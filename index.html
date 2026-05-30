@@ -637,7 +637,7 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
   display:flex;align-items:center;justify-content:center;
   transition:opacity .5s var(--spring2);
 }
-#setup-card,#login-card{
+#login-card{
   width:360px;max-width:94vw;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.1);
@@ -699,30 +699,6 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
 
 <!-- ══ LOGIN SCREEN ══ -->
 <div id="login-overlay">
-  <!-- First-run setup (shown only when no accounts exist) -->
-  <div id="setup-card" style="display:none">
-    <div class="login-logo">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      Live Trading Charts
-    </div>
-    <div class="login-subtitle" style="font-size:13px;color:var(--tx1);margin-bottom:4px;font-weight:600">Welcome! Create your admin account</div>
-    <div class="login-subtitle" style="margin-bottom:22px">This is a one-time setup. Your credentials are stored locally only.</div>
-    <div class="lf-group">
-      <label>Admin Username</label>
-      <input class="lf-inp" type="text" id="su-user" placeholder="Choose a username" spellcheck="false" autocomplete="off">
-    </div>
-    <div class="lf-group">
-      <label>Password</label>
-      <input class="lf-inp" type="password" id="su-pass" placeholder="Choose a strong password">
-    </div>
-    <div class="lf-group">
-      <label>Confirm Password</label>
-      <input class="lf-inp" type="password" id="su-pass2" placeholder="Confirm password">
-    </div>
-    <div class="login-error" id="su-error"></div>
-    <button class="login-btn" id="su-btn">Create Admin Account</button>
-  </div>
-
   <div id="login-card">
     <div class="login-logo">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -4637,7 +4613,8 @@ function isTooSimilarToAdmin(username) {
 
 function addAccount(u, p) {
   const arr = getAccounts();
-  arr.push({u, p, created: Date.now()});
+  const isFirst = arr.length === 0;
+  arr.push({u, p, created: Date.now(), ...(isFirst ? {admin: true} : {})});
   saveAccounts(arr);
 }
 function changePassword(u, oldP, newP) {
@@ -4689,43 +4666,6 @@ function _recordFail() {
 function _clearFails() {
   sessionStorage.removeItem(_FAIL_KEY);
   sessionStorage.removeItem(_LOCK_KEY);
-}
-
-// ─── First-run setup screen ────────────────────────────────
-function initSetupScreen() {
-  const card   = document.getElementById('setup-card');
-  const suUser = document.getElementById('su-user');
-  const suPass = document.getElementById('su-pass');
-  const suPass2= document.getElementById('su-pass2');
-  const suErr  = document.getElementById('su-error');
-  const suBtn  = document.getElementById('su-btn');
-
-  function doSetup() {
-    suErr.textContent = '';
-    const u = suUser.value.trim();
-    const p = suPass.value;
-    const p2= suPass2.value;
-    if(!u || !p || !p2) { suErr.textContent = 'Fill in all fields.'; return; }
-    if(u.length < 3) { suErr.textContent = 'Username must be at least 3 characters.'; return; }
-    if(p.length < 6) { suErr.textContent = 'Password must be at least 6 characters.'; return; }
-    if(p !== p2) { suErr.textContent = 'Passwords do not match.'; return; }
-    saveAccounts([{u, p, admin: true, created: Date.now()}]);
-    suErr.style.color = 'var(--green)';
-    suErr.textContent = 'Admin account created! Signing you in…';
-    setTimeout(() => {
-      card.style.display = 'none';
-      const overlay = document.getElementById('login-overlay');
-      overlay.style.transition = 'opacity .45s var(--spring2)';
-      overlay.style.opacity = '0';
-      overlay.style.pointerEvents = 'none';
-      setTimeout(() => { overlay.style.display = 'none'; startApp(u); }, 460);
-    }, 1000);
-  }
-
-  suBtn.addEventListener('click', doSetup);
-  suPass.addEventListener('keydown', e => { if(e.key === 'Enter') suPass2.focus(); });
-  suPass2.addEventListener('keydown', e => { if(e.key === 'Enter') doSetup(); });
-  setTimeout(() => suUser.focus(), 50);
 }
 
 function initLoginScreen() {
@@ -5219,12 +5159,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
   initLoginScreen();
-  // First-run: no accounts yet → show setup screen
-  if(!getAccounts().length) {
-    document.getElementById('login-card').style.display = 'none';
-    document.getElementById('setup-card').style.display = 'block';
-    initSetupScreen();
-  }
 });
 
 window.addEventListener('beforeunload', () => {
