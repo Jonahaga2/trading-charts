@@ -355,6 +355,14 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
 #reset-btn:hover{border-color:var(--blue);background:var(--bg3);box-shadow:0 4px 24px var(--bglow)}
 
 /* ═══ SCANNER PANEL ═══ */
+#cat-panel{position:fixed;top:42px;right:0;width:420px;
+  background:rgba(2,2,4,.95);border-left:1px solid rgba(255,255,255,.08);
+  display:flex;flex-direction:column;z-index:600;
+  transform:translateX(105%);transition:transform .32s var(--spring2);
+  bottom:22px;box-shadow:-20px 0 60px rgba(0,0,0,.9);will-change:transform;
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+#cat-panel.open{transform:translateX(0)}
+
 #scan-panel{position:fixed;top:42px;right:0;width:420px;
   background:rgba(2,2,4,.95);border-left:1px solid rgba(255,255,255,.08);
   display:flex;flex-direction:column;z-index:600;
@@ -443,6 +451,9 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
   background:rgba(255,255,255,.06);color:var(--tx2);border:1px solid rgba(255,255,255,.08);
   letter-spacing:.2px;transition:all .14s var(--ease);cursor:pointer}
 .news-tick:hover{background:rgba(255,255,255,.12);color:var(--tx1)}
+.news-tick.up{background:var(--gdim);color:var(--green);border:1px solid rgba(34,197,94,.18)}
+.news-tick.dn{background:var(--rdim);color:var(--red);border:1px solid rgba(244,63,94,.18)}
+.news-tick.up:hover,.news-tick.dn:hover{filter:brightness(1.2)}
 
 /* ═══ WATCHLIST DROPDOWN ═══ */
 #wl-panel{position:fixed;top:42px;left:44px;width:232px;
@@ -626,7 +637,7 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
   display:flex;align-items:center;justify-content:center;
   transition:opacity .5s var(--spring2);
 }
-#login-card{
+#setup-card,#login-card{
   width:360px;max-width:94vw;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.1);
@@ -688,6 +699,30 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
 
 <!-- ══ LOGIN SCREEN ══ -->
 <div id="login-overlay">
+  <!-- First-run setup (shown only when no accounts exist) -->
+  <div id="setup-card" style="display:none">
+    <div class="login-logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Live Trading Charts
+    </div>
+    <div class="login-subtitle" style="font-size:13px;color:var(--tx1);margin-bottom:4px;font-weight:600">Welcome! Create your admin account</div>
+    <div class="login-subtitle" style="margin-bottom:22px">This is a one-time setup. Your credentials are stored locally only.</div>
+    <div class="lf-group">
+      <label>Admin Username</label>
+      <input class="lf-inp" type="text" id="su-user" placeholder="Choose a username" spellcheck="false" autocomplete="off">
+    </div>
+    <div class="lf-group">
+      <label>Password</label>
+      <input class="lf-inp" type="password" id="su-pass" placeholder="Choose a strong password">
+    </div>
+    <div class="lf-group">
+      <label>Confirm Password</label>
+      <input class="lf-inp" type="password" id="su-pass2" placeholder="Confirm password">
+    </div>
+    <div class="login-error" id="su-error"></div>
+    <button class="login-btn" id="su-btn">Create Admin Account</button>
+  </div>
+
   <div id="login-card">
     <div class="login-logo">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -759,7 +794,6 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
       </div>
       <div class="login-error" id="lc-error"></div>
       <button class="login-btn" id="lc-save-btn" style="background:linear-gradient(135deg,rgba(34,197,94,.3),rgba(34,197,94,.15));border-color:rgba(34,197,94,.35)">Save Changes</button>
-      <div class="login-default-note">Default account: trader / charts</div>
     </div>
   </div>
 </div>
@@ -860,11 +894,11 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
     Scanner
   </button>
 
-  <button class="hbtn" id="fhkey-btn" title="Set Finnhub API Key" style="border:1px solid var(--border)">
+  <button class="hbtn" id="cat-btn" title="Catalyst News — high-impact movers">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
-      <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
     </svg>
-    API Key
+    Catalysts
   </button>
 
   <div class="hdr-div"></div>
@@ -904,6 +938,12 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
   </button>
 
   <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+    <button class="hbtn" id="fhkey-btn" title="Connect Finnhub for real-time data">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+        <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+      </svg>
+      Live Data
+    </button>
     <button class="hbtn" id="admin-btn" title="Dev Tools" style="display:none;color:var(--orange);border-color:rgba(245,158,11,.2)">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
         <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
@@ -974,7 +1014,6 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
       <div class="sp-tab act" data-sc="gainers">▲ Gainers</div>
       <div class="sp-tab" data-sc="losers">▼ Losers</div>
       <div class="sp-tab" data-sc="active">⚡ Active</div>
-      <div class="sp-tab" data-sc="news">📰 News</div>
       <div class="sp-tab" data-sc="custom">⚙ Custom</div>
     </div>
     <button class="sp-refresh" id="sc-refresh" title="Refresh">
@@ -1000,6 +1039,26 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
   <div class="sp-count" id="sc-count"></div>
   <div class="sp-body" id="sc-body">
     <div class="sp-loading"><div class="spin"></div><span>Loading scanner…</span></div>
+  </div>
+</div>
+
+<!-- ══ CATALYST NEWS PANEL ══ -->
+<div id="cat-panel">
+  <div class="sp-hdr">
+    <div class="sp-title">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      Catalysts
+    </div>
+    <button class="sp-refresh" id="cat-refresh" title="Refresh">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      Refresh
+    </button>
+    <button class="hbtn" id="cat-close" style="margin-left:6px">✕</button>
+  </div>
+  <div class="sp-timer" id="cat-timer"></div>
+  <div class="sp-count" id="cat-count"></div>
+  <div class="sp-body" id="cat-body">
+    <div class="sp-loading"><div class="spin"></div><span>Loading catalysts…</span></div>
   </div>
 </div>
 
@@ -1095,9 +1154,10 @@ html,body{height:100%;background:#0d0d0d;color:var(--tx1);
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2962ff" stroke-width="2.2" stroke-linecap="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
       <span style="font-size:15px;font-weight:600;color:#d1d4dc">Finnhub API Key</span>
     </div>
-    <p style="color:#787b86;font-size:12px;margin:0 0 16px 28px;line-height:1.5">
-      Get your free key at <strong style="color:#d1d4dc">finnhub.io</strong> → Sign Up → API Keys.<br>
-      Free tier: 60 calls/min · real-time US stocks · crypto candles.
+    <p style="color:#787b86;font-size:12px;margin:0 0 16px 28px;line-height:1.6">
+      Enables <strong style="color:#26a69a">real-time data</strong> for charts and live prices.<br>
+      Get a free key at <strong style="color:#d1d4dc">finnhub.io</strong> → Sign Up → API Keys.<br>
+      <span style="color:#555">Free tier: 60 calls/min · real-time US stocks · crypto OHLCV.</span>
     </p>
     <input id="fhkey-input" type="text" placeholder="e.g. cq9abc123def456xyz" spellcheck="false"
       style="width:100%;box-sizing:border-box;background:#131722;border:1px solid #2a2e39;border-radius:6px;color:#d1d4dc;font-size:13px;padding:10px 12px;font-family:monospace;outline:none;margin-bottom:14px">
@@ -1296,8 +1356,14 @@ let theme = JSON.parse(localStorage.getItem('chart-theme')||'null') || {
 };
 function saveTheme() { localStorage.setItem('chart-theme', JSON.stringify(theme)); }
 
-// v7/finance/quote is now blocked — use v8/finance/chart meta instead
+// Fetch live quote (Finnhub primary when key set, Yahoo Finance fallback)
 async function fetchChartQuote(yfsym) {
+  // Try Finnhub first — real-time, no CORS issues
+  if(fhKey) {
+    const fhq = await fetchFHQuote(yfsym);
+    if(fhq) return fhq;
+  }
+  // Fallback: Yahoo Finance v8 chart meta
   const d = await tryFetch(`${YF}/v8/finance/chart/${yfsym}?interval=1d&range=5d`, 9000);
   const meta = d?.chart?.result?.[0]?.meta;
   if(!meta?.regularMarketPrice) return null;
@@ -2041,8 +2107,77 @@ const isCrypto = s => /USDT$|BTC$|ETH$|BNB$/i.test(s);
 
 // Yahoo Finance base URL + symbol maps (no API key required)
 const YF = 'https://query1.finance.yahoo.com';
-const FH = 'https://finnhub.io/api/v1'; // kept for optional API key modal
+const FH = 'https://finnhub.io/api/v1';
 let fhKey = localStorage.getItem('fh-api-key') || '';
+
+// Finnhub resolution + range mappings
+const FH_RES = {
+  '1m':'1','5m':'5','15m':'15','30m':'30',
+  '1h':'60','4h':'60','1d':'D','1w':'W','1mo':'M'
+};
+const FH_DAYS = {
+  '1m':5,'5m':30,'15m':60,'30m':90,
+  '1h':365,'4h':730,'1d':1825,'1w':3650,'1mo':3650
+};
+
+function toFHSym(sym) {
+  // Convert BTC-USD → BINANCE:BTCUSDT for Finnhub crypto
+  const up = sym.toUpperCase();
+  if(up.endsWith('-USD') && !up.includes('.')) {
+    const base = up.replace('-USD','');
+    if(['BTC','ETH','SOL','BNB','XRP','ADA','AVAX','DOGE','DOT','MATIC',
+        'LINK','UNI','ATOM','LTC','NEAR','ALGO','TRX','XLM','FIL'].includes(base))
+      return 'BINANCE:' + base + 'USDT';
+  }
+  return up;
+}
+
+async function fetchFHChart(sym, tf) {
+  if(!fhKey) return null;
+  const fhSym = toFHSym(sym);
+  const isCrypto = fhSym.startsWith('BINANCE:');
+  const res = FH_RES[tf] || 'D';
+  const to  = Math.floor(Date.now() / 1000);
+  const from = to - (FH_DAYS[tf] || 365) * 86400;
+  const endpoint = isCrypto
+    ? `${FH}/crypto/candle?symbol=${fhSym}&resolution=${res}&from=${from}&to=${to}&token=${fhKey}`
+    : `${FH}/stock/candle?symbol=${fhSym}&resolution=${res}&from=${from}&to=${to}&token=${fhKey}`;
+  try {
+    const d = await fetchWithTimeout(endpoint, 12000);
+    if(!d.ok) return null;
+    const j = await d.json();
+    if(j.s !== 'ok' || !j.c?.length) return null;
+    let bars = j.t.map((t, i) => ({
+      time: t, open: j.o[i], high: j.h[i], low: j.l[i], close: j.c[i], volume: j.v?.[i] || 0
+    })).filter(b => b.open > 0 && b.close > 0 && b.high >= b.low);
+    if(tf === '4h') bars = resampleBars(bars, 14400);
+    return bars.length >= 5 ? bars : null;
+  } catch(e) { return null; }
+}
+
+async function fetchFHQuote(sym) {
+  if(!fhKey) return null;
+  const fhSym = toFHSym(sym);
+  if(fhSym.startsWith('BINANCE:')) return null; // use YF for crypto quotes
+  try {
+    const d = await fetchWithTimeout(`${FH}/quote?symbol=${fhSym}&token=${fhKey}`, 6000);
+    if(!d.ok) return null;
+    const j = await d.json();
+    if(!(j.c > 0)) return null;
+    return {
+      symbol: sym, shortName: sym,
+      regularMarketPrice: j.c,
+      regularMarketChange: j.d || 0,
+      regularMarketChangePercent: j.dp || 0,
+      marketState: 'REGULAR',
+      preMarketPrice: 0, postMarketPrice: 0,
+      regularMarketVolume: 0,
+      fiftyTwoWeekHigh: 0, fiftyTwoWeekLow: 0,
+      regularMarketDayHigh: j.h || 0,
+      regularMarketDayLow: j.l || 0,
+    };
+  } catch(e) { return null; }
+}
 
 const YF_CRYPTO = {
   BTCUSDT:'BTC-USD',  ETHUSDT:'ETH-USD',  SOLUSDT:'SOL-USD',
@@ -2103,6 +2238,49 @@ async function tryFetch(url, timeoutMs=10000) {
   throw new Error('Network error — run: bash ~/trading-charts/start.sh');
 }
 
+// ── Batch quote fetch (single request for multiple symbols) ──────────────
+async function fetchBatchQuotes(symbols) {
+  const yfSyms = symbols.map(toYFSym);
+  const fields = 'regularMarketPrice,regularMarketChange,regularMarketChangePercent,regularMarketPreviousClose,regularMarketVolume,fiftyTwoWeekHigh,fiftyTwoWeekLow,shortName,marketState';
+  const url = `${YF}/v7/finance/quote?symbols=${yfSyms.join(',')}&fields=${fields}`;
+  try {
+    const data = await tryFetch(url, 15000);
+    const results = data?.quoteResponse?.result;
+    if(results?.length) {
+      return results
+        .filter(q => q.regularMarketPrice > 0)
+        .map(q => ({
+          sym:     symbols.find(s => toYFSym(s) === q.symbol) || q.symbol,
+          name:    q.shortName || q.symbol,
+          px:      q.regularMarketPrice,
+          chg:     q.regularMarketChange || 0,
+          chgPct:  q.regularMarketChangePercent || 0,
+          vol:     q.regularMarketVolume || 0,
+          hi52:    q.fiftyTwoWeekHigh || 0,
+          lo52:    q.fiftyTwoWeekLow || 0,
+          prevClose: q.regularMarketPreviousClose || 0,
+        }));
+    }
+  } catch(e) {}
+  // Fallback: individual chart requests
+  const settled = await Promise.allSettled(symbols.map(s => fetchChartQuote(toYFSym(s))));
+  return settled.map((r, i) => {
+    if(r.status !== 'fulfilled' || !r.value || !(r.value.regularMarketPrice > 0)) return null;
+    const q = r.value;
+    return {
+      sym:     symbols[i],
+      name:    SCAN_NAMES[symbols[i]] || q.shortName || symbols[i],
+      px:      q.regularMarketPrice,
+      chg:     q.regularMarketChange,
+      chgPct:  q.regularMarketChangePercent,
+      vol:     q.regularMarketVolume,
+      hi52:    q.fiftyTwoWeekHigh,
+      lo52:    q.fiftyTwoWeekLow,
+      prevClose: q.regularMarketPrice - q.regularMarketChange,
+    };
+  }).filter(Boolean);
+}
+
 // ── Bar utilities ────────────────────────────
 function resampleBars(bars, bucketSecs) {
   if(!bucketSecs || bucketSecs <= 60) return bars;
@@ -2150,13 +2328,16 @@ function parseYFChart(d, sym) {
   return bars;
 }
 
-// ── Fetch full candle history via Yahoo Finance ──
+// ── Fetch full candle history (Finnhub primary, Yahoo Finance fallback) ──
 async function getData(sym, tf) {
+  if(fhKey) {
+    const fhBars = await fetchFHChart(sym, tf);
+    if(fhBars?.length) return fhBars;
+  }
   const yfsym    = toYFSym(sym);
   const interval = YF_INTERVAL[tf] || '1d';
   const range    = YF_RANGE[tf]    || '10y';
   const url      = `${YF}/v8/finance/chart/${yfsym}?interval=${interval}&range=${range}&includePrePost=${prePostEnabled}`;
-
   const d    = await tryFetch(url, 14000);
   let   bars = cleanBars(parseYFChart(d, sym));
   if(!bars.length) throw new Error('No valid candles for ' + sym);
@@ -2254,6 +2435,10 @@ async function pollLatest(idx) {
       inst.bars.push(newBar);
       latestBar = newBar;
     }
+
+    // Store true day change from quote so % badge always shows today's move
+    inst.dayChgPct  = q.regularMarketChangePercent;
+    inst.prevClose  = q.regularMarketPrice - q.regularMarketChange;
 
     const bar = latestBar || inst.bars[inst.bars.length - 1];
     if(!bar) return;
@@ -2355,20 +2540,15 @@ function renderWL() {
 async function pollWL() {
   if(!watchlist.length) return;
   try {
-    const results = await Promise.allSettled(watchlist.map(s => fetchChartQuote(toYFSym(s))));
-    results.forEach((r, i) => {
-      if(r.status !== 'fulfilled' || !r.value) return;
-      const q = r.value;
-      const origSym = watchlist[i];
-      const pxEl  = document.getElementById(`wlpx-${origSym}`);
-      const chgEl = document.getElementById(`wlchg-${origSym}`);
-      if(!pxEl || !(q.regularMarketPrice > 0)) return;
-      const p  = q.regularMarketPrice;
-      const dp = q.regularMarketChangePercent || 0;
-      const up = dp >= 0;
-      pxEl.textContent = p >= 1 ? '$'+p.toFixed(2) : '$'+p.toFixed(4);
+    const quotes = await fetchBatchQuotes(watchlist);
+    quotes.forEach(q => {
+      const pxEl  = document.getElementById(`wlpx-${q.sym}`);
+      const chgEl = document.getElementById(`wlchg-${q.sym}`);
+      if(!pxEl || !(q.px > 0)) return;
+      const up = q.chgPct >= 0;
+      pxEl.textContent = q.px >= 1 ? '$'+q.px.toFixed(2) : '$'+q.px.toFixed(4);
       pxEl.style.color = up ? 'var(--green)' : 'var(--red)';
-      if(chgEl) { chgEl.textContent = (up?'+':'')+dp.toFixed(2)+'%'; chgEl.className = 'wl-chg '+(up?'up':'dn'); }
+      if(chgEl) { chgEl.textContent = (up?'+':'')+q.chgPct.toFixed(2)+'%'; chgEl.className = 'wl-chg '+(up?'up':'dn'); }
     });
   } catch(e) {}
 }
@@ -2409,14 +2589,13 @@ function mkChartOptions(container) {
   };
 }
 function mkOscChartOptions() {
-  const isGrad = theme.bg==='#000000';
   return {
-    layout:{background:{type:'VerticalGradient',topColor:'#000000',bottomColor:'#0e0e1a'},textColor:'#4a5568',fontSize:9},
-    grid:{vertLines:{color:'#0a0a12',style:1},horzLines:{color:'#0a0a12',style:1}},
+    layout:{background:{type:'solid',color:'#000000'},textColor:'#4a5568',fontSize:9},
+    grid:{vertLines:{color:'#111111',style:1},horzLines:{color:'#111111',style:1}},
     crosshair:{mode:LightweightCharts.CrosshairMode.Normal,
-      vertLine:{color:'rgba(255,255,255,.18)',labelBackgroundColor:'#131320'},
-      horzLine:{color:'rgba(255,255,255,.18)',labelBackgroundColor:'#131320'}},
-    rightPriceScale:{borderColor:'#141425',textColor:'#4a5568',scaleMargins:{top:0.1,bottom:0.08}},
+      vertLine:{color:'rgba(255,255,255,.18)',labelBackgroundColor:'#111111'},
+      horzLine:{color:'rgba(255,255,255,.18)',labelBackgroundColor:'#111111'}},
+    rightPriceScale:{borderColor:'#1a1a1a',textColor:'#4a5568',scaleMargins:{top:0.1,bottom:0.08}},
     timeScale:{visible:false},
     handleScroll:false,handleScale:false,autoSize:true,
   };
@@ -2693,16 +2872,19 @@ function updLivePx(idx, bar) {
     }
     if(pct) { pct.textContent = ''; pct.className = 'chg-pct'; }
   } else {
+    const inst = charts[idx];
     const converted = convertPx(bar.close, ccy);
-    const first = charts[idx].bars.length ? (charts[idx].bars[0].open || charts[idx].bars[0].close) : bar.close;
-    const up = bar.close >= first;
+    // Use true day % from quote if available, else fall back to first-bar calc
+    const chg = inst?.dayChgPct != null
+      ? inst.dayChgPct
+      : (inst?.prevClose > 0 ? (bar.close - inst.prevClose) / inst.prevClose * 100
+        : (inst?.bars?.length > 1 ? ((bar.close - (inst.bars[0].open||inst.bars[0].close)) / (inst.bars[0].open||inst.bars[0].close) * 100) : 0));
+    const up = chg >= 0;
     px.textContent = fmtCcy(converted, ccy);
     px.className = 'live-px ' + (up?'up':'dn');
-    if(pct && charts[idx].bars && charts[idx].bars.length > 1) {
-      const first = charts[idx].bars[0].open || charts[idx].bars[0].close;
-      const chg = first > 0 ? ((bar.close - first) / first * 100) : 0;
+    if(pct) {
       pct.textContent = (chg>=0?'+':'')+chg.toFixed(2)+'%';
-      pct.className = 'chg-pct ' + (chg>=0?'up':'dn');
+      pct.className = 'chg-pct ' + (up?'up':'dn');
     }
   }
 }
@@ -3320,7 +3502,7 @@ function renderAdminPanel() {
     const color       = AVATAR_COLORS[i % AVATAR_COLORS.length];
     const initial     = acc.u.charAt(0).toUpperCase();
     const isSelf      = acc.u.toLowerCase() === me.toLowerCase();
-    const isProtected = SEED_ACCOUNTS.some(s => s.u.toLowerCase() === acc.u.toLowerCase());
+    const isProtected = isSelf;
     const created     = acc.created ? new Date(acc.created).toLocaleString() : 'Pre-seeded';
     const hasLayout   = nCharts > 0;
 
@@ -3977,22 +4159,138 @@ function timeAgo(ts) {
 }
 
 async function fetchNewsData() {
-  const body = document.getElementById('sc-body');
-  body.innerHTML='<div class="sp-loading"><div class="spin"></div><span>Loading news…</span></div>';
-  document.getElementById('sc-count').textContent='';
+  const body = document.getElementById('cat-body');
+  body.innerHTML='<div class="sp-loading"><div class="spin"></div><span>Scanning catalysts…</span></div>';
+  document.getElementById('cat-count').textContent='';
   try {
-    const url = `${YF}/v2/finance/news?count=60&symbols=${NEWS_SYMS}`;
-    const data = await tryFetch(url, 12000);
-    const items = data?.items?.result
-      || data?.data?.main?.stream
-      || data?.news
-      || (Array.isArray(data) ? data : []);
-    if(!items.length) throw new Error('No news returned');
-    renderNewsItems(items);
+    let rawItems = [];
+
+    // Try Finnhub market news first if key set
+    if(fhKey) {
+      try {
+        const d = await tryFetch(`${FH}/news?category=general&token=${fhKey}`, 10000);
+        if(Array.isArray(d) && d.length) {
+          rawItems = d.map(n => ({content:{
+            title: n.headline, summary: n.summary,
+            pubDate: new Date((n.datetime||0)*1000).toISOString(),
+            provider:{displayName: n.source},
+            canonicalUrl:{url: n.url||''},
+            tickers: n.related ? n.related.split(',').map(s=>s.trim()).filter(Boolean) : [],
+          }}));
+        }
+      } catch(e) {}
+    }
+
+    // Fallback: Yahoo Finance news
+    if(!rawItems.length) {
+      const url = `${YF}/v2/finance/news?count=60&symbols=${NEWS_SYMS}`;
+      const data = await tryFetch(url, 12000);
+      rawItems = data?.items?.result || data?.data?.main?.stream || data?.news || (Array.isArray(data) ? data : []);
+    }
+
+    if(!rawItems.length) throw new Error('No news available');
+
+    // Score by impact category × freshness — filter out generic market news
+    const WEIGHTS = {earn:5, fda:5, ma:4, legal:3, upgrade:2, downgrade:2, ipo:2};
+    const now = Date.now() / 1000;
+    const scored = rawItems.map(it => {
+      const content = it.content || it;
+      const title   = content.title || it.headline || '';
+      const summary = content.summary || '';
+      if(!title) return null;
+      const {label, cls} = classifyNews(title, summary);
+      const catKey = Object.entries(NEWS_KW).find(([,d]) => d.cls === cls)?.[0] || 'general';
+      const weight = WEIGHTS[catKey] || 0;
+      if(!weight) return null; // drop generic stories
+      const pubTs  = content.pubDate ? Math.floor(new Date(content.pubDate).getTime()/1000)
+                   : content.publishedAt ? Math.floor(new Date(content.publishedAt).getTime()/1000)
+                   : content.providerPublishTime || 0;
+      const age    = pubTs ? now - pubTs : 86400;
+      const fresh  = age < 3600 ? 3 : age < 21600 ? 1.5 : age < 86400 ? 1 : 0.5;
+      return {content, title, pubTs, label, cls, weight, score: weight * fresh};
+    }).filter(Boolean).sort((a,b) => b.score - a.score).slice(0, 30);
+
+    if(!scored.length) {
+      document.getElementById('cat-body').innerHTML='<div class="sp-loading"><span style="color:var(--tx3)">No high-impact catalysts right now</span></div>';
+      return;
+    }
+
+    // Collect tickers from all stories, batch-fetch live quotes
+    const tickerSet = new Set();
+    scored.forEach(s => {
+      (s.content.tickers || s.content.relatedTickers || []).slice(0,5).forEach(t => {
+        if(t && t.length <= 6) tickerSet.add(t);
+      });
+    });
+    const liveQuotes = {};
+    if(tickerSet.size) {
+      try {
+        const quotes = await fetchBatchQuotes([...tickerSet].slice(0,25));
+        quotes.forEach(q => { liveQuotes[q.sym] = q; });
+      } catch(e) {}
+    }
+
+    renderCatalysts(scored, liveQuotes);
   } catch(e) {
-    body.innerHTML=`<div class="sp-loading"><span style="color:var(--tx3)">News unavailable — ${e.message}</span></div>`;
-    document.getElementById('sc-count').textContent='';
+    document.getElementById('cat-body').innerHTML=`<div class="sp-loading"><span style="color:var(--tx3)">Catalysts unavailable — ${e.message}</span></div>`;
+    document.getElementById('cat-count').textContent='';
   }
+}
+
+function renderCatalysts(scored, liveQuotes) {
+  const body  = document.getElementById('cat-body');
+  const count = document.getElementById('cat-count');
+  count.textContent = `${scored.length} catalysts · ${new Date().toLocaleTimeString()}`;
+
+  const html = scored.map((s, idx) => {
+    const {content, title, pubTs, label, cls} = s;
+    const src   = content.provider?.displayName || content.publisher || content.source || '';
+    const link  = safeUrl(content.canonicalUrl?.url || content.link || content.url || '#');
+    const ticks = (content.tickers || content.relatedTickers || []).slice(0,5);
+    const delay = Math.min(idx * 0.04, 0.8);
+
+    const tickHtml = ticks.map(t => {
+      const q = liveQuotes[t];
+      if(q?.chgPct != null) {
+        const up  = q.chgPct >= 0;
+        const pct = (up?'+':'') + q.chgPct.toFixed(2) + '%';
+        return `<span class="news-tick ${up?'up':'dn'}" data-sym="${escHtml(t)}">${escHtml(t)} <strong>${pct}</strong></span>`;
+      }
+      return `<span class="news-tick" data-sym="${escHtml(t)}">${escHtml(t)}</span>`;
+    }).join('');
+
+    return `<div class="news-item ${cls}" style="animation-delay:${delay}s" data-link="${escHtml(link)}">
+      <span class="news-impact">${label}</span>
+      <div class="news-headline">${escHtml(title)}</div>
+      <div class="news-meta">
+        ${pubTs ? `<span class="news-time">${timeAgo(pubTs)}</span>` : ''}
+        ${src   ? `<span class="news-src">· ${escHtml(src)}</span>` : ''}
+        ${ticks.length ? `<div class="news-ticks">${tickHtml}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+
+  body.innerHTML = `<div class="news-list">${html}</div>`;
+
+  body.querySelectorAll('.news-item').forEach(el => {
+    el.addEventListener('click', e => {
+      if(e.target.classList.contains('news-tick') || e.target.closest?.('.news-tick')) return;
+      const link = el.dataset.link;
+      if(link && link !== '#') window.open(link, '_blank', 'noopener');
+    });
+  });
+  body.querySelectorAll('.news-tick[data-sym]').forEach(el => {
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      const sym = el.dataset.sym;
+      if(!sym) return;
+      loadChart(activeIdx, sym, charts[activeIdx]?.tf||'1h');
+      updateSymInput(activeIdx, sym);
+      toast(`Loading ${sym}`, 'ok');
+    });
+  });
+
+  startCatRefreshTimer();
 }
 
 function renderNewsItems(items) {
@@ -4082,7 +4380,6 @@ const SCAN_NAMES = {
 };
 
 async function fetchScannerData(type) {
-  if(type === 'news')   { return fetchNewsData(); }
   if(type === 'custom') { return runCustomScan(); }
 
   const body = document.getElementById('sc-body');
@@ -4090,16 +4387,11 @@ async function fetchScannerData(type) {
   document.getElementById('sc-count').textContent='';
 
   try {
-    const results = await Promise.allSettled(SCAN_SYMS.map(s => fetchChartQuote(s)));
-    scannerData = results
-      .map((r, i) => {
-        if(r.status !== 'fulfilled' || !r.value || !(r.value.regularMarketPrice > 0)) return null;
-        const q = r.value;
-        return { sym: SCAN_SYMS[i], name: SCAN_NAMES[SCAN_SYMS[i]] || q.shortName || SCAN_SYMS[i],
-                 px: q.regularMarketPrice, chg: q.regularMarketChange, chgPct: q.regularMarketChangePercent,
-                 vol: q.regularMarketVolume, hi52: q.fiftyTwoWeekHigh, lo52: q.fiftyTwoWeekLow };
-      })
-      .filter(Boolean);
+    const quotes = await fetchBatchQuotes(SCAN_SYMS);
+    scannerData = quotes.map(q => ({
+      ...q,
+      name: SCAN_NAMES[q.sym] || q.name,
+    }));
     if(!scannerData.length) throw new Error('No quotes returned — check network');
   } catch(e) {
     body.innerHTML=`<div class="sp-loading"><span style="color:var(--red)">Error: ${e.message}</span></div>`;
@@ -4121,15 +4413,9 @@ async function runCustomScan() {
 
   body.innerHTML='<div class="sp-loading"><div class="spin"></div><span>Fetching live quotes…</span></div>';
   try {
-    const results = await Promise.allSettled(SCAN_SYMS.map(s => fetchChartQuote(s)));
-    scannerData = results
-      .map((r, i) => {
-        if(r.status !== 'fulfilled' || !r.value || !(r.value.regularMarketPrice > 0)) return null;
-        const q = r.value;
-        return { sym: SCAN_SYMS[i], name: SCAN_NAMES[SCAN_SYMS[i]] || q.shortName || SCAN_SYMS[i],
-                 px: q.regularMarketPrice, chg: q.regularMarketChange, chgPct: q.regularMarketChangePercent,
-                 vol: q.regularMarketVolume, hi52: q.fiftyTwoWeekHigh, lo52: q.fiftyTwoWeekLow };
-      })
+    const quotes = await fetchBatchQuotes(SCAN_SYMS);
+    scannerData = quotes
+      .map(q => ({...q, name: SCAN_NAMES[q.sym] || q.name}))
       .filter(r => {
         if(!r) return false;
         if(r.px < minPx || r.px > maxPx) return false;
@@ -4235,17 +4521,39 @@ function startScanRefreshTimer() {
   }, 60000);
 }
 
+let catRefreshTimer = null;
+function startCatRefreshTimer() {
+  if(catRefreshTimer) clearTimeout(catRefreshTimer);
+  const bar = document.getElementById('cat-timer');
+  if(bar){bar.style.transition='none';bar.style.transform='scaleX(1)';
+    requestAnimationFrame(()=>{bar.style.transition='transform 60s linear';bar.style.transform='scaleX(0)';});}
+  catRefreshTimer = setTimeout(()=>{
+    if(document.getElementById('cat-panel').classList.contains('open')) fetchNewsData();
+  }, 60000);
+}
+
 function openScanner() {
+  closeCatalysts();
   document.getElementById('scan-panel').classList.add('open');
   document.getElementById('scan-btn').classList.add('act');
-  const body = document.getElementById('sc-body');
-  const isEmpty = body.querySelector('.sp-loading') || !body.firstChild;
-  if(scannerTab === 'news' || !scannerData.length) fetchScannerData(scannerTab);
+  if(!scannerData.length) fetchScannerData(scannerTab);
 }
 function closeScanner() {
   document.getElementById('scan-panel').classList.remove('open');
   document.getElementById('scan-btn').classList.remove('act');
   if(scanRefreshTimer){clearTimeout(scanRefreshTimer);scanRefreshTimer=null;}
+}
+function openCatalysts() {
+  closeScanner();
+  document.getElementById('cat-panel').classList.add('open');
+  document.getElementById('cat-btn').classList.add('act');
+  const body = document.getElementById('cat-body');
+  if(!body.querySelector('.news-list')) fetchNewsData();
+}
+function closeCatalysts() {
+  document.getElementById('cat-panel').classList.remove('open');
+  document.getElementById('cat-btn').classList.remove('act');
+  if(catRefreshTimer){clearTimeout(catRefreshTimer);catRefreshTimer=null;}
 }
 
 // ═══════════════════════════════════════════
@@ -4282,38 +4590,16 @@ const AUTH_KEY    = 'app-accounts';
 const SESSION_KEY = 'app-session';
 const LAYOUT_KEY  = 'app-layout';
 
-const SEED_ACCOUNTS = [
-  {u:'trader', p:'charts'},
-  {u:'jonah',  p:'wasd', admin:true},
-];
-
-function _ensureSeeds(arr) {
-  let changed = false;
-  SEED_ACCOUNTS.forEach(s => {
-    const existing = arr.find(a => a.u.toLowerCase() === s.u.toLowerCase());
-    if(!existing) {
-      arr.push({...s}); changed = true;
-    } else {
-      // Ensure seed properties (admin flag, correct password) are always up to date
-      if(s.admin && !existing.admin) { existing.admin = true; changed = true; }
-      if(existing.p !== s.p) { existing.p = s.p; changed = true; }
-      if(existing.u !== s.u) { existing.u = s.u; changed = true; }
-    }
-  });
-  if(changed) localStorage.setItem(AUTH_KEY, btoa(JSON.stringify(arr)));
-  return arr;
-}
-
 function getAccounts() {
   try {
     const r = localStorage.getItem(AUTH_KEY);
     if(r) {
       const parsed = JSON.parse(atob(r));
-      if(parsed && !Array.isArray(parsed) && parsed.u) return _ensureSeeds([parsed]);
-      if(Array.isArray(parsed)) return _ensureSeeds(parsed);
+      if(parsed && !Array.isArray(parsed) && parsed.u) return [parsed];
+      if(Array.isArray(parsed)) return parsed;
     }
   } catch(e) {}
-  return _ensureSeeds([]);
+  return [];
 }
 function saveAccounts(arr) { localStorage.setItem(AUTH_KEY, btoa(JSON.stringify(arr))); }
 function isAdmin() { return getAccounts().find(a => a.u.toLowerCase()===currentUser().toLowerCase())?.admin === true; }
@@ -4385,6 +4671,63 @@ function getSavedLayout() {
   return null;
 }
 
+// ─── Login rate-limit (5 attempts → 60s lockout) ──────────
+const _FAIL_KEY = 'login-fails';
+const _LOCK_KEY = 'login-lock-until';
+function _loginLocked() {
+  const until = +sessionStorage.getItem(_LOCK_KEY) || 0;
+  return Date.now() < until;
+}
+function _lockRemaining() {
+  return Math.max(0, Math.ceil(((+sessionStorage.getItem(_LOCK_KEY)||0) - Date.now()) / 1000));
+}
+function _recordFail() {
+  const fails = (+sessionStorage.getItem(_FAIL_KEY) || 0) + 1;
+  sessionStorage.setItem(_FAIL_KEY, fails);
+  if(fails >= 5) sessionStorage.setItem(_LOCK_KEY, Date.now() + 60000);
+}
+function _clearFails() {
+  sessionStorage.removeItem(_FAIL_KEY);
+  sessionStorage.removeItem(_LOCK_KEY);
+}
+
+// ─── First-run setup screen ────────────────────────────────
+function initSetupScreen() {
+  const card   = document.getElementById('setup-card');
+  const suUser = document.getElementById('su-user');
+  const suPass = document.getElementById('su-pass');
+  const suPass2= document.getElementById('su-pass2');
+  const suErr  = document.getElementById('su-error');
+  const suBtn  = document.getElementById('su-btn');
+
+  function doSetup() {
+    suErr.textContent = '';
+    const u = suUser.value.trim();
+    const p = suPass.value;
+    const p2= suPass2.value;
+    if(!u || !p || !p2) { suErr.textContent = 'Fill in all fields.'; return; }
+    if(u.length < 3) { suErr.textContent = 'Username must be at least 3 characters.'; return; }
+    if(p.length < 6) { suErr.textContent = 'Password must be at least 6 characters.'; return; }
+    if(p !== p2) { suErr.textContent = 'Passwords do not match.'; return; }
+    saveAccounts([{u, p, admin: true, created: Date.now()}]);
+    suErr.style.color = 'var(--green)';
+    suErr.textContent = 'Admin account created! Signing you in…';
+    setTimeout(() => {
+      card.style.display = 'none';
+      const overlay = document.getElementById('login-overlay');
+      overlay.style.transition = 'opacity .45s var(--spring2)';
+      overlay.style.opacity = '0';
+      overlay.style.pointerEvents = 'none';
+      setTimeout(() => { overlay.style.display = 'none'; startApp(u); }, 460);
+    }, 1000);
+  }
+
+  suBtn.addEventListener('click', doSetup);
+  suPass.addEventListener('keydown', e => { if(e.key === 'Enter') suPass2.focus(); });
+  suPass2.addEventListener('keydown', e => { if(e.key === 'Enter') doSetup(); });
+  setTimeout(() => suUser.focus(), 50);
+}
+
 function initLoginScreen() {
   const overlay  = document.getElementById('login-overlay');
   const userInp  = document.getElementById('login-user');
@@ -4422,10 +4765,15 @@ function initLoginScreen() {
   // ── Sign In ─────────────────────────────────
   function attemptLogin() {
     errEl.textContent='';
+    if(_loginLocked()) {
+      errEl.textContent=`Too many attempts. Try again in ${_lockRemaining()}s.`;
+      shakeCard(); return;
+    }
     const u = userInp.value.trim();
     const p = passInp.value;
     if(!u||!p) { errEl.textContent='Enter username and password.'; return; }
     if(findAccount(u,p)) {
+      _clearFails();
       sessionStorage.setItem(SESSION_KEY,'true');
       sessionStorage.setItem('app-user', u);
       overlay.style.transition='opacity .45s var(--spring2)';
@@ -4433,7 +4781,11 @@ function initLoginScreen() {
       overlay.style.pointerEvents='none';
       setTimeout(()=>{ overlay.style.display='none'; startApp(u); }, 460);
     } else {
-      errEl.textContent='Incorrect username or password.';
+      _recordFail();
+      const rem = _lockRemaining();
+      errEl.textContent = rem > 0
+        ? `Too many attempts. Try again in ${rem}s.`
+        : 'Incorrect username or password.';
       passInp.value='';
       shakeCard();
     }
@@ -4672,6 +5024,16 @@ function startApp(loggedUser) {
     fetchScannerData(scannerTab).finally(()=>btn.classList.remove('spin-it'));
   });
 
+  document.getElementById('cat-btn').addEventListener('click',()=>{
+    document.getElementById('cat-panel').classList.contains('open') ? closeCatalysts() : openCatalysts();
+  });
+  document.getElementById('cat-close').addEventListener('click', closeCatalysts);
+  document.getElementById('cat-refresh').addEventListener('click',()=>{
+    const btn=document.getElementById('cat-refresh');
+    btn.classList.add('spin-it');
+    fetchNewsData().finally(()=>btn.classList.remove('spin-it'));
+  });
+
   // Scanner tabs
   document.querySelectorAll('.sp-tab').forEach(t=>{
     t.addEventListener('click',()=>{
@@ -4831,9 +5193,6 @@ function startApp(loggedUser) {
     if(!k) { fhStatus.textContent = 'Enter your Finnhub API key.'; fhStatus.style.color='#ef5350'; return; }
     fhKey = k;
     localStorage.setItem('fh-api-key', k);
-    // Update the header button color to show key is set
-    document.getElementById('fhkey-btn').style.color = 'var(--green)';
-    document.getElementById('fhkey-btn').style.borderColor = 'rgba(38,166,154,.5)';
     closeKeyModal();
     toast('API key saved — reloading charts', 'ok');
     // Reload all active charts with the new key
@@ -4841,8 +5200,6 @@ function startApp(loggedUser) {
     fetchFXRates();
   });
 
-  // API key button is optional — charts use Yahoo Finance (no key needed)
-  document.getElementById('fhkey-btn').style.display = 'none';
 
   // Boot: restore saved layout, else default to 1 chart
   if(initialN && initialCells.length) {
@@ -4856,10 +5213,17 @@ function startApp(loggedUser) {
 } // end startApp
 
 document.addEventListener('DOMContentLoaded', () => {
-  initLoginScreen();
   if(isLoggedIn()) {
     document.getElementById('login-overlay').style.display='none';
     startApp(currentUser());
+    return;
+  }
+  initLoginScreen();
+  // First-run: no accounts yet → show setup screen
+  if(!getAccounts().length) {
+    document.getElementById('login-card').style.display = 'none';
+    document.getElementById('setup-card').style.display = 'block';
+    initSetupScreen();
   }
 });
 
