@@ -1,0 +1,65 @@
+/* Headless screenshot + console-error harness.
+   Wraps index.html with an error collector and an optional driver snippet,
+   so a screenshot run also reports whether anything threw.
+   Usage: node tools/shoot.mjs <name> <width> <height> <driverFile|-> <settleMs> */
+import fs from 'node:fs';
+import path from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
+const [name, w, h, driverFile, settle] = process.argv.slice(2);
+const OUT = process.env.SHOT_DIR || path.join(ROOT, '.shots');
+fs.mkdirSync(OUT, { recursive: true });
+
+const driver = driverFile && driverFile !== '-' ? fs.readFileSync(path.join(ROOT, driverFile), 'utf8') : '';
+const settleMs = Number(settle) || 9000;
+
+const probe = `<script>
+window.__err=[];
+addEventListener('error',e=>window.__err.push('ERROR: '+(e.message||e.error)+' @'+e.lineno));
+addEventListener('unhandledrejection',e=>window.__err.push('REJECT: '+(e.reason&&e.reason.message||e.reason)));
+const _ce=console.error;console.error=(...a)=>{window.__err.push('CONSOLE: '+a.map(String).join(' '));_ce(...a)};
+try{localStorage.clear()}catch(e){}
+const ev=t=>{if(t)t.dispatchEvent(new MouseEvent('click',{bubbles:true}))};
+const pickInd=n=>{const it=[...document.querySelectorAll('.ind-item')].find(x=>x.querySelector('.ind-item-name').textContent===n);
+  if(it)ev(it); else window.__err.push('MISSING INDICATOR: '+n)};
+addEventListener('load',()=>setTimeout(()=>{
+${driver}
+  setTimeout(()=>{
+    const o=document.createElement('pre');
+    o.id='RESULT'+'BLOCK';
+    o.style.cssText='position:fixed;left:-9999px';
+    o.textContent=btoa(unescape(encodeURIComponent(JSON.stringify({
+      errors:window.__err,
+      bodyW:document.documentElement.scrollWidth, winW:innerWidth,
+      cells:document.querySelectorAll('.cell').length,
+      panes:document.querySelectorAll('.pane-osc').length,
+      logos:document.querySelectorAll('a[href*="tradingview"]').length,
+      loading:[...document.querySelectorAll('.cell-state.show .msg')].map(x=>x.textContent),
+      prices:[...document.querySelectorAll('.last-price')].map(x=>x.textContent),
+    }))));
+    document.body.appendChild(o);
+  }, ${settleMs});
+}, 5500));
+</script>`;
+
+const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').replace('</head>', probe + '</head>');
+fs.writeFileSync(path.join(ROOT, '__probe.html'), html);
+
+const CHROME = process.env.CHROME || 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+const dom = execFileSync(CHROME, [
+  '--headless=new', '--disable-gpu', '--no-sandbox', '--hide-scrollbars',
+  `--window-size=${w},${h}`, `--virtual-time-budget=${settleMs + 15000}`,
+  `--screenshot=${path.join(OUT, name + '.png')}`, '--dump-dom',
+  'http://localhost:8099/__probe.html',
+], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024, stdio: ['ignore', 'pipe', 'ignore'] });
+
+const m = dom.match(/<pre id="RESULTBLOCK"[^>]*>([A-Za-z0-9+/=]+)<\/pre>/);
+if (!m) { console.log(`${name.padEnd(10)} NO RESULT (page did not settle)`); process.exit(1); }
+const d = JSON.parse(Buffer.from(m[1], 'base64').toString('utf8'));
+const overflow = d.bodyW > d.winW ? `  ⚠ H-OVERFLOW ${d.bodyW}>${d.winW}` : '';
+const stuck = d.loading.length ? `  ⚠ STILL LOADING: ${d.loading.join(', ')}` : '';
+console.log(`${name.padEnd(10)} errors:${d.errors.length}  cells:${d.cells} panes:${d.panes} logos:${d.logos}  prices:[${d.prices.join(' ')}]${overflow}${stuck}`);
+d.errors.forEach(e => console.log('    ✗ ' + e));
+if (d.errors.length) process.exitCode = 1;
