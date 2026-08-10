@@ -517,12 +517,19 @@ kbd {
 @keyframes toast-in { from { opacity: 0; transform: translateY(8px) } }
 
 /* ═══ Lock screen ════════════════════════════════════════════════════ */
-#lock {
+#lock, #connect {
   position: fixed; inset: 0; z-index: 100;
   display: flex; align-items: center; justify-content: center;
   background: var(--bg);
 }
-#lock[hidden] { display: none; }
+#connect { z-index: 101; }
+.connect-check {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 11px; color: var(--muted); margin: 4px 0 2px; cursor: pointer;
+}
+.connect-check input { accent-color: var(--accent); }
+.lock-alt a { color: var(--accent); text-decoration: none; }
+.lock-alt a:hover { text-decoration: underline; }
 .lock-card { width: min(320px, 90vw); }
 .lock-mark { width: 30px; height: 30px; margin-bottom: 18px; }
 .lock-title { font-size: 19px; font-weight: 650; letter-spacing: -.025em; margin-bottom: 4px; }

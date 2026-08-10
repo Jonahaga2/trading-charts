@@ -1,53 +1,26 @@
-/* Verification for src/data.js against LIVE Yahoo Finance responses.
-   This is the candle-accuracy suite: it asserts the properties a chart needs
-   to be truthful — monotonic unique stamps, self-consistent OHLC, no
-   synthetic bars, correct exchange-local time, session-aligned grids, and
-   split continuity — and cross-checks 1h bars against the 1d bar covering
-   the same session.
+/* Verification for src/data.js against the LIVE Alpaca market data API.
+   The candle-accuracy suite. It asserts the properties a chart needs to be
+   truthful — monotonic unique stamps, self-consistent OHLC, exchange-local
+   time across DST, session grids that respect half-days — and it pins the
+   auction prints against ground truth established independently:
+
+     AAPL 2026-08-04  official open  302.73
+     AAPL 2026-08-07  official open  311.45   official close 313.33
+
+   Yahoo's intraday feed missed all of these. Alpaca's SIP feed must not.
+
+   Credentials come from ~/trading-dashboard/.env (paper keys, read-only
+   market-data endpoints; no trading endpoint is ever called).
    Run: node test/data.test.mjs                                            */
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import fs from 'node:fs';
+import os from 'node:os';
 
 const require = createRequire(import.meta.url);
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const DATA = require(path.join(ROOT, 'src', 'data.js'));
-
-// Node has no browser Origin, so hit Yahoo directly and identify ourselves.
-// Responses are cached on disk: the suite makes ~20 requests and Yahoo starts
-// returning 429 if you re-run it a few times in a row. Delete the cache dir
-// (or pass --fresh) to re-validate against the live feed.
-import fs from 'node:fs';
-import crypto from 'node:crypto';
-
-const CACHE = path.join(ROOT, '.cache');
-const FRESH = process.argv.includes('--fresh');
-const MAX_AGE_MS = 30 * 60 * 1000;
-if (FRESH && fs.existsSync(CACHE)) fs.rmSync(CACHE, { recursive: true, force: true });
-fs.mkdirSync(CACHE, { recursive: true });
-
-const realFetch = globalThis.fetch;
-let liveHits = 0, cacheHits = 0;
-globalThis.fetch = async (url, opts = {}) => {
-  const file = path.join(CACHE, crypto.createHash('sha1').update(String(url)).digest('hex') + '.json');
-  if (fs.existsSync(file) && Date.now() - fs.statSync(file).mtimeMs < MAX_AGE_MS) {
-    cacheHits++;
-    return new Response(fs.readFileSync(file, 'utf8'), { status: 200 });
-  }
-  const r = await realFetch(url, {
-    ...opts,
-    headers: {
-      ...(opts.headers || {}),
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36',
-    },
-  });
-  liveHits++;
-  if (!r.ok) return r;
-  const text = await r.text();
-  fs.writeFileSync(file, text);
-  return new Response(text, { status: 200 });
-};
-DATA.setDirect(true);
 
 let pass = 0, fail = 0; const failures = [];
 const ok = (name, cond, detail = '') => {
@@ -56,393 +29,356 @@ const ok = (name, cond, detail = '') => {
 const eq = (name, actual, expected, tol = 1e-9) =>
   ok(name, actual != null && Math.abs(actual - expected) <= tol, `${actual} != ${expected}`);
 const section = s => console.log(`\n\x1b[1m${s}\x1b[0m`);
-const utcParts = t => {
-  const d = new Date(t * 1000);
-  return { h: d.getUTCHours(), m: d.getUTCMinutes(), date: d.toISOString().slice(0, 10) };
-};
 
-/* ═══ 1. Structural integrity of real series ═════════════════════════ */
-section('1. Structural integrity across symbols and timeframes');
+/* ── credentials ─────────────────────────────────────────────────────── */
+function loadEnvCreds() {
+  const candidates = [
+    process.env.ALPACA_ENV,
+    path.join(os.homedir(), 'trading-dashboard', '.env'),
+    path.join(ROOT, '.env'),
+  ].filter(Boolean);
+  for (const f of candidates) {
+    if (!f || !fs.existsSync(f)) continue;
+    const env = Object.fromEntries(fs.readFileSync(f, 'utf8').split('\n')
+      .filter(l => l.includes('=') && !l.trim().startsWith('#'))
+      .map(l => { const i = l.indexOf('='); return [l.slice(0, i).trim(), l.slice(i + 1).trim()]; }));
+    const key = env.APCA_API_KEY_ID || env.ALPACA_KEY_ID;
+    const secret = env.APCA_API_SECRET_KEY || env.ALPACA_SECRET_KEY;
+    if (key && secret) return { key, secret, paper: /^PK/.test(key) };
+  }
+  return null;
+}
+const c = loadEnvCreds();
+if (!c) {
+  console.error('No Alpaca credentials found. Set ALPACA_ENV to a .env with '
+    + 'APCA_API_KEY_ID and APCA_API_SECRET_KEY, or place one at ~/trading-dashboard/.env');
+  process.exit(2);
+}
+DATA.setCreds(c.key, c.secret, c.paper);
+console.log(`using ${c.paper ? 'paper' : 'live'} key ${c.key.slice(0, 4)}…`);
 
-const CASES = [
-  ['AAPL', '1d'], ['AAPL', '1h'], ['AAPL', '5m'], ['AAPL', '4h'],
-  ['MSFT', '15m'], ['SPY', '1d'], ['BTC-USD', '1h'], ['BTC-USD', '1d'],
-  ['NVDA', '30m'], ['TSLA', '1wk'],
-];
+const utcParts = t => { const d = new Date(t * 1000); return { h: d.getUTCHours(), m: d.getUTCMinutes() }; };
+const dayOf = b => Math.floor(b.time / 86400);
 
-const fetched = {};
+/* ═══ 1. Symbol classification ═══════════════════════════════════════ */
+section('1. Symbol handling');
+{
+  ok('plain equity', DATA.classify('aapl').symbol === 'AAPL' && !DATA.classify('aapl').crypto);
+  ok('dotted class shares', DATA.classify('BRK-B').symbol === 'BRK.B');
+  ok('BTC-USD becomes a pair', DATA.classify('BTC-USD').symbol === 'BTC/USD' && DATA.classify('BTC-USD').crypto);
+  ok('BTCUSD becomes a pair', DATA.classify('BTCUSD').symbol === 'BTC/USD');
+  ok('explicit pair passes through', DATA.classify('ETH/USD').symbol === 'ETH/USD');
+  ok('a ticker that merely ends in USD is not crypto', DATA.classify('THUSD').crypto === false);
+  let msg = '';
+  try { DATA.classify('^GSPC'); } catch (e) { msg = e.message; }
+  ok('indices are rejected with a usable message', /index/i.test(msg) && /SPY/.test(msg), msg);
+  ok('index rejection is a NotFound', (() => { try { DATA.classify('^VIX'); } catch (e) { return e instanceof DATA.NotFound; } })());
+}
+
+/* ═══ 2. Structural integrity ════════════════════════════════════════ */
+section('2. Structural integrity across symbols and timeframes');
+const CASES = [['AAPL', '1d'], ['AAPL', '1h'], ['AAPL', '5m'], ['AAPL', '4h'],
+               ['MSFT', '15m'], ['SPY', '1d'], ['NVDA', '30m'], ['TSLA', '1wk'], ['BTC/USD', '1h']];
+const got = {};
 for (const [sym, tf] of CASES) {
   let r;
   try { r = await DATA.fetchBars(sym, tf); }
   catch (e) { ok(`${sym} ${tf}: fetch`, false, e.message); continue; }
-  fetched[`${sym}|${tf}`] = r;
-  const b = r.bars;
-  const tag = `${sym} ${tf}`;
-
-  ok(`${tag}: returns bars`, b.length > 10, `${b.length} bars`);
-  ok(`${tag}: time strictly increasing`, b.every((x, i) => i === 0 || x.time > b[i - 1].time));
+  got[`${sym}|${tf}`] = r;
+  const b = r.bars, tag = `${sym} ${tf}`;
+  ok(`${tag}: returns bars`, b.length > 20, `${b.length}`);
+  ok(`${tag}: time strictly increasing`, b.every((x, i) => !i || x.time > b[i - 1].time));
   ok(`${tag}: no duplicate stamps`, new Set(b.map(x => x.time)).size === b.length);
   ok(`${tag}: high >= max(open, close)`, b.every(x => x.high >= Math.max(x.open, x.close) - 1e-9));
   ok(`${tag}: low <= min(open, close)`, b.every(x => x.low <= Math.min(x.open, x.close) + 1e-9));
-  ok(`${tag}: high >= low`, b.every(x => x.high >= x.low));
-  ok(`${tag}: all prices positive`, b.every(x => x.open > 0 && x.high > 0 && x.low > 0 && x.close > 0));
+  ok(`${tag}: prices positive`, b.every(x => x.open > 0 && x.high > 0 && x.low > 0 && x.close > 0));
   ok(`${tag}: volume non-negative`, b.every(x => x.volume >= 0));
-  ok(`${tag}: no NaN anywhere`,
-    b.every(x => [x.time, x.open, x.high, x.low, x.close, x.volume].every(Number.isFinite)));
-  ok(`${tag}: every bar keeps its true utc stamp`, b.every(x => Number.isFinite(x.utc)));
-  // The trailing stub must be gone.
-  ok(`${tag}: no synthetic trailing bar survives`, !DATA.isStub(b[b.length - 1]) || b[b.length - 1].volume > 0,
-    `last=${JSON.stringify(b[b.length - 1])}`);
-  // Last close should agree with the quoted price (they are the same print).
-  const drift = Math.abs(b[b.length - 1].close - r.meta.price) / r.meta.price;
-  ok(`${tag}: last close tracks the quote`, drift < 0.05, `drift ${(drift * 100).toFixed(2)}%`);
+  ok(`${tag}: no NaN`, b.every(x => [x.time, x.utc, x.open, x.high, x.low, x.close, x.volume].every(Number.isFinite)));
+  ok(`${tag}: keeps a true utc stamp`, b.every(x => Number.isFinite(x.utc)));
 }
 
-/* ═══ 2. Exchange-local time ═════════════════════════════════════════ */
-section('2. Exchange-local timestamps (the axis a trader expects)');
+/* ═══ 3. Auction prints — the thing Yahoo got wrong ══════════════════ */
+section('3. Auction prints present in the intraday series');
 {
-  const d = fetched['AAPL|1d'];
-  if (d) {
-    // US equities open 09:30 ET. After shifting, reading the stamp as UTC
-    // must show exactly 09:30 — for every bar, across DST changes.
-    const bad = d.bars.filter(b => { const p = utcParts(b.time); return !(p.h === 9 && p.m === 30); });
-    ok('AAPL daily bars all read 09:30 exchange-local', bad.length === 0,
-      `${bad.length} off, e.g. ${bad[0] ? new Date(bad[0].time * 1000).toISOString() : ''}`);
-    // Spanning >1y guarantees the sample crosses at least two DST switches.
-    const span = (d.bars[d.bars.length - 1].time - d.bars[0].time) / 86400;
-    ok('AAPL daily sample spans multiple DST transitions', span > 400, `${Math.round(span)} days`);
-    ok('AAPL timezone reported', d.meta.timezone === 'America/New_York', d.meta.timezone);
-  }
-  const c = fetched['BTC-USD|1d'];
-  if (c) {
-    const bad = c.bars.filter(b => { const p = utcParts(b.time); return !(p.h === 0 && p.m === 0); });
-    ok('BTC daily bars sit at UTC midnight (no shift applied)', bad.length === 0, `${bad.length} off`);
-    ok('BTC flagged as 24h', c.meta.is24h === true);
-  }
-  const h = fetched['AAPL|1h'];
-  if (h) {
-    // Intraday US equity bars start at :30 past the hour, because the session
-    // opens at 09:30 — not on the hour. The exception is a shortened session
-    // (13:00 early close), whose final stub bar lands on the hour, so allow
-    // :00 only as a session's last bar.
+  const r = got['AAPL|5m'];
+  if (r) {
     const byDay = new Map();
-    for (const b of h.bars) {
-      const d = Math.floor(b.time / 86400);
-      if (!byDay.has(d)) byDay.set(d, []);
-      byDay.get(d).push(b);
-    }
-    let bad = 0, tail = 0;
-    for (const day of byDay.values())
-      day.forEach((b, i) => {
-        if (utcParts(b.time).m === 30) return;
-        if (i === day.length - 1) tail++; else bad++;
-      });
-    ok('AAPL 1h bars are session-anchored to :30', bad === 0, `${bad} mid-session bars off the :30 grid`);
-    ok('off-grid 1h bars are only session-closing stubs', tail < byDay.size, `${tail} of ${byDay.size} sessions`);
-  }
-  const f = fetched['AAPL|4h'];
-  if (f) {
-    const hours = new Set(f.bars.map(b => utcParts(b.time).h));
-    ok('AAPL 4h bars anchor to the session, not UTC 00/04/08',
-      [...hours].every(x => x === 9 || x === 13), `hours seen: ${[...hours].join(',')}`);
-  }
-}
-
-/* ═══ 3. Grid alignment within a session ═════════════════════════════ */
-section('3. Intraday bars land on the interval grid');
-for (const key of ['AAPL|5m', 'MSFT|15m', 'NVDA|30m']) {
-  const r = fetched[key];
-  if (!r) continue;
-  const secs = r.meta.tfSecs;
-  // Group by exchange-local day, then check each day's bars sit on a grid
-  // whose origin is that day's first bar.
-  const byDay = new Map();
-  for (const b of r.bars) {
-    const d = Math.floor(b.time / 86400);
-    if (!byDay.has(d)) byDay.set(d, []);
-    byDay.get(d).push(b);
-  }
-  let offGrid = 0, total = 0;
-  for (const day of byDay.values()) {
-    const origin = day[0].time;
-    for (const b of day) { total++; if ((b.time - origin) % secs !== 0) offGrid++; }
-  }
-  ok(`${key}: every bar is on the session grid`, offGrid === 0, `${offGrid}/${total} off-grid`);
-  ok(`${key}: session count is plausible`, byDay.size >= 3, `${byDay.size} sessions`);
-}
-
-/* ═══ 4. Cross-check: 1h bars must reconstruct the 1d bar ════════════ */
-section('4. Cross-timeframe consistency (1h aggregated vs the 1d bar)');
-{
-  const day = fetched['AAPL|1d'], hour = fetched['AAPL|1h'];
-  if (day && hour) {
-    const dayByKey = new Map(day.bars.map(b => [Math.floor(b.time / 86400), b]));
-    let checked = 0, agree = 0, worst = 0, worstDay = '';
-    const byDay = new Map();
-    for (const b of hour.bars) {
-      const k = Math.floor(b.time / 86400);
+    for (const b of r.bars) {
+      const k = dayOf(b);
       if (!byDay.has(k)) byDay.set(k, []);
       byDay.get(k).push(b);
     }
-    for (const [k, hrs] of byDay) {
-      const d = dayByKey.get(k);
-      if (!d || hrs.length < 6) continue;          // skip half-days/missing
-      checked++;
-      const hi = Math.max(...hrs.map(x => x.high));
-      const lo = Math.min(...hrs.map(x => x.low));
-      const o = hrs[0].open, c = hrs[hrs.length - 1].close;
-      const err = Math.max(
-        Math.abs(hi - d.high) / d.high,
-        Math.abs(lo - d.low) / d.low,
-        Math.abs(o - d.open) / d.open,
-        Math.abs(c - d.close) / d.close,
-      );
-      if (err > worst) { worst = err; worstDay = new Date(k * 86400 * 1000).toISOString().slice(0, 10); }
-      if (err < 0.005) agree++;                    // 0.5% tolerance
+    const find = iso => {
+      for (const [, bs] of byDay) {
+        const d = new Date(bs[0].time * 1000).toISOString().slice(0, 10);
+        if (d === iso) return bs;
+      }
+      return null;
+    };
+    const a4 = find('2026-08-04'), a7 = find('2026-08-07');
+    if (a4) eq('AAPL 2026-08-04 opens at the official auction price', a4[0].open, 302.73, 0.01);
+    else ok('AAPL 2026-08-04 present in the 5m window', false, 'outside lookback');
+    if (a7) {
+      eq('AAPL 2026-08-07 opens at the official auction price', a7[0].open, 311.45, 0.01);
+      eq('AAPL 2026-08-07 closes at the official auction price', a7[a7.length - 1].close, 313.33, 0.02);
     }
-    ok('1h bars reconstruct the daily OHLC', checked > 20 && agree / checked > 0.9,
-      `${agree}/${checked} days agree, worst ${(worst * 100).toFixed(2)}% on ${worstDay}`);
+    // A full regular session is exactly 78 five-minute bars.
+    const full = [...byDay.values()].filter(bs => bs.length >= 70);
+    ok('full sessions contain exactly 78 five-minute bars',
+      full.length > 3 && full.every(bs => bs.length === 78),
+      `counts: ${[...new Set(full.map(b => b.length))].join(',')}`);
+  }
+  // Daily bars must agree with the intraday session they summarise.
+  const d = got['AAPL|1d'], f = got['AAPL|5m'];
+  if (d && f) {
+    const dmap = new Map(d.bars.map(b => [dayOf(b), b]));
+    const groups = new Map();
+    for (const b of f.bars) {
+      const k = dayOf(b);
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(b);
+    }
+    let checked = 0, openOk = 0, closeOk = 0, hiOk = 0, loOk = 0;
+    for (const [k, bs] of groups) {
+      const dd = dmap.get(k);
+      if (!dd || bs.length < 70) continue;
+      // the newest session may still be provisional (IEX tail)
+      if (bs.some(x => x.provisional)) continue;
+      checked++;
+      if (Math.abs(bs[0].open - dd.open) < 0.02) openOk++;
+      if (Math.abs(bs[bs.length - 1].close - dd.close) < 0.02) closeOk++;
+      if (Math.abs(Math.max(...bs.map(x => x.high)) - dd.high) / dd.high < 0.001) hiOk++;
+      if (Math.abs(Math.min(...bs.map(x => x.low)) - dd.low) / dd.low < 0.001) loOk++;
+    }
+    ok('5m sessions reproduce the daily open', checked > 5 && openOk === checked, `${openOk}/${checked}`);
+    ok('5m sessions reproduce the daily close', checked > 5 && closeOk === checked, `${closeOk}/${checked}`);
+    ok('5m sessions reproduce the daily high', checked > 5 && hiOk / checked > 0.9, `${hiOk}/${checked}`);
+    ok('5m sessions reproduce the daily low', checked > 5 && loOk / checked > 0.9, `${loOk}/${checked}`);
   }
 }
 
-/* ═══ 5. Split and dividend adjustment ═══════════════════════════════ */
-section('5. Corporate actions');
+/* ═══ 4. Exchange-local time ═════════════════════════════════════════ */
+section('4. Exchange-local timestamps');
 {
-  // AAPL split 4:1 on 2020-08-31. With split-adjusted OHLC (the default) the
-  // series must be continuous across it; an unadjusted feed shows a 4x cliff.
-  const url = `${DATA.YF}/v8/finance/chart/AAPL?interval=1d&period1=1597881600&period2=1599696000&events=div%2Csplit`;
-  const json = await DATA.getJSON(url);
-  const r = DATA.parseChart(json, '1d');
-  let maxJump = 0;
-  for (let i = 1; i < r.bars.length; i++)
-    maxJump = Math.max(maxJump, Math.abs(r.bars[i].close / r.bars[i - 1].close - 1));
-  ok('AAPL is continuous through its 4:1 split (already split-adjusted)', maxJump < 0.15,
-    `largest day-over-day move ${(maxJump * 100).toFixed(1)}%`);
-
-  // Dividend adjustment must actually change a dividend payer's history, and
-  // must leave the most recent bar alone (the factor converges to 1).
-  const koRaw = await DATA.fetchBars('KO', '1d', { range: '2y' });
-  const koAdj = await DATA.fetchBars('KO', '1d', { range: '2y', dividendAdjusted: true });
-  const n = Math.min(koRaw.bars.length, koAdj.bars.length);
-  ok('dividend adjustment lowers older KO closes', koAdj.bars[0].close < koRaw.bars[0].close,
-    `${koAdj.bars[0].close.toFixed(2)} vs ${koRaw.bars[0].close.toFixed(2)}`);
-  ok('dividend adjustment is a no-op on the latest bar',
-    Math.abs(koAdj.bars[n - 1].close - koRaw.bars[n - 1].close) < 0.01);
-  ok('dividend adjustment scales the whole candle, not just the close',
-    koAdj.bars[0].high / koRaw.bars[0].high - koAdj.bars[0].close / koRaw.bars[0].close < 1e-6);
+  const h = got['AAPL|1h'];
+  if (h) {
+    // Alpaca's own hourly bars start at 09:00; these are rebuilt from 30Min
+    // so they run 09:30→10:30 like every other platform.
+    const bad = h.bars.filter(b => utcParts(b.time).m !== 30);
+    ok('1h bars are anchored to the 09:30 session open', bad.length === 0, `${bad.length} off-grid`);
+    const hours = new Set(h.bars.map(b => utcParts(b.time).h));
+    ok('1h bars cover the session hours only',
+      [...hours].every(x => x >= 9 && x <= 15), `hours: ${[...hours].sort((a, b) => a - b).join(',')}`);
+    // A full session is 6 hourly bars: 09:30 through 15:30.
+    const per = new Map();
+    for (const b of h.bars) per.set(dayOf(b), (per.get(dayOf(b)) || 0) + 1);
+    const counts = [...per.values()];
+    ok('a full session yields 7 hourly bars (the last one short)',
+      counts.filter(c => c === 7).length > counts.length * 0.8,
+      `distribution: ${[...new Set(counts)].sort().join(',')}`);
+  }
+  // DST correctness is proven directly on the ten-year daily series below and
+  // by the January/August session-window checks, rather than by hoping the
+  // intraday lookback happens to straddle a transition.
+  {
+    const d = got['AAPL|1d'];
+    if (d) {
+      const summer = d.bars.filter(b => new Date(b.time * 1000).toISOString().slice(5, 7) === '07');
+      const winter = d.bars.filter(b => new Date(b.time * 1000).toISOString().slice(5, 7) === '01');
+      ok('daily bars sit at exchange midnight in summer (EDT)',
+        summer.length > 50 && summer.every(b => utcParts(b.time).h === 0));
+      ok('daily bars sit at exchange midnight in winter (EST)',
+        winter.length > 50 && winter.every(b => utcParts(b.time).h === 0));
+    }
+  }
+  const f = got['AAPL|5m'];
+  if (f) {
+    const first = new Map();
+    for (const b of f.bars) { const k = dayOf(b); if (!first.has(k)) first.set(k, b); }
+    const opens = [...first.values()].map(b => utcParts(b.time));
+    ok('every session starts at 09:30 exchange-local',
+      opens.every(p => p.h === 9 && p.m === 30), JSON.stringify(opens.slice(0, 3)));
+  }
+  const c1 = got['BTC/USD|1h'];
+  if (c1) {
+    ok('crypto is flagged 24h', c1.meta.is24h === true);
+    ok('crypto is not shifted (UTC)', c1.meta.timezone === 'UTC');
+    ok('crypto 1h bars sit on the hour', c1.bars.every(b => utcParts(b.time).m === 0));
+  }
+  const d = got['AAPL|1d'];
+  if (d) ok('daily bars sit at exchange midnight', d.bars.every(b => utcParts(b.time).h === 0 && utcParts(b.time).m === 0));
 }
 
-/* ═══ 6. Live-tick logic ═════════════════════════════════════════════ */
-section('6. Live tick handling (the fake-candle regression)');
+/* ═══ 5. Session grid, half-days, extended hours ═════════════════════ */
+section('5. Session grid and the market calendar');
 {
-  const mkMeta = (over = {}) => ({
-    tfSecs: 60, timezone: 'America/New_York', is24h: false,
-    sessionStart: 1786109400, sessionEnd: 1786132800, ...over,
-  });
-  // Real bars carry a shifted display stamp alongside the true utc stamp;
-  // the fixture must mirror that or it is not testing what ships.
-  const mkBars = (t0, n, secs) => Array.from({ length: n }, (_, i) => {
+  const cal = await DATA.calendar();
+  ok('calendar loaded', cal.size > 500, `${cal.size} dates`);
+  const thanksgivingFri = cal.get('2026-11-27');
+  ok('calendar knows half-days', thanksgivingFri && thanksgivingFri.closeMin === 13 * 60,
+    thanksgivingFri ? String(thanksgivingFri.closeMin) : 'missing');
+  const normal = cal.get('2026-11-25');
+  ok('normal days close at 16:00', normal && normal.closeMin === 16 * 60);
+  ok('calendar carries extended-hours bounds', normal && normal.sessionOpenMin === 240 && normal.sessionCloseMin === 1200);
+
+  const w = await DATA.sessionWindow(Math.floor(new Date('2026-08-07T18:00:00Z').getTime() / 1000));
+  ok('session window resolves a date', w && w.date === '2026-08-07', w?.date);
+  ok('session opens at 13:30 UTC in August (EDT)', w && new Date(w.open * 1000).toISOString().slice(11, 16) === '13:30',
+    w ? new Date(w.open * 1000).toISOString() : '');
+  ok('session closes at 20:00 UTC in August', w && new Date(w.close * 1000).toISOString().slice(11, 16) === '20:00');
+  // Winter date: EST, so the same local times land an hour later in UTC.
+  const wWinter = await DATA.sessionWindow(Math.floor(new Date('2026-01-15T18:00:00Z').getTime() / 1000));
+  ok('DST is handled: January opens at 14:30 UTC (EST)',
+    wWinter && new Date(wWinter.open * 1000).toISOString().slice(11, 16) === '14:30',
+    wWinter ? new Date(wWinter.open * 1000).toISOString() : 'no window');
+
+  // Regular-session filtering must drop pre/post bars by default.
+  const reg = got['AAPL|5m'];
+  if (reg) {
+    const mins = reg.bars.map(b => utcParts(b.time).h * 60 + utcParts(b.time).m);
+    ok('no pre-market bars by default', mins.every(m => m >= 9 * 60 + 30));
+    ok('no after-hours bars by default', mins.every(m => m < 16 * 60));
+  }
+  const ext = await DATA.fetchBars('AAPL', '5m', { prePost: true });
+  const emins = ext.bars.map(b => utcParts(b.time).h * 60 + utcParts(b.time).m);
+  ok('extended hours adds pre-market bars', Math.min(...emins) < 9 * 60 + 30, `earliest ${Math.min(...emins)}`);
+  ok('extended hours adds after-hours bars', Math.max(...emins) >= 16 * 60);
+  ok('extended hours stays inside 04:00-20:00',
+    Math.min(...emins) >= 4 * 60 && Math.max(...emins) < 20 * 60);
+}
+
+/* ═══ 6. SIP / IEX split ═════════════════════════════════════════════ */
+section('6. Authoritative history with a real-time tail');
+{
+  const r = got['AAPL|5m'];
+  ok('feed is reported', r?.meta.feed === 'sip + iex tail', r?.meta.feed);
+  ok('provisional bars are counted', typeof r?.meta.provisionalCount === 'number', String(r?.meta.provisionalCount));
+  const prov = r.bars.filter(b => b.provisional);
+  ok('only the tail is provisional', prov.length < 12, `${prov.length} provisional`);
+  if (prov.length) {
+    const firstProv = r.bars.findIndex(b => b.provisional);
+    ok('provisional bars are contiguous at the end',
+      r.bars.slice(firstProv).every(b => b.provisional));
+    ok('provisionalFrom marks the boundary', r.meta.provisionalFrom === r.bars[firstProv].time);
+  }
+  // Turning the live tail off must leave only authoritative data.
+  const histOnly = await DATA.fetchBars('AAPL', '5m', { live: false });
+  ok('live:false yields no provisional bars', histOnly.bars.every(b => !b.provisional));
+}
+
+/* ═══ 7. Corporate actions ═══════════════════════════════════════════ */
+section('7. Corporate actions');
+{
+  // AAPL 4:1 split on 2020-08-31; split-adjusted close for 2020-08-25 is ~124.8.
+  const split = await DATA.fetchBars('AAPL', '1d', {});
+  const bar = split.bars.find(b => new Date(b.time * 1000).toISOString().slice(0, 10) === '2020-08-25');
+  if (bar) {
+    ok('history is split-adjusted by default', Math.abs(bar.close - 124.83) < 0.5, `${bar.close}`);
+    let maxJump = 0;
+    const around = split.bars.filter(b => {
+      const d = new Date(b.time * 1000).toISOString().slice(0, 10);
+      return d >= '2020-08-20' && d <= '2020-09-08';
+    });
+    for (let i = 1; i < around.length; i++)
+      maxJump = Math.max(maxJump, Math.abs(around[i].close / around[i - 1].close - 1));
+    ok('no split cliff in the series', maxJump < 0.15, `${(maxJump * 100).toFixed(1)}%`);
+  } else ok('2020 history available for the split test', false, 'bar not found');
+
+  const div = await DATA.fetchBars('KO', '1d', { dividendAdjusted: true });
+  const plain = await DATA.fetchBars('KO', '1d', {});
+  const oldDiv = div.bars[0], oldPlain = plain.bars.find(b => b.time === oldDiv.time);
+  ok('dividend adjustment lowers older closes', oldPlain && oldDiv.close < oldPlain.close,
+    `${oldDiv?.close} vs ${oldPlain?.close}`);
+  ok('dividend adjustment leaves the latest bar alone',
+    Math.abs(div.bars[div.bars.length - 1].close - plain.bars[plain.bars.length - 1].close) < 0.02);
+}
+
+/* ═══ 8. Live tick handling ══════════════════════════════════════════ */
+section('8. Live tick handling');
+{
+  const open = Math.floor(new Date('2026-08-07T13:30:00Z').getTime() / 1000);
+  const close = Math.floor(new Date('2026-08-07T20:00:00Z').getTime() / 1000);
+  const meta = () => ({ tfSecs: 60, timezone: 'America/New_York', is24h: false, sessionStart: open, sessionEnd: close });
+  const mk = (t0, n, secs) => Array.from({ length: n }, (_, i) => {
     const utc = t0 + i * secs;
     return { time: utc + DATA.tzOffset(utc, 'America/New_York'), utc, open: 100, high: 101, low: 99, close: 100, volume: 10 };
   });
 
-  // Market shut: must refuse to invent anything. This is the bug that filled
-  // overnight 1m charts with hundreds of flat candles.
-  {
-    const bars = mkBars(1786109400, 5, 60);
-    const before = bars.length;
-    const res = DATA.applyTick(bars, mkMeta(), 123, 1786132800 + 3600); // after the close
-    ok('closed market: no tick applied', res === null);
-    ok('closed market: no bar appended', bars.length === before);
-  }
-  // Inside the session, same bucket: extend the forming bar.
-  {
-    const bars = mkBars(1786109400, 5, 60);
-    const last = bars[bars.length - 1];
-    const res = DATA.applyTick(bars, mkMeta(), 105, last.utc + 30);
-    ok('open market, same bucket: extends in place', res && res.isNew === false);
-    ok('open market: high ratchets up', last.high === 105);
-    ok('open market: close follows the tick', last.close === 105);
-    const res2 = DATA.applyTick(bars, mkMeta(), 95, last.utc + 40);
-    ok('open market: low ratchets down', last.low === 95 && res2.isNew === false);
-  }
-  // Next bucket inside the session: exactly one new bar.
-  {
-    const bars = mkBars(1786109400, 5, 60);
-    const n = bars.length;
-    const res = DATA.applyTick(bars, mkMeta(), 110, bars[n - 1].utc + 65);
-    ok('new bucket inside session: appends one bar', res && res.isNew === true && bars.length === n + 1);
-    ok('new bar opens at the tick price', bars[bars.length - 1].open === 110);
-    ok('new bar sits on the grid', (bars[bars.length - 1].time - bars[0].time) % 60 === 0);
-  }
-  // A gap that would land past the close must not open a bar.
-  {
-    const bars = mkBars(1786132800 - 120, 2, 60);
-    const n = bars.length;
-    DATA.applyTick(bars, mkMeta(), 110, 1786132800 - 1);
-    ok('a bucket past the session end is not opened', bars.length === n);
-  }
-  // Daily bars extend while the session is live and never roll on their own.
-  {
-    const t = 1786109400 + DATA.tzOffset(1786109400, 'America/New_York');
-    const bars = [{ time: t, utc: 1786109400, open: 100, high: 101, low: 99, close: 100, volume: 10 }];
-    const meta = mkMeta({ tfSecs: 86400 });
-    const res = DATA.applyTick(bars, meta, 108, 1786109400 + 3600);
-    ok('daily bar updates live during its session', res && res.isNew === false && bars[0].close === 108);
-    ok('daily bar does not roll to a new day on its own',
-      DATA.applyTick(bars, meta, 108, 1786109400 + 86400 * 2) === null && bars.length === 1);
-  }
-  // 24h instruments have no session gate.
-  {
-    const bars = mkBars(1786100000, 3, 3600);
-    const meta = { tfSecs: 3600, timezone: 'UTC', is24h: true, sessionStart: null, sessionEnd: null };
-    ok('crypto ticks apply at any hour',
-      DATA.applyTick(bars, meta, 150, bars[2].utc + 10) !== null);
-    ok('crypto market always reads as open', DATA.marketOpen(meta, 0) === true);
-  }
-}
+  let bars = mk(open, 5, 60);
+  ok('closed market: no tick applied', DATA.applyTick(bars, meta(), 123, close + 3600) === null);
+  ok('closed market: no bar appended', bars.length === 5);
 
-/* ═══ 6b. Auction reconciliation ═════════════════════════════════════ */
-section('6b. Opening/closing auction reconciliation');
-{
-  const mk = (t, o, h, l, c, v = 100) => ({ time: t, utc: t, open: o, high: h, low: l, close: c, volume: v });
-  const D = 86400;
-  // one session of three intraday bars, plus the authoritative daily bar
-  const intraday = [mk(D * 10 + 100, 303.79, 303.79, 303.74, 303.76), mk(D * 10 + 200, 303.76, 305, 303.5, 304.8), mk(D * 10 + 300, 304.8, 305.2, 304.1, 304.9)];
-  const dailyBar = [mk(D * 10 + 50, 302.73, 305.2, 302.73, 305.05)];
-  const patched = DATA.reconcileAuctions(intraday, dailyBar);
-  ok('reconciliation reports what it changed', patched === 2, `${patched}`);
-  eq('first bar takes the official open', intraday[0].open, 302.73);
-  ok('first bar low widens to contain the auction print', intraday[0].low === 302.73);
-  eq('last bar takes the official close', intraday[2].close, 305.05);
-  ok('last bar high widens to contain the closing print', intraday[2].high === 305.2);
-  ok('mid-session bars are untouched', intraday[1].open === 303.76 && intraday[1].close === 304.8);
+  bars = mk(open, 5, 60);
+  let last = bars[4];
+  let res = DATA.applyTick(bars, meta(), 105, last.utc + 30);
+  ok('same bucket extends in place', res && !res.isNew && last.close === 105 && last.high === 105);
+  DATA.applyTick(bars, meta(), 95, last.utc + 40);
+  ok('low ratchets down', last.low === 95);
 
-  // It must refuse when the daily bar is nowhere near — that is a mismatched
-  // instrument or a split-adjustment difference, not an auction print.
-  const far = [mk(D * 11 + 100, 100, 101, 99, 100)];
-  const bogus = [mk(D * 11 + 50, 25, 26, 24, 25)];
-  const n = DATA.reconcileAuctions(far, bogus);
-  ok('refuses to patch an implausible gap', n === 0 && far[0].open === 100);
+  bars = mk(open, 5, 60);
+  res = DATA.applyTick(bars, meta(), 110, bars[4].utc + 65);
+  ok('a new bucket appends exactly one bar', res && res.isNew && bars.length === 6);
+  ok('the new bar is marked provisional', bars[5].provisional === true);
+  ok('the new bar sits on the grid', (bars[5].time - bars[0].time) % 60 === 0);
 
-  // A session with no matching daily bar is left alone.
-  const orphan = [mk(D * 12 + 100, 10, 11, 9, 10)];
-  DATA.reconcileAuctions(orphan, dailyBar);
-  ok('sessions without a daily bar are untouched', orphan[0].open === 10);
-  ok('empty inputs are safe', DATA.reconcileAuctions([], dailyBar) === 0 && DATA.reconcileAuctions(intraday, []) === 0);
+  bars = mk(close - 120, 2, 60);
+  DATA.applyTick(bars, meta(), 110, close - 1);
+  ok('a bucket past the close is not opened', bars.length === 2);
 
-  // Live: the reconciled 5m series must now agree with the daily bar on the
-  // session open and close, which is the thing that visibly differed.
-  const i5 = await DATA.fetchBars('AAPL', '5m');
-  const d1 = await DATA.fetchBars('AAPL', '1d');
-  const dayOf = b => Math.floor(b.time / 86400);
-  const dmap = new Map(d1.bars.map(b => [dayOf(b), b]));
-  const groups = new Map();
-  for (const b of i5.bars) {
-    const k = dayOf(b);
-    if (!groups.has(k)) groups.set(k, []);
-    groups.get(k).push(b);
-  }
-  let checked = 0, openOk = 0, closeOk = 0;
-  for (const [k, bs] of groups) {
-    const d = dmap.get(k);
-    if (!d || bs.length < 70) continue;
-    checked++;
-    if (Math.abs(bs[0].open - d.open) < 0.005) openOk++;
-    if (Math.abs(bs[bs.length - 1].close - d.close) < 0.005) closeOk++;
-  }
-  ok('live: session opens now match the official daily open', checked > 5 && openOk === checked,
-    `${openOk}/${checked}`);
-  ok('live: session closes now match the official daily close', checked > 5 && closeOk === checked,
-    `${closeOk}/${checked}`);
-  ok('reconciliation reported a patch count', typeof i5.meta.auctionsPatched === 'number',
-    String(i5.meta.auctionsPatched));
+  const cryptoMeta = { tfSecs: 3600, timezone: 'UTC', is24h: true, sessionStart: null, sessionEnd: null };
+  ok('crypto is always open', DATA.marketOpen(cryptoMeta, 0) === true);
+  const cb = mk(1786100000, 3, 3600);
+  ok('crypto ticks apply at any hour', DATA.applyTick(cb, cryptoMeta, 150, cb[2].utc + 10) !== null);
 
-  // Reconciled bars must still be internally valid candles.
-  ok('reconciled bars keep high >= max(open,close)',
-    i5.bars.every(b => b.high >= Math.max(b.open, b.close) - 1e-9));
-  ok('reconciled bars keep low <= min(open,close)',
-    i5.bars.every(b => b.low <= Math.min(b.open, b.close) + 1e-9));
-
-  // Opting out returns the raw feed.
-  const raw = await DATA.fetchBars('AAPL', '5m', { reconcile: false });
-  ok('reconcile:false leaves the raw feed alone', raw.meta.auctionsPatched === undefined);
-}
-
-/* ═══ 7. Stub detection unit checks ══════════════════════════════════ */
-section('7. Synthetic-bar detection');
-{
-  const flat0 = { open: 5, high: 5, low: 5, close: 5, volume: 0 };
-  const flatV = { open: 5, high: 5, low: 5, close: 5, volume: 1200 };
-  const real  = { open: 5, high: 6, low: 4, close: 5.5, volume: 0 };
-  ok('flat zero-volume bar is a stub', DATA.isStub(flat0) === true);
-  ok('flat bar WITH volume is not a stub', DATA.isStub(flatV) === false);
-  ok('zero-volume bar with a real range is not a stub', DATA.isStub(real) === false);
-  // Full parse path: a stub must be folded into the previous bar, not dropped.
-  const synthetic = {
-    chart: { result: [{
-      meta: { symbol: 'X', exchangeTimezoneName: 'UTC', instrumentType: 'CRYPTOCURRENCY', regularMarketPrice: 12 },
-      timestamp: [1000, 1060, 1071],
-      indicators: { quote: [{ open: [10, 11, 12], high: [10.5, 11.5, 12], low: [9.5, 10.5, 12], close: [10.2, 11.2, 12], volume: [100, 200, 0] }] },
-    }] },
-  };
-  const parsed = DATA.parseChart(synthetic, '1m');
-  ok('stub is removed from the series', parsed.bars.length === 2);
-  ok('stub price is folded into the forming bar', parsed.bars[1].close === 12);
-  ok('folding widens the forming bar high', parsed.bars[1].high === 12);
-  ok('livePrice is surfaced', parsed.livePrice === 12);
-}
-
-/* ═══ 8. Session and period keys ═════════════════════════════════════ */
-section('8. Session / period keys used by VWAP and pivots');
-{
-  const r = fetched['AAPL|5m'];
-  if (r) {
-    const keys = r.bars.map(DATA.sessionKey);
-    const distinct = new Set(keys).size;
-    ok('5m bars split into multiple sessions', distinct >= 3, `${distinct} sessions`);
-    ok('session key is non-decreasing', keys.every((k, i) => i === 0 || k >= keys[i - 1]));
-    // A US session must never straddle two keys.
-    const byKey = new Map();
-    for (let i = 0; i < r.bars.length; i++) {
-      const k = keys[i];
-      byKey.set(k, (byKey.get(k) || 0) + 1);
-    }
-    const counts = [...byKey.values()];
-    ok('each full session has a plausible bar count', counts.filter(c => c > 90).length === 0,
-      `max ${Math.max(...counts)} bars/session (5m regular session = 78)`);
-  }
-  const pk = DATA.periodKeyFor('1d');
-  const b1 = { time: Date.UTC(2026, 0, 15) / 1000 }, b2 = { time: Date.UTC(2026, 1, 3) / 1000 };
-  ok('daily pivots key by calendar month', pk(b1) !== pk(b2));
-  ok('same month shares a pivot key', pk(b1) === pk({ time: Date.UTC(2026, 0, 28) / 1000 }));
-  const pi = DATA.periodKeyFor('5m');
-  ok('intraday pivots key by day',
-    pi({ time: 86400 * 10 }) !== pi({ time: 86400 * 11 }) && pi({ time: 86400 * 10 + 3600 }) === pi({ time: 86400 * 10 }));
+  const dailyMeta = { ...meta(), tfSecs: 86400 };
+  const db = [{ time: open + DATA.tzOffset(open, 'America/New_York'), utc: open, open: 100, high: 101, low: 99, close: 100, volume: 1 }];
+  ok('daily bar updates during its session',
+    DATA.applyTick(db, dailyMeta, 108, open + 3600)?.isNew === false && db[0].close === 108);
+  ok('daily bar does not roll on its own',
+    DATA.applyTick(db, dailyMeta, 108, open + 86400 * 2) === null && db.length === 1);
 }
 
 /* ═══ 9. Quotes, search, errors ══════════════════════════════════════ */
 section('9. Quotes, search and error handling');
 {
-  const q = await DATA.fetchQuote('AAPL');
-  ok('quote: price present', q.price > 0);
-  ok('quote: previous close present', q.previousClose > 0);
-  ok('quote: change matches price - previousClose',
-    Math.abs(q.change - (q.price - q.previousClose)) < 1e-6);
-  ok('quote: percent matches', Math.abs(q.changePct - q.change / q.previousClose * 100) < 1e-6);
-  ok('quote: 52w high >= 52w low', q.fiftyTwoWeekHigh >= q.fiftyTwoWeekLow);
-  ok('quote: name resolved', !!q.name && q.name !== 'AAPL');
+  const qs = await DATA.fetchQuotes(['AAPL', 'MSFT', 'NVDA', 'BTC/USD']);
+  ok('batch quotes return every requested symbol', qs.length === 4, `${qs.length}: ${qs.map(q => q.symbol)}`);
+  ok('batch quotes keep request order', qs[0].symbol === 'AAPL' && qs[2].symbol === 'NVDA');
+  const a = qs.find(q => q.symbol === 'AAPL');
+  ok('quote has a price', a.price > 0);
+  ok('quote has a previous close', a.previousClose > 0);
+  ok('change matches price - previousClose', Math.abs(a.change - (a.price - a.previousClose)) < 1e-6);
+  ok('percent matches change / previousClose', Math.abs(a.changePct - a.change / a.previousClose * 100) < 1e-6);
+  ok('crypto quote resolves', qs.find(q => q.symbol === 'BTC/USD')?.price > 0);
+  // Volume must be consolidated, not the single-venue IEX figure. NVDA trades
+  // ~100M shares a day; IEX alone reports ~4M, so a low number here means the
+  // scanner would be ranking on 4% of the tape.
+  const nv = (await DATA.fetchQuotes(['NVDA']))[0];
+  ok('quote volume is consolidated, not IEX-only', nv.volume > 20e6,
+    `${(nv.volume / 1e6).toFixed(2)}M`);
+  ok('quote carries the session OHLC', nv.open > 0 && nv.dayHigh >= nv.dayLow);
+  ok('day high bounds the close', nv.close == null || nv.dayHigh >= nv.close - 1e-9);
+  ok('unresolvable symbols are dropped, not faked',
+    (await DATA.fetchQuotes(['AAPL', 'ZZZZNOTREAL'])).length === 1);
 
-  const many = await DATA.fetchQuotes(['AAPL', 'MSFT', 'NVDA', 'BADSYMBOLXYZ']);
-  ok('batch quotes drop unresolvable symbols', many.length === 3, `${many.length} returned`);
-  ok('batch quotes keep request order', many[0].symbol === 'AAPL' && many[2].symbol === 'NVDA');
+  const hits = await DATA.search('AAPL');
+  ok('search finds AAPL', hits.some(h => h.symbol === 'AAPL'), hits.map(h => h.symbol).join(','));
+  ok('search ranks exact prefix first', hits[0].symbol.startsWith('AAPL'), hits[0]?.symbol);
+  const btc = await DATA.search('BTC');
+  ok('search surfaces crypto pairs', btc.some(h => h.symbol === 'BTC/USD'));
+  ok('search caps its result count', (await DATA.search('A')).length <= 12);
 
-  const hits = await DATA.search('apple');
-  ok('search returns AAPL', hits.some(h => h.symbol === 'AAPL'), hits.map(h => h.symbol).join(','));
+  let threw = null;
+  try { await DATA.fetchBars('ZZZZNOTREAL', '1d'); } catch (e) { threw = e; }
+  ok('unknown symbol raises NotFound', threw instanceof DATA.NotFound, threw?.message);
 
-  let threw = false;
-  try { await DATA.fetchBars('ZZZZ-NOT-REAL', '1d'); } catch { threw = true; }
-  ok('unknown symbol raises rather than returning junk', threw);
+  const saved = { key: c.key, secret: c.secret };
+  DATA.setCreds('bogus', 'bogus', true);
+  let authErr = null;
+  try { await DATA.fetchQuotes(['AAPL']); } catch (e) { authErr = e; }
+  ok('bad credentials raise AuthError', authErr instanceof DATA.AuthError, authErr?.message);
+  DATA.setCreds(saved.key, saved.secret, c.paper);
+  ok('credentials restore cleanly', DATA.hasCreds());
 }
 
 /* ═══ Summary ════════════════════════════════════════════════════════ */
@@ -452,5 +388,5 @@ if (fail) {
   failures.forEach(f => console.log(`  \x1b[31m✗\x1b[0m ${f}`));
   process.exit(1);
 } else {
-  console.log(`\x1b[32mAll ${pass} checks passed against live Yahoo data\x1b[0m`);
+  console.log(`\x1b[32mAll ${pass} checks passed against live Alpaca data\x1b[0m`);
 }

@@ -823,6 +823,11 @@
       if (cell.idx === state.active) refreshNewsIfOpen();
     } catch (e) {
       if (cell.loadToken !== token || cell.destroyed) return;
+      if (e instanceof DATA.AuthError) {
+        showState(cell, 'error', 'Data connection needed');
+        promptConnect(e.message).then(() => loadCell(cell, symbol, tf));
+        return;
+      }
       showState(cell, 'error', `${symbol}: ${e.message}`);
     }
   }
@@ -869,6 +874,12 @@
       cell.meta.previousClose = q.previousClose ?? cell.meta.previousClose;
       cell.meta.price = q.price;
 
+      // Outside trading hours the official closing auction is the last price,
+      // not IEX's final print — showing the latter made the header disagree
+      // with the candle it sits above.
+      const open = DATA.marketOpen(cell.meta, now);
+      const shown = open ? q.price : (cell.bars[cell.bars.length - 1]?.close ?? q.price);
+
       const res = DATA.applyTick(cell.bars, cell.meta, q.price, now);
       if (res) {
         if (res.isNew) {
@@ -885,7 +896,7 @@
         // and leave the forming bar to the cheap path.
         if (res.isNew) refreshIndicators(cell);
       }
-      renderPrice(cell, q.price, true);
+      renderPrice(cell, shown, open);
       renderRibbon(cell, now);
     }
     updateMarketState();
@@ -1285,7 +1296,7 @@
 
     group('Data');
     toggle('Include auction prints', state.reconcile,
-      "Yahoo's intraday feed omits the opening and closing auctions, so the first and last candle of each session disagree with other platforms. On, they are taken from the official daily bar.", v => {
+      "Intraday bars do not reliably start or end on the auction print. On, the first and last candle of each session take the official open and close from the daily bar.", v => {
         state.reconcile = v;
         state.cells.forEach(c => c.symbol && loadCell(c, c.symbol, c.tf));
       });
@@ -1299,6 +1310,27 @@
         state.dividendAdjusted = v;
         state.cells.forEach(c => c.symbol && loadCell(c, c.symbol, c.tf));
       });
+
+    group('Data connection');
+    const conn = document.createElement('div');
+    conn.className = 'empty';
+    conn.style.textAlign = 'left';
+    const cell0 = activeCell();
+    const prov = cell0?.meta?.provisionalCount || 0;
+    conn.innerHTML = `Connected to <b>Alpaca</b>${DATA.tradingHost().includes('paper') ? ' (paper keys)' : ''}.
+      History comes from the consolidated SIP feed; the most recent
+      ${Math.round(DATA.SIP_EMBARGO_SEC / 60)} minutes are embargoed on the free plan and are
+      filled from IEX instead${prov ? ` (${prov} bar${prov === 1 ? '' : 's'} right now)` : ''},
+      then replaced by SIP as they age.`;
+    body.append(conn);
+    const cr = document.createElement('div'); cr.className = 'setting';
+    const rekey = document.createElement('button');
+    rekey.className = 'btn'; rekey.textContent = 'Change keys';
+    rekey.addEventListener('click', () => { closePanels(); promptConnect().then(() => state.cells.forEach(c => c.symbol && loadCell(c, c.symbol, c.tf))); });
+    const forget = document.createElement('button');
+    forget.className = 'btn'; forget.textContent = 'Disconnect'; forget.style.color = 'var(--down)';
+    forget.addEventListener('click', () => { DATA.clearCreds(); location.reload(); });
+    cr.append(rekey, forget); body.append(cr);
 
     group('Profile');
     const info = document.createElement('div');
@@ -1368,7 +1400,7 @@
       const row = document.createElement('div');
       row.className = 'row';
       row.innerHTML = `<div class="row-main"><div class="row-sym">${esc(r.symbol)}</div>
-          <div class="row-name">${esc(r.name)} · ${DATA.fmtVolume(r.volume)}</div></div>
+          <div class="row-name">${esc(nameFor(r.symbol))} · ${DATA.fmtVolume(r.volume)}</div></div>
         <div class="row-right"><div class="row-px">${DATA.fmtPrice(r.price)}</div>
           <div class="row-chg ${r.changePct >= 0 ? 'up' : 'down'}">${r.changePct >= 0 ? '+' : ''}${r.changePct.toFixed(2)}%</div></div>`;
       row.addEventListener('click', () => loadCell(activeCell(), r.symbol, activeCell().tf));
@@ -1380,27 +1412,34 @@
   async function loadNews() {
     const cell = activeCell();
     const body = $('#news-body');
-    if (!cell?.symbol) { body.innerHTML = '<div class="empty">Load a symbol first.</div>'; return; }
     body.innerHTML = '<div class="empty"><div class="spinner" style="margin:0 auto 10px"></div>Fetching headlines</div>';
     try {
-      const url = `${DATA.YF}/v1/finance/search?q=${encodeURIComponent(cell.symbol)}&quotesCount=0&newsCount=20`;
-      const json = await DATA.getJSON(url, 10000);
+      // Scoped to the active chart when there is one, otherwise the market feed.
+      const sym = cell?.symbol && !cell.meta?.crypto ? DATA.classify(cell.symbol).symbol : '';
+      const url = `${DATA.DATA_HOST}/v1beta1/news?limit=25&sort=desc`
+        + (sym ? `&symbols=${encodeURIComponent(sym)}` : '');
+      const json = await DATA.api(url, { timeout: 12000 });
       const items = json?.news || [];
-      if (!items.length) { body.innerHTML = `<div class="empty">No recent headlines for ${esc(cell.symbol)}.</div>`; return; }
+      if (!items.length) {
+        body.innerHTML = `<div class="empty">No recent headlines${sym ? ' for ' + esc(sym) : ''}.</div>`;
+        return;
+      }
       body.textContent = '';
       const head = document.createElement('div');
       head.className = 'label ind-group-label';
-      head.textContent = cell.symbol;
+      head.textContent = sym || 'Market';
       body.append(head);
       for (const n of items) {
         const a = document.createElement('a');
         a.className = 'row'; a.style.textDecoration = 'none'; a.style.color = 'inherit';
-        a.href = safeUrl(n.link); a.target = '_blank'; a.rel = 'noopener noreferrer';
-        a.innerHTML = `<div class="row-main"><div style="font-size:12px;line-height:1.4">${esc(n.title)}</div>
-          <div class="row-name">${esc(n.publisher || '')} · ${timeAgo(n.providerPublishTime)}</div></div>`;
+        a.href = safeUrl(n.url); a.target = '_blank'; a.rel = 'noopener noreferrer';
+        const tickers = (n.symbols || []).slice(0, 4).join(' · ');
+        a.innerHTML = `<div class="row-main"><div style="font-size:12px;line-height:1.4">${esc(n.headline)}</div>
+          <div class="row-name">${esc(n.source || '')} · ${timeAgo(Date.parse(n.created_at) / 1000)}${tickers ? ' · ' + esc(tickers) : ''}</div></div>`;
         body.append(a);
       }
     } catch (e) {
+      if (e instanceof DATA.AuthError) return promptConnect(e.message);
       body.innerHTML = `<div class="empty">Could not load news: ${esc(e.message)}</div>`;
     }
   }
@@ -1527,6 +1566,49 @@ hline(1);`,
     loadCell(activeCell(), r.symbol, activeCell().tf);
   }
 
+  /* ══ Data connection ═════════════════════════════════════════════
+     Keys are held in this browser and sent straight to Alpaca; nothing
+     proxies them. The overlay reappears whenever Alpaca rejects them, so a
+     revoked key surfaces as a prompt rather than as empty charts.        */
+  let connectResolve = null;
+  function promptConnect(message = '') {
+    const el = $('#connect');
+    $('#connect-err').textContent = message;
+    if (message) {
+      $('#ap-key').value = '';
+      $('#ap-secret').value = '';
+    }
+    el.hidden = false;
+    setTimeout(() => $('#ap-key').focus(), 30);
+    return new Promise(res => { connectResolve = res; });
+  }
+
+  function wireConnect() {
+    $('#connect-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const key = $('#ap-key').value.trim();
+      const secret = $('#ap-secret').value.trim();
+      const paper = $('#ap-paper').checked;
+      const err = $('#connect-err');
+      if (!key || !secret) { err.textContent = 'Enter both the key ID and the secret.'; return; }
+      const btn = $('#ap-go');
+      btn.disabled = true; btn.textContent = 'Checking…'; err.textContent = '';
+      DATA.setCreds(key, secret, paper);
+      try {
+        await DATA.fetchQuotes(['AAPL']);          // cheapest possible probe
+        DATA.saveCreds(key, secret, paper);
+        $('#connect').hidden = true;
+        const done = connectResolve; connectResolve = null;
+        if (done) done(true);
+      } catch (e2) {
+        DATA.clearCreds();
+        err.textContent = e2 instanceof DATA.AuthError
+          ? 'Alpaca rejected those keys. Check you copied both in full.'
+          : `Could not reach Alpaca: ${e2.message}`;
+      } finally { btn.disabled = false; btn.textContent = 'Connect'; }
+    });
+  }
+
   /* ══ Lock screen ═════════════════════════════════════════════════
      A per-profile screen lock, not authentication. Passphrases are stored
      as a SHA-256 hash so the raw string is not sitting in localStorage, but
@@ -1592,6 +1674,18 @@ hline(1);`,
       });
     });
   }
+
+
+  /* Alpaca's snapshots return no company name, so resolve it from the asset
+     list the search panel already caches. Falls back to the ticker. */
+  let _names = null;
+  function primeNames() {
+    if (_names) return;
+    _names = new Map();
+    DATA.assets().then(list => { for (const a of list) _names.set(a.symbol, a.name); })
+      .catch(() => {});
+  }
+  const nameFor = sym => (_names && _names.get(sym)) || sym;
 
   /* ══ Utilities ═══════════════════════════════════════════════════ */
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c =>
@@ -1716,7 +1810,10 @@ hline(1);`,
       return;
     }
     await initLock();
+    wireConnect();
     wireChrome();
+    if (!DATA.loadCreds()) await promptConnect();
+    primeNames();
     watchlist = (STORE.get('watchlist', ['AAPL', 'NVDA', 'TSLA', 'SPY'])).map(s => typeof s === 'string' ? { symbol: s } : s);
     restoreLayout();
     startPolling();

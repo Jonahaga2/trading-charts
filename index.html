@@ -534,12 +534,19 @@ kbd {
 @keyframes toast-in { from { opacity: 0; transform: translateY(8px) } }
 
 /* ═══ Lock screen ════════════════════════════════════════════════════ */
-#lock {
+#lock, #connect {
   position: fixed; inset: 0; z-index: 100;
   display: flex; align-items: center; justify-content: center;
   background: var(--bg);
 }
-#lock[hidden] { display: none; }
+#connect { z-index: 101; }
+.connect-check {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 11px; color: var(--muted); margin: 4px 0 2px; cursor: pointer;
+}
+.connect-check input { accent-color: var(--accent); }
+.lock-alt a { color: var(--accent); text-decoration: none; }
+.lock-alt a:hover { text-decoration: underline; }
 .lock-card { width: min(320px, 90vw); }
 .lock-mark { width: 30px; height: 30px; margin-bottom: 18px; }
 .lock-title { font-size: 19px; font-weight: 650; letter-spacing: -.025em; margin-bottom: 4px; }
@@ -633,6 +640,36 @@ kbd {
       <button type="button" id="lock-skip">Skip</button>
       <div style="margin-top:8px">This lock keeps your layout separate per profile on this
         browser. It is not account security — the page is public and runs entirely client-side.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ Connect ════════════════════════════════════════════════════
+     Keys live in this browser and are sent straight to Alpaca — no server
+     and no proxy sits in between. They are still a browser-side secret on a
+     public page, which is why this asks for paper keys. -->
+<div id="connect" hidden>
+  <div class="lock-card">
+    <svg class="lock-mark" viewBox="0 0 32 32" aria-hidden="true">
+      <rect x="8" y="11" width="4" height="13" fill="#2EBD85"/><rect x="9.2" y="7" width="1.6" height="19" fill="#2EBD85"/>
+      <rect x="19" y="8" width="4" height="11" fill="#F0616D"/><rect x="20.2" y="5" width="1.6" height="18" fill="#F0616D"/>
+    </svg>
+    <div class="lock-title">Connect your data</div>
+    <div class="lock-sub">Charts are drawn from Alpaca's market data. Paste an API key
+      pair to begin — a free account is enough.</div>
+    <form id="connect-form" autocomplete="off">
+      <input class="field" type="text" id="ap-key" placeholder="API key ID" spellcheck="false" autocomplete="off">
+      <input class="field" type="password" id="ap-secret" placeholder="API secret key" autocomplete="off">
+      <label class="connect-check"><input type="checkbox" id="ap-paper" checked> These are paper-trading keys</label>
+      <button class="btn btn-primary" type="submit" id="ap-go">Connect</button>
+    </form>
+    <div class="lock-err" id="connect-err"></div>
+    <div class="lock-alt">
+      Get keys at <a href="https://app.alpaca.markets/paper/dashboard/overview" target="_blank" rel="noopener noreferrer">app.alpaca.markets</a>
+      → Home → API Keys.
+      <div style="margin-top:8px">Your keys are stored in this browser only and go directly
+        to Alpaca. <b>Use paper keys.</b> Anything stored client-side on a public page should
+        never be able to move real money.</div>
     </div>
   </div>
 </div>
@@ -1463,268 +1500,299 @@ if (typeof module !== 'undefined' && module.exports) module.exports = TA;
 </script>
 <script>
 /* ═══════════════════════════════════════════════════════════════════════
-   DATA — Yahoo Finance adapter
+   DATA — Alpaca Market Data adapter
    ───────────────────────────────────────────────────────────────────────
-   Every rule here was checked against live Yahoo responses, not assumed.
-   The findings that shaped it:
+   Replaces Yahoo, which proved unreliable in ways that could not be coded
+   around: its intraday feed omits the opening and closing auctions (the
+   official open fell outside the range of its own 09:30 one-minute bar on
+   5 sessions in 8), its intraday volume runs 11–24% under its own daily
+   figure, and it rate-limits aggressively.
 
-   • Daily bars are stamped 09:30 exchange-local, NOT UTC midnight. Bucketing
-     live updates by UTC midnight (as the old build did) means the daily
-     candle never updates at all.
-   • Yahoo appends a synthetic trailing bar carrying the current price:
-     volume 0, open==high==low==close, and often off the interval grid
-     (BTC 1h returned a bar stamped 05:06:32). Rendering it produces a fake
-     flat candle at the right edge of every intraday chart. It is a live
-     tick, so it is merged into the forming bar instead.
-   • OHLC from the chart endpoint is already split-adjusted; `adjclose` is
-     additionally dividend-adjusted. Split adjustment is the default (this
-     is what TradingView shows); dividends are opt-in.
-   • Yahoo serves a native, session-anchored 4h interval. Resampling 1h bars
-     into UTC 4h buckets — the old approach — straddles the session open.
-   • interval=1d&range=max silently returns ~168 bars, not 25 years.
-   • /v7/finance/quote returns 401 without a crumb; /v8/finance/spark does not.
-   • Direct browser fetches to Yahoo have no CORS header, so a proxy is
-     mandatory from a hosted page. corsproxy.io is Origin-gated: it works
-     from a browser and 403s from a script.
+   Measured against the same ground truth, Alpaca's SIP feed reproduces the
+   official prints exactly — AAPL 2026-08-04 opens at 302.725 against an
+   official 302.73 — and it sends `Access-Control-Allow-Origin: *`, so the
+   browser calls it directly and no third-party CORS proxy ever sees the
+   traffic or the credentials.
+
+   The one real cost: on the free plan SIP is embargoed for the most recent
+   15 minutes. So history comes from SIP (exact, deep, auctions included)
+   and the last few bars come from IEX, which is genuinely real-time but is
+   a single venue. Those bars are flagged `provisional` and are replaced by
+   the authoritative SIP values as soon as they age past the embargo. The
+   UI says which is which rather than pretending the tail is consolidated.
    ═══════════════════════════════════════════════════════════════════════ */
 const DATA = (() => {
   'use strict';
 
-  const YF = 'https://query1.finance.yahoo.com';
+  const DATA_HOST = 'https://data.alpaca.markets';
+  const SIP_EMBARGO_SEC = 16 * 60;      // 15 min, plus a minute of slack
 
-  /* ── Timeframes ───────────────────────────────────────────────────────
-     `range` is the largest window Yahoo actually serves for that interval;
-     asking for more returns HTTP 422 rather than truncating. */
-  const TIMEFRAMES = [
-    { id: '1m',  label: '1m',  interval: '1m',  secs: 60,     range: '7d'   },
-    { id: '2m',  label: '2m',  interval: '2m',  secs: 120,    range: '60d'  },
-    { id: '5m',  label: '5m',  interval: '5m',  secs: 300,    range: '60d'  },
-    { id: '15m', label: '15m', interval: '15m', secs: 900,    range: '60d'  },
-    { id: '30m', label: '30m', interval: '30m', secs: 1800,   range: '60d'  },
-    { id: '1h',  label: '1H',  interval: '1h',  secs: 3600,   range: '730d' },
-    { id: '4h',  label: '4H',  interval: '4h',  secs: 14400,  range: '730d' },
-    { id: '1d',  label: '1D',  interval: '1d',  secs: 86400,  range: '10y'  },
-    { id: '1wk', label: '1W',  interval: '1wk', secs: 604800, range: '10y'  },
-    { id: '1mo', label: '1M',  interval: '1mo', secs: 2592000, range: '10y' },
-  ];
-  const TF = Object.fromEntries(TIMEFRAMES.map(t => [t.id, t]));
-  const isIntraday = tf => TF[tf] && TF[tf].secs < 86400;
-
-  /* ── Exchange-timezone shifting ───────────────────────────────────────
-     lightweight-charts draws whatever epoch it is handed as UTC. To show
-     exchange time (what every other charting package shows) the bar stamps
-     are shifted by the exchange's UTC offset *at that instant*, so DST
-     boundaries land correctly — a single fixed meta.gmtoffset would put half
-     the year an hour out.
-
-     A pleasant side effect: once shifted, floor(t / 86400) is the
-     exchange-local calendar day, which is exactly the key VWAP and pivots
-     need to anchor a session. */
-  const _fmtCache = new Map();
-  function _formatter(tz) {
-    let f = _fmtCache.get(tz);
-    if (!f) {
-      f = new Intl.DateTimeFormat('en-US', {
-        timeZone: tz, hour12: false,
-        year: 'numeric', month: '2-digit', day: '2-digit',
-        hour: '2-digit', minute: '2-digit', second: '2-digit',
-      });
-      _fmtCache.set(tz, f);
-    }
-    return f;
+  /* ── Credentials ──────────────────────────────────────────────────────
+     Held in localStorage and sent straight to Alpaca. Because the requests
+     are direct, the key never transits a proxy. It is still a browser-side
+     secret on a public page, so the UI tells the user to use paper keys. */
+  let creds = { key: '', secret: '', paper: true };
+  function setCreds(key, secret, paper = true) {
+    creds = { key: (key || '').trim(), secret: (secret || '').trim(), paper: !!paper };
+    _calendar = null; _assets = null;
   }
-  const _offCache = new Map();
-  // UTC offset, in seconds, of `tz` at the instant `utcSec`.
-  function tzOffset(utcSec, tz) {
-    if (!tz || tz === 'UTC') return 0;
-    // Cached per exchange-day. US DST changes on a Sunday with markets shut,
-    // so an intra-day transition never affects a real equity bar.
-    const key = tz + ':' + Math.floor(utcSec / 86400);
-    const hit = _offCache.get(key);
-    if (hit !== undefined) return hit;
-    const p = Object.fromEntries(_formatter(tz).formatToParts(new Date(utcSec * 1000))
-      .filter(x => x.type !== 'literal').map(x => [x.type, x.value]));
-    const asUtc = Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second) / 1000;
-    const off = Math.round(asUtc - utcSec);
-    _offCache.set(key, off);
-    return off;
+  const hasCreds = () => !!(creds.key && creds.secret);
+  const tradingHost = () => creds.paper ? 'https://paper-api.alpaca.markets' : 'https://api.alpaca.markets';
+
+  function loadCreds() {
+    try {
+      const raw = localStorage.getItem('tc:alpaca');
+      if (raw) { const c = JSON.parse(raw); setCreds(c.key, c.secret, c.paper !== false); }
+    } catch {}
+    return hasCreds();
+  }
+  function saveCreds(key, secret, paper) {
+    setCreds(key, secret, paper);
+    try { localStorage.setItem('tc:alpaca', JSON.stringify(creds)); } catch {}
+  }
+  function clearCreds() {
+    creds = { key: '', secret: '', paper: true };
+    try { localStorage.removeItem('tc:alpaca'); } catch {}
   }
 
-  /* ── Network ──────────────────────────────────────────────────────────
-     Ordered by measured reliability. corsproxy.io is first because it is
-     both fastest and the only one that consistently answers; the others are
-     genuine fallbacks, not decoration. A hosted page can never reach Yahoo
-     directly, so there is no "try direct first" step to waste a timeout on.  */
-  const PROXIES = [
-    u => `https://corsproxy.io/?url=${encodeURIComponent(u)}`,
-    u => `https://proxy.cors.sh/${u}`,
-    u => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-  ];
-
-  let directFetch = false;              // node/tests can bypass the proxies
-  const setDirect = v => { directFetch = v; };
-
-  function withTimeout(url, ms) {
-    const ctrl = new AbortController();
-    const id = setTimeout(() => ctrl.abort(), ms);
-    return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(id));
-  }
-
-  const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-  // A 404 means the symbol does not exist — retrying or trying another proxy
-  // cannot help, so fail immediately rather than burning three timeouts.
+  class AuthError extends Error {}
   class NotFound extends Error {}
 
-  async function getJSON(url, timeout = 12000) {
-    const attempts = directFetch ? [u => u] : PROXIES;
-    let lastErr;
-    // Yahoo and the proxies both rate limit; back off rather than giving up,
-    // otherwise a six-wide scanner sweep trips 429 and reports "no data".
-    for (let round = 0; round < 3; round++) {
-      for (const make of attempts) {
-        try {
-          const r = await withTimeout(make(url), timeout);
-          if (r.status === 404) throw new NotFound('symbol not found');
-          if (r.status === 429 || r.status >= 500) { lastErr = new Error('HTTP ' + r.status); continue; }
-          if (!r.ok) { lastErr = new Error('HTTP ' + r.status); continue; }
-          const text = await r.text();
-          try { return JSON.parse(text); } catch { lastErr = new Error('malformed response'); }
-        } catch (e) {
-          if (e instanceof NotFound) throw e;
-          lastErr = e;
-        }
-      }
-      if (round < 2) await sleep(400 * Math.pow(3, round));   // 0.4s, 1.2s
+  /* ── Timeframes ──────────────────────────────────────────────────────
+     `lookback` is how much history to pull, in days.
+
+     Alpaca's own 1Hour and 4Hour bars are anchored to the *clock* — 09:00,
+     10:00, … — so the first bar of a US equity session covers only 09:30
+     to 10:00 and every hourly candle after it is offset by half an hour
+     from what TradingView and the rest of the world draw. Both are rebuilt
+     here from 30-minute bars, chunked from each session's own open, which
+     puts them back on the 09:30 / 10:30 grid. Every other timeframe already
+     lands on a grid that contains 09:30, so it is used natively. */
+  const TIMEFRAMES = [
+    { id: '1m',  label: '1m',  tf: '1Min',   secs: 60,      lookback: 7 },
+    { id: '2m',  label: '2m',  tf: '2Min',   secs: 120,     lookback: 14 },
+    { id: '5m',  label: '5m',  tf: '5Min',   secs: 300,     lookback: 35 },
+    { id: '15m', label: '15m', tf: '15Min',  secs: 900,     lookback: 100 },
+    { id: '30m', label: '30m', tf: '30Min',  secs: 1800,    lookback: 200 },
+    // `chunk` and the 30Min base exist only to fix the equity session grid.
+    // Crypto has no session and no auction, and Alpaca's native hourly bars
+    // are already UTC-aligned, so it uses `cryptoTf` unchunked.
+    { id: '1h',  label: '1H',  tf: '30Min',  secs: 3600,    lookback: 150, chunk: 2, cryptoTf: '1Hour' },
+    { id: '4h',  label: '4H',  tf: '30Min',  secs: 14400,   lookback: 300, chunk: 8, cryptoTf: '4Hour' },
+    { id: '1d',  label: '1D',  tf: '1Day',   secs: 86400,   lookback: 3650 },
+    { id: '1wk', label: '1W',  tf: '1Week',  secs: 604800,  lookback: 3650 },
+    { id: '1mo', label: '1M',  tf: '1Month', secs: 2592000, lookback: 7300 },
+  ];
+  const TF = Object.fromEntries(TIMEFRAMES.map(t => [t.id, t]));
+  const isIntraday = id => TF[id] && TF[id].secs < 86400;
+  const DAY = 86400;
+
+  /* ── Symbols ─────────────────────────────────────────────────────────
+     Alpaca writes crypto pairs as BASE/QUOTE. Accept the shapes people
+     actually type and normalise. Indices are not carried at all, so say so
+     plainly instead of returning an empty chart.                          */
+  const CRYPTO_BASES = new Set(['BTC', 'ETH', 'SOL', 'AVAX', 'LINK', 'LTC', 'BCH', 'UNI',
+    'AAVE', 'DOGE', 'DOT', 'SHIB', 'XRP', 'USDT', 'USDC', 'YFI', 'MKR', 'SUSHI', 'CRV', 'GRT', 'BAT', 'PEPE', 'TRUMP']);
+  const INDEX_ALTERNATIVE = { '^GSPC': 'SPY', '^NDX': 'QQQ', '^IXIC': 'QQQ', '^DJI': 'DIA', '^RUT': 'IWM', '^VIX': 'VIXY' };
+
+  function classify(input) {
+    const raw = String(input || '').trim().toUpperCase();
+    if (!raw) throw new Error('no symbol');
+    if (raw.startsWith('^') || raw.startsWith('$')) {
+      const alt = INDEX_ALTERNATIVE[raw];
+      throw new NotFound(`${raw} is an index — Alpaca carries stocks, ETFs and crypto only.`
+        + (alt ? ` Try ${alt}.` : ''));
     }
-    throw lastErr || new Error('network unreachable');
+    if (raw.includes('/')) return { symbol: raw, crypto: true };
+    const m = /^([A-Z0-9]{2,10})(?:-|)(USD|USDT|USDC)$/.exec(raw);
+    if (m && CRYPTO_BASES.has(m[1])) return { symbol: `${m[1]}/${m[2] === 'USDT' ? 'USDT' : 'USD'}`, crypto: true };
+    return { symbol: raw.replace(/-/g, '.'), crypto: false };   // BRK-B -> BRK.B
   }
 
-  /* ── Parsing ─────────────────────────────────────────────────────────── */
-
-  // A bar is a stub if it carries no information: Yahoo's live-price marker.
-  // Checked only on the final bar, where Yahoo puts it.
-  const isStub = b =>
-    (b.volume === 0 || b.volume == null) &&
-    b.open === b.high && b.high === b.low && b.low === b.close;
-
-  function parseChart(json, tfId, opts = {}) {
-    const res = json?.chart?.result?.[0];
-    if (!res) {
-      const msg = json?.chart?.error?.description || 'no data';
-      throw new Error(msg);
+  /* ── Exchange timezone ────────────────────────────────────────────────
+     Bars are shifted into exchange-local time so the axis reads the way a
+     trader expects, and so floor(t / 86400) is the trading day — the key
+     VWAP and pivots anchor to. Offsets are resolved per instant so DST
+     lands correctly. */
+  const _fmt = new Map();
+  const formatter = tz => {
+    let f = _fmt.get(tz);
+    if (!f) {
+      f = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour12: false,
+        year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      _fmt.set(tz, f);
     }
-    const meta = res.meta || {};
-    const ts = res.timestamp || [];
-    const q = res.indicators?.quote?.[0];
-    if (!ts.length || !q) throw new Error('empty series');
+    return f;
+  };
+  const _off = new Map();
+  function tzOffset(utcSec, tz) {
+    if (!tz || tz === 'UTC') return 0;
+    const key = tz + ':' + Math.floor(utcSec / DAY);
+    const hit = _off.get(key);
+    if (hit !== undefined) return hit;
+    const p = Object.fromEntries(formatter(tz).formatToParts(new Date(utcSec * 1000))
+      .filter(x => x.type !== 'literal').map(x => [x.type, x.value]));
+    const v = Math.round(Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second) / 1000 - utcSec);
+    _off.set(key, v);
+    return v;
+  }
+  const ET = 'America/New_York';
 
-    const tz = meta.exchangeTimezoneName || 'UTC';
-    const adjClose = res.indicators?.adjclose?.[0]?.adjclose;
-    const useDiv = !!opts.dividendAdjusted && Array.isArray(adjClose);
+  /* ── HTTP ────────────────────────────────────────────────────────────
+     Direct to Alpaca — no proxy. 200 requests/minute, so back off on 429
+     rather than surfacing a failure the user can do nothing about.        */
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-    const raw = [];
-    for (let i = 0; i < ts.length; i++) {
-      let o = q.open?.[i], h = q.high?.[i], l = q.low?.[i], c = q.close?.[i];
-      const v = q.volume?.[i];
-      // Yahoo emits explicit nulls for holidays and untraded crypto minutes.
-      if (o == null || h == null || l == null || c == null) continue;
-      if (!(o > 0 && h > 0 && l > 0 && c > 0)) continue;
-      if (h < l) continue;
-      // Dividend adjustment scales the whole bar by adjclose/close so the
-      // candle body stays proportionally correct, not just the close.
-      if (useDiv && adjClose[i] != null && c !== 0) {
-        const k = adjClose[i] / c;
-        o *= k; h *= k; l *= k; c *= k;
-      }
-      const utc = ts[i];
-      raw.push({
-        time: utc + tzOffset(utc, tz),   // exchange-local, for display + sessions
-        utc,
-        open: o,
-        high: Math.max(h, o, c),         // Yahoo occasionally floats these by 1e-6
-        low: Math.min(l, o, c),
-        close: c,
-        volume: v || 0,
+  async function api(url, { timeout = 15000, retries = 3 } = {}) {
+    if (!hasCreds()) throw new AuthError('Alpaca API key required');
+    for (let attempt = 0; ; attempt++) {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), timeout);
+      try {
+        const r = await fetch(url, {
+          signal: ctrl.signal,
+          headers: {
+            'APCA-API-KEY-ID': creds.key,
+            'APCA-API-SECRET-KEY': creds.secret,
+            'accept': 'application/json',
+          },
+        });
+        if (r.status === 401 || r.status === 403) {
+          const body = await r.text().catch(() => '');
+          throw new AuthError(/subscription/i.test(body)
+            ? 'Your Alpaca plan does not allow this data'
+            : 'Alpaca rejected these API keys');
+        }
+        if ((r.status === 429 || r.status >= 500) && attempt < retries) {
+          await sleep(500 * Math.pow(2, attempt));
+          continue;
+        }
+        if (!r.ok) throw new Error(`Alpaca returned ${r.status}`);
+        return await r.json();
+      } catch (e) {
+        if (e instanceof AuthError) throw e;
+        if (attempt >= retries) throw e;
+        await sleep(500 * Math.pow(2, attempt));
+      } finally { clearTimeout(timer); }
+    }
+  }
+
+  // Walks Alpaca's page tokens and concatenates one symbol's bars. Alpaca
+  // caps a page at roughly 215 bars whatever `limit` asks for, so a long
+  // intraday window genuinely needs tens of pages; stopping at a low count
+  // silently truncated the series to a few weeks.
+  async function pagedBars(baseUrl, symbol, cap = 40000, maxPages = 60) {
+    const out = [];
+    let token = null;
+    for (let page = 0; page < maxPages; page++) {
+      const url = baseUrl + (token ? `&page_token=${encodeURIComponent(token)}` : '');
+      const j = await api(url);
+      const chunk = j?.bars?.[symbol];
+      if (Array.isArray(chunk)) out.push(...chunk);
+      token = j?.next_page_token;
+      if (!token || out.length >= cap) break;
+    }
+    return out;
+  }
+
+  /* ── Market calendar ──────────────────────────────────────────────────
+     Gives the exact regular open and close for every date, including half
+     days (the day after Thanksgiving closes at 13:00). Yahoo only ever
+     exposed the *current* session, so historical half-days were invisible
+     and their bars were filtered wrongly. */
+  let _calendar = null;
+  async function calendar() {
+    if (_calendar) return _calendar;
+    // Reach a year ahead so an upcoming half-day is already known, and ten
+    // years back so historical sessions filter correctly.
+    const end = new Date(Date.now() + 400 * DAY * 1000).toISOString().slice(0, 10);
+    const start = new Date(Date.now() - 3700 * DAY * 1000).toISOString().slice(0, 10);
+    const rows = await api(`${tradingHost()}/v2/calendar?start=${start}&end=${end}`, { timeout: 20000 });
+    _calendar = new Map();
+    for (const r of rows || []) {
+      const [oh, om] = r.open.split(':').map(Number);
+      const [ch, cm] = r.close.split(':').map(Number);
+      _calendar.set(r.date, {
+        date: r.date,
+        openMin: oh * 60 + om,
+        closeMin: ch * 60 + cm,
+        sessionOpenMin: r.session_open ? +r.session_open.slice(0, 2) * 60 + +r.session_open.slice(2) : 4 * 60,
+        sessionCloseMin: r.session_close ? +r.session_close.slice(0, 2) * 60 + +r.session_close.slice(2) : 20 * 60,
       });
     }
-    if (!raw.length) throw new Error('no valid candles');
+    return _calendar;
+  }
 
-    // De-duplicate and sort. The renderer requires strictly increasing time.
-    raw.sort((a, b) => a.time - b.time);
-    const bars = [];
-    for (const b of raw) {
-      if (bars.length && bars[bars.length - 1].time === b.time) bars[bars.length - 1] = b;
-      else bars.push(b);
-    }
+  // Exchange-local minutes-past-midnight for a UTC instant.
+  const localMinutes = (utcSec) => {
+    const local = utcSec + tzOffset(utcSec, ET);
+    return Math.floor((local % DAY) / 60);
+  };
+  const localDate = (utcSec) => new Date((utcSec + tzOffset(utcSec, ET)) * 1000).toISOString().slice(0, 10);
 
-    // Fold Yahoo's trailing live-price stub into the bar that is still forming.
-    let livePrice = null;
-    if (bars.length > 1 && isStub(bars[bars.length - 1])) {
-      const stub = bars.pop();
-      livePrice = stub.close;
-      const last = bars[bars.length - 1];
-      last.close = stub.close;
-      last.high = Math.max(last.high, stub.close);
-      last.low = Math.min(last.low, stub.close);
-    }
-
-    const period = meta.currentTradingPeriod?.regular;
+  /* ── Bars ────────────────────────────────────────────────────────────── */
+  function toBar(b, tz) {
+    const utc = Math.floor(new Date(b.t).getTime() / 1000);
+    const o = b.o, h = b.h, l = b.l, c = b.c;
     return {
-      bars,
-      meta: {
-        symbol: meta.symbol,
-        name: meta.shortName || meta.longName || meta.symbol,
-        exchange: meta.fullExchangeName || meta.exchangeName || '',
-        currency: meta.currency || 'USD',
-        timezone: tz,
-        instrumentType: meta.instrumentType || '',
-        is24h: (meta.instrumentType === 'CRYPTOCURRENCY') || tz === 'UTC',
-        price: meta.regularMarketPrice ?? livePrice ?? bars[bars.length - 1].close,
-        previousClose: meta.chartPreviousClose ?? meta.previousClose ?? null,
-        dayHigh: meta.regularMarketDayHigh ?? null,
-        dayLow: meta.regularMarketDayLow ?? null,
-        volume: meta.regularMarketVolume ?? null,
-        fiftyTwoWeekHigh: meta.fiftyTwoWeekHigh ?? null,
-        fiftyTwoWeekLow: meta.fiftyTwoWeekLow ?? null,
-        priceHint: meta.priceHint ?? 2,
-        sessionStart: period?.start ?? null,
-        sessionEnd: period?.end ?? null,
-        marketTime: meta.regularMarketTime ?? null,
-        tfSecs: TF[tfId]?.secs ?? 86400,
-      },
-      livePrice,
+      time: utc + tzOffset(utc, tz), utc,
+      open: o, high: Math.max(h, o, c), low: Math.min(l, o, c), close: c,
+      volume: b.v || 0,
     };
   }
 
-  /* ── Public fetches ──────────────────────────────────────────────────── */
+  function dedupe(bars) {
+    bars.sort((a, b) => a.time - b.time);
+    const out = [];
+    for (const b of bars) {
+      if (out.length && out[out.length - 1].time === b.time) out[out.length - 1] = b;
+      else out.push(b);
+    }
+    return out;
+  }
 
-  function chartURL(symbol, tfId, opts = {}) {
-    const tf = TF[tfId] || TF['1d'];
-    const p = new URLSearchParams({
-      interval: tf.interval,
-      range: opts.range || tf.range,
-      includePrePost: String(!!opts.prePost),
-    });
-    // Splits and dividends are needed to build the adjustment factor.
-    p.set('events', 'div,split');
-    return `${YF}/v8/finance/chart/${encodeURIComponent(symbol)}?${p}`;
+  const ADJUSTMENT = { split: 'split', all: 'all', raw: 'raw' };
+
+  /* Groups each session's bars into fixed-size chunks starting at that
+     session's own open, which is what makes a rebuilt 1H bar run 09:30→10:30
+     rather than 09:00→10:00. A short final chunk is kept: the last hour of a
+     half-day is a real, if stubby, candle. */
+  function chunkSessions(bars, size) {
+    if (size <= 1) return bars;
+    const out = [];
+    let key = null, acc = null, n = 0;
+    for (const b of bars) {
+      const k = Math.floor(b.time / DAY);
+      if (k !== key || n === size) {
+        if (acc) out.push(acc);
+        key = k; n = 0;
+        acc = { time: b.time, utc: b.utc, open: b.open, high: b.high, low: b.low, close: b.close, volume: b.volume };
+        if (b.provisional) acc.provisional = true;
+      } else {
+        acc.high = Math.max(acc.high, b.high);
+        acc.low = Math.min(acc.low, b.low);
+        acc.close = b.close;
+        acc.volume += b.volume;
+        if (b.provisional) acc.provisional = true;
+      }
+      n++;
+    }
+    if (acc) out.push(acc);
+    return out;
   }
 
   /* ── Auction reconciliation ───────────────────────────────────────────
-     Yahoo serves intraday bars from a thinner feed than its daily bars, and
-     that feed misses the opening and closing auction prints. Measured on
-     AAPL/NVDA/TSLA: the daily open falls *outside* the range of the 09:30
-     one-minute bar on roughly 5 sessions in 8 — on 2026-08-04 the official
-     open was 302.73 while the first minute only traded 303.74–303.79.
+     Alpaca's daily bars carry the official opening and closing auction
+     prints; its intraday bars do not reliably start or end on them. On the
+     five sessions to 2026-08-07 the 5-minute open matched the official open
+     three times and the close matched once — 08-07 closed 313.30 against an
+     official 313.33.
 
-     Every real charting platform puts the auction in the session's first and
-     last candle, which is why an untouched Yahoo intraday chart visibly
-     disagrees with TradingView on exactly those two bars. Both prints happen
-     at known times, so they can be placed exactly: the open belongs to the
-     session's first bar, the close to its last. Nothing else is inferred —
-     the daily high/low are deliberately not redistributed, because there is
-     no way to know which bar they belong to without fabricating.           */
+     Both prints belong to known bars, so they are placed exactly: the open
+     into the session's first bar, the close into its last, widening that
+     bar's range to contain the print. The daily high and low are not
+     redistributed, because there is no way to know which bar they belong to
+     without inventing one. */
   function reconcileAuctions(bars, dailyBars, tolerance = 0.05) {
     if (!bars.length || !dailyBars?.length) return 0;
     const daily = new Map(dailyBars.map(b => [Math.floor(b.time / DAY), b]));
@@ -1738,163 +1806,341 @@ const DATA = (() => {
     for (const [k, d] of daily) {
       const f = first.get(k), l = last.get(k);
       if (!f || !l) continue;
-      // Refuse to "correct" anything that looks like a different instrument
-      // or a split-adjustment mismatch rather than an auction print.
-      if (Math.abs(d.open - f.open) / f.open < tolerance) {
-        if (d.open !== f.open) patched++;
+      // A gap this large is a mismatched instrument or an adjustment
+      // difference, not an auction print. Leave it alone.
+      if (Math.abs(d.open - f.open) / f.open < tolerance && d.open !== f.open) {
         f.open = d.open;
         f.high = Math.max(f.high, d.open);
         f.low = Math.min(f.low, d.open);
+        patched++;
       }
-      if (Math.abs(d.close - l.close) / l.close < tolerance) {
-        if (d.close !== l.close) patched++;
+      // Never overwrite a still-forming bar with a stale daily close.
+      if (!l.provisional && Math.abs(d.close - l.close) / l.close < tolerance && d.close !== l.close) {
         l.close = d.close;
         l.high = Math.max(l.high, d.close);
         l.low = Math.min(l.low, d.close);
+        patched++;
       }
     }
     return patched;
   }
 
-  // Daily range wide enough to cover the intraday window being reconciled.
-  const DAILY_COVER = { '1m': '1mo', '2m': '3mo', '5m': '3mo', '15m': '3mo', '30m': '3mo', '1h': '2y', '4h': '2y' };
+  async function fetchStockBars(symbol, tfId, opts) {
+    const tf = TF[tfId] || TF['1d'];
+    const now = Math.floor(Date.now() / 1000);
+    const start = new Date((now - tf.lookback * DAY) * 1000).toISOString();
+    const adjustment = opts.dividendAdjusted ? ADJUSTMENT.all : ADJUSTMENT.split;
 
-  async function fetchBars(symbol, tfId, opts = {}) {
-    const json = await getJSON(chartURL(symbol, tfId, opts), 14000);
-    const parsed = parseChart(json, tfId, opts);
+    // Authoritative history, embargoed for the last 15 minutes.
+    const sipEnd = new Date((now - SIP_EMBARGO_SEC) * 1000).toISOString();
+    const sipUrl = `${DATA_HOST}/v2/stocks/bars?symbols=${encodeURIComponent(symbol)}`
+      + `&timeframe=${tf.tf}&start=${encodeURIComponent(start)}&end=${encodeURIComponent(sipEnd)}`
+      + `&limit=10000&feed=sip&adjustment=${adjustment}&sort=asc`;
+    const sip = await pagedBars(sipUrl, symbol);
 
-    // Only meaningful for regular-session intraday charts: the daily bar
-    // describes regular hours, so it cannot reconcile an extended-hours
-    // series, and daily-and-slower bars already contain the auctions.
-    const wants = opts.reconcile !== false && isIntraday(tfId) && !opts.prePost && !parsed.meta.is24h;
-    if (wants) {
-      try {
-        const dj = await getJSON(chartURL(symbol, '1d', {
-          range: DAILY_COVER[tfId] || '3mo', dividendAdjusted: opts.dividendAdjusted,
-        }), 10000);
-        const dbars = parseChart(dj, '1d', opts).bars;
-        parsed.meta.auctionsPatched = reconcileAuctions(parsed.bars, dbars);
-      } catch { parsed.meta.auctionsPatched = null; }   // never fail the chart over this
+    // Real-time tail from IEX, covering only what SIP is not allowed to show.
+    let tail = [];
+    if (opts.live !== false) {
+      const tailStart = new Date((now - SIP_EMBARGO_SEC - tf.secs * 2) * 1000).toISOString();
+      const iexUrl = `${DATA_HOST}/v2/stocks/bars?symbols=${encodeURIComponent(symbol)}`
+        + `&timeframe=${tf.tf}&start=${encodeURIComponent(tailStart)}`
+        + `&limit=500&feed=iex&adjustment=${adjustment}&sort=asc`;
+      try { tail = await pagedBars(iexUrl, symbol, 500); } catch { tail = []; }
     }
-    return parsed;
+    return { sip, tail };
   }
 
-  // Light quote used by the poller and the scanner. One chart request with a
-  // one-day range is ~1.2 KB and carries every field /v7/finance/quote used to.
-  async function fetchQuote(symbol) {
-    const json = await getJSON(`${YF}/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=1d`, 9000);
-    const m = json?.chart?.result?.[0]?.meta;
-    if (!m || !(m.regularMarketPrice > 0)) throw new Error('no quote for ' + symbol);
-    const prev = m.chartPreviousClose ?? m.previousClose ?? null;
+  // Authoritative daily bars covering the intraday window, used only to
+  // recover the auction prints.
+  async function fetchDailyForReconcile(symbol, days, opts) {
+    const start = new Date((Date.now() - (days + 5) * DAY * 1000)).toISOString();
+    const adjustment = opts.dividendAdjusted ? ADJUSTMENT.all : ADJUSTMENT.split;
+    const url = `${DATA_HOST}/v2/stocks/bars?symbols=${encodeURIComponent(symbol)}`
+      + `&timeframe=1Day&start=${encodeURIComponent(start)}&limit=10000&feed=sip`
+      + `&adjustment=${adjustment}&sort=asc`;
+    return (await pagedBars(url, symbol, 5000, 30)).map(b => toBar(b, ET));
+  }
+
+  async function fetchCryptoBars(symbol, tfId) {
+    const tf = TF[tfId] || TF['1d'];
+    const now = Math.floor(Date.now() / 1000);
+    const start = new Date((now - tf.lookback * DAY) * 1000).toISOString();
+    const url = `${DATA_HOST}/v1beta3/crypto/us/bars?symbols=${encodeURIComponent(symbol)}`
+      + `&timeframe=${tf.cryptoTf || tf.tf}&start=${encodeURIComponent(start)}&limit=10000&sort=asc`;
+    return pagedBars(url, symbol);
+  }
+
+  /* Filters intraday bars to the regular session unless extended hours are
+     requested. Alpaca always returns 04:00–20:00, and the calendar supplies
+     each date's real boundaries, so half-days are handled exactly. */
+  function filterSession(bars, cal, prePost) {
+    if (!cal) return bars;
+    return bars.filter(b => {
+      const day = cal.get(localDate(b.utc));
+      if (!day) return false;                       // not a trading day
+      const m = localMinutes(b.utc);
+      return prePost
+        ? m >= day.sessionOpenMin && m < day.sessionCloseMin
+        : m >= day.openMin && m < day.closeMin;
+    });
+  }
+
+  async function fetchBars(symbolInput, tfId, opts = {}) {
+    const { symbol, crypto } = classify(symbolInput);
+    const tz = crypto ? 'UTC' : ET;
+    let bars, provisionalFrom = Infinity, cal = null;
+
+    const tfDef = TF[tfId] || TF['1d'];
+    let patched = 0;
+
+    if (crypto) {
+      bars = dedupe((await fetchCryptoBars(symbol, tfId)).map(b => toBar(b, tz)));
+    } else {
+      const { sip, tail } = await fetchStockBars(symbol, tfId, opts);
+      cal = await calendar().catch(() => null);
+      let merged = sip.map(b => toBar(b, tz));
+      const known = new Set(merged.map(b => b.time));
+      for (const b of tail) {
+        const bar = toBar(b, tz);
+        if (!known.has(bar.time)) { bar.provisional = true; merged.push(bar); }
+      }
+      merged = dedupe(merged);
+      // Session filtering happens before chunking so an hourly bar is built
+      // from regular-session halves only, never from a pre-market bar.
+      if (isIntraday(tfId)) merged = filterSession(merged, cal, opts.prePost);
+      if (tfDef.chunk) merged = chunkSessions(merged, tfDef.chunk);
+
+      // Put the auction prints back. Skipped for extended-hours charts, where
+      // the session's first and last bar are pre/post bars the daily bar says
+      // nothing about.
+      if (isIntraday(tfId) && !opts.prePost && opts.reconcile !== false) {
+        try {
+          const daily = await fetchDailyForReconcile(symbol, tfDef.lookback, opts);
+          patched = reconcileAuctions(merged, daily);
+        } catch { patched = null; }
+      }
+      const firstProv = merged.find(b => b.provisional);
+      if (firstProv) provisionalFrom = firstProv.time;
+      bars = merged;
+    }
+
+    if (!bars.length) {
+      throw new NotFound(`No data for ${symbol}. Check the symbol, or the market may not have traded yet.`);
+    }
+
+    const last = bars[bars.length - 1];
+    const win = crypto ? null : await sessionWindow().catch(() => null);
+
     return {
-      symbol: m.symbol,
-      name: m.shortName || m.longName || m.symbol,
-      price: m.regularMarketPrice,
-      previousClose: prev,
-      change: prev ? m.regularMarketPrice - prev : 0,
-      changePct: prev ? (m.regularMarketPrice - prev) / prev * 100 : 0,
-      volume: m.regularMarketVolume ?? 0,
-      dayHigh: m.regularMarketDayHigh ?? null,
-      dayLow: m.regularMarketDayLow ?? null,
-      fiftyTwoWeekHigh: m.fiftyTwoWeekHigh ?? null,
-      fiftyTwoWeekLow: m.fiftyTwoWeekLow ?? null,
-      currency: m.currency || 'USD',
-      timezone: m.exchangeTimezoneName || 'UTC',
-      sessionStart: m.currentTradingPeriod?.regular?.start ?? null,
-      sessionEnd: m.currentTradingPeriod?.regular?.end ?? null,
-      marketTime: m.regularMarketTime ?? null,
-      is24h: m.instrumentType === 'CRYPTOCURRENCY',
+      bars,
+      meta: {
+        symbol, display: symbol, crypto,
+        timezone: tz,
+        is24h: crypto,
+        tfSecs: TF[tfId]?.secs || DAY,
+        price: last.close,
+        previousClose: previousSessionClose(bars, tz),
+        sessionStart: win?.open ?? null,
+        sessionEnd: win?.close ?? null,
+        preOpen: win?.preOpen ?? null,
+        postClose: win?.postClose ?? null,
+        halfDay: win?.halfDay ?? false,
+        provisionalFrom,
+        provisionalCount: bars.filter(b => b.provisional).length,
+        auctionsPatched: patched,
+        feed: crypto ? 'crypto' : 'sip + iex tail',
+      },
     };
   }
 
-  // Concurrency-limited batch. Yahoo tolerates parallel chart requests far
-  // better than it tolerates one giant one, but a proxy in front will rate
-  // limit, so keep the width modest.
-  async function fetchQuotes(symbols, { concurrency = 6, onProgress } = {}) {
+  // Close of the session before the most recent one — the reference every
+  // day-change percentage is measured from.
+  function previousSessionClose(bars, tz) {
+    if (bars.length < 2) return null;
+    const lastDay = Math.floor(bars[bars.length - 1].time / DAY);
+    for (let i = bars.length - 2; i >= 0; i--) {
+      if (Math.floor(bars[i].time / DAY) !== lastDay) return bars[i].close;
+    }
+    return bars[0].open;
+  }
+
+  /* ── Session window for the ribbon and the open/closed gate ──────────── */
+
+  // "2026-08-07" plus minutes-past-local-midnight -> true UTC epoch seconds.
+  // Two passes, because the offset depends on the instant we are solving for:
+  // the first guess can land on the wrong side of a DST change.
+  function localToUtc(dateStr, minutes) {
+    const [y, mo, d] = dateStr.split('-').map(Number);
+    const naive = Date.UTC(y, mo - 1, d) / 1000 + minutes * 60;   // as if local were UTC
+    let utc = naive - tzOffset(naive, ET);
+    utc = naive - tzOffset(utc, ET);
+    return utc;
+  }
+
+  async function sessionWindow(atUtcSec = Math.floor(Date.now() / 1000)) {
+    const cal = await calendar().catch(() => null);
+    if (!cal) return null;
+    const date = localDate(atUtcSec);
+    const day = cal.get(date);
+    if (!day) return null;
+    return {
+      date,
+      open: localToUtc(date, day.openMin),
+      close: localToUtc(date, day.closeMin),
+      preOpen: localToUtc(date, day.sessionOpenMin),
+      postClose: localToUtc(date, day.sessionCloseMin),
+      halfDay: day.closeMin < 15 * 60,
+    };
+  }
+
+  /* ── Quotes ───────────────────────────────────────────────────────────
+     One snapshot request covers every symbol, which is what makes the
+     scanner and the poller cheap: 10 names came back in ~30 ms.           */
+  async function fetchQuotes(inputs) {
+    const stocks = [], cryptos = [], map = new Map();
+    for (const i of inputs) {
+      try {
+        const c = classify(i);
+        map.set(c.symbol, i);
+        (c.crypto ? cryptos : stocks).push(c.symbol);
+      } catch { /* skip indices and junk */ }
+    }
     const out = [];
-    let idx = 0, done = 0;
-    async function worker() {
-      while (idx < symbols.length) {
-        const s = symbols[idx++];
-        try { out.push(await fetchQuote(s)); } catch { /* skip unresolvable */ }
-        if (onProgress) onProgress(++done, symbols.length);
+    if (stocks.length) {
+      const list = encodeURIComponent(stocks.join(','));
+      // Two requests cover any number of symbols. The daily bars are SIP, so
+      // volume and the previous close are consolidated — the IEX snapshot's
+      // dailyBar counts one venue and reports roughly 4% of the real figure
+      // (NVDA: 4.36M against 106.39M), which would rank a "most active" scan
+      // on noise. The snapshot is used only for the live trade price.
+      const since = new Date(Date.now() - 8 * DAY * 1000).toISOString();
+      const [daily, snaps] = await Promise.all([
+        api(`${DATA_HOST}/v2/stocks/bars?symbols=${list}&timeframe=1Day`
+          + `&start=${encodeURIComponent(since)}&limit=10000&feed=sip&adjustment=split&sort=asc`),
+        api(`${DATA_HOST}/v2/stocks/snapshots?symbols=${list}&feed=iex`).catch(() => ({})),
+      ]);
+      for (const sym of stocks) {
+        const bars = daily?.bars?.[sym];
+        const snap = snaps?.[sym];
+        const day = bars?.length ? bars[bars.length - 1] : null;
+        const prevBar = bars?.length > 1 ? bars[bars.length - 2] : null;
+        const live = snap?.latestTrade?.p;
+        const price = live ?? day?.c;
+        const prev = prevBar?.c ?? snap?.prevDailyBar?.c ?? null;
+        if (!(price > 0)) continue;
+        out.push({
+          symbol: sym, input: map.get(sym) || sym, name: sym,
+          price, previousClose: prev,
+          change: prev ? price - prev : 0,
+          changePct: prev ? (price - prev) / prev * 100 : 0,
+          volume: day?.v ?? 0,                       // consolidated
+          dayHigh: day?.h ?? null, dayLow: day?.l ?? null, open: day?.o ?? null,
+          close: day?.c ?? null,                     // official close, once settled
+          tradeTime: snap?.latestTrade?.t ? Math.floor(new Date(snap.latestTrade.t).getTime() / 1000) : null,
+          crypto: false,
+        });
       }
     }
-    await Promise.all(Array.from({ length: Math.min(concurrency, symbols.length) }, worker));
-    const order = new Map(symbols.map((s, i) => [s.toUpperCase(), i]));
-    return out.sort((a, b) => (order.get(a.symbol?.toUpperCase()) ?? 0) - (order.get(b.symbol?.toUpperCase()) ?? 0));
+    if (cryptos.length) {
+      const j = await api(`${DATA_HOST}/v1beta3/crypto/us/snapshots?symbols=${encodeURIComponent(cryptos.join(','))}`);
+      for (const [sym, s] of Object.entries(j?.snapshots || {})) {
+        const price = s.latestTrade?.p ?? s.dailyBar?.c;
+        const prev = s.prevDailyBar?.c ?? null;
+        if (!(price > 0)) continue;
+        out.push({
+          symbol: sym, input: map.get(sym) || sym, name: sym,
+          price, previousClose: prev,
+          change: prev ? price - prev : 0,
+          changePct: prev ? (price - prev) / prev * 100 : 0,
+          volume: s.dailyBar?.v ?? 0,
+          dayHigh: s.dailyBar?.h ?? null, dayLow: s.dailyBar?.l ?? null,
+          open: s.dailyBar?.o ?? null, tradeTime: null, crypto: true,
+        });
+      }
+    }
+    const order = new Map(inputs.map((s, i) => [String(s).toUpperCase(), i]));
+    return out.sort((a, b) =>
+      (order.get(String(a.input).toUpperCase()) ?? 0) - (order.get(String(b.input).toUpperCase()) ?? 0));
   }
+
+  async function fetchQuote(symbol) {
+    const [q] = await fetchQuotes([symbol]);
+    if (!q) throw new NotFound(`No quote for ${symbol}`);
+    return q;
+  }
+
+  /* ── Symbol search ───────────────────────────────────────────────────
+     Alpaca has no search endpoint, so the tradable asset list is fetched
+     once (~11k rows), cached, and filtered locally — which also makes the
+     search instant instead of a request per keystroke. */
+  let _assets = null, _assetsPromise = null;
+  async function assets() {
+    if (_assets) return _assets;
+    if (!_assetsPromise) {
+      _assetsPromise = api(`${tradingHost()}/v2/assets?status=active&asset_class=us_equity`, { timeout: 25000 })
+        .then(rows => {
+          _assets = (rows || [])
+            .filter(a => a.tradable !== false)
+            .map(a => ({ symbol: a.symbol, name: a.name || a.symbol, exchange: a.exchange || '' }));
+          return _assets;
+        })
+        .catch(e => { _assetsPromise = null; throw e; });
+    }
+    return _assetsPromise;
+  }
+
+  const CRYPTO_SUGGEST = [...CRYPTO_BASES].map(b => ({ symbol: `${b}/USD`, name: `${b} / US Dollar`, exchange: 'CRYPTO' }));
 
   async function search(query) {
-    const url = `${YF}/v1/finance/search?q=${encodeURIComponent(query)}&quotesCount=12&newsCount=0`;
-    const json = await getJSON(url, 8000);
-    return (json?.quotes || [])
-      .filter(q => q.symbol && q.quoteType !== 'OPTION')
-      .map(q => ({
-        symbol: q.symbol,
-        name: q.shortname || q.longname || q.symbol,
-        type: (q.quoteType || '').toLowerCase(),
-        exchange: q.exchDisp || q.exchange || '',
-      }));
+    const q = String(query || '').trim().toUpperCase();
+    if (!q) return [];
+    let list = [];
+    try { list = await assets(); } catch { list = []; }
+    const pool = list.concat(CRYPTO_SUGGEST);
+    const starts = [], contains = [];
+    for (const a of pool) {
+      if (a.symbol.startsWith(q)) starts.push(a);
+      else if (a.symbol.includes(q) || a.name.toUpperCase().includes(q)) contains.push(a);
+      if (starts.length >= 12) break;
+    }
+    return starts.concat(contains).slice(0, 12)
+      .map(a => ({ symbol: a.symbol, name: a.name, exchange: a.exchange, type: a.exchange === 'CRYPTO' ? 'crypto' : 'equity' }));
   }
 
-  /* ── Session helpers ─────────────────────────────────────────────────
-     Bars are already in exchange-local time, so a calendar day is just a
-     division. `sessionKey` anchors VWAP; `periodKey` anchors pivots to the
-     previous day (intraday) or month (daily and slower). */
-  const DAY = 86400;
+  /* ── Session helpers ─────────────────────────────────────────────────── */
   const sessionKey = bar => Math.floor(bar.time / DAY);
   function periodKeyFor(tfId) {
     if (isIntraday(tfId)) return bar => Math.floor(bar.time / DAY);
-    return bar => {                                  // calendar month
-      const d = new Date(bar.time * 1000);
-      return d.getUTCFullYear() * 12 + d.getUTCMonth();
-    };
+    return bar => { const d = new Date(bar.time * 1000); return d.getUTCFullYear() * 12 + d.getUTCMonth(); };
   }
 
-  /* ── Live update ──────────────────────────────────────────────────────
-     Extends the forming candle, or opens a new one — but only when a new
-     bucket has genuinely started AND the market is actually trading. The old
-     build advanced the bucket on wall-clock alone, so an overnight 1-minute
-     chart accumulated hundreds of invented flat candles.                    */
   function marketOpen(meta, nowSec = Date.now() / 1000) {
     if (meta.is24h) return true;
     if (meta.sessionStart == null || meta.sessionEnd == null) return false;
     return nowSec >= meta.sessionStart && nowSec < meta.sessionEnd;
   }
 
-  // Returns { bar, isNew } describing what the chart should render, or null
-  // when nothing legitimately changed.
+  /* ── Live tick ────────────────────────────────────────────────────────
+     Extends the forming candle or opens exactly one new one, and only while
+     the market is genuinely trading. */
   function applyTick(bars, meta, price, nowSec = Date.now() / 1000) {
     if (!bars.length || !(price > 0)) return null;
-    const last = bars[bars.length - 1];
-    const secs = meta.tfSecs || 86400;
-
-    // Outside trading hours only the last close is meaningful; never invent
-    // a bar, and never drift the completed candle.
     if (!marketOpen(meta, nowSec)) return null;
-
-    // All arithmetic runs in true UTC and only the emitted stamp is shifted,
-    // so the function stays correct no matter how the caller built `bars`.
+    const last = bars[bars.length - 1];
+    const secs = meta.tfSecs || DAY;
     const lastUtc = last.utc ?? last.time;
-    const localNow = nowSec + tzOffset(nowSec, meta.timezone);
 
-    // Daily and slower: the bucket is the session, so keep extending the last
-    // bar for as long as the session is open rather than doing modular math
-    // on a stamp that sits at 09:30, not midnight.
     if (secs >= DAY) {
-      const localBar = lastUtc + tzOffset(lastUtc, meta.timezone);
-      if (Math.floor(localNow / DAY) === Math.floor(localBar / DAY)) {
+      const dayOf = t => Math.floor((t + tzOffset(t, meta.timezone)) / DAY);
+      if (dayOf(nowSec) === dayOf(lastUtc)) {
         last.close = price;
         last.high = Math.max(last.high, price);
         last.low = Math.min(last.low, price);
         return { bar: last, isNew: false };
       }
-      return null;   // a new session's first bar must come from a real fetch
+      return null;
     }
 
-    // Intraday: bars sit on a grid anchored to the session open, so derive the
-    // bucket from the last known bar rather than from epoch zero.
     const elapsed = nowSec - lastUtc;
     if (elapsed < 0) return null;
     if (elapsed < secs) {
@@ -1903,19 +2149,17 @@ const DATA = (() => {
       last.low = Math.min(last.low, price);
       return { bar: last, isNew: false };
     }
-    // A whole bucket has elapsed. Only open one if it still falls inside the
-    // session — otherwise the gap is the overnight break.
     const nextUtc = lastUtc + Math.floor(elapsed / secs) * secs;
     if (!meta.is24h && meta.sessionEnd != null && nextUtc >= meta.sessionEnd) return null;
     const bar = {
       time: nextUtc + tzOffset(nextUtc, meta.timezone), utc: nextUtc,
-      open: price, high: price, low: price, close: price, volume: 0,
+      open: price, high: price, low: price, close: price, volume: 0, provisional: true,
     };
     bars.push(bar);
     return { bar, isNew: true };
   }
 
-  /* ── Formatting ──────────────────────────────────────────────────────── */
+  /* ── Formatting ───────────────────────────────────────────────────────── */
   function decimalsFor(price) {
     const p = Math.abs(price);
     if (p >= 1000) return 2;
@@ -1924,10 +2168,7 @@ const DATA = (() => {
     if (p >= 0.01) return 5;
     return 8;
   }
-  function fmtPrice(v, decimals) {
-    if (v == null || !Number.isFinite(v)) return '—';
-    return v.toFixed(decimals ?? decimalsFor(v));
-  }
+  const fmtPrice = (v, d) => (v == null || !Number.isFinite(v)) ? '—' : v.toFixed(d ?? decimalsFor(v));
   function fmtVolume(v) {
     if (!v) return '0';
     const a = Math.abs(v);
@@ -1939,10 +2180,12 @@ const DATA = (() => {
   }
 
   return {
-    YF, TIMEFRAMES, TF, isIntraday,
-    tzOffset, getJSON, setDirect, chartURL, parseChart,
-    fetchBars, fetchQuote, fetchQuotes, search,
-    sessionKey, periodKeyFor, marketOpen, applyTick, isStub, reconcileAuctions,
+    TIMEFRAMES, TF, isIntraday, DATA_HOST, SIP_EMBARGO_SEC,
+    setCreds, saveCreds, loadCreds, clearCreds, hasCreds, tradingHost,
+    AuthError, NotFound, classify, tzOffset, api, calendar, sessionWindow,
+    fetchBars, fetchQuote, fetchQuotes, search, assets,
+    sessionKey, periodKeyFor, marketOpen, applyTick, reconcileAuctions, chunkSessions,
+    localDate, localMinutes, previousSessionClose, filterSession,
     decimalsFor, fmtPrice, fmtVolume,
   };
 })();
@@ -2775,6 +3018,11 @@ if (typeof module !== 'undefined' && module.exports) module.exports = DATA;
       if (cell.idx === state.active) refreshNewsIfOpen();
     } catch (e) {
       if (cell.loadToken !== token || cell.destroyed) return;
+      if (e instanceof DATA.AuthError) {
+        showState(cell, 'error', 'Data connection needed');
+        promptConnect(e.message).then(() => loadCell(cell, symbol, tf));
+        return;
+      }
       showState(cell, 'error', `${symbol}: ${e.message}`);
     }
   }
@@ -2821,6 +3069,12 @@ if (typeof module !== 'undefined' && module.exports) module.exports = DATA;
       cell.meta.previousClose = q.previousClose ?? cell.meta.previousClose;
       cell.meta.price = q.price;
 
+      // Outside trading hours the official closing auction is the last price,
+      // not IEX's final print — showing the latter made the header disagree
+      // with the candle it sits above.
+      const open = DATA.marketOpen(cell.meta, now);
+      const shown = open ? q.price : (cell.bars[cell.bars.length - 1]?.close ?? q.price);
+
       const res = DATA.applyTick(cell.bars, cell.meta, q.price, now);
       if (res) {
         if (res.isNew) {
@@ -2837,7 +3091,7 @@ if (typeof module !== 'undefined' && module.exports) module.exports = DATA;
         // and leave the forming bar to the cheap path.
         if (res.isNew) refreshIndicators(cell);
       }
-      renderPrice(cell, q.price, true);
+      renderPrice(cell, shown, open);
       renderRibbon(cell, now);
     }
     updateMarketState();
@@ -3237,7 +3491,7 @@ if (typeof module !== 'undefined' && module.exports) module.exports = DATA;
 
     group('Data');
     toggle('Include auction prints', state.reconcile,
-      "Yahoo's intraday feed omits the opening and closing auctions, so the first and last candle of each session disagree with other platforms. On, they are taken from the official daily bar.", v => {
+      "Intraday bars do not reliably start or end on the auction print. On, the first and last candle of each session take the official open and close from the daily bar.", v => {
         state.reconcile = v;
         state.cells.forEach(c => c.symbol && loadCell(c, c.symbol, c.tf));
       });
@@ -3251,6 +3505,27 @@ if (typeof module !== 'undefined' && module.exports) module.exports = DATA;
         state.dividendAdjusted = v;
         state.cells.forEach(c => c.symbol && loadCell(c, c.symbol, c.tf));
       });
+
+    group('Data connection');
+    const conn = document.createElement('div');
+    conn.className = 'empty';
+    conn.style.textAlign = 'left';
+    const cell0 = activeCell();
+    const prov = cell0?.meta?.provisionalCount || 0;
+    conn.innerHTML = `Connected to <b>Alpaca</b>${DATA.tradingHost().includes('paper') ? ' (paper keys)' : ''}.
+      History comes from the consolidated SIP feed; the most recent
+      ${Math.round(DATA.SIP_EMBARGO_SEC / 60)} minutes are embargoed on the free plan and are
+      filled from IEX instead${prov ? ` (${prov} bar${prov === 1 ? '' : 's'} right now)` : ''},
+      then replaced by SIP as they age.`;
+    body.append(conn);
+    const cr = document.createElement('div'); cr.className = 'setting';
+    const rekey = document.createElement('button');
+    rekey.className = 'btn'; rekey.textContent = 'Change keys';
+    rekey.addEventListener('click', () => { closePanels(); promptConnect().then(() => state.cells.forEach(c => c.symbol && loadCell(c, c.symbol, c.tf))); });
+    const forget = document.createElement('button');
+    forget.className = 'btn'; forget.textContent = 'Disconnect'; forget.style.color = 'var(--down)';
+    forget.addEventListener('click', () => { DATA.clearCreds(); location.reload(); });
+    cr.append(rekey, forget); body.append(cr);
 
     group('Profile');
     const info = document.createElement('div');
@@ -3320,7 +3595,7 @@ if (typeof module !== 'undefined' && module.exports) module.exports = DATA;
       const row = document.createElement('div');
       row.className = 'row';
       row.innerHTML = `<div class="row-main"><div class="row-sym">${esc(r.symbol)}</div>
-          <div class="row-name">${esc(r.name)} · ${DATA.fmtVolume(r.volume)}</div></div>
+          <div class="row-name">${esc(nameFor(r.symbol))} · ${DATA.fmtVolume(r.volume)}</div></div>
         <div class="row-right"><div class="row-px">${DATA.fmtPrice(r.price)}</div>
           <div class="row-chg ${r.changePct >= 0 ? 'up' : 'down'}">${r.changePct >= 0 ? '+' : ''}${r.changePct.toFixed(2)}%</div></div>`;
       row.addEventListener('click', () => loadCell(activeCell(), r.symbol, activeCell().tf));
@@ -3332,27 +3607,34 @@ if (typeof module !== 'undefined' && module.exports) module.exports = DATA;
   async function loadNews() {
     const cell = activeCell();
     const body = $('#news-body');
-    if (!cell?.symbol) { body.innerHTML = '<div class="empty">Load a symbol first.</div>'; return; }
     body.innerHTML = '<div class="empty"><div class="spinner" style="margin:0 auto 10px"></div>Fetching headlines</div>';
     try {
-      const url = `${DATA.YF}/v1/finance/search?q=${encodeURIComponent(cell.symbol)}&quotesCount=0&newsCount=20`;
-      const json = await DATA.getJSON(url, 10000);
+      // Scoped to the active chart when there is one, otherwise the market feed.
+      const sym = cell?.symbol && !cell.meta?.crypto ? DATA.classify(cell.symbol).symbol : '';
+      const url = `${DATA.DATA_HOST}/v1beta1/news?limit=25&sort=desc`
+        + (sym ? `&symbols=${encodeURIComponent(sym)}` : '');
+      const json = await DATA.api(url, { timeout: 12000 });
       const items = json?.news || [];
-      if (!items.length) { body.innerHTML = `<div class="empty">No recent headlines for ${esc(cell.symbol)}.</div>`; return; }
+      if (!items.length) {
+        body.innerHTML = `<div class="empty">No recent headlines${sym ? ' for ' + esc(sym) : ''}.</div>`;
+        return;
+      }
       body.textContent = '';
       const head = document.createElement('div');
       head.className = 'label ind-group-label';
-      head.textContent = cell.symbol;
+      head.textContent = sym || 'Market';
       body.append(head);
       for (const n of items) {
         const a = document.createElement('a');
         a.className = 'row'; a.style.textDecoration = 'none'; a.style.color = 'inherit';
-        a.href = safeUrl(n.link); a.target = '_blank'; a.rel = 'noopener noreferrer';
-        a.innerHTML = `<div class="row-main"><div style="font-size:12px;line-height:1.4">${esc(n.title)}</div>
-          <div class="row-name">${esc(n.publisher || '')} · ${timeAgo(n.providerPublishTime)}</div></div>`;
+        a.href = safeUrl(n.url); a.target = '_blank'; a.rel = 'noopener noreferrer';
+        const tickers = (n.symbols || []).slice(0, 4).join(' · ');
+        a.innerHTML = `<div class="row-main"><div style="font-size:12px;line-height:1.4">${esc(n.headline)}</div>
+          <div class="row-name">${esc(n.source || '')} · ${timeAgo(Date.parse(n.created_at) / 1000)}${tickers ? ' · ' + esc(tickers) : ''}</div></div>`;
         body.append(a);
       }
     } catch (e) {
+      if (e instanceof DATA.AuthError) return promptConnect(e.message);
       body.innerHTML = `<div class="empty">Could not load news: ${esc(e.message)}</div>`;
     }
   }
@@ -3479,6 +3761,49 @@ hline(1);`,
     loadCell(activeCell(), r.symbol, activeCell().tf);
   }
 
+  /* ══ Data connection ═════════════════════════════════════════════
+     Keys are held in this browser and sent straight to Alpaca; nothing
+     proxies them. The overlay reappears whenever Alpaca rejects them, so a
+     revoked key surfaces as a prompt rather than as empty charts.        */
+  let connectResolve = null;
+  function promptConnect(message = '') {
+    const el = $('#connect');
+    $('#connect-err').textContent = message;
+    if (message) {
+      $('#ap-key').value = '';
+      $('#ap-secret').value = '';
+    }
+    el.hidden = false;
+    setTimeout(() => $('#ap-key').focus(), 30);
+    return new Promise(res => { connectResolve = res; });
+  }
+
+  function wireConnect() {
+    $('#connect-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const key = $('#ap-key').value.trim();
+      const secret = $('#ap-secret').value.trim();
+      const paper = $('#ap-paper').checked;
+      const err = $('#connect-err');
+      if (!key || !secret) { err.textContent = 'Enter both the key ID and the secret.'; return; }
+      const btn = $('#ap-go');
+      btn.disabled = true; btn.textContent = 'Checking…'; err.textContent = '';
+      DATA.setCreds(key, secret, paper);
+      try {
+        await DATA.fetchQuotes(['AAPL']);          // cheapest possible probe
+        DATA.saveCreds(key, secret, paper);
+        $('#connect').hidden = true;
+        const done = connectResolve; connectResolve = null;
+        if (done) done(true);
+      } catch (e2) {
+        DATA.clearCreds();
+        err.textContent = e2 instanceof DATA.AuthError
+          ? 'Alpaca rejected those keys. Check you copied both in full.'
+          : `Could not reach Alpaca: ${e2.message}`;
+      } finally { btn.disabled = false; btn.textContent = 'Connect'; }
+    });
+  }
+
   /* ══ Lock screen ═════════════════════════════════════════════════
      A per-profile screen lock, not authentication. Passphrases are stored
      as a SHA-256 hash so the raw string is not sitting in localStorage, but
@@ -3544,6 +3869,18 @@ hline(1);`,
       });
     });
   }
+
+
+  /* Alpaca's snapshots return no company name, so resolve it from the asset
+     list the search panel already caches. Falls back to the ticker. */
+  let _names = null;
+  function primeNames() {
+    if (_names) return;
+    _names = new Map();
+    DATA.assets().then(list => { for (const a of list) _names.set(a.symbol, a.name); })
+      .catch(() => {});
+  }
+  const nameFor = sym => (_names && _names.get(sym)) || sym;
 
   /* ══ Utilities ═══════════════════════════════════════════════════ */
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c =>
@@ -3668,7 +4005,10 @@ hline(1);`,
       return;
     }
     await initLock();
+    wireConnect();
     wireChrome();
+    if (!DATA.loadCreds()) await promptConnect();
+    primeNames();
     watchlist = (STORE.get('watchlist', ['AAPL', 'NVDA', 'TSLA', 'SPY'])).map(s => typeof s === 'string' ? { symbol: s } : s);
     restoreLayout();
     startPolling();

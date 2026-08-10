@@ -15,12 +15,19 @@ fs.mkdirSync(OUT, { recursive: true });
 const driver = driverFile && driverFile !== '-' ? fs.readFileSync(path.join(ROOT, driverFile), 'utf8') : '';
 const settleMs = Number(settle) || 9000;
 
+// Optional credential seeding for end-to-end runs. Read from the environment
+// so keys never land in a file — __probe.html is gitignored regardless.
+const seed = (process.env.SHOT_ALPACA_KEY && process.env.SHOT_ALPACA_SECRET)
+  ? `try{localStorage.setItem('tc:alpaca',JSON.stringify({key:${JSON.stringify(process.env.SHOT_ALPACA_KEY)},secret:${JSON.stringify(process.env.SHOT_ALPACA_SECRET)},paper:true}))}catch(e){}`
+  : '';
+
 const probe = `<script>
 window.__err=[];
 addEventListener('error',e=>window.__err.push('ERROR: '+(e.message||e.error)+' @'+e.lineno));
 addEventListener('unhandledrejection',e=>window.__err.push('REJECT: '+(e.reason&&e.reason.message||e.reason)));
 const _ce=console.error;console.error=(...a)=>{window.__err.push('CONSOLE: '+a.map(String).join(' '));_ce(...a)};
 try{localStorage.clear()}catch(e){}
+${seed}
 const ev=t=>{if(t)t.dispatchEvent(new MouseEvent('click',{bubbles:true}))};
 const pickInd=n=>{const it=[...document.querySelectorAll('.ind-item')].find(x=>x.querySelector('.ind-item-name').textContent===n);
   if(it)ev(it); else window.__err.push('MISSING INDICATOR: '+n)};

@@ -51,6 +51,36 @@
   </div>
 </div>
 
+<!-- ═══ Connect ════════════════════════════════════════════════════
+     Keys live in this browser and are sent straight to Alpaca — no server
+     and no proxy sits in between. They are still a browser-side secret on a
+     public page, which is why this asks for paper keys. -->
+<div id="connect" hidden>
+  <div class="lock-card">
+    <svg class="lock-mark" viewBox="0 0 32 32" aria-hidden="true">
+      <rect x="8" y="11" width="4" height="13" fill="#2EBD85"/><rect x="9.2" y="7" width="1.6" height="19" fill="#2EBD85"/>
+      <rect x="19" y="8" width="4" height="11" fill="#F0616D"/><rect x="20.2" y="5" width="1.6" height="18" fill="#F0616D"/>
+    </svg>
+    <div class="lock-title">Connect your data</div>
+    <div class="lock-sub">Charts are drawn from Alpaca's market data. Paste an API key
+      pair to begin — a free account is enough.</div>
+    <form id="connect-form" autocomplete="off">
+      <input class="field" type="text" id="ap-key" placeholder="API key ID" spellcheck="false" autocomplete="off">
+      <input class="field" type="password" id="ap-secret" placeholder="API secret key" autocomplete="off">
+      <label class="connect-check"><input type="checkbox" id="ap-paper" checked> These are paper-trading keys</label>
+      <button class="btn btn-primary" type="submit" id="ap-go">Connect</button>
+    </form>
+    <div class="lock-err" id="connect-err"></div>
+    <div class="lock-alt">
+      Get keys at <a href="https://app.alpaca.markets/paper/dashboard/overview" target="_blank" rel="noopener noreferrer">app.alpaca.markets</a>
+      → Home → API Keys.
+      <div style="margin-top:8px">Your keys are stored in this browser only and go directly
+        to Alpaca. <b>Use paper keys.</b> Anything stored client-side on a public page should
+        never be able to move real money.</div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ Header ═════════════════════════════════════════════════════ -->
 <header id="header">
   <div class="brand">
