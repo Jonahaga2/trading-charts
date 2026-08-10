@@ -9,6 +9,8 @@
   <g id="i-plus"><path d="M8 3v10M3 8h10"/></g>
   <g id="i-fx"><path d="M2 11.5l3-5 3 3.5 2.5-6L14 8"/></g>
   <g id="i-check"><path d="M3.5 8.5l3 3 6-7"/></g>
+  <g id="i-expand"><path d="M6 2H2v4M10 2h4v4M6 14H2v-4M10 14h4v-4"/></g>
+  <g id="i-collapse"><path d="M2 6h4V2M14 6h-4V2M2 10h4v4M14 10h-4v4"/></g>
   <g id="i-l1"><rect x="2" y="3" width="12" height="10" rx="1"/></g>
   <g id="i-l2"><rect x="2" y="3" width="5.2" height="10" rx="1"/><rect x="8.8" y="3" width="5.2" height="10" rx="1"/></g>
   <g id="i-l2v"><rect x="2" y="3" width="12" height="4.2" rx="1"/><rect x="2" y="8.8" width="12" height="4.2" rx="1"/></g>
@@ -40,16 +42,29 @@
 
   <div class="sep"></div>
   <button class="btn" id="btn-search"><svg viewBox="0 0 16 16"><use href="#i-search"/></svg><span>Symbol</span><kbd>/</kbd></button>
-  <button class="btn" id="btn-sync" title="Put the active symbol on every chart"><svg viewBox="0 0 16 16"><use href="#i-sync"/></svg><span>Sync all</span></button>
+  <div class="menu-wrap">
+    <button class="btn" id="btn-sync" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 16 16"><use href="#i-sync"/></svg><span>Sync</span></button>
+    <div class="menu" id="sync-menu" role="menu" hidden>
+      <button role="menuitem" data-sync="settings">Settings &amp; indicators &rarr; every chart
+        <small>Puts every chart back on the interval, candle type, time zone and indicators set here. Use it after changing something inside a chart's own toolbar.</small></button>
+      <button role="menuitem" data-sync="symbol">Symbol &rarr; every chart
+        <small>Puts the active chart's ticker on all of them.</small></button>
+    </div>
+  </div>
   <button class="btn" id="btn-studies" title="Indicators on every chart"><svg viewBox="0 0 16 16"><use href="#i-fx"/></svg><span>Indicators</span><span class="count" id="studies-count" hidden></span></button>
 
   <div class="spacer"></div>
 
+  <button class="btn icon" id="btn-focus"     title="Borderless — just the charts (f)"><svg viewBox="0 0 16 16"><use href="#i-expand"/></svg></button>
   <button class="btn icon" id="btn-watchlist" title="Watchlist"><svg viewBox="0 0 16 16"><use href="#i-star"/></svg></button>
   <button class="btn icon" id="btn-screener"  title="Screener"><svg viewBox="0 0 16 16"><use href="#i-radar"/></svg></button>
   <button class="btn icon" id="btn-news"      title="News"><svg viewBox="0 0 16 16"><use href="#i-news"/></svg></button>
   <button class="btn icon" id="btn-settings"  title="Settings"><svg viewBox="0 0 16 16"><use href="#i-gear"/></svg></button>
 </header>
+
+<!-- The only thing left on screen in borderless mode. Faint until pointed at,
+     so it is a way out rather than more furniture. -->
+<button id="focus-exit" title="Leave borderless (esc)"><svg viewBox="0 0 16 16"><use href="#i-collapse"/></svg></button>
 
 <!-- ═══ Charts ═════════════════════════════════════════════════════ -->
 <main id="grid" data-layout="1"></main>

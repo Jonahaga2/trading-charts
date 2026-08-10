@@ -204,6 +204,48 @@ select.field { cursor: pointer; }
 .market-state[data-state="open"]  { color: var(--text); }
 @keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .45 } }
 
+/* ═══ Menu ═══════════════════════════════════════════════════════════ */
+.menu-wrap { position: relative; display: inline-flex; }
+.menu {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 50;
+  width: 300px; padding: 4px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-lg); box-shadow: var(--shadow);
+  animation: rise .14s var(--ease);
+}
+.menu button {
+  display: block; width: 100%; text-align: left;
+  padding: 8px 9px; background: none; border: 0; border-radius: var(--r);
+  color: var(--text); font: inherit; font-size: 12px; font-weight: 550; cursor: pointer;
+}
+.menu button:hover { background: var(--raised); }
+.menu small {
+  display: block; margin-top: 3px;
+  font-size: 11px; font-weight: 400; line-height: 1.45; color: var(--dim);
+}
+
+/* ═══ Borderless ═════════════════════════════════════════════════════
+   Everything this app draws gets out of the way — its header, the symbol
+   bars, and the hairlines between tiles — leaving the charts edge to edge.
+   The widget's own toolbar goes too, but that one is not CSS: it lives
+   inside the iframe, so app.js hides it through the config. */
+body[data-focus="1"] #header { display: none; }
+body[data-focus="1"] .cell-bar { display: none; }
+body[data-focus="1"] #grid { gap: 0; }
+body[data-focus="1"] #panel-layer { top: 0; }
+body[data-focus="1"] #focus-exit { display: grid; }
+
+#focus-exit {
+  display: none; position: fixed; top: 8px; right: 8px; z-index: 70;
+  width: 26px; height: 26px; place-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r);
+  color: var(--muted); cursor: pointer; opacity: .22;
+  transition: opacity .15s var(--ease);
+}
+#focus-exit:hover, #focus-exit:focus-visible, #focus-exit.hint { opacity: 1; color: var(--text); }
+#focus-exit.hint { transition: opacity .2s var(--ease); }
+#focus-exit svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
 /* ═══ Workspace ══════════════════════════════════════════════════════ */
 #grid {
   flex: 1; display: grid; gap: 1px; background: var(--line-soft); min-height: 0; min-width: 0;

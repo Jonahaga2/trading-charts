@@ -60,6 +60,7 @@
     hideTopToolbar: false,
     hideLegend: false,
     withVolume: true,
+    focus: false,
   };
 
   const STORE = {
@@ -217,7 +218,10 @@
       // In a grid the widget's own side rail and date-range footer eat most of
       // a small cell, so tiles get the chart and a single chart gets the lot.
       hide_side_toolbar: state.hideSideToolbar || n > 1,
-      hide_top_toolbar: state.hideTopToolbar,
+      // Borderless means the charts and nothing else, and nine copies of the
+      // widget's own toolbar is the largest thing left once this app's chrome
+      // is gone. The legend stays: that is the reading, not the furniture.
+      hide_top_toolbar: state.hideTopToolbar || state.focus,
       hide_legend: state.hideLegend,
       withdateranges: n === 1,
       details: false,
@@ -281,6 +285,14 @@
     applyTimer = setTimeout(() => { applyAll(); saveLayout(); }, ms);
   }
 
+  /* Rebuild every chart whether or not its configuration changed.
+     applyAll compares against what a chart was *built* with, which cannot see
+     a change made inside the widget's own toolbar — that happens in a
+     cross-origin frame and never reaches this side. So a chart switched to 5m
+     from its own toolbar still matches its signature and would be skipped.
+     This is the deliberate override that drags those back into line. */
+  const forceAll = () => { state.cells.forEach(mountWidget); saveLayout(); };
+
   function setSymbol(cell, input, opts = {}) {
     if (!cell) return;
     const sym = normalise(input);
@@ -333,6 +345,7 @@
       theme: state.theme, studies: state.studies,
       hideSideToolbar: state.hideSideToolbar, hideTopToolbar: state.hideTopToolbar,
       hideLegend: state.hideLegend, withVolume: state.withVolume,
+      focus: state.focus,
       symbols: state.cells.map(c => c.symbol),
     });
   }
@@ -353,9 +366,73 @@
     state.hideLegend = !!s.hideLegend;
     state.withVolume = s.withVolume !== false;
     state.active = s.active || 0;
+    state.focus = !!s.focus;
     document.body.dataset.theme = state.theme;
+    // Paint before the first mount, so a restored borderless session builds
+    // its charts without the toolbar rather than building then rebuilding.
+    // Fullscreen is not re-entered: it needs a gesture a page load cannot give.
+    paintFocus();
     setLayout(s.layout || '1', { symbols: s.symbols || [], skipSave: true });
   }
+
+  /* ══ Borderless ══════════════════════════════════════════════════
+     Hides everything this app draws — header, symbol bars, the hairlines
+     between tiles — and asks the browser for the screen, so what is left is
+     the charts. It also drops the widget's own toolbar, which is the one part
+     that is not free: that lives inside the iframe, so it costs a rebuild of
+     every chart on the way in and on the way out.
+
+     Real fullscreen needs a user gesture, which a click or a keypress
+     provides but a page load does not. So a restored session comes back
+     borderless without it, rather than silently failing. */
+  function paintFocus() {
+    if (state.focus) document.body.dataset.focus = '1';
+    else delete document.body.dataset.focus;
+    $('#btn-focus').classList.toggle('on', state.focus);
+  }
+
+  function setFocus(on) {
+    if (!!on === state.focus) return;
+    state.focus = !!on;
+    paintFocus();
+    if (state.focus) document.documentElement.requestFullscreen?.().catch(() => {});
+    else if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+
+    // The way out is a faint pill in the corner, which is right as a resting
+    // state and useless as a discovery one. Say it once, plainly, then let it
+    // recede.
+    if (state.focus) {
+      const x = $('#focus-exit');
+      x.classList.add('hint');
+      setTimeout(() => x.classList.remove('hint'), 2600);
+      toast('Borderless — esc or f to come back');
+    }
+    applyAll();
+    saveLayout();
+  }
+
+  /* ══ Sync ════════════════════════════════════════════════════════ */
+  function syncSymbol() {
+    const sym = activeCell()?.symbol;
+    if (!sym) return;
+    state.cells.forEach(c => setSymbol(c, sym, { silent: true }));
+    saveLayout();
+    toast(`Every chart on ${shortName(sym)}`);
+  }
+
+  function syncSettings() {
+    forceAll();
+    const tf = INTERVALS.find(i => i.id === state.interval)?.label || state.interval;
+    const n = state.cells.length;
+    toast(`${n} chart${n === 1 ? '' : 's'} back on ${tf}`
+      + (state.studies.length ? ` · ${state.studies.length} indicator${state.studies.length === 1 ? '' : 's'}` : ''));
+  }
+
+  const closeMenu = () => {
+    $('#sync-menu').hidden = true;
+    $('#btn-sync').setAttribute('aria-expanded', 'false');
+    $('#btn-sync').classList.remove('on');
+  };
 
   /* ══ Panels ══════════════════════════════════════════════════════ */
   function openPanel(id) {
@@ -591,7 +668,7 @@
       "TradingView's drawing tools down the left. Hidden in a grid regardless — there is no room.",
       v => { state.hideSideToolbar = !v; });
     toggle('Chart toolbar', () => !state.hideTopToolbar,
-      'The symbol, interval and indicator row along the top of each chart.',
+      'The interval and indicator row along the top of each chart. Borderless hides it regardless.',
       v => { state.hideTopToolbar = !v; });
     toggle('Legend', () => !state.hideLegend, 'OHLC and indicator readout in the top-left of each chart.',
       v => { state.hideLegend = !v; });
@@ -644,12 +721,30 @@
       if (b) setLayout(b.dataset.layout);
     });
     $('#btn-search').addEventListener('click', openSearch);
-    $('#btn-sync').addEventListener('click', () => {
-      const sym = activeCell()?.symbol;
-      if (!sym) return;
-      state.cells.forEach(c => setSymbol(c, sym, { silent: true }));
-      saveLayout();
-      toast(`All charts on ${shortName(sym)}`);
+
+    $('#btn-sync').addEventListener('click', e => {
+      e.stopPropagation();
+      const m = $('#sync-menu');
+      if (!m.hidden) return closeMenu();
+      m.hidden = false;
+      $('#btn-sync').setAttribute('aria-expanded', 'true');
+      $('#btn-sync').classList.add('on');
+    });
+    $('#sync-menu').addEventListener('click', e => {
+      const b = e.target.closest('[data-sync]');
+      if (!b) return;
+      closeMenu();
+      if (b.dataset.sync === 'symbol') syncSymbol(); else syncSettings();
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.menu-wrap')) closeMenu();
+    });
+
+    $('#btn-focus').addEventListener('click', () => setFocus(!state.focus));
+    $('#focus-exit').addEventListener('click', () => setFocus(false));
+    // F11 or the browser's own Escape leaves fullscreen without telling us.
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement && state.focus) setFocus(false);
     });
     $('#btn-studies').addEventListener('click', openStudies);
     $('#studies-filter').addEventListener('input', renderStudies);
@@ -689,12 +784,19 @@
 
     document.addEventListener('keydown', e => {
       const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName);
+      // Escape unwinds one layer at a time, innermost first, so it never drops
+      // out of borderless while a panel is still covering the charts.
       if (e.key === 'Escape') {
-        if ($('#search-overlay').classList.contains('open')) closeSearch(); else closePanels();
+        if ($('#search-overlay').classList.contains('open')) closeSearch();
+        else if (!$('#sync-menu').hidden) closeMenu();
+        else if ($$('.panel.open').length) closePanels();
+        else if (state.focus) setFocus(false);
         return;
       }
       if (typing) return;
       if (e.key === '/') { e.preventDefault(); openSearch(); }
+      else if (e.key.toLowerCase() === 'f') { setFocus(!state.focus); }
+      else if (e.key.toLowerCase() === 'r') { syncSettings(); }
       else if (/^[1-9]$/.test(e.key) && !e.metaKey && !e.ctrlKey) {
         // The digit is the number of charts, so 9 gives nine.
         const hit = LAYOUTS.find(l => l.key === e.key);

@@ -46,6 +46,24 @@ in `src/app.js`, so they do not get hopefully re-added later. Volume Profile
 and Average Day Range are among them — they are paid TradingView studies and
 never render in the free embed.
 
+**Charts can still drift.** TradingView's own toolbar sits on each chart, and
+an interval or indicator changed there happens inside a cross-origin frame —
+this app cannot see it, so that chart quietly stops matching the others.
+**Sync → Settings & indicators** (`r`) rebuilds every chart from the settings
+held here, which drags the strays back. The same menu holds the older
+symbol sync, which is the one thing deliberately *not* shared by default.
+
+## Borderless
+
+`f`, or the expand button. The header, the symbol bars, the hairlines between
+tiles and TradingView's per-chart toolbar all go, and the browser is asked for
+the screen — what is left is the charts, edge to edge. The legend stays, since
+that is the reading rather than the furniture. `esc` or `f` comes back, as
+does the faint pill in the corner.
+
+It is mostly a class on `<body>`, but not entirely free: the widget toolbar
+lives inside the iframe, so entering and leaving rebuilds the charts.
+
 ## Layout of the repo
 
 `index.html` is what GitHub Pages serves — one self-contained file, no runtime
@@ -163,7 +181,9 @@ that disagreed with the chart next to it.
 |---|---|
 | `/` | symbol search |
 | `1` `2` `3` `4` `6` `9` | grid layout — the digit is the number of charts |
+| `f` | borderless — just the charts |
 | `i` | indicators |
+| `r` | re-apply settings to every chart |
 | `w` | watchlist |
 | `s` | screener |
 | `n` | news |
