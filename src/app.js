@@ -29,8 +29,24 @@
   ];
 
   const DEFAULT_SYMBOLS = ['NASDAQ:AAPL', 'NASDAQ:NVDA', 'NASDAQ:TSLA',
-                           'AMEX:SPY', 'NASDAQ:MSFT', 'BINANCE:BTCUSDT'];
+                           'AMEX:SPY', 'NASDAQ:MSFT', 'BINANCE:BTCUSDT',
+                           'NASDAQ:AMD', 'NASDAQ:META', 'NASDAQ:QQQ'];
 
+  /* The grid table. `key` is the number key that selects it, so the shortcut
+     is the chart count rather than a button position — 9 gives nine charts.
+     Two layouts hold two charts, so only the first claims the key. */
+  const LAYOUTS = [
+    { id: '1',  n: 1, key: '1' },
+    { id: '2',  n: 2, key: '2' },
+    { id: '2v', n: 2, key: null },
+    { id: '3',  n: 3, key: '3' },
+    { id: '4',  n: 4, key: '4' },
+    { id: '6',  n: 6, key: '6' },
+    { id: '9',  n: 9, key: '9' },
+  ];
+  const LAYOUT_COUNT = Object.fromEntries(LAYOUTS.map(l => [l.id, l.n]));
+
+  /* Everything below `cells` is global on purpose: one control, every chart. */
   const state = {
     layout: '1',
     active: 0,
@@ -39,7 +55,10 @@
     style: '1',                  // 1 = candles
     theme: 'dark',
     timezone: 'America/New_York',
+    studies: [],
     hideSideToolbar: false,
+    hideTopToolbar: false,
+    hideLegend: false,
     withVolume: true,
   };
 
@@ -82,6 +101,58 @@
   }
   const shortName = sym => String(sym).split(':').pop();
 
+  /* ══ Indicators ══════════════════════════════════════════════════
+     The widget takes a `studies` array at construction, so an indicator
+     picked here lands on every chart at once — which is the only way to get
+     one onto nine charts without opening nine of them.
+
+     TradingView publishes no list of the ids their embed accepts, and a
+     wrong one fails silently: the chart loads, the study simply is not
+     there. So every id below was checked by mounting it on a live widget and
+     reading the legend back (2026-08-10). Ids that did nothing are recorded
+     at the bottom rather than dropped, so they do not get re-added later. */
+  const STUDIES = [
+    // — drawn on the price pane —
+    { id: 'MASimple@tv-basicstudies',       g: 'Overlay', name: 'Moving average',      sub: 'SMA' },
+    { id: 'MAExp@tv-basicstudies',          g: 'Overlay', name: 'Moving average exp.', sub: 'EMA' },
+    { id: 'VWAP@tv-basicstudies',           g: 'Overlay', name: 'VWAP',                sub: 'session anchored' },
+    { id: 'BB@tv-basicstudies',             g: 'Overlay', name: 'Bollinger Bands',     sub: '20, 2' },
+    { id: 'STD;Keltner_Channels',           g: 'Overlay', name: 'Keltner Channels',    sub: '20, 2' },
+    { id: 'STD;Donchian_Channels',          g: 'Overlay', name: 'Donchian Channels',   sub: '20' },
+    { id: 'STD;Supertrend',                 g: 'Overlay', name: 'Supertrend',          sub: '10, 3' },
+    { id: 'PSAR@tv-basicstudies',           g: 'Overlay', name: 'Parabolic SAR',       sub: '0.02, 0.2' },
+    { id: 'IchimokuCloud@tv-basicstudies',  g: 'Overlay', name: 'Ichimoku Cloud',      sub: '9, 26, 52' },
+    { id: 'PivotPointsStandard@tv-basicstudies', g: 'Overlay', name: 'Pivot Points',   sub: 'traditional' },
+    { id: 'LinearRegression@tv-basicstudies', g: 'Overlay', name: 'Linear Regression', sub: 'channel' },
+    { id: 'ZigZag@tv-basicstudies',         g: 'Overlay', name: 'Zig Zag',             sub: '5%, 10' },
+
+    // — each opens its own pane below the price —
+    { id: 'RSI@tv-basicstudies',            g: 'Oscillator', name: 'RSI',              sub: '14' },
+    { id: 'MACD@tv-basicstudies',           g: 'Oscillator', name: 'MACD',             sub: '12, 26, 9' },
+    { id: 'Stochastic@tv-basicstudies',     g: 'Oscillator', name: 'Stochastic',       sub: '14, 3, 3' },
+    { id: 'StochasticRSI@tv-basicstudies',  g: 'Oscillator', name: 'Stochastic RSI',   sub: '3, 3, 14, 14' },
+    { id: 'ATR@tv-basicstudies',            g: 'Oscillator', name: 'ATR',              sub: '14, RMA' },
+    { id: 'STD;DMI',                        g: 'Oscillator', name: 'ADX / DMI',        sub: 'ADX, +DI, −DI' },
+    { id: 'MF@tv-basicstudies',             g: 'Oscillator', name: 'Money Flow Index', sub: '14' },
+    { id: 'STD;Chaikin_Money_Flow',         g: 'Oscillator', name: 'Chaikin Money Flow', sub: '20' },
+    { id: 'OBV@tv-basicstudies',            g: 'Oscillator', name: 'On Balance Volume', sub: '' },
+    { id: 'CCI@tv-basicstudies',            g: 'Oscillator', name: 'CCI',              sub: '20' },
+    { id: 'WilliamR@tv-basicstudies',       g: 'Oscillator', name: 'Williams %R',      sub: '14' },
+    { id: 'AwesomeOscillator@tv-basicstudies', g: 'Oscillator', name: 'Awesome Oscillator', sub: '5, 34' },
+    { id: 'MOM@tv-basicstudies',            g: 'Oscillator', name: 'Momentum',         sub: '10' },
+    { id: 'ROC@tv-basicstudies',            g: 'Oscillator', name: 'Rate of Change',   sub: '9' },
+    { id: 'STD;Choppiness_Index',           g: 'Oscillator', name: 'Choppiness Index', sub: '14' },
+    { id: 'STD;Bollinger_Bands_Width',      g: 'Oscillator', name: 'Bollinger Width',  sub: '20, 2' },
+  ];
+  /* Checked and rejected — the widget accepted the id and drew nothing:
+     ParabolicSAR@…, ADX@…, KeltnerChannels@…, DonchianChannels@…,
+     RelativeVolumeAtTime@…, ADR@…, STD;ADX, STD;Average_Directional_Index,
+     STD;Average_Day_Range, STD;Relative_Volume_at_Time, STD;Vortex_Indicator,
+     STD;Volume_Weighted_Moving_Average, STD;Anchored_VWAP.
+     Volume Profile (STD;Session_Volume_Profile,
+     STD;Volume_Profile_Visible_Range) is a paid TradingView study and does
+     not render in the free embed. */
+
   /* ══ Chart cells ═════════════════════════════════════════════════
      The embed exposes no method to change a symbol after construction, so a
      change tears the widget down and builds a new one. That is a full iframe
@@ -117,13 +188,65 @@
     return cell;
   }
 
+  /* Pane colours have to follow the theme. Forcing the dark surface under
+     `theme: 'light'` is what made the light setting produce a dark chart in
+     a light frame. */
+  const CHART_SKIN = {
+    dark:  { bg: '#0B0E14', grid: '#151C28', text: '#7C8AA5', axis: '#212A3A' },
+    light: { bg: '#FFFFFF', grid: '#EDF0F5', text: '#5A6880', axis: '#D8DEE9' },
+  };
+
+  /* The complete widget configuration for a cell. Everything a chart shows
+     other than its symbol comes from global state, which is what lets one
+     control move all nine at once. Kept as a pure function so it doubles as
+     a change signature — see applyAll. */
+  function widgetConfig(cell) {
+    const n = state.cells.length;
+    const skin = CHART_SKIN[state.theme] || CHART_SKIN.dark;
+    return {
+      symbol: cell.symbol,
+      interval: state.interval,
+      autosize: true,
+      timezone: state.timezone,
+      theme: state.theme,
+      style: state.style,
+      locale: 'en',
+      toolbar_bg: skin.bg,
+      enable_publishing: false,
+      allow_symbol_change: false,   // this app owns the symbol, so it can save it
+      // In a grid the widget's own side rail and date-range footer eat most of
+      // a small cell, so tiles get the chart and a single chart gets the lot.
+      hide_side_toolbar: state.hideSideToolbar || n > 1,
+      hide_top_toolbar: state.hideTopToolbar,
+      hide_legend: state.hideLegend,
+      withdateranges: n === 1,
+      details: false,
+      // The widget already overlays volume on the price pane, so adding the
+      // study as well drew it twice. Only the hide flag is ours to set.
+      hide_volume: !state.withVolume,
+      studies: state.studies,
+      overrides: {
+        'paneProperties.background': skin.bg,
+        'paneProperties.backgroundType': 'solid',
+        'paneProperties.vertGridProperties.color': skin.grid,
+        'paneProperties.horzGridProperties.color': skin.grid,
+        'scalesProperties.textColor': skin.text,
+        'scalesProperties.lineColor': skin.axis,
+        'mainSeriesProperties.candleStyle.upColor': '#2EBD85',
+        'mainSeriesProperties.candleStyle.downColor': '#F0616D',
+        'mainSeriesProperties.candleStyle.borderUpColor': '#2EBD85',
+        'mainSeriesProperties.candleStyle.borderDownColor': '#F0616D',
+        'mainSeriesProperties.candleStyle.wickUpColor': '#2EBD85',
+        'mainSeriesProperties.candleStyle.wickDownColor': '#F0616D',
+      },
+    };
+  }
+
   let mountSeq = 0;
   function mountWidget(cell) {
     if (!window.TradingView) return;
-    // In a grid, the widget's own side rail and date-range footer eat most of
-    // a small cell. A single chart gets the full furniture; tiles get the
-    // chart. The Settings toggle can still force the drawing rail off.
-    const multi = state.cells.length > 1;
+    const cfg = widgetConfig(cell);
+    cell.sig = JSON.stringify(cfg);
     // Clearing first stops a stale chart flashing underneath the new one.
     cell.els.mount.innerHTML = '';
     const host = document.createElement('div');
@@ -133,42 +256,29 @@
     cell.els.hint.textContent = '';
 
     try {
-      cell.widget = new window.TradingView.widget({
-        container_id: host.id,
-        symbol: cell.symbol,
-        interval: state.interval,
-        autosize: true,
-        timezone: state.timezone,
-        theme: state.theme,
-        style: state.style,
-        locale: 'en',
-        toolbar_bg: '#0B0E14',
-        enable_publishing: false,
-        allow_symbol_change: false,   // this app owns the symbol, so it can save it
-        hide_side_toolbar: state.hideSideToolbar || multi,
-        withdateranges: !multi,
-        details: false,
-        // The widget already overlays volume on the price pane, so adding the
-        // study as well drew it twice. Only the hide flag is ours to set.
-        hide_volume: !state.withVolume,
-        overrides: {
-          'paneProperties.background': '#0B0E14',
-          'paneProperties.backgroundType': 'solid',
-          'paneProperties.vertGridProperties.color': '#151C28',
-          'paneProperties.horzGridProperties.color': '#151C28',
-          'scalesProperties.textColor': '#7C8AA5',
-          'scalesProperties.lineColor': '#212A3A',
-          'mainSeriesProperties.candleStyle.upColor': '#2EBD85',
-          'mainSeriesProperties.candleStyle.downColor': '#F0616D',
-          'mainSeriesProperties.candleStyle.borderUpColor': '#2EBD85',
-          'mainSeriesProperties.candleStyle.borderDownColor': '#F0616D',
-          'mainSeriesProperties.candleStyle.wickUpColor': '#2EBD85',
-          'mainSeriesProperties.candleStyle.wickDownColor': '#F0616D',
-        },
-      });
+      cell.widget = new window.TradingView.widget({ container_id: host.id, ...cfg });
     } catch {
       cell.els.hint.textContent = 'chart failed to load';
+      cell.sig = '';                                    // force a retry next time
     }
+  }
+
+  /* Every global change funnels through here. Because the configuration is a
+     pure function of state, comparing it against what a cell was built with
+     says exactly which charts need rebuilding — so switching theme rebuilds
+     nine, and switching layout rebuilds only the ones whose furniture
+     changed. */
+  const applyAll = () => state.cells.forEach(c => {
+    if (JSON.stringify(widgetConfig(c)) !== c.sig) mountWidget(c);
+  });
+
+  /* A rebuild is a full iframe load, and nine of them is not free. Toggling
+     four indicators in a row should cost one rebuild, not four, so settings
+     changes coalesce. */
+  let applyTimer = null;
+  function applySoon(ms = 320) {
+    clearTimeout(applyTimer);
+    applyTimer = setTimeout(() => { applyAll(); saveLayout(); }, ms);
   }
 
   function setSymbol(cell, input, opts = {}) {
@@ -189,8 +299,6 @@
   }
 
   /* ══ Layout ══════════════════════════════════════════════════════ */
-  const LAYOUT_COUNT = { '1': 1, '2': 2, '2v': 2, '3': 3, '4': 4, '6': 6 };
-
   function setLayout(id, opts = {}) {
     const want = LAYOUT_COUNT[id] || 1;
     const grid = $('#grid');
@@ -198,7 +306,6 @@
     grid.dataset.layout = id;
     $$('#layouts .btn').forEach(b => b.classList.toggle('on', b.dataset.layout === id));
 
-    const before = state.cells.length;
     while (state.cells.length > want) destroyCell(state.cells.pop());
     while (state.cells.length < want) {
       const cell = createCell(state.cells.length, (opts.symbols || [])[state.cells.length]);
@@ -207,10 +314,8 @@
     }
     state.cells.forEach((c, i) => { c.idx = i; c.el.dataset.idx = i; });
     // Mount only once every cell exists, so each widget knows whether it is
-    // alone or in a grid. Crossing the 1-vs-many line changes the furniture,
-    // so those widgets have to be rebuilt too.
-    const crossed = (before <= 1) !== (want <= 1);
-    state.cells.forEach(c => { if (!c.widget || crossed) mountWidget(c); });
+    // alone or in a grid before it decides what furniture to draw.
+    applyAll();
     setActive(Math.min(state.active, state.cells.length - 1));
     if (!opts.skipSave) saveLayout();
   }
@@ -220,13 +325,14 @@
     state.cells.forEach((c, j) => c.el.classList.toggle('active', j === state.active));
   }
   const activeCell = () => state.cells[state.active];
-  const remountAll = () => { state.cells.forEach(mountWidget); saveLayout(); };
 
   function saveLayout() {
     STORE.set('layout', {
       layout: state.layout, active: state.active,
       interval: state.interval, style: state.style, timezone: state.timezone,
-      hideSideToolbar: state.hideSideToolbar, withVolume: state.withVolume,
+      theme: state.theme, studies: state.studies,
+      hideSideToolbar: state.hideSideToolbar, hideTopToolbar: state.hideTopToolbar,
+      hideLegend: state.hideLegend, withVolume: state.withVolume,
       symbols: state.cells.map(c => c.symbol),
     });
   }
@@ -237,9 +343,17 @@
     state.interval = s.interval || '15';
     state.style = s.style || '1';
     state.timezone = s.timezone || 'America/New_York';
+    state.theme = s.theme === 'light' ? 'light' : 'dark';
+    // Drop anything no longer in the table, so an id that stops working can be
+    // retired without stranding a saved workspace on a chart that never draws.
+    const known = new Set(STUDIES.map(x => x.id));
+    state.studies = (Array.isArray(s.studies) ? s.studies : []).filter(x => known.has(x));
     state.hideSideToolbar = !!s.hideSideToolbar;
+    state.hideTopToolbar = !!s.hideTopToolbar;
+    state.hideLegend = !!s.hideLegend;
     state.withVolume = s.withVolume !== false;
     state.active = s.active || 0;
+    document.body.dataset.theme = state.theme;
     setLayout(s.layout || '1', { symbols: s.symbols || [], skipSave: true });
   }
 
@@ -320,6 +434,52 @@
     STORE.set('watchlist', watchlist);
     renderWatchlist();
     toast(`${shortName(sym)} added`);
+  }
+
+  /* — indicators, applied to every chart at once — */
+  function paintStudiesCount() {
+    const el = $('#studies-count');
+    el.textContent = String(state.studies.length);
+    el.hidden = !state.studies.length;
+    $('#btn-studies').classList.toggle('on', state.studies.length > 0);
+  }
+
+  function openStudies() {
+    if (!openPanel('panel-studies')) return;
+    $('#studies-filter').value = '';
+    renderStudies();
+  }
+
+  function renderStudies() {
+    const body = $('#studies-body');
+    const q = $('#studies-filter').value.trim().toLowerCase();
+    const hits = STUDIES.filter(s => !q || `${s.name} ${s.sub} ${s.g}`.toLowerCase().includes(q));
+    body.textContent = '';
+    if (!hits.length) { body.innerHTML = '<div class="empty">Nothing matches.</div>'; return; }
+
+    let group = null;
+    for (const s of hits) {
+      if (s.g !== group) {
+        group = s.g;
+        const h = document.createElement('div');
+        h.className = 'label group-label';
+        h.textContent = group === 'Overlay' ? 'On the price' : 'Own pane';
+        body.append(h);
+      }
+      const row = document.createElement('div');
+      row.className = 'row' + (state.studies.includes(s.id) ? ' on' : '');
+      row.innerHTML = `<div class="row-tick"><svg viewBox="0 0 16 16"><use href="#i-check"/></svg></div>
+        <div class="row-main"><div class="row-sym">${esc(s.name)}</div>
+          ${s.sub ? `<div class="row-name">${esc(s.sub)}</div>` : ''}</div>`;
+      row.addEventListener('click', () => {
+        const i = state.studies.indexOf(s.id);
+        if (i >= 0) state.studies.splice(i, 1); else state.studies.push(s.id);
+        row.classList.toggle('on', i < 0);
+        paintStudiesCount();
+        applySoon();
+      });
+      body.append(row);
+    }
   }
 
   /* ══ Symbol search ═══════════════════════════════════════════════
@@ -404,28 +564,46 @@
       s.addEventListener('change', () => onChange(s.value));
       row.append(l, s); body.append(row);
     };
-    const toggle = (label, value, hint, onChange) => {
+    // Repaints only its own button, so the panel does not rebuild and lose
+    // scroll position every time a switch is flipped.
+    const toggle = (label, get, hint, set) => {
       const row = document.createElement('div'); row.className = 'setting';
       const l = document.createElement('label');
       l.innerHTML = `${esc(label)}${hint ? `<div style="font-size:11px;color:var(--dim)">${esc(hint)}</div>` : ''}`;
       const b = document.createElement('button');
-      b.className = 'btn' + (value ? ' on' : ''); b.textContent = value ? 'On' : 'Off';
-      b.addEventListener('click', () => { onChange(!value); openSettings(); });
+      const paint = () => { const v = get(); b.className = 'btn' + (v ? ' on' : ''); b.textContent = v ? 'On' : 'Off'; };
+      b.addEventListener('click', () => { set(!get()); paint(); applySoon(0); });
+      paint();
       row.append(l, b); body.append(row);
     };
 
-    group('Charts');
+    group(`Every chart · ${state.cells.length} on screen`);
     select('Interval', state.interval, INTERVALS.map(i => ({ id: i.id, name: i.label })),
-      v => { state.interval = v; remountAll(); });
-    select('Candle type', state.style, STYLES, v => { state.style = v; remountAll(); });
+      v => { state.interval = v; applySoon(0); });
+    select('Candle type', state.style, STYLES, v => { state.style = v; applySoon(0); });
     select('Time zone', state.timezone, ZONES.map(z => ({ id: z, name: z.replace(/_/g, ' ') })),
-      v => { state.timezone = v; remountAll(); });
+      v => { state.timezone = v; applySoon(0); });
     select('Theme', state.theme, [{ id: 'dark', name: 'Dark' }, { id: 'light', name: 'Light' }],
-      v => { state.theme = v; document.body.dataset.theme = v; remountAll(); });
-    toggle('Volume', state.withVolume, 'Show the volume study on every chart.',
-      v => { state.withVolume = v; remountAll(); });
-    toggle('Drawing toolbar', !state.hideSideToolbar, "TradingView's drawing tools down the left of each chart.",
-      v => { state.hideSideToolbar = !v; remountAll(); });
+      v => { state.theme = v; document.body.dataset.theme = v; applySoon(0); });
+    toggle('Volume', () => state.withVolume, 'Volume bars under the price on every chart.',
+      v => { state.withVolume = v; });
+    toggle('Drawing toolbar', () => !state.hideSideToolbar,
+      "TradingView's drawing tools down the left. Hidden in a grid regardless — there is no room.",
+      v => { state.hideSideToolbar = !v; });
+    toggle('Chart toolbar', () => !state.hideTopToolbar,
+      'The symbol, interval and indicator row along the top of each chart.',
+      v => { state.hideTopToolbar = !v; });
+    toggle('Legend', () => !state.hideLegend, 'OHLC and indicator readout in the top-left of each chart.',
+      v => { state.hideLegend = !v; });
+
+    const fx = document.createElement('div'); fx.className = 'setting';
+    const fl = document.createElement('label');
+    fl.innerHTML = 'Indicators<div style="font-size:11px;color:var(--dim)">'
+      + `${state.studies.length || 'None'} drawn on every chart.</div>`;
+    const fb = document.createElement('button');
+    fb.className = 'btn'; fb.textContent = 'Choose';
+    fb.addEventListener('click', openStudies);
+    fx.append(fl, fb); body.append(fx);
 
     group('About the data');
     const note = document.createElement('div');
@@ -473,6 +651,13 @@
       saveLayout();
       toast(`All charts on ${shortName(sym)}`);
     });
+    $('#btn-studies').addEventListener('click', openStudies);
+    $('#studies-filter').addEventListener('input', renderStudies);
+    $('#studies-clear').addEventListener('click', () => {
+      if (!state.studies.length) return;
+      state.studies.length = 0;
+      renderStudies(); paintStudiesCount(); applySoon(0);
+    });
     $('#btn-watchlist').addEventListener('click', () => { if (openPanel('panel-watchlist')) renderWatchlist(); });
     $('#btn-screener').addEventListener('click', () => { if (openPanel('panel-screener')) mountEmbed($('#screener-body'), 'screener', screenerConfig()); });
     $('#btn-news').addEventListener('click', () => { if (openPanel('panel-news')) mountEmbed($('#news-body'), 'timeline', newsConfig()); });
@@ -510,9 +695,12 @@
       }
       if (typing) return;
       if (e.key === '/') { e.preventDefault(); openSearch(); }
-      else if (e.key >= '1' && e.key <= '6' && !e.metaKey && !e.ctrlKey) {
-        setLayout(['1', '2', '2v', '3', '4', '6'][+e.key - 1]);
-      } else if (e.key.toLowerCase() === 'w') { if (openPanel('panel-watchlist')) renderWatchlist(); }
+      else if (/^[1-9]$/.test(e.key) && !e.metaKey && !e.ctrlKey) {
+        // The digit is the number of charts, so 9 gives nine.
+        const hit = LAYOUTS.find(l => l.key === e.key);
+        if (hit) setLayout(hit.id);
+      } else if (e.key.toLowerCase() === 'i') { openStudies(); }
+      else if (e.key.toLowerCase() === 'w') { if (openPanel('panel-watchlist')) renderWatchlist(); }
       else if (e.key.toLowerCase() === 's') { if (openPanel('panel-screener')) mountEmbed($('#screener-body'), 'screener', screenerConfig()); }
       else if (e.key.toLowerCase() === 'n') { if (openPanel('panel-news')) mountEmbed($('#news-body'), 'timeline', newsConfig()); }
     });
@@ -530,6 +718,7 @@
     watchlist = STORE.get('watchlist', ['NASDAQ:AAPL', 'NASDAQ:NVDA', 'NASDAQ:TSLA', 'AMEX:SPY']);
     wire();
     restoreLayout();
+    paintStudiesCount();
   }
 
   if (document.readyState === 'loading') window.addEventListener('DOMContentLoaded', boot);

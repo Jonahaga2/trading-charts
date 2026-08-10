@@ -60,6 +60,25 @@
   --strip-h:  26px;
 }
 
+/* The light skin re-points the same tokens, so nothing downstream needs to
+   know which theme is on. It exists because the Theme setting drives the
+   TradingView widgets too — a light chart in a blue-black frame reads as a
+   bug, not a choice. */
+body[data-theme="light"] {
+  --bg:        #FFFFFF;
+  --surface:   #F5F7FA;
+  --raised:    #E8EDF4;
+  --hover:     #DCE3EC;
+  --line:      #D8DEE9;
+  --line-soft: #E6EAF1;
+  --text:      #10151F;
+  --muted:     #5A6880;
+  --dim:       #8A96AC;
+  --accent:    #B5811A;
+  --accent-soft: rgba(181, 129, 26, .12);
+  --shadow: 0 12px 32px -8px rgba(16, 21, 31, .18), 0 0 0 1px var(--line);
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* The `hidden` attribute only sets display:none in the UA sheet, so any
@@ -196,6 +215,7 @@ select.field { cursor: pointer; }
 #grid[data-layout="3"] .cell:first-child { grid-row: span 2; }
 #grid[data-layout="4"] { grid-template: 1fr 1fr / 1fr 1fr; }
 #grid[data-layout="6"] { grid-template: 1fr 1fr / repeat(3, 1fr); }
+#grid[data-layout="9"] { grid-template: repeat(3, 1fr) / repeat(3, 1fr); }
 
 /* ═══ Chart cell ═════════════════════════════════════════════════════ */
 .cell {
@@ -214,6 +234,12 @@ select.field { cursor: pointer; }
 }
 .cell-bar .spacer { flex: 1; }
 .cell-hint { font-size: 11px; color: var(--dim); }
+/* Nine tiles on a 1080p screen leaves each one about 460x300. The bar has to
+   give some of that back, or the chart is mostly furniture. */
+#grid[data-layout="6"] .cell-bar,
+#grid[data-layout="9"] .cell-bar { height: 26px; padding: 0 4px 0 6px; }
+#grid[data-layout="9"] .sym-input { width: 74px; height: 21px; font-size: 12px; }
+#grid[data-layout="9"] .cell-bar .btn.icon { width: 22px; height: 22px; }
 .cell-chart { flex: 1; min-height: 0; position: relative; }
 .chart-mount { position: absolute; inset: 0; }
 /* The widget paints its own background; this stops a white flash while the
@@ -277,6 +303,30 @@ select.field { cursor: pointer; }
 .panel-title { font-size: 12px; font-weight: 650; letter-spacing: -.01em; flex: 1; }
 .panel-body { flex: 1; overflow-y: auto; overscroll-behavior: contain; }
 .panel-foot { flex: none; padding: 8px 10px; border-top: 1px solid var(--line); display: flex; gap: 6px; }
+.panel-sub { flex: none; padding: 8px 10px; border-bottom: 1px solid var(--line-soft); display: flex; gap: 6px; }
+.panel-note {
+  flex: none; padding: 8px 14px; font-size: 11px; line-height: 1.5;
+  color: var(--muted); background: var(--accent-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+.panel-note b { color: var(--accent); font-weight: 650; }
+
+/* Count badge on the Indicators button — how many are live on every chart. */
+.btn .count {
+  min-width: 16px; height: 16px; padding: 0 4px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent); color: #17130A; border-radius: 8px;
+  font-family: var(--mono); font-size: 10px; font-weight: 700;
+}
+
+/* — indicator rows: a tick column that does not reflow when it fills in — */
+.row-tick {
+  width: 16px; height: 16px; flex: none; display: grid; place-items: center;
+  color: var(--accent); opacity: 0;
+}
+.row.on .row-tick { opacity: 1; }
+.row.on .row-sym { color: var(--accent); }
+.row-tick svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
 .tabs { display: flex; gap: 1px; padding: 6px 10px; border-bottom: 1px solid var(--line-soft); }
 .tab {
@@ -310,6 +360,15 @@ select.field { cursor: pointer; }
 .empty {
   padding: 32px 20px; text-align: center; color: var(--dim); font-size: 12px; line-height: 1.6;
 }
+
+/* — settings rows: label left, control right, on one baseline — */
+.setting {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 8px 12px; border-bottom: 1px solid var(--line-soft);
+}
+.setting > label { font-size: 12px; color: var(--text); flex: 1; min-width: 0; }
+.setting > .btn { flex: none; min-width: 46px; justify-content: center; }
+.setting select.field { flex: none; }
 
 /* ═══ Search overlay ═════════════════════════════════════════════════ */
 #search-overlay {

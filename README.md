@@ -1,8 +1,9 @@
 # Trading Charts
 
-A multi-chart workspace built on TradingView's own charts. Up to six live
-charts side by side, a watchlist that drives them, symbol search, the
-TradingView screener and news, saved layouts and keyboard control.
+A multi-chart workspace built on TradingView's own charts. Up to **nine** live
+charts side by side, one set of controls that drives all of them, a watchlist,
+symbol search, the TradingView screener and news, saved layouts and keyboard
+control.
 
 **→ [jonahaga2.github.io/trading-charts](https://jonahaga2.github.io/trading-charts/)**
 
@@ -17,7 +18,33 @@ The charts, the candles, the indicator library and the drawing tools are
 license. This project does not fetch, store or redistribute any market data.
 
 What it adds is the part their free embed does not give you: **several charts
-at once**, a workspace around them, and somewhere to keep it.
+at once**, **one control that changes all of them**, a workspace around them,
+and somewhere to keep it.
+
+## Driving nine charts from one place
+
+Everything except a chart's symbol is global. Interval, candle type, time
+zone, theme, volume, the toolbars, the legend and the indicator set are picked
+once and land on every chart on screen — which is the only practical way to
+put VWAP on nine charts, since doing it inside the widget means doing it nine
+times.
+
+Indicators live behind the **Indicators** button (`i`). TradingView publishes
+no list of the study ids their embed accepts, and a wrong id fails *silently* —
+the chart loads and the study simply is not there. So every id in the picker
+was verified by mounting it on a live widget and reading the legend back;
+`tools/study-probe.html` is how, and re-running it is how to check the list
+still holds:
+
+```bash
+npm run serve
+node tools/cdp-shot.mjs "http://localhost:8099/tools/study-probe.html?s=ID1,ID2,..." out.png 30000
+```
+
+Ids that were checked and drew nothing are listed in a comment beside the table
+in `src/app.js`, so they do not get hopefully re-added later. Volume Profile
+and Average Day Range are among them — they are paid TradingView studies and
+never render in the free embed.
 
 ## Layout of the repo
 
@@ -53,9 +80,20 @@ fast-forwards timers, which starves the WebSocket the widget streams its
 candles over: the chrome renders and the chart stays empty. That looks exactly
 like a broken build and is not one, so verification goes through CDP instead.
 
-`tools/shoot.mjs` is the faster structural check — it reports console errors,
-how many widgets mounted and what symbol, interval and theme each one was
-handed, without waiting for pixels.
+`tools/shoot.mjs` is the faster structural check — it decodes the configuration
+each widget was handed out of its iframe URL and prints it, without waiting for
+pixels. That is the only way to prove a setting reached all nine charts, since
+nothing inside a cross-origin frame can be read back:
+
+```bash
+node tools/shoot.mjs nine 1600 1000 tools/drivers/nine-studies.js 9000
+#  nine  errors:0  cells:9 iframes:9
+#    widget: NASDAQ:AAPL@15/dark/1 side:1 top:0 legend:0 hidevol:0 studies[2]:VWAP…,RSI…
+```
+
+Two things to know when reading that output: **tv.js drops every false flag**,
+so an absent key means *off*, not *ignored*; and it joins studies into one
+string with a unit separator rather than passing an array.
 
 ## Behaviour worth knowing
 
@@ -64,15 +102,23 @@ handed, without waiting for pixels.
   rebuilding the widget. In-widget symbol changing is turned off so that the
   symbol shown is always the symbol saved.
 - **Interval, indicators and drawings changed *inside* a chart belong to
-  TradingView** and are not part of the saved layout. Symbols set from here
-  are, along with the grid, the default interval, candle type, time zone and
-  theme.
+  TradingView** and are not part of the saved layout. Everything set from this
+  app is saved: symbols, the grid, interval, candle type, time zone, theme,
+  the indicator set and the toolbar switches.
+- **A change to a global setting rebuilds the charts it affects.** The embed
+  has no method to change anything after construction, so applying a setting
+  means building a new iframe. The configuration is a pure function of state
+  and is compared against what each chart was built with, so only the charts
+  that actually differ are rebuilt — and rapid changes (toggling four
+  indicators) coalesce into one rebuild rather than four.
 - **A grid gets leaner furniture.** With more than one chart the widget's side
   rail and date-range footer are dropped, because in a tile they take more room
-  than the chart. A single chart gets everything.
-- **Six charts means six TradingView apps.** They are real iframes, each
-  opening its own data connection; four or six take a few seconds to settle and
-  are noticeably heavier than one.
+  than the chart. A single chart gets everything. In a dense grid the chart
+  toolbar and legend are worth turning off too — both are switches in Settings.
+- **Nine charts means nine TradingView apps.** They are real iframes, each
+  opening its own data connection. Measured here, all nine frames load within
+  ~1.3s of switching layout; the candles stream in after that, so the grid
+  takes a few seconds more to fill and is noticeably heavier than one chart.
 
 ## The data
 
@@ -116,7 +162,8 @@ that disagreed with the chart next to it.
 | key | action |
 |---|---|
 | `/` | symbol search |
-| `1`–`6` | grid layout |
+| `1` `2` `3` `4` `6` `9` | grid layout — the digit is the number of charts |
+| `i` | indicators |
 | `w` | watchlist |
 | `s` | screener |
 | `n` | news |

@@ -1,0 +1,28 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>study id probe</title>
+<style>
+  body { margin:0; background:#0B0E14; color:#DFE6F1; font:12px system-ui; }
+  #g { display:grid; grid-template:repeat(3,1fr)/repeat(3,1fr); gap:2px; height:100vh; }
+  .c { display:flex; flex-direction:column; min-height:0; background:#0B0E14; }
+  .t { flex:none; padding:3px 6px; background:#1A2130; font-weight:700; font-size:14px; }
+  .m { flex:1; min-height:0; }
+</style>
+<div id="g"></div>
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+  const ids = (new URLSearchParams(location.search).get('s') || '').split(',').filter(Boolean);
+  const g = document.getElementById('g');
+  ids.forEach((id, i) => {
+    const c = document.createElement('div'); c.className = 'c';
+    const t = document.createElement('div'); t.className = 't'; t.textContent = id;
+    const m = document.createElement('div'); m.className = 'm'; m.id = 'm' + i;
+    c.append(t, m); g.append(c);
+    new TradingView.widget({
+      container_id: m.id, symbol: 'NASDAQ:AAPL', interval: '15', autosize: true,
+      timezone: 'America/New_York', theme: 'dark', style: '1', locale: 'en',
+      hide_side_toolbar: true, hide_top_toolbar: true, allow_symbol_change: false,
+      studies: [id],
+    });
+  });
+</script>
