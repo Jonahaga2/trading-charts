@@ -41,10 +41,6 @@
   --accent:    #E8B34A;
   --accent-soft: rgba(232, 179, 74, .13);
 
-  /* session ribbon segments */
-  --pre:       #4B7BE5;
-  --post:      #9B6BD6;
-
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI",
           system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", "Roboto Mono",
@@ -56,8 +52,6 @@
   --shadow: 0 12px 32px -8px rgba(0, 0, 0, .7), 0 0 0 1px var(--line);
 
   --header-h: 46px;
-  --rail-w:   44px;
-  --strip-h:  26px;
 }
 
 /* The light skin re-points the same tokens, so nothing downstream needs to
@@ -97,14 +91,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 body { display: flex; flex-direction: column; }
-
-/* Every number in the app. Tabular figures are the whole point. */
-.num, .price, input[type="number"] {
-  font-family: var(--mono);
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1, "zero" 1;
-  letter-spacing: -.01em;
-}
 
 /* Small caps labelling, used for anything that names a control or a field. */
 .label {
@@ -147,11 +133,6 @@ body { display: flex; flex-direction: column; }
 .btn.icon { width: 28px; padding: 0; justify-content: center; }
 .btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.btn-primary {
-  background: var(--accent); color: #17130A; border-color: var(--accent); font-weight: 600;
-}
-.btn-primary:hover { background: #F2C264; color: #17130A; }
-
 .field {
   height: 28px; padding: 0 8px;
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--r);
@@ -187,22 +168,6 @@ select.field { cursor: pointer; }
 .layouts .btn svg { width: 13px; height: 13px; stroke-width: 1.4; }
 
 #header .spacer { flex: 1; }
-
-/* Market state pill: the only place the accent appears in the header. */
-.market-state {
-  display: flex; align-items: center; gap: 7px;
-  height: 26px; padding: 0 10px;
-  background: var(--bg); border: 1px solid var(--line); border-radius: 13px;
-  font-size: 11px; font-weight: 550; color: var(--muted);
-}
-.market-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--dim); flex: none;
-}
-.market-state[data-state="open"]  .market-dot { background: var(--up); box-shadow: 0 0 0 3px var(--up-soft); animation: pulse 2.4s var(--ease) infinite; }
-.market-state[data-state="pre"]   .market-dot { background: var(--pre); box-shadow: 0 0 0 3px rgba(75,123,229,.16); }
-.market-state[data-state="post"]  .market-dot { background: var(--post); box-shadow: 0 0 0 3px rgba(155,107,214,.16); }
-.market-state[data-state="open"]  { color: var(--text); }
-@keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .45 } }
 
 /* ═══ Menu ═══════════════════════════════════════════════════════════ */
 .menu-wrap { position: relative; display: inline-flex; }
@@ -299,25 +264,26 @@ body[data-focus="1"] #focus-exit { display: grid; }
 .sym-input:hover { background: var(--raised); }
 .sym-input:focus { outline: none; background: var(--bg); border-color: var(--accent); }
 
-
-
-.last-price {
-  font-family: var(--mono); font-variant-numeric: tabular-nums;
-  font-size: 13px; font-weight: 600; letter-spacing: -.02em;
-  padding: 2px 6px; border-radius: 4px;
-  transition: background .35s var(--ease);
+/* Per-chart interval. The native arrow is dropped: at nine tiles the row has
+   no width to spare, and the value itself is the affordance. */
+.tf-select {
+  height: 22px; padding: 0 5px; flex: none;
+  background: transparent; border: 1px solid transparent; border-radius: 4px;
+  color: var(--muted); font: inherit; font-size: 11px; font-weight: 650;
+  cursor: pointer; appearance: none; -webkit-appearance: none; text-align: center;
 }
-.last-price.up { color: var(--up); }
-.last-price.down { color: var(--down); }
-.last-price.flash-up { background: var(--up-soft); transition: background 0s; }
-.last-price.flash-down { background: var(--down-soft); transition: background 0s; }
+.tf-select:hover { background: var(--raised); color: var(--text); }
+.tf-select:focus { outline: none; border-color: var(--accent); color: var(--text); }
+.tf-select option { background: var(--surface); color: var(--text); font-weight: 500; }
 
-.chg-badge {
-  font-family: var(--mono); font-variant-numeric: tabular-nums;
-  font-size: 11px; font-weight: 600; padding: 2px 5px; border-radius: 4px;
+/* Colour wells in Settings. */
+.setting input[type="color"] {
+  width: 44px; height: 24px; padding: 2px; flex: none;
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--r);
+  cursor: pointer;
 }
-.chg-badge.up { color: var(--up); background: var(--up-soft); }
-.chg-badge.down { color: var(--down); background: var(--down-soft); }
+.setting input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+.setting input[type="color"]::-webkit-color-swatch { border: none; border-radius: 3px; }
 
 /* ═══ Panels ═════════════════════════════════════════════════════════ */
 #panel-layer {
@@ -370,14 +336,6 @@ body[data-focus="1"] #focus-exit { display: grid; }
 .row.on .row-sym { color: var(--accent); }
 .row-tick svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-.tabs { display: flex; gap: 1px; padding: 6px 10px; border-bottom: 1px solid var(--line-soft); }
-.tab {
-  flex: 1; height: 25px; background: transparent; border: none; border-radius: 4px;
-  color: var(--muted); font: inherit; font-size: 11px; font-weight: 600; cursor: pointer;
-}
-.tab:hover { background: var(--raised); color: var(--text); }
-.tab.on { background: var(--raised); color: var(--accent); }
-
 .row {
   display: flex; align-items: center; gap: 8px; padding: 7px 12px;
   border-bottom: 1px solid var(--line-soft); cursor: pointer;
@@ -388,9 +346,6 @@ body[data-focus="1"] #focus-exit { display: grid; }
 .row-sym { font-size: 12px; font-weight: 650; letter-spacing: -.01em; }
 .row-name { font-size: 11px; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .row-right { text-align: right; flex: none; }
-.row-px { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 12px; font-weight: 600; }
-.row-chg { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 11px; font-weight: 600; }
-.row-chg.up { color: var(--up); } .row-chg.down { color: var(--down); }
 .row-del {
   width: 20px; height: 20px; display: grid; place-items: center; flex: none;
   background: none; border: none; color: var(--dim); cursor: pointer; border-radius: 4px; opacity: 0;
@@ -458,24 +413,22 @@ kbd {
 @keyframes toast-in { from { opacity: 0; transform: translateY(8px) } }
 
 /* ═══ Responsive ═════════════════════════════════════════════════════ */
+/* One chart at a time below 900px: nine tiles on a phone is nine unreadable
+   tiles. The grid keeps its layout in state, so the desktop arrangement comes
+   back untouched on a wider screen. */
 @media (max-width: 900px) {
   .panel, .panel.wide { width: 100%; }
   .brand-name, .layouts { display: none; }
-  /* These have equivalents in Settings; drop them rather than let the header
-     overflow and clip the market state. */
-  #btn-prepost, #btn-fit, #header .sep { display: none; }
+  /* Both have equivalents in Settings; drop them rather than let the header
+     overflow. */
+  #btn-sync span, #btn-studies span, #header .sep { display: none; }
   #btn-search span, #btn-search kbd { display: none; }
   #grid[data-layout] { grid-template: 1fr / 1fr; }
   #grid .cell:not(.active) { display: none; }
+  .menu { left: auto; right: 0; }
 }
 @media (max-width: 600px) {
-  /* Only the timeframe strip scrolls; symbol and price stay pinned so the
-     last price is never the thing that gets clipped. */
-  .cell-bar { overflow: visible; gap: 2px; padding-right: 8px; }
-  .cell-bar .spacer { display: none; }
-    .tf-group::-webkit-scrollbar { display: none; }
+  .cell-bar { gap: 2px; padding-right: 8px; }
   .sym-input { width: 68px; flex: none; }
-  .chg-badge { display: none; }
-  .readout { top: 44px; }
   .brand { margin-right: 2px; }
 }

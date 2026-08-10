@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>override probe</title>
+<style>
+  body { margin:0; background:#0B0E14; color:#DFE6F1; font:12px system-ui; }
+  #g { display:grid; grid-template:repeat(2,1fr)/repeat(2,1fr); gap:2px; height:100vh; }
+  .c { display:flex; flex-direction:column; min-height:0; }
+  .t { flex:none; padding:3px 6px; background:#1A2130; font-weight:700; font-size:13px; }
+  .m { flex:1; min-height:0; }
+</style>
+<div id="g"></div>
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+  // Each variant changes exactly one thing against the same baseline, so a
+  // chart that fails to draw names the override that broke it.
+  // Which series-style families the embed tolerates. An override it does not
+  // recognise may not just be ignored — it can stop the chart drawing at all.
+  const six = (root, up, down) => ({
+    [`mainSeriesProperties.${root}.upColor`]: up,
+    [`mainSeriesProperties.${root}.downColor`]: down,
+    [`mainSeriesProperties.${root}.borderUpColor`]: up,
+    [`mainSeriesProperties.${root}.borderDownColor`]: down,
+    [`mainSeriesProperties.${root}.wickUpColor`]: up,
+    [`mainSeriesProperties.${root}.wickDownColor`]: down,
+  });
+  const B = '#00A3FF', O = '#FF8A00';
+  const VARIANTS = [
+    ['candleStyle only', { overrides: six('candleStyle', B, O) }],
+    ['+ hollowCandleStyle', { overrides: { ...six('candleStyle', B, O), ...six('hollowCandleStyle', B, O) } }],
+    ['+ haStyle', { overrides: { ...six('candleStyle', B, O), ...six('haStyle', B, O) } }],
+    ['+ barStyle up/down', { overrides: {
+      ...six('candleStyle', B, O),
+      'mainSeriesProperties.barStyle.upColor': B,
+      'mainSeriesProperties.barStyle.downColor': O,
+    } }],
+  ];
+  const g = document.getElementById('g');
+  VARIANTS.forEach(([label, extra], i) => {
+    const c = document.createElement('div'); c.className = 'c';
+    const t = document.createElement('div'); t.className = 't'; t.textContent = label;
+    const m = document.createElement('div'); m.className = 'm'; m.id = 'm' + i;
+    c.append(t, m); g.append(c);
+    const cfg = {
+      container_id: m.id, symbol: 'NASDAQ:AAPL', interval: '15', autosize: true,
+      timezone: 'America/New_York', theme: 'dark', style: '1', locale: 'en',
+      hide_side_toolbar: true, hide_top_toolbar: true, allow_symbol_change: false,
+      ...extra,
+    };
+    if (cfg.theme === undefined) delete cfg.theme;
+    new TradingView.widget(cfg);
+  });
+</script>

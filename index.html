@@ -54,10 +54,6 @@
   --accent:    #E8B34A;
   --accent-soft: rgba(232, 179, 74, .13);
 
-  /* session ribbon segments */
-  --pre:       #4B7BE5;
-  --post:      #9B6BD6;
-
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI",
           system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", "Roboto Mono",
@@ -69,8 +65,6 @@
   --shadow: 0 12px 32px -8px rgba(0, 0, 0, .7), 0 0 0 1px var(--line);
 
   --header-h: 46px;
-  --rail-w:   44px;
-  --strip-h:  26px;
 }
 
 /* The light skin re-points the same tokens, so nothing downstream needs to
@@ -110,14 +104,6 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 body { display: flex; flex-direction: column; }
-
-/* Every number in the app. Tabular figures are the whole point. */
-.num, .price, input[type="number"] {
-  font-family: var(--mono);
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1, "zero" 1;
-  letter-spacing: -.01em;
-}
 
 /* Small caps labelling, used for anything that names a control or a field. */
 .label {
@@ -160,11 +146,6 @@ body { display: flex; flex-direction: column; }
 .btn.icon { width: 28px; padding: 0; justify-content: center; }
 .btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.btn-primary {
-  background: var(--accent); color: #17130A; border-color: var(--accent); font-weight: 600;
-}
-.btn-primary:hover { background: #F2C264; color: #17130A; }
-
 .field {
   height: 28px; padding: 0 8px;
   background: var(--bg); border: 1px solid var(--line); border-radius: var(--r);
@@ -200,22 +181,6 @@ select.field { cursor: pointer; }
 .layouts .btn svg { width: 13px; height: 13px; stroke-width: 1.4; }
 
 #header .spacer { flex: 1; }
-
-/* Market state pill: the only place the accent appears in the header. */
-.market-state {
-  display: flex; align-items: center; gap: 7px;
-  height: 26px; padding: 0 10px;
-  background: var(--bg); border: 1px solid var(--line); border-radius: 13px;
-  font-size: 11px; font-weight: 550; color: var(--muted);
-}
-.market-dot {
-  width: 6px; height: 6px; border-radius: 50%; background: var(--dim); flex: none;
-}
-.market-state[data-state="open"]  .market-dot { background: var(--up); box-shadow: 0 0 0 3px var(--up-soft); animation: pulse 2.4s var(--ease) infinite; }
-.market-state[data-state="pre"]   .market-dot { background: var(--pre); box-shadow: 0 0 0 3px rgba(75,123,229,.16); }
-.market-state[data-state="post"]  .market-dot { background: var(--post); box-shadow: 0 0 0 3px rgba(155,107,214,.16); }
-.market-state[data-state="open"]  { color: var(--text); }
-@keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .45 } }
 
 /* ═══ Menu ═══════════════════════════════════════════════════════════ */
 .menu-wrap { position: relative; display: inline-flex; }
@@ -312,25 +277,26 @@ body[data-focus="1"] #focus-exit { display: grid; }
 .sym-input:hover { background: var(--raised); }
 .sym-input:focus { outline: none; background: var(--bg); border-color: var(--accent); }
 
-
-
-.last-price {
-  font-family: var(--mono); font-variant-numeric: tabular-nums;
-  font-size: 13px; font-weight: 600; letter-spacing: -.02em;
-  padding: 2px 6px; border-radius: 4px;
-  transition: background .35s var(--ease);
+/* Per-chart interval. The native arrow is dropped: at nine tiles the row has
+   no width to spare, and the value itself is the affordance. */
+.tf-select {
+  height: 22px; padding: 0 5px; flex: none;
+  background: transparent; border: 1px solid transparent; border-radius: 4px;
+  color: var(--muted); font: inherit; font-size: 11px; font-weight: 650;
+  cursor: pointer; appearance: none; -webkit-appearance: none; text-align: center;
 }
-.last-price.up { color: var(--up); }
-.last-price.down { color: var(--down); }
-.last-price.flash-up { background: var(--up-soft); transition: background 0s; }
-.last-price.flash-down { background: var(--down-soft); transition: background 0s; }
+.tf-select:hover { background: var(--raised); color: var(--text); }
+.tf-select:focus { outline: none; border-color: var(--accent); color: var(--text); }
+.tf-select option { background: var(--surface); color: var(--text); font-weight: 500; }
 
-.chg-badge {
-  font-family: var(--mono); font-variant-numeric: tabular-nums;
-  font-size: 11px; font-weight: 600; padding: 2px 5px; border-radius: 4px;
+/* Colour wells in Settings. */
+.setting input[type="color"] {
+  width: 44px; height: 24px; padding: 2px; flex: none;
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--r);
+  cursor: pointer;
 }
-.chg-badge.up { color: var(--up); background: var(--up-soft); }
-.chg-badge.down { color: var(--down); background: var(--down-soft); }
+.setting input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+.setting input[type="color"]::-webkit-color-swatch { border: none; border-radius: 3px; }
 
 /* ═══ Panels ═════════════════════════════════════════════════════════ */
 #panel-layer {
@@ -383,14 +349,6 @@ body[data-focus="1"] #focus-exit { display: grid; }
 .row.on .row-sym { color: var(--accent); }
 .row-tick svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-.tabs { display: flex; gap: 1px; padding: 6px 10px; border-bottom: 1px solid var(--line-soft); }
-.tab {
-  flex: 1; height: 25px; background: transparent; border: none; border-radius: 4px;
-  color: var(--muted); font: inherit; font-size: 11px; font-weight: 600; cursor: pointer;
-}
-.tab:hover { background: var(--raised); color: var(--text); }
-.tab.on { background: var(--raised); color: var(--accent); }
-
 .row {
   display: flex; align-items: center; gap: 8px; padding: 7px 12px;
   border-bottom: 1px solid var(--line-soft); cursor: pointer;
@@ -401,9 +359,6 @@ body[data-focus="1"] #focus-exit { display: grid; }
 .row-sym { font-size: 12px; font-weight: 650; letter-spacing: -.01em; }
 .row-name { font-size: 11px; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .row-right { text-align: right; flex: none; }
-.row-px { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 12px; font-weight: 600; }
-.row-chg { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 11px; font-weight: 600; }
-.row-chg.up { color: var(--up); } .row-chg.down { color: var(--down); }
 .row-del {
   width: 20px; height: 20px; display: grid; place-items: center; flex: none;
   background: none; border: none; color: var(--dim); cursor: pointer; border-radius: 4px; opacity: 0;
@@ -471,25 +426,23 @@ kbd {
 @keyframes toast-in { from { opacity: 0; transform: translateY(8px) } }
 
 /* ═══ Responsive ═════════════════════════════════════════════════════ */
+/* One chart at a time below 900px: nine tiles on a phone is nine unreadable
+   tiles. The grid keeps its layout in state, so the desktop arrangement comes
+   back untouched on a wider screen. */
 @media (max-width: 900px) {
   .panel, .panel.wide { width: 100%; }
   .brand-name, .layouts { display: none; }
-  /* These have equivalents in Settings; drop them rather than let the header
-     overflow and clip the market state. */
-  #btn-prepost, #btn-fit, #header .sep { display: none; }
+  /* Both have equivalents in Settings; drop them rather than let the header
+     overflow. */
+  #btn-sync span, #btn-studies span, #header .sep { display: none; }
   #btn-search span, #btn-search kbd { display: none; }
   #grid[data-layout] { grid-template: 1fr / 1fr; }
   #grid .cell:not(.active) { display: none; }
+  .menu { left: auto; right: 0; }
 }
 @media (max-width: 600px) {
-  /* Only the timeframe strip scrolls; symbol and price stay pinned so the
-     last price is never the thing that gets clipped. */
-  .cell-bar { overflow: visible; gap: 2px; padding-right: 8px; }
-  .cell-bar .spacer { display: none; }
-    .tf-group::-webkit-scrollbar { display: none; }
+  .cell-bar { gap: 2px; padding-right: 8px; }
   .sym-input { width: 68px; flex: none; }
-  .chg-badge { display: none; }
-  .readout { top: 44px; }
   .brand { margin-right: 2px; }
 }
 </style>
@@ -542,8 +495,8 @@ kbd {
   <div class="menu-wrap">
     <button class="btn" id="btn-sync" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 16 16"><use href="#i-sync"/></svg><span>Sync</span></button>
     <div class="menu" id="sync-menu" role="menu" hidden>
-      <button role="menuitem" data-sync="settings">Settings &amp; indicators &rarr; every chart
-        <small>Puts every chart back on the interval, candle type, time zone and indicators set here. Use it after changing something inside a chart's own toolbar.</small></button>
+      <button role="menuitem" data-sync="settings">Match chart 1 <kbd>r</kbd>
+        <small>Every chart takes chart 1's interval, plus the candle type, colours and indicators set here. Symbols are left alone.</small></button>
       <button role="menuitem" data-sync="symbol">Symbol &rarr; every chart
         <small>Puts the active chart's ticker on all of them.</small></button>
     </div>
@@ -694,7 +647,12 @@ kbd {
     hideLegend: false,
     withVolume: true,
     focus: false,
+    // Empty means "whatever the theme says", so the pickers stay out of the
+    // way until one is actually used and a theme switch keeps working.
+    colors: { up: '', down: '', bg: '', volUp: '', volDown: '' },
   };
+  const UP = '#2EBD85', DOWN = '#F0616D';
+  const blankColors = () => ({ up: '', down: '', bg: '', volUp: '', volDown: '' });
 
   const STORE = {
     get(k, d) { try { const v = localStorage.getItem('tc2:' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
@@ -791,13 +749,15 @@ kbd {
      The embed exposes no method to change a symbol after construction, so a
      change tears the widget down and builds a new one. That is a full iframe
      load, which is why it only happens when the symbol actually differs. */
-  function createCell(idx, symbol) {
+  function createCell(idx, symbol, interval) {
     const el = document.createElement('section');
     el.className = 'cell';
     el.dataset.idx = idx;
     el.innerHTML = `
       <div class="cell-bar">
         <input class="sym-input" spellcheck="false" aria-label="Symbol">
+        <select class="tf-select" aria-label="Interval">${
+          INTERVALS.map(i => `<option value="${i.id}">${i.label}</option>`).join('')}</select>
         <span class="cell-hint"></span>
         <div class="spacer"></div>
         <button class="btn icon cell-search" title="Search symbol"><svg viewBox="0 0 16 16"><use href="#i-search"/></svg></button>
@@ -807,9 +767,20 @@ kbd {
     const cell = {
       idx, el,
       symbol: symbol || DEFAULT_SYMBOLS[idx] || 'NASDAQ:AAPL',
+      // A chart added to the grid should match what is already on screen, so
+      // it follows chart 1 rather than a default the user may have left behind.
+      interval: interval || state.cells[0]?.interval || state.interval,
       widget: null,
-      els: { bar: $('.cell-bar', el), sym: $('.sym-input', el), hint: $('.cell-hint', el), mount: $('.chart-mount', el) },
+      els: { bar: $('.cell-bar', el), sym: $('.sym-input', el), tf: $('.tf-select', el),
+             hint: $('.cell-hint', el), mount: $('.chart-mount', el) },
     };
+
+    cell.els.tf.value = cell.interval;
+    cell.els.tf.addEventListener('change', () => {
+      cell.interval = cell.els.tf.value;
+      applyAll();
+      saveLayout();
+    });
 
     cell.els.sym.value = shortName(cell.symbol);
     cell.els.sym.addEventListener('keydown', e => {
@@ -822,30 +793,81 @@ kbd {
     return cell;
   }
 
-  /* Pane colours have to follow the theme. Forcing the dark surface under
-     `theme: 'light'` is what made the light setting produce a dark chart in
-     a light frame. */
-  const CHART_SKIN = {
-    dark:  { bg: '#0B0E14', grid: '#151C28', text: '#7C8AA5', axis: '#212A3A' },
-    light: { bg: '#FFFFFF', grid: '#EDF0F5', text: '#5A6880', axis: '#D8DEE9' },
-  };
+  /* The chart surface per theme, used whenever no colour has been picked.
+     Only a background: it is the one surface colour the embed lets us set. */
+  const CHART_SKIN = { dark: '#0B0E14', light: '#FFFFFF' };
 
   /* The complete widget configuration for a cell. Everything a chart shows
      other than its symbol comes from global state, which is what lets one
      control move all nine at once. Kept as a pure function so it doubles as
      a change signature — see applyAll. */
+  /* Candle colours have to be repeated for every series style, because
+     TradingView keeps a separate colour pair per style — set only
+     candleStyle and the colours vanish the moment you switch to bars or
+     Heikin-Ashi. */
+  function seriesColours(up, down) {
+    const o = {};
+    for (const s of ['candleStyle', 'hollowCandleStyle', 'haStyle']) {
+      o[`mainSeriesProperties.${s}.upColor`] = up;
+      o[`mainSeriesProperties.${s}.downColor`] = down;
+      o[`mainSeriesProperties.${s}.borderUpColor`] = up;
+      o[`mainSeriesProperties.${s}.borderDownColor`] = down;
+      o[`mainSeriesProperties.${s}.wickUpColor`] = up;
+      o[`mainSeriesProperties.${s}.wickDownColor`] = down;
+    }
+    o['mainSeriesProperties.barStyle.upColor'] = up;
+    o['mainSeriesProperties.barStyle.downColor'] = down;
+    return o;
+  }
+
+  /* The colour actually in force for a key: an explicit pick, else the theme. */
+  function colourOf(key) {
+    const c = state.colors;
+    switch (key) {
+      case 'up':   return c.up   || UP;
+      case 'down': return c.down || DOWN;
+      case 'bg':   return c.bg   || CHART_SKIN[state.theme] || CHART_SKIN.dark;
+      case 'volUp':   return c.volUp   || c.up   || UP;
+      case 'volDown': return c.volDown || c.down || DOWN;
+      default: return '#000000';
+    }
+  }
+
+  /* What the free embed will and will not let us colour, established by
+     mounting each against a live widget and looking (2026-08-10):
+
+       backgroundColor (top level)          works, on both themes
+       mainSeriesProperties.*Style.*Color   works
+       studies_overrides volume.volume.*    works — color.1 is up, color.0 down
+
+       gridColor (top level)                ignored
+       paneProperties.background            ignored — `theme` wins
+       paneProperties.*GridProperties.color ignored
+       scalesProperties.textColor/lineColor ignored
+
+     The ignored ones are the reason there is no grid or axis colour to pick:
+     the embed will not honour them, and a control that does nothing is worse
+     than no control. They were in this config for months doing nothing —
+     the charts were dark because of `theme`, never because of the override. */
   function widgetConfig(cell) {
     const n = state.cells.length;
-    const skin = CHART_SKIN[state.theme] || CHART_SKIN.dark;
+    const c = state.colors;
+    // Only emit a volume override when one was actually picked — otherwise
+    // leave TradingView's own translucent bars alone rather than replacing
+    // them with flat colour nobody asked for.
+    const studiesOverrides = {};
+    if (c.volUp) studiesOverrides['volume.volume.color.1'] = c.volUp;
+    if (c.volDown) studiesOverrides['volume.volume.color.0'] = c.volDown;
     return {
       symbol: cell.symbol,
-      interval: state.interval,
+      interval: cell.interval,
       autosize: true,
       timezone: state.timezone,
       theme: state.theme,
       style: state.style,
       locale: 'en',
-      toolbar_bg: skin.bg,
+      backgroundColor: colourOf('bg'),
+      toolbar_bg: colourOf('bg'),
       enable_publishing: false,
       allow_symbol_change: false,   // this app owns the symbol, so it can save it
       // In a grid the widget's own side rail and date-range footer eat most of
@@ -862,29 +884,20 @@ kbd {
       // study as well drew it twice. Only the hide flag is ours to set.
       hide_volume: !state.withVolume,
       studies: state.studies,
-      overrides: {
-        'paneProperties.background': skin.bg,
-        'paneProperties.backgroundType': 'solid',
-        'paneProperties.vertGridProperties.color': skin.grid,
-        'paneProperties.horzGridProperties.color': skin.grid,
-        'scalesProperties.textColor': skin.text,
-        'scalesProperties.lineColor': skin.axis,
-        'mainSeriesProperties.candleStyle.upColor': '#2EBD85',
-        'mainSeriesProperties.candleStyle.downColor': '#F0616D',
-        'mainSeriesProperties.candleStyle.borderUpColor': '#2EBD85',
-        'mainSeriesProperties.candleStyle.borderDownColor': '#F0616D',
-        'mainSeriesProperties.candleStyle.wickUpColor': '#2EBD85',
-        'mainSeriesProperties.candleStyle.wickDownColor': '#F0616D',
-      },
+      studies_overrides: studiesOverrides,
+      overrides: seriesColours(colourOf('up'), colourOf('down')),
     };
   }
 
   let mountSeq = 0;
-  function mountWidget(cell) {
+  function mountWidget(cell, cfg = widgetConfig(cell)) {
     if (!window.TradingView) return;
-    const cfg = widgetConfig(cell);
     cell.sig = JSON.stringify(cfg);
-    // Clearing first stops a stale chart flashing underneath the new one.
+    // Tear the old widget down before dropping its container. Wiping innerHTML
+    // alone leaves tv.js holding listeners on a frame that no longer exists,
+    // which accumulates across every settings change on every chart.
+    try { cell.widget?.remove?.(); } catch {}
+    // Clearing second stops a stale chart flashing underneath the new one.
     cell.els.mount.innerHTML = '';
     const host = document.createElement('div');
     host.id = `tvm-${cell.idx}-${++mountSeq}`;
@@ -906,7 +919,8 @@ kbd {
      nine, and switching layout rebuilds only the ones whose furniture
      changed. */
   const applyAll = () => state.cells.forEach(c => {
-    if (JSON.stringify(widgetConfig(c)) !== c.sig) mountWidget(c);
+    const cfg = widgetConfig(c);
+    if (JSON.stringify(cfg) !== c.sig) mountWidget(c, cfg);   // built once, not twice
   });
 
   /* A rebuild is a full iframe load, and nine of them is not free. Toggling
@@ -924,7 +938,10 @@ kbd {
      cross-origin frame and never reaches this side. So a chart switched to 5m
      from its own toolbar still matches its signature and would be skipped.
      This is the deliberate override that drags those back into line. */
-  const forceAll = () => { state.cells.forEach(mountWidget); saveLayout(); };
+  // Not `forEach(mountWidget)`: forEach passes the index as the second
+  // argument, which would land in mountWidget's cfg parameter and build every
+  // chart from a number.
+  const forceAll = () => { state.cells.forEach(c => mountWidget(c)); saveLayout(); };
 
   function setSymbol(cell, input, opts = {}) {
     if (!cell) return;
@@ -953,7 +970,8 @@ kbd {
 
     while (state.cells.length > want) destroyCell(state.cells.pop());
     while (state.cells.length < want) {
-      const cell = createCell(state.cells.length, (opts.symbols || [])[state.cells.length]);
+      const i = state.cells.length;
+      const cell = createCell(i, (opts.symbols || [])[i], (opts.intervals || [])[i]);
       state.cells.push(cell);
       grid.append(cell.el);
     }
@@ -978,8 +996,9 @@ kbd {
       theme: state.theme, studies: state.studies,
       hideSideToolbar: state.hideSideToolbar, hideTopToolbar: state.hideTopToolbar,
       hideLegend: state.hideLegend, withVolume: state.withVolume,
-      focus: state.focus,
+      focus: state.focus, colors: state.colors,
       symbols: state.cells.map(c => c.symbol),
+      intervals: state.cells.map(c => c.interval),
     });
   }
 
@@ -998,6 +1017,7 @@ kbd {
     state.hideTopToolbar = !!s.hideTopToolbar;
     state.hideLegend = !!s.hideLegend;
     state.withVolume = s.withVolume !== false;
+    state.colors = Object.assign(blankColors(), s.colors || {});
     state.active = s.active || 0;
     state.focus = !!s.focus;
     document.body.dataset.theme = state.theme;
@@ -1005,7 +1025,9 @@ kbd {
     // its charts without the toolbar rather than building then rebuilding.
     // Fullscreen is not re-entered: it needs a gesture a page load cannot give.
     paintFocus();
-    setLayout(s.layout || '1', { symbols: s.symbols || [], skipSave: true });
+    setLayout(s.layout || '1', {
+      symbols: s.symbols || [], intervals: s.intervals || [], skipSave: true,
+    });
   }
 
   /* ══ Borderless ══════════════════════════════════════════════════
@@ -1053,11 +1075,22 @@ kbd {
     toast(`Every chart on ${shortName(sym)}`);
   }
 
-  function syncSettings() {
+  const tfLabel = id => INTERVALS.find(i => i.id === id)?.label || id;
+  const paintIntervals = () => state.cells.forEach(c => { c.els.tf.value = c.interval; });
+
+  /* Chart 1 is the master. Its interval goes to every other chart, and every
+     chart is rebuilt from the settings held here — which is also what drags
+     back one that was changed inside TradingView's own toolbar, since that
+     happens in a frame this side cannot read. Symbols are left alone. */
+  function syncFromFirst() {
+    const first = state.cells[0];
+    if (!first) return;
+    state.interval = first.interval;
+    state.cells.forEach(c => { c.interval = first.interval; });
+    paintIntervals();
     forceAll();
-    const tf = INTERVALS.find(i => i.id === state.interval)?.label || state.interval;
     const n = state.cells.length;
-    toast(`${n} chart${n === 1 ? '' : 's'} back on ${tf}`
+    toast(`${n} chart${n === 1 ? '' : 's'} matched to ${shortName(first.symbol)} · ${tfLabel(first.interval)}`
       + (state.studies.length ? ` · ${state.studies.length} indicator${state.studies.length === 1 ? '' : 's'}` : ''));
   }
 
@@ -1260,8 +1293,15 @@ kbd {
   const ZONES = ['America/New_York', 'America/Chicago', 'America/Los_Angeles', 'Europe/London',
     'Europe/Berlin', 'Asia/Tokyo', 'Asia/Hong_Kong', 'Australia/Sydney', 'Etc/UTC'];
 
+  /* Opening toggles the panel; rendering does not. They used to be one
+     function, so anything that re-rendered from inside the panel — Reset
+     colours — went through openPanel a second time and shut the panel it was
+     redrawing. */
   function openSettings() {
-    openPanel('panel-settings');
+    if (openPanel('panel-settings')) renderSettings();
+  }
+
+  function renderSettings() {
     const body = $('#settings-body');
     body.textContent = '';
     const group = t => { const h = document.createElement('div'); h.className = 'label group-label'; h.textContent = t; body.append(h); };
@@ -1289,7 +1329,12 @@ kbd {
 
     group(`Every chart · ${state.cells.length} on screen`);
     select('Interval', state.interval, INTERVALS.map(i => ({ id: i.id, name: i.label })),
-      v => { state.interval = v; applySoon(0); });
+      v => {
+        state.interval = v;
+        state.cells.forEach(c => { c.interval = v; });   // the default is also a command
+        paintIntervals();
+        applySoon(0);
+      });
     select('Candle type', state.style, STYLES, v => { state.style = v; applySoon(0); });
     select('Time zone', state.timezone, ZONES.map(z => ({ id: z, name: z.replace(/_/g, ' ') })),
       v => { state.timezone = v; applySoon(0); });
@@ -1305,6 +1350,33 @@ kbd {
       v => { state.hideTopToolbar = !v; });
     toggle('Legend', () => !state.hideLegend, 'OHLC and indicator readout in the top-left of each chart.',
       v => { state.hideLegend = !v; });
+
+    // `change`, not `input`: dragging inside a colour picker fires input
+    // continuously, and each one would rebuild every chart.
+    const colour = (label, key) => {
+      const row = document.createElement('div'); row.className = 'setting';
+      const l = document.createElement('label'); l.textContent = label;
+      const inp = document.createElement('input');
+      inp.type = 'color';
+      inp.value = colourOf(key);
+      inp.addEventListener('change', () => { state.colors[key] = inp.value; applySoon(200); });
+      row.append(l, inp); body.append(row);
+    };
+
+    group('Appearance');
+    colour('Up', 'up');
+    colour('Down', 'down');
+    colour('Background', 'bg');
+    colour('Volume up', 'volUp');
+    colour('Volume down', 'volDown');
+
+    const cr = document.createElement('div'); cr.className = 'setting';
+    const cl = document.createElement('label');
+    cl.innerHTML = 'Reset colours<div style="font-size:11px;color:var(--dim)">Back to following the theme.</div>';
+    const cb = document.createElement('button');
+    cb.className = 'btn'; cb.textContent = 'Reset';
+    cb.addEventListener("click", () => { state.colors = blankColors(); applySoon(0); renderSettings(); });
+    cr.append(cl, cb); body.append(cr);
 
     const fx = document.createElement('div'); fx.className = 'setting';
     const fl = document.createElement('label');
@@ -1327,15 +1399,20 @@ kbd {
       belong to TradingView and are not part of the saved layout. Symbols set from here are.</div>`;
     body.append(note);
 
+    // Every .setting is label-then-control; this row had only a control, so it
+    // laid out differently from the rest and broke anything walking the panel.
     const reset = document.createElement('div'); reset.className = 'setting';
+    const rl = document.createElement('label');
+    rl.innerHTML = 'Reset workspace<div style="font-size:11px;color:var(--dim)">'
+      + 'Clears the layout, watchlist, colours and every setting.</div>';
     const rb = document.createElement('button');
-    rb.className = 'btn'; rb.textContent = 'Reset workspace'; rb.style.color = 'var(--down)';
+    rb.className = 'btn'; rb.textContent = 'Reset'; rb.style.color = 'var(--down)';
     rb.addEventListener('click', () => {
       if (!confirm('Reset layout, watchlist and settings?')) return;
       try { Object.keys(localStorage).filter(k => k.startsWith('tc2:')).forEach(k => localStorage.removeItem(k)); } catch {}
       location.reload();
     });
-    reset.append(rb); body.append(reset);
+    reset.append(rl, rb); body.append(reset);
   }
 
   /* ══ Misc ════════════════════════════════════════════════════════ */
@@ -1367,7 +1444,7 @@ kbd {
       const b = e.target.closest('[data-sync]');
       if (!b) return;
       closeMenu();
-      if (b.dataset.sync === 'symbol') syncSymbol(); else syncSettings();
+      if (b.dataset.sync === "symbol") syncSymbol(); else syncFromFirst();
     });
     document.addEventListener('click', e => {
       if (!e.target.closest('.menu-wrap')) closeMenu();
@@ -1429,7 +1506,7 @@ kbd {
       if (typing) return;
       if (e.key === '/') { e.preventDefault(); openSearch(); }
       else if (e.key.toLowerCase() === 'f') { setFocus(!state.focus); }
-      else if (e.key.toLowerCase() === 'r') { syncSettings(); }
+      else if (e.key.toLowerCase() === 'r') { syncFromFirst(); }
       else if (/^[1-9]$/.test(e.key) && !e.metaKey && !e.ctrlKey) {
         // The digit is the number of charts, so 9 gives nine.
         const hit = LAYOUTS.find(l => l.key === e.key);

@@ -76,6 +76,13 @@ await send('Runtime.enable', {}, sessionId);
 await send('Log.enable', {}, sessionId);
 await send('Network.enable', {}, sessionId);
 await send('Page.navigate', { url }, sessionId);
+// Optional interaction, same contract as cdp-shot: a JS file run once the
+// shell is up, so a failure that only appears after a rebuild is catchable.
+const driver = process.env.CDP_DRIVER;
+if (driver && fs.existsSync(driver)) {
+  await sleep(4000);
+  await send('Runtime.evaluate', { expression: fs.readFileSync(driver, 'utf8'), awaitPromise: true }, sessionId);
+}
 await sleep(Number(waitMs));
 
 const dump = (title, arr) => {

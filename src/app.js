@@ -61,7 +61,12 @@
     hideLegend: false,
     withVolume: true,
     focus: false,
+    // Empty means "whatever the theme says", so the pickers stay out of the
+    // way until one is actually used and a theme switch keeps working.
+    colors: { up: '', down: '', bg: '', volUp: '', volDown: '' },
   };
+  const UP = '#2EBD85', DOWN = '#F0616D';
+  const blankColors = () => ({ up: '', down: '', bg: '', volUp: '', volDown: '' });
 
   const STORE = {
     get(k, d) { try { const v = localStorage.getItem('tc2:' + k); return v == null ? d : JSON.parse(v); } catch { return d; } },
@@ -158,13 +163,15 @@
      The embed exposes no method to change a symbol after construction, so a
      change tears the widget down and builds a new one. That is a full iframe
      load, which is why it only happens when the symbol actually differs. */
-  function createCell(idx, symbol) {
+  function createCell(idx, symbol, interval) {
     const el = document.createElement('section');
     el.className = 'cell';
     el.dataset.idx = idx;
     el.innerHTML = `
       <div class="cell-bar">
         <input class="sym-input" spellcheck="false" aria-label="Symbol">
+        <select class="tf-select" aria-label="Interval">${
+          INTERVALS.map(i => `<option value="${i.id}">${i.label}</option>`).join('')}</select>
         <span class="cell-hint"></span>
         <div class="spacer"></div>
         <button class="btn icon cell-search" title="Search symbol"><svg viewBox="0 0 16 16"><use href="#i-search"/></svg></button>
@@ -174,9 +181,20 @@
     const cell = {
       idx, el,
       symbol: symbol || DEFAULT_SYMBOLS[idx] || 'NASDAQ:AAPL',
+      // A chart added to the grid should match what is already on screen, so
+      // it follows chart 1 rather than a default the user may have left behind.
+      interval: interval || state.cells[0]?.interval || state.interval,
       widget: null,
-      els: { bar: $('.cell-bar', el), sym: $('.sym-input', el), hint: $('.cell-hint', el), mount: $('.chart-mount', el) },
+      els: { bar: $('.cell-bar', el), sym: $('.sym-input', el), tf: $('.tf-select', el),
+             hint: $('.cell-hint', el), mount: $('.chart-mount', el) },
     };
+
+    cell.els.tf.value = cell.interval;
+    cell.els.tf.addEventListener('change', () => {
+      cell.interval = cell.els.tf.value;
+      applyAll();
+      saveLayout();
+    });
 
     cell.els.sym.value = shortName(cell.symbol);
     cell.els.sym.addEventListener('keydown', e => {
@@ -189,30 +207,81 @@
     return cell;
   }
 
-  /* Pane colours have to follow the theme. Forcing the dark surface under
-     `theme: 'light'` is what made the light setting produce a dark chart in
-     a light frame. */
-  const CHART_SKIN = {
-    dark:  { bg: '#0B0E14', grid: '#151C28', text: '#7C8AA5', axis: '#212A3A' },
-    light: { bg: '#FFFFFF', grid: '#EDF0F5', text: '#5A6880', axis: '#D8DEE9' },
-  };
+  /* The chart surface per theme, used whenever no colour has been picked.
+     Only a background: it is the one surface colour the embed lets us set. */
+  const CHART_SKIN = { dark: '#0B0E14', light: '#FFFFFF' };
 
   /* The complete widget configuration for a cell. Everything a chart shows
      other than its symbol comes from global state, which is what lets one
      control move all nine at once. Kept as a pure function so it doubles as
      a change signature — see applyAll. */
+  /* Candle colours have to be repeated for every series style, because
+     TradingView keeps a separate colour pair per style — set only
+     candleStyle and the colours vanish the moment you switch to bars or
+     Heikin-Ashi. */
+  function seriesColours(up, down) {
+    const o = {};
+    for (const s of ['candleStyle', 'hollowCandleStyle', 'haStyle']) {
+      o[`mainSeriesProperties.${s}.upColor`] = up;
+      o[`mainSeriesProperties.${s}.downColor`] = down;
+      o[`mainSeriesProperties.${s}.borderUpColor`] = up;
+      o[`mainSeriesProperties.${s}.borderDownColor`] = down;
+      o[`mainSeriesProperties.${s}.wickUpColor`] = up;
+      o[`mainSeriesProperties.${s}.wickDownColor`] = down;
+    }
+    o['mainSeriesProperties.barStyle.upColor'] = up;
+    o['mainSeriesProperties.barStyle.downColor'] = down;
+    return o;
+  }
+
+  /* The colour actually in force for a key: an explicit pick, else the theme. */
+  function colourOf(key) {
+    const c = state.colors;
+    switch (key) {
+      case 'up':   return c.up   || UP;
+      case 'down': return c.down || DOWN;
+      case 'bg':   return c.bg   || CHART_SKIN[state.theme] || CHART_SKIN.dark;
+      case 'volUp':   return c.volUp   || c.up   || UP;
+      case 'volDown': return c.volDown || c.down || DOWN;
+      default: return '#000000';
+    }
+  }
+
+  /* What the free embed will and will not let us colour, established by
+     mounting each against a live widget and looking (2026-08-10):
+
+       backgroundColor (top level)          works, on both themes
+       mainSeriesProperties.*Style.*Color   works
+       studies_overrides volume.volume.*    works — color.1 is up, color.0 down
+
+       gridColor (top level)                ignored
+       paneProperties.background            ignored — `theme` wins
+       paneProperties.*GridProperties.color ignored
+       scalesProperties.textColor/lineColor ignored
+
+     The ignored ones are the reason there is no grid or axis colour to pick:
+     the embed will not honour them, and a control that does nothing is worse
+     than no control. They were in this config for months doing nothing —
+     the charts were dark because of `theme`, never because of the override. */
   function widgetConfig(cell) {
     const n = state.cells.length;
-    const skin = CHART_SKIN[state.theme] || CHART_SKIN.dark;
+    const c = state.colors;
+    // Only emit a volume override when one was actually picked — otherwise
+    // leave TradingView's own translucent bars alone rather than replacing
+    // them with flat colour nobody asked for.
+    const studiesOverrides = {};
+    if (c.volUp) studiesOverrides['volume.volume.color.1'] = c.volUp;
+    if (c.volDown) studiesOverrides['volume.volume.color.0'] = c.volDown;
     return {
       symbol: cell.symbol,
-      interval: state.interval,
+      interval: cell.interval,
       autosize: true,
       timezone: state.timezone,
       theme: state.theme,
       style: state.style,
       locale: 'en',
-      toolbar_bg: skin.bg,
+      backgroundColor: colourOf('bg'),
+      toolbar_bg: colourOf('bg'),
       enable_publishing: false,
       allow_symbol_change: false,   // this app owns the symbol, so it can save it
       // In a grid the widget's own side rail and date-range footer eat most of
@@ -229,29 +298,20 @@
       // study as well drew it twice. Only the hide flag is ours to set.
       hide_volume: !state.withVolume,
       studies: state.studies,
-      overrides: {
-        'paneProperties.background': skin.bg,
-        'paneProperties.backgroundType': 'solid',
-        'paneProperties.vertGridProperties.color': skin.grid,
-        'paneProperties.horzGridProperties.color': skin.grid,
-        'scalesProperties.textColor': skin.text,
-        'scalesProperties.lineColor': skin.axis,
-        'mainSeriesProperties.candleStyle.upColor': '#2EBD85',
-        'mainSeriesProperties.candleStyle.downColor': '#F0616D',
-        'mainSeriesProperties.candleStyle.borderUpColor': '#2EBD85',
-        'mainSeriesProperties.candleStyle.borderDownColor': '#F0616D',
-        'mainSeriesProperties.candleStyle.wickUpColor': '#2EBD85',
-        'mainSeriesProperties.candleStyle.wickDownColor': '#F0616D',
-      },
+      studies_overrides: studiesOverrides,
+      overrides: seriesColours(colourOf('up'), colourOf('down')),
     };
   }
 
   let mountSeq = 0;
-  function mountWidget(cell) {
+  function mountWidget(cell, cfg = widgetConfig(cell)) {
     if (!window.TradingView) return;
-    const cfg = widgetConfig(cell);
     cell.sig = JSON.stringify(cfg);
-    // Clearing first stops a stale chart flashing underneath the new one.
+    // Tear the old widget down before dropping its container. Wiping innerHTML
+    // alone leaves tv.js holding listeners on a frame that no longer exists,
+    // which accumulates across every settings change on every chart.
+    try { cell.widget?.remove?.(); } catch {}
+    // Clearing second stops a stale chart flashing underneath the new one.
     cell.els.mount.innerHTML = '';
     const host = document.createElement('div');
     host.id = `tvm-${cell.idx}-${++mountSeq}`;
@@ -273,7 +333,8 @@
      nine, and switching layout rebuilds only the ones whose furniture
      changed. */
   const applyAll = () => state.cells.forEach(c => {
-    if (JSON.stringify(widgetConfig(c)) !== c.sig) mountWidget(c);
+    const cfg = widgetConfig(c);
+    if (JSON.stringify(cfg) !== c.sig) mountWidget(c, cfg);   // built once, not twice
   });
 
   /* A rebuild is a full iframe load, and nine of them is not free. Toggling
@@ -291,7 +352,10 @@
      cross-origin frame and never reaches this side. So a chart switched to 5m
      from its own toolbar still matches its signature and would be skipped.
      This is the deliberate override that drags those back into line. */
-  const forceAll = () => { state.cells.forEach(mountWidget); saveLayout(); };
+  // Not `forEach(mountWidget)`: forEach passes the index as the second
+  // argument, which would land in mountWidget's cfg parameter and build every
+  // chart from a number.
+  const forceAll = () => { state.cells.forEach(c => mountWidget(c)); saveLayout(); };
 
   function setSymbol(cell, input, opts = {}) {
     if (!cell) return;
@@ -320,7 +384,8 @@
 
     while (state.cells.length > want) destroyCell(state.cells.pop());
     while (state.cells.length < want) {
-      const cell = createCell(state.cells.length, (opts.symbols || [])[state.cells.length]);
+      const i = state.cells.length;
+      const cell = createCell(i, (opts.symbols || [])[i], (opts.intervals || [])[i]);
       state.cells.push(cell);
       grid.append(cell.el);
     }
@@ -345,8 +410,9 @@
       theme: state.theme, studies: state.studies,
       hideSideToolbar: state.hideSideToolbar, hideTopToolbar: state.hideTopToolbar,
       hideLegend: state.hideLegend, withVolume: state.withVolume,
-      focus: state.focus,
+      focus: state.focus, colors: state.colors,
       symbols: state.cells.map(c => c.symbol),
+      intervals: state.cells.map(c => c.interval),
     });
   }
 
@@ -365,6 +431,7 @@
     state.hideTopToolbar = !!s.hideTopToolbar;
     state.hideLegend = !!s.hideLegend;
     state.withVolume = s.withVolume !== false;
+    state.colors = Object.assign(blankColors(), s.colors || {});
     state.active = s.active || 0;
     state.focus = !!s.focus;
     document.body.dataset.theme = state.theme;
@@ -372,7 +439,9 @@
     // its charts without the toolbar rather than building then rebuilding.
     // Fullscreen is not re-entered: it needs a gesture a page load cannot give.
     paintFocus();
-    setLayout(s.layout || '1', { symbols: s.symbols || [], skipSave: true });
+    setLayout(s.layout || '1', {
+      symbols: s.symbols || [], intervals: s.intervals || [], skipSave: true,
+    });
   }
 
   /* ══ Borderless ══════════════════════════════════════════════════
@@ -420,11 +489,22 @@
     toast(`Every chart on ${shortName(sym)}`);
   }
 
-  function syncSettings() {
+  const tfLabel = id => INTERVALS.find(i => i.id === id)?.label || id;
+  const paintIntervals = () => state.cells.forEach(c => { c.els.tf.value = c.interval; });
+
+  /* Chart 1 is the master. Its interval goes to every other chart, and every
+     chart is rebuilt from the settings held here — which is also what drags
+     back one that was changed inside TradingView's own toolbar, since that
+     happens in a frame this side cannot read. Symbols are left alone. */
+  function syncFromFirst() {
+    const first = state.cells[0];
+    if (!first) return;
+    state.interval = first.interval;
+    state.cells.forEach(c => { c.interval = first.interval; });
+    paintIntervals();
     forceAll();
-    const tf = INTERVALS.find(i => i.id === state.interval)?.label || state.interval;
     const n = state.cells.length;
-    toast(`${n} chart${n === 1 ? '' : 's'} back on ${tf}`
+    toast(`${n} chart${n === 1 ? '' : 's'} matched to ${shortName(first.symbol)} · ${tfLabel(first.interval)}`
       + (state.studies.length ? ` · ${state.studies.length} indicator${state.studies.length === 1 ? '' : 's'}` : ''));
   }
 
@@ -627,8 +707,15 @@
   const ZONES = ['America/New_York', 'America/Chicago', 'America/Los_Angeles', 'Europe/London',
     'Europe/Berlin', 'Asia/Tokyo', 'Asia/Hong_Kong', 'Australia/Sydney', 'Etc/UTC'];
 
+  /* Opening toggles the panel; rendering does not. They used to be one
+     function, so anything that re-rendered from inside the panel — Reset
+     colours — went through openPanel a second time and shut the panel it was
+     redrawing. */
   function openSettings() {
-    openPanel('panel-settings');
+    if (openPanel('panel-settings')) renderSettings();
+  }
+
+  function renderSettings() {
     const body = $('#settings-body');
     body.textContent = '';
     const group = t => { const h = document.createElement('div'); h.className = 'label group-label'; h.textContent = t; body.append(h); };
@@ -656,7 +743,12 @@
 
     group(`Every chart · ${state.cells.length} on screen`);
     select('Interval', state.interval, INTERVALS.map(i => ({ id: i.id, name: i.label })),
-      v => { state.interval = v; applySoon(0); });
+      v => {
+        state.interval = v;
+        state.cells.forEach(c => { c.interval = v; });   // the default is also a command
+        paintIntervals();
+        applySoon(0);
+      });
     select('Candle type', state.style, STYLES, v => { state.style = v; applySoon(0); });
     select('Time zone', state.timezone, ZONES.map(z => ({ id: z, name: z.replace(/_/g, ' ') })),
       v => { state.timezone = v; applySoon(0); });
@@ -672,6 +764,33 @@
       v => { state.hideTopToolbar = !v; });
     toggle('Legend', () => !state.hideLegend, 'OHLC and indicator readout in the top-left of each chart.',
       v => { state.hideLegend = !v; });
+
+    // `change`, not `input`: dragging inside a colour picker fires input
+    // continuously, and each one would rebuild every chart.
+    const colour = (label, key) => {
+      const row = document.createElement('div'); row.className = 'setting';
+      const l = document.createElement('label'); l.textContent = label;
+      const inp = document.createElement('input');
+      inp.type = 'color';
+      inp.value = colourOf(key);
+      inp.addEventListener('change', () => { state.colors[key] = inp.value; applySoon(200); });
+      row.append(l, inp); body.append(row);
+    };
+
+    group('Appearance');
+    colour('Up', 'up');
+    colour('Down', 'down');
+    colour('Background', 'bg');
+    colour('Volume up', 'volUp');
+    colour('Volume down', 'volDown');
+
+    const cr = document.createElement('div'); cr.className = 'setting';
+    const cl = document.createElement('label');
+    cl.innerHTML = 'Reset colours<div style="font-size:11px;color:var(--dim)">Back to following the theme.</div>';
+    const cb = document.createElement('button');
+    cb.className = 'btn'; cb.textContent = 'Reset';
+    cb.addEventListener("click", () => { state.colors = blankColors(); applySoon(0); renderSettings(); });
+    cr.append(cl, cb); body.append(cr);
 
     const fx = document.createElement('div'); fx.className = 'setting';
     const fl = document.createElement('label');
@@ -694,15 +813,20 @@
       belong to TradingView and are not part of the saved layout. Symbols set from here are.</div>`;
     body.append(note);
 
+    // Every .setting is label-then-control; this row had only a control, so it
+    // laid out differently from the rest and broke anything walking the panel.
     const reset = document.createElement('div'); reset.className = 'setting';
+    const rl = document.createElement('label');
+    rl.innerHTML = 'Reset workspace<div style="font-size:11px;color:var(--dim)">'
+      + 'Clears the layout, watchlist, colours and every setting.</div>';
     const rb = document.createElement('button');
-    rb.className = 'btn'; rb.textContent = 'Reset workspace'; rb.style.color = 'var(--down)';
+    rb.className = 'btn'; rb.textContent = 'Reset'; rb.style.color = 'var(--down)';
     rb.addEventListener('click', () => {
       if (!confirm('Reset layout, watchlist and settings?')) return;
       try { Object.keys(localStorage).filter(k => k.startsWith('tc2:')).forEach(k => localStorage.removeItem(k)); } catch {}
       location.reload();
     });
-    reset.append(rb); body.append(reset);
+    reset.append(rl, rb); body.append(reset);
   }
 
   /* ══ Misc ════════════════════════════════════════════════════════ */
@@ -734,7 +858,7 @@
       const b = e.target.closest('[data-sync]');
       if (!b) return;
       closeMenu();
-      if (b.dataset.sync === 'symbol') syncSymbol(); else syncSettings();
+      if (b.dataset.sync === "symbol") syncSymbol(); else syncFromFirst();
     });
     document.addEventListener('click', e => {
       if (!e.target.closest('.menu-wrap')) closeMenu();
@@ -796,7 +920,7 @@
       if (typing) return;
       if (e.key === '/') { e.preventDefault(); openSearch(); }
       else if (e.key.toLowerCase() === 'f') { setFocus(!state.focus); }
-      else if (e.key.toLowerCase() === 'r') { syncSettings(); }
+      else if (e.key.toLowerCase() === 'r') { syncFromFirst(); }
       else if (/^[1-9]$/.test(e.key) && !e.metaKey && !e.ctrlKey) {
         // The digit is the number of charts, so 9 gives nine.
         const hit = LAYOUTS.find(l => l.key === e.key);
