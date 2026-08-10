@@ -247,9 +247,72 @@ const DATA = (() => {
     return `${YF}/v8/finance/chart/${encodeURIComponent(symbol)}?${p}`;
   }
 
+  /* ── Auction reconciliation ───────────────────────────────────────────
+     Yahoo serves intraday bars from a thinner feed than its daily bars, and
+     that feed misses the opening and closing auction prints. Measured on
+     AAPL/NVDA/TSLA: the daily open falls *outside* the range of the 09:30
+     one-minute bar on roughly 5 sessions in 8 — on 2026-08-04 the official
+     open was 302.73 while the first minute only traded 303.74–303.79.
+
+     Every real charting platform puts the auction in the session's first and
+     last candle, which is why an untouched Yahoo intraday chart visibly
+     disagrees with TradingView on exactly those two bars. Both prints happen
+     at known times, so they can be placed exactly: the open belongs to the
+     session's first bar, the close to its last. Nothing else is inferred —
+     the daily high/low are deliberately not redistributed, because there is
+     no way to know which bar they belong to without fabricating.           */
+  function reconcileAuctions(bars, dailyBars, tolerance = 0.05) {
+    if (!bars.length || !dailyBars?.length) return 0;
+    const daily = new Map(dailyBars.map(b => [Math.floor(b.time / DAY), b]));
+    const first = new Map(), last = new Map();
+    for (const b of bars) {
+      const k = Math.floor(b.time / DAY);
+      if (!first.has(k)) first.set(k, b);
+      last.set(k, b);
+    }
+    let patched = 0;
+    for (const [k, d] of daily) {
+      const f = first.get(k), l = last.get(k);
+      if (!f || !l) continue;
+      // Refuse to "correct" anything that looks like a different instrument
+      // or a split-adjustment mismatch rather than an auction print.
+      if (Math.abs(d.open - f.open) / f.open < tolerance) {
+        if (d.open !== f.open) patched++;
+        f.open = d.open;
+        f.high = Math.max(f.high, d.open);
+        f.low = Math.min(f.low, d.open);
+      }
+      if (Math.abs(d.close - l.close) / l.close < tolerance) {
+        if (d.close !== l.close) patched++;
+        l.close = d.close;
+        l.high = Math.max(l.high, d.close);
+        l.low = Math.min(l.low, d.close);
+      }
+    }
+    return patched;
+  }
+
+  // Daily range wide enough to cover the intraday window being reconciled.
+  const DAILY_COVER = { '1m': '1mo', '2m': '3mo', '5m': '3mo', '15m': '3mo', '30m': '3mo', '1h': '2y', '4h': '2y' };
+
   async function fetchBars(symbol, tfId, opts = {}) {
     const json = await getJSON(chartURL(symbol, tfId, opts), 14000);
-    return parseChart(json, tfId, opts);
+    const parsed = parseChart(json, tfId, opts);
+
+    // Only meaningful for regular-session intraday charts: the daily bar
+    // describes regular hours, so it cannot reconcile an extended-hours
+    // series, and daily-and-slower bars already contain the auctions.
+    const wants = opts.reconcile !== false && isIntraday(tfId) && !opts.prePost && !parsed.meta.is24h;
+    if (wants) {
+      try {
+        const dj = await getJSON(chartURL(symbol, '1d', {
+          range: DAILY_COVER[tfId] || '3mo', dividendAdjusted: opts.dividendAdjusted,
+        }), 10000);
+        const dbars = parseChart(dj, '1d', opts).bars;
+        parsed.meta.auctionsPatched = reconcileAuctions(parsed.bars, dbars);
+      } catch { parsed.meta.auctionsPatched = null; }   // never fail the chart over this
+    }
+    return parsed;
   }
 
   // Light quote used by the poller and the scanner. One chart request with a
@@ -415,7 +478,7 @@ const DATA = (() => {
     YF, TIMEFRAMES, TF, isIntraday,
     tzOffset, getJSON, setDirect, chartURL, parseChart,
     fetchBars, fetchQuote, fetchQuotes, search,
-    sessionKey, periodKeyFor, marketOpen, applyTick, isStub,
+    sessionKey, periodKeyFor, marketOpen, applyTick, isStub, reconcileAuctions,
     decimalsFor, fmtPrice, fmtVolume,
   };
 })();

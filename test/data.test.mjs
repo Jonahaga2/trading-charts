@@ -53,6 +53,8 @@ let pass = 0, fail = 0; const failures = [];
 const ok = (name, cond, detail = '') => {
   if (cond) pass++; else { fail++; failures.push(`${name}${detail ? ' — ' + detail : ''}`); }
 };
+const eq = (name, actual, expected, tol = 1e-9) =>
+  ok(name, actual != null && Math.abs(actual - expected) <= tol, `${actual} != ${expected}`);
 const section = s => console.log(`\n\x1b[1m${s}\x1b[0m`);
 const utcParts = t => {
   const d = new Date(t * 1000);
@@ -298,6 +300,73 @@ section('6. Live tick handling (the fake-candle regression)');
       DATA.applyTick(bars, meta, 150, bars[2].utc + 10) !== null);
     ok('crypto market always reads as open', DATA.marketOpen(meta, 0) === true);
   }
+}
+
+/* ═══ 6b. Auction reconciliation ═════════════════════════════════════ */
+section('6b. Opening/closing auction reconciliation');
+{
+  const mk = (t, o, h, l, c, v = 100) => ({ time: t, utc: t, open: o, high: h, low: l, close: c, volume: v });
+  const D = 86400;
+  // one session of three intraday bars, plus the authoritative daily bar
+  const intraday = [mk(D * 10 + 100, 303.79, 303.79, 303.74, 303.76), mk(D * 10 + 200, 303.76, 305, 303.5, 304.8), mk(D * 10 + 300, 304.8, 305.2, 304.1, 304.9)];
+  const dailyBar = [mk(D * 10 + 50, 302.73, 305.2, 302.73, 305.05)];
+  const patched = DATA.reconcileAuctions(intraday, dailyBar);
+  ok('reconciliation reports what it changed', patched === 2, `${patched}`);
+  eq('first bar takes the official open', intraday[0].open, 302.73);
+  ok('first bar low widens to contain the auction print', intraday[0].low === 302.73);
+  eq('last bar takes the official close', intraday[2].close, 305.05);
+  ok('last bar high widens to contain the closing print', intraday[2].high === 305.2);
+  ok('mid-session bars are untouched', intraday[1].open === 303.76 && intraday[1].close === 304.8);
+
+  // It must refuse when the daily bar is nowhere near — that is a mismatched
+  // instrument or a split-adjustment difference, not an auction print.
+  const far = [mk(D * 11 + 100, 100, 101, 99, 100)];
+  const bogus = [mk(D * 11 + 50, 25, 26, 24, 25)];
+  const n = DATA.reconcileAuctions(far, bogus);
+  ok('refuses to patch an implausible gap', n === 0 && far[0].open === 100);
+
+  // A session with no matching daily bar is left alone.
+  const orphan = [mk(D * 12 + 100, 10, 11, 9, 10)];
+  DATA.reconcileAuctions(orphan, dailyBar);
+  ok('sessions without a daily bar are untouched', orphan[0].open === 10);
+  ok('empty inputs are safe', DATA.reconcileAuctions([], dailyBar) === 0 && DATA.reconcileAuctions(intraday, []) === 0);
+
+  // Live: the reconciled 5m series must now agree with the daily bar on the
+  // session open and close, which is the thing that visibly differed.
+  const i5 = await DATA.fetchBars('AAPL', '5m');
+  const d1 = await DATA.fetchBars('AAPL', '1d');
+  const dayOf = b => Math.floor(b.time / 86400);
+  const dmap = new Map(d1.bars.map(b => [dayOf(b), b]));
+  const groups = new Map();
+  for (const b of i5.bars) {
+    const k = dayOf(b);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(b);
+  }
+  let checked = 0, openOk = 0, closeOk = 0;
+  for (const [k, bs] of groups) {
+    const d = dmap.get(k);
+    if (!d || bs.length < 70) continue;
+    checked++;
+    if (Math.abs(bs[0].open - d.open) < 0.005) openOk++;
+    if (Math.abs(bs[bs.length - 1].close - d.close) < 0.005) closeOk++;
+  }
+  ok('live: session opens now match the official daily open', checked > 5 && openOk === checked,
+    `${openOk}/${checked}`);
+  ok('live: session closes now match the official daily close', checked > 5 && closeOk === checked,
+    `${closeOk}/${checked}`);
+  ok('reconciliation reported a patch count', typeof i5.meta.auctionsPatched === 'number',
+    String(i5.meta.auctionsPatched));
+
+  // Reconciled bars must still be internally valid candles.
+  ok('reconciled bars keep high >= max(open,close)',
+    i5.bars.every(b => b.high >= Math.max(b.open, b.close) - 1e-9));
+  ok('reconciled bars keep low <= min(open,close)',
+    i5.bars.every(b => b.low <= Math.min(b.open, b.close) + 1e-9));
+
+  // Opting out returns the raw feed.
+  const raw = await DATA.fetchBars('AAPL', '5m', { reconcile: false });
+  ok('reconcile:false leaves the raw feed alone', raw.meta.auctionsPatched === undefined);
 }
 
 /* ═══ 7. Stub detection unit checks ══════════════════════════════════ */

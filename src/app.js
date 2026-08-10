@@ -37,6 +37,7 @@
     prePost: false,
     seriesType: 'candles',
     dividendAdjusted: false,
+    reconcile: true,
     profile: null,
   };
 
@@ -794,6 +795,7 @@
       const { bars, meta } = await DATA.fetchBars(symbol, tf, {
         prePost: state.prePost,
         dividendAdjusted: state.dividendAdjusted,
+        reconcile: state.reconcile,
       });
       if (cell.loadToken !== token || cell.destroyed) return;   // superseded
 
@@ -1032,7 +1034,8 @@
   function saveLayout() {
     STORE.set('layout', {
       layout: state.layout, active: state.active,
-      prePost: state.prePost, seriesType: state.seriesType, dividendAdjusted: state.dividendAdjusted,
+      prePost: state.prePost, seriesType: state.seriesType,
+      dividendAdjusted: state.dividendAdjusted, reconcile: state.reconcile,
       cells: state.cells.map(c => ({
         symbol: c.symbol, tf: c.tf,
         indicators: c.indicators.map(i => ({ defId: i.defId, params: i.params, color: i.color,
@@ -1048,6 +1051,7 @@
     state.prePost = !!s.prePost;
     state.seriesType = s.seriesType || 'candles';
     state.dividendAdjusted = !!s.dividendAdjusted;
+    state.reconcile = s.reconcile !== false;
     $('#btn-prepost').classList.toggle('on', state.prePost);
     setLayout(s.layout || '1', { skipLoad: true, skipSave: true });
     (s.cells || []).forEach(async (saved, i) => {
@@ -1280,6 +1284,11 @@
     });
 
     group('Data');
+    toggle('Include auction prints', state.reconcile,
+      "Yahoo's intraday feed omits the opening and closing auctions, so the first and last candle of each session disagree with other platforms. On, they are taken from the official daily bar.", v => {
+        state.reconcile = v;
+        state.cells.forEach(c => c.symbol && loadCell(c, c.symbol, c.tf));
+      });
     toggle('Extended hours', state.prePost,
       'Include pre-market and after-hours bars on intraday charts.', v => {
         state.prePost = v; $('#btn-prepost').classList.toggle('on', v);

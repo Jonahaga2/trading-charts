@@ -85,6 +85,18 @@ Each of these was checked against real API responses, not assumed:
   session, which is what VWAP and pivots anchor to.
 - **4h uses Yahoo's native session-anchored interval.** Resampling 1h bars into
   UTC 4h buckets straddles the session open.
+- **Yahoo's intraday feed omits the opening and closing auctions.** Its daily
+  bars include them; its intraday bars come from a thinner feed that does not.
+  Measured on AAPL/NVDA/TSLA, the official daily open falls *outside* the range
+  of the 09:30 one-minute bar on roughly five sessions in eight — on
+  2026-08-04 the open was 302.73 while the first minute only traded
+  303.74–303.79. Every other charting platform puts the auction in the first
+  and last candle of the session, so an untouched Yahoo intraday chart visibly
+  disagrees on exactly those two bars. Both prints happen at known times, so
+  they are placed exactly: open into the session's first bar, close into its
+  last. The daily high/low are deliberately *not* redistributed — there is no
+  way to know which bar they belong to without inventing one. Toggle under
+  Settings → Data → Include auction prints.
 - **OHLC is already split-adjusted**; `adjclose` is additionally
   dividend-adjusted. Split adjustment is the default, matching other charting
   platforms; dividends are opt-in in Settings and scale the whole candle.
@@ -154,5 +166,15 @@ plot(sma(close, 30), { color: '#E8B34A' });
   slow.
 - Intraday history is capped by Yahoo: 1m goes back ~7 days, 5m/15m/30m ~60
   days, 1h/4h ~2 years.
+- **Intraday volume is understated.** Yahoo's intraday feed misses
+  off-exchange prints: summing its 5m bars gives 11–24% less volume than its
+  own daily bar for the same session (median, measured on AAPL/NVDA/TSLA).
+  Auction reconciliation fixes the opening and closing *price*, but nothing
+  can recover the missing volume from this source. Treat intraday volume as
+  relative, not absolute — and compare like-for-like across bars rather than
+  against another platform's number.
+- Individual mid-session wicks can still differ slightly from a
+  consolidated-feed platform for the same reason. Daily, weekly and monthly
+  candles come from Yahoo's consolidated series and should match closely.
 - Data is delayed and is not exchange-official. This is a charting tool, not a
   trading system.
