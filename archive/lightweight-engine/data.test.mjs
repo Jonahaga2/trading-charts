@@ -19,8 +19,9 @@ import fs from 'node:fs';
 import os from 'node:os';
 
 const require = createRequire(import.meta.url);
-const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const DATA = require(path.join(ROOT, 'src', 'data.js'));
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.dirname(path.dirname(HERE));
+const DATA = require(path.join(HERE, 'data.js'));
 
 let pass = 0, fail = 0; const failures = [];
 const ok = (name, cond, detail = '') => {

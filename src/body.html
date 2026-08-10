@@ -1,23 +1,12 @@
-<!-- Icons are inlined once here and cloned by id, so the markup below stays
-     readable and the browser parses each path exactly once. -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <g id="i-close"><path d="M4 4l8 8M12 4l-8 8"/></g>
-  <g id="i-gear"><circle cx="8" cy="8" r="2.4"/><path d="M8 1.5v2M8 12.5v2M14.5 8h-2M3.5 8h-2M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4M12.6 12.6l-1.4-1.4M4.8 4.8L3.4 3.4"/></g>
   <g id="i-search"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></g>
   <g id="i-star"><path d="M8 2l1.9 3.9 4.1.6-3 2.9.7 4.1L8 11.6 4.3 13.5l.7-4.1-3-2.9 4.1-.6z"/></g>
   <g id="i-radar"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.5"/><path d="M8 8l4-4"/></g>
   <g id="i-news"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M4.5 6h5M4.5 8.5h7M4.5 11h4"/></g>
-  <g id="i-fx"><path d="M2 12l3.5-5 3 3L14 4"/><path d="M10 4h4v4"/></g>
-  <g id="i-code"><path d="M6 4L2.5 8 6 12M10 4l3.5 4L10 12"/></g>
-  <g id="i-fit"><path d="M6 2H2v4M10 2h4v4M6 14H2v-4M10 14h4v-4"/></g>
-  <g id="i-cursor"><path d="M3 2l5.5 12 1.8-4.7L15 7.5z"/></g>
-  <g id="i-cross"><path d="M8 1v14M1 8h14"/></g>
-  <g id="i-trend"><path d="M2 13L14 3"/><circle cx="2.5" cy="12.5" r="1.4"/><circle cx="13.5" cy="3.5" r="1.4"/></g>
-  <g id="i-hline"><path d="M1.5 8h13"/><circle cx="8" cy="8" r="1.5"/></g>
-  <g id="i-rect"><rect x="2.5" y="4" width="11" height="8" rx="1"/></g>
-  <g id="i-fib"><path d="M2 3.5h12M2 6.5h12M2 9.5h12M2 12.5h12"/></g>
-  <g id="i-text"><path d="M3 4h10M8 4v9"/></g>
-  <g id="i-trash"><path d="M3 4.5h10M6.5 4.5V3h3v1.5M4.5 4.5l.7 9h5.6l.7-9"/></g>
+  <g id="i-gear"><circle cx="8" cy="8" r="2.4"/><path d="M8 1.5v2M8 12.5v2M14.5 8h-2M3.5 8h-2M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4M12.6 12.6l-1.4-1.4M4.8 4.8L3.4 3.4"/></g>
+  <g id="i-sync"><path d="M13 7a5 5 0 0 0-9-2M3 9a5 5 0 0 0 9 2"/><path d="M3.5 3v3h3M12.5 13v-3h-3"/></g>
+  <g id="i-plus"><path d="M8 3v10M3 8h10"/></g>
   <g id="i-l1"><rect x="2" y="3" width="12" height="10" rx="1"/></g>
   <g id="i-l2"><rect x="2" y="3" width="5.2" height="10" rx="1"/><rect x="8.8" y="3" width="5.2" height="10" rx="1"/></g>
   <g id="i-l2v"><rect x="2" y="3" width="12" height="4.2" rx="1"/><rect x="2" y="8.8" width="12" height="4.2" rx="1"/></g>
@@ -25,61 +14,6 @@
   <g id="i-l4"><rect x="2" y="3" width="5.2" height="4.2" rx="1"/><rect x="8.8" y="3" width="5.2" height="4.2" rx="1"/><rect x="2" y="8.8" width="5.2" height="4.2" rx="1"/><rect x="8.8" y="8.8" width="5.2" height="4.2" rx="1"/></g>
   <g id="i-l6"><rect x="1.5" y="3" width="4" height="4.2" rx="1"/><rect x="6" y="3" width="4" height="4.2" rx="1"/><rect x="10.5" y="3" width="4" height="4.2" rx="1"/><rect x="1.5" y="8.8" width="4" height="4.2" rx="1"/><rect x="6" y="8.8" width="4" height="4.2" rx="1"/><rect x="10.5" y="8.8" width="4" height="4.2" rx="1"/></g>
 </defs></svg>
-
-<!-- ═══ Lock ═══════════════════════════════════════════════════════ -->
-<div id="lock" hidden>
-  <div class="lock-card">
-    <svg class="lock-mark" viewBox="0 0 32 32" aria-hidden="true">
-      <rect x="8" y="11" width="4" height="13" fill="#2EBD85"/><rect x="9.2" y="7" width="1.6" height="19" fill="#2EBD85"/>
-      <rect x="19" y="8" width="4" height="11" fill="#F0616D"/><rect x="20.2" y="5" width="1.6" height="18" fill="#F0616D"/>
-    </svg>
-    <div class="lock-title">Trading Charts</div>
-    <div class="lock-sub" id="lock-sub">Enter your passphrase to unlock this browser.</div>
-    <form id="lock-form" autocomplete="off">
-      <input class="field" type="text" id="lock-user" placeholder="Name" autocomplete="username">
-      <input class="field" type="password" id="lock-pass" placeholder="Passphrase" autocomplete="current-password">
-      <input class="field" type="password" id="lock-pass2" placeholder="Confirm passphrase" hidden>
-      <button class="btn-primary btn" type="submit" id="lock-go">Unlock</button>
-    </form>
-    <div class="lock-err" id="lock-err"></div>
-    <div class="lock-alt">
-      <button type="button" id="lock-toggle">Set up a new profile</button> ·
-      <button type="button" id="lock-skip">Skip</button>
-      <div style="margin-top:8px">This lock keeps your layout separate per profile on this
-        browser. It is not account security — the page is public and runs entirely client-side.</div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ Connect ════════════════════════════════════════════════════
-     Keys live in this browser and are sent straight to Alpaca — no server
-     and no proxy sits in between. They are still a browser-side secret on a
-     public page, which is why this asks for paper keys. -->
-<div id="connect" hidden>
-  <div class="lock-card">
-    <svg class="lock-mark" viewBox="0 0 32 32" aria-hidden="true">
-      <rect x="8" y="11" width="4" height="13" fill="#2EBD85"/><rect x="9.2" y="7" width="1.6" height="19" fill="#2EBD85"/>
-      <rect x="19" y="8" width="4" height="11" fill="#F0616D"/><rect x="20.2" y="5" width="1.6" height="18" fill="#F0616D"/>
-    </svg>
-    <div class="lock-title">Connect your data</div>
-    <div class="lock-sub">Charts are drawn from Alpaca's market data. Paste an API key
-      pair to begin — a free account is enough.</div>
-    <form id="connect-form" autocomplete="off">
-      <input class="field" type="text" id="ap-key" placeholder="API key ID" spellcheck="false" autocomplete="off">
-      <input class="field" type="password" id="ap-secret" placeholder="API secret key" autocomplete="off">
-      <label class="connect-check"><input type="checkbox" id="ap-paper" checked> These are paper-trading keys</label>
-      <button class="btn btn-primary" type="submit" id="ap-go">Connect</button>
-    </form>
-    <div class="lock-err" id="connect-err"></div>
-    <div class="lock-alt">
-      Get keys at <a href="https://app.alpaca.markets/paper/dashboard/overview" target="_blank" rel="noopener noreferrer">app.alpaca.markets</a>
-      → Home → API Keys.
-      <div style="margin-top:8px">Your keys are stored in this browser only and go directly
-        to Alpaca. <b>Use paper keys.</b> Anything stored client-side on a public page should
-        never be able to move real money.</div>
-    </div>
-  </div>
-</div>
 
 <!-- ═══ Header ═════════════════════════════════════════════════════ -->
 <header id="header">
@@ -92,146 +26,75 @@
   </div>
 
   <div class="layouts" id="layouts" role="group" aria-label="Grid layout">
-    <button class="btn on" data-layout="1"  title="Single chart"     aria-label="Single chart"><svg viewBox="0 0 16 16"><use href="#i-l1"/></svg></button>
-    <button class="btn"    data-layout="2"  title="Two columns"      aria-label="Two columns"><svg viewBox="0 0 16 16"><use href="#i-l2"/></svg></button>
-    <button class="btn"    data-layout="2v" title="Two rows"         aria-label="Two rows"><svg viewBox="0 0 16 16"><use href="#i-l2v"/></svg></button>
-    <button class="btn"    data-layout="3"  title="Three charts"     aria-label="Three charts"><svg viewBox="0 0 16 16"><use href="#i-l3"/></svg></button>
-    <button class="btn"    data-layout="4"  title="Four charts"      aria-label="Four charts"><svg viewBox="0 0 16 16"><use href="#i-l4"/></svg></button>
-    <button class="btn"    data-layout="6"  title="Six charts"       aria-label="Six charts"><svg viewBox="0 0 16 16"><use href="#i-l6"/></svg></button>
+    <button class="btn on" data-layout="1"  title="Single chart"><svg viewBox="0 0 16 16"><use href="#i-l1"/></svg></button>
+    <button class="btn"    data-layout="2"  title="Two columns"><svg viewBox="0 0 16 16"><use href="#i-l2"/></svg></button>
+    <button class="btn"    data-layout="2v" title="Two rows"><svg viewBox="0 0 16 16"><use href="#i-l2v"/></svg></button>
+    <button class="btn"    data-layout="3"  title="Three charts"><svg viewBox="0 0 16 16"><use href="#i-l3"/></svg></button>
+    <button class="btn"    data-layout="4"  title="Four charts"><svg viewBox="0 0 16 16"><use href="#i-l4"/></svg></button>
+    <button class="btn"    data-layout="6"  title="Six charts"><svg viewBox="0 0 16 16"><use href="#i-l6"/></svg></button>
   </div>
 
   <div class="sep"></div>
-  <button class="btn" id="btn-search"><svg viewBox="0 0 16 16"><use href="#i-search"/></svg>Symbol<kbd style="margin-left:2px">/</kbd></button>
-  <button class="btn" id="btn-indicators"><svg viewBox="0 0 16 16"><use href="#i-fx"/></svg>Indicators</button>
-
-  <div class="sep"></div>
-  <button class="btn icon" id="btn-watchlist" title="Watchlist"><svg viewBox="0 0 16 16"><use href="#i-star"/></svg></button>
-  <button class="btn icon" id="btn-scanner"   title="Scanner"><svg viewBox="0 0 16 16"><use href="#i-radar"/></svg></button>
-  <button class="btn icon" id="btn-news"      title="News"><svg viewBox="0 0 16 16"><use href="#i-news"/></svg></button>
-  <button class="btn icon" id="btn-editor"    title="Script editor"><svg viewBox="0 0 16 16"><use href="#i-code"/></svg></button>
+  <button class="btn" id="btn-search"><svg viewBox="0 0 16 16"><use href="#i-search"/></svg><span>Symbol</span><kbd>/</kbd></button>
+  <button class="btn" id="btn-sync" title="Put the active symbol on every chart"><svg viewBox="0 0 16 16"><use href="#i-sync"/></svg><span>Sync all</span></button>
 
   <div class="spacer"></div>
 
-  <button class="btn" id="btn-prepost" title="Include pre-market and after-hours bars">Ext hours</button>
-  <button class="btn icon" id="btn-fit" title="Fit chart to data"><svg viewBox="0 0 16 16"><use href="#i-fit"/></svg></button>
-  <div class="sep"></div>
-  <div class="market-state" id="market-state" data-state="closed">
-    <span class="market-dot"></span><span id="market-label">Connecting</span>
-  </div>
-  <button class="btn icon" id="btn-settings" title="Settings"><svg viewBox="0 0 16 16"><use href="#i-gear"/></svg></button>
+  <button class="btn icon" id="btn-watchlist" title="Watchlist"><svg viewBox="0 0 16 16"><use href="#i-star"/></svg></button>
+  <button class="btn icon" id="btn-screener"  title="Screener"><svg viewBox="0 0 16 16"><use href="#i-radar"/></svg></button>
+  <button class="btn icon" id="btn-news"      title="News"><svg viewBox="0 0 16 16"><use href="#i-news"/></svg></button>
+  <button class="btn icon" id="btn-settings"  title="Settings"><svg viewBox="0 0 16 16"><use href="#i-gear"/></svg></button>
 </header>
 
-<!-- ═══ Workspace ══════════════════════════════════════════════════ -->
-<div id="workspace">
-  <nav id="rail" aria-label="Drawing tools">
-    <button class="btn on" data-tool="cursor"    title="Cursor"><svg viewBox="0 0 16 16"><use href="#i-cursor"/></svg></button>
-    <button class="btn"    data-tool="crosshair" title="Magnet crosshair"><svg viewBox="0 0 16 16"><use href="#i-cross"/></svg></button>
-    <div class="rail-sep"></div>
-    <button class="btn" data-tool="trendline" title="Trend line"><svg viewBox="0 0 16 16"><use href="#i-trend"/></svg></button>
-    <button class="btn" data-tool="hline"     title="Horizontal line"><svg viewBox="0 0 16 16"><use href="#i-hline"/></svg></button>
-    <button class="btn" data-tool="rect"      title="Rectangle"><svg viewBox="0 0 16 16"><use href="#i-rect"/></svg></button>
-    <button class="btn" data-tool="fib"       title="Fibonacci retracement"><svg viewBox="0 0 16 16"><use href="#i-fib"/></svg></button>
-    <div class="rail-sep"></div>
-    <button class="btn" id="btn-clear-draw" title="Clear drawings"><svg viewBox="0 0 16 16"><use href="#i-trash"/></svg></button>
-  </nav>
+<!-- ═══ Charts ═════════════════════════════════════════════════════ -->
+<main id="grid" data-layout="1"></main>
 
-  <main id="grid" data-layout="1"></main>
-</div>
-
-<!-- ═══ Panels ═════════════════════════════════════════════════════
-     Wrapped in a clipping layer: a closed panel is parked one full width to
-     the right, and without this it would extend the document past the
-     viewport. The layer ignores pointer events so it never sits between the
-     cursor and the chart; each panel re-enables them for itself. -->
+<!-- ═══ Panels ═════════════════════════════════════════════════════ -->
 <div id="panel-layer">
-<aside class="panel" id="panel-watchlist" aria-label="Watchlist">
-  <div class="panel-head">
-    <span class="panel-title">Watchlist</span>
-    <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
-  </div>
-  <div class="panel-body" id="watchlist-body"></div>
-  <div class="panel-foot">
-    <input class="field" id="watchlist-add" placeholder="Add symbol" style="flex:1">
-    <button class="btn" id="watchlist-add-btn">Add</button>
-  </div>
-</aside>
+  <aside class="panel" id="panel-watchlist" aria-label="Watchlist">
+    <div class="panel-head">
+      <span class="panel-title">Watchlist</span>
+      <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="panel-body" id="watchlist-body"></div>
+    <div class="panel-foot">
+      <input class="field" id="watchlist-add" placeholder="Add symbol" spellcheck="false" style="flex:1">
+      <button class="btn" id="watchlist-add-btn"><svg viewBox="0 0 16 16"><use href="#i-plus"/></svg></button>
+    </div>
+  </aside>
 
-<aside class="panel" id="panel-indicators" aria-label="Indicators">
-  <div class="panel-head">
-    <span class="panel-title">Indicators</span>
-    <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
-  </div>
-  <div class="tabs">
-    <button class="tab on" data-ind-tab="add">Add</button>
-    <button class="tab" data-ind-tab="active">On this chart</button>
-  </div>
-  <div class="ind-search" id="ind-search-wrap"><input class="field" id="ind-search" placeholder="Search 41 indicators"></div>
-  <div class="panel-body" id="indicators-body"></div>
-</aside>
+  <aside class="panel wide" id="panel-screener" aria-label="Screener">
+    <div class="panel-head">
+      <span class="panel-title">Screener</span>
+      <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="panel-body embed" id="screener-body"></div>
+  </aside>
 
-<aside class="panel" id="panel-scanner" aria-label="Scanner">
-  <div class="panel-head">
-    <span class="panel-title">Scanner</span>
-    <button class="btn icon" id="scanner-run" title="Run scan"><svg viewBox="0 0 16 16"><use href="#i-radar"/></svg></button>
-    <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
-  </div>
-  <div class="tabs">
-    <button class="tab on" data-scan-tab="gainers">Gainers</button>
-    <button class="tab" data-scan-tab="losers">Losers</button>
-    <button class="tab" data-scan-tab="active">Most active</button>
-    <button class="tab" data-scan-tab="custom">Filter</button>
-  </div>
-  <div class="filters" id="scan-filters" hidden>
-    <div class="fl"><span class="label">Min price</span><input class="field" type="number" id="f-minpx" placeholder="0"></div>
-    <div class="fl"><span class="label">Max price</span><input class="field" type="number" id="f-maxpx" placeholder="∞"></div>
-    <div class="fl"><span class="label">Min change %</span><input class="field" type="number" id="f-minchg" placeholder="-100"></div>
-    <div class="fl"><span class="label">Max change %</span><input class="field" type="number" id="f-maxchg" placeholder="100"></div>
-    <div class="fl"><span class="label">Min volume (M)</span><input class="field" type="number" id="f-minvol" placeholder="0"></div>
-    <div class="fl"><span class="label">Within % of 52w high</span><input class="field" type="number" id="f-hi52" placeholder="∞"></div>
-  </div>
-  <div class="panel-body" id="scanner-body"></div>
-</aside>
+  <aside class="panel" id="panel-news" aria-label="News">
+    <div class="panel-head">
+      <span class="panel-title">News</span>
+      <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="panel-body embed" id="news-body"></div>
+  </aside>
 
-<aside class="panel" id="panel-news" aria-label="News">
-  <div class="panel-head">
-    <span class="panel-title">News</span>
-    <button class="btn icon" id="news-refresh" title="Refresh"><svg viewBox="0 0 16 16"><use href="#i-news"/></svg></button>
-    <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
-  </div>
-  <div class="panel-body" id="news-body"></div>
-</aside>
-
-<aside class="panel wide" id="panel-editor" aria-label="Script editor">
-  <div class="panel-head">
-    <span class="panel-title">Script editor</span>
-    <select class="field" id="editor-template" style="width:130px"></select>
-    <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
-  </div>
-  <div class="editor-wrap"><textarea id="editor-area"></textarea></div>
-  <div class="panel-foot">
-    <button class="btn btn-primary" id="editor-run">Add to chart</button>
-    <button class="btn" id="editor-remove">Remove</button>
-    <span class="spacer" style="flex:1"></span>
-    <span class="label" style="align-self:center">Ctrl ⏎</span>
-  </div>
-</aside>
-
-<aside class="panel" id="panel-settings" aria-label="Settings">
-  <div class="panel-head">
-    <span class="panel-title">Settings</span>
-    <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
-  </div>
-  <div class="panel-body" id="settings-body"></div>
-</aside>
+  <aside class="panel" id="panel-settings" aria-label="Settings">
+    <div class="panel-head">
+      <span class="panel-title">Settings</span>
+      <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="panel-body" id="settings-body"></div>
+  </aside>
 </div>
 
 <!-- ═══ Symbol search ══════════════════════════════════════════════ -->
 <div id="search-overlay" role="dialog" aria-modal="true" aria-label="Symbol search">
   <div class="search-box">
-    <input id="search-input" placeholder="Search symbols — AAPL, SPY, BTC/USD" autocomplete="off" spellcheck="false">
+    <input id="search-input" placeholder="Symbol — AAPL, NASDAQ:TSLA, BINANCE:BTCUSDT" autocomplete="off" spellcheck="false">
     <div class="search-results" id="search-results"></div>
     <div class="search-hint">
-      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>⏎</kbd> load</span><span><kbd>esc</kbd> close</span>
+      <span><kbd>↑</kbd><kbd>↓</kbd> pick</span><span><kbd>⏎</kbd> load</span><span><kbd>esc</kbd> close</span>
     </div>
   </div>
 </div>

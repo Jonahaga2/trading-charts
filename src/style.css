@@ -185,17 +185,7 @@ select.field { cursor: pointer; }
 .market-state[data-state="open"]  { color: var(--text); }
 @keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: .45 } }
 
-/* ═══ Tool rail ══════════════════════════════════════════════════════ */
-#rail {
-  width: var(--rail-w); flex: none;
-  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 0;
-  background: var(--surface); border-right: 1px solid var(--line);
-}
-#rail .btn { width: 30px; height: 30px; padding: 0; justify-content: center; border-radius: var(--r); }
-#rail .rail-sep { width: 18px; height: 1px; background: var(--line); margin: 6px 0; }
-
 /* ═══ Workspace ══════════════════════════════════════════════════════ */
-#workspace { flex: 1; display: flex; min-height: 0; }
 #grid {
   flex: 1; display: grid; gap: 1px; background: var(--line-soft); min-height: 0; min-width: 0;
 }
@@ -216,12 +206,22 @@ select.field { cursor: pointer; }
 .cell.active { box-shadow: inset 0 0 0 1px rgba(232, 179, 74, .3); }
 #grid[data-layout="1"] .cell.active { box-shadow: none; }
 
-/* — toolbar — */
+/* — toolbar: symbol only; everything else belongs to the widget — */
 .cell-bar {
-  height: 34px; flex: none;
-  display: flex; align-items: center; gap: 3px; padding: 0 6px 0 8px;
+  height: 32px; flex: none;
+  display: flex; align-items: center; gap: 4px; padding: 0 6px 0 8px;
   border-bottom: 1px solid var(--line-soft);
 }
+.cell-bar .spacer { flex: 1; }
+.cell-hint { font-size: 11px; color: var(--dim); }
+.cell-chart { flex: 1; min-height: 0; position: relative; }
+.chart-mount { position: absolute; inset: 0; }
+/* The widget paints its own background; this stops a white flash while the
+   iframe loads. */
+.chart-mount iframe { border: 0; background: var(--bg); }
+.panel-body.embed { padding: 0; overflow: hidden; }
+.panel-body.embed .tradingview-widget-container { height: 100%; }
+.group-label { padding: 12px 12px 4px; }
 .sym-input {
   width: 82px; height: 24px; padding: 0 6px;
   background: transparent; border: 1px solid transparent; border-radius: 4px;
@@ -231,17 +231,7 @@ select.field { cursor: pointer; }
 .sym-input:hover { background: var(--raised); }
 .sym-input:focus { outline: none; background: var(--bg); border-color: var(--accent); }
 
-.tf-group { display: flex; gap: 0; }
-.tf-btn {
-  height: 24px; min-width: 26px; padding: 0 5px;
-  background: transparent; border: none; border-radius: 4px;
-  color: var(--dim); font: inherit; font-size: 11px; font-weight: 600; cursor: pointer;
-  transition: color .1s var(--ease), background .1s var(--ease);
-}
-.tf-btn:hover { color: var(--text); background: var(--raised); }
-.tf-btn.on { color: var(--accent); background: var(--accent-soft); }
 
-.cell-bar .spacer { flex: 1; }
 
 .last-price {
   font-family: var(--mono); font-variant-numeric: tabular-nums;
@@ -261,113 +251,6 @@ select.field { cursor: pointer; }
 .chg-badge.up { color: var(--up); background: var(--up-soft); }
 .chg-badge.down { color: var(--down); background: var(--down-soft); }
 
-/* — session ribbon: the signature —
-   A scale drawing of the trading day. Pre-market, the regular session and
-   after-hours are laid out proportionally; the amber playhead marks now and
-   the tick marks the close of the candle currently forming. For a gapper
-   trader the 04:00–09:30 block is the part that matters, so it is drawn to
-   the same scale as everything else rather than being collapsed away. */
-.ribbon {
-  height: 4px; flex: none; position: relative;
-  background: var(--bg); overflow: hidden;
-  border-bottom: 1px solid var(--line-soft);
-}
-.ribbon-seg { position: absolute; top: 1px; bottom: 1px; }
-.ribbon-seg.pre  { background: rgba(75, 123, 229, .30); }
-.ribbon-seg.reg  { background: rgba(124, 138, 165, .34); }
-.ribbon-seg.post { background: rgba(155, 107, 214, .26); }
-/* Elapsed time reads as a dim wash so the eye lands on the playhead, not
-   on the fill. */
-.ribbon-done { position: absolute; top: 1px; bottom: 1px; left: 0; background: rgba(11, 14, 20, .55); }
-.ribbon-now {
-  position: absolute; top: -1px; bottom: -1px; width: 2px;
-  background: var(--accent); box-shadow: 0 0 6px rgba(232, 179, 74, .7);
-  transition: left .9s linear;
-}
-.ribbon[hidden] { display: none; }
-
-/* — readout row — */
-.readout {
-  position: absolute; top: 41px; left: 10px; z-index: 5;
-  display: flex; flex-direction: column; gap: 3px;
-  pointer-events: none; user-select: none;
-}
-.ohlc {
-  display: flex; gap: 9px;
-  font-family: var(--mono); font-variant-numeric: tabular-nums;
-  font-size: 11px; color: var(--muted);
-}
-.ohlc b { font-weight: 500; color: var(--dim); margin-right: 2px; }
-.ohlc .v { font-weight: 600; }
-.ohlc.up .v { color: var(--up); }
-.ohlc.down .v { color: var(--down); }
-
-/* The legend sits over the candles, so it stays quiet: dim labels, dimmer
-   values, and it only lifts to full contrast on hover. */
-.legend { display: flex; flex-direction: column; gap: 1px; pointer-events: auto; }
-.legend-row {
-  display: flex; align-items: center; gap: 5px;
-  font-size: 10.5px; color: var(--dim);
-  padding: 0 4px 0 2px; border-radius: 3px;
-  transition: color .12s var(--ease), background .12s var(--ease);
-}
-.legend-row:hover { background: rgba(11, 14, 20, .92); color: var(--muted); }
-.legend-swatch { width: 8px; height: 2px; border-radius: 1px; flex: none; }
-.legend-val {
-  font-family: var(--mono); font-variant-numeric: tabular-nums;
-  color: var(--muted); opacity: .85;
-}
-.legend-row:hover .legend-val { color: var(--text); opacity: 1; }
-.legend-btn {
-  width: 15px; height: 15px; display: grid; place-items: center;
-  background: none; border: none; color: var(--dim); cursor: pointer; border-radius: 3px;
-  opacity: 0; transition: opacity .1s;
-}
-.legend-row:hover .legend-btn { opacity: 1; }
-.legend-btn:hover { color: var(--text); background: var(--hover); }
-.legend-btn svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 1.8; }
-
-/* — panes — */
-.panes { flex: 1; display: flex; flex-direction: column; min-height: 0; position: relative; }
-.pane-main { flex: 1; min-height: 0; position: relative; }
-/* Panes keep their set height but may shrink when the cell is short, so a
-   stack of three oscillators cannot push the last one off the bottom. */
-.pane-osc { flex: 0 1 auto; min-height: 40px; position: relative; border-top: 1px solid var(--line-soft); }
-.pane-osc-title {
-  position: absolute; top: 3px; left: 8px; z-index: 4;
-  font-size: 10px; font-weight: 600; letter-spacing: .04em; color: var(--muted);
-  pointer-events: none; display: flex; gap: 6px; align-items: baseline;
-}
-.pane-osc-title .v { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--text); }
-.pane-close {
-  position: absolute; top: 2px; right: 6px; z-index: 5;
-  width: 16px; height: 16px; display: grid; place-items: center;
-  background: none; border: none; color: var(--dim); cursor: pointer; border-radius: 3px; opacity: 0;
-  transition: opacity .1s;
-}
-.pane-osc:hover .pane-close { opacity: 1; }
-.pane-close:hover { color: var(--text); background: var(--hover); }
-.pane-grip {
-  height: 4px; flex: none; cursor: ns-resize; background: transparent;
-  transition: background .12s var(--ease);
-}
-.pane-grip:hover { background: var(--accent-soft); }
-
-/* — loading / error — */
-.cell-state {
-  position: absolute; inset: 0; z-index: 20;
-  display: none; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-  background: var(--bg); color: var(--muted); font-size: 12px;
-}
-.cell-state.show { display: flex; }
-.spinner {
-  width: 18px; height: 18px; border: 2px solid var(--raised); border-top-color: var(--accent);
-  border-radius: 50%; animation: spin .7s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg) } }
-.cell-state.error { color: var(--down); }
-.cell-state .retry { margin-top: 2px; }
-
 /* ═══ Panels ═════════════════════════════════════════════════════════ */
 #panel-layer {
   position: fixed; top: var(--header-h); right: 0; bottom: 0; left: 0;
@@ -385,7 +268,8 @@ select.field { cursor: pointer; }
   transition: transform .24s var(--ease), visibility 0s linear .24s;
 }
 .panel.open { transform: none; visibility: visible; transition: transform .24s var(--ease), visibility 0s; }
-.panel.wide { width: 460px; }
+/* The screener needs room for its columns, or they clip. */
+.panel.wide { width: min(660px, 94vw); }
 .panel-head {
   height: 40px; flex: none; display: flex; align-items: center; gap: 8px;
   padding: 0 8px 0 14px; border-bottom: 1px solid var(--line);
@@ -426,50 +310,6 @@ select.field { cursor: pointer; }
 .empty {
   padding: 32px 20px; text-align: center; color: var(--dim); font-size: 12px; line-height: 1.6;
 }
-
-/* indicator picker */
-.ind-search { padding: 8px 10px; border-bottom: 1px solid var(--line-soft); }
-.ind-search .field { width: 100%; }
-.ind-group-label { padding: 10px 12px 4px; }
-.ind-item {
-  display: flex; align-items: baseline; gap: 8px; padding: 6px 12px;
-  cursor: pointer; border-radius: 0; transition: background .1s var(--ease);
-}
-.ind-item:hover { background: var(--raised); }
-.ind-item-name { font-size: 12px; font-weight: 550; min-width: 92px; }
-.ind-item-desc { font-size: 11px; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-/* indicator settings */
-.setting { display: flex; align-items: center; gap: 8px; padding: 6px 12px; }
-.setting label { flex: 1; font-size: 12px; color: var(--muted); }
-.setting .field { width: 86px; }
-.setting input[type="color"] {
-  width: 28px; height: 24px; padding: 0; background: none;
-  border: 1px solid var(--line); border-radius: 4px; cursor: pointer;
-}
-
-/* scanner filters */
-.filters { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 10px; border-bottom: 1px solid var(--line-soft); }
-.filters .fl { display: flex; flex-direction: column; gap: 3px; }
-.filters .field { width: 100%; }
-.filters .full { grid-column: span 2; }
-
-/* editor */
-.editor-wrap { flex: 1; min-height: 0; display: flex; flex-direction: column; }
-.CodeMirror {
-  flex: 1; height: auto !important; background: var(--bg) !important; color: var(--text) !important;
-  font-family: var(--mono) !important; font-size: 12px !important; line-height: 1.6 !important;
-}
-.CodeMirror-gutters { background: var(--bg) !important; border-right: 1px solid var(--line) !important; }
-.CodeMirror-linenumber { color: var(--dim) !important; }
-.CodeMirror-cursor { border-left-color: var(--accent) !important; }
-.CodeMirror-selected { background: var(--hover) !important; }
-.cm-s-default .cm-keyword { color: #C98BDB !important; }
-.cm-s-default .cm-number  { color: var(--accent) !important; }
-.cm-s-default .cm-string  { color: var(--up) !important; }
-.cm-s-default .cm-comment { color: var(--dim) !important; font-style: italic; }
-.cm-s-default .cm-def, .cm-s-default .cm-variable { color: var(--text) !important; }
-.cm-s-default .cm-property { color: #7FC4E8 !important; }
 
 /* ═══ Search overlay ═════════════════════════════════════════════════ */
 #search-overlay {
@@ -516,40 +356,8 @@ kbd {
 .toast.ok { border-color: rgba(46, 189, 133, .35); }
 @keyframes toast-in { from { opacity: 0; transform: translateY(8px) } }
 
-/* ═══ Lock screen ════════════════════════════════════════════════════ */
-#lock, #connect {
-  position: fixed; inset: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--bg);
-}
-#connect { z-index: 101; }
-.connect-check {
-  display: flex; align-items: center; gap: 7px;
-  font-size: 11px; color: var(--muted); margin: 4px 0 2px; cursor: pointer;
-}
-.connect-check input { accent-color: var(--accent); }
-.lock-alt a { color: var(--accent); text-decoration: none; }
-.lock-alt a:hover { text-decoration: underline; }
-.lock-card { width: min(320px, 90vw); }
-.lock-mark { width: 30px; height: 30px; margin-bottom: 18px; }
-.lock-title { font-size: 19px; font-weight: 650; letter-spacing: -.025em; margin-bottom: 4px; }
-.lock-sub { font-size: 12px; color: var(--dim); margin-bottom: 22px; line-height: 1.5; }
-.lock-card .field { width: 100%; height: 34px; margin-bottom: 8px; }
-.lock-card .btn-primary { width: 100%; height: 34px; justify-content: center; margin-top: 6px; }
-.lock-err { font-size: 12px; color: var(--down); min-height: 17px; margin-top: 8px; }
-.lock-alt {
-  margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line-soft);
-  font-size: 11px; color: var(--dim); line-height: 1.6;
-}
-.lock-alt button {
-  background: none; border: none; color: var(--muted); font: inherit; font-size: 11px;
-  cursor: pointer; text-decoration: underline; text-underline-offset: 2px; padding: 0;
-}
-.lock-alt button:hover { color: var(--accent); }
-
 /* ═══ Responsive ═════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  #rail { display: none; }
   .panel, .panel.wide { width: 100%; }
   .brand-name, .layouts { display: none; }
   /* These have equivalents in Settings; drop them rather than let the header
@@ -564,8 +372,7 @@ kbd {
      last price is never the thing that gets clipped. */
   .cell-bar { overflow: visible; gap: 2px; padding-right: 8px; }
   .cell-bar .spacer { display: none; }
-  .tf-group { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
-  .tf-group::-webkit-scrollbar { display: none; }
+    .tf-group::-webkit-scrollbar { display: none; }
   .sym-input { width: 68px; flex: none; }
   .chg-badge { display: none; }
   .readout { top: 44px; }

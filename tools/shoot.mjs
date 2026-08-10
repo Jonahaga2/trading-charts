@@ -41,10 +41,11 @@ ${driver}
       errors:window.__err,
       bodyW:document.documentElement.scrollWidth, winW:innerWidth,
       cells:document.querySelectorAll('.cell').length,
-      panes:document.querySelectorAll('.pane-osc').length,
-      logos:document.querySelectorAll('a[href*="tradingview"]').length,
-      loading:[...document.querySelectorAll('.cell-state.show .msg')].map(x=>x.textContent),
-      prices:[...document.querySelectorAll('.last-price')].map(x=>x.textContent),
+      iframes:document.querySelectorAll('.chart-mount iframe').length,
+      symbols:[...document.querySelectorAll('.sym-input')].map(x=>x.value),
+      srcs:[...document.querySelectorAll('.chart-mount iframe')].map(f=>{
+        try{const h=decodeURIComponent(f.src.split('#')[1]||'');const j=JSON.parse(h);
+          return j.symbol+'@'+j.interval+'/'+j.theme+'/'+j.style;}catch(e){return 'unparsed'}}),
     }))));
     document.body.appendChild(o);
   }, ${settleMs});
@@ -66,7 +67,7 @@ const m = dom.match(/<pre id="RESULTBLOCK"[^>]*>([A-Za-z0-9+/=]+)<\/pre>/);
 if (!m) { console.log(`${name.padEnd(10)} NO RESULT (page did not settle)`); process.exit(1); }
 const d = JSON.parse(Buffer.from(m[1], 'base64').toString('utf8'));
 const overflow = d.bodyW > d.winW ? `  ⚠ H-OVERFLOW ${d.bodyW}>${d.winW}` : '';
-const stuck = d.loading.length ? `  ⚠ STILL LOADING: ${d.loading.join(', ')}` : '';
-console.log(`${name.padEnd(10)} errors:${d.errors.length}  cells:${d.cells} panes:${d.panes} logos:${d.logos}  prices:[${d.prices.join(' ')}]${overflow}${stuck}`);
+console.log(`${name.padEnd(10)} errors:${d.errors.length}  cells:${d.cells} iframes:${d.iframes}  [${d.symbols.join(' ')}]${overflow}`);
+d.srcs.forEach(s => console.log('    widget: ' + s));
 d.errors.forEach(e => console.log('    ✗ ' + e));
 if (d.errors.length) process.exitCode = 1;

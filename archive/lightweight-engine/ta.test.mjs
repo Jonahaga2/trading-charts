@@ -11,8 +11,9 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const require = createRequire(import.meta.url);
-const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const TA = require(path.join(ROOT, 'src', 'ta.js'));
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.dirname(path.dirname(HERE));
+const TA = require(path.join(HERE, 'ta.js'));
 
 let pass = 0, fail = 0;
 const failures = [];
