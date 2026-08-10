@@ -1542,7 +1542,7 @@ hline(1);`,
     $('#search-overlay').classList.add('open');
     const input = $('#search-input');
     input.value = ''; input.focus();
-    $('#search-results').innerHTML = '<div class="empty">Type to search Yahoo Finance.</div>';
+    $('#search-results').innerHTML = '<div class="empty">Type to search stocks, ETFs and crypto.</div>';
   }
   const closeSearch = () => $('#search-overlay').classList.remove('open');
 

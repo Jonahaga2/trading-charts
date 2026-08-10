@@ -8,8 +8,8 @@
 <meta name="referrer" content="no-referrer">
 <title>Trading Charts</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E14'/%3E%3Crect x='8' y='11' width='4' height='13' fill='%232EBD85'/%3E%3Crect x='9.2' y='7' width='1.6' height='19' fill='%232EBD85'/%3E%3Crect x='19' y='8' width='4' height='11' fill='%23F0616D'/%3E%3Crect x='20.2' y='5' width='1.6' height='18' fill='%23F0616D'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://query1.finance.yahoo.com" crossorigin>
-<link rel="preconnect" href="https://corsproxy.io" crossorigin>
+<link rel="preconnect" href="https://data.alpaca.markets" crossorigin>
+<link rel="preconnect" href="https://paper-api.alpaca.markets" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css" crossorigin="anonymous">
 <script src="https://unpkg.com/lightweight-charts@4.2.3/dist/lightweight-charts.standalone.production.js" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js" crossorigin="anonymous" defer></script>
@@ -821,7 +821,7 @@ kbd {
 <!-- ═══ Symbol search ══════════════════════════════════════════════ -->
 <div id="search-overlay" role="dialog" aria-modal="true" aria-label="Symbol search">
   <div class="search-box">
-    <input id="search-input" placeholder="Search symbols — AAPL, BTC-USD, ^GSPC" autocomplete="off" spellcheck="false">
+    <input id="search-input" placeholder="Search symbols — AAPL, SPY, BTC/USD" autocomplete="off" spellcheck="false">
     <div class="search-results" id="search-results"></div>
     <div class="search-hint">
       <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>⏎</kbd> load</span><span><kbd>esc</kbd> close</span>
@@ -3737,7 +3737,7 @@ hline(1);`,
     $('#search-overlay').classList.add('open');
     const input = $('#search-input');
     input.value = ''; input.focus();
-    $('#search-results').innerHTML = '<div class="empty">Type to search Yahoo Finance.</div>';
+    $('#search-results').innerHTML = '<div class="empty">Type to search stocks, ETFs and crypto.</div>';
   }
   const closeSearch = () => $('#search-overlay').classList.remove('open');
 
