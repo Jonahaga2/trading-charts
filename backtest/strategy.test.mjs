@@ -7,6 +7,7 @@
 import { runBacktest, LONG, FLAT, SHORT } from './engine.mjs';
 import { monthlyBounce } from './strategies.mjs';
 import { parseUniverse, makeScreen } from './universe.mjs';
+import { poolTrades, simulatePortfolio } from './scan.mjs';
 
 let pass = 0, fail = 0; const failures = [];
 const ok = (name, cond, detail = '') => {
@@ -272,6 +273,95 @@ ok('the float bound is exclusive at 1bn',
      sig(runBacktest(bars, monthlyBounce({ universe: makeScreen(UNI, 'MNOP') }))), 1);
   eq('  and does not when its float is too big',
      sig(runBacktest(bars, monthlyBounce({ universe: veto }))), 0);
+}
+
+/* ══ Pooled statistics and portfolio ════════════════════════════════════ */
+section('Pooled statistics');
+{
+  /* Two wins at +20%, three losses at -10%. Breakeven for a 2:1 payoff is
+     1/3, the win rate is 2/5, so the edge is 6.67 points and expectancy is
+     (0.4 + -0.3) / 5 = +2% a trade. */
+  const t = r => ({ returnPct: r, bars: 5, exitReason: r > 0 ? 'target' : 'stop' });
+  const p = poolTrades([t(0.20), t(-0.10), t(0.20), t(-0.10), t(-0.10)]);
+  eq('win rate', p.winRate, 0.4);
+  eq('average win', p.avgWin, 0.20, 1e-12);
+  eq('average loss', p.avgLoss, -0.10, 1e-12);
+  eq('payoff ratio', p.payoff, 2, 1e-12);
+  eq('breakeven win rate', p.breakevenWinRate, 1 / 3, 1e-12);
+  eq('edge over breakeven', p.edge, 0.4 - 1 / 3, 1e-12);
+  eq('expectancy per trade', p.expectancy, 0.02, 1e-12);
+  ok('exit reasons counted', p.byReason.target === 2 && p.byReason.stop === 3);
+}
+{
+  /* The invariant that makes breakeven worth printing: a win rate above it
+     is positive expectancy, and below it is negative, always. */
+  const t = r => ({ returnPct: r, bars: 1 });
+  for (const [wins, losses] of [[1, 9], [5, 5], [9, 1], [3, 7], [7, 3]]) {
+    const trades = [...Array(wins).fill(t(0.15)), ...Array(losses).fill(t(-0.08))];
+    const p = poolTrades(trades);
+    ok(`edge and expectancy agree in sign (${wins}/${wins + losses})`,
+       Math.sign(p.edge) === Math.sign(p.expectancy), `edge ${p.edge}, exp ${p.expectancy}`);
+  }
+}
+ok('an empty trade list is not an error', poolTrades([]).trades === 0);
+
+section('Portfolio');
+{
+  const tr = (entry, exit, ret) => ({ entryTime: entry, exitTime: exit, returnPct: ret, bars: 1 });
+  {
+    const s = simulatePortfolio([tr(0, 10, 0.2)], { maxPositions: 1 });
+    eq('one trade, one slot', s.final, 120_000, 1e-6);
+  }
+  {
+    /* Sequential trades compound: 100k → 120k → 144k. */
+    const s = simulatePortfolio([tr(0, 10, 0.2), tr(20, 30, 0.2)], { maxPositions: 1 });
+    eq('sequential trades compound', s.final, 144_000, 1e-6);
+    eq('  both taken', s.taken, 2);
+  }
+  {
+    const s = simulatePortfolio([tr(0, 10, 0.2), tr(5, 15, 0.2)], { maxPositions: 1 });
+    eq('an overlapping signal is skipped when full', s.skipped, 1);
+    eq('  only the first is taken', s.taken, 1);
+    eq('  and the account reflects one trade', s.final, 120_000, 1e-6);
+  }
+  {
+    /* Two slots, half the book each, both +20% → +20% overall. */
+    const s = simulatePortfolio([tr(0, 10, 0.2), tr(5, 15, 0.2)], { maxPositions: 2 });
+    eq('two slots take both', s.taken, 2);
+    eq('  each on half the book', s.final, 120_000, 1e-6);
+  }
+  {
+    /* Capital freed by an exit is usable by an entry on the same day. Sort
+       the other way and this second trade is skipped for want of a slot. */
+    const s = simulatePortfolio([tr(0, 10, 0.2), tr(10, 20, 0.2)], { maxPositions: 1 });
+    eq('an exit settles before an entry at the same stamp', s.taken, 2);
+    eq('  so the capital recycles', s.final, 144_000, 1e-6);
+  }
+  {
+    /* A bracket is live from the moment of entry, so a trade can open and
+       close inside one bar. Its exit must still sort after its own entry —
+       otherwise the exit finds nothing open, the entry takes a slot that is
+       never released, and the run quietly stops trading. */
+    const s = simulatePortfolio([tr(0, 0, -0.1), tr(5, 15, 0.2)], { maxPositions: 1 });
+    eq('a same-day round trip does not leak its slot', s.taken, 2);
+    eq('  and both P&Ls land', s.final, 100_000 * 0.9 * 1.2, 1e-6);
+  }
+  {
+    /* Three same-day signals, one slot. Only the first is taken: daily bars
+       carry no intraday sequence, so there is nothing to say the slot was
+       free again in time for the second. Assuming it was would be inventing
+       fills out of a timestamp that has no hours in it. The slot is released
+       by the end of the day — the case above shows the next day using it. */
+    const s = simulatePortfolio([tr(0, 0, 0.1), tr(0, 0, 0.1), tr(0, 0, 0.1)], { maxPositions: 1 });
+    eq('same-day signals do not recycle one slot', s.taken, 1);
+    eq('  the rest are skipped', s.skipped, 2);
+    eq('  and only the one taken pays', s.final, 110_000, 1e-6);
+  }
+  {
+    const s = simulatePortfolio([tr(0, 10, -0.5)], { maxPositions: 1 });
+    eq('losses reduce the account', s.final, 50_000, 1e-6);
+    ok('  and show as drawdown', s.maxDrawdown > 0.49);
+  }
 }
 
 console.log(`\n${fail ? '\x1b[31m' : '\x1b[32m'}${pass} passed, ${fail} failed\x1b[0m`);

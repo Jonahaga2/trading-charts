@@ -5,12 +5,39 @@ in `archive/lightweight-engine/ta.js`.
 
 ```bash
 node backtest/engine.test.mjs        # 56 checks on the engine and metrics
-node backtest/strategy.test.mjs      # 56 on resting orders, the screen, the universe
-node backtest/run.mjs --csv path/to/ABCD.csv --strategy bounce --costs 10
-node backtest/run.mjs --csv path/to/ABCD.csv --strategy bounce --universe float.csv
+node backtest/strategy.test.mjs      # 87 on resting orders, the screen, the
+                                     #   universe, pooling and the portfolio
+node backtest/run.mjs  --csv path/to/ABCD.csv --strategy bounce --costs 10
+node backtest/scan.mjs --dir data/ --strategy bounce --universe float.csv
 ```
 
 Neither test suite needs network or credentials.
+
+## One symbol or a universe
+
+`run.mjs` runs one symbol and prints the condition funnel — use it to see
+which criterion is binding. `scan.mjs` runs a directory of csvs and is what
+actually answers whether the rule works, because a screen that fires a few
+times per symbol per decade cannot be judged one symbol at a time. Twenty-six
+trades is a story, not a sample.
+
+It reports two things that answer different questions. **Pooled trade
+statistics** treat every trade as one draw from the same distribution and
+are sizing-free, so no allocation assumption can flatter them; from the
+average win and average loss comes the **breakeven win rate**, the number
+the rule has to beat to be worth trading at all. **The portfolio run** then
+asks what it would have done to an account — equal stakes, a fixed number
+of slots, signals skipped when all slots are full.
+
+Expect the slot cap to bind on a real universe: a month in which everything
+is down 10% is the same month for every name at once, so signals should
+arrive in clusters. The run reports how many it had to drop rather than
+assuming a number.
+
+The portfolio equity curve is realised-only — it steps when a trade closes,
+and open positions are carried at cost. Drawdown measured on it is therefore
+optimistic, because it cannot see the dip a position took before it
+recovered. Read it as a ledger, not a mark-to-market curve.
 
 ## The rule that the whole thing rests on
 
