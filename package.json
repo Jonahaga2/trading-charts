@@ -8,6 +8,8 @@
     "check": "node build.mjs --check",
     "serve": "node tools/serve.mjs",
     "test": "node build.mjs --check",
+    "test:backtest": "node backtest/engine.test.mjs && node backtest/strategy.test.mjs",
+    "backtest": "node backtest/run.mjs",
     "test:engine": "node archive/lightweight-engine/ta.test.mjs",
     "test:engine:data": "node archive/lightweight-engine/data.test.mjs",
     "shot": "node tools/cdp-shot.mjs http://localhost:8099/index.html .shots/chart.png 28000"
