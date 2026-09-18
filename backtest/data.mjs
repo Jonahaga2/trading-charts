@@ -23,6 +23,14 @@
    to trade the split. Volume is left raw — splits and dividends cannot be
    told apart from the adjusted close alone, and guessing would corrupt the
    volume series on ordinary dividend dates to fix a handful of split days.
+
+   The unadjusted prices survive on `bar.raw`, and any rule that filters on
+   a price LEVEL must use them. A stock that changed hands at $0.40 before
+   a 1-for-10 reverse split appears at $4.00 in the adjusted series, so a
+   "$1 to $5" screen run against adjusted prices selects a different set of
+   companies than the one you meant — and systematically favours the ones
+   that later reverse-split, which is to say the ones that were failing.
+   Returns come from the adjusted series; levels come from `raw`.
    ═══════════════════════════════════════════════════════════════════════ */
 
 import fs from 'node:fs';
@@ -81,7 +89,10 @@ export function loadCsv(file, { adjust = true } = {}) {
     };
     if (adjust && iA >= 0 && Number.isFinite(+f[iA]) && c !== 0) {
       const k = +f[iA] / c;
-      bar = { ...bar, open: o * k, high: h * k, low: l * k, close: c * k, adjusted: true };
+      bar = {
+        ...bar, open: o * k, high: h * k, low: l * k, close: c * k,
+        adjusted: true, raw: { open: o, high: h, low: l, close: c },
+      };
     }
     bars.push(bar);
   }

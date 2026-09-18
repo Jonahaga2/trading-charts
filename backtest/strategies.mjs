@@ -130,6 +130,109 @@ export const bollingerReversion = (n = 20, mult = 2) => ({
   },
 });
 
+/* ══ Monthly bounce ═════════════════════════════════════════════════════
+   Buy a beaten-down low-priced name on the day it turns, take profit at the
+   high the month has already made, cut it if it loses the month's low.
+
+     entry   month-to-date return <= -10%
+             today's return between +2% and +20%
+             price between $1 and $5          (unadjusted — see below)
+             common stock, float under 1bn    (needs reference data)
+     exit    limit at the monthly high, stop at the monthly low
+
+   Both exits are resting orders, so they fill intrabar; the engine takes
+   the stop first where one bar touches both, because OHLC cannot say which
+   came first.
+
+   The levels are fixed at entry. "Sell it at the monthly high" is a limit
+   order, and an order you placed on Tuesday does not move because Thursday
+   printed a higher high — if you meant a target that ratchets up with the
+   month, that is a different rule and a different result.
+
+   Month-to-date is measured from the previous month's closing price, the
+   standard reference. `dropIncludesToday` decides whether the -10% is
+   tested through today's close or through yesterday's: with it on (the
+   default) the stock must still be down 10% after the bounce you are
+   buying, which is the stricter and, I think, the intended reading. It
+   changes the trade count materially, so it is a flag rather than a
+   decision made quietly on your behalf.
+
+   The price screen runs on `bar.raw` — unadjusted. Run it on adjusted
+   prices and you select the companies that later reverse-split, which is
+   to say the ones that were failing. If the bars carry no raw prices the
+   screen falls back to adjusted and says so in the funnel.                */
+
+const monthIndex = t => { const d = new Date(t * 1000); return d.getUTCFullYear() * 12 + d.getUTCMonth(); };
+
+export const monthlyBounce = ({
+  monthDropPct = 10,
+  dayGainMin = 2,
+  dayGainMax = 20,
+  priceMin = 1,
+  priceMax = 5,
+  dropIncludesToday = true,
+  universe = null,            // (timeSec) => boolean — common stock + float screen
+} = {}) => ({
+  name: `Monthly bounce ${monthDropPct}% / +${dayGainMin}–${dayGainMax}% / $${priceMin}–${priceMax}`,
+  params: { monthDropPct, dayGainMin, dayGainMax, priceMin, priceMax, dropIncludesToday,
+            universeEnforced: typeof universe === 'function' },
+
+  prepare(bars) {
+    const n = bars.length;
+    const prevMonthClose = new Array(n).fill(null);
+    const mtdHigh = new Array(n).fill(null);
+    const mtdLow = new Array(n).fill(null);
+    let key = null, ref = null, hi = -Infinity, lo = Infinity;
+
+    for (let i = 0; i < n; i++) {
+      const k = monthIndex(bars[i].time);
+      if (k !== key) { key = k; ref = i > 0 ? bars[i - 1].close : null; hi = -Infinity; lo = Infinity; }
+      hi = Math.max(hi, bars[i].high);
+      lo = Math.min(lo, bars[i].low);
+      prevMonthClose[i] = ref; mtdHigh[i] = hi; mtdLow[i] = lo;
+    }
+    /* A funnel, so "no trades" can be read as a fact about the data rather
+       than a suspicion about the code. */
+    const stats = { bars: n, hadRef: 0, inPrice: 0, dayOk: 0, monthOk: 0, universeOk: 0,
+                    targetAbove: 0, signals: 0, usedAdjustedForPrice: 0 };
+    return { prevMonthClose, mtdHigh, mtdLow, stats, screen: universe || null };
+  },
+
+  decide(c, ctx, pos) {
+    /* Holding: the exits are resting orders, not signals. */
+    if (pos !== FLAT) return null;
+
+    const i = c.i, bar = c.bar, prior = c.prior(1);
+    const ref = ctx.prevMonthClose[i];
+    const S = ctx.stats;
+    if (!prior || ref == null || ref === 0) return FLAT;
+    S.hadRef++;
+
+    const level = bar.raw ? bar.raw.close : (S.usedAdjustedForPrice++, bar.close);
+    if (level < priceMin || level > priceMax) return FLAT;
+    S.inPrice++;
+
+    const dayGain = (bar.close / prior.close - 1) * 100;
+    if (dayGain < dayGainMin || dayGain > dayGainMax) return FLAT;
+    S.dayOk++;
+
+    const mtd = ((dropIncludesToday ? bar.close : prior.close) / ref - 1) * 100;
+    if (mtd > -monthDropPct) return FLAT;
+    S.monthOk++;
+
+    if (universe && !universe(bar.time)) return FLAT;
+    S.universeOk++;
+
+    const target = ctx.mtdHigh[i], stop = ctx.mtdLow[i];
+    /* If today already made the month's high there is nothing to sell into,
+       and if the month's low is above us the stop is already breached. */
+    if (!(target > bar.close) || !(stop < bar.close)) return FLAT;
+    S.targetAbove++; S.signals++;
+
+    return { position: LONG, target, stop };
+  },
+});
+
 export const REFERENCE = {
   'sma-cross':   smaCross,
   'ema-ls':      emaCrossLongShort,
@@ -138,6 +241,7 @@ export const REFERENCE = {
   'donchian':    donchianBreakout,
   'supertrend':  supertrendFollow,
   'bollinger':   bollingerReversion,
+  'bounce':      monthlyBounce,
 };
 
 /* ══ Your rules ═════════════════════════════════════════════════════════
@@ -172,4 +276,6 @@ export const REFERENCE = {
        equity-dependent sizing do not need any state of your own.
    ═══════════════════════════════════════════════════════════════════════ */
 
-export const myRules = null;
+/* Your criteria, as given. `monthlyBounce` above is the implementation;
+   its options are there to change without touching the logic. */
+export const myRules = monthlyBounce();
