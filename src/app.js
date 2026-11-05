@@ -593,6 +593,128 @@
     toast(`${shortName(sym)} added`);
   }
 
+  /* — dip scanner —
+     The scan itself runs nightly on GitHub Actions (scanner/run.mjs), which
+     can call Yahoo directly; a page cannot without a CORS proxy, and ~6,000
+     requests through one is a guaranteed rate limit. What it publishes is
+     every stock that fell at least `prefilter.minDrop`% with its daily bars,
+     so the thresholds here re-run instantly against that file. `?scan=URL`
+     points the panel at another file, e.g. a local run. */
+  const SCAN_URL = new URLSearchParams(location.search).get('scan')
+    || 'https://raw.githubusercontent.com/Jonahaga2/trading-charts/scan-data/scan.json';
+  const dips = {
+    data: null, loadedAt: 0, loading: null, error: '', active: '',
+    opts: { ...SCAN.DEFAULTS, sort: 'drop', fresh: false, ...STORE.get('dips', {}) },
+  };
+  const DIP_CAP = 250;
+
+  function loadDips(force) {
+    if (dips.loading) return dips.loading;
+    if (dips.data && !force && Date.now() - dips.loadedAt < 30 * 60e3) return Promise.resolve();
+    dips.error = '';
+    paintDipStatus('Loading the latest scan…');
+    dips.loading = (async () => {
+      try {
+        const r = await fetch(SCAN_URL, { cache: force ? 'reload' : 'default' });
+        if (r.status === 404) throw new Error('No scan has been published yet. It runs on GitHub Actions after each US close — '
+          + 'run the "Dip scan" workflow once from the Actions tab to publish the first one.');
+        if (!r.ok) throw new Error(`The scan could not be loaded (HTTP ${r.status}).`);
+        const d = await r.json();
+        if (d.v !== 1 || !Array.isArray(d.rows)) throw new Error('The scan file is not in a format this page understands.');
+        dips.data = d; dips.loadedAt = Date.now();
+      } catch (e) {
+        dips.error = e instanceof TypeError ? 'The scan could not be reached — check your connection.' : e.message;
+      } finally { dips.loading = null; }
+      renderDips();
+    })();
+    return dips.loading;
+  }
+
+  function paintDipControls() {
+    const o = dips.opts;
+    $('#dip-drop').value = o.minDrop; $('#dip-lookback').value = String(o.lookback);
+    $('#dip-rmin').value = o.minRetrace; $('#dip-rmax').value = o.maxRetrace;
+    $('#dip-price').value = o.minPrice; $('#dip-dv').value = String(o.minDollarVol);
+    $('#dip-sort').value = o.sort; $('#dip-fresh').classList.toggle('on', !!o.fresh);
+  }
+  /* The file only holds stocks that fell at least the prefilter, so a lower
+     minimum here would silently show a subset; it is clamped up instead. */
+  function readDipControls() {
+    const num = (id, lo, hi, d) => { const v = parseFloat($(id).value); return Number.isFinite(v) ? clamp(v, lo, hi) : d; };
+    const floor = dips.data?.prefilter?.minDrop ?? 20;
+    const o = dips.opts;
+    o.minDrop = num('#dip-drop', floor, 99, o.minDrop);
+    o.lookback = +$('#dip-lookback').value || o.lookback;
+    o.minRetrace = num('#dip-rmin', 0, 100, o.minRetrace);
+    o.maxRetrace = num('#dip-rmax', o.minRetrace, 100, o.maxRetrace);
+    o.minPrice = num('#dip-price', 0, 1e6, o.minPrice);
+    o.minDollarVol = +$('#dip-dv').value || o.minDollarVol;
+    o.sort = $('#dip-sort').value;
+    STORE.set('dips', o);
+  }
+
+  function paintDipStatus(html) { $('#dips-status').innerHTML = html; }
+
+  const fmtPrice = x => x >= 1000 ? x.toFixed(0) : x >= 1 ? x.toFixed(2) : x.toFixed(4);
+  const fmtDV = x => x >= 1e9 ? (x / 1e9).toFixed(1) + 'B' : x >= 1e6 ? (x / 1e6).toFixed(0) + 'M' : (x / 1e3).toFixed(0) + 'K';
+
+  function renderDips() {
+    const body = $('#dips-body');
+    if (dips.error) {
+      paintDipStatus('');
+      body.innerHTML = `<div class="empty">${esc(dips.error)}</div>`;
+      return;
+    }
+    const d = dips.data;
+    if (!d) { body.innerHTML = ''; return; }
+    const o = dips.opts;
+    const hits = [];
+    for (const r of d.rows) {
+      const m = SCAN.evaluate(r, o);
+      if (m && m.pass && (!o.fresh || m.fresh)) hits.push({ r, m });
+    }
+    const by = {
+      drop: (a, b) => b.m.drop - a.m.drop,
+      retrace: (a, b) => b.m.retrace - a.m.retrace,
+      recent: (a, b) => a.m.sinceLow - b.m.sinceLow || b.m.drop - a.m.drop,
+      dv: (a, b) => b.m.dv - a.m.dv,
+    };
+    hits.sort(by[o.sort] || by.drop);
+
+    const stale = d.asOf && (Date.now() - Date.parse(d.asOf + 'T21:00:00Z')) > 4 * 864e5;
+    paintDipStatus(`<b>${hits.length.toLocaleString()} ${hits.length === 1 ? 'match' : 'matches'}</b>`
+      + ` · close of ${esc(d.asOf || '—')} · ${d.universe.toLocaleString()} stocks scanned`
+      + (d.failed ? ` (${d.failed.toLocaleString()} unavailable)` : '')
+      + (stale ? ' · <span class="warn">this scan is several days old</span>' : ''));
+
+    if (!hits.length) {
+      body.innerHTML = '<div class="empty">Nothing matches.<br>Lower the drop, or widen the window or the retrace range.</div>';
+      return;
+    }
+    const tick = clamp(o.minRetrace, 0, 100);
+    body.innerHTML = hits.slice(0, DIP_CAP).map(({ r, m }) => {
+      const sym = r.x ? `${r.x}:${r.s}` : r.s;
+      const ago = m.sinceLow === 0 ? 'today' : `${m.sinceLow}d ago`;
+      return `<div class="dip-row${dips.active === sym ? ' active' : ''}" data-sym="${esc(sym)}" title="${esc(r.n || r.s)}">
+        <div class="row-main"><div class="row-sym dip-sym">${esc(r.s)}${m.fresh ? '<span class="dip-new">new</span>' : ''}</div>
+          <div class="row-name">${esc(r.n || r.x)} · ${fmtDV(m.dv)}/day</div></div>
+        <div class="dip-num">${fmtPrice(m.close)}<small>from ${fmtPrice(m.peak)}</small></div>
+        <div class="dip-num dip-fell">−${m.drop.toFixed(0)}%<small>${m.dropDays}d</small></div>
+        <div class="dip-bar"><div class="dip-track"><div class="dip-fill" style="width:${clamp(m.retrace, 0, 100).toFixed(1)}%"></div>
+          <div class="dip-tick" style="left:${tick}%"></div></div><div class="dip-num">${m.retrace.toFixed(0)}%</div></div>
+        <div class="dip-num">${fmtPrice(m.trough)}<small>${ago}</small></div>
+      </div>`;
+    }).join('') + (hits.length > DIP_CAP
+      ? `<div class="empty">${(hits.length - DIP_CAP).toLocaleString()} more — tighten the filters to see them.</div>` : '');
+  }
+
+  function openDips() {
+    if (!openPanel('panel-dips')) return;
+    paintDipControls();
+    renderDips();
+    loadDips();
+  }
+
   /* — indicators, applied to every chart at once — */
   function paintStudiesCount() {
     const el = $('#studies-count');
@@ -878,6 +1000,27 @@
       renderStudies(); paintStudiesCount(); applySoon(0);
     });
     $('#btn-watchlist').addEventListener('click', () => { if (openPanel('panel-watchlist')) renderWatchlist(); });
+    $('#btn-dips').addEventListener('click', openDips);
+    $('#dips-reload').addEventListener('click', () => loadDips(true));
+    let dipTimer = null;
+    $('#dips-controls').addEventListener('input', () => {
+      clearTimeout(dipTimer);
+      dipTimer = setTimeout(() => { readDipControls(); renderDips(); }, 150);
+    });
+    // Clamped values are written back only once the field is left, so typing
+    // "4" on the way to "45" is not snapped up to the floor mid-keystroke.
+    $('#dips-controls').addEventListener('change', () => { readDipControls(); paintDipControls(); renderDips(); });
+    $('#dip-fresh').addEventListener('click', () => {
+      dips.opts.fresh = !dips.opts.fresh; STORE.set('dips', dips.opts); paintDipControls(); renderDips();
+    });
+    $('#dips-body').addEventListener('click', e => {
+      const row = e.target.closest('[data-sym]');
+      if (!row) return;
+      dips.active = row.dataset.sym;
+      $$('.dip-row.active', $('#dips-body')).forEach(x => x.classList.remove('active'));
+      row.classList.add('active');
+      setSymbol(activeCell(), row.dataset.sym);
+    });
     $('#btn-screener').addEventListener('click', () => { if (openPanel('panel-screener')) mountEmbed($('#screener-body'), 'screener', screenerConfig()); });
     $('#btn-news').addEventListener('click', () => { if (openPanel('panel-news')) mountEmbed($('#news-body'), 'timeline', newsConfig()); });
     $('#btn-settings').addEventListener('click', openSettings);
@@ -927,6 +1070,7 @@
         if (hit) setLayout(hit.id);
       } else if (e.key.toLowerCase() === 'i') { openStudies(); }
       else if (e.key.toLowerCase() === 'w') { if (openPanel('panel-watchlist')) renderWatchlist(); }
+      else if (e.key.toLowerCase() === 'd') { openDips(); }
       else if (e.key.toLowerCase() === 's') { if (openPanel('panel-screener')) mountEmbed($('#screener-body'), 'screener', screenerConfig()); }
       else if (e.key.toLowerCase() === 'n') { if (openPanel('panel-news')) mountEmbed($('#news-body'), 'timeline', newsConfig()); }
     });

@@ -3,6 +3,7 @@
   <g id="i-search"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></g>
   <g id="i-star"><path d="M8 2l1.9 3.9 4.1.6-3 2.9.7 4.1L8 11.6 4.3 13.5l.7-4.1-3-2.9 4.1-.6z"/></g>
   <g id="i-radar"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.5"/><path d="M8 8l4-4"/></g>
+  <g id="i-dip"><path d="M1.5 3.5l4.5 9 3-4.5 5 2.5"/><path d="M11.5 9l2.5 1.5-1 2.5"/></g>
   <g id="i-news"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M4.5 6h5M4.5 8.5h7M4.5 11h4"/></g>
   <g id="i-gear"><circle cx="8" cy="8" r="2.4"/><path d="M8 1.5v2M8 12.5v2M14.5 8h-2M3.5 8h-2M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4M12.6 12.6l-1.4-1.4M4.8 4.8L3.4 3.4"/></g>
   <g id="i-sync"><path d="M13 7a5 5 0 0 0-9-2M3 9a5 5 0 0 0 9 2"/><path d="M3.5 3v3h3M12.5 13v-3h-3"/></g>
@@ -57,6 +58,7 @@
 
   <button class="btn icon" id="btn-focus"     title="Borderless — just the charts (f)"><svg viewBox="0 0 16 16"><use href="#i-expand"/></svg></button>
   <button class="btn icon" id="btn-watchlist" title="Watchlist"><svg viewBox="0 0 16 16"><use href="#i-star"/></svg></button>
+  <button class="btn icon" id="btn-dips"      title="Dip scanner — big drop, then a recovery (d)"><svg viewBox="0 0 16 16"><use href="#i-dip"/></svg></button>
   <button class="btn icon" id="btn-screener"  title="Screener"><svg viewBox="0 0 16 16"><use href="#i-radar"/></svg></button>
   <button class="btn icon" id="btn-news"      title="News"><svg viewBox="0 0 16 16"><use href="#i-news"/></svg></button>
   <button class="btn icon" id="btn-settings"  title="Settings"><svg viewBox="0 0 16 16"><use href="#i-gear"/></svg></button>
@@ -94,6 +96,34 @@
       <input class="field" id="studies-filter" placeholder="Filter indicators" spellcheck="false" style="flex:1">
     </div>
     <div class="panel-body" id="studies-body"></div>
+  </aside>
+
+  <aside class="panel wide" id="panel-dips" aria-label="Dip scanner">
+    <div class="panel-head">
+      <span class="panel-title">Dip scanner</span>
+      <button class="btn icon" id="dips-reload" title="Reload the latest scan"><svg viewBox="0 0 16 16"><use href="#i-sync"/></svg></button>
+      <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="panel-note">US stocks that <b>fell hard</b>, then won back part of the fall. Retraced 20% means it has
+      recovered a fifth of the drop: $100&nbsp;&rarr;&nbsp;$50 back to $60. Click a row to chart it.</div>
+    <div class="dip-controls" id="dips-controls">
+      <label>Fell at least <span><input class="field" type="number" id="dip-drop" min="20" max="95" step="5">%</span></label>
+      <label>within <span><select class="field" id="dip-lookback">
+        <option value="10">2 weeks</option><option value="21">1 month</option><option value="42">2 months</option>
+        <option value="63">3 months</option><option value="126">6 months</option></select></span></label>
+      <label>then retraced <span><input class="field" type="number" id="dip-rmin" min="0" max="100" step="5">&ndash;<input class="field" type="number" id="dip-rmax" min="0" max="100" step="5">%</span></label>
+      <label>Price over <span>$<input class="field" type="number" id="dip-price" min="1" step="1"></span></label>
+      <label>Avg $ volume <span><select class="field" id="dip-dv">
+        <option value="1000000">$1M+</option><option value="5000000">$5M+</option><option value="20000000">$20M+</option>
+        <option value="100000000">$100M+</option></select></span></label>
+      <label>Sort <span><select class="field" id="dip-sort">
+        <option value="drop">Biggest drop</option><option value="retrace">Most retraced</option>
+        <option value="recent">Most recent low</option><option value="dv">Most traded</option></select></span></label>
+      <button class="btn" id="dip-fresh" title="Only stocks that crossed the retrace line on the latest session">New today</button>
+    </div>
+    <div class="dip-status" id="dips-status"></div>
+    <div class="dip-head" aria-hidden="true"><span>Stock</span><span>Close</span><span>Fell</span><span>Retraced</span><span>Low</span></div>
+    <div class="panel-body" id="dips-body"></div>
   </aside>
 
   <aside class="panel wide" id="panel-screener" aria-label="Screener">

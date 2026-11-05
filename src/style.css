@@ -367,6 +367,59 @@ body[data-focus="1"] #focus-exit { display: grid; }
 .setting > .btn { flex: none; min-width: 46px; justify-content: center; }
 .setting select.field { flex: none; }
 
+/* ═══ Dip scanner ════════════════════════════════════════════════════ */
+.dip-controls {
+  flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+  padding: 10px 14px; border-bottom: 1px solid var(--line-soft);
+}
+.dip-controls label { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
+.dip-controls label > span { display: inline-flex; align-items: center; gap: 3px; color: var(--dim); }
+.dip-controls input.field { width: 52px; padding: 0 6px; font-family: var(--mono); text-align: right; }
+.dip-controls select.field { padding: 0 6px; }
+.dip-status {
+  flex: none; padding: 6px 14px; font-size: 11px; color: var(--dim);
+  border-bottom: 1px solid var(--line-soft); min-height: 27px;
+}
+.dip-status b { color: var(--text); font-weight: 650; }
+.dip-status .warn { color: var(--accent); }
+/* Header and rows share one column template so the figures line up. */
+.dip-head, .dip-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) 72px 60px 128px 56px;
+  align-items: center; gap: 10px; padding: 0 14px;
+}
+.dip-head {
+  flex: none; height: 26px; border-bottom: 1px solid var(--line);
+  font-size: 10px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--dim);
+}
+.dip-head span:not(:first-child) { text-align: right; }
+.dip-row {
+  height: 44px; border-bottom: 1px solid var(--line-soft); cursor: pointer;
+  transition: background .1s var(--ease);
+}
+.dip-row:hover { background: var(--raised); }
+.dip-row.active { background: var(--accent-soft); }
+.dip-num { text-align: right; font-family: var(--mono); font-size: 12px; font-variant-numeric: tabular-nums; }
+.dip-num small { display: block; font-size: 10px; color: var(--dim); white-space: nowrap; }
+.dip-fell { color: var(--down); }
+.dip-sym { display: flex; align-items: center; gap: 6px; }
+.dip-new {
+  font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  padding: 1px 5px; border-radius: 3px; background: var(--up-soft); color: var(--up);
+}
+/* Retrace as a bar: where the close sits between the low (left) and the old
+   peak (right). The tick marks the threshold being scanned for. */
+.dip-bar { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.dip-track {
+  position: relative; width: 64px; height: 5px; border-radius: 3px; background: var(--raised); flex: none;
+}
+.dip-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--up); }
+.dip-tick { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--muted); }
+@media (max-width: 600px) {
+  .dip-head, .dip-row { grid-template-columns: minmax(0, 1fr) 76px 48px 52px; gap: 8px; }
+  .dip-head span:last-child, .dip-row > :last-child { display: none; }
+  .dip-track { display: none; }
+}
+
 /* ═══ Search overlay ═════════════════════════════════════════════════ */
 #search-overlay {
   position: fixed; inset: 0; z-index: 60; display: none;
