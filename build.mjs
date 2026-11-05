@@ -29,6 +29,9 @@ ${src('style.css').trim()}
 <body>
 ${src('body.html').trim()}
 <script>
+${src('scan.js').trim()}
+</script>
+<script>
 ${src('app.js').trim()}
 </script>
 </body>

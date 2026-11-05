@@ -1,0 +1,50 @@
+# Dip scan — runs scanner/run.mjs after each US close and publishes the
+# result to the `scan-data` branch, which the page reads from
+# raw.githubusercontent.com (it sends Access-Control-Allow-Origin: *).
+#
+# The branch is a single orphan commit, force-pushed each run, so a year of
+# nightly scans does not pile up in the repository's history. A run that
+# fails (Yahoo refused a quarter or more of the requests) publishes nothing,
+# leaving the previous good scan in place.
+name: Dip scan
+
+on:
+  schedule:
+    # 22:17 UTC, Mon–Fri: 5:17pm New York in winter, 6:17pm in summer —
+    # after the close either way, with time for Yahoo's daily bars to settle.
+    - cron: '17 22 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dip-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Test the scanner
+        run: node scanner/scan.test.mjs
+
+      - name: Scan
+        run: node scanner/run.mjs --out out/scan.json
+
+      - name: Publish to scan-data
+        run: |
+          cd out
+          git init -q -b scan-data
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scan.json
+          git commit -q -m "Dip scan $(date -u +%Y-%m-%d)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" scan-data

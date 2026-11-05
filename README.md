@@ -86,6 +86,58 @@ and `barStyle` together, because TradingView keeps a separate colour pair per
 style: set only `candleStyle` and your colours vanish the moment you switch to
 bars or Heikin-Ashi.
 
+## Dip scanner
+
+`d`, or the dip button. Every US-listed common stock that **fell hard and has
+since won back part of the fall** — by default, down at least 30% inside three
+months and retraced at least 20% of that drop. Click a row to chart it.
+
+"Retraced 20%" is measured against the size of the fall, not the price: a
+drop from $100 to $50 has retraced 20% at $60, and so has a drop from $100 to
+$90 at $92. The drop is the deepest peak-to-trough fall inside the window,
+highs to lows, which is not the same as "highest high, then the lowest low
+after it": a stock that crashed early and never got back to its old high is
+exactly what this is for, and that rule misses it. **New** marks the stocks
+that crossed the retrace line on the latest session.
+
+Every threshold is in the panel — drop, window (two weeks to six months),
+retrace range, price, average dollar volume — and re-runs instantly.
+
+**Where the data comes from.** Yahoo daily bars, fetched by
+`scanner/run.mjs` on GitHub Actions after each US close
+(`.github/workflows/scan.yml`). It runs on a server rather than in the page
+because a page can only reach Yahoo through a third-party CORS proxy, and
+~6,000 chart requests through one of those is a guaranteed rate limit — the
+reason Yahoo was retired from the charts in the first place. The universe is
+Nasdaq Trader's symbol directory with ETFs, warrants, rights, units,
+preferreds and notes removed.
+
+The job publishes every stock that fell at least 20% (and trades over $1 and
+$1M a day) with six months of its highs, lows and closes, to a `scan-data`
+branch the page reads from `raw.githubusercontent.com`. That branch is one
+commit, force-pushed each run, so nightly data does not pile up in the
+history. A run where Yahoo refused a quarter or more of the requests fails
+and publishes nothing, so a bad night leaves yesterday's scan up rather than
+replacing it with a partial one. Because the file only holds stocks down
+20% or more, that is the lowest drop the panel will accept.
+
+The first scan appears after the workflow first runs — trigger it by hand from
+the Actions tab rather than waiting for the evening.
+
+```bash
+npm run scan                                        # full scan → .scan/scan.json, prints the matches
+node scanner/run.mjs --symbols AAPL,TSLA,PLTR       # just these
+node scanner/run.mjs --drop 40 --retrace 25 --lookback 126
+npm run test:scan                                   # 48 checks, no network
+```
+
+`src/scan.js` is the logic, and it is the same file in both places — inlined
+into the page and required by the runner — so the nightly prefilter and the
+panel cannot disagree. Its tests check the arithmetic against hand-worked
+cases and a brute-force reference over 400 random series, and were
+mutation-tested: each of six deliberately re-introduced bugs fails the suite.
+`?scan=URL` points the panel at any other scan file.
+
 ## Borderless
 
 `f`, or the expand button. The header, the symbol bars, the hairlines between
@@ -230,6 +282,7 @@ that disagreed with the chart next to it.
 | `f` | borderless — just the charts |
 | `i` | indicators |
 | `r` | match every chart to chart 1 |
+| `d` | dip scanner |
 | `w` | watchlist |
 | `s` | screener |
 | `n` | news |

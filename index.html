@@ -380,6 +380,59 @@ body[data-focus="1"] #focus-exit { display: grid; }
 .setting > .btn { flex: none; min-width: 46px; justify-content: center; }
 .setting select.field { flex: none; }
 
+/* ═══ Dip scanner ════════════════════════════════════════════════════ */
+.dip-controls {
+  flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+  padding: 10px 14px; border-bottom: 1px solid var(--line-soft);
+}
+.dip-controls label { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
+.dip-controls label > span { display: inline-flex; align-items: center; gap: 3px; color: var(--dim); }
+.dip-controls input.field { width: 52px; padding: 0 6px; font-family: var(--mono); text-align: right; }
+.dip-controls select.field { padding: 0 6px; }
+.dip-status {
+  flex: none; padding: 6px 14px; font-size: 11px; color: var(--dim);
+  border-bottom: 1px solid var(--line-soft); min-height: 27px;
+}
+.dip-status b { color: var(--text); font-weight: 650; }
+.dip-status .warn { color: var(--accent); }
+/* Header and rows share one column template so the figures line up. */
+.dip-head, .dip-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) 72px 60px 128px 56px;
+  align-items: center; gap: 10px; padding: 0 14px;
+}
+.dip-head {
+  flex: none; height: 26px; border-bottom: 1px solid var(--line);
+  font-size: 10px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: var(--dim);
+}
+.dip-head span:not(:first-child) { text-align: right; }
+.dip-row {
+  height: 44px; border-bottom: 1px solid var(--line-soft); cursor: pointer;
+  transition: background .1s var(--ease);
+}
+.dip-row:hover { background: var(--raised); }
+.dip-row.active { background: var(--accent-soft); }
+.dip-num { text-align: right; font-family: var(--mono); font-size: 12px; font-variant-numeric: tabular-nums; }
+.dip-num small { display: block; font-size: 10px; color: var(--dim); white-space: nowrap; }
+.dip-fell { color: var(--down); }
+.dip-sym { display: flex; align-items: center; gap: 6px; }
+.dip-new {
+  font-size: 9px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  padding: 1px 5px; border-radius: 3px; background: var(--up-soft); color: var(--up);
+}
+/* Retrace as a bar: where the close sits between the low (left) and the old
+   peak (right). The tick marks the threshold being scanned for. */
+.dip-bar { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.dip-track {
+  position: relative; width: 64px; height: 5px; border-radius: 3px; background: var(--raised); flex: none;
+}
+.dip-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--up); }
+.dip-tick { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--muted); }
+@media (max-width: 600px) {
+  .dip-head, .dip-row { grid-template-columns: minmax(0, 1fr) 76px 48px 52px; gap: 8px; }
+  .dip-head span:last-child, .dip-row > :last-child { display: none; }
+  .dip-track { display: none; }
+}
+
 /* ═══ Search overlay ═════════════════════════════════════════════════ */
 #search-overlay {
   position: fixed; inset: 0; z-index: 60; display: none;
@@ -453,6 +506,7 @@ kbd {
   <g id="i-search"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></g>
   <g id="i-star"><path d="M8 2l1.9 3.9 4.1.6-3 2.9.7 4.1L8 11.6 4.3 13.5l.7-4.1-3-2.9 4.1-.6z"/></g>
   <g id="i-radar"><circle cx="8" cy="8" r="6"/><circle cx="8" cy="8" r="2.5"/><path d="M8 8l4-4"/></g>
+  <g id="i-dip"><path d="M1.5 3.5l4.5 9 3-4.5 5 2.5"/><path d="M11.5 9l2.5 1.5-1 2.5"/></g>
   <g id="i-news"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M4.5 6h5M4.5 8.5h7M4.5 11h4"/></g>
   <g id="i-gear"><circle cx="8" cy="8" r="2.4"/><path d="M8 1.5v2M8 12.5v2M14.5 8h-2M3.5 8h-2M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4M12.6 12.6l-1.4-1.4M4.8 4.8L3.4 3.4"/></g>
   <g id="i-sync"><path d="M13 7a5 5 0 0 0-9-2M3 9a5 5 0 0 0 9 2"/><path d="M3.5 3v3h3M12.5 13v-3h-3"/></g>
@@ -507,6 +561,7 @@ kbd {
 
   <button class="btn icon" id="btn-focus"     title="Borderless — just the charts (f)"><svg viewBox="0 0 16 16"><use href="#i-expand"/></svg></button>
   <button class="btn icon" id="btn-watchlist" title="Watchlist"><svg viewBox="0 0 16 16"><use href="#i-star"/></svg></button>
+  <button class="btn icon" id="btn-dips"      title="Dip scanner — big drop, then a recovery (d)"><svg viewBox="0 0 16 16"><use href="#i-dip"/></svg></button>
   <button class="btn icon" id="btn-screener"  title="Screener"><svg viewBox="0 0 16 16"><use href="#i-radar"/></svg></button>
   <button class="btn icon" id="btn-news"      title="News"><svg viewBox="0 0 16 16"><use href="#i-news"/></svg></button>
   <button class="btn icon" id="btn-settings"  title="Settings"><svg viewBox="0 0 16 16"><use href="#i-gear"/></svg></button>
@@ -546,6 +601,34 @@ kbd {
     <div class="panel-body" id="studies-body"></div>
   </aside>
 
+  <aside class="panel wide" id="panel-dips" aria-label="Dip scanner">
+    <div class="panel-head">
+      <span class="panel-title">Dip scanner</span>
+      <button class="btn icon" id="dips-reload" title="Reload the latest scan"><svg viewBox="0 0 16 16"><use href="#i-sync"/></svg></button>
+      <button class="btn icon" data-close-panel><svg viewBox="0 0 16 16"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="panel-note">US stocks that <b>fell hard</b>, then won back part of the fall. Retraced 20% means it has
+      recovered a fifth of the drop: $100&nbsp;&rarr;&nbsp;$50 back to $60. Click a row to chart it.</div>
+    <div class="dip-controls" id="dips-controls">
+      <label>Fell at least <span><input class="field" type="number" id="dip-drop" min="20" max="95" step="5">%</span></label>
+      <label>within <span><select class="field" id="dip-lookback">
+        <option value="10">2 weeks</option><option value="21">1 month</option><option value="42">2 months</option>
+        <option value="63">3 months</option><option value="126">6 months</option></select></span></label>
+      <label>then retraced <span><input class="field" type="number" id="dip-rmin" min="0" max="100" step="5">&ndash;<input class="field" type="number" id="dip-rmax" min="0" max="100" step="5">%</span></label>
+      <label>Price over <span>$<input class="field" type="number" id="dip-price" min="1" step="1"></span></label>
+      <label>Avg $ volume <span><select class="field" id="dip-dv">
+        <option value="1000000">$1M+</option><option value="5000000">$5M+</option><option value="20000000">$20M+</option>
+        <option value="100000000">$100M+</option></select></span></label>
+      <label>Sort <span><select class="field" id="dip-sort">
+        <option value="drop">Biggest drop</option><option value="retrace">Most retraced</option>
+        <option value="recent">Most recent low</option><option value="dv">Most traded</option></select></span></label>
+      <button class="btn" id="dip-fresh" title="Only stocks that crossed the retrace line on the latest session">New today</button>
+    </div>
+    <div class="dip-status" id="dips-status"></div>
+    <div class="dip-head" aria-hidden="true"><span>Stock</span><span>Close</span><span>Fell</span><span>Retraced</span><span>Low</span></div>
+    <div class="panel-body" id="dips-body"></div>
+  </aside>
+
   <aside class="panel wide" id="panel-screener" aria-label="Screener">
     <div class="panel-head">
       <span class="panel-title">Screener</span>
@@ -583,6 +666,120 @@ kbd {
 </div>
 
 <div id="toasts" aria-live="polite"></div>
+<script>
+/* ═══════════════════════════════════════════════════════════════════════
+   SCAN — "big drop, then a recovery" over daily bars
+   ───────────────────────────────────────────────────────────────────────
+   Shared by the page (inlined into index.html, exposed as window.SCAN) and
+   by scanner/run.mjs (required from Node), so the numbers the nightly job
+   pre-filters on are computed by exactly the code the panel filters with.
+
+   The definitions, for a window of the last `lookback` daily bars:
+
+   • Peak and trough are the pair with the largest drawdown in the window:
+     the trough is the lowest low *after* the peak, and the peak is the high
+     that makes that fall deepest. Picking "the highest high, then the lowest
+     low after it" instead misses a stock that crashed early in the window and
+     never got back to its old high — exactly the stocks this is looking for.
+
+   • drop      = (peak − trough) / peak               — how far it fell
+   • retrace   = (close − trough) / (peak − trough)   — how much of that fall
+                                                        it has since won back
+     So a fall from $100 to $50 that is back to $60 has retraced 20%; a fall
+     from $100 to $90 back to $92 has also retraced 20%.
+
+   • fresh     = yesterday's close had not yet retraced `minRetrace`, today's
+     has — the day the signal first appears.
+
+   A drawdown in a shorter window can never be deeper than in the whole
+   series, which is what makes pre-filtering on the full window sound.
+   ═══════════════════════════════════════════════════════════════════════ */
+(function (root) {
+  'use strict';
+
+  /* Largest peak-to-trough fall over bars [from, to). High and low arrays,
+     same length. Returns null only for a window under two bars; a series
+     that never fell comes back as drop 0.
+
+     Each bar is measured against the peak *before* it and only then allowed
+     to become the peak, so a bar is never its own trough — otherwise one
+     wide day's range would count as a "drop". Ties go to the latest high,
+     so a double top dates the fall from its second peak. */
+  function maxDrawdown(h, l, from = 0, to = h.length) {
+    from = Math.max(0, from);
+    if (to - from < 2) return null;
+    let peakI = from, peak = h[from];
+    let best = { drop: 0, peakI: from, troughI: from };
+    for (let i = from + 1; i < to; i++) {
+      if (peak > 0) {
+        const d = (peak - l[i]) / peak;
+        if (d > best.drop) best = { drop: d, peakI, troughI: i };
+      }
+      if (h[i] >= peak) { peak = h[i]; peakI = i; }
+    }
+    return best;
+  }
+
+  const DEFAULTS = {
+    lookback: 63,        // trading days the drop must fall inside (~3 months)
+    minDrop: 30,         // %
+    minRetrace: 20,      // % of the drop won back
+    maxRetrace: 100,     // %
+    minPrice: 1,         // $
+    minDollarVol: 1e6,   // average daily $ volume
+  };
+
+  /* One symbol against one set of criteria. `row` is { h, l, c, dv } —
+     daily highs, lows, closes (oldest first) and average daily dollar
+     volume. Returns the measurements whether or not they pass, with `pass`. */
+  function evaluate(row, opts = {}) {
+    const o = { ...DEFAULTS, ...opts };
+    const n = row.c.length;
+    if (n < 3) return null;
+    const from = Math.max(0, n - o.lookback);
+    const dd = maxDrawdown(row.h, row.l, from, n);
+    if (!dd) return null;
+
+    const peak = row.h[dd.peakI], trough = row.l[dd.troughI];
+    const range = peak - trough;
+    const close = row.c[n - 1];
+    const retrace = range > 0 ? (close - trough) / range : 0;
+    // Yesterday only counts as "not yet" if the trough was already in.
+    const prev = dd.troughI <= n - 2 && range > 0 ? (row.c[n - 2] - trough) / range : -Infinity;
+    const minR = o.minRetrace / 100;
+
+    const m = {
+      drop: dd.drop * 100,
+      retrace: retrace * 100,
+      peak, trough, close,
+      dropDays: dd.troughI - dd.peakI,       // bars from the peak to the low
+      sinceLow: n - 1 - dd.troughI,          // bars since the low
+      fresh: prev < minR && retrace >= minR,
+      dv: row.dv || 0,
+    };
+    m.pass = m.drop >= o.minDrop
+      && m.retrace >= o.minRetrace
+      && m.retrace <= o.maxRetrace
+      && close >= o.minPrice
+      && m.dv >= o.minDollarVol;
+    return m;
+  }
+
+  /* Average daily dollar volume over the last `days` bars. */
+  function dollarVolume(c, v, days = 20) {
+    const n = Math.min(c.length, v.length);
+    let sum = 0, k = 0;
+    for (let i = Math.max(0, n - days); i < n; i++) {
+      if (c[i] > 0 && v[i] >= 0) { sum += c[i] * v[i]; k++; }
+    }
+    return k ? sum / k : 0;
+  }
+
+  const api = { maxDrawdown, evaluate, dollarVolume, DEFAULTS };
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.SCAN = api;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script>
 <script>
 /* ═══════════════════════════════════════════════════════════════════════
    APP — a multi-chart workspace around TradingView's embedded widgets
@@ -1179,6 +1376,128 @@ kbd {
     toast(`${shortName(sym)} added`);
   }
 
+  /* — dip scanner —
+     The scan itself runs nightly on GitHub Actions (scanner/run.mjs), which
+     can call Yahoo directly; a page cannot without a CORS proxy, and ~6,000
+     requests through one is a guaranteed rate limit. What it publishes is
+     every stock that fell at least `prefilter.minDrop`% with its daily bars,
+     so the thresholds here re-run instantly against that file. `?scan=URL`
+     points the panel at another file, e.g. a local run. */
+  const SCAN_URL = new URLSearchParams(location.search).get('scan')
+    || 'https://raw.githubusercontent.com/Jonahaga2/trading-charts/scan-data/scan.json';
+  const dips = {
+    data: null, loadedAt: 0, loading: null, error: '', active: '',
+    opts: { ...SCAN.DEFAULTS, sort: 'drop', fresh: false, ...STORE.get('dips', {}) },
+  };
+  const DIP_CAP = 250;
+
+  function loadDips(force) {
+    if (dips.loading) return dips.loading;
+    if (dips.data && !force && Date.now() - dips.loadedAt < 30 * 60e3) return Promise.resolve();
+    dips.error = '';
+    paintDipStatus('Loading the latest scan…');
+    dips.loading = (async () => {
+      try {
+        const r = await fetch(SCAN_URL, { cache: force ? 'reload' : 'default' });
+        if (r.status === 404) throw new Error('No scan has been published yet. It runs on GitHub Actions after each US close — '
+          + 'run the "Dip scan" workflow once from the Actions tab to publish the first one.');
+        if (!r.ok) throw new Error(`The scan could not be loaded (HTTP ${r.status}).`);
+        const d = await r.json();
+        if (d.v !== 1 || !Array.isArray(d.rows)) throw new Error('The scan file is not in a format this page understands.');
+        dips.data = d; dips.loadedAt = Date.now();
+      } catch (e) {
+        dips.error = e instanceof TypeError ? 'The scan could not be reached — check your connection.' : e.message;
+      } finally { dips.loading = null; }
+      renderDips();
+    })();
+    return dips.loading;
+  }
+
+  function paintDipControls() {
+    const o = dips.opts;
+    $('#dip-drop').value = o.minDrop; $('#dip-lookback').value = String(o.lookback);
+    $('#dip-rmin').value = o.minRetrace; $('#dip-rmax').value = o.maxRetrace;
+    $('#dip-price').value = o.minPrice; $('#dip-dv').value = String(o.minDollarVol);
+    $('#dip-sort').value = o.sort; $('#dip-fresh').classList.toggle('on', !!o.fresh);
+  }
+  /* The file only holds stocks that fell at least the prefilter, so a lower
+     minimum here would silently show a subset; it is clamped up instead. */
+  function readDipControls() {
+    const num = (id, lo, hi, d) => { const v = parseFloat($(id).value); return Number.isFinite(v) ? clamp(v, lo, hi) : d; };
+    const floor = dips.data?.prefilter?.minDrop ?? 20;
+    const o = dips.opts;
+    o.minDrop = num('#dip-drop', floor, 99, o.minDrop);
+    o.lookback = +$('#dip-lookback').value || o.lookback;
+    o.minRetrace = num('#dip-rmin', 0, 100, o.minRetrace);
+    o.maxRetrace = num('#dip-rmax', o.minRetrace, 100, o.maxRetrace);
+    o.minPrice = num('#dip-price', 0, 1e6, o.minPrice);
+    o.minDollarVol = +$('#dip-dv').value || o.minDollarVol;
+    o.sort = $('#dip-sort').value;
+    STORE.set('dips', o);
+  }
+
+  function paintDipStatus(html) { $('#dips-status').innerHTML = html; }
+
+  const fmtPrice = x => x >= 1000 ? x.toFixed(0) : x >= 1 ? x.toFixed(2) : x.toFixed(4);
+  const fmtDV = x => x >= 1e9 ? (x / 1e9).toFixed(1) + 'B' : x >= 1e6 ? (x / 1e6).toFixed(0) + 'M' : (x / 1e3).toFixed(0) + 'K';
+
+  function renderDips() {
+    const body = $('#dips-body');
+    if (dips.error) {
+      paintDipStatus('');
+      body.innerHTML = `<div class="empty">${esc(dips.error)}</div>`;
+      return;
+    }
+    const d = dips.data;
+    if (!d) { body.innerHTML = ''; return; }
+    const o = dips.opts;
+    const hits = [];
+    for (const r of d.rows) {
+      const m = SCAN.evaluate(r, o);
+      if (m && m.pass && (!o.fresh || m.fresh)) hits.push({ r, m });
+    }
+    const by = {
+      drop: (a, b) => b.m.drop - a.m.drop,
+      retrace: (a, b) => b.m.retrace - a.m.retrace,
+      recent: (a, b) => a.m.sinceLow - b.m.sinceLow || b.m.drop - a.m.drop,
+      dv: (a, b) => b.m.dv - a.m.dv,
+    };
+    hits.sort(by[o.sort] || by.drop);
+
+    const stale = d.asOf && (Date.now() - Date.parse(d.asOf + 'T21:00:00Z')) > 4 * 864e5;
+    paintDipStatus(`<b>${hits.length.toLocaleString()} ${hits.length === 1 ? 'match' : 'matches'}</b>`
+      + ` · close of ${esc(d.asOf || '—')} · ${d.universe.toLocaleString()} stocks scanned`
+      + (d.failed ? ` (${d.failed.toLocaleString()} unavailable)` : '')
+      + (stale ? ' · <span class="warn">this scan is several days old</span>' : ''));
+
+    if (!hits.length) {
+      body.innerHTML = '<div class="empty">Nothing matches.<br>Lower the drop, or widen the window or the retrace range.</div>';
+      return;
+    }
+    const tick = clamp(o.minRetrace, 0, 100);
+    body.innerHTML = hits.slice(0, DIP_CAP).map(({ r, m }) => {
+      const sym = r.x ? `${r.x}:${r.s}` : r.s;
+      const ago = m.sinceLow === 0 ? 'today' : `${m.sinceLow}d ago`;
+      return `<div class="dip-row${dips.active === sym ? ' active' : ''}" data-sym="${esc(sym)}" title="${esc(r.n || r.s)}">
+        <div class="row-main"><div class="row-sym dip-sym">${esc(r.s)}${m.fresh ? '<span class="dip-new">new</span>' : ''}</div>
+          <div class="row-name">${esc(r.n || r.x)} · ${fmtDV(m.dv)}/day</div></div>
+        <div class="dip-num">${fmtPrice(m.close)}<small>from ${fmtPrice(m.peak)}</small></div>
+        <div class="dip-num dip-fell">−${m.drop.toFixed(0)}%<small>${m.dropDays}d</small></div>
+        <div class="dip-bar"><div class="dip-track"><div class="dip-fill" style="width:${clamp(m.retrace, 0, 100).toFixed(1)}%"></div>
+          <div class="dip-tick" style="left:${tick}%"></div></div><div class="dip-num">${m.retrace.toFixed(0)}%</div></div>
+        <div class="dip-num">${fmtPrice(m.trough)}<small>${ago}</small></div>
+      </div>`;
+    }).join('') + (hits.length > DIP_CAP
+      ? `<div class="empty">${(hits.length - DIP_CAP).toLocaleString()} more — tighten the filters to see them.</div>` : '');
+  }
+
+  function openDips() {
+    if (!openPanel('panel-dips')) return;
+    paintDipControls();
+    renderDips();
+    loadDips();
+  }
+
   /* — indicators, applied to every chart at once — */
   function paintStudiesCount() {
     const el = $('#studies-count');
@@ -1464,6 +1783,27 @@ kbd {
       renderStudies(); paintStudiesCount(); applySoon(0);
     });
     $('#btn-watchlist').addEventListener('click', () => { if (openPanel('panel-watchlist')) renderWatchlist(); });
+    $('#btn-dips').addEventListener('click', openDips);
+    $('#dips-reload').addEventListener('click', () => loadDips(true));
+    let dipTimer = null;
+    $('#dips-controls').addEventListener('input', () => {
+      clearTimeout(dipTimer);
+      dipTimer = setTimeout(() => { readDipControls(); renderDips(); }, 150);
+    });
+    // Clamped values are written back only once the field is left, so typing
+    // "4" on the way to "45" is not snapped up to the floor mid-keystroke.
+    $('#dips-controls').addEventListener('change', () => { readDipControls(); paintDipControls(); renderDips(); });
+    $('#dip-fresh').addEventListener('click', () => {
+      dips.opts.fresh = !dips.opts.fresh; STORE.set('dips', dips.opts); paintDipControls(); renderDips();
+    });
+    $('#dips-body').addEventListener('click', e => {
+      const row = e.target.closest('[data-sym]');
+      if (!row) return;
+      dips.active = row.dataset.sym;
+      $$('.dip-row.active', $('#dips-body')).forEach(x => x.classList.remove('active'));
+      row.classList.add('active');
+      setSymbol(activeCell(), row.dataset.sym);
+    });
     $('#btn-screener').addEventListener('click', () => { if (openPanel('panel-screener')) mountEmbed($('#screener-body'), 'screener', screenerConfig()); });
     $('#btn-news').addEventListener('click', () => { if (openPanel('panel-news')) mountEmbed($('#news-body'), 'timeline', newsConfig()); });
     $('#btn-settings').addEventListener('click', openSettings);
@@ -1513,6 +1853,7 @@ kbd {
         if (hit) setLayout(hit.id);
       } else if (e.key.toLowerCase() === 'i') { openStudies(); }
       else if (e.key.toLowerCase() === 'w') { if (openPanel('panel-watchlist')) renderWatchlist(); }
+      else if (e.key.toLowerCase() === 'd') { openDips(); }
       else if (e.key.toLowerCase() === 's') { if (openPanel('panel-screener')) mountEmbed($('#screener-body'), 'screener', screenerConfig()); }
       else if (e.key.toLowerCase() === 'n') { if (openPanel('panel-news')) mountEmbed($('#news-body'), 'timeline', newsConfig()); }
     });
