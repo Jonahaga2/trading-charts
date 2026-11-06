@@ -3,7 +3,7 @@
    behaviour against canned responses. No network.
    Run: node scanner/scan.test.mjs   (or npm run test:scan) */
 import { createRequire } from 'node:module';
-import { parseUniverse, parseChart, scan, cleanName, yahooSymbol, PREFILTER, BARS } from './run.mjs';
+import { parseUniverse, parseChart, scan, cleanName, yahooSymbol, getSession, Blocked, PREFILTER, BARS } from './run.mjs';
 
 const require = createRequire(import.meta.url);
 const SCAN = require('../src/scan.js');
@@ -188,12 +188,83 @@ check('dollar volume averages the last 20', near(SCAN.dollarVolume(Array(30).fil
   check('prefilter keeps the fallers', kept === 'BUSY,DIP,LONG', kept);
   check('429 is retried until it answers', calls.BUSY === 3);
   check('404 is not retried and not a failure', calls.GONE === 1 && !out.failedSymbols.includes('GONE'));
-  check('5xx retried, then counted as failed', calls.DOWN === 5 && out.failed === 1 && out.failedSymbols[0] === 'DOWN');
+  check('5xx retried, then counted as failed', calls.DOWN === 4 && out.failed === 1 && out.failedSymbols[0] === 'DOWN');
+  check('failures are tallied by reply', out.errors['HTTP 503'] === 1, JSON.stringify(out.errors));
   check('series trimmed to the stored window', out.rows.find(r => r.s === 'LONG').c.length === BARS);
   check('header carries the prefilter', out.prefilter.minDrop === PREFILTER.minDrop && out.universe === 7);
   check('asOf is a date', /^\d{4}-\d\d-\d\d$/.test(out.asOf));
   const dip = SCAN.evaluate(out.rows.find(r => r.s === 'DIP'));
   check('a kept row re-evaluates in the panel', dip.pass && near(dip.retrace, 22), JSON.stringify(dip));
+}
+
+/* ── Yahoo session: cookie from fc.yahoo.com, crumb from getcrumb ── */
+const res = (status, body = '', setCookie = []) => ({
+  ok: status >= 200 && status < 300, status,
+  text: async () => body, json: async () => JSON.parse(body),
+  headers: { getSetCookie: () => setCookie },
+});
+const tinyChart = JSON.stringify({ chart: { result: [{ timestamp: [1, 2, 3],
+  indicators: { quote: [{ high: [100, 50, 61], low: [100, 50, 61], close: [100, 50, 61], volume: [1e6, 1e6, 1e6] }] } }] } });
+{
+  const seen = [];
+  const yahoo = async (url, init = {}) => {
+    seen.push({ url, cookie: init.headers?.Cookie });
+    if (url.startsWith('https://fc.yahoo.com')) return res(404, 'nope', ['A3=d=AQAB; Expires=Fri; Domain=.yahoo.com; Path=/; Secure']);
+    if (url.includes('/v1/test/getcrumb')) return init.headers?.Cookie === 'A3=d=AQAB' ? res(200, 'abc.DEF/9') : res(401, '<html>');
+    const crumb = new URL(url).searchParams.get('crumb');
+    return crumb === 'abc.DEF/9' && init.headers?.Cookie === 'A3=d=AQAB' ? res(200, tinyChart) : res(429, 'Too Many Requests');
+  };
+  const sess = await getSession(yahoo);
+  check('session takes the cookie from fc.yahoo.com', sess.cookie === 'A3=d=AQAB', sess.cookie);
+  check('session gets a crumb with it', sess.crumb === 'abc.DEF/9', sess.crumb);
+  const out = await scan([{ s: 'DIP', x: 'NYSE', n: 'Dip' }], { fetchFn: yahoo, backoff: 1 });
+  const chartCall = seen.find(c => c.url.includes('/v8/finance/chart/'));
+  check('chart requests carry the crumb', chartCall && new URL(chartCall.url).searchParams.get('crumb') === 'abc.DEF/9');
+  check('chart requests carry the cookie', chartCall?.cookie === 'A3=d=AQAB');
+  check('a session-authenticated scan succeeds', out.rows.length === 1 && out.failed === 0);
+
+  const pageNotCrumb = async url => url.includes('getcrumb') ? res(200, '<!doctype html><html>') : res(404, '', []);
+  check('an HTML page is not taken for a crumb', (await getSession(pageNotCrumb)).crumb === '');
+}
+
+/* ── an expired session (401) is renewed once, shared by all workers ── */
+{
+  let handshakes = 0, chartCalls = 0;
+  const expiring = async (url, init = {}) => {
+    if (url.startsWith('https://fc.yahoo.com')) return res(404, '', [`A3=s${handshakes}`]);
+    if (url.includes('getcrumb')) { handshakes++; return res(200, `c${handshakes}`); }
+    chartCalls++;
+    return new URL(url).searchParams.get('crumb') === 'c2' ? res(200, tinyChart) : res(401, 'Unauthorized');
+  };
+  const u = Array.from({ length: 8 }, (_, i) => ({ s: 'S' + i, x: 'NYSE', n: '' }));
+  const out = await scan(u, { fetchFn: expiring, backoff: 1, concurrency: 4 });
+  check('401 renews the session and succeeds', out.failed === 0 && out.rows.length === 8, JSON.stringify(out.errors));
+  check('…with one renewal, not one per worker', handshakes === 2, `handshakes ${handshakes}`);
+}
+
+/* ── blocked: stop after the probe instead of grinding through the rest ── */
+{
+  let calls = 0;
+  const refusing = async url => {
+    if (url.startsWith('https://fc.yahoo.com') || url.includes('getcrumb')) return res(429, 'Too Many Requests');
+    calls++; return res(429, 'Too Many Requests');
+  };
+  const u = Array.from({ length: 2000 }, (_, i) => ({ s: 'B' + i, x: 'NYSE', n: '' }));
+  let err = null;
+  try { await scan(u, { fetchFn: refusing, backoff: 1, probe: 60, concurrency: 6 }); } catch (e) { err = e; }
+  check('a blocked run throws Blocked', err instanceof Blocked, String(err));
+  check('…naming what Yahoo answered', /HTTP 429/.test(err?.message || ''), err?.message);
+  check('…after the probe, not the whole universe', calls < 70 * 4, `${calls} chart calls`);
+
+  // A run that is merely patchy is not blocked.
+  let n = 0;
+  const patchy = async url => {
+    if (url.startsWith('https://fc.yahoo.com') || url.includes('getcrumb')) return res(200, 'ok1');
+    return (n++ % 3 === 0) ? res(400, 'bad') : res(200, tinyChart);
+  };
+  const v = Array.from({ length: 150 }, (_, i) => ({ s: 'P' + i, x: 'NYSE', n: '' }));
+  const out = await scan(v, { fetchFn: patchy, backoff: 1 });
+  check('a patchy run completes', out.universe === 150 && out.failed > 0 && out.rows.length > 0);
 }
 
 console.log(`${pass} passed, ${fail} failed`);

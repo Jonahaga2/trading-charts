@@ -121,6 +121,14 @@ and publishes nothing, so a bad night leaves yesterday's scan up rather than
 replacing it with a partial one. Because the file only holds stocks down
 20% or more, that is the lowest drop the panel will accept.
 
+Yahoo refuses cookieless requests from data-centre addresses, which is
+every request from GitHub Actions — the first two scans got nothing but 429s
+for an hour each. So the runner first does the handshake yfinance uses:
+`fc.yahoo.com` sets a session cookie, `/v1/test/getcrumb` turns it into a
+crumb, and both ride on every chart request, renewed once if Yahoo answers
+401. If 90% of the first 60 symbols still fail, the run stops within a
+minute and logs what Yahoo answered, instead of retrying 6,000 refusals.
+
 The first scan appears after the workflow first runs — trigger it by hand from
 the Actions tab rather than waiting for the evening.
 
@@ -128,7 +136,7 @@ the Actions tab rather than waiting for the evening.
 npm run scan                                        # full scan → .scan/scan.json, prints the matches
 node scanner/run.mjs --symbols AAPL,TSLA,PLTR       # just these
 node scanner/run.mjs --drop 40 --retrace 25 --lookback 126
-npm run test:scan                                   # 48 checks, no network
+npm run test:scan                                   # 61 checks, no network
 ```
 
 `src/scan.js` is the logic, and it is the same file in both places — inlined
