@@ -103,14 +103,20 @@ that crossed the retrace line on the latest session.
 Every threshold is in the panel — drop, window (two weeks to six months),
 retrace range, price, average dollar volume — and re-runs instantly.
 
-**Where the data comes from.** Yahoo daily bars, fetched by
+**Where the data comes from.** Alpaca's consolidated daily bars, fetched by
 `scanner/run.mjs` on GitHub Actions after each US close
-(`.github/workflows/scan.yml`). It runs on a server rather than in the page
-because a page can only reach Yahoo through a third-party CORS proxy, and
-~6,000 chart requests through one of those is a guaranteed rate limit — the
-reason Yahoo was retired from the charts in the first place. The universe is
+(`.github/workflows/scan.yml`), 200 symbols a request. The universe is
 Nasdaq Trader's symbol directory with ETFs, warrants, rights, units,
 preferreds and notes removed.
+
+It was built on Yahoo first and Yahoo is still there (`--source yahoo`), but
+Yahoo answers every data-centre address with `429 Too Many Requests` —
+GitHub Actions and every cloud machine tried, from the very first request,
+even with the cookie-and-crumb session yfinance uses. Alpaca serves servers;
+free paper-trading keys are enough. Add them as repository secrets named
+`ALPACA_KEY` and `ALPACA_SECRET` (Settings → Secrets and variables →
+Actions). Without them the job falls back to Yahoo, which stops within a
+minute and says why in the log, rather than retrying for an hour.
 
 The job publishes every stock that fell at least 20% (and trades over $1 and
 $1M a day) with six months of its highs, lows and closes, to a `scan-data`
@@ -121,22 +127,14 @@ and publishes nothing, so a bad night leaves yesterday's scan up rather than
 replacing it with a partial one. Because the file only holds stocks down
 20% or more, that is the lowest drop the panel will accept.
 
-Yahoo refuses cookieless requests from data-centre addresses, which is
-every request from GitHub Actions — the first two scans got nothing but 429s
-for an hour each. So the runner first does the handshake yfinance uses:
-`fc.yahoo.com` sets a session cookie, `/v1/test/getcrumb` turns it into a
-crumb, and both ride on every chart request, renewed once if Yahoo answers
-401. If 90% of the first 60 symbols still fail, the run stops within a
-minute and logs what Yahoo answered, instead of retrying 6,000 refusals.
-
 The first scan appears after the workflow first runs — trigger it by hand from
 the Actions tab rather than waiting for the evening.
 
 ```bash
-npm run scan                                        # full scan → .scan/scan.json, prints the matches
+ALPACA_KEY=… ALPACA_SECRET=… npm run scan          # full scan → .scan/scan.json, prints the matches
 node scanner/run.mjs --symbols AAPL,TSLA,PLTR       # just these
 node scanner/run.mjs --drop 40 --retrace 25 --lookback 126
-npm run test:scan                                   # 61 checks, no network
+npm run test:scan                                   # 78 checks, no network
 ```
 
 `src/scan.js` is the logic, and it is the same file in both places — inlined

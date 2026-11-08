@@ -36,8 +36,15 @@ jobs:
       - name: Test the scanner
         run: node scanner/scan.test.mjs
 
+      # Prices come from Alpaca: Yahoo answers GitHub's addresses with 429.
+      # Free paper-trading keys, stored as repository secrets (Settings →
+      # Secrets and variables → Actions). Without them the run falls back to
+      # Yahoo, which stops within a minute with the reason in the log.
       - name: Scan
         run: node scanner/run.mjs --out out/scan.json
+        env:
+          ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
 
       - name: Publish to scan-data
         run: |

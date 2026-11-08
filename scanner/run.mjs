@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   Nightly dip scan — every US-listed common stock, from Yahoo daily bars
+   Nightly dip scan — every US-listed common stock, from daily bars
    ───────────────────────────────────────────────────────────────────────
    Run on a server, not in the page. Yahoo sends no CORS header, so a hosted
    page can only reach it through a third-party proxy, and pushing ~6,000
@@ -19,6 +19,11 @@
      node scanner/run.mjs --symbols AAPL,TSLA   just these
      node scanner/run.mjs --limit 200           first 200 of the universe
      node scanner/run.mjs --out path.json --drop 40 --retrace 20 --lookback 90
+
+   Prices come from Alpaca when ALPACA_KEY and ALPACA_SECRET are set (free
+   paper-trading keys are enough), else from Yahoo; --source alpaca|yahoo
+   forces one. Yahoo answers every data-centre address — GitHub Actions, any
+   cloud machine — with 429, so in practice the nightly job needs Alpaca.
    ═══════════════════════════════════════════════════════════════════════ */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -166,27 +171,127 @@ async function getChart(sym, ctx) {
   throw lastErr;
 }
 
+const errKey = e => e instanceof HttpError ? e.message : `network: ${e?.cause?.code || e?.message || e}`;
+
+/* ── Sources ──────────────────────────────────────────────────────────
+   A source turns a batch of symbols into { bars, errors }: bars maps a
+   symbol to { h, l, c, v, last }, errors maps a symbol to why it failed. A
+   symbol in neither has no data (delisted, renamed) and is not a failure. */
+
+function yahooSource({ fetchFn, backoff, tries, session }) {
+  const sess = Promise.resolve(session || getSession(fetchFn));
+  const ctx = { fetchFn, backoff, tries, session: sess };
+  return {
+    name: 'Yahoo', batch: 1, concurrency: 6,
+    async fetch(syms) {
+      const bars = new Map(), errors = new Map();
+      for (const s of syms) {
+        try { const b = await getChart(s, ctx); if (b) bars.set(s, b); }
+        catch (e) { if (!(e instanceof NotFound)) errors.set(s, errKey(e)); }
+      }
+      return { bars, errors };
+    },
+  };
+}
+
+/* Alpaca: consolidated (SIP) daily bars, split-adjusted, for up to 200
+   symbols a request, following next_page_token — a page holds at most
+   `limit` bars across all its symbols, and one symbol's bars can run over
+   a page break. The free plan embargoes SIP for the last 15 minutes, so the
+   window ends 16 minutes ago; after the close that changes nothing.
+   Keys go in two headers (see archive/lightweight-engine/data.js, which was
+   checked against the live API). A rejected key stops the run at once. */
+export class AuthError extends Error {}
+const ALPACA = 'https://data.alpaca.markets';
+
+function alpacaSource({ fetchFn, backoff, tries, key, secret, now = Date.now() }) {
+  const start = new Date(now - 200 * 864e5).toISOString().slice(0, 10);   // ~138 sessions ≥ BARS
+  const end = new Date(now - 16 * 60e3).toISOString();
+  const headers = { 'APCA-API-KEY-ID': key || '', 'APCA-API-SECRET-KEY': secret || '', Accept: 'application/json' };
+  async function get(url) {
+    let last;
+    for (let t = 0; t < tries; t++) {
+      try {
+        const r = await fetchFn(url, { headers });
+        if (r.status === 401 || r.status === 403) {
+          const body = (await r.text().catch(() => '')).slice(0, 200);
+          throw new AuthError(`Alpaca rejected the API key (HTTP ${r.status}${body ? ': ' + body.trim() : ''})`);
+        }
+        if (r.ok) return await r.json();
+        last = new HttpError(r.status);
+        if (r.status !== 429 && r.status < 500) break;
+      } catch (e) {
+        if (e instanceof AuthError) throw e;
+        last = e;
+      }
+      if (t < tries - 1) await sleep(backoff * 2 ** t * (1 + Math.random() / 2));
+    }
+    throw last;
+  }
+  return {
+    name: 'Alpaca', batch: 200, concurrency: 3,
+    async fetch(syms) {
+      const bars = new Map(), errors = new Map();
+      const base = `${ALPACA}/v2/stocks/bars?symbols=${encodeURIComponent(syms.join(','))}&timeframe=1Day`
+        + `&start=${start}&end=${encodeURIComponent(end)}&limit=10000&feed=sip&adjustment=split&sort=asc`;
+      try {
+        let token = null;
+        for (let page = 0; page < 100; page++) {
+          const j = await get(base + (token ? `&page_token=${encodeURIComponent(token)}` : ''));
+          for (const [s, list] of Object.entries(j?.bars || {})) {
+            let b = bars.get(s);
+            if (!b) bars.set(s, b = { h: [], l: [], c: [], v: [], last: 0 });
+            for (const x of list || []) {
+              if (x.h == null || x.l == null || x.c == null) continue;
+              b.h.push(x.h); b.l.push(x.l); b.c.push(x.c); b.v.push(x.v ?? 0);
+              b.last = Math.floor(Date.parse(x.t) / 1000);
+            }
+          }
+          token = j?.next_page_token;
+          if (!token) break;
+        }
+      } catch (e) {
+        if (e instanceof AuthError) throw e;
+        // Half a batch is worse than none: a symbol cut off at a page break
+        // would be scanned on a truncated series. Fail the whole batch.
+        bars.clear();
+        for (const s of syms) errors.set(s, errKey(e));
+      }
+      return { bars, errors };
+    },
+  };
+}
+
 /* Trim to the stored window and round, so the file stays small: cents for
    anything over a dollar, four places below it. */
 const round = x => (x >= 1 ? Math.round(x * 100) / 100 : Math.round(x * 1e4) / 1e4);
 
 /* `probe`: after this many symbols, a run where at least `blockedAt` of them
-   failed is abandoned with Blocked, naming what Yahoo answered. */
+   failed is abandoned with Blocked, naming what the source answered. */
 export async function scan(universe, {
-  fetchFn = fetch, concurrency = 6, backoff = 800, tries = 4, probe = 60, blockedAt = 0.9, session, onProgress,
+  source = 'yahoo', fetchFn = fetch, concurrency, backoff = 800, tries = 4, probe = 60, blockedAt = 0.9,
+  session, key, secret, now, onProgress,
 } = {}) {
+  const src = source === 'alpaca'
+    ? alpacaSource({ fetchFn, backoff, tries, key, secret, now })
+    : yahooSource({ fetchFn, backoff, tries, session });
+  const batches = [];
+  for (let i = 0; i < universe.length; i += src.batch) batches.push(universe.slice(i, i + src.batch));
+
   const rows = [], failed = [];
   const errors = {};                       // final error per failed symbol: "HTTP 429" → count
-  let done = 0, next = 0, asOf = 0, ok = 0, blocked = null;
-  const sess = Promise.resolve(session || getSession(fetchFn));
-  const ctx = { fetchFn, backoff, tries, session: sess };
+  let done = 0, next = 0, asOf = 0, stop = null;
   async function worker() {
-    while (next < universe.length && !blocked) {
-      const u = universe[next++];
-      try {
-        const bars = await getChart(u.s, ctx);
-        ok++;
-        if (bars) {
+    while (next < batches.length && !stop) {
+      const batch = batches[next++];
+      let got;
+      try { got = await src.fetch(batch.map(u => u.s)); }
+      catch (e) { stop = e; break; }       // AuthError: no point continuing
+      for (const u of batch) {
+        const bars = got.bars.get(u.s);
+        const err = got.errors.get(u.s);
+        if (err) { failed.push(u.s); errors[err] = (errors[err] || 0) + 1; }
+        else if (bars && bars.c.length) {
           asOf = Math.max(asOf, bars.last || 0);
           const dv = SCAN.dollarVolume(bars.c, bars.v);
           const k = Math.max(0, bars.c.length - BARS);
@@ -194,26 +299,20 @@ export async function scan(universe, {
           const m = SCAN.evaluate(row, { lookback: BARS, minDrop: 0, minRetrace: 0, maxRetrace: 100, minPrice: 0, minDollarVol: 0 });
           if (m && m.drop >= PREFILTER.minDrop && m.close >= PREFILTER.minPrice && dv >= PREFILTER.minDollarVol) rows.push(row);
         }
-      } catch (e) {
-        if (e instanceof NotFound) ok++;
-        else {
-          failed.push(u.s);
-          const k = e instanceof HttpError ? e.message : `network: ${e?.cause?.code || e?.message || e}`;
-          errors[k] = (errors[k] || 0) + 1;
-        }
+        done++;
       }
-      done++;
       if (onProgress) onProgress(done, universe.length, rows.length, failed.length, errors);
-      if (!blocked && done >= probe && universe.length > probe && failed.length >= done * blockedAt) {
-        blocked = new Blocked(`Yahoo refused ${failed.length} of the first ${done} symbols — ${fmtErrors(errors)}. Stopping rather than retrying the rest.`);
+      if (!stop && done >= probe && universe.length > probe && failed.length >= done * blockedAt) {
+        stop = new Blocked(`${src.name} refused ${failed.length} of the first ${done} symbols — ${fmtErrors(errors)}. Stopping rather than retrying the rest.`);
       }
     }
   }
-  await Promise.all(Array.from({ length: concurrency }, worker));
-  if (blocked) { blocked.errors = errors; blocked.session = await ctx.session; throw blocked; }
+  await Promise.all(Array.from({ length: concurrency || src.concurrency }, worker));
+  if (stop) { if (stop instanceof Blocked) stop.errors = errors; throw stop; }
   rows.sort((a, b) => a.s.localeCompare(b.s));
   return {
     v: 1,
+    source: src.name,
     generated: new Date().toISOString(),
     asOf: asOf ? new Date(asOf * 1000).toISOString().slice(0, 10) : null,
     bars: BARS,
@@ -263,23 +362,34 @@ async function main() {
 
   const t0 = Date.now();
   const tty = process.stderr.isTTY;
-  const session = await getSession();
-  console.error(`yahoo session: cookie ${session.cookie ? 'yes' : 'NO'}, crumb ${session.crumb ? 'yes' : 'NO'} (getcrumb answered ${session.status})`);
+  // Alpaca when a key is configured (it serves data-centre machines; Yahoo
+  // answers them 429), Yahoo otherwise. --source overrides.
+  const key = process.env.ALPACA_KEY, secret = process.env.ALPACA_SECRET;
+  const source = a.source || (key ? 'alpaca' : 'yahoo');
+  let session;
+  if (source === 'yahoo') {
+    session = await getSession();
+    console.error(`yahoo session: cookie ${session.cookie ? 'yes' : 'NO'}, crumb ${session.crumb ? 'yes' : 'NO'} (getcrumb answered ${session.status})`);
+  } else {
+    console.error(`source: Alpaca (key ${key ? 'set' : 'MISSING'}, secret ${secret ? 'set' : 'MISSING'})`);
+  }
 
-  let out;
+  let out, printed = -1;
   try {
     out = await scan(universe, {
-      session,
-      concurrency: +a.concurrency || 6,
+      source, session, key, secret,
+      concurrency: +a.concurrency || undefined,
       onProgress: (d, n, kept, bad, errors) => {
         // Early and often at first, so a blocked run says so in the log at once.
-        if (tty ? d % 25 === 0 || d === n : d === 20 || d % 250 === 0 || d === n)
-          process.stderr.write(`${tty ? '\r' : ''}${d}/${n}  kept ${kept}  failed ${bad}`
-            + (bad ? `  (${fmtErrors(errors)})` : '') + (tty ? '' : '\n'));
+        const bucket = d >= n ? Infinity : d < 250 ? Math.floor(d / 20) : 100 + Math.floor(d / 250);
+        if (!tty && bucket === printed) return;
+        printed = bucket;
+        process.stderr.write(`${tty ? '\r' : ''}${d}/${n}  kept ${kept}  failed ${bad}`
+          + (bad ? `  (${fmtErrors(errors)})` : '') + (tty ? '' : '\n'));
       },
     });
   } catch (e) {
-    if (!(e instanceof Blocked)) throw e;
+    if (!(e instanceof Blocked) && !(e instanceof AuthError)) throw e;
     console.error(`\n${e.message}`);
     process.exit(3);
   }

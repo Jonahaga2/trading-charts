@@ -3,7 +3,7 @@
    behaviour against canned responses. No network.
    Run: node scanner/scan.test.mjs   (or npm run test:scan) */
 import { createRequire } from 'node:module';
-import { parseUniverse, parseChart, scan, cleanName, yahooSymbol, getSession, Blocked, PREFILTER, BARS } from './run.mjs';
+import { parseUniverse, parseChart, scan, cleanName, yahooSymbol, getSession, Blocked, AuthError, PREFILTER, BARS } from './run.mjs';
 
 const require = createRequire(import.meta.url);
 const SCAN = require('../src/scan.js');
@@ -265,6 +265,79 @@ const tinyChart = JSON.stringify({ chart: { result: [{ timestamp: [1, 2, 3],
   const v = Array.from({ length: 150 }, (_, i) => ({ s: 'P' + i, x: 'NYSE', n: '' }));
   const out = await scan(v, { fetchFn: patchy, backoff: 1 });
   check('a patchy run completes', out.universe === 150 && out.failed > 0 && out.rows.length > 0);
+}
+
+/* ── Alpaca: many symbols per request, paged, with keys in two headers ── */
+{
+  const day = i => new Date(Date.UTC(2026, 5, 1) + i * 864e5).toISOString();
+  const barsOf = closes => closes.map((c, i) => ({ t: day(i), o: c, h: c, l: c, c, v: 1e6 }));
+  const DATA = {
+    DIP: barsOf([...Array(100).fill(100), 50, 52, 61]),   // drop 50, retrace 22
+    CALM: barsOf(Array(120).fill(100).map((x, i) => x + i)),
+    'BRK.B': barsOf([...Array(60).fill(500), 300, 360]),
+  };
+  const reqs = [];
+  // Serves pages of at most 50 bars across symbols, like Alpaca's `limit`,
+  // so DIP is split over a page break.
+  const alpaca = async (url, init = {}) => {
+    const u = new URL(url);
+    reqs.push({ u, h: init.headers || {} });
+    if (init.headers?.['APCA-API-SECRET-KEY'] !== 'sec') return res(401, '{"message":"forbidden."}');
+    const syms = u.searchParams.get('symbols').split(',');
+    const flat = syms.flatMap(s => (DATA[s] || []).map(b => [s, b]));
+    const from = +(u.searchParams.get('page_token') || 0);
+    const page = flat.slice(from, from + 50), bars = {};
+    for (const [s, b] of page) (bars[s] ||= []).push(b);
+    return res(200, JSON.stringify({ bars, next_page_token: from + 50 < flat.length ? String(from + 50) : null }));
+  };
+  const u = ['DIP', 'CALM', 'BRK.B', 'GONE'].map(s => ({ s, x: 'NYSE', n: s }));
+  const now = Date.UTC(2026, 10, 6, 22, 0);
+  const out = await scan(u, { source: 'alpaca', fetchFn: alpaca, key: 'kid', secret: 'sec', backoff: 1, now });
+  const r0 = reqs[0];
+  check('alpaca: both key headers sent', r0.h['APCA-API-KEY-ID'] === 'kid' && r0.h['APCA-API-SECRET-KEY'] === 'sec');
+  check('alpaca: one request names all four symbols', r0.u.searchParams.get('symbols') === 'DIP,CALM,BRK.B,GONE');
+  check('alpaca: daily, consolidated, split-adjusted, ascending', ['timeframe=1Day', 'feed=sip', 'adjustment=split', 'sort=asc'].every(q => r0.u.search.includes(q)));
+  check('alpaca: window ends past the 15-minute embargo', Date.parse(r0.u.searchParams.get('end')) <= now - 15 * 60e3);
+  check('alpaca: window starts far enough back for BARS sessions', (now - Date.parse(r0.u.searchParams.get('start'))) / 864e5 >= BARS * 1.4);
+  check('alpaca: follows page tokens', reqs.length === 6, `${reqs.length} requests`);
+  const dip = out.rows.find(r => r.s === 'DIP');
+  check('alpaca: a symbol split across pages is whole', dip && dip.c.length === 103, dip && String(dip.c.length));
+  check('alpaca: kept rows evaluate', SCAN.evaluate(dip).pass);
+  check('alpaca: share classes keep their dot', out.rows.some(r => r.s === 'BRK.B'));
+  check('alpaca: no data is not a failure', out.failed === 0 && out.universe === 4);
+  check('alpaca: output names the source', out.source === 'Alpaca');
+  check('alpaca: asOf is the latest bar of any symbol', out.asOf === day(119).slice(0, 10), out.asOf);
+
+  let err = null;
+  try { await scan(u, { source: 'alpaca', fetchFn: alpaca, key: 'kid', secret: 'wrong', backoff: 1, now }); } catch (e) { err = e; }
+  check('alpaca: a rejected key stops the run with AuthError', err instanceof AuthError && /401/.test(err.message), String(err));
+
+  // A batch whose second page fails is discarded whole: DIP's bars run over
+  // that page break, and scanning half a series would misreport it.
+  const secondPageFails = async (url, init) => new URL(url).searchParams.get('page_token') === '50'
+    ? res(503, 'busy') : alpaca(url, init);
+  const outP = await scan(u, { source: 'alpaca', fetchFn: secondPageFails, key: 'kid', secret: 'sec', backoff: 1, now });
+  check('alpaca: a batch failing mid-pages keeps nothing', outP.rows.length === 0 && outP.failed === 4, `rows ${outP.rows.length}, failed ${outP.failed}`);
+
+  // 450 symbols → 3 batches of ≤200; a batch that keeps failing fails whole.
+  const big = Array.from({ length: 450 }, (_, i) => ({ s: 'Z' + i, x: 'NYSE', n: '' }));
+  const sizes = [];
+  let flaky = 0;
+  const batching = async url => {
+    const n = new URL(url).searchParams.get('symbols').split(',');
+    sizes.push(n.length);
+    if (n[0] === 'Z200') { flaky++; return res(503, 'busy'); }
+    return res(200, JSON.stringify({ bars: {}, next_page_token: null }));
+  };
+  const outB = await scan(big, { source: 'alpaca', fetchFn: batching, key: 'k', secret: 's', backoff: 1, probe: 1000 });
+  check('alpaca: batches of at most 200', sizes.filter((_, i) => i === sizes.indexOf(sizes[i])).every(n => n <= 200) && Math.max(...sizes) === 200);
+  check('alpaca: a failing batch is retried, then fails whole', flaky === 4 && outB.failed === 200 && outB.errors['HTTP 503'] === 200, JSON.stringify(outB.errors));
+
+  // Blocked names Alpaca, not Yahoo.
+  const refuse = async () => res(429, 'slow down');
+  let berr = null;
+  try { await scan(big, { source: 'alpaca', fetchFn: refuse, key: 'k', secret: 's', backoff: 1, tries: 2 }); } catch (e) { berr = e; }
+  check('alpaca: blocked run names Alpaca', berr instanceof Blocked && /^Alpaca refused/.test(berr.message), berr?.message);
 }
 
 console.log(`${pass} passed, ${fail} failed`);
