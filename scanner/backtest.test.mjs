@@ -39,6 +39,18 @@ const sig = (i, peak = 200) => ({ s: 'X', i, peak });
   const nostop = trade(stopped, sig(0), { stop: 1, hold: 3 });
   check('stop 100% = no stop', nostop.why === 'time' && nostop.exit === 88);
   check('no bar after the signal → no trade', trade(flat, sig(10), { hold: 5 }) === null);
+
+  // Take-profit: +10% from a 100 entry is 110.
+  const tp = ser('X', [[90, 95, 88, 92], [100, 104, 99, 103], [103, 112, 102, 111], [111, 120, 110, 119]]);
+  const t1 = trade(tp, sig(0), { stop: 0.15, hold: 20, takeProfit: 0.1 });
+  check('take-profit fills at +10%', t1.why === 'target' && near(t1.exit, 110) && t1.k === 2);
+  // Trailing 10%: highs 104 then 120 lift the stop to 108 for day 4.
+  const tr = ser('X', [[90, 95, 88, 92], [100, 104, 99, 103], [103, 120, 102, 118], [118, 119, 105, 106]]);
+  const t2 = trade(tr, sig(0), { stop: 0.15, hold: 20, trail: 0.1 });
+  check('trailing stop follows the high', t2.why === 'trail' && near(t2.exit, 108) && t2.k === 3);
+  // A day's own high can't raise the stop it's tested against.
+  const same = ser('X', [[90, 95, 88, 92], [100, 130, 95, 100]]);
+  check('trail uses highs before today only', trade(same, sig(0), { stop: 0.15, hold: 1, trail: 0.1 }).why === 'time');
 }
 
 // signals(): fires once, on the day the steady recovery crosses 50%.

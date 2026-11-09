@@ -57,14 +57,22 @@ export function signals(series, rule = PICK) {
   return out;
 }
 
-/* One trade from the bar after signal i. */
-export function trade(series, sig, { stop = 0.15, hold = 20, target = false } = {}) {
+/* One trade from the bar after signal i.
+   takeProfit: sell at entry × (1 + takeProfit) (a fraction, e.g. 0.2).
+   trail: trailing stop, a fraction below the highest high *before* today —
+   a day's own high can't raise the stop it is tested against, since the
+   order of high and low within a day isn't known. */
+export function trade(series, sig, { stop = 0.15, hold = 20, target = false, takeProfit = 0, trail = 0 } = {}) {
   const { o, h, l, c, t } = series, e = sig.i + 1;
   if (e >= c.length) return null;
-  const entry = o[e], stopPx = entry * (1 - stop), tgt = target ? sig.peak : Infinity;
+  const entry = o[e];
+  let stopPx = entry * (1 - stop), hh = entry;
+  const tgt = Math.min(target ? sig.peak : Infinity, takeProfit ? entry * (1 + takeProfit) : Infinity);
   for (let k = e; k < c.length && k < e + hold; k++) {
-    if (l[k] <= stopPx) return { exit: Math.min(o[k], stopPx), k, why: 'stop', entry, e };
+    if (trail) stopPx = Math.max(stopPx, hh * (1 - trail));
+    if (l[k] <= stopPx) return { exit: Math.min(o[k], stopPx), k, why: stopPx > entry * (1 - stop) ? 'trail' : 'stop', entry, e };
     if (h[k] >= tgt) return { exit: Math.max(o[k], tgt), k, why: 'target', entry, e };
+    hh = Math.max(hh, h[k]);
   }
   const k = Math.min(c.length - 1, e + hold - 1);
   // A trade still open at the end of the data is marked at the last close.
