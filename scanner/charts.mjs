@@ -9,8 +9,8 @@
    them.
 
    "Best" is deliberately simple and stated: liquid stocks ($5+, $50M+ a
-   day) that fell 30%+ inside three months and have won back 20–50% of it —
-   recovering, but not already recovered. Ones that crossed the 20% line on
+   day) that fell 30%+ inside three months and have won back 50–85% of it,
+   steadily — no single day since the low up more than 10%. Ones that crossed the 20% line on
    the latest session come first, then the deepest falls.
 
      ALPACA_KEY=… ALPACA_SECRET=… node scanner/charts.mjs --scan .scan/scan.json --out .scan/charts
@@ -25,7 +25,9 @@ import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 const SCAN = require('../src/scan.js');
 
-export const PICK = { lookback: 63, minDrop: 30, minRetrace: 20, maxRetrace: 50, minPrice: 5, minDollarVol: 5e7 };
+// maxJump: no single day since the low may be up more than this, so a
+// recovery made of one spike (news, a squeeze) is left out for a steady one.
+export const PICK = { lookback: 63, minDrop: 30, minRetrace: 50, maxRetrace: 85, minPrice: 5, minDollarVol: 5e7, maxJump: 10 };
 export const SHOW = 90;                       // sessions drawn per chart
 
 export function pickTop(rows, n = 5, opts = PICK) {
@@ -54,7 +56,7 @@ export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRet
   const step = (W - L - R) / b.length, bw = Math.max(1.5, step * 0.62);
   const X = i => L + step * (i + 0.5);
   const Y = p => TOP + (hi - p) / (hi - lo) * (PB - TOP);
-  const out = [];
+  const out = [], over = [];               // over: drawn after the candles
 
   // Horizontal grid and price labels, skipping any label a reference
   // line's price tag would sit on.
@@ -78,9 +80,10 @@ export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRet
     const y = Y(p);
     out.push(`<line x1="${L}" x2="${W - R}" y1="${y}" y2="${y}" stroke="${color}" stroke-width="1.2" stroke-dasharray="${dash}"/>`,
       `<rect x="${W - R + 2}" y="${y - 10}" width="${R - 4}" height="20" rx="3" fill="${color}"/>`,
-      `<text x="${W - R + 8}" y="${y + 4}" fill="${C.bg}" font-size="12" font-weight="700">${fmt(p)}</text>`,
-      `<text x="${L + 6}" y="${y - 6}" fill="${color}" font-size="12" font-weight="600" `
-        + `stroke="${C.bg}" stroke-width="4" paint-order="stroke">${label}</text>`);
+      `<text x="${W - R + 8}" y="${y + 4}" fill="${C.bg}" font-size="12" font-weight="700">${fmt(p)}</text>`);
+    // The name tab goes on top of the candles, on a solid background.
+    over.push(`<rect x="${L}" y="${y - 21}" width="${label.length * 7.2 + 12}" height="17" rx="3" fill="${C.bg}" opacity=".92"/>`,
+      `<text x="${L + 6}" y="${y - 8}" fill="${color}" font-size="12" font-weight="600">${label}</text>`);
   };
   line(m.peak, C.muted, '6 4', 'High');
   line(m.trough + (m.peak - m.trough) * back / 100, C.accent, '2 3', `${back}% back`);
@@ -105,7 +108,7 @@ export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRet
     + (m.fresh ? `<tspan fill="${C.accent}">  ·  NEW</tspan>` : '') + `</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" `
     + `font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">`
-    + `<rect width="${W}" height="${H}" fill="${C.bg}"/>${head}${out.join('')}`
+    + `<rect width="${W}" height="${H}" fill="${C.bg}"/>${head}${out.join('')}${over.join('')}`
     + `<text x="${W - 16}" y="${H - 10}" fill="${C.dim}" font-size="11" text-anchor="end">Daily · last ${b.length} sessions · to ${b.at(-1).t.slice(0, 10)}</text></svg>`;
 }
 
@@ -146,7 +149,8 @@ async function main() {
   fs.mkdirSync(dir, { recursive: true });
 
   // --retrace N / --max N override the rule's recovery range.
-  const rule = { ...PICK, ...(a.retrace && { minRetrace: +a.retrace }), ...(a.max && { maxRetrace: +a.max }) };
+  const rule = { ...PICK, ...(a.retrace && { minRetrace: +a.retrace }), ...(a.max && { maxRetrace: +a.max }),
+    ...(a.jump && { maxJump: +a.jump }) };
   const top = pickTop(scan.rows, +a.n || 5, rule);
   const ohlc = top.length ? await fetchOHLC(top.map(x => x.r.s), { key: process.env.ALPACA_KEY, secret: process.env.ALPACA_SECRET }) : {};
   const picks = [];
@@ -157,7 +161,7 @@ async function main() {
     screenshot(svg, path.join(dir, `${n}.png`));
     fs.rmSync(svg);
     picks.push({ rank: n, symbol: r.s, exchange: r.x, name: r.n, close: m.close, drop: +m.drop.toFixed(1),
-      retrace: +m.retrace.toFixed(1), peak: m.peak, low: m.trough, daysSinceLow: m.sinceLow, fresh: m.fresh,
+      retrace: +m.retrace.toFixed(1), maxJump: +m.jump.toFixed(1), peak: m.peak, low: m.trough, daysSinceLow: m.sinceLow, fresh: m.fresh,
       dollarVolume: m.dv, chart: `charts/${n}.png` });
   }
   fs.writeFileSync(path.join(dir, '..', 'picks.json'), JSON.stringify({ asOf: scan.asOf, rule, picks }, null, 1));

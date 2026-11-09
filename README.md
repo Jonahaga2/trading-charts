@@ -139,8 +139,10 @@ npm run test:scan                                   # 78 checks, no network
 
 **Top 5 picks, with charts.** After each scan, `scanner/charts.mjs` picks
 five: liquid stocks ($5+, $50M+ a day) that fell 30%+ inside three months
-and have won back 20–50% of it — recovering, not yet recovered — with the
-ones that crossed 20% on the latest session first, then the deepest falls.
+and have won back 50–85% of it **steadily** — no single day since the low up
+more than 10%, so a recovery made of one spike is left out — with the ones
+that crossed 50% on the latest session first, then the deepest falls.
+`--retrace`, `--max` and `--jump` override the rule for one run.
 It fetches their full candles from Alpaca, draws each as a candlestick chart
 with the high, the low and the 20% line marked, and screenshots it with
 headless Chrome. `picks.json` and `charts/1.png … 5.png` are published beside

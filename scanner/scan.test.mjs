@@ -113,6 +113,21 @@ const loose = { lookback: 999, minDrop: 0, minRetrace: 0, minPrice: 0, minDollar
   check(`windowed drawdown ≤ full (${sound}/${N})`, sound === N);
 }
 
+/* ── maxJump: the biggest one-day gain since the low ── */
+{
+  const spike = flat([100, 50, 51, 70, 71]);           // +37% on one day
+  const steady = flat([100, 50, 54, 58, 62, 66, 71]);  // ≤8% a day
+  const ms = SCAN.evaluate(spike, loose), mt = SCAN.evaluate(steady, loose);
+  check('jump: spike measured', near(ms.jump, (70 / 51 - 1) * 100));
+  check('jump: steady climb measured', mt.jump < 8.1 && mt.jump > 7);
+  check('jump: maxJump gates the spike', !SCAN.evaluate(spike, { ...loose, maxJump: 10 }).pass);
+  check('jump: …and passes the steady one', SCAN.evaluate(steady, { ...loose, maxJump: 10 }).pass);
+  // The crash into the low is not a "jump", and days before the low don't count.
+  const preSpike = flat([60, 100, 50, 52, 55]);        // +67% before the low
+  check('jump: only days after the low count', SCAN.evaluate(preSpike, loose).jump < 6);
+  check('jump: default allows anything', SCAN.evaluate(spike, loose).pass);
+}
+
 /* ── dollar volume ── */
 check('dollar volume averages the last 20', near(SCAN.dollarVolume(Array(30).fill(10), [...Array(10).fill(0), ...Array(20).fill(100)]), 1000));
 

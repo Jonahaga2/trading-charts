@@ -58,6 +58,7 @@
     maxRetrace: 100,     // %
     minPrice: 1,         // $
     minDollarVol: 1e6,   // average daily $ volume
+    maxJump: Infinity,   // % — biggest single-day gain allowed since the low
   };
 
   /* One symbol against one set of criteria. `row` is { h, l, c, dv } —
@@ -85,6 +86,7 @@
       peak, trough, close,
       dropDays: dd.troughI - dd.peakI,       // bars from the peak to the low
       sinceLow: n - 1 - dd.troughI,          // bars since the low
+      jump: maxJump(row.c, dd.troughI, n),   // biggest one-day gain since the low, %
       fresh: prev < minR && retrace >= minR,
       dv: row.dv || 0,
     };
@@ -92,8 +94,20 @@
       && m.retrace >= o.minRetrace
       && m.retrace <= o.maxRetrace
       && close >= o.minPrice
-      && m.dv >= o.minDollarVol;
+      && m.dv >= o.minDollarVol
+      && m.jump <= o.maxJump;
     return m;
+  }
+
+  /* Biggest close-to-close gain, in %, on any day after bar `from` — so a
+     recovery made of one spike can be told from a steady climb. The day of
+     the low itself is not counted; the first day after it is. */
+  function maxJump(c, from, to = c.length) {
+    let best = 0;
+    for (let i = Math.max(1, from + 1); i < to; i++) {
+      if (c[i - 1] > 0) best = Math.max(best, (c[i] / c[i - 1] - 1) * 100);
+    }
+    return best;
   }
 
   /* Average daily dollar volume over the last `days` bars. */
@@ -106,7 +120,7 @@
     return k ? sum / k : 0;
   }
 
-  const api = { maxDrawdown, evaluate, dollarVolume, DEFAULTS };
+  const api = { maxDrawdown, maxJump, evaluate, dollarVolume, DEFAULTS };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.SCAN = api;
 })(typeof window !== 'undefined' ? window : globalThis);
