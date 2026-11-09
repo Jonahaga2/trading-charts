@@ -7,9 +7,10 @@
     "build": "node build.mjs",
     "check": "node build.mjs --check",
     "serve": "node tools/serve.mjs",
-    "test": "node build.mjs --check && node scanner/scan.test.mjs",
+    "test": "node build.mjs --check && node scanner/scan.test.mjs && node scanner/charts.test.mjs",
     "scan": "node scanner/run.mjs",
-    "test:scan": "node scanner/scan.test.mjs",
+    "test:scan": "node scanner/scan.test.mjs && node scanner/charts.test.mjs",
+    "charts": "node scanner/charts.mjs",
     "test:engine": "node archive/lightweight-engine/ta.test.mjs",
     "test:engine:data": "node archive/lightweight-engine/data.test.mjs",
     "shot": "node tools/cdp-shot.mjs http://localhost:8099/index.html .shots/chart.png 28000"

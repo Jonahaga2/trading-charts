@@ -34,7 +34,7 @@ jobs:
           node-version: 22
 
       - name: Test the scanner
-        run: node scanner/scan.test.mjs
+        run: node scanner/scan.test.mjs && node scanner/charts.test.mjs
 
       # Prices come from Alpaca: Yahoo answers GitHub's addresses with 429.
       # Free paper-trading keys, stored as repository secrets (Settings →
@@ -46,12 +46,20 @@ jobs:
           ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
           ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
 
+      # Top 5 picks with a candlestick chart each, drawn as SVG and
+      # screenshotted with the runner's preinstalled Chrome.
+      - name: Charts
+        run: node scanner/charts.mjs --scan out/scan.json --out out/charts
+        env:
+          ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+
       - name: Publish to scan-data
         run: |
           cd out
           git init -q -b scan-data
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scan.json
+          git add scan.json picks.json charts
           git commit -q -m "Dip scan $(date -u +%Y-%m-%d)"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" scan-data

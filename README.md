@@ -137,6 +137,15 @@ node scanner/run.mjs --drop 40 --retrace 25 --lookback 126
 npm run test:scan                                   # 78 checks, no network
 ```
 
+**Top 5 picks, with charts.** After each scan, `scanner/charts.mjs` picks
+five: liquid stocks ($5+, $50M+ a day) that fell 30%+ inside three months
+and have won back 20–50% of it — recovering, not yet recovered — with the
+ones that crossed 20% on the latest session first, then the deepest falls.
+It fetches their full candles from Alpaca, draws each as a candlestick chart
+with the high, the low and the 20% line marked, and screenshots it with
+headless Chrome. `picks.json` and `charts/1.png … 5.png` are published beside
+`scan.json`, and the morning briefing shows them.
+
 `src/scan.js` is the logic, and it is the same file in both places — inlined
 into the page and required by the runner — so the nightly prefilter and the
 panel cannot disagree. Its tests check the arithmetic against hand-worked
