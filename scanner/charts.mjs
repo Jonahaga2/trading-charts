@@ -129,11 +129,13 @@ export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRet
 }
 
 /* ── Data ─────────────────────────────────────────────────────────── */
-export async function fetchOHLC(symbols, { key, secret, fetchFn = fetch, now = Date.now(), timeframe = '1Day', days = 160 } = {}) {
+// adjustment: 'split' (as charts show prices) or 'all' (dividends too, to
+// match data adjusted that way, e.g. the backtest's).
+export async function fetchOHLC(symbols, { key, secret, fetchFn = fetch, now = Date.now(), timeframe = '1Day', days = 160, adjustment = 'split' } = {}) {
   const start = new Date(now - days * 864e5).toISOString().slice(0, 10);
   const end = new Date(now - 16 * 60e3).toISOString();
   const base = `https://data.alpaca.markets/v2/stocks/bars?symbols=${encodeURIComponent(symbols.join(','))}`
-    + `&timeframe=${timeframe}&start=${start}&end=${encodeURIComponent(end)}&limit=10000&feed=sip&adjustment=split&sort=asc`;
+    + `&timeframe=${timeframe}&start=${start}&end=${encodeURIComponent(end)}&limit=10000&feed=sip&adjustment=${adjustment}&sort=asc`;
   const out = {};
   let token = null;
   for (let page = 0; page < 50; page++) {
