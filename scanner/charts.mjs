@@ -28,8 +28,11 @@ const SCAN = require('../src/scan.js');
 // maxJump: no single day since the low may be up more than this, so a
 // recovery made of one spike (news, a squeeze) is left out for a steady one.
 export const PICK = { lookback: 63, minDrop: 30, minRetrace: 50, maxRetrace: 85, minPrice: 5, minDollarVol: 5e7, maxJump: 10 };
-export const SHOW = 90;                       // daily candles drawn per chart
-export const SHOW_HOURS = 140;                // hourly candles: ~20 sessions of 7
+/* How much each chart shows: the whole story, from a few sessions before
+   the high, through the low, to the last bar, so the fall is always in view. */
+export function windowSessions(m) {
+  return Math.min(75, Math.max(15, (m.dropDays ?? 0) + (m.sinceLow ?? 0) + 4));
+}
 
 export function pickTop(rows, n = 5, opts = PICK) {
   return rows
@@ -50,7 +53,13 @@ const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct
 /* bars: [{ t, o, h, l, c, v }] oldest first. m: SCAN.evaluate measurements. */
 export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRetrace, tf = 'day' }) {
   const hourly = tf === 'hour';
-  const b = bars.slice(-(hourly ? SHOW_HOURS : SHOW));
+  const want = windowSessions(m);
+  let b;
+  if (hourly) {
+    const days = [...new Set(bars.map(x => x.day))];
+    const from = days[Math.max(0, days.length - want)];
+    b = bars.filter(x => x.day >= from);
+  } else b = bars.slice(-Math.max(want, 40));            // daily: at least two months of context
   if (!b.length) throw new Error(`no bars for ${sym}`);
   let lo = Math.min(...b.map(x => x.l), m.trough), hi = Math.max(...b.map(x => x.h), m.peak);
   const pad = (hi - lo) * 0.06; lo -= pad; hi += pad;
@@ -201,12 +210,11 @@ async function main() {
   const rule = { ...PICK, ...(a.retrace && { minRetrace: +a.retrace }), ...(a.max && { maxRetrace: +a.max }),
     ...(a.jump && { maxJump: +a.jump }) };
   const top = pickTop(scan.rows, +a.n || 5, rule);
-  // Hourly by default (--tf day for daily). ~35 calendar days of 30-minute
-  // bars covers the ~20 sessions drawn.
+  // Hourly by default (--tf day for daily).
   const tf = a.tf === 'day' ? 'day' : 'hour';
   const creds = { key: process.env.ALPACA_KEY, secret: process.env.ALPACA_SECRET };
   const raw = top.length ? await fetchOHLC(top.map(x => x.r.s),
-    tf === 'hour' ? { ...creds, timeframe: '30Min', days: 35 } : creds) : {};
+    tf === 'hour' ? { ...creds, timeframe: '30Min', days: 110 } : creds) : {};   // 110 days ≥ 75 sessions
   const ohlc = Object.fromEntries(Object.entries(raw).map(([s, b]) => [s, tf === 'hour' ? toHourly(b) : b]));
   const picks = [];
   for (const [i, { r, m }] of top.entries()) {

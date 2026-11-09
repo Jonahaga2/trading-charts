@@ -1,6 +1,6 @@
 /* Checks for the top-picks rule and the chart renderer. No network, no browser.
    Run: node scanner/charts.test.mjs */
-import { pickTop, renderChart, fetchOHLC, toHourly, nyTime, PICK, SHOW, SHOW_HOURS } from './charts.mjs';
+import { pickTop, renderChart, fetchOHLC, toHourly, nyTime, windowSessions, PICK } from './charts.mjs';
 
 let pass = 0, fail = 0;
 const check = (name, cond, detail = '') => { if (cond) pass++; else { fail++; console.log(`  ✗ ${name}${detail ? ' — ' + detail : ''}`); } };
@@ -39,9 +39,12 @@ const bars = Array.from({ length: 120 }, (_, i) => {
   const c = i < 100 ? 100 - i * 0.5 : 50 + (i - 100);
   return { t: day(i), o: c - 1, h: c + 2, l: c - 2, c, v: 1e6 + i };
 });
-const m = { close: 69, peak: 102, trough: 48, drop: 52.9, retrace: 38.9, fresh: true };
+const m = { close: 69, peak: 102, trough: 48, drop: 52.9, retrace: 38.9, fresh: true, dropDays: 60, sinceLow: 25 };
 const svg = renderChart({ sym: 'TEST', name: 'Test & Co <A>', bars, m, rank: 1, line: 20 });
-check('draws the last SHOW sessions', (svg.match(/class="candle"/g) || []).length === SHOW);
+check('window: from before the high to now', windowSessions(m) === 75 && windowSessions({ dropDays: 10, sinceLow: 5 }) === 19 && windowSessions({}) === 15);
+check('daily: draws the whole window', (svg.match(/class="candle"/g) || []).length === 75);
+const short = renderChart({ sym: 'T', bars, m: { ...m, dropDays: 3, sinceLow: 2 } });
+check('daily: at least 40 sessions of context', (short.match(/class="candle"/g) || []).length === 40);
 check('names the stock, escaped', svg.includes('#1  TEST') && svg.includes('Test &amp; Co &lt;A&gt;'));
 check('labels the high, low and retrace line', ['>High<', '>Low<', '>20% back<'].every(t => svg.includes(t)));
 check('marks the 20% line at the right price', svg.includes(`>${(48 + 54 * 0.2).toFixed(2)}<`));
@@ -80,8 +83,9 @@ check('no bars is an error, not a blank chart', threw);
     const c = 60 + Math.sin(d + k / 13) * 5;
     return { t: new Date(Date.UTC(2026, 9, 1 + d, 14, 30 + k * 30)).toISOString(), o: c - 0.3, h: c + 1, l: c - 1, c, v: 1e5 };
   })).flat());
-  const hs = renderChart({ sym: 'HR', bars: hb, m: { ...m, peak: 70, trough: 50, close: 60 }, tf: 'hour', line: 50 });
-  check('hourly chart: draws SHOW_HOURS candles', (hs.match(/class="candle"/g) || []).length === SHOW_HOURS);
+  const hs = renderChart({ sym: 'HR', bars: hb, m: { ...m, peak: 70, trough: 50, close: 60, dropDays: 12, sinceLow: 6 }, tf: 'hour', line: 50 });
+  // The fixture's sessions start at 10:30 ET (14:30Z in October), so 6 candles each.
+  check('hourly chart: high-to-now window (12 + 6 + 4 = 22 sessions)', (hs.match(/class="candle"/g) || []).length === 22 * 6);
   check('hourly chart: says so', hs.includes('1-hour candles, regular hours'));
   check('hourly chart: dated session labels', /> ?(Oct|Nov) \d{1,2}</.test(hs));
 }
