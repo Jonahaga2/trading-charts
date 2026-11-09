@@ -3,7 +3,7 @@
    ───────────────────────────────────────────────────────────────────────
    Reads a scan (scanner/run.mjs output), picks the best five, fetches their
    full OHLC bars from Alpaca (the scan file keeps no opens, to stay small),
-   draws each as an SVG candlestick chart and screenshots it to PNG with
+   draws each as an SVG candlestick chart (1-hour candles by default) and screenshots it to PNG with
    headless Chrome. Writes picks.json plus 1.png … 5.png. The nightly
    workflow publishes them beside scan.json, and the morning briefing links
    them.
@@ -28,7 +28,8 @@ const SCAN = require('../src/scan.js');
 // maxJump: no single day since the low may be up more than this, so a
 // recovery made of one spike (news, a squeeze) is left out for a steady one.
 export const PICK = { lookback: 63, minDrop: 30, minRetrace: 50, maxRetrace: 85, minPrice: 5, minDollarVol: 5e7, maxJump: 10 };
-export const SHOW = 90;                       // sessions drawn per chart
+export const SHOW = 90;                       // daily candles drawn per chart
+export const SHOW_HOURS = 140;                // hourly candles: ~20 sessions of 7
 
 export function pickTop(rows, n = 5, opts = PICK) {
   return rows
@@ -47,8 +48,9 @@ const fmt = x => x >= 1000 ? x.toFixed(0) : x.toFixed(2);
 const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 /* bars: [{ t, o, h, l, c, v }] oldest first. m: SCAN.evaluate measurements. */
-export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRetrace }) {
-  const b = bars.slice(-SHOW);
+export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRetrace, tf = 'day' }) {
+  const hourly = tf === 'hour';
+  const b = bars.slice(-(hourly ? SHOW_HOURS : SHOW));
   if (!b.length) throw new Error(`no bars for ${sym}`);
   let lo = Math.min(...b.map(x => x.l), m.trough), hi = Math.max(...b.map(x => x.h), m.peak);
   const pad = (hi - lo) * 0.06; lo -= pad; hi += pad;
@@ -67,14 +69,26 @@ export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRet
     if (refs.every(ry => Math.abs(ry - y) > 16))
       out.push(`<text x="${W - R + 8}" y="${y + 4}" fill="${C.dim}" font-size="12">${fmt(p)}</text>`);
   }
-  // Month labels where the month changes.
-  let lastMon = -1;
-  b.forEach((x, i) => {
-    const d = new Date(x.t), mo = d.getUTCMonth();
-    if (mo !== lastMon && i > 2) out.push(`<text x="${X(i)}" y="${H - 30}" fill="${C.dim}" font-size="12" text-anchor="middle">${MON[mo]}</text>`,
-      `<line x1="${X(i)}" x2="${X(i)}" y1="${TOP}" y2="${VB}" stroke="${C.grid}" stroke-dasharray="2 4"/>`);
-    lastMon = mo;
-  });
+  // Time labels: month changes on a daily chart; on an hourly one, the
+  // first candle of every few sessions, labelled with its date.
+  const mark = (i, text) => out.push(`<text x="${X(i)}" y="${H - 30}" fill="${C.dim}" font-size="12" text-anchor="middle">${text}</text>`,
+    `<line x1="${X(i)}" x2="${X(i)}" y1="${TOP}" y2="${VB}" stroke="${C.grid}" stroke-dasharray="2 4"/>`);
+  if (hourly) {
+    const starts = b.map((x, i) => i).filter(i => i === 0 || b[i].day !== b[i - 1].day);
+    const every = Math.max(1, Math.ceil(starts.length / 6));
+    starts.forEach((i, k) => {
+      if (k % every || i < 3) return;
+      const [, mo, d] = b[i].day.split('-');
+      mark(i, `${MON[+mo - 1]} ${+d}`);
+    });
+  } else {
+    let lastMon = -1;
+    b.forEach((x, i) => {
+      const mo = new Date(x.t).getUTCMonth();
+      if (mo !== lastMon && i > 2) mark(i, MON[mo]);
+      lastMon = mo;
+    });
+  }
   // Reference lines: the old high, the low, and the retrace line being scanned for.
   const line = (p, color, dash, label) => {
     const y = Y(p);
@@ -109,15 +123,17 @@ export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRet
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" `
     + `font-family="-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">`
     + `<rect width="${W}" height="${H}" fill="${C.bg}"/>${head}${out.join('')}${over.join('')}`
-    + `<text x="${W - 16}" y="${H - 10}" fill="${C.dim}" font-size="11" text-anchor="end">Daily · last ${b.length} sessions · to ${b.at(-1).t.slice(0, 10)}</text></svg>`;
+    + `<text x="${W - 16}" y="${H - 10}" fill="${C.dim}" font-size="11" text-anchor="end">`
+    + (hourly ? `1-hour candles, regular hours · last ${new Set(b.map(x => x.day)).size} sessions · to ${b.at(-1).day}`
+      : `Daily · last ${b.length} sessions · to ${b.at(-1).t.slice(0, 10)}`) + `</text></svg>`;
 }
 
 /* ── Data ─────────────────────────────────────────────────────────── */
-export async function fetchOHLC(symbols, { key, secret, fetchFn = fetch, now = Date.now() } = {}) {
-  const start = new Date(now - 160 * 864e5).toISOString().slice(0, 10);
+export async function fetchOHLC(symbols, { key, secret, fetchFn = fetch, now = Date.now(), timeframe = '1Day', days = 160 } = {}) {
+  const start = new Date(now - days * 864e5).toISOString().slice(0, 10);
   const end = new Date(now - 16 * 60e3).toISOString();
   const base = `https://data.alpaca.markets/v2/stocks/bars?symbols=${encodeURIComponent(symbols.join(','))}`
-    + `&timeframe=1Day&start=${start}&end=${encodeURIComponent(end)}&limit=10000&feed=sip&adjustment=split&sort=asc`;
+    + `&timeframe=${timeframe}&start=${start}&end=${encodeURIComponent(end)}&limit=10000&feed=sip&adjustment=split&sort=asc`;
   const out = {};
   let token = null;
   for (let page = 0; page < 50; page++) {
@@ -129,6 +145,37 @@ export async function fetchOHLC(symbols, { key, secret, fetchFn = fetch, now = D
     token = j.next_page_token;
     if (!token) break;
   }
+  return out;
+}
+
+/* 30-minute bars → regular-session hourly candles on the 9:30 grid
+   (9:30, 10:30, … 15:30, the last one half an hour), as TradingView draws
+   them. Alpaca's own 1Hour bars sit on the clock (9:00, 10:00), so the
+   session's first "hour" would hold only 9:30–10:00; the archived adapter
+   found this and rebuilt them the same way. Pre- and after-market bars are
+   dropped. Times are read in New York, so daylight saving is handled. */
+const NY = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit',
+  day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+export function nyTime(t) {
+  const p = Object.fromEntries(NY.formatToParts(new Date(t)).map(x => [x.type, x.value]));
+  return { day: `${p.year}-${p.month}-${p.day}`, min: +p.hour * 60 + +p.minute };
+}
+export function toHourly(bars30) {
+  const out = [];
+  let cur = null, key = '';
+  for (const x of bars30) {
+    const { day, min } = nyTime(x.t);
+    if (min < 570 || min >= 960) continue;              // 9:30 to 16:00 only
+    const k = `${day}#${Math.floor((min - 570) / 60)}`;
+    if (k !== key) {
+      if (cur) out.push(cur);
+      cur = { t: x.t, day, o: x.o, h: x.h, l: x.l, c: x.c, v: x.v || 0 };
+      key = k;
+    } else {
+      cur.h = Math.max(cur.h, x.h); cur.l = Math.min(cur.l, x.l); cur.c = x.c; cur.v += x.v || 0;
+    }
+  }
+  if (cur) out.push(cur);
   return out;
 }
 
@@ -152,12 +199,18 @@ async function main() {
   const rule = { ...PICK, ...(a.retrace && { minRetrace: +a.retrace }), ...(a.max && { maxRetrace: +a.max }),
     ...(a.jump && { maxJump: +a.jump }) };
   const top = pickTop(scan.rows, +a.n || 5, rule);
-  const ohlc = top.length ? await fetchOHLC(top.map(x => x.r.s), { key: process.env.ALPACA_KEY, secret: process.env.ALPACA_SECRET }) : {};
+  // Hourly by default (--tf day for daily). ~35 calendar days of 30-minute
+  // bars covers the ~20 sessions drawn.
+  const tf = a.tf === 'day' ? 'day' : 'hour';
+  const creds = { key: process.env.ALPACA_KEY, secret: process.env.ALPACA_SECRET };
+  const raw = top.length ? await fetchOHLC(top.map(x => x.r.s),
+    tf === 'hour' ? { ...creds, timeframe: '30Min', days: 35 } : creds) : {};
+  const ohlc = Object.fromEntries(Object.entries(raw).map(([s, b]) => [s, tf === 'hour' ? toHourly(b) : b]));
   const picks = [];
   for (const [i, { r, m }] of top.entries()) {
     const n = i + 1;
     const svg = path.join(dir, `${n}.svg`);
-    fs.writeFileSync(svg, renderChart({ sym: r.s, name: r.n, bars: ohlc[r.s] || [], m, rank: n, line: rule.minRetrace }));
+    fs.writeFileSync(svg, renderChart({ sym: r.s, name: r.n, bars: ohlc[r.s] || [], m, rank: n, line: rule.minRetrace, tf }));
     screenshot(svg, path.join(dir, `${n}.png`));
     fs.rmSync(svg);
     picks.push({ rank: n, symbol: r.s, exchange: r.x, name: r.n, close: m.close, drop: +m.drop.toFixed(1),

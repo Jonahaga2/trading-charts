@@ -1,6 +1,6 @@
 /* Checks for the top-picks rule and the chart renderer. No network, no browser.
    Run: node scanner/charts.test.mjs */
-import { pickTop, renderChart, fetchOHLC, PICK, SHOW } from './charts.mjs';
+import { pickTop, renderChart, fetchOHLC, toHourly, nyTime, PICK, SHOW, SHOW_HOURS } from './charts.mjs';
 
 let pass = 0, fail = 0;
 const check = (name, cond, detail = '') => { if (cond) pass++; else { fail++; console.log(`  ✗ ${name}${detail ? ' — ' + detail : ''}`); } };
@@ -51,6 +51,40 @@ check('valid-looking SVG', svg.startsWith('<svg') && svg.endsWith('</svg>'));
 let threw = false;
 try { renderChart({ sym: 'NONE', bars: [], m }); } catch { threw = true; }
 check('no bars is an error, not a blank chart', threw);
+
+/* Hourly candles from 30-minute bars, on the 9:30 grid, regular hours only */
+{
+  // Fri 2026-11-06 is EST (UTC−5): 9:30 ET = 14:30Z. A full day of 30-min
+  // bars from 8:30 to 18:00 ET (bar 2 is 9:30), each bar's close = its index, so the
+  // grouping is visible in the output.
+  const day30 = (date, utcOpenHour) => Array.from({ length: 20 }, (_, i) => {
+    const t = new Date(Date.UTC(...date, utcOpenHour - 1, 30 + i * 30)).toISOString();   // from 8:30 ET
+    return { t, o: i, h: i + 0.5, l: i - 0.5, c: i, v: 10 };
+  });
+  const fri = toHourly(day30([2026, 10, 6], 14));
+  check('hourly: 7 candles in a regular session', fri.length === 7, String(fri.length));
+  check('hourly: first candle opens at 9:30 ET', nyTime(fri[0].t).min === 570 && fri[0].day === '2026-11-06');
+  check('hourly: pre-market dropped (opens on the 9:30 bar)', fri[0].o === 2);
+  check('hourly: two 30-min bars merged', fri[0].c === 3 && fri[0].h === 3.5 && fri[0].l === 1.5 && fri[0].v === 20);
+  check('hourly: last candle is 15:30 only, half an hour', nyTime(fri[6].t).min === 930 && fri[6].v === 10 && fri[6].c === 14);
+  check('hourly: after-hours dropped', fri.every(x => x.c <= 14));
+  // Wed 2026-07-01 is EDT (UTC−4): 9:30 ET = 13:30Z.
+  const jul = toHourly(day30([2026, 6, 1], 13));
+  check('hourly: daylight saving handled', jul.length === 7 && nyTime(jul[0].t).min === 570 && jul[0].o === 2);
+  check('hourly: sessions kept apart', toHourly([...day30([2026, 6, 1], 13), ...day30([2026, 10, 6], 14)]).length === 14);
+}
+
+/* Hourly chart */
+{
+  const hb = toHourly(Array.from({ length: 30 }, (_, d) => Array.from({ length: 13 }, (_, k) => {
+    const c = 60 + Math.sin(d + k / 13) * 5;
+    return { t: new Date(Date.UTC(2026, 9, 1 + d, 14, 30 + k * 30)).toISOString(), o: c - 0.3, h: c + 1, l: c - 1, c, v: 1e5 };
+  })).flat());
+  const hs = renderChart({ sym: 'HR', bars: hb, m: { ...m, peak: 70, trough: 50, close: 60 }, tf: 'hour', line: 50 });
+  check('hourly chart: draws SHOW_HOURS candles', (hs.match(/class="candle"/g) || []).length === SHOW_HOURS);
+  check('hourly chart: says so', hs.includes('1-hour candles, regular hours'));
+  check('hourly chart: dated session labels', /> ?(Oct|Nov) \d{1,2}</.test(hs));
+}
 
 /* Alpaca OHLC fetch: pages joined per symbol */
 const pages = [

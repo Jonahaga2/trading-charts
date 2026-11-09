@@ -143,7 +143,8 @@ and have won back 50–85% of it **steadily** — no single day since the low up
 more than 10%, so a recovery made of one spike is left out — with the ones
 that crossed 50% on the latest session first, then the deepest falls.
 `--retrace`, `--max` and `--jump` override the rule for one run.
-It fetches their full candles from Alpaca, draws each as a candlestick chart
+It fetches their candles from Alpaca, draws each as a 1-hour candlestick chart
+(regular hours, on the 9:30 grid, last ~20 sessions; `--tf day` for daily)
 with the high, the low and the 20% line marked, and screenshots it with
 headless Chrome. `picks.json` and `charts/1.png … 5.png` are published beside
 `scan.json`, and the morning briefing shows them.
