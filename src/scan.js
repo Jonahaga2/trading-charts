@@ -59,6 +59,9 @@
     minPrice: 1,         // $
     minDollarVol: 1e6,   // average daily $ volume
     maxJump: Infinity,   // % — biggest single-day gain allowed since the low
+    maxDropDays: Infinity, // sessions from the high to the low: small = a sharp dip
+    highLookback: 0,     // >0: the high must top the previous N sessions (a
+                         // dip from a high, not a step down in a downtrend)
   };
 
   /* One symbol against one set of criteria. `row` is { h, l, c, dv } —
@@ -87,6 +90,7 @@
       dropDays: dd.troughI - dd.peakI,       // bars from the peak to the low
       sinceLow: n - 1 - dd.troughI,          // bars since the low
       jump: maxJump(row.c, dd.troughI, n),   // biggest one-day gain since the low, %
+      highFor: highFor(row.h, dd.peakI),     // sessions the high was the highest of
       fresh: prev < minR && retrace >= minR,
       dv: row.dv || 0,
     };
@@ -95,7 +99,9 @@
       && m.retrace <= o.maxRetrace
       && close >= o.minPrice
       && m.dv >= o.minDollarVol
-      && m.jump <= o.maxJump;
+      && m.jump <= o.maxJump
+      && m.dropDays <= o.maxDropDays
+      && m.highFor >= o.highLookback;
     return m;
   }
 
@@ -110,6 +116,15 @@
     return best;
   }
 
+  /* How many sessions before bar i its high stays the highest: 60 means the
+     high topped the previous 60 sessions. Capped by the history available, so
+     a short series can't vouch for a long lookback. */
+  function highFor(h, i) {
+    let k = 0;
+    while (i - k - 1 >= 0 && h[i - k - 1] <= h[i]) k++;
+    return k;
+  }
+
   /* Average daily dollar volume over the last `days` bars. */
   function dollarVolume(c, v, days = 20) {
     const n = Math.min(c.length, v.length);
@@ -120,7 +135,7 @@
     return k ? sum / k : 0;
   }
 
-  const api = { maxDrawdown, maxJump, evaluate, dollarVolume, DEFAULTS };
+  const api = { maxDrawdown, maxJump, highFor, evaluate, dollarVolume, DEFAULTS };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.SCAN = api;
 })(typeof window !== 'undefined' ? window : globalThis);

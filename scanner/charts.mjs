@@ -27,6 +27,9 @@ const SCAN = require('../src/scan.js');
 
 // maxJump: no single day since the low may be up more than this, so a
 // recovery made of one spike (news, a squeeze) is left out for a steady one.
+// A sharp-dip variant (maxDropDays: 10–15, highLookback: 60 — high to low
+// fast, from a 60-session high) was backtested 2021–2026 and did worse than
+// this in every combination tried, so it is not the default.
 export const PICK = { lookback: 63, minDrop: 30, minRetrace: 50, maxRetrace: 85, minPrice: 5, minDollarVol: 5e7, maxJump: 10 };
 /* How much each chart shows: the whole story, from a few sessions before
    the high, through the low, to the last bar, so the fall is always in view. */

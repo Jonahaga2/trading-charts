@@ -128,6 +128,22 @@ const loose = { lookback: 999, minDrop: 0, minRetrace: 0, minPrice: 0, minDollar
   check('jump: default allows anything', SCAN.evaluate(spike, loose).pass);
 }
 
+/* ── sharp dips from a high: maxDropDays and highLookback ── */
+{
+  const sharp = flat([...Array(10).fill(80), 90, 100, 70, 50, 60, 76]);       // up to a high, −50% in 2 days
+  const slide = flat([100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 60, 76]);  // a 10-day grind down
+  const fromHigh = { ...loose, minRetrace: 50 };
+  const ms = SCAN.evaluate(sharp, fromHigh), ml = SCAN.evaluate(slide, fromHigh);
+  check('sharp: drop days measured', ms.dropDays === 2 && ml.dropDays === 10);
+  check('sharp: maxDropDays keeps the fast drop', SCAN.evaluate(sharp, { ...fromHigh, maxDropDays: 5 }).pass);
+  check('sharp: …and drops the slow slide', !SCAN.evaluate(slide, { ...fromHigh, maxDropDays: 5 }).pass);
+  check('sharp: highFor counts the sessions the high tops', ms.highFor === 11 && ml.highFor === 0);
+  check('sharp: highLookback keeps a dip from a high', SCAN.evaluate(sharp, { ...fromHigh, highLookback: 10 }).pass);
+  const lowerHigh = flat([120, ...Array(9).fill(80), 90, 100, 70, 50, 60, 76]);   // a higher high 11 sessions back
+  check('sharp: …and drops one below an earlier high', !SCAN.evaluate(lowerHigh, { ...fromHigh, lookback: 7, highLookback: 15 }).pass);
+  check('sharp: off by default', SCAN.evaluate(slide, fromHigh).pass);
+}
+
 /* ── dollar volume ── */
 check('dollar volume averages the last 20', near(SCAN.dollarVolume(Array(30).fill(10), [...Array(10).fill(0), ...Array(20).fill(100)]), 1000));
 
