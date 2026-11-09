@@ -45,7 +45,7 @@ const fmt = x => x >= 1000 ? x.toFixed(0) : x.toFixed(2);
 const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 /* bars: [{ t, o, h, l, c, v }] oldest first. m: SCAN.evaluate measurements. */
-export function renderChart({ sym, name, bars, m, rank }) {
+export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRetrace }) {
   const b = bars.slice(-SHOW);
   if (!b.length) throw new Error(`no bars for ${sym}`);
   let lo = Math.min(...b.map(x => x.l), m.trough), hi = Math.max(...b.map(x => x.h), m.peak);
@@ -58,7 +58,7 @@ export function renderChart({ sym, name, bars, m, rank }) {
 
   // Horizontal grid and price labels, skipping any label a reference
   // line's price tag would sit on.
-  const refs = [m.peak, m.trough + (m.peak - m.trough) * PICK.minRetrace / 100, m.trough].map(Y);
+  const refs = [m.peak, m.trough + (m.peak - m.trough) * back / 100, m.trough].map(Y);
   for (let k = 0; k <= 4; k++) {
     const p = lo + (hi - lo) * k / 4, y = Y(p);
     out.push(`<line x1="${L}" x2="${W - R}" y1="${y}" y2="${y}" stroke="${C.grid}"/>`);
@@ -83,7 +83,7 @@ export function renderChart({ sym, name, bars, m, rank }) {
         + `stroke="${C.bg}" stroke-width="4" paint-order="stroke">${label}</text>`);
   };
   line(m.peak, C.muted, '6 4', 'High');
-  line(m.trough + (m.peak - m.trough) * PICK.minRetrace / 100, C.accent, '2 3', `${PICK.minRetrace}% back`);
+  line(m.trough + (m.peak - m.trough) * back / 100, C.accent, '2 3', `${back}% back`);
   line(m.trough, C.up, '6 4', 'Low');
   // Volume, then candles on top.
   b.forEach((x, i) => {
@@ -145,20 +145,22 @@ async function main() {
   const dir = path.resolve(a.out || '.scan/charts');
   fs.mkdirSync(dir, { recursive: true });
 
-  const top = pickTop(scan.rows, +a.n || 5);
+  // --retrace N / --max N override the rule's recovery range.
+  const rule = { ...PICK, ...(a.retrace && { minRetrace: +a.retrace }), ...(a.max && { maxRetrace: +a.max }) };
+  const top = pickTop(scan.rows, +a.n || 5, rule);
   const ohlc = top.length ? await fetchOHLC(top.map(x => x.r.s), { key: process.env.ALPACA_KEY, secret: process.env.ALPACA_SECRET }) : {};
   const picks = [];
   for (const [i, { r, m }] of top.entries()) {
     const n = i + 1;
     const svg = path.join(dir, `${n}.svg`);
-    fs.writeFileSync(svg, renderChart({ sym: r.s, name: r.n, bars: ohlc[r.s] || [], m, rank: n }));
+    fs.writeFileSync(svg, renderChart({ sym: r.s, name: r.n, bars: ohlc[r.s] || [], m, rank: n, line: rule.minRetrace }));
     screenshot(svg, path.join(dir, `${n}.png`));
     fs.rmSync(svg);
     picks.push({ rank: n, symbol: r.s, exchange: r.x, name: r.n, close: m.close, drop: +m.drop.toFixed(1),
       retrace: +m.retrace.toFixed(1), peak: m.peak, low: m.trough, daysSinceLow: m.sinceLow, fresh: m.fresh,
       dollarVolume: m.dv, chart: `charts/${n}.png` });
   }
-  fs.writeFileSync(path.join(dir, '..', 'picks.json'), JSON.stringify({ asOf: scan.asOf, rule: PICK, picks }, null, 1));
+  fs.writeFileSync(path.join(dir, '..', 'picks.json'), JSON.stringify({ asOf: scan.asOf, rule, picks }, null, 1));
   console.error(`${picks.length} picks: ${picks.map(p => p.symbol).join(', ') || 'none'} → ${dir}`);
 }
 
