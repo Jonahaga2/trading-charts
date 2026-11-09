@@ -87,6 +87,10 @@ const sig = (i, peak = 200) => ({ s: 'X', i, peak });
   check('dollars: never more than $500 a stock', capped.trades.every(t => t.size <= 500));
   check('dollars: never more than the cash on hand', capped.trades.reduce((s, t) => s + t.size, 0) <= 2000 && capped.trades.length === 4);
   check('dollars: flat trades return the stake', Math.abs(capped.final - 2000) < 1e-6);
+  const blocked = simulateDollars(all, sigs, { start: 2000, top: 5, spyUp, allow: new Map([[day, false]]), stop: 0.15, hold: 5 });
+  check('market filter: no buys on a down day', blocked.trades.length === 0 && blocked.final === 2000);
+  const allowed = simulateDollars(all, sigs, { start: 2000, top: 5, spyUp, allow: new Map([[day, true]]), stop: 0.15, hold: 5 });
+  check('market filter: buys on an up day', allowed.trades.length === 5);
 }
 
 console.log(`${pass} passed, ${fail} failed`);

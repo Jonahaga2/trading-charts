@@ -119,7 +119,9 @@ export function confidence(g, spyUp) {
   return (spyUp ? 1 : 0) + (g.jump <= 6 ? 1 : 0) + (g.dv >= 2e8 ? 1 : 0) + (g.retrace >= 60 ? 1 : 0);
 }
 
-export function simulateDollars(all, sigs, { start = 2000, maxPer = 500, sizes = SIZES, top = 5, spyUp = new Map(), ...exit } = {}) {
+/* `allow`: optional Map day → bool; signals on a day it marks false (or
+   doesn't mention) are skipped — the market filter. */
+export function simulateDollars(all, sigs, { start = 2000, maxPer = 500, sizes = SIZES, top = 5, spyUp = new Map(), allow = null, ...exit } = {}) {
   const byDay = new Map();
   for (const g of sigs) (byDay.get(g.day) || byDay.set(g.day, []).get(g.day)).push(g);
   const days = [...byDay.keys()].sort();
@@ -129,6 +131,7 @@ export function simulateDollars(all, sigs, { start = 2000, maxPer = 500, sizes =
     open = open.filter(p => { if (p.exitDay > d) return true; cash += p.proceeds; return false; });
     const eq = cash + open.reduce((s, p) => s + p.size, 0);       // at cost: realised P&L only
     peakEq = Math.max(peakEq, eq); maxDD = Math.max(maxDD, 1 - eq / peakEq);
+    if (allow && !allow.get(d)) continue;
     const today = byDay.get(d).sort((a, b) => b.drop - a.drop).slice(0, top);
     for (const g of today) {
       if ((busyUntil.get(g.s) || '') > d) continue;
@@ -265,6 +268,32 @@ async function main() {
     report.variants.push({ name, dollars: { final: ds.final, maxDD: ds.maxDD, trades: ds.trades.length,
       byScore: [0, 1, 2, 3, 4].map(k => { const t = ds.trades.filter(x => x.score === k); return { k, n: t.length, avg: t.length ? t.reduce((s, x) => s + x.ret, 0) / t.length : null, pnl: t.reduce((s, x) => s + x.pnl, 0) }; }) } });
   }
+  // Market filter: only buy while SPY is in an uptrend.
+  const above = days => {
+    const m = new Map();
+    for (let i = days - 1; i < spy.c.length; i++) {
+      let s = 0; for (let k = i - days + 1; k <= i; k++) s += spy.c[k];
+      m.set(spy.t[i], spy.c[i] > s / days);
+    }
+    return m;
+  };
+  const up50 = above(50), up200 = above(200);
+  const both = new Map([...up200].map(([d, v]) => [d, v && !!up50.get(d)]));
+  const filters = [['SPY > 50-day avg', up50], ['SPY > 200-day avg', up200], ['SPY > both', both]];
+  report.filters = [];
+  console.log('\n— Only buying when the market is going up —');
+  for (const [fname, allow] of filters) {
+    const share = [...allow.values()].filter(Boolean).length / allow.size;
+    console.log(`${fname} (true ${pct(share).slice(1)} of days):`);
+    for (const [name, exit] of variants) {
+      const ds = simulateDollars(all, sigs, { start, maxPer, top: 5, spyUp, allow, ...exit });
+      const st = stats(ds.trades);
+      console.log(`   ${name}: $${start} → ${usd(ds.final)} (${pct((ds.final / start) ** (1 / years) - 1)}/yr) · `
+        + `${ds.trades.length} trades · win ${pct(st.win || 0).slice(1)} · worst dip ${pct(-ds.maxDD)}`);
+      report.filters.push({ filter: fname, name, final: ds.final, maxDD: ds.maxDD, trades: ds.trades.length, win: st.win });
+    }
+  }
+
   console.log('\n— Equal-weight version (5 slots, % of equity), for comparison —');
   for (const [name, exit] of variants) {
     const sim = simulate(all, sigs, { top: 5, slots: 5, ...exit });
