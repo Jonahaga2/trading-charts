@@ -1,4 +1,4 @@
-# Paper trading — 50% SPY + 50% top-10 momentum, rebalanced on the first
+# Paper trading — 50% top-10 momentum + 30% SPY + 20% bonds (IEF), rebalanced on the first
 # trading day of each month on Alpaca's PAPER account (no real money).
 # scanner/paper.mjs decides whether today is that day, so the schedule just
 # wakes it on each of the first seven weekdays. Each run is appended to

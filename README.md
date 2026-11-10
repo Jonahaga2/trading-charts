@@ -316,7 +316,7 @@ intact, as their terms require.
 ## Paper trading (Alpaca, no real money)
 
 `scanner/paper.mjs` runs the one strategy that passed every backtest gate:
-**50% SPY + 50% the 10 large stocks with the best 12-1 momentum ÷ volatility**
+**50% in the 10 large stocks with the best 12-1 momentum ÷ volatility, 30% SPY, 20% IEF (7–10 year Treasuries)**
 (US common stocks, $3+, the 300 most traded over 60 sessions), rebalanced on
 the first trading day of each month. Orders go only to `paper-api.alpaca.markets`.
 

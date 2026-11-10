@@ -39,11 +39,12 @@ const grow = (g, w = 0.01, n = 300, p0 = 50, vol = 1e6) => {
   check('sorted best first', picks.every((p, i) => !i || picks[i - 1].smooth >= p.smooth));
 }
 
-// targetWeights: 50% SPY, 5% each of 10.
+// targetWeights: 30% SPY, 20% bonds, 5% each of 10.
 {
   const w = targetWeights(Array.from({ length: 10 }, (_, i) => ({ sym: 'X' + i })));
-  check('SPY 50%', w.SPY === 0.5);
-  check('each pick 5%', Object.entries(w).filter(([s]) => s !== 'SPY').every(([, x]) => near(x, 0.05)));
+  check('SPY 30%', w.SPY === 0.3);
+  check('bonds (IEF) 20%', w.IEF === 0.2);
+  check('each pick 5%', Object.entries(w).filter(([s]) => s !== 'SPY' && s !== 'IEF').every(([, x]) => near(x, 0.05)));
   check('weights sum to 1', near(Object.values(w).reduce((a, b) => a + b, 0), 1));
   const few = targetWeights([{ sym: 'A' }, { sym: 'B' }]);
   check('fewer than 10 picks: still 5% each, rest stays cash', near(few.A, 0.05) && near(few.B, 0.05));
