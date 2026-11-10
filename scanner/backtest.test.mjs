@@ -53,6 +53,31 @@ const sig = (i, peak = 200) => ({ s: 'X', i, peak });
   check('trail uses highs before today only', trade(same, sig(0), { stop: 0.15, hold: 1, trail: 0.1 }).why === 'time');
 }
 
+// Sell on a lower low.
+{
+  // Days 0-4 before entry, lowest low 90 → first stop 90. Entry day 5 at 100.
+  // Day 7 low 97 is a swing low (below days 5-6 and 8-9), confirmed at day 9
+  // → stop lifts to 97. Day 11 trades to 95: a lower low → out at 97.
+  const rows = [[95, 96, 92, 95], [95, 96, 90, 95], [95, 97, 93, 96], [96, 98, 94, 97], [97, 99, 95, 98],   // 0-4
+    [100, 104, 99, 103], [103, 106, 100, 105], [104, 105, 97, 103], [103, 108, 101, 107], [107, 110, 104, 109], // 5-9
+    [109, 111, 106, 110], [108, 109, 95, 96]];                                                                  // 10-11
+  const t = trade(ser('X', rows), sig(4), { swing: true });
+  check('lower low: enters at the next open', t.entry === 100 && t.firstStop === 90);
+  check('lower low: a confirmed higher low lifts the stop', t.stop === 97);
+  check('lower low: sells on the break, at the stop', t.why === 'lowerlow' && t.exit === 97 && t.k === 11);
+  // A gap below the stop fills at the open.
+  const gapRows = [...rows.slice(0, 11), [92, 93, 90, 91]];
+  check('lower low: a gap through fills at the open', trade(ser('X', gapRows), sig(4), { swing: true }).exit === 92);
+  // Never breaking down: sold at the close of the 60th session.
+  const up = [...rows.slice(0, 5), ...Array.from({ length: 70 }, (_, k) => [100 + k, 101 + k, 99.5 + k, 100.5 + k])];
+  const u = trade(ser('X', up), sig(4), { swing: true });
+  check('lower low: time exit after 60 sessions', u.why === 'time' && u.k === 5 + 59 && u.exit === 100.5 + 59);
+  // Before entry, the first stop alone applies.
+  const early = [...rows.slice(0, 5), [100, 101, 89, 90]];
+  const ea = trade(ser('X', early), sig(4), { swing: true });
+  check('lower low: under the pre-entry dip on day one is out', ea.why === 'lowerlow' && ea.exit === 90 && ea.k === 5);
+}
+
 // signals(): fires once, on the day the steady recovery crosses 50%.
 {
   const closes = [...Array(70).fill(100), 50, 54, 58, 62, 66, 70, 74, 78];   // 50% back at 75

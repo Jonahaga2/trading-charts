@@ -62,7 +62,9 @@ export function signals(series, rule = PICK) {
    trail: trailing stop, a fraction below the highest high *before* today —
    a day's own high can't raise the stop it is tested against, since the
    order of high and low within a day isn't known. */
-export function trade(series, sig, { stop = 0.15, hold = 20, target = false, takeProfit = 0, trail = 0 } = {}) {
+export function trade(series, sig, opts = {}) {
+  if (opts.swing) return swingTrade(series, sig, opts);
+  const { stop = 0.15, hold = 20, target = false, takeProfit = 0, trail = 0 } = opts;
   const { o, h, l, c, t } = series, e = sig.i + 1;
   if (e >= c.length) return null;
   const entry = o[e];
@@ -77,6 +79,38 @@ export function trade(series, sig, { stop = 0.15, hold = 20, target = false, tak
   const k = Math.min(c.length - 1, e + hold - 1);
   // A trade still open at the end of the data is marked at the last close.
   return { exit: c[k], k, why: k === e + hold - 1 ? 'time' : 'open', entry, e };
+}
+
+/* Sell on a lower low.
+   • Entry: next session's open, as above.
+   • First stop: the lowest low of the `before` sessions up to the signal —
+     the most recent dip.
+   • A swing low is a day whose low is below the `n` days either side of it;
+     it is only known `n` days later. Each one confirmed after entry is a
+     higher low (a lower one would already have hit the stop) and lifts the
+     stop to it.
+   • Exit: the first day trading below the stop — a lower low — filled at the
+     stop, or at the open if it gaps through. Otherwise the close of the
+     `maxHold`-th session. */
+export function swingTrade(series, sig, { before = 5, n = 2, maxHold = 60 } = {}) {
+  const { o, h, l, c } = series, e = sig.i + 1;
+  if (e >= c.length) return null;
+  const entry = o[e];
+  let stopPx = Infinity;
+  for (let j = Math.max(0, sig.i - before + 1); j <= sig.i; j++) stopPx = Math.min(stopPx, l[j]);
+  const first = stopPx;
+  for (let k = e; k < c.length && k < e + maxHold; k++) {
+    if (l[k] < stopPx) return { exit: Math.min(o[k], stopPx), k, why: 'lowerlow', entry, e, stop: stopPx, firstStop: first };
+    // End of day k: is k − n now a confirmed swing low after entry?
+    const j = k - n;
+    if (j >= e) {
+      let swing = true;
+      for (let d = 1; d <= n && swing; d++) if (!(l[j] < l[j - d] && l[j] < l[j + d])) swing = false;
+      if (swing) stopPx = Math.max(stopPx, l[j]);
+    }
+  }
+  const k = Math.min(c.length - 1, e + maxHold - 1);
+  return { exit: c[k], k, why: k === e + maxHold - 1 ? 'time' : 'open', entry, e, stop: stopPx, firstStop: first };
 }
 
 /* Replay: signals by day, top N a day, slot-limited portfolio. */

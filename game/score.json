@@ -1,0 +1,125 @@
+{
+ "about": "Blind dip-chart game. Each round shows past triggers with the ticker, year and outcome hidden; the player marks buy or pass. A buy enters at the next open and sells on a lower low: first stop at the lowest low of the 5 sessions before entry, lifted to each higher swing low (a low below the 2 days either side), sold when price trades below it, or after 60 sessions. Scores are % per trade on daily bars, no costs.",
+ "rounds": [
+  {
+   "round": "blind1",
+   "played": "2026-11-10",
+   "charts": [
+    {
+     "chart": "1",
+     "symbol": "AXON",
+     "triggered": "2025-03-14",
+     "kind": "Fast drop + big-jump bounce (J/K)",
+     "bought": false,
+     "ret": -3.65,
+     "days": 10,
+     "exit": "lowerlow",
+     "entry": 552.72,
+     "sold": 532.52,
+     "firstStop": 501.85,
+     "lastStop": 532.52,
+     "soldOn": "2025-03-28"
+    },
+    {
+     "chart": "2",
+     "symbol": "MYSE",
+     "triggered": "2025-01-13",
+     "kind": "Fast drop + big-jump bounce (J/K)",
+     "bought": false,
+     "ret": -18.04,
+     "days": 9,
+     "exit": "lowerlow",
+     "entry": 4.99,
+     "sold": 4.09,
+     "firstStop": 1.92,
+     "lastStop": 4.09,
+     "soldOn": "2025-01-27"
+    },
+    {
+     "chart": "3",
+     "symbol": "SOC",
+     "triggered": "2025-07-17",
+     "kind": "Steady recovery (current rule)",
+     "bought": false,
+     "ret": -7.69,
+     "days": 18,
+     "exit": "lowerlow",
+     "entry": 30.5,
+     "sold": 28.15,
+     "firstStop": 19.58,
+     "lastStop": 28.15,
+     "soldOn": "2025-08-12"
+    },
+    {
+     "chart": "4",
+     "symbol": "BSP",
+     "triggered": "2026-10-07",
+     "kind": "Big-jump recovery (D)",
+     "bought": true,
+     "ret": 9.53,
+     "days": 22,
+     "exit": "lowerlow",
+     "entry": 39.26,
+     "sold": 43,
+     "firstStop": 31.48,
+     "lastStop": 43,
+     "soldOn": "2026-11-06"
+    },
+    {
+     "chart": "5",
+     "symbol": "DDOG",
+     "triggered": "2026-04-15",
+     "kind": "Steady recovery (current rule)",
+     "bought": true,
+     "ret": 70.64,
+     "days": 45,
+     "exit": "lowerlow",
+     "entry": 128.39,
+     "sold": 219.08,
+     "firstStop": 100.8,
+     "lastStop": 219.08,
+     "soldOn": "2026-06-18"
+    },
+    {
+     "chart": "6",
+     "symbol": "RKLB",
+     "triggered": "2024-11-15",
+     "kind": "Sharp V (A)",
+     "bought": false,
+     "ret": 14.33,
+     "days": 15,
+     "exit": "lowerlow",
+     "entry": 19.54,
+     "sold": 22.34,
+     "firstStop": 14.01,
+     "lastStop": 22.34,
+     "soldOn": "2024-12-09"
+    }
+   ],
+   "totals": {
+    "rounds": 1,
+    "shown": 6,
+    "buys": 2,
+    "wins": 2,
+    "totalPct": 80.17,
+    "avgPct": 40.09,
+    "avgAllPct": 10.85,
+    "edge": 29.23,
+    "passedLosers": 3,
+    "passedWinners": 1
+   }
+  }
+ ],
+ "totals": {
+  "rounds": 1,
+  "shown": 6,
+  "buys": 2,
+  "wins": 2,
+  "totalPct": 80.17,
+  "avgPct": 40.09,
+  "avgAllPct": 10.85,
+  "edge": 29.23,
+  "passedLosers": 3,
+  "passedWinners": 1
+ }
+}
