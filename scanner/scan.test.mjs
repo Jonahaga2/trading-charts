@@ -142,6 +142,8 @@ const loose = { lookback: 999, minDrop: 0, minRetrace: 0, minPrice: 0, minDollar
   const lowerHigh = flat([120, ...Array(9).fill(80), 90, 100, 70, 50, 60, 76]);   // a higher high 11 sessions back
   check('sharp: …and drops one below an earlier high', !SCAN.evaluate(lowerHigh, { ...fromHigh, lookback: 7, highLookback: 15 }).pass);
   check('sharp: off by default', SCAN.evaluate(slide, fromHigh).pass);
+  check('slow: minDropDays keeps the slide', SCAN.evaluate(slide, { ...fromHigh, minDropDays: 10 }).pass);
+  check('slow: …and drops the crash', !SCAN.evaluate(sharp, { ...fromHigh, minDropDays: 10 }).pass);
 }
 
 /* ── dollar volume ── */

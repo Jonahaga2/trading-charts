@@ -9,7 +9,7 @@ const check = (name, cond, detail = '') => { if (cond) pass++; else { fail++; co
 const row = (s, closes, dv = 1e8) => ({ s, x: 'NYSE', n: s + ' Inc.', dv, h: [...closes], l: [...closes], c: [...closes] });
 const flat = n => Array(n).fill(100);
 
-const R20 = { ...PICK, minRetrace: 20, maxRetrace: 50 };   // the fixtures below are sized for 20–50%
+const R20 = { ...PICK, minRetrace: 20, maxRetrace: 50, minDropDays: 0 };   // the fixtures below are sized for 20–50%
 const rows = [
   row('DEEP', [...flat(10), 30, 32.5, 35, 37.5, 40, 42.5, 45]), // fell 70%, 21% back, crossed today, ≤8%/day
   row('MID', [...flat(10), 50, 54, 58, 62]),    // fell 50%, 24% back, crossed today
@@ -26,6 +26,7 @@ check('fresh crossings first, deepest first within', syms === 'DEEP,MID,OLD', sy
 check('limits to n', pickTop(rows, 2, R20).length === 2);
 check('default rule is 50–85% back', PICK.minRetrace === 50 && PICK.maxRetrace === 85);
 check('rule caps a one-day jump at 10%', PICK.maxJump === 10);
+check('default rule: slow drops only', PICK.minDropDays === 10);
 const spiky = row('SPIKE', [...flat(10), 50, 51, 65]);   // fell 50%, +27% in a day
 const calm = row('CALM', [...flat(10), 50, 54, 58, 62]); // fell 50%, ≤8% a day
 const picked = pickTop([spiky, calm], 5, R20).map(x => x.r.s).join();

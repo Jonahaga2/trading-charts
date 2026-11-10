@@ -60,6 +60,7 @@
     minDollarVol: 1e6,   // average daily $ volume
     maxJump: Infinity,   // % — biggest single-day gain allowed since the low
     maxDropDays: Infinity, // sessions from the high to the low: small = a sharp dip
+    minDropDays: 0,      // …and at least this many: large = a slow slide, not a crash
     highLookback: 0,     // >0: the high must top the previous N sessions (a
                          // dip from a high, not a step down in a downtrend)
   };
@@ -101,6 +102,7 @@
       && m.dv >= o.minDollarVol
       && m.jump <= o.maxJump
       && m.dropDays <= o.maxDropDays
+      && m.dropDays >= o.minDropDays
       && m.highFor >= o.highLookback;
     return m;
   }

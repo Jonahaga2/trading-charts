@@ -80,12 +80,16 @@ const sig = (i, peak = 200) => ({ s: 'X', i, peak });
 
 // signals(): fires once, on the day the steady recovery crosses 50%.
 {
-  const closes = [...Array(70).fill(100), 50, 54, 58, 62, 66, 70, 74, 78];   // 50% back at 75
+  // A slow slide (13 sessions, 100 → 50), then a steady climb: 50% back at 75.
+  const slide = [96, 92, 88, 84, 80, 76, 72, 68, 64, 60, 56, 52, 50];
+  const closes = [...Array(70).fill(100), ...slide, 54, 58, 62, 66, 70, 74, 78];
   const rows = closes.map(c => [c, c, c, c]);
   const sg = signals(ser('Y', rows));
-  check('signal fires on the crossing day only', sg.length === 1 && sg[0].i === 77, JSON.stringify(sg.map(x => x.i)));
-  const spiky = [...Array(70).fill(100), 50, 52, 76, 77];                     // +46% in one day
+  check('signal fires on the crossing day only', sg.length === 1 && sg[0].i === 89, JSON.stringify(sg.map(x => x.i)));
+  const spiky = [...Array(70).fill(100), ...slide, 52, 76, 77];               // +46% in one day
   check('a one-day spike gives no signal', signals(ser('Z', spiky.map(c => [c, c, c, c]))).length === 0);
+  const crash = [...Array(70).fill(100), 50, 54, 58, 62, 66, 70, 74, 78];      // the same climb after a 1-day crash
+  check('a crash (not a slow drop) gives no signal', signals(ser('C', crash.map(c => [c, c, c, c]))).length === 0);
 }
 
 // simulate(): slots and one trade per symbol at a time.
