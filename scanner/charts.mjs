@@ -53,18 +53,22 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 const fmt = x => x >= 1000 ? x.toFixed(0) : x.toFixed(2);
 const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-/* bars: [{ t, o, h, l, c, v }] oldest first. m: SCAN.evaluate measurements. */
-export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRetrace, tf = 'day' }) {
+/* bars: [{ t, o, h, l, c, v }] oldest first. m: SCAN.evaluate measurements.
+   Replays (what happened next) add:
+     split   the trigger day; bars after it are shaded as "after", and the
+             window is measured from the trigger, not the last bar
+     levels  [{ p, color, label }] extra price lines, e.g. entry and stop
+     note    a line of text over the after-section, e.g. the result */
+export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRetrace, tf = 'day', split = null, levels = [], note = '' }) {
   const hourly = tf === 'hour';
+  const dayOf = x => x.day || x.t.slice(0, 10);
   const want = windowSessions(m);
-  let b;
-  if (hourly) {
-    const days = [...new Set(bars.map(x => x.day))];
-    const from = days[Math.max(0, days.length - want)];
-    b = bars.filter(x => x.day >= from);
-  } else b = bars.slice(-Math.max(want, 40));            // daily: at least two months of context
+  const upto = split ? bars.filter(x => dayOf(x) <= split) : bars;
+  const days = [...new Set(upto.map(dayOf))];
+  const from = days[Math.max(0, days.length - (hourly ? want : Math.max(want, 40)))];
+  const b = bars.filter(x => dayOf(x) >= from);
   if (!b.length) throw new Error(`no bars for ${sym}`);
-  let lo = Math.min(...b.map(x => x.l), m.trough), hi = Math.max(...b.map(x => x.h), m.peak);
+  let lo = Math.min(...b.map(x => x.l), m.trough, ...levels.map(v => v.p)), hi = Math.max(...b.map(x => x.h), m.peak, ...levels.map(v => v.p));
   const pad = (hi - lo) * 0.06; lo -= pad; hi += pad;
   const vmax = Math.max(...b.map(x => x.v)) || 1;
   const step = (W - L - R) / b.length, bw = Math.max(1.5, step * 0.62);
@@ -114,6 +118,18 @@ export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRet
   line(m.peak, C.muted, '6 4', 'High');
   line(m.trough + (m.peak - m.trough) * back / 100, C.accent, '2 3', `${back}% back`);
   line(m.trough, C.up, '6 4', 'Low');
+  for (const v of levels) line(v.p, v.color, '3 3', v.label);
+  // The after-section: shaded, with the trigger marked and the result noted.
+  if (split) {
+    const a = b.findIndex(x => dayOf(x) > split);
+    if (a > 0) {
+      const x0 = X(a) - step / 2;
+      out.unshift(`<rect x="${x0}" y="${TOP}" width="${W - R - x0}" height="${VB - TOP}" fill="${C.text}" opacity=".045"/>`);
+      over.push(`<line x1="${x0}" x2="${x0}" y1="${TOP}" y2="${VB}" stroke="${C.accent}" stroke-width="1.5"/>`,
+        `<text x="${x0 + 6}" y="${TOP + 14}" fill="${C.accent}" font-size="12" font-weight="700">TRIGGER → after</text>`);
+      if (note) over.push(`<text x="${W - R - 8}" y="${TOP + 14}" fill="${C.text}" font-size="13" font-weight="700" text-anchor="end">${esc(note)}</text>`);
+    }
+  }
   // Volume, then candles on top.
   b.forEach((x, i) => {
     const vh = (x.v / vmax) * (VB - VT), col = x.c >= x.o ? C.up : C.down;

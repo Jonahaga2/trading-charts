@@ -90,6 +90,18 @@ check('no bars is an error, not a blank chart', threw);
   check('hourly chart: dated session labels', /> ?(Oct|Nov) \d{1,2}</.test(hs));
 }
 
+/* Replay: bars after the trigger day are drawn, shaded and marked */
+{
+  const trig = bars[99].t.slice(0, 10);
+  const rp = renderChart({ sym: 'R', bars, m, split: trig, note: 'Sold +12%',
+    levels: [{ p: 60, color: '#fff', label: 'Bought' }, { p: 51, color: '#f00', label: 'Stop' }] });
+  const n = (rp.match(/class="candle"/g) || []).length;
+  check('replay: window measured to the trigger, plus every bar after', n === 75 + 20, String(n));
+  check('replay: trigger marked, result noted', rp.includes('TRIGGER → after') && rp.includes('Sold +12%'));
+  check('replay: entry and stop lines', rp.includes('>Bought<') && rp.includes('>Stop<'));
+  check('no split: no replay marks', !svg.includes('TRIGGER'));
+}
+
 /* Alpaca OHLC fetch: pages joined per symbol */
 const pages = [
   { bars: { A: [{ t: day(0), o: 1, h: 2, l: 0.5, c: 1.5, v: 10 }] }, next_page_token: 'p2' },
