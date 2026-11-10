@@ -127,7 +127,10 @@ export function renderChart({ sym, name, bars, m, rank, line: back = PICK.minRet
       out.unshift(`<rect x="${x0}" y="${TOP}" width="${W - R - x0}" height="${VB - TOP}" fill="${C.text}" opacity=".045"/>`);
       over.push(`<line x1="${x0}" x2="${x0}" y1="${TOP}" y2="${VB}" stroke="${C.accent}" stroke-width="1.5"/>`,
         `<text x="${x0 + 6}" y="${TOP + 14}" fill="${C.accent}" font-size="12" font-weight="700">TRIGGER → after</text>`);
-      if (note) over.push(`<text x="${W - R - 8}" y="${TOP + 14}" fill="${C.text}" font-size="13" font-weight="700" text-anchor="end">${esc(note)}</text>`);
+      // The result goes on its own line, on a tab, so it can't collide with
+      // the trigger label however close to the right edge the trigger is.
+      if (note) over.push(`<rect x="${W - R - 16 - note.length * 7.4}" y="${TOP + 22}" width="${note.length * 7.4 + 12}" height="20" rx="3" fill="${C.bg}" opacity=".92"/>`,
+        `<text x="${W - R - 10}" y="${TOP + 37}" fill="${C.text}" font-size="13" font-weight="700" text-anchor="end">${esc(note)}</text>`);
     }
   }
   // Volume, then candles on top.
