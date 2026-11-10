@@ -108,18 +108,118 @@
     "passedLosers": 3,
     "passedWinners": 1
    }
+  },
+  {
+   "round": "blind2",
+   "played": "2026-11-10",
+   "charts": [
+    {
+     "chart": "1",
+     "symbol": "NB",
+     "triggered": "2025-10-20",
+     "kind": "Fast drop + big-jump bounce (J/K)",
+     "bought": true,
+     "ret": -9.56,
+     "days": 2,
+     "exit": "lowerlow",
+     "entry": 8.79,
+     "sold": 7.95,
+     "firstStop": 7.95,
+     "lastStop": 7.95,
+     "soldOn": "2025-10-22"
+    },
+    {
+     "chart": "2",
+     "symbol": "BIAF",
+     "triggered": "2026-09-03",
+     "kind": "Big-jump recovery (D)",
+     "bought": false,
+     "ret": -24.82,
+     "days": 5,
+     "exit": "lowerlow",
+     "entry": 11.12,
+     "sold": 8.36,
+     "firstStop": 4.56,
+     "lastStop": 8.36,
+     "soldOn": "2026-09-11"
+    },
+    {
+     "chart": "3",
+     "symbol": "LEU",
+     "triggered": "2025-06-30",
+     "kind": "Sharp V (A)",
+     "bought": true,
+     "ret": 16.2,
+     "days": 23,
+     "exit": "lowerlow",
+     "entry": 173.17,
+     "sold": 201.22,
+     "firstStop": 151,
+     "lastStop": 208,
+     "soldOn": "2025-08-01"
+    },
+    {
+     "chart": "4",
+     "symbol": "CLSK",
+     "triggered": "2024-12-04",
+     "kind": "Fast drop + big-jump bounce (J/K)",
+     "bought": false,
+     "ret": -17.75,
+     "days": 5,
+     "exit": "lowerlow",
+     "entry": 15.44,
+     "sold": 12.7,
+     "firstStop": 12.7,
+     "lastStop": 12.7,
+     "soldOn": "2024-12-11"
+    },
+    {
+     "chart": "5",
+     "symbol": "SEZL",
+     "triggered": "2025-08-04",
+     "kind": "Steady recovery (current rule)",
+     "bought": false,
+     "ret": -13.24,
+     "days": 2,
+     "exit": "lowerlow",
+     "entry": 158,
+     "sold": 137.08,
+     "firstStop": 137.08,
+     "lastStop": 137.08,
+     "soldOn": "2025-08-06"
+    }
+   ],
+   "voided": [
+    {
+     "chart": "6",
+     "symbol": "FNGD",
+     "why": "FNGD is a -3x inverse leveraged ETN, not a stock"
+    }
+   ],
+   "totals": {
+    "rounds": 1,
+    "shown": 5,
+    "buys": 2,
+    "wins": 1,
+    "totalPct": 6.64,
+    "avgPct": 3.32,
+    "avgAllPct": -9.83,
+    "edge": 13.15,
+    "passedLosers": 3,
+    "passedWinners": 0
+   }
   }
  ],
  "totals": {
-  "rounds": 1,
-  "shown": 6,
-  "buys": 2,
-  "wins": 2,
-  "totalPct": 80.17,
-  "avgPct": 40.09,
-  "avgAllPct": 10.85,
-  "edge": 29.23,
-  "passedLosers": 3,
+  "rounds": 2,
+  "shown": 11,
+  "buys": 4,
+  "wins": 3,
+  "totalPct": 86.81,
+  "avgPct": 21.7,
+  "avgAllPct": 1.45,
+  "edge": 20.25,
+  "passedLosers": 6,
   "passedWinners": 1
  }
 }

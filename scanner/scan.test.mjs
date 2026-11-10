@@ -166,6 +166,8 @@ check('dollar volume averages the last 20', near(SCAN.dollarVolume(Array(30).fil
     'SPY|SPDR S&P 500 ETF Trust|P|SPY|Y|100|N|SPY',
     'GME|GameStop Corporation Common Stock|N|GME|N|100|N|GME',
     'XYZ|Some Arca Listed Inc Common Stock|P|XYZ|N|100|N|XYZ',
+    'FNGD|MicroSectors FANG+ Index -3X Inverse Leveraged ETNs due January 8, 2038|P|FNGD|N|100|N|FNGD',
+    'XLX|Some Bank 2X Long ETN|P|XLX|N|100|N|XLX',
     'AAPL|duplicate should be ignored|N|AAPL|N|100|N|AAPL',
     'File Creation Time: 1105202617:00|||||||',
   ].join('\n');

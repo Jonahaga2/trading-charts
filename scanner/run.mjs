@@ -48,7 +48,10 @@ const EXCH = { N: 'NYSE', A: 'AMEX', P: 'AMEX', Z: 'CBOE', V: 'IEX' };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 /* ── Universe ─────────────────────────────────────────────────────── */
-const NOT_COMMON = /\b(warrants?|rights?|units?|preferred|depositary shares? representing|notes? due|debentures?|subordinated|perpetual|% )/i;
+// Exchange-traded notes are flagged ETF=N in the directory, so leveraged and
+// inverse ones ("MicroSectors FANG+ Index -3X Inverse Leveraged ETNs due
+// 2038") came through as stocks; they are caught by name.
+const NOT_COMMON = /\b(warrants?|rights?|units?|preferred|depositary shares? representing|notes? due|debentures?|subordinated|perpetual|ETNs?|exchange traded notes?|leveraged|inverse|-?[1-9]x|% )/i;
 
 /* "Alphabet Inc. - Class A Common Stock" → "Alphabet Inc. Class A" */
 export function cleanName(s) {
