@@ -61,24 +61,40 @@ export function signals(series, rule = PICK) {
    takeProfit: sell at entry × (1 + takeProfit) (a fraction, e.g. 0.2).
    trail: trailing stop, a fraction below the highest high *before* today —
    a day's own high can't raise the stop it is tested against, since the
-   order of high and low within a day isn't known. */
+   order of high and low within a day isn't known.
+   atr: the stop sits atr × ATR(14) below entry instead of a fixed % — wider
+   for a jumpy stock, tighter for a calm one; chandelier: it then trails
+   atr × ATR below the highest high before today.
+   onClose: only a close below the stop sells (at that close), so a dip that
+   recovers within the day doesn't. */
 export function trade(series, sig, opts = {}) {
   if (opts.swing) return swingTrade(series, sig, opts);
-  const { stop = 0.15, hold = 20, target = false, takeProfit = 0, trail = 0 } = opts;
+  const { stop = 0.15, hold = 20, target = false, takeProfit = 0, trail = 0, atr = 0, chandelier = false, onClose = false } = opts;
   const { o, h, l, c, t } = series, e = sig.i + 1;
   if (e >= c.length) return null;
-  const entry = o[e];
-  let stopPx = entry * (1 - stop), hh = entry;
+  const entry = o[e], a = atr ? atrAt(series, sig.i) : 0;
+  let stopPx = atr ? entry - atr * a : entry * (1 - stop), hh = entry;
+  const first = stopPx;
   const tgt = Math.min(target ? sig.peak : Infinity, takeProfit ? entry * (1 + takeProfit) : Infinity);
   for (let k = e; k < c.length && k < e + hold; k++) {
     if (trail) stopPx = Math.max(stopPx, hh * (1 - trail));
-    if (l[k] <= stopPx) return { exit: Math.min(o[k], stopPx), k, why: stopPx > entry * (1 - stop) ? 'trail' : 'stop', entry, e };
+    if (chandelier) stopPx = Math.max(stopPx, hh - atr * a);
+    if (onClose ? c[k] < stopPx : l[k] <= stopPx)
+      return { exit: onClose ? c[k] : Math.min(o[k], stopPx), k, why: stopPx > first ? 'trail' : 'stop', entry, e, firstStop: first, stop: stopPx };
     if (h[k] >= tgt) return { exit: Math.max(o[k], tgt), k, why: 'target', entry, e };
     hh = Math.max(hh, h[k]);
   }
   const k = Math.min(c.length - 1, e + hold - 1);
   // A trade still open at the end of the data is marked at the last close.
   return { exit: c[k], k, why: k === e + hold - 1 ? 'time' : 'open', entry, e };
+}
+
+/* Average true range over the n sessions ending at i. */
+export function atrAt({ h, l, c }, i, n = 14) {
+  let s = 0, k = 0;
+  for (let j = Math.max(1, i - n + 1); j <= i; j++, k++)
+    s += Math.max(h[j] - l[j], Math.abs(h[j] - c[j - 1]), Math.abs(l[j] - c[j - 1]));
+  return k ? s / k : 0;
 }
 
 /* Sell on a lower low.
@@ -92,7 +108,7 @@ export function trade(series, sig, opts = {}) {
    • Exit: the first day trading below the stop — a lower low — filled at the
      stop, or at the open if it gaps through. Otherwise the close of the
      `maxHold`-th session. */
-export function swingTrade(series, sig, { before = 5, n = 2, maxHold = 60 } = {}) {
+export function swingTrade(series, sig, { before = 5, n = 2, maxHold = 60, onClose = false } = {}) {
   const { o, h, l, c } = series, e = sig.i + 1;
   if (e >= c.length) return null;
   const entry = o[e];
@@ -100,7 +116,7 @@ export function swingTrade(series, sig, { before = 5, n = 2, maxHold = 60 } = {}
   for (let j = Math.max(0, sig.i - before + 1); j <= sig.i; j++) stopPx = Math.min(stopPx, l[j]);
   const first = stopPx;
   for (let k = e; k < c.length && k < e + maxHold; k++) {
-    if (l[k] < stopPx) return { exit: Math.min(o[k], stopPx), k, why: 'lowerlow', entry, e, stop: stopPx, firstStop: first };
+    if (onClose ? c[k] < stopPx : l[k] < stopPx) return { exit: onClose ? c[k] : Math.min(o[k], stopPx), k, why: 'lowerlow', entry, e, stop: stopPx, firstStop: first };
     // End of day k: is k − n now a confirmed swing low after entry?
     const j = k - n;
     if (j >= e) {

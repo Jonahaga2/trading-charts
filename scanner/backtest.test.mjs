@@ -1,6 +1,6 @@
 /* Checks for the backtest's trade mechanics and portfolio. No network.
    Run: node scanner/backtest.test.mjs */
-import { trade, signals, simulate, simulateDollars, confidence, stats } from './backtest.mjs';
+import { trade, signals, simulate, simulateDollars, confidence, stats, atrAt } from './backtest.mjs';
 
 let pass = 0, fail = 0;
 const check = (name, cond, detail = '') => { if (cond) pass++; else { fail++; console.log(`  ✗ ${name}${detail ? ' — ' + detail : ''}`); } };
@@ -51,6 +51,28 @@ const sig = (i, peak = 200) => ({ s: 'X', i, peak });
   // A day's own high can't raise the stop it's tested against.
   const same = ser('X', [[90, 95, 88, 92], [100, 130, 95, 100]]);
   check('trail uses highs before today only', trade(same, sig(0), { stop: 0.15, hold: 1, trail: 0.1 }).why === 'time');
+}
+
+// ATR stops and close-only stops.
+{
+  // 15 days with a 4-point true range each (h−l = 4, no gaps) → ATR 4.
+  const base = Array.from({ length: 15 }, () => [100, 102, 98, 100]);
+  check('ATR: average true range', near(atrAt(ser('X', base), 14), 4));
+  // Entry 100, 2 × ATR stop = 92. A low of 93 holds; a low of 91 sells at 92.
+  const holds = ser('X', [...base, [100, 101, 93, 99], [99, 100, 98, 99]]);
+  check('ATR stop: 2×ATR below entry holds above it', trade(holds, { i: 14 }, { atr: 2, hold: 2 }).why === 'time');
+  const hits = ser('X', [...base, [100, 101, 91, 95]]);
+  const ah = trade(hits, { i: 14 }, { atr: 2, hold: 5 });
+  check('ATR stop: sells at entry − 2×ATR', ah.why === 'stop' && near(ah.exit, 92));
+  // Chandelier: high 120 on day 15 → stop 120 − 8 = 112 from day 16.
+  const ch = ser('X', [...base, [100, 120, 99, 119], [119, 119, 111, 112]]);
+  const cr = trade(ch, { i: 14 }, { atr: 2, chandelier: true, hold: 5 });
+  check('chandelier: trails ATR below the high', cr.why === 'trail' && near(cr.exit, 112));
+  // Close-only: a wick to 84 that closes at 95 doesn't sell a 15% stop (85).
+  const wick = ser('X', [[90, 95, 88, 92], [100, 101, 84, 95], [95, 96, 80, 82]]);
+  check('close-only: an intraday wick below the stop is ignored', trade(wick, sig(0), { stop: 0.15, hold: 1, onClose: true }).why === 'time');
+  const shut = trade(wick, sig(0), { stop: 0.15, hold: 5, onClose: true });
+  check('close-only: a close below sells at that close', shut.why === 'stop' && shut.exit === 82 && shut.k === 2);
 }
 
 // Sell on a lower low.
