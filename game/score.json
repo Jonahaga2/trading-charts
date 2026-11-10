@@ -208,18 +208,126 @@
     "passedLosers": 3,
     "passedWinners": 0
    }
+  },
+  {
+   "round": "blind3",
+   "played": "2026-11-10",
+   "charts": [
+    {
+     "chart": "1",
+     "symbol": "NIKI",
+     "triggered": "2024-03-19",
+     "kind": "Fast drop + big-jump bounce (J/K)",
+     "bought": false,
+     "ret": -18.05,
+     "days": 18,
+     "exit": "lowerlow",
+     "entry": 96.4,
+     "sold": 79,
+     "firstStop": 42.7,
+     "lastStop": 79,
+     "soldOn": "2024-04-15"
+    },
+    {
+     "chart": "2",
+     "symbol": "DJT",
+     "triggered": "2024-03-25",
+     "kind": "Fast drop + big-jump bounce (J/K)",
+     "bought": true,
+     "ret": -36.81,
+     "days": 8,
+     "exit": "lowerlow",
+     "entry": 70.9,
+     "sold": 44.8,
+     "firstStop": 32.1,
+     "lastStop": 45.26,
+     "soldOn": "2024-04-05"
+    },
+    {
+     "chart": "3",
+     "symbol": "MC",
+     "triggered": "2026-04-13",
+     "kind": "Steady recovery (current rule)",
+     "bought": true,
+     "ret": -1.78,
+     "days": 13,
+     "exit": "lowerlow",
+     "entry": 64.51,
+     "sold": 63.36,
+     "firstStop": 53.92,
+     "lastStop": 63.99,
+     "soldOn": "2026-04-30"
+    },
+    {
+     "chart": "4",
+     "symbol": "CSIQ",
+     "triggered": "2025-12-04",
+     "kind": "Sharp V (A)",
+     "bought": false,
+     "ret": -5.35,
+     "days": 2,
+     "exit": "lowerlow",
+     "entry": 24.68,
+     "sold": 23.36,
+     "firstStop": 23.36,
+     "lastStop": 23.36,
+     "soldOn": "2025-12-08"
+    },
+    {
+     "chart": "5",
+     "symbol": "QUBT",
+     "triggered": "2025-04-24",
+     "kind": "Big-jump recovery (D)",
+     "bought": false,
+     "ret": 128.21,
+     "days": 40,
+     "exit": "lowerlow",
+     "entry": 6.96,
+     "sold": 15.89,
+     "firstStop": 5.76,
+     "lastStop": 16.45,
+     "soldOn": "2025-06-23"
+    },
+    {
+     "chart": "6",
+     "symbol": "BAM",
+     "triggered": "2025-04-24",
+     "kind": "Steady recovery (current rule)",
+     "bought": true,
+     "ret": 5.32,
+     "days": 31,
+     "exit": "lowerlow",
+     "entry": 50.02,
+     "sold": 52.68,
+     "firstStop": 44.72,
+     "lastStop": 52.68,
+     "soldOn": "2025-06-09"
+    }
+   ],
+   "totals": {
+    "rounds": 1,
+    "shown": 6,
+    "buys": 3,
+    "wins": 1,
+    "totalPct": -33.27,
+    "avgPct": -11.09,
+    "avgAllPct": 11.92,
+    "edge": -23.01,
+    "passedLosers": 2,
+    "passedWinners": 1
+   }
   }
  ],
  "totals": {
-  "rounds": 2,
-  "shown": 11,
-  "buys": 4,
-  "wins": 3,
-  "totalPct": 86.81,
-  "avgPct": 21.7,
-  "avgAllPct": 1.45,
-  "edge": 20.25,
-  "passedLosers": 6,
-  "passedWinners": 1
+  "rounds": 3,
+  "shown": 17,
+  "buys": 7,
+  "wins": 4,
+  "totalPct": 53.54,
+  "avgPct": 7.65,
+  "avgAllPct": 5.15,
+  "edge": 2.5,
+  "passedLosers": 8,
+  "passedWinners": 2
  }
 }
