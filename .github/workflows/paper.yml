@@ -1,0 +1,64 @@
+# Paper trading — 50% SPY + 50% top-10 momentum, rebalanced on the first
+# trading day of each month on Alpaca's PAPER account (no real money).
+# scanner/paper.mjs decides whether today is that day, so the schedule just
+# wakes it on each of the first seven weekdays. Each run is appended to
+# paper-log.json on the `paper-log` branch.
+name: Paper trade
+
+on:
+  schedule:
+    # 14:47 UTC: 9:47am New York in winter, 10:47am in summer — after the open.
+    - cron: '47 14 1-7 * 1-5'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'auto (first session only), force (rebalance now) or dry (plan only)'
+        default: force
+        type: choice
+        options: [auto, force, dry]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-trade
+  cancel-in-progress: false
+
+jobs:
+  rebalance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Test
+        run: node scanner/paper.test.mjs
+
+      - name: Fetch the log
+        run: |
+          mkdir -p out
+          git fetch -q origin paper-log && git show origin/paper-log:paper-log.json > out/paper-log.json || echo "no log yet"
+
+      - name: Rebalance
+        run: |
+          MODE="${{ github.event.inputs.mode || 'auto' }}"
+          FLAG=""; [ "$MODE" = force ] && FLAG="--force"; [ "$MODE" = dry ] && FLAG="--dry"
+          node scanner/paper.mjs $FLAG --log out/paper-log.json
+        env:
+          ALPACA_KEY: ${{ secrets.ALPACA_KEY }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+
+      - name: Save the log
+        run: |
+          [ -f out/paper-log.json ] || exit 0
+          cd out
+          git init -q -b paper-log
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper-log.json
+          git commit -q -m "Paper trade $(date -u +%Y-%m-%d)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" paper-log

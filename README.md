@@ -312,3 +312,17 @@ Charts, screener and news are provided by
 [TradingView](https://www.tradingview.com/), used through their public
 embeddable widgets. Their branding and links inside each widget are left
 intact, as their terms require.
+
+## Paper trading (Alpaca, no real money)
+
+`scanner/paper.mjs` runs the one strategy that passed every backtest gate:
+**50% SPY + 50% the 10 large stocks with the best 12-1 momentum ÷ volatility**
+(US common stocks, $3+, the 300 most traded over 60 sessions), rebalanced on
+the first trading day of each month. Orders go only to `paper-api.alpaca.markets`.
+
+- `.github/workflows/paper.yml` wakes on the first seven weekdays of each month
+  at 14:47 UTC; the script trades only on the month's first session.
+  Run it by hand from Actions → Paper trade (`force` rebalances now, `dry` only plans).
+- Each run is appended to `paper-log.json` on the `paper-log` branch: equity, SPY, picks, orders.
+- `node scanner/paper.test.mjs` checks the rule and order planner (no network).
+  On cached data the live code picks the same stocks as the backtest in every one of the last 24 months.
