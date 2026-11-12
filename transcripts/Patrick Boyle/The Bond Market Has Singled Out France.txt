@@ -1,0 +1,552 @@
+[00:00:00] If you had a hundred euros to lend this
+[00:00:00] week, and you wanted a nice safe borrower,
+[00:00:05] the bond market would suggest you lend it to
+[00:00:05] L’Oréal… rather than the French Republic.
+[00:00:10] Or to Air Liquide, a company whose main product
+[00:00:10] is, broadly speaking, air. There is also LVMH,
+[00:00:18] or Sanofi, or (according to the credit
+[00:00:18] strategists at Barclays) a fairly wide
+[00:00:23] selection of triple-B rated companies - the
+[00:00:23] bottom rung of what the rating agencies call
+[00:00:29] investment grade. All of them can now
+[00:00:29] borrow money more cheaply than France.
+[00:00:34] So can Italy… and so can Greece.
+[00:00:34] Which is a bit embarrassing,
+[00:00:39] as French officials have spent the past fortnight
+[00:00:39] reassuring everyone that France is not Greece.
+[00:00:46] Bloomberg calculates that about 215 billion euros
+[00:00:46] of French high-grade corporate bonds (or 38% of
+[00:00:54] the market) now trade at lower yields than French
+[00:00:54] government debt of a similar maturity. At the
+[00:01:01] start of the year it was just 12 billion euros.
+[00:01:01] Now, in theory, a government is the safest
+[00:01:08] borrower in its own country. If things go wrong,
+[00:01:08] it can always raise taxes or print more money.
+[00:01:15] L’Oréal can’t do either of those things… it has
+[00:01:15] no legal way of sending armed police to your
+[00:01:21] house to collect seventy euros for moisturizer.
+[00:01:21] France, as it happens, can’t print money either.
+[00:01:28] It handed that job over to the European Central
+[00:01:28] Bank in 1999, which we’ll come back to later. But
+[00:01:36] it can still raise taxes, so investors have always
+[00:01:36] given it the benefit of the doubt. Over the last
+[00:01:42] few weeks, they’ve been rethinking that.
+[00:01:42] French ten-year borrowing costs came within
+[00:01:48] a whisker of 5% last week, the highest rate
+[00:01:48] in almost a quarter of a century. The spread
+[00:01:54] over German Bunds, which is how bond traders
+[00:01:54] measure how nervous they are about a country,
+[00:02:00] briefly topped one and a half percentage points,
+[00:02:00] the widest it has been since 2011. In eurozone
+[00:02:07] seating-plan terms, France has been moved from
+[00:02:07] the top table to the one near the bathroom.
+[00:02:13] While this has been going on, high school
+[00:02:13] students across France have spent the past
+[00:02:18] few weeks blockading their schools in protest
+[00:02:18] at teacher shortages, overcrowded classrooms,
+[00:02:25] and buildings that are falling apart. Most of the
+[00:02:25] marches have been peaceful - but some have not.
+[00:02:32] A few entrance halls have been set on fire, and
+[00:02:32] more than six thousand people have been arrested,
+[00:02:38] most of them teenagers. Setting fire to your
+[00:02:38] school in protest at the condition of school
+[00:02:44] buildings is a bold negotiating strategy…
+[00:02:44] though I suppose it does strengthen the case
+[00:02:50] for renovation. The students would like more money
+[00:02:50] spent on schools. The bond market would like less
+[00:02:58] money spent on everything. The French government
+[00:02:58] is standing in between them, holding a budget.
+[00:03:05] During the euro crisis, the bond market’s
+[00:03:05] troublemakers traveled as a group: the PIIGS,
+[00:03:11] which were Portugal, Ireland, Italy, Greece, and
+[00:03:11] Spain. This time, as Lionel Laurent pointed out
+[00:03:17] in Bloomberg this week, France has been given
+[00:03:17] an acronym all of its own. FROGS – which stands
+[00:03:24] for French Oversized Government and Social
+[00:03:24] Security. It was coined by a Paris research
+[00:03:30] firm called Rexecode, so at least the insult was
+[00:03:30] made in France. I think it’s OK if they say it
+[00:03:38] themselves… I’m not sure if I’m allowed to say it.
+[00:03:38] I’ll credit Rexecode every time, just to be safe.
+[00:03:45] As an Irishman, I take a strong interest
+[00:03:45] in this sort of thing. I helped put the
+[00:03:51] “I” in PIIGS (well, my country did… I mostly just
+[00:03:51] watched the bond yields), so I’d like to formally
+[00:03:59] welcome France to the club. The membership
+[00:03:59] fee is about ten years of austerity, and
+[00:04:05] the troika will soon be in touch.
+[00:04:05] So, before I dig into how France is
+[00:04:10] going to handle its new membership,
+[00:04:10] let me tell you about this week’s
+[00:04:14] video sponsor, Incogni. [Sponsor clip]
+[00:04:14] So, to understand why the French bond market
+[00:05:44] is on fire, it helps to look at why everyone
+[00:05:44] else’s bond market is also smoking slightly.
+[00:05:51] For most of the last decade, borrowing money was
+[00:05:51] close to free, and governments (understandably)
+[00:05:58] took full advantage of the offer. Today, according
+[00:05:58] to The Economist - the median ten-year government
+[00:06:05] bond in the rich world yields about 4%, the
+[00:06:05] highest in more than fifteen years. America’s
+[00:06:12] ten-year yield topped 5.3% this week, and Japan’s
+[00:06:12] crossed 3% for the first time since 1996.
+[00:06:21] There are a few reasons for this. The first
+[00:06:21] is AI. Goldman Sachs expects the five biggest
+[00:06:28] hyperscalers, Alphabet, Amazon, Meta, Microsoft,
+[00:06:28] and Oracle, to spend around $800 billion on
+[00:06:36] capital investment this year and $1.2 trillion
+[00:06:36] next year, which would be more than 3% of
+[00:06:43] America’s GDP. At first they paid for their data
+[00:06:43] centers out of their own cash flow. Now they’re
+[00:06:50] borrowing. They’ve issued $230 billion of bonds so
+[00:06:50] far this year, which is double last year’s total.
+[00:06:58] That money comes out of the same global pool
+[00:06:58] of savings that governments borrow from,
+[00:07:04] and the AI companies are not very price-sensitive
+[00:07:04] borrowers. The FT reports that they see building
+[00:07:11] data centers as an existential necessity,
+[00:07:11] and an extra percentage point or two of
+[00:07:17] interest as a detail. The Economist says the
+[00:07:17] hyperscalers now account for nearly 10% of new
+[00:07:25] euro-denominated bonds sold by non-financial
+[00:07:25] companies, and that some European firms
+[00:07:31] avoid issuing debt on the same days they do.
+[00:07:31] The second reason is the war in Iran. Crude oil
+[00:07:39] is about 40% more expensive than it was before
+[00:07:39] the war started. This has kept inflation high
+[00:07:45] and pushed central banks into raising rates
+[00:07:45] rather than cutting them. The Federal Reserve
+[00:07:50] raised rates in September for the first time since
+[00:07:50] 2023, and the ECB has raised twice since June.
+[00:07:58] Now, when borrowing costs go up, every indebted
+[00:07:58] government gets tested. The arithmetic goes like
+[00:08:05] this. If your economy grows faster
+[00:08:05] than the interest rate on your debt,
+[00:08:10] the debt shrinks as a share of national
+[00:08:10] income over time, as long as you aren’t
+[00:08:14] borrowing too much on top. If the interest rate
+[00:08:14] is higher than your growth rate, the debt grows
+[00:08:21] relative to the economy, unless you raise taxes
+[00:08:21] or cut spending. Economists call this “r minus
+[00:08:28] g,” which is about as exciting as it sounds.
+[00:08:28] Some countries are getting through the test for
+[00:08:35] now, each for their own reasons. America runs a
+[00:08:35] deficit of about 6% of GDP, which The Economist
+[00:08:43] describes as unsustainable, but it issues the
+[00:08:43] world’s reserve currency, its economy is growing
+[00:08:49] at over 3% a year, and investors still seem happy
+[00:08:49] to lend to it. Japan’s net debt is 134% of GDP
+[00:08:59] (its gross debt is a lot higher than that), but
+[00:08:59] inflation has risen alongside interest rates,
+[00:09:06] so in real terms the debt is shrinking,
+[00:09:06] and most of it is owed to the Japanese.
+[00:09:11] Britain’s thirty-year gilt yield is
+[00:09:11] above 6%, the highest since 1998,
+[00:09:17] but Britain already had its bond market revolt
+[00:09:17] in 2022, when Liz Truss’s unfunded tax cuts
+[00:09:25] were outlasted by a lettuce. British politicians
+[00:09:25] have been nervous of the gilt market ever since.
+[00:09:32] And then there’s France. It doesn’t issue a
+[00:09:32] reserve currency, it isn’t having an AI boom,
+[00:09:38] it imports most of its oil and gas, and it hasn’t
+[00:09:38] had its Liz Truss moment… yet. As The Economist
+[00:09:46] points out, French borrowing costs were about two
+[00:09:46] percentage points above nominal GDP growth in the
+[00:09:52] second quarter, the widest gap in the rich world,
+[00:09:52] and the gap has widened since. On those numbers,
+[00:10:00] unless something changes, French debt keeps
+[00:10:00] growing faster than the French economy.
+[00:10:05] So, how hard is the arithmetic? Well, back
+[00:10:05] in May, the French government asked four
+[00:10:12] independent economists to work out where the
+[00:10:12] country’s public finances were heading. Their
+[00:10:17] report came out in July, and it said that based on
+[00:10:17] current policies, the deficit would rise to 6.8%
+[00:10:25] of GDP by 2030, that debt would pass 130% of
+[00:10:25] GDP, and that the interest bill would grow by
+[00:10:34] about 10 billion euros a year. They also noted
+[00:10:34] that the interest bill was already approaching
+[00:10:40] the budget of the entire Ministry of Education
+[00:10:40] – and we’ll come back to that in a moment.
+[00:10:47] To stabilize the debt, the economists argued that
+[00:10:47] France would need to make savings worth about 125
+[00:10:54] billion euros a year by 2032. That calculation
+[00:10:54] assumed France’s ten-year borrowing rate,
+[00:11:01] which was 3.7% at the time, would drift down to
+[00:11:01] 3.3% as the bond market rewarded the government
+[00:11:09] for behaving responsibly. That rate has recently
+[00:11:09] risen to about 4.9%. The report came out in July,
+[00:11:18] which in bond market terms makes it a
+[00:11:18] historical document. Ben Hall at the FT
+[00:11:24] reckons that the amount that needs to be saved per
+[00:11:24] year has already gone up to 140 billion euros.
+[00:11:32] Against that, Prime Minister Sébastien Lecornu’s
+[00:11:32] 2027 budget proposes 43 billion euros of spending
+[00:11:40] cuts and tax rises. For one year, that is a big
+[00:11:40] number. The problem is that something like it has
+[00:11:47] to happen again, and stick, every year until
+[00:11:47] 2032, and Lecornu doesn’t have a majority in
+[00:11:55] parliament. ING’s economists say that even if his
+[00:11:55] plan passes in full, it won’t stabilize the debt.
+[00:12:03] Part of the problem, according to the
+[00:12:03] commission, is that the French state has come
+[00:12:08] to see itself as the “insurer of last resort”
+[00:12:08] for every crisis. When something goes wrong,
+[00:12:15] the state steps in to protect household incomes
+[00:12:15] and company balance sheets, and the emergency
+[00:12:21] measures tend to stay in place long after the
+[00:12:21] emergency has passed. The report calls this a
+[00:12:27] ratchet effect. In insurance terms, the French
+[00:12:27] state writes a policy for every disaster and
+[00:12:34] never lets one expire. This month, the queue of
+[00:12:34] claimants includes students, farmers, fishermen,
+[00:12:41] truckers, construction companies, and nurses.
+[00:12:41] Normally, a government that spends too much can
+[00:12:48] raise taxes. But France’s tax take is already at
+[00:12:48] 44% of GDP, compared to an OECD average of 34%,
+[00:12:58] and the commission says that it is the highest
+[00:12:58] in the eurozone. The economists warn that the
+[00:13:04] public’s “consent to taxation” is weakening,
+[00:13:04] because people feel they are paying more and
+[00:13:09] more for public services that are getting
+[00:13:09] worse. People will put up with Scandinavian
+[00:13:15] tax rates if they get Scandinavian schools. They
+[00:13:15] get less enthusiastic when the roof is leaking.
+[00:13:22] Which leaves the option of spending cuts. Almost
+[00:13:22] a quarter of public spending in France goes on
+[00:13:29] pensions. And French workers retire earlier, on
+[00:13:29] more generous terms, than in most rich countries.
+[00:13:36] While pensions aren’t legally untouchable,
+[00:13:36] they are politically radioactive. Lecornu’s
+[00:13:42] budget proposes freezing the most generous state
+[00:13:42] pensions, and the opposition parties are already
+[00:13:48] lining up against it. Defense spending, meanwhile,
+[00:13:48] is the one area that has been ring-fenced.
+[00:13:55] Now, back to the schools. The protests started
+[00:13:55] in the middle of September at a lycée in Créteil,
+[00:14:02] just outside Paris, over long school days,
+[00:14:02] crumbling buildings, and teacher shortages.
+[00:14:08] The Economist reports that spending per secondary
+[00:14:08] pupil has been flat in real terms for a decade.
+[00:14:15] Two weeks into the protests, the government
+[00:14:15] published its budget, which cuts 1,588 teaching
+[00:14:22] posts, on the grounds that pupil numbers are
+[00:14:22] falling. As timing goes, that could have been
+[00:14:29] better. One university student summed it
+[00:14:29] up to The Economist: “The budget for the
+[00:14:34] army is increasing, but not for education.”
+[00:14:34] One student union reckons the students’ demands
+[00:14:41] would cost about 10 billion euros. Lecornu
+[00:14:41] has promised measures that are “concrete,
+[00:14:48] swift, hence, funded”… which he’ll
+[00:14:48] announce at the end of the month.
+[00:14:53] So, the government is stuck. Every euro it tries
+[00:14:53] to save brings someone new out onto the streets,
+[00:15:00] and every year it doesn’t save anything, the
+[00:15:00] interest bill goes up by another ten billion.
+[00:15:06] Which raises the difficult question…
+[00:15:06] If France is in this much trouble,
+[00:15:11] how is Italy, a country with more debt
+[00:15:11] than France, able to borrow more cheaply?
+[00:15:16] To answer that, we need to go back to our
+[00:15:16] official league table of borrowers that
+[00:15:21] the bond market currently considers
+[00:15:21] safer than the French Republic.
+[00:15:26] Greece has been on it since the end of 2024.
+[00:15:26] Italy joined last year. Emmanuel Moulin,
+[00:15:33] the governor of the Banque de France, told
+[00:15:33] the FT this week that France is not Greece,
+[00:15:39] which is true… they are entirely different
+[00:15:39] countries – but Greece does borrow more cheaply.
+[00:15:46] Italy is maybe more of a puzzle. The Economist
+[00:15:46] puts Italy’s net debt at almost 130% of GDP,
+[00:15:54] while France’s total debt is just under 120%.
+[00:15:54] Normally, if you owe more than someone else
+[00:16:01] relative to your income, you’d expect to be
+[00:16:01] the one paying the higher interest rate.
+[00:16:06] You might think the bond market is
+[00:16:06] rewarding Italy for some newfound
+[00:16:10] culture of enthusiastic tax compliance, but
+[00:16:10] that doesn’t seem to be the case either.
+[00:16:16] The FT reported this week that an estimated 60,000
+[00:16:16] cars and motorbikes, mostly in and around Naples,
+[00:16:24] are registered in Poland. Their Italian
+[00:16:24] owners transfer their ownership to Polish
+[00:16:29] shell companies, with the promise of saving about
+[00:16:29] 70% on road tax and insurance. Naples has some of
+[00:16:37] the highest car insurance premiums in Italy,
+[00:16:37] and the road tax on a Fiat Panda is around 130
+[00:16:43] to 140 euros a year. According to the Polish
+[00:16:43] car insurers’ agency, most of these vehicles
+[00:16:51] “have never been on the roads of Poland.”
+[00:16:51] There are other benefits too. Parking tickets
+[00:16:57] and speeding fines get sent to the shell company
+[00:16:57] in Poland, where, as the same agency put it,
+[00:17:02] “everything vanishes into thin air.” The Italian
+[00:17:02] and Polish police are both aware of this. In
+[00:17:09] March, police in Warsaw arrested seven people
+[00:17:09] for producing registration papers for more than
+[00:17:15] a thousand five hundred vehicles, with the help
+[00:17:15] of what investigators described as corrupt local
+[00:17:21] officials. All of the cars had passed Polish
+[00:17:21] technical inspections… which was impressive,
+[00:17:28] as none of them had ever been to Poland.
+[00:17:28] With an election coming in 2027, Giorgia
+[00:17:34] Meloni’s government has come up with a solution.
+[00:17:34] It’s suspending the road tax on small and midsized
+[00:17:40] cars for a year, which will leave about 2.4
+[00:17:40] billion euros with Italian motorists rather
+[00:17:47] than the Italian treasury. This is possibly
+[00:17:47] the most effective anti-evasion policy ever
+[00:17:53] devised… it’s impossible to dodge a tax that
+[00:17:53] doesn’t exist. For now, the hole in the budget
+[00:18:00] will be filled with money left over from Italy’s
+[00:18:00] EU-funded Covid recovery plan. Francesco Galietti
+[00:18:07] of the consultancy Policy Sonar described it
+[00:18:07] to the FT as “giving some sugar to voters.” So,
+[00:18:14] Italy is not exactly Switzerland. But it
+[00:18:14] still borrows more cheaply than France.
+[00:18:21] Different governments take different approaches
+[00:18:21] to raising revenue. While France is searching
+[00:18:26] down the back of every radiator in the country
+[00:18:26] for taxable euros, other countries are more
+[00:18:32] relaxed about it. In 2016, the European Commission
+[00:18:32] ordered Ireland (founding member of the PIIGS) to
+[00:18:40] collect 13 billion euros in back taxes from
+[00:18:40] Apple. The Irish government spent the next
+[00:18:46] eight years in the European courts, arguing that
+[00:18:46] it didn’t want the money… which is a position
+[00:18:51] that would be hard to explain to a French finance
+[00:18:51] minister. Ireland finally lost that case in 2024,
+[00:18:59] and roughly 14 billion euros, including interest,
+[00:18:59] was handed over. Having 14 billion euros deposited
+[00:19:06] in your bank account against your will is
+[00:19:06] a heavy cross to bear, but as an Irishman,
+[00:19:12] I can tell you we accepted it with great dignity.
+[00:19:12] So, anyhow… back to the bond market.
+[00:19:19] If bond yields were a reward for paying your
+[00:19:19] road tax, Italy would not be beating France.
+[00:19:26] Growth and political stability matter too,
+[00:19:26] of course. But the biggest difference between
+[00:19:30] the two countries comes down to one line
+[00:19:30] in their accounts: the primary balance.
+[00:19:36] The primary balance is a government’s budget
+[00:19:36] before interest. You take everything the state
+[00:19:42] collects in taxes, subtract everything it
+[00:19:42] spends on running the country, the schools,
+[00:19:47] the pensions, the hospitals, and the army,
+[00:19:47] and you ignore the interest on its debt.
+[00:19:53] Italy runs a primary surplus. It collects more
+[00:19:53] than it spends on everything (if you exclude
+[00:19:59] interest), and it has done that in most years
+[00:19:59] since the early 1990s. It learned the hard way,
+[00:20:05] in the 1992 currency crisis and again during the
+[00:20:05] euro crisis, but it learned. Its overall deficit,
+[00:20:14] interest included, is expected to
+[00:20:14] fall below 3% of GDP this year.
+[00:20:20] France runs a primary deficit of 2.9% of
+[00:20:20] GDP. So even if France had no debt at all,
+[00:20:27] and paid no interest to anyone, it would still
+[00:20:27] be borrowing to keep the lights on. It has run
+[00:20:33] a primary deficit every year since 2002, and it
+[00:20:33] hasn’t balanced its overall budget since 1974.
+[00:20:42] Italy has its own risks. It has an election
+[00:20:42] in 2027, it has populists of its own,
+[00:20:48] and its deficit is expected to tick back
+[00:20:48] up next year as it spends more on defense
+[00:20:54] and on cushioning the energy shock. But the bond
+[00:20:54] market has made a fairly practical calculation.
+[00:21:02] Italy has already had its crisis, and has shown
+[00:21:02] that it can run a surplus. France hasn’t… and,
+[00:21:09] as the past three weeks have shown, the political
+[00:21:09] cost of even talking about an adjustment is high.
+[00:21:17] So, what does the French political class plan
+[00:21:17] to do about all of this? The short answer is:
+[00:21:23] quite a lot, and not all of it adds up.
+[00:21:23] Let’s start with the government. Emmanuel Macron
+[00:21:30] came to power in 2017 promising business-friendly
+[00:21:30] reforms that would boost growth and fix the public
+[00:21:37] finances. Over his nine years in office, the
+[00:21:37] national debt has grown by more than a trillion
+[00:21:43] euros, a lot of it spent protecting households
+[00:21:43] and businesses from the pandemic and the energy
+[00:21:49] crisis. Since the 2024 snap election left France
+[00:21:49] with a hung parliament, budget negotiations have
+[00:21:56] cost two prime ministers their jobs. The current
+[00:21:56] one, Sébastien Lecornu, is trying to pass his 43
+[00:22:03] billion euro package without a majority, and
+[00:22:03] lawmakers are expected to rewrite much of it.
+[00:22:10] Then there’s the opposition, which is preparing
+[00:22:10] for next April’s presidential election.
+[00:22:16] Leading the polls is Marine Le Pen of the National
+[00:22:16] Rally, whose party has long championed generous
+[00:22:23] state spending. On Tuesday, she announced that
+[00:22:23] she is now a champion of fiscal discipline.
+[00:22:30] She wants a constitutional “golden rule” capping
+[00:22:30] debt at 60% of GDP and cutting the deficit by
+[00:22:38] half a percentage point a year, backed by a
+[00:22:38] package of savings worth 140 billion euros by
+[00:22:45] 2032. Which is exactly the number Ben Hall
+[00:22:45] at the FT came up with a few days earlier.
+[00:22:53] The bond market liked it, and French ten-year
+[00:22:53] yields fell by 0.12 percentage points that day.
+[00:23:00] Economists were less convinced, as the plan
+[00:23:00] also includes cutting VAT on energy and food,
+[00:23:07] and lowering the retirement age from 62 to 60 for
+[00:23:07] people who started work young. Olivier Blanchard,
+[00:23:15] the former chief economist of the IMF, told The
+[00:23:15] Economist: “Unfortunately, now that she has shown
+[00:23:21] where she intends to find the money, there is zero
+[00:23:21] credibility to her promise.” The finance minister,
+[00:23:27] Roland Lescure, said he had “the impression
+[00:23:27] that she has converted to fiscal discipline.”
+[00:23:34] On the left, Jean-Luc Mélenchon, who is second in
+[00:23:34] the polls, has a more direct solution. According
+[00:23:41] to the FT, he has suggested that the French
+[00:23:41] bonds held by the central bank could simply
+[00:23:47] be thrown “into the fire.” I suppose a bond
+[00:23:47] fire would at least help with energy costs…
+[00:23:54] The formal version, from his party, is to convert
+[00:23:54] about 488 billion euros of French bonds held by
+[00:24:01] the Eurosystem into perpetual, zero-coupon
+[00:24:01] debt, which France would never repay and
+[00:24:08] never pay interest on. Daire MacFadden at the
+[00:24:08] FT’s Unhedged newsletter, who used to work at
+[00:24:14] the Bank of England and the European Central Bank,
+[00:24:14] pointed out the problem: the central bank created
+[00:24:20] reserves to buy those bonds, and it still has
+[00:24:20] to pay interest on those reserves to the banks.
+[00:24:26] Canceling the bonds just moves the cost to the
+[00:24:26] central bank, while the bond market watches a G7
+[00:24:33] government default on its own central bank.
+[00:24:33] France does have some history here. In 1789,
+[00:24:40] Louis the Sixteenth ran out of money, couldn’t
+[00:24:40] get anyone to agree to new taxes, and called the
+[00:24:46] Estates-General to sort it out. Things escalated
+[00:24:46] from there. By 1797, with the king long since
+[00:24:54] executed, the Directory carried out what became
+[00:24:54] known as the “bankruptcy of the two-thirds,”
+[00:25:00] writing off two-thirds of the national debt.
+[00:25:00] This solved the interest problem… The regime
+[00:25:07] that did it lasted two more years before Napoleon
+[00:25:07] took over. So, by French standards, the current
+[00:25:14] budget negotiations are going reasonably well.
+[00:25:14] With six months to go before the election,
+[00:25:20] the bond market is looking at three main options:
+[00:25:20] a minority government that may not be able to pass
+[00:25:25] its budget, a frontrunner promising an earlier
+[00:25:25] retirement age funded by spending discipline,
+[00:25:32] and her nearest rival proposing to settle
+[00:25:32] the national accounts with a bonfire. You
+[00:25:38] can sort of understand why investors want to be
+[00:25:38] paid more to lend to France than to Germany.
+[00:25:44] Meanwhile, the frontrunner has already
+[00:25:44] asked the European Central Bank to step
+[00:25:49] in and “lighten the heavy interest burden,”
+[00:25:49] as soon as France “takes back control” of
+[00:25:55] its finances. Which brings us to Frankfurt.
+[00:25:55] So, why can’t the ECB just step in and fix this?
+[00:26:04] Well, according to Morningstar, Jörg
+[00:26:04] Krämer, the chief economist at Commerzbank,
+[00:26:09] sees four steps the ECB could take if things get
+[00:26:09] worse. Step one is to sound less keen on raising
+[00:26:16] interest rates. Step two is verbal intervention,
+[00:26:16] where central bankers solemnly declare that they
+[00:26:23] are ready to use their emergency tools. Step
+[00:26:23] three is to stop shrinking the ECB’s balance
+[00:26:29] sheet and start reinvesting maturing bonds, with
+[00:26:29] the reinvestments tilted toward France. And step
+[00:26:36] four is to press the big red button and activate
+[00:26:36] the Transmission Protection Instrument, or TPI.
+[00:26:43] The TPI was created in 2022 to let the ECB buy
+[00:26:43] a country’s bonds, with no size limit set in
+[00:26:52] advance, when market moves are “unwarranted”
+[00:26:52] and “disorderly.” It has never been used. The
+[00:26:58] slight catch is the eligibility criteria. To
+[00:26:58] qualify, a country is supposed to be following
+[00:27:05] sound and sustainable fiscal policies, and
+[00:27:05] France is currently under the EU’s excessive
+[00:27:10] deficit procedure. According to Krämer,
+[00:27:10] that doesn’t automatically rule France out,
+[00:27:17] but it doesn’t help. Now, just to be clear,
+[00:27:17] the ECB isn’t going to let France collapse.
+[00:27:23] But the TPI is an emergency rescue tool designed
+[00:27:23] mainly for countries that don’t need rescuing.
+[00:27:31] Using it on a government with a 5.4%
+[00:27:31] deficit that may not be able to pass
+[00:27:36] its budget would not go down well in Berlin.
+[00:27:36] Christine Lagarde has been here before. In March
+[00:27:43] 2020, she told a press conference that the
+[00:27:43] ECB was “not here to close spreads.” Italian
+[00:27:50] borrowing costs jumped immediately, and she spent
+[00:27:50] the rest of the day walking the comment back.
+[00:27:56] Then there’s inflation. With the war in Iran
+[00:27:56] keeping energy prices high, the ECB has raised
+[00:28:03] rates twice this year, and markets still see
+[00:28:03] a good chance of another hike by December.
+[00:28:09] Every hike makes France’s debt more expensive.
+[00:28:09] Lagarde has started telling European lawmakers
+[00:28:16] that higher bond yields will slow the economy,
+[00:28:16] which is a polite way of saying that the bond
+[00:28:22] market is now doing some of her job for her.
+[00:28:22] As The Economist notes, all of this sets up a
+[00:28:29] game of chicken. Countries are supposed
+[00:28:29] to fix their budgets before the ECB buys
+[00:28:34] their bonds. But the European Union can’t really
+[00:28:34] survive without France, so if a populist French
+[00:28:42] president refused to cut spending and dared the
+[00:28:42] ECB to let French bonds collapse, The Economist
+[00:28:49] reckons the president would probably win.
+[00:28:49] Greece tried this in 2015. The ECB capped
+[00:28:56] emergency funding to Greek banks, the banks closed
+[00:28:56] for three weeks, and Greece gave in. But, as we’ve
+[00:29:04] been told repeatedly, France is not Greece.
+[00:29:04] So, where does all of this leave France?
+[00:29:11] Lionel Laurent at Bloomberg described the
+[00:29:11] situation as less like Liz Truss’s sudden
+[00:29:17] blowup and more like “a slow squeeze.” And
+[00:29:17] that seems to me like the right diagnosis.
+[00:29:24] France does have some real protections. French
+[00:29:24] officials point to high household savings,
+[00:29:30] reliable tax collection, and a stable banking
+[00:29:30] system. But their biggest protection is a
+[00:29:37] shared currency - the euro, and this is
+[00:29:37] where that decision from 1999 comes in.
+[00:29:43] As The Economist points out, French governments
+[00:29:43] are still haunted by memories of May 1968, when
+[00:29:50] students and workers shut the country down with
+[00:29:50] a general strike. The government settled it with
+[00:29:56] a deal that raised the minimum wage by about a
+[00:29:56] third. Money quickly started leaving the country,
+[00:30:03] and the Banque de France spent much of its
+[00:30:03] reserves defending the franc. De Gaulle refused
+[00:30:08] to devalue at the time, but a few months after
+[00:30:08] he left office in 1969, the franc was devalued by
+[00:30:15] about 11%. When a country has its own currency,
+[00:30:15] that’s where the pressure shows up first,
+[00:30:22] and it tends to show up all at once.
+[00:30:22] Today, the euro protects France from
+[00:30:28] a currency run, so the pressure arrives
+[00:30:28] more slowly: a spread over Germany that
+[00:30:34] keeps creeping wider, an interest bill that
+[00:30:34] eats a little more of the budget every year,
+[00:30:39] and a steady turnover of prime ministers.
+[00:30:39] For now, the bond market is waiting.
+[00:30:45] Parliament will spend the next couple of months
+[00:30:45] deciding how much of Lecornu’s 43 billion euro
+[00:30:52] package it’s willing to keep. Moody’s is due to
+[00:30:52] review France’s credit rating later this month.
+[00:30:58] And on October 29th, the ECB meets to
+[00:30:58] decide what to do about interest rates.
+[00:31:05] If nothing changes, the arithmetic the
+[00:31:05] economists laid out in July will keep
+[00:31:10] running in the background. The debt will keep
+[00:31:10] growing, and the interest bill will keep rising
+[00:31:15] by about ten billion euros a year… and that’s
+[00:31:15] using July’s interest rates. Meanwhile, the bond
+[00:31:23] market will keep updating its league table.
+[00:31:23] If you liked this video, you should watch my
+[00:31:28] video on Scott Bessent’s war on prices next. Don’t
+[00:31:28] forget to check out this week’s sponsor, Incogni,
+[00:31:36] using the link in the description.
+[00:31:36] See you in the next video, bye.

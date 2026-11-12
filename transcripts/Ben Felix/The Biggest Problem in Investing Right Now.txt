@@ -1,0 +1,647 @@
+[00:00:00] Financial product advertisements are
+[00:00:02] often unconcerned with the truth, or in
+[00:00:04] the words of philosopher Harry
+[00:00:06] Frankfurt, they are full of
+[00:00:09] You're probably susceptible to it, too.
+[00:00:11] A 2022 study found that younger,
+[00:00:13] high-income men who are very confident
+[00:00:15] in their own financial knowledge are
+[00:00:17] more likely to fall for financial
+[00:00:20] The financial products that
+[00:00:22] get advertised the most aggressively
+[00:00:24] tend to be the most profitable for the
+[00:00:25] firm selling them. If it's highly
+[00:00:27] profitable for them, you can generally
+[00:00:29] infer that it is less profitable for
+[00:00:32] you. You're the one funding the profits,
+[00:00:34] but the thing is, if you know what to
+[00:00:36] look for and what to avoid, you can
+[00:00:38] actually use this to your advantage. I'm
+[00:00:40] Ben Felix, chief investment officer at
+[00:00:42] PWL Capital, and I'm going to show you
+[00:00:43] how financial advertising bullshits you
+[00:00:46] into buying expensive financial products
+[00:00:48] and what you can do about it.
+[00:00:54] Research on financial product
+[00:00:56] advertising has found that more heavily
+[00:00:58] advertised products tend to be more
+[00:00:59] expensive for consumers, that the ads
+[00:01:02] contain little relevant information, and
+[00:01:05] that the information they do highlight
+[00:01:06] is often enticing but irrelevant or at
+[00:01:09] least incomplete for making a good
+[00:01:11] decision. This is not an accident.
+[00:01:13] Financial product advertising
+[00:01:14] intentionally focuses on
+[00:01:16] attention-grabbing features while making
+[00:01:18] the things that actually matter harder
+[00:01:20] to evaluate. It also pushes up the cost
+[00:01:23] of financial products themselves without
+[00:01:24] moving consumers toward better
+[00:01:26] decision-making. To get a sense of the
+[00:01:28] scale, one analysis showed that
+[00:01:30] marketing and distribution expenses are
+[00:01:31] responsible for about a third of the
+[00:01:34] cost of actively managed mutual funds.
+[00:01:36] The authors find that marketing makes
+[00:01:37] investors worse off overall because
+[00:01:40] highly marketed funds attract more
+[00:01:42] assets than they should, and they often
+[00:01:44] underperform. I think most of you
+[00:01:46] watching my videos have probably already
+[00:01:48] figured out that high-fee actively
+[00:01:50] managed mutual funds can be avoided in
+[00:01:52] general, regardless of how good the ads
+[00:01:54] are, and a lot of people have figured
+[00:01:56] out that low-cost index funds are a
+[00:01:57] better way to invest, which is
+[00:01:59] consistent with index funds attracting
+[00:02:01] more and more assets at the expense of
+[00:02:03] active funds giving them up while active
+[00:02:05] funds also dropped their fees. This is
+[00:02:07] all good news, but the financial
+[00:02:09] industry has continued to innovate new
+[00:02:11] ways to generate profits and in many
+[00:02:13] cases the products being marketed most
+[00:02:15] aggressively to investors today are far
+[00:02:17] worse, in my opinion, than the quaint
+[00:02:20] old days of actively managed mutual
+[00:02:21] funds. I'm going to talk about the
+[00:02:22] marketing behind private assets, margin
+[00:02:25] loans, options trading, thematic ETFs,
+[00:02:28] and of course covered call ETFs. The ads
+[00:02:31] for these products are smart. They know
+[00:02:33] how your brain works. They tend to rely
+[00:02:35] on five techniques. Once you hear them,
+[00:02:38] you'll start noticing them everywhere.
+[00:02:39] Transference borrows credibility from
+[00:02:42] something real, like the expected growth
+[00:02:44] of a sector or the income yield of a
+[00:02:46] covered call fund, and transfers it to
+[00:02:48] an area where it's irrelevant, like the
+[00:02:50] expected returns of a product investing
+[00:02:52] in that sector or using that strategy.
+[00:02:55] Framing it uses empty language to
+[00:02:57] associate a product with positive mental
+[00:02:59] categorizations. Salience highlights
+[00:03:01] specific attention-grabbing features
+[00:03:03] that may not be relevant to evaluating
+[00:03:04] the product, but do grab your interest.
+[00:03:07] Shrouding buries the things that
+[00:03:09] actually matter, like fees, costs, and
+[00:03:10] risks in footnotes and fine print. And
+[00:03:13] complexity makes products hard to
+[00:03:15] evaluate. Financial products are often
+[00:03:17] complex enough to make comparisons
+[00:03:19] between them nearly impossible. So,
+[00:03:21] instead of evaluating them properly,
+[00:03:23] which often takes time and expertise,
+[00:03:25] you end up defaulting to trust and
+[00:03:26] intuition, which is being actively
+[00:03:29] manipulated by the ads themselves.
+[00:03:31] Together, this creates a powerful
+[00:03:32] psychological mechanism. You're given
+[00:03:34] something that feels like compelling
+[00:03:36] information about a financial product,
+[00:03:38] but it's often irrelevant or at least
+[00:03:39] insufficient to decide whether the
+[00:03:41] product is actually a good investment
+[00:03:43] for you. It should be no surprise that
+[00:03:45] when financial product providers spend
+[00:03:46] marketing dollars to promote products,
+[00:03:48] they will promote the ones that are most
+[00:03:50] profitable for them. No one's going to
+[00:03:52] spend ad dollars to promote a
+[00:03:54] money-losing product. That just it makes
+[00:03:56] sense as a business. You got to respect
+[00:03:59] the hustle. You got to respect that
+[00:04:00] companies exist to be profitable. But if
+[00:04:03] it's highly profitable for the firm
+[00:04:04] selling it, we can generally infer that
+[00:04:06] it's less profitable for you, the end
+[00:04:09] consumer. You are funding the profits.
+[00:04:11] Let's go through some examples. I'll
+[00:04:12] explain how they're marketed and what
+[00:04:15] the marketing conveniently leaves out.
+[00:04:17] If you have other examples that I
+[00:04:18] missed, tell me about them in the
+[00:04:19] comments. Private equity and private
+[00:04:21] credit are increasingly being advertised
+[00:04:23] to retail investors in Canada. A big
+[00:04:25] part of the pitch is that private
+[00:04:26] markets deliver higher returns than
+[00:04:28] public markets. Some of the most
+[00:04:30] prominent and heavily marketed pitches
+[00:04:32] in Canada make this the clear focus of
+[00:04:34] the advertisement, but the claim is
+[00:04:36] contestable or at least requires
+[00:04:38] context. To be clear, it is possible to
+[00:04:40] show that a private equity index like
+[00:04:42] this has outperformed public equities
+[00:04:44] over some time periods. One of the
+[00:04:46] challenges with these index data is that
+[00:04:48] they're often based on net asset values,
+[00:04:51] which are non-market tested values for
+[00:04:53] the underlying private holdings. It's
+[00:04:55] basically what the fund says its assets
+[00:04:57] are worth rather than what it can
+[00:04:58] actually sell them for, which are often
+[00:05:00] different numbers. A recent challenge in
+[00:05:02] private markets has been the inability
+[00:05:04] of funds to sell their assets for their
+[00:05:06] net asset values, highlighting an issue
+[00:05:08] colloquially referred to as return
+[00:05:10] smoothing or volatility laundering. The
+[00:05:13] numbers look good on paper, but you
+[00:05:15] can't actually sell the assets for their
+[00:05:16] paper values. This can also show up as
+[00:05:18] illiquidity, where fund investors can't
+[00:05:20] get their money back when they want it.
+[00:05:22] Analysis that uses secondary market
+[00:05:24] transactions in private equity fund
+[00:05:26] shares, let me explain that. Sometimes
+[00:05:28] people want to sell the shares they own
+[00:05:30] in an illiquid private equity fund, and
+[00:05:33] the researchers used those actual
+[00:05:34] transaction prices of those private
+[00:05:36] equity fund shares instead of the fund's
+[00:05:38] reported net asset values to estimate a
+[00:05:41] private equity index from 2006 through
+[00:05:43] 2017. The result shows that private
+[00:05:46] equity's performance is fully explained
+[00:05:48] by taking on more public equity market
+[00:05:50] risk than a public equity index. In this
+[00:05:52] case, roughly double the risk measured
+[00:05:54] by market beta for buyout funds. Once
+[00:05:56] this additional risk is accounted for,
+[00:05:58] the excess risk-adjusted return of the
+[00:06:00] private equity indices for both buyouts
+[00:06:02] and venture capital in this analysis are
+[00:06:05] statistically indistinguishable from
+[00:06:07] zero. Taking on more risk is not
+[00:06:09] necessarily a bad thing and it can lead
+[00:06:11] to outperformance, but it should be
+[00:06:12] front and center when evaluating an
+[00:06:14] investment product. And even that's not
+[00:06:17] the end of the story. Research using a
+[00:06:18] different performance evaluation method
+[00:06:20] called the public market equivalent or
+[00:06:22] PME finds that when consistently defined
+[00:06:24] and benchmarked, private equity
+[00:06:26] performed about the same as public
+[00:06:28] equity from 2006 through June 2025.
+[00:06:31] I think the jury is still out on
+[00:06:33] whether, after its high fees and costs,
+[00:06:35] private equity has a reasonable
+[00:06:37] expectation of outperforming public
+[00:06:39] equity. And even if it does, its risks,
+[00:06:41] including potential illiquidity, need to
+[00:06:44] be highlighted. Part of the problem is
+[00:06:46] that measuring private equity
+[00:06:47] performance is itself complex. The
+[00:06:49] choice of performance metric, benchmark,
+[00:06:51] or time period can support claims of
+[00:06:53] outperformance even if it's not a
+[00:06:55] reasonable expectation. Looking at the
+[00:06:57] fund from the marketing example, while
+[00:06:59] it's only been around since 2024, it has
+[00:07:01] returned, in line with the research I
+[00:07:03] just mentioned, about the same as a
+[00:07:05] public equity index fund. Anecdotally, I
+[00:07:07] do get the sense that people are waking
+[00:07:09] up to the realities of the private
+[00:07:10] equity sales pitch. At PWL Capital,
+[00:07:12] we've been seeing more and more people
+[00:07:14] coming to us asking for help unwinding
+[00:07:16] their illiquid and often underperforming
+[00:07:19] private equity positions. Private credit
+[00:07:20] has similar issues. Private credit
+[00:07:22] consists of loans to private companies,
+[00:07:23] kind of like bonds, except the loans are
+[00:07:25] not publicly traded and are created by
+[00:07:27] non-bank entities like private credit
+[00:07:30] funds or business development companies.
+[00:07:31] These funds raise money from investors
+[00:07:33] and make direct loans, often with
+[00:07:35] flexible terms and covenants, to private
+[00:07:37] companies. These loans, by their nature,
+[00:07:39] are risky. Like private equity, private
+[00:07:42] credit funds are illiquid and will not
+[00:07:44] have their assets marked to market
+[00:07:45] daily. This allows them to appear
+[00:07:47] relatively low risk and uncorrelated to
+[00:07:50] other assets, even if the value of their
+[00:07:51] underlying assets would be fluctuating
+[00:07:53] wildly in the public markets. And again,
+[00:07:56] like private equity, when the returns on
+[00:07:58] private credit funds are properly
+[00:08:00] evaluated against risk-appropriate
+[00:08:02] benchmarks and adjusted for their
+[00:08:04] illiquidity, there's nothing special
+[00:08:05] there in terms of risk-adjusted returns
+[00:08:07] or diversification. One of the big
+[00:08:09] problems I see with private credit is
+[00:08:11] that it's often marketed based on its
+[00:08:12] yield. That's salience at work.
+[00:08:15] Investors love the idea of passive
+[00:08:17] income, sitting back and collecting cash
+[00:08:19] flow. The problem, especially with
+[00:08:21] high-risk loans like what we see in
+[00:08:22] private credit, is that yield and total
+[00:08:25] return, which to be clear is what
+[00:08:26] actually matters, total return,
+[00:08:28] yield and total return have a messy
+[00:08:29] relationship. Due to the value of the
+[00:08:31] loans being volatile and some loans
+[00:08:33] going bust entirely, total returns in
+[00:08:35] credit investments tend to trail their
+[00:08:37] headline yield. We see this clearly with
+[00:08:39] the example advertisement where the
+[00:08:40] target yield is 9.6%, but the realized
+[00:08:43] total return since inception in 2023 is
+[00:08:46] 7.7%,
+[00:08:47] which is in line with a publicly-traded
+[00:08:49] high-yield bond ETF. Private assets are
+[00:08:51] risky, illiquid, and expensive to own.
+[00:08:53] Ads claiming that they generate returns
+[00:08:55] superior to publicly-listed assets or
+[00:08:57] offer a unique source of diversification
+[00:08:59] are contested by academic research. And
+[00:09:02] at the very least, any claims about
+[00:09:03] their higher expected returns should
+[00:09:05] highlight their higher risk. None of
+[00:09:07] this is obvious from the marketing
+[00:09:09] materials, which could lead an investor
+[00:09:10] to allocate to the products when they
+[00:09:12] otherwise would not have or to allocate
+[00:09:14] more than they would have if the full
+[00:09:16] set of information had been available.
+[00:09:18] And here's the kicker. Like many of the
+[00:09:20] heavily advertised products I'll talk
+[00:09:21] about, private investments are often
+[00:09:23] lucrative for those selling them. Many
+[00:09:26] of these funds will pay wealth managers
+[00:09:28] who invest their clients' money in the
+[00:09:29] fund. Think about it. If you're a wealth
+[00:09:31] manager, I can speak to this from
+[00:09:33] experience. I know what it's like. If
+[00:09:35] you're a wealth manager and can get a
+[00:09:36] kickback from placing your clients'
+[00:09:38] assets into a private market fund,
+[00:09:40] increasing your revenue from that
+[00:09:42] client, it starts to sound like a pretty
+[00:09:44] smart idea. Having worked in financial
+[00:09:46] services for more than a decade, I get
+[00:09:48] it. I know what it's like. It's not easy
+[00:09:49] to see past the dollars. It's possible,
+[00:09:52] as firms like PWL Capital show, we don't
+[00:09:55] take money from the funds that we invest
+[00:09:56] in, but it's not easy. The money is
+[00:10:00] there. The Financial Times has reported
+[00:10:02] that billions of dollars have been paid
+[00:10:03] from private market funds to the banks
+[00:10:06] and brokerages offering them to their
+[00:10:08] clients, creating an incentive to
+[00:10:09] promote those products over something
+[00:10:12] like a low-cost index fund, which does
+[00:10:13] not have any kickbacks or incentives for
+[00:10:16] placing clients' money in them. Another
+[00:10:18] way that this can show up is through the
+[00:10:20] wealth manager negotiating a lower fee
+[00:10:22] from the private fund manager and
+[00:10:23] pocketing the difference or a portion of
+[00:10:25] the difference between the fund's normal
+[00:10:27] fee paid by clients and the lower
+[00:10:29] negotiated fee. Even if some of that fee
+[00:10:31] is returned to customers, there is a
+[00:10:33] clear incentive to recommend the private
+[00:10:34] fund over a low-cost index fund. The
+[00:10:37] heavy marketing pitch starts to make a
+[00:10:38] lot more sense when you follow the
+[00:10:40] money. That's private markets, where the
+[00:10:42] story for higher returns sounds great,
+[00:10:44] but the reality is much less compelling,
+[00:10:45] and those selling the products, rather
+[00:10:47] than those investing in them, stand to
+[00:10:49] reap most of the benefits. Something
+[00:10:50] that you will reap all of the benefits
+[00:10:52] from is subscribing to this channel if
+[00:10:54] you have not already done so. The next
+[00:10:55] product I want to talk about is being
+[00:10:57] marketed based on its power. But power
+[00:10:59] cuts both ways. This is an example of
+[00:11:01] framing, empty language designed to get
+[00:11:03] you into positive mental frame when
+[00:11:04] thinking about the product. Margin
+[00:11:06] investing, which means borrowing from
+[00:11:08] your brokerage using your investments as
+[00:11:10] collateral, is often promoted to retail
+[00:11:12] investors as a way to boost returns.
+[00:11:14] Discount brokers are, in many cases, not
+[00:11:17] charging their customers commissions for
+[00:11:18] trades anymore, which used to be how
+[00:11:20] they made a lot of their money, which
+[00:11:22] has made marginal loan interest an
+[00:11:24] increasingly important part of their
+[00:11:25] revenue. I've seen margin marketed to
+[00:11:27] retail investors through email marketing
+[00:11:29] campaigns and flashy landing pages that
+[00:11:31] focus on the power of margin, which to
+[00:11:34] be clear is a real thing, but without
+[00:11:36] much of a focus on the associated risks.
+[00:11:38] It's worth going deeper on the truth to
+[00:11:40] the statement on the truth about the
+[00:11:41] power of margin. Borrowing to invest,
+[00:11:43] when done responsibly, is not inherently
+[00:11:45] a bad thing, and it may even be the
+[00:11:46] right thing for some people to do as
+[00:11:48] long as it's done as part of a long-term
+[00:11:51] plan. However, investing on margin
+[00:11:53] introduces a lot of risk, and it's
+[00:11:56] associated with negative financial
+[00:11:58] behaviors. The empirical reality, like
+[00:12:01] what actually happens among retail
+[00:12:03] investors, is that margin tends to be
+[00:12:05] used by overconfident investors who
+[00:12:07] trade frequently and perform poorly. A
+[00:12:09] 2020 study found that investors with
+[00:12:11] margin accounts trade more actively,
+[00:12:14] more speculatively, and importantly less
+[00:12:16] profitably than those with cash
+[00:12:18] accounts, and that among investors who
+[00:12:20] have margin accounts, those with
+[00:12:22] experience trading on margin, again,
+[00:12:24] trade more actively, more speculatively,
+[00:12:26] and less profitably. Despite these
+[00:12:29] empirical realities, 20% of Canadian
+[00:12:31] retail investors surveyed in 2020
+[00:12:33] reported using leverage to invest.
+[00:12:35] Focusing on the opportunity or power of
+[00:12:37] margin without highlighting the risks
+[00:12:38] and empirical realities is, in my
+[00:12:40] opinion, incomplete and could lead
+[00:12:42] investors down a path that is profitable
+[00:12:45] for their brokerage because they're now
+[00:12:46] paying margin interest, but not for
+[00:12:49] them. I suspect that the reason we see
+[00:12:51] so many ads for margin, again, is that
+[00:12:53] margin lending is a major revenue driver
+[00:12:56] for brokerages, especially when they've
+[00:12:57] eliminated trading commissions. There's
+[00:13:00] another revenue source that's probably
+[00:13:01] even more lucrative and definitely
+[00:13:03] marketed more aggressively. I can't
+[00:13:05] scroll Reddit for more than a few
+[00:13:06] minutes without seeing ads for options
+[00:13:08] trading. The ads focus on the
+[00:13:10] opportunity, again, positive framing,
+[00:13:12] and on low fees, which I'm going to call
+[00:13:14] transference or borrowing credibility
+[00:13:16] from the positive attribute of low fees,
+[00:13:18] while shrouding the total trading costs,
+[00:13:21] particularly for trading US options. The
+[00:13:23] first omission is that US options trades
+[00:13:25] are often sold to market makers in an
+[00:13:27] arrangement called payment for order
+[00:13:29] flow. This practice is not allowed
+[00:13:31] within Canada, but US options,
+[00:13:34] obviously, trade in the US. By selling
+[00:13:37] the order flow, brokerages have been
+[00:13:38] able to drive commissions down often to
+[00:13:40] zero since they receive significant
+[00:13:42] revenue from selling the order flow. Low
+[00:13:45] commissions are good, but they're not
+[00:13:46] the whole story. Within stocks, payment
+[00:13:48] for order flow seems to be an overall
+[00:13:50] good thing for investors because it
+[00:13:52] drove commissions down and trade
+[00:13:53] execution seems to be good.
+[00:13:55] But less so in options, where payment
+[00:13:57] for order flow seems to be related to
+[00:13:59] wider spreads. That aside, I think
+[00:14:01] there's a bigger problem here. Payment
+[00:14:02] for options order flow is far more
+[00:14:04] lucrative for brokerages than payment
+[00:14:06] for stock order flow, creating an
+[00:14:07] incentive for brokers to promote options
+[00:14:10] trading to their clients. To be clear,
+[00:14:12] options are not inherently a bad thing.
+[00:14:14] It's kind of like margin. They're useful
+[00:14:16] tools for many reasons, and the
+[00:14:17] technology and its underlying
+[00:14:19] mathematics have arguably changed the
+[00:14:20] world for the better. While they can be
+[00:14:22] used for good, some of their features,
+[00:14:24] like embedded leverage, make them a
+[00:14:26] double-edged sword. They can just as
+[00:14:27] easily be used for responsible risk
+[00:14:29] management and hedging as they can be
+[00:14:31] used for speculation and gambling. For
+[00:14:33] retail investors, again, I want to come
+[00:14:35] back to the empirical reality, which is
+[00:14:38] on the wrong edge of the sword. A 2023
+[00:14:41] paper estimates that the aggregate
+[00:14:42] portfolio of retail investors lost $2.1
+[00:14:45] billion trading options from November
+[00:14:47] 2019 to June 2021, largely due to
+[00:14:50] indirect trading costs. That retail
+[00:14:53] option traders lost money on average,
+[00:14:55] and that 50% of retail trades in the
+[00:14:57] sample are in risky options with less
+[00:14:59] than a week to expiration, with an
+[00:15:01] average quoted bid-ask spread of 12.6
+[00:15:05] percent. A study on 68,000 trading
+[00:15:07] accounts and more than 8 million trades
+[00:15:09] in stocks and options at a large online
+[00:15:11] broker in the Netherlands similarly
+[00:15:13] finds that most investors take
+[00:15:15] significant losses on their options
+[00:15:16] trades much larger than the losses they
+[00:15:18] take from equity trading. Ads focusing
+[00:15:21] on the explicit costs of option trades,
+[00:15:24] low or zero commissions, which is a real
+[00:15:26] thing, without explaining the often high
+[00:15:29] implicit costs, wide bid-ask spreads,
+[00:15:32] and positioning options trades as an
+[00:15:34] opportunity to get ahead when
+[00:15:35] empirically most retail investors lose
+[00:15:38] on their options trades could lead
+[00:15:40] people to make bad decisions. Thematic
+[00:15:42] ETF advertising tends to highlight an
+[00:15:44] exciting theme that investors are
+[00:15:45] currently interested in. We're going to
+[00:15:47] space, which could be a big deal,
+[00:15:49] legitimately, and investors don't want
+[00:15:51] to miss out on the opportunity. That
+[00:15:52] very real economic opportunity is used
+[00:15:55] to market an investment product, but
+[00:15:58] it's not relevant in that context. The
+[00:16:00] problem is that thematic ETFs tend to
+[00:16:02] launch after the theme they represent
+[00:16:04] has already delivered high returns when
+[00:16:06] investor interest is high and then go on
+[00:16:09] to deliver poor performance, often
+[00:16:10] resulting in the fund closing down.
+[00:16:12] Research commissioned by the Financial
+[00:16:14] Times shows that the vast majority of
+[00:16:16] thematic ETFs have underperformed broad
+[00:16:18] market benchmarks. A 2021 academic study
+[00:16:21] found the thematic ETFs underperformed
+[00:16:23] by 6% on average in the 5 years after
+[00:16:25] launching, despite their themes having
+[00:16:27] strong performance before launch, which
+[00:16:29] is part of the problem. ETF companies
+[00:16:31] like to launch these funds because they
+[00:16:33] can charge higher fees than they could
+[00:16:35] with a low-cost index fund, and unlike
+[00:16:37] with index funds, investors in these
+[00:16:39] products are fee insensitive. Investors
+[00:16:42] in index funds care about fees, but in
+[00:16:44] thematic funds, they don't. This paper
+[00:16:46] shows that in 2019, this is a while ago
+[00:16:48] now, thematic ETF made up 18% of the ETF
+[00:16:51] market but accounted for about 35% of
+[00:16:54] the industry's revenues. Despite their
+[00:16:56] higher fees, again, investors are eager
+[00:16:58] to buy these products because they're
+[00:17:00] excited about the theme. They don't care
+[00:17:01] about the fees. But the problem is it
+[00:17:03] doesn't tend to work out well.
+[00:17:05] Morningstar's Global Thematic Fund
+[00:17:07] Landscape 2025 finds that the long-term
+[00:17:09] odds of picking a thematic fund that
+[00:17:11] both survives and outperforms global
+[00:17:14] equities is very low. The data for
+[00:17:16] Canadian listed funds is even more
+[00:17:18] damning with 100% of Canadian listed
+[00:17:20] thematic funds either closing or
+[00:17:22] underperforming at the 10-year horizon
+[00:17:24] and 100% of funds closing by the 15-year
+[00:17:27] mark. The underlying reasons for this
+[00:17:29] poor performance are kind of simple. I
+[00:17:31] mean, we could get more complex, but the
+[00:17:34] simple explanation is that exciting
+[00:17:36] growth that you expect from a theme,
+[00:17:37] like space,
+[00:17:39] is usually already reflected in high
+[00:17:41] stock prices for that theme. As reality
+[00:17:44] unfolds, expectations tend to settle
+[00:17:46] down and stock prices tend to fall. This
+[00:17:49] cycle has repeated countless times
+[00:17:51] throughout history. Every time there's a
+[00:17:53] new exciting technology, and each time
+[00:17:55] it happens, financial intermediaries
+[00:17:57] find a way to profit off of it by
+[00:17:58] selling financial products. Another type
+[00:18:01] of ETF that I see heavily marketed
+[00:18:03] online, both in ads and through
+[00:18:05] influencers, is covered call ETFs. A
+[00:18:08] covered call means selling a call
+[00:18:10] option, that is the right to buy the
+[00:18:12] stock from you at a predetermined price,
+[00:18:14] called the strike
+[00:18:15] in exchange for a premium, and you're
+[00:18:18] selling this call on a stock that you
+[00:18:19] own, which puts a cap on your upside
+[00:18:21] returns. A fund using this strategy
+[00:18:24] typically distributes the option
+[00:18:25] premiums from selling calls to the fund
+[00:18:28] investors, resulting in high
+[00:18:30] distribution yields.
+[00:18:32] Now, some people like that, fair enough,
+[00:18:35] but I've got more to say. Those
+[00:18:37] distribution yields are heavily
+[00:18:38] marketed. That That is the focus of the
+[00:18:40] marketing, but this specific data point
+[00:18:42] is, in my opinion, misleading due to the
+[00:18:45] relationship between option premium
+[00:18:47] income and total expected returns,
+[00:18:50] expected total returns. Selling the call
+[00:18:52] is only the first step in the trade. The
+[00:18:54] fund has sold the right to buy the
+[00:18:56] underlying stock at the strike price. If
+[00:18:58] the price of the underlying rises above
+[00:19:00] the strike price, the option holder,
+[00:19:02] whoever the fund sold the option to,
+[00:19:03] will exercise their call option, and the
+[00:19:05] fund will have to sell the stock at a
+[00:19:07] price below its market value. That's
+[00:19:09] putting that cap that I mentioned on
+[00:19:11] upside returns. In some ways covered
+[00:19:13] calls look a lot like a mix of stocks
+[00:19:15] and cash, which most long-term investors
+[00:19:17] realize is not a great way to allocate
+[00:19:18] assets. The overall result is that
+[00:19:20] selling the call has reduced exposure to
+[00:19:22] the underlying equity primarily on the
+[00:19:24] upside, while the downside remains
+[00:19:26] largely exposed, reducing expected
+[00:19:28] returns and capping the ability of the
+[00:19:30] fund to recover after the inevitable
+[00:19:31] downturns that stocks experience over
+[00:19:34] time.
+[00:19:35] For long-term investors, my view is that
+[00:19:36] covered call funds are not good
+[00:19:38] investments in general, do not generate
+[00:19:40] passive income, and create unnecessary
+[00:19:42] layers of risk and costs.
+[00:19:44] Critically, this is also true for
+[00:19:46] investors who need income. As I've shown
+[00:19:48] in past analyses, they are better off
+[00:19:50] owning the underlying and selling bits
+[00:19:52] and pieces of the portfolio as needed.
+[00:19:54] But, covered call funds charge higher
+[00:19:57] fees than index funds, and so they get
+[00:20:00] heavily marketed. The threads connecting
+[00:20:02] everything I've covered in this video
+[00:20:04] are information or the lack thereof and
+[00:20:06] incentives. In every case, the ads are
+[00:20:09] not lying. They're providing
+[00:20:11] information that is real. They're just
+[00:20:14] not giving you what you need to make a
+[00:20:16] good decision. Instead, they're
+[00:20:17] persuading you to buy a product that is
+[00:20:19] highly profitable for the firm selling
+[00:20:21] it while having questionable value to
+[00:20:23] you. It should be no surprise that when
+[00:20:25] financial firms spend marketing dollars,
+[00:20:27] they promote the products that are most
+[00:20:28] profitable for them. I I respect that.
+[00:20:30] It makes sense for a business to do
+[00:20:32] that, but you don't have to fall for it.
+[00:20:34] You can be a savvy consumer and use this
+[00:20:37] knowledge to your advantage. The crazy
+[00:20:39] thing is that a lot of people will fall
+[00:20:40] for these ads. That's why we see them.
+[00:20:42] The ads are clearly working. And that
+[00:20:45] fact is powerful for you to understand.
+[00:20:47] Consumers who understand the cost and
+[00:20:49] pitfalls of heavily marketed financial
+[00:20:51] products like what I've talked about
+[00:20:53] stand to benefit from low-cost loss
+[00:20:55] leader services like free trading and
+[00:20:57] ultra low-cost index funds that
+[00:20:59] financial firms can provide because they
+[00:21:02] expect to generate profits from more
+[00:21:04] lucrative channels like getting a cut
+[00:21:06] from private fund fees, charging margin
+[00:21:09] interest, receiving payment for US order
+[00:21:11] flow, and charging higher fees on
+[00:21:13] thematic or covered call ETFs. If you
+[00:21:15] can stay disciplined and avoid getting
+[00:21:17] sucked into these more profitable for
+[00:21:20] the financial firms products, you are
+[00:21:22] effectively receiving a subsidy from
+[00:21:24] less financially sophisticated
+[00:21:25] consumers. Harsh, but that's the reality
+[00:21:28] we live in. The funds that I find most
+[00:21:30] sensible don't tend to advertise at all,
+[00:21:32] which probably helps to explain their
+[00:21:34] low fees. You can learn more about
+[00:21:36] Dimensional Fund Advisors here and
+[00:21:37] Avantis, who recently launched ETFs in
+[00:21:40] Canada, here. I gain nothing from you
+[00:21:42] knowing about those fund companies or
+[00:21:44] those products other than the
+[00:21:45] satisfaction that you're less likely to
+[00:21:47] buy covered call ETFs.

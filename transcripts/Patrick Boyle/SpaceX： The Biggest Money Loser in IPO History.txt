@@ -1,0 +1,688 @@
+[00:00:00] When a company decides to go public,
+[00:00:02] they're required by the Securities and
+[00:00:04] Exchange Commission to file an S1
+[00:00:06] prospectus. Historically, these are some
+[00:00:09] of the driest documents ever committed
+[00:00:11] to paper. They're written by corporate
+[00:00:14] lawyers for other corporate lawyers to
+[00:00:16] ensure that no one anywhere is ever
+[00:00:19] accidentally entertained. But two days
+[00:00:22] ago, SpaceX filed its paperwork to go
+[00:00:25] public. And reading through it, it
+[00:00:27] became immediately clear that this was
+[00:00:30] not going to be your typical legal
+[00:00:32] disclosure. For a start, it opened with
+[00:00:35] 14 pages of photographs of rockets and
+[00:00:38] satellites, which reminded me of Adam
+[00:00:40] Newman's ill- faded we work perspectus,
+[00:00:44] which famously opened with the line, "We
+[00:00:47] dedicate this to the energy of we
+[00:00:50] greater than any one of us, but inside
+[00:00:52] each of us." That document was later
+[00:00:55] described as one of the worst IPO
+[00:00:57] filings in Wall Street history. The
+[00:01:00] SpaceX perspectus is similarly
+[00:01:03] unconventional, though I will say the
+[00:01:06] rockets are more photogenic than the Wei
+[00:01:08] Work community photographs were. The
+[00:01:11] document is also filled with phrases
+[00:01:14] that I'm fairly confident have never
+[00:01:16] appeared in an SEC filing before. Under
+[00:01:19] the business strategy section, right
+[00:01:21] alongside standard disclosures about
+[00:01:24] lease agreements and accounting
+[00:01:25] standards, management explains that
+[00:01:28] their primary objective is to extend the
+[00:01:31] light of consciousness to the stars. A
+[00:01:34] phrase that appears 10 separate times in
+[00:01:36] the filing, which suggests that it
+[00:01:38] wasn't a typo. Investors are also warned
+[00:01:42] that we do not want humans to have the
+[00:01:44] same fate as dinosaurs, which is a fair
+[00:01:48] point, I suppose. It's the kind of
+[00:01:49] sentence that gets you excited about
+[00:01:51] what the risk disclosure section will
+[00:01:53] look like. The document then goes on to
+[00:01:57] outline a string of future business
+[00:01:59] lines that read like science fiction.
+[00:02:02] They include longhaul point-to-point
+[00:02:04] terrestrial travel, which I think means
+[00:02:07] traveling around the Earth in rockets
+[00:02:09] rather than in airplanes. In orbit
+[00:02:11] manufacturing, yes, in orbit, passenger
+[00:02:15] and cargo transportation to the moon and
+[00:02:18] Mars, manufacturing and energy
+[00:02:20] production on the moon and Mars, and
+[00:02:23] asteroid mining. Because why mine for
+[00:02:26] resources on Earth when you can chase
+[00:02:29] down an asteroid in the hope that you'll
+[00:02:31] find useful minerals on it? The acronym
+[00:02:34] AI appears over 200 times in the
+[00:02:38] document. The word consciousness appears
+[00:02:41] 10 times. The word prophet appears
+[00:02:44] somewhat less frequently than either of
+[00:02:46] those. What we're looking at is quite
+[00:02:48] possibly the most extraordinary document
+[00:02:51] in the history of American securities
+[00:02:53] regulation. And today we're going to go
+[00:02:56] through it because every single thing
+[00:02:58] I'm about to tell you, no matter how
+[00:03:00] absurd it sounds, comes directly from
+[00:03:03] the filing. If you've been following
+[00:03:05] SpaceX for the last two decades, you
+[00:03:08] probably think of it as a rocket
+[00:03:10] company. In recent years, with the rapid
+[00:03:12] expansion of Starlink, you might have
+[00:03:15] updated that to a satellite internet
+[00:03:17] company. But if you read the IPO
+[00:03:20] perspectus, you're in for a surprise.
+[00:03:22] SpaceX is now apparently an AI company.
+[00:03:26] According to the document, 93% of the
+[00:03:29] company's total addressable market is
+[00:03:32] attributed to AI. And based on the
+[00:03:35] capital expenditure breakdown, roughly
+[00:03:38] 60% of all spending is now going into
+[00:03:41] artificial intelligence infrastructure.
+[00:03:44] The prospectus breaks down the business
+[00:03:46] into three segments, space,
+[00:03:49] connectivity, and AI. In the first
+[00:03:52] quarter of 2026, the space division, the
+[00:03:55] part that actually builds and launches
+[00:03:57] rockets, lost $662 million.
+[00:04:02] The connectivity division, which is
+[00:04:04] Starlink, turned a $1.1 billion profit.
+[00:04:07] The AI division lost $2.5 billion in
+[00:04:11] just the last three months. The only
+[00:04:14] division that makes money is the
+[00:04:17] satellite internet business. everything
+[00:04:19] else loses money. When Musk says that
+[00:04:22] this is an AI company, what he means is
+[00:04:25] that the one business that actually
+[00:04:27] works is subsidizing a money losing AI
+[00:04:30] venture. While he tries to convince
+[00:04:33] public market investors that the money
+[00:04:35] losing AI venture is the entire reason
+[00:04:38] the company's worth $1.75 trillion.
+[00:04:42] If we look past the talk of extending
+[00:04:45] consciousness to the stars and focus
+[00:04:48] purely on the income statement, the
+[00:04:50] financial reality of SpaceX is bracing.
+[00:04:54] Before we dig into that, let me tell you
+[00:04:56] about this week's video sponsor, SY. If
+[00:04:59] you travel at all, you'll know the dread
+[00:05:01] of landing somewhere new and watching
+[00:05:03] your phone bill explode with roaming
+[00:05:05] charges before you've even grabbed your
+[00:05:07] bag. Sy fixes that. It's an eim app that
+[00:05:11] gives you affordable data across more
+[00:05:14] than 200 destinations worldwide. And
+[00:05:17] here's the part I really like. You only
+[00:05:19] install the eim once. That's it. One
+[00:05:22] app, one install, and every time you
+[00:05:25] travel somewhere new, you just pick a
+[00:05:27] plan for that country and go. No
+[00:05:30] swapping SIM cards, no hunting for a
+[00:05:32] local provider, no installing anything
+[00:05:35] again. With SYL, you sort everything out
+[00:05:38] before you leave home. Choose your
+[00:05:41] destination, a plan that suits your
+[00:05:43] needs, and when you land, your phone
+[00:05:45] connects automatically to a local
+[00:05:47] network. The plans are affordable, and
+[00:05:49] because you're on a local data plan
+[00:05:51] rather than roaming, there are no
+[00:05:53] unexpected charges appearing on your
+[00:05:56] bill afterwards. You can get a car, pull
+[00:05:58] up Maps, or call ahead to the hotel the
+[00:06:01] minute you step off the plane. Get an
+[00:06:04] exclusive 15% discount on sale data
+[00:06:07] plans. Download SY app and use the code
+[00:06:10] boil at checkout. In 2025, the company
+[00:06:14] generated $18.7 billion in revenue. Now
+[00:06:18] $18.7 billion is a lot of money, but at
+[00:06:22] a proposed valuation of $1.75 trillion,
+[00:06:26] SpaceX is asking investors to value it
+[00:06:29] at almost 100 times its revenue. If
+[00:06:32] SpaceX were dropped into the S&P 500
+[00:06:35] today, it would be the seventh largest
+[00:06:37] company in the index by market cap. But
+[00:06:40] if you ranked it by actual revenue, it
+[00:06:43] wouldn't even meet 200th. It would be
+[00:06:46] down near Kelloggs, the maker of Fruit
+[00:06:48] Luke's breakfast cereal. You get the
+[00:06:51] point. Unlike Kelloggs, SpaceX is not
+[00:06:55] profitable. Space exploration is just a
+[00:06:58] tougher business than breakfast. Last
+[00:07:00] year, SpaceX posted a net loss of $4.94
+[00:07:04] billion. What makes this number
+[00:07:07] remarkable is that Starlink actually
+[00:07:10] generated $4.4 billion in operating
+[00:07:13] profit. That means the rest of the
+[00:07:15] business ate up more than $9 billion in
+[00:07:19] a single year. Since its founding,
+[00:07:22] SpaceX has accumulated over $ 37 billion
+[00:07:26] in losses, more than any other company
+[00:07:29] that has ever gone public in history.
+[00:07:32] And there are no signs of the cash burn
+[00:07:34] slowing down. Capital expenditure
+[00:07:37] reached $20.7 billion last year,
+[00:07:40] quintupling from 2023, driven by
+[00:07:43] Starlink expansion, Starship
+[00:07:46] development, and AI infrastructure
+[00:07:48] spending. To fund all of this, the
+[00:07:51] company is carrying $29 billion in debt,
+[00:07:55] including a $20 billion bridge loan
+[00:07:58] taken out in March 2026, 8 weeks ago.
+[00:08:02] So, when investors hand over $75 billion
+[00:08:05] in this IPO, a meaningful portion of it
+[00:08:08] may not be going to orbital data centers
+[00:08:11] or a Mars colony. It goes straight back
+[00:08:13] to the banks who lent SpaceX money 8
+[00:08:16] weeks ago. Now to be fair, the company
+[00:08:19] is growing. Revenue is up somewhere
+[00:08:22] between 33 and 43% annually, which is
+[00:08:26] genuinely impressive. But that growth is
+[00:08:29] coming entirely from Starlink, not the
+[00:08:32] AI business. And even that growth comes
+[00:08:35] with a caveat. Starlink's average
+[00:08:37] revenue per user has fallen by around
+[00:08:40] 18% since 2023 as the company is
+[00:08:44] discounting aggressively to juice its
+[00:08:46] subscriber numbers before the IPO. Back
+[00:08:50] in April 2018, Gwyn Shotwell, the
+[00:08:53] president of SpaceX, stood on a TED
+[00:08:56] stage and made the promise within a
+[00:08:58] decade, she told the audience, people
+[00:09:00] would be taking 30inut rocket trips from
+[00:09:03] New York to Shanghai. These rockets
+[00:09:06] would compete with longhaul airlines
+[00:09:09] making up to 10 flights per day. That
+[00:09:12] decade expires in under two years now,
+[00:09:15] which is not much time to figure out how
+[00:09:18] to safely replace the jumbo jet with a
+[00:09:20] reusable ballistic missile that requires
+[00:09:23] passengers to withstand 3Gs at takeoff.
+[00:09:27] Now, if you were paying attention
+[00:09:28] earlier, you may remember the phrase
+[00:09:31] longhaul point-to-point terrestrial
+[00:09:33] travel from the prospectus that is this
+[00:09:36] product. It is still being pitched to
+[00:09:38] investors as a future revenue stream.
+[00:09:41] There's no sign of a commercial commuter
+[00:09:43] rocket and there are under two years
+[00:09:45] left on the clock. In the list of yet to
+[00:09:48] be realized business lines, there's a
+[00:09:51] section on payment processing. Twitter,
+[00:09:54] Elon Musk's everything app, has been
+[00:09:56] talking about becoming a financial
+[00:09:58] services platform for several years now.
+[00:10:01] They've secured money transmitter
+[00:10:03] licenses in a handful of US states, but
+[00:10:06] they don't have a functioning payments
+[00:10:08] product yet. So SpaceX is now partially
+[00:10:11] in the business of filing paperwork with
+[00:10:14] the Nevada Department of Business and
+[00:10:16] Industry in pursuit of the dream of
+[00:10:19] processing an $8 peer-to-peer payment on
+[00:10:22] a rocket company social media platform.
+[00:10:25] SpaceX claims its total addressable
+[00:10:28] market is $28.5
+[00:10:31] trillion. This is larger than the entire
+[00:10:34] GDP of the United States and almost
+[00:10:37] entirely built on businesses that do not
+[00:10:40] yet exist. As the Financial Times Lex
+[00:10:43] column noted, the market has never
+[00:10:46] before had to price a stock this
+[00:10:48] speculative at this size, which is
+[00:10:51] probably worth keeping in mind.
+[00:10:53] According to the prospectus, enterprise
+[00:10:55] applications of AI make up to 80% of
+[00:10:59] SpaceX's total addressable market. This
+[00:11:02] means they expect large businesses to
+[00:11:05] pay for Musk's AI tools to improve
+[00:11:07] productivity. If you add in consumer AI,
+[00:11:11] the total AI share of the claimed
+[00:11:14] addressable market rises to 93%.
+[00:11:18] So 93% of the company's value is Grock.
+[00:11:22] Now I want to be careful here because
+[00:11:25] 80% of a 28.5 trillion market is an
+[00:11:29] enormous number. So, it's worth asking
+[00:11:31] which enterprises are currently using
+[00:11:34] Grock. And from what I can tell, the
+[00:11:36] primary documented use cases for Grock
+[00:11:39] are fact-checking tweets and generating
+[00:11:42] non-consensual nude images that have
+[00:11:45] resulted in regulatory investigations in
+[00:11:47] Spain, France, and the UK, and at least
+[00:11:50] one ongoing lawsuit, which is not
+[00:11:53] exactly the enterprise productivity
+[00:11:56] pitch that I was expecting. The filing
+[00:11:59] effectively concedes that the enterprise
+[00:12:01] AI market is dominated by open AI,
+[00:12:04] Anthropic, and Google. SpaceX's own AI
+[00:12:08] product, Grock, holds a market share of
+[00:12:10] roughly 3.4%.
+[00:12:13] According to Bloomberg, SpaceX's own
+[00:12:16] engineers have been slow to adopt Grock
+[00:12:18] for technical work because it
+[00:12:20] underperforms rival tools. Last month,
+[00:12:24] Musk himself said that the AI code would
+[00:12:27] need to be rebuilt from scratch shortly
+[00:12:30] after he sold XAI to SpaceX for $250
+[00:12:33] billion. His solution to Grock's
+[00:12:36] weakness in coding was to attempt to
+[00:12:39] acquire Cursor, the tool his own
+[00:12:41] engineers were actually using for $60
+[00:12:44] billion with a $10 billion break fee if
+[00:12:48] the deal falls through. The company
+[00:12:51] whose AI product represents 93% of its
+[00:12:54] claimed addressable market has a
+[00:12:56] flagship product its own engineers won't
+[00:12:59] use and is spending $60 billion trying
+[00:13:03] to buy a competitor so that they can get
+[00:13:05] it to work. SpaceX's nearterm AI revenue
+[00:13:09] story rests substantially on a $15
+[00:13:13] billion a year deal to rent compute
+[00:13:16] capacity to Anthropic, one of the very
+[00:13:18] competitors whose existence proves that
+[00:13:21] Grock is losing the AI race. So SpaceX
+[00:13:25] is basically space coreweave. If SpaceX
+[00:13:29] were genuinely going to be a dominant AI
+[00:13:31] company, it would need that computing
+[00:13:34] power that it owns for its own models.
+[00:13:36] If Volkswagen were renting out all of
+[00:13:38] its car factories, would anyone describe
+[00:13:41] Volkswagen as still being in the car
+[00:13:43] business? The more pressing problem is
+[00:13:47] that this $15 billion a year contract,
+[00:13:49] roughly 40% of projected near-term
+[00:13:52] revenues, can be cancelled by Anthropic
+[00:13:55] with 90 days notice. SpaceX's entire AI
+[00:13:59] business model at the moment is renting
+[00:14:02] GPUs to a competitor on terms that can
+[00:14:05] vanish in a fiscal quarter. If SpaceX's
+[00:14:08] total addressable market is 28.5
+[00:14:11] trillion and 93% of it is AI, then by
+[00:14:16] SpaceX's own logic, the leading AI
+[00:14:19] companies must be worth vastly more than
+[00:14:21] SpaceX. Anthropic's quarterly revenue is
+[00:14:24] already roughly double SpaceX's entire
+[00:14:27] AI segment revenue. Both Antropic and
+[00:14:31] Open AAI are reportedly filing for IPOs
+[00:14:34] at approximately $1 trillion valuations.
+[00:14:38] And yet SpaceX wants $1.75 trillion on
+[00:14:42] the basis of a market its direct
+[00:14:45] competitors are winning. Now, if you've
+[00:14:47] been wondering exactly who is buying the
+[00:14:50] Tesla Cyber Truck, the SpaceX Prospectus
+[00:14:53] finally provides an answer. It turns out
+[00:14:56] it was SpaceX. According to the filings,
+[00:14:59] SpaceX purchased $650 million in goods
+[00:15:02] from Tesla last year. This included $131
+[00:15:06] million spent on Cybert trucks, all at
+[00:15:09] full retail price. no volume discount,
+[00:15:13] which is notable given how hard Tesla
+[00:15:15] has found them to sell. That works out
+[00:15:18] at roughly 1,500 vehicles. At one point
+[00:15:21] in the fourth quarter of 2025, SpaceX
+[00:15:25] single-handedly accounted for 18% of all
+[00:15:28] Cybertruck registrations in the United
+[00:15:30] States. using shareholder money from one
+[00:15:34] company that you control to support the
+[00:15:37] sales figures of another company you
+[00:15:39] control right before both companies face
+[00:15:42] major financial events is generally
+[00:15:44] considered not ideal corporate
+[00:15:47] governance. There is also a small
+[00:15:50] accounting discrepancy worth mentioning.
+[00:15:53] SpaceX reports buying roughly $650
+[00:15:56] million of goods from Tesla last year
+[00:15:59] and Tesla's own filings report selling
+[00:16:02] $573 million of goods to SpaceX. So
+[00:16:06] somewhere between Austin and Bokeh
+[00:16:08] Chica, $77 million seems to have fallen
+[00:16:11] off the back of a truck. Um, presumably
+[00:16:14] a Cyber Truck. But a few thousand
+[00:16:17] overpriced pickup trucks are the least
+[00:16:19] of the related party concerns in this
+[00:16:22] document. Antonio Gracias is a long-term
+[00:16:25] Musk Ally and a sitting member of the
+[00:16:28] SpaceX board of directors. He also runs
+[00:16:31] a private investment firm called Valor
+[00:16:34] Equity Partners. According to the IPO
+[00:16:37] perspectus, SpaceX and XAI are carrying
+[00:16:40] more than $20 billion in AI
+[00:16:43] infrastructure lease obligations tied to
+[00:16:46] agreements with entities connected to
+[00:16:48] Valor. Some of these deals are
+[00:16:50] structured as what accountants call
+[00:16:53] failed sale leasebacks. Normally in a
+[00:16:56] sale lease back, a company sells an
+[00:16:58] asset to an investor, gets cash up
+[00:17:01] front, and leases the asset back,
+[00:17:04] removing it from the balance sheet. When
+[00:17:06] the transaction fails to qualify as a
+[00:17:08] genuine sale under accounting rules, the
+[00:17:11] asset stays on the books and the
+[00:17:13] associated payment obligations get
+[00:17:16] recorded as debt instead. The practical
+[00:17:19] effect is that SpaceX is carrying
+[00:17:21] billions in obligations to a firm run by
+[00:17:24] one of its own board members on its
+[00:17:27] balance sheet as debt. It's once again
+[00:17:30] considered good practice to board
+[00:17:32] members who don't have $20 billion worth
+[00:17:35] of highinterest financial loans with the
+[00:17:38] company they're supposed to be
+[00:17:40] overseeing. But anyhow, back in 2016,
+[00:17:44] Elon Musk used Tesla's shareholder money
+[00:17:47] to acquire Solar City, a struggling
+[00:17:50] solar company that he also chaired and
+[00:17:53] partly owned. To help justify the deal,
+[00:17:56] he staged a public demonstration of
+[00:17:58] Solar City solar roof tiles during the
+[00:18:01] acquisition negotiations. The tiles were
+[00:18:04] later found by a Delaware court to have
+[00:18:06] been actually inoperable and far from
+[00:18:09] ready to go to market. At the time of
+[00:18:12] the demonstration, the court reviewed
+[00:18:14] the entire transaction under its
+[00:18:16] strictest standard of scrutiny,
+[00:18:18] describing the process as deeply flawed,
+[00:18:21] noted Musk's apparent inability to
+[00:18:24] acknowledge his clear conflict of
+[00:18:25] interest, and then found the deal
+[00:18:28] entirely fair anyway, largely because
+[00:18:31] 85% of the shareholders had approved it,
+[00:18:34] and Tesla's stock subsequently went up.
+[00:18:38] The judge declined to award Musk his
+[00:18:41] legal costs, which is the Delaware Court
+[00:18:43] of Chancery's version of a strongly
+[00:18:46] worded letter. Musk later had a falling
+[00:18:49] out with Delaware over his Tesla pay
+[00:18:51] package and reinccorporated in Texas. He
+[00:18:54] has now completed a structurally similar
+[00:18:57] acquisition, this time of XAI in a state
+[00:19:00] with far more lack securities rules. In
+[00:19:03] Texas, to bring a derivative lawsuit
+[00:19:05] against SpaceX, a shareholder must own
+[00:19:08] at least 3% of the company. At the
+[00:19:11] current valuation, that's approximately
+[00:19:14] 52 billion worth of stock. To win any
+[00:19:17] lawsuit, they must prove not just a
+[00:19:19] breach of fiduciary duty, but
+[00:19:22] specifically fraud, intentional
+[00:19:24] misconduct, or a knowing violation of
+[00:19:27] law. A conflicted transaction, even one
+[00:19:30] with no independent oversight.
+[00:19:32] whatsoever does not meet that standard
+[00:19:35] on its own. And if you wanted to go
+[00:19:37] looking for the internal emails that
+[00:19:39] might help you to prove fraud, as
+[00:19:41] shareholders did so effectively in
+[00:19:43] Delaware, Texas corporate law now
+[00:19:46] explicitly excludes emails and text
+[00:19:49] messages from shareholder document
+[00:19:52] requests.
+[00:19:53] When Tesla reincorporated in Texas,
+[00:19:56] Governor Greg Abbott posted on Twitter
+[00:19:59] to personally congratulate Musk and wish
+[00:20:02] him well, which gives you a reasonable
+[00:20:04] sense of the regulatory environment. The
+[00:20:08] lesson that Musk appears to have drawn
+[00:20:10] from Solar City is not don't do
+[00:20:13] conflicted acquisitions, it's do them
+[00:20:15] somewhere with friendlier courts. The
+[00:20:18] clearest beneficiaries of this
+[00:20:20] acquisition are not the SpaceX engineers
+[00:20:23] trying to get to Mars. They're the
+[00:20:25] venture capitalists and banks, including
+[00:20:27] Morgan Stanley, who were at first stuck
+[00:20:29] holding billions in underwater debt from
+[00:20:32] Musk's chaotic buyout of Twitter. Thanks
+[00:20:35] to the XAI SpaceX merger, those lenders
+[00:20:38] have been made whole in SpaceX equity,
+[00:20:41] conveniently timed just before the
+[00:20:44] largest IPO in history. Now,
+[00:20:46] historically, investment bankers won IPO
+[00:20:49] mandates by demonstrating deep sector
+[00:20:52] expertise, long-term advisory
+[00:20:55] relationships, and a willingness to work
+[00:20:57] extremely long hours. It used to be
+[00:21:00] quite a dignified business. The first
+[00:21:02] sign of slipping standards in investment
+[00:21:05] banking came in 2007 when the Goldman
+[00:21:08] Sachs bankers who were pitching for the
+[00:21:10] Lululemon IPO mandate turned up to the
+[00:21:13] meeting led by David Solomon also known
+[00:21:16] as DJ Dol dressed headto toe in
+[00:21:20] Lululemon at leisure wear. I want to be
+[00:21:23] clear here this slip-in standards may
+[00:21:26] well have been the event that triggered
+[00:21:28] the global financial crisis that year.
+[00:21:31] DJ Diesel, the bad boy of corporate
+[00:21:34] finance this time around, boasted to the
+[00:21:37] press that he secured the lead left
+[00:21:39] position on the largest IPO in history
+[00:21:42] by having his staffers help him send
+[00:21:44] Elon Musk a direct message on Twitter.
+[00:21:48] Morgan Stanley, which had cultivated a
+[00:21:50] Musk relationship for years through
+[00:21:52] their StarTech banker, Michael Grimes,
+[00:21:55] is listed as co-lead. Their name appears
+[00:21:58] second in alphabetical order directly
+[00:22:01] after Goldman Sachs. Morgan Stanley was
+[00:22:04] apparently so furious about this that
+[00:22:06] they force SpaceX to explicitly clarify
+[00:22:09] in the term sheet that the listing is
+[00:22:11] purely alphabetical.
+[00:22:14] 23 banks have cramped their names onto
+[00:22:17] the cover of this prospectus. The fees
+[00:22:19] constitute the most lucrative Wall
+[00:22:21] Street IPO payday ever. The only
+[00:22:24] evidence of enterprise usage of Musk's
+[00:22:27] Grock AI may well be the millions of
+[00:22:30] dollars of licenses that Musk is forcing
+[00:22:33] on his lead IPO banks. All of this
+[00:22:36] brings us to the corporate governance
+[00:22:38] structure of SpaceX, which is perhaps
+[00:22:41] the most heavily fortified dictatorship
+[00:22:43] ever brought to US public markets. The
+[00:22:46] company will have a dual class share
+[00:22:49] structure. Regular investors will get
+[00:22:51] class A shares which carry one vote and
+[00:22:54] Elon Musk gets class B shares which
+[00:22:57] carry 10 votes each. While Musk only
+[00:22:59] owns around 41% of SpaceX, he will
+[00:23:03] control more than 85% of the votes,
+[00:23:06] meaning that he can't ever be fired by
+[00:23:08] shareholders.
+[00:23:10] The company has also placed limits on
+[00:23:13] how shareholders can file legal
+[00:23:15] challenges. As SpaceX writes in the
+[00:23:17] perspectus, this will limit or preclude
+[00:23:20] your ability to influence corporate
+[00:23:22] matters and the election of our
+[00:23:24] directors. On top of that, because Elon
+[00:23:28] Musk convinced NASDAQ to change their
+[00:23:30] index inclusion methodology in order to
+[00:23:32] win this listing, SpaceX will be
+[00:23:35] fasttracked for inclusion in the NASDAQ
+[00:23:38] 100 index. This is a massive deal. The
+[00:23:41] NASDAQ 100 is tracked by over $600
+[00:23:44] billion of passive investor money. By
+[00:23:47] fasttracking SpaceX into the index,
+[00:23:50] countless pension funds and passive
+[00:23:52] investors will become forced buyers of
+[00:23:55] the stock almost immediately, long
+[00:23:58] before there's any serious price
+[00:24:00] discovery. And they'll own shares in a
+[00:24:03] heavily cash burning company where they
+[00:24:06] have no voting power and no meaningful
+[00:24:08] ability to sue management.
+[00:24:11] Musk has ensured that he will never lose
+[00:24:14] his control over SpaceX. The filing
+[00:24:16] reveals the creation of a new class C
+[00:24:19] non voting stock. This exists so that
+[00:24:22] SpaceX can acquire other companies in
+[00:24:25] the future using that stock without ever
+[00:24:28] diluting Musk's voting power. And if he
+[00:24:31] ever decides to step down, he can place
+[00:24:34] his super voting shares into trusts,
+[00:24:37] passing those super voting shares onto
+[00:24:39] his children, ensuring dynastic control.
+[00:24:43] Finally, we get to his compensation
+[00:24:46] package. You've most likely read about
+[00:24:48] how Musk is getting 1 billion
+[00:24:51] performance-based restricted shares and
+[00:24:53] how these shares only vest when SpaceX
+[00:24:56] establishes a permanent human colony on
+[00:24:59] Mars and hits a 7.5 trillion market cap.
+[00:25:04] SpaceX explicitly describes the
+[00:25:06] achievement of these milestones in the
+[00:25:08] prospectus as being improbable. To be
+[00:25:12] clear, this is not a sudden burst of
+[00:25:14] cander from management. It's instead a
+[00:25:17] bit of an accounting trick. Under
+[00:25:19] accounting rules, if the company
+[00:25:21] admitted that it was probable that Musk
+[00:25:24] would get these shares, they would have
+[00:25:26] to expense the full value of the award,
+[00:25:28] potentially hundreds of billions of
+[00:25:30] dollars on their income statement today.
+[00:25:33] By categorizing the share grant as
+[00:25:36] improbable, it gets booked at zero cost.
+[00:25:39] But there's a trick. As law professor
+[00:25:42] Anne Lipton points out, Musk doesn't
+[00:25:45] actually need to achieve any of those
+[00:25:47] hard-to-reach goals. He gets the utility
+[00:25:50] of these shares immediately. He can vote
+[00:25:53] them today. He can collect dividends on
+[00:25:55] them today. And with the approval of a
+[00:25:58] board that he entirely controls, he can
+[00:26:00] pledge them as collateral for loans to
+[00:26:03] get access to tax-free cash today. He
+[00:26:06] gets all the benefits of owning the
+[00:26:09] shares immediately based on a Mars
+[00:26:11] colony that the company admits he will
+[00:26:14] probably never build. Now, possibly the
+[00:26:17] most extraordinary line in the entire
+[00:26:19] prospectus is this. SpaceX renounced
+[00:26:23] certain corporate opportunities that may
+[00:26:25] be presented to Mr. Musk and certain of
+[00:26:28] our directors and their respective
+[00:26:30] affiliates. and such persons may have no
+[00:26:33] duty to present such opportunities to
+[00:26:36] us. What this means is that nothing
+[00:26:38] stops Elon Musk from setting up a
+[00:26:41] separate private company tomorrow to
+[00:26:43] pursue whatever the next big tech trend
+[00:26:46] is rather than doing it inside SpaceX,
+[00:26:50] which if you remember him claiming Tesla
+[00:26:52] was an AI company and then immediately
+[00:26:55] starting XAI as a separate competing
+[00:26:58] private entity is a fairly relevant
+[00:27:00] risk. As an Lipton summarized it, public
+[00:27:04] shareholders in SpaceX will have no
+[00:27:06] votes that matter, no ability to sell at
+[00:27:09] a fair price discovered through normal
+[00:27:11] market mechanisms, and no ability to sue
+[00:27:14] the company for wrongdoing. No votes, no
+[00:27:17] sales, no suits. There's one technology
+[00:27:21] at SpaceX that everything else depends
+[00:27:23] on. Not the AI, not the satellite
+[00:27:26] internet, not the Mars colony. One
+[00:27:29] rocket, Starship, the largest rocket
+[00:27:32] ever built, is supposed to be the key to
+[00:27:35] everything. Cheaper launches, bigger
+[00:27:38] Starlink satellites, orbital data
+[00:27:40] centers, a city on Mars, the NASA
+[00:27:43] contracts. Without Starship, the entire
+[00:27:46] $1.75 trillion story falls apart
+[00:27:49] entirely. Yesterday, Barrens wrote that
+[00:27:53] the Starship launch was a bigger deal
+[00:27:55] for SpaceX than the IPO filing itself.
+[00:27:58] The latest version of the rocket was
+[00:28:00] supposed to launch before the IPO
+[00:28:03] filing, but that launch was postponed.
+[00:28:05] It was then supposed to launch
+[00:28:07] yesterday, the day after the filing.
+[00:28:09] Nicki Minaj even turned up to watch, but
+[00:28:12] there were technical difficulties.
+[00:28:14] According to the news, they're going to
+[00:28:16] try again today. So, we'll have to see
+[00:28:19] how that goes. The problem so far is
+[00:28:22] that Starship hasn't yet worked. It's
+[00:28:25] still in the rapid unscheduled
+[00:28:27] disassembly phase of its development. It
+[00:28:30] is yet to carry any cargo to orbit other
+[00:28:32] than the banana. So, as Baron's rightly
+[00:28:35] states, this launch is really going to
+[00:28:38] matter. The entire investment thesis is
+[00:28:41] built around Starship achieving what
+[00:28:43] SpaceX themselves call an insane flight
+[00:28:46] rate. Hundreds of launches per year,
+[00:28:49] each carrying 200 tons into orbit.
+[00:28:52] Starlink version 3 satellites, which are
+[00:28:55] supposed to provide 20 times the
+[00:28:57] capacity of current models, are too
+[00:28:59] large for the existing rockets and
+[00:29:01] require Starship. The orbital data
+[00:29:04] center concept requires Starship to
+[00:29:07] launch a million satellites. The Mars
+[00:29:09] colony requires Starship to work
+[00:29:11] reliably enough to transport a million
+[00:29:14] people who I guess want to go there. If
+[00:29:18] Starship fails to deliver, if the flight
+[00:29:21] rate is half of what is promised, if the
+[00:29:23] reliability is lower, and if the costs
+[00:29:26] are higher, the entire valuation
+[00:29:28] collapses. The $ 1.75 trillion number
+[00:29:32] assumes Starship works exactly as
+[00:29:35] advertised on schedule with no technical
+[00:29:38] setbacks. History suggests that rockets
+[00:29:42] rarely work exactly as advertised. So
+[00:29:45] the company claiming to be worth $1.75
+[00:29:48] trillion is depending on a rocket that
+[00:29:51] is yet to figure out how to land without
+[00:29:54] exploding, which is a risk. Now, IPO
+[00:29:58] prospectuses are required to tell
+[00:30:00] investors specifically what the company
+[00:30:03] will do with their money. This is called
+[00:30:05] the use of proceeds. A piece by Cape
+[00:30:08] Fear Advisors points out how hard you
+[00:30:11] have to dig, including through the
+[00:30:12] footnotes to grasp the full picture of
+[00:30:15] SpaceX's use of proceeds. The IPO is
+[00:30:19] expected to raise between 50 and $75
+[00:30:21] billion. When you add up all of the
+[00:30:24] commitments buried in the document, the
+[00:30:26] company needs approximately $235 billion
+[00:30:31] over the next few years, between three
+[00:30:33] and five times the IPO proceeds. What
+[00:30:36] this means is that the IPO is not the
+[00:30:39] end of fundraising. It's just the
+[00:30:42] beginning. Matt Lavine summed up how
+[00:30:44] investors should think about this
+[00:30:46] vibes-based investment in his Money
+[00:30:49] Stuff newsletter. He writes, "If you're
+[00:30:51] buying SpaceX stock to tell Elon Musk
+[00:30:54] what to do, you should stop. If you're
+[00:30:56] buying SpaceX stock because you want
+[00:30:59] exposure to the space AI business, but
+[00:31:01] you have your doubts about current
+[00:31:03] management, you should stop. If you're
+[00:31:06] buying SpaceX stock because you like
+[00:31:08] Elon Musk and want to go along for the
+[00:31:10] ride with him, yes, that's correct.
+[00:31:13] That's the investment thesis here. If
+[00:31:16] later you're disillusioned with Elon
+[00:31:18] Musk, if you feel that you were misled
+[00:31:20] that he didn't do the stuff he promised
+[00:31:22] to do, well, that's kind of his whole
+[00:31:24] thing. If you found this video
+[00:31:26] interesting, you should watch this video
+[00:31:28] on private credit next. Don't forget to
+[00:31:31] check out our sponsor SY using the link
+[00:31:33] in the video description and see you in
+[00:31:35] the next video. Bye. [music]

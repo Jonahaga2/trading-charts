@@ -1,0 +1,1566 @@
+[00:00:00] hey what's going on happy thanksgiving i
+[00:00:02] hope you're having a great
+[00:00:04] start to the holiday season and what
+[00:00:07] better
+[00:00:07] thing to do when it's thanksgiving you
+[00:00:10] have some time off
+[00:00:11] and you're quarantined what better thing
+[00:00:13] to do than to have a drink with your
+[00:00:15] buddy larry
+[00:00:16] and write a little bit of code i'm gonna
+[00:00:19] have
+[00:00:19] a bit of woodford reserve today
+[00:00:23] and we are gonna hang out and back test
+[00:00:27] some trading strategies so
+[00:00:31] let's talk about this so during this
+[00:00:35] tutorial series we have been discussing
+[00:00:38] this
+[00:00:38] opening range breakout strategy i know
+[00:00:41] you're probably tired of it right we've
+[00:00:42] we've been
+[00:00:43] talking for like 20 videos now and i
+[00:00:45] keep saying opening range breakout
+[00:00:46] whatever
+[00:00:47] but uh yeah we got to keep going with
+[00:00:49] this because
+[00:00:51] um i want to actually test this strategy
+[00:00:54] right
+[00:00:54] because how did i actually choose this
+[00:00:56] as the example that we're going to talk
+[00:00:58] about
+[00:00:59] well some guy sent me a link on twitter
+[00:01:01] and asked if i would talk about it
+[00:01:03] that was my entire decision making
+[00:01:05] process and he sent me this link to this
+[00:01:07] warrior trading site right
+[00:01:08] and this word trading site says it works
+[00:01:11] right but i don't know this word trading
+[00:01:13] guy
+[00:01:13] some people question whether he's legit
+[00:01:15] or not maybe he's great
+[00:01:16] i don't know i'm not making any
+[00:01:18] judgments but you'll find all these
+[00:01:20] strategies online for instance if you
+[00:01:22] type make 100
+[00:01:23] a day from trading right you'll see this
+[00:01:25] guy talking about ttm squeeze you'll see
+[00:01:27] the ziptrader guy
+[00:01:29] talking about you know candlesticks and
+[00:01:32] rsi and stuff like that
+[00:01:34] you'll find there's this three bar play
+[00:01:35] guy in here and they might all be great
+[00:01:38] you know i haven't validated all of
+[00:01:39] their claims
+[00:01:40] they might make tons of money from
+[00:01:42] trading however
+[00:01:44] how do you know whether to believe any
+[00:01:45] of these people right if
+[00:01:47] they claim these indicators work or
+[00:01:50] these candlestick patterns work if i say
+[00:01:52] you know this opening range breakout
+[00:01:53] strategy is what you should use how do
+[00:01:55] you actually
+[00:01:56] test that out and see if there's even
+[00:01:58] any truth behind that right
+[00:02:00] because it's easy for a video to cherry
+[00:02:03] pick
+[00:02:04] uh individual charts and individual
+[00:02:06] stocks and show when a particular
+[00:02:08] straight trading strategy would have
+[00:02:09] worked
+[00:02:09] and illustrate it and you see the
+[00:02:11] picture of the chart you see
+[00:02:13] the buy and the cell and you go wow that
+[00:02:15] made me a lot of money
+[00:02:16] i should be doing that but how do you
+[00:02:18] know if that really worked over time
+[00:02:19] a lot of people will show just the
+[00:02:21] examples that worked and they don't talk
+[00:02:22] about when it didn't work
+[00:02:24] they don't talk about when they would
+[00:02:26] have actually taken their stop-loss
+[00:02:27] they talk about what you could have done
+[00:02:28] like oh you could have sold here bought
+[00:02:30] here blah blah blah
+[00:02:31] make it look really easy right so how do
+[00:02:33] you validate that what any of these
+[00:02:35] people
+[00:02:35] are saying is true how do you validate
+[00:02:37] if anything i'm saying is true
+[00:02:39] how do you validate any of your ideas to
+[00:02:41] see if there's any
+[00:02:42] truth behind them and if these
+[00:02:44] strategies would actually work
+[00:02:46] over the long term at least in the past
+[00:02:49] well
+[00:02:49] that's what we're going to do today
+[00:02:51] we're going to use backtrader
+[00:02:52] to write a back testing program that's
+[00:02:55] going to take our historical data from
+[00:02:56] the database that we downloaded in the
+[00:02:58] last video
+[00:02:59] we can replay that data minute by minute
+[00:03:02] for the entire year
+[00:03:03] for every single stock in the nasdaq 100
+[00:03:06] and our backtrader program
+[00:03:08] will apply a strategy to that feed of
+[00:03:11] data so as the minute data
+[00:03:12] is being replayed minute by minute we'll
+[00:03:14] be executing
+[00:03:16] the opening range breakout algorithm
+[00:03:18] against the minute bar data
+[00:03:20] and cerebro which is the control center
+[00:03:23] of a backtrader application is going to
+[00:03:26] be updating
+[00:03:27] a broker object with and
+[00:03:30] updating the cache executing orders and
+[00:03:32] keeping track of profit and loss
+[00:03:34] and we'll be able to see the outcome of
+[00:03:36] trading the strategy on any given day
+[00:03:39] over the past year for any stock in the
+[00:03:41] nasdaq 100
+[00:03:42] and following this video i'm going to
+[00:03:44] show you how to optimize
+[00:03:46] that strategy so that we can try out
+[00:03:48] different parameters so we can see
+[00:03:49] should we have used the 15 minute
+[00:03:51] opening range the 30 minute opening
+[00:03:53] range
+[00:03:53] the one hour opening range should we
+[00:03:56] have used an atr stop loss
+[00:03:58] at two times atr stop loss or just
+[00:04:01] uh two times the opening range we could
+[00:04:04] up uh
+[00:04:05] we could adjust any of the parameters in
+[00:04:07] our program
+[00:04:08] and see if we could optimize it a little
+[00:04:10] more while being careful not to
+[00:04:12] over optimize or over fit our
+[00:04:15] algorithm so let's go ahead and get
+[00:04:18] started
+[00:04:18] talking about the code and i'm going to
+[00:04:20] approach this one a little bit
+[00:04:21] differently
+[00:04:22] in that i'm going to show you some of
+[00:04:24] the written code
+[00:04:25] and mark it up with the ipad and try to
+[00:04:27] walk you through it first
+[00:04:28] and then we'll write write the code from
+[00:04:31] scratch real quick so i want to give you
+[00:04:32] an overview
+[00:04:33] of how this works and then we'll dive
+[00:04:35] into the details and write it from
+[00:04:36] scratch
+[00:04:37] so let's go ahead and get started with
+[00:04:38] coding this strategy
+[00:04:40] all right check it out so i opened up
+[00:04:42] some of my code this is a screenshot of
+[00:04:44] my code so i can draw on it so i'm
+[00:04:45] trying out the ipad
+[00:04:46] uh for this particular video so this is
+[00:04:50] some of the code for the strategy back
+[00:04:52] test
+[00:04:53] and what you see here right here is the
+[00:04:56] main program
+[00:04:57] and so you have this if name equals main
+[00:04:59] it's the beginning of the program
+[00:05:00] and the first thing we do is connect to
+[00:05:03] the sqlite database using
+[00:05:05] sqlite3.connect
+[00:05:06] and we import our we're going to import
+[00:05:08] our config at the top of the script so
+[00:05:10] we're just going to connect
+[00:05:12] to our appdb file that we've been using
+[00:05:14] throughout the
+[00:05:16] tutorial series series and we're going
+[00:05:18] to do a select query
+[00:05:20] right and what that select query is
+[00:05:22] going to do
+[00:05:23] is select all the stock ids that we have
+[00:05:26] in our database
+[00:05:27] and so in the last video we took a
+[00:05:30] snapshot
+[00:05:31] of all of the minute data for every
+[00:05:32] single stock and so we have
+[00:05:34] a bunch of stock ids in here and those
+[00:05:36] stock ids all correspond
+[00:05:38] to the stock ids in the nasdaq 100
+[00:05:42] so we have our stock table each of those
+[00:05:44] has a primary key
+[00:05:46] and that refers to a unique stock and so
+[00:05:48] we're just getting a list of all the
+[00:05:49] stocks we're going to loop through
+[00:05:50] right and so here you'll see that i'm
+[00:05:52] looping through all the stocks
+[00:05:54] and so for each stock i'm going to run
+[00:05:56] the back test
+[00:05:58] so if you haven't watched my videos on
+[00:06:00] backtrader before
+[00:06:01] there's a few parts to a back trader
+[00:06:03] program the first
+[00:06:04] thing that every single back trader
+[00:06:05] program needs is to instantiate
+[00:06:08] this cerebro object right here
+[00:06:11] and cerebro i think it means or cerebral
+[00:06:14] i believe
+[00:06:14] is in spanish i think it means brain and
+[00:06:16] so this is just the control center for
+[00:06:19] the application so what cerebro has is a
+[00:06:22] couple
+[00:06:23] of options so the first thing you do you
+[00:06:26] have is a broker
+[00:06:27] so the cerebro object
+[00:06:30] has a broker object and
+[00:06:34] you can give your broker a certain
+[00:06:35] amount of cash so your brokerage
+[00:06:37] could be you know alpaca or ameritrade
+[00:06:39] or e-trade or whatever
+[00:06:40] but it emulates a broker here um and so
+[00:06:43] we're
+[00:06:44] setting the initial amount of cash that
+[00:06:46] we want to trade with
+[00:06:47] i think by default it's ten thousand but
+[00:06:49] i find that a little low
+[00:06:50] so i like to start with a hundred
+[00:06:52] thousand uh so just think about the
+[00:06:54] size of the account that you're usually
+[00:06:57] trading with
+[00:06:57] and you know the amount of cash that you
+[00:06:59] want to initialize your brokerage with
+[00:07:01] and test this out with so
+[00:07:03] i like a hundred thousand i think 10 000
+[00:07:05] is a little bit low um
+[00:07:07] the next thing we do here now this is
+[00:07:09] optional this ad
+[00:07:10] sizer so that what ad sizer does is
+[00:07:14] it lets you specify the amount you're
+[00:07:17] going to
+[00:07:17] purchase on any given buy so if you
+[00:07:20] don't have a sizer here
+[00:07:21] when you execute a buy order with this
+[00:07:24] broker
+[00:07:24] um it'll just buy one share and sell one
+[00:07:27] share but if i add a sizer here i can
+[00:07:29] say
+[00:07:30] i can give it a certain percent or a
+[00:07:32] certain amount of cash that i want to
+[00:07:34] use when i make a trade so i can say
+[00:07:37] buy 100 shares so i can use a fixed
+[00:07:40] stake
+[00:07:40] like by 100 shares or i can say you know
+[00:07:44] buy ten thousand dollars worth or i can
+[00:07:46] say buy a percent worth
+[00:07:47] and so what this does is if i have a
+[00:07:49] hundred thousand dollars
+[00:07:51] uh in my account then this would use
+[00:07:53] ninety five thousand dollars right
+[00:07:55] and whenever i execute a trade and as my
+[00:07:58] account grew if i grew it to 200 000
+[00:08:00] then this percentage would obviously go
+[00:08:03] up so 95
+[00:08:04] of 200 000 would be 190 000 so this
+[00:08:07] would keep increasing
+[00:08:08] uh the size so basically i'm essentially
+[00:08:11] going all in on this strategy to see
+[00:08:13] uh how it performs with different stocks
+[00:08:15] right so i'm going
+[00:08:17] almost all in but if you put 100 you run
+[00:08:19] into some problems of running out of
+[00:08:20] cash so
+[00:08:21] you don't want to get too close to using
+[00:08:23] 100 of your balance so that's why i'm
+[00:08:25] using 95
+[00:08:26] okay so the first thing you need is to
+[00:08:30] instantiate
+[00:08:30] cerebro and then you need to add some
+[00:08:34] cash to your broker
+[00:08:35] and optionally you can add a sizer here
+[00:08:38] to determine how much capital you want
+[00:08:40] to use on any given trade
+[00:08:42] okay the next thing you need to do with
+[00:08:46] uh backtrader is to provide a data feed
+[00:08:49] now in the videos i've done in the past
+[00:08:50] i've used a csv
+[00:08:52] file as the data feed you can also use a
+[00:08:55] pandas data frame
+[00:08:56] as a data feed but what i haven't
+[00:08:57] actually seen a lot of people do
+[00:08:59] is using a database it's used a database
+[00:09:02] as the data feed and so that's what i'm
+[00:09:04] doing here and so i looked into how to
+[00:09:06] do that
+[00:09:07] and since there's a way to provide
+[00:09:10] a pandas data feed so backtrader
+[00:09:13] pandas data so
+[00:09:15] backtrader.feeds.pandasdata
+[00:09:16] will accept a pandas dataframe and so
+[00:09:19] what i did was use
+[00:09:20] this feature of pandas this method
+[00:09:22] called read sql
+[00:09:25] and what that does is let's it lets
+[00:09:27] pandas
+[00:09:28] execute a sql query so this is my sql
+[00:09:31] query
+[00:09:32] and you just give it your database
+[00:09:34] connection which i
+[00:09:36] established up here right so that's my
+[00:09:39] database connection reference
+[00:09:40] i'm going to execute this sql query here
+[00:09:43] and then we just need to give it some
+[00:09:45] parameters and so the sql query as you
+[00:09:47] can see
+[00:09:48] i'm selecting all the minute bars from
+[00:09:50] stock price minute
+[00:09:51] so i'm selecting date time open high low
+[00:09:53] close and volume
+[00:09:54] where stock id equals stock id so this
+[00:09:57] is a placeholder
+[00:09:58] and then these params you pass the
+[00:10:00] params that go into the placeholder
+[00:10:02] right so there's a variable that's
+[00:10:04] actually going into this
+[00:10:06] uh stock id and so up here
+[00:10:09] right we're looping through each stock
+[00:10:12] and so
+[00:10:13] this will pass it stock id number one
+[00:10:15] two three and four and so this
+[00:10:17] query here if it was on you know the
+[00:10:20] first iteration of this loop it might be
+[00:10:21] on apple the second iteration it might
+[00:10:23] be on amd and so forth so this is just
+[00:10:25] taking
+[00:10:25] uh running a query that selects all of
+[00:10:28] the minute bars for one symbol
+[00:10:30] between a certain time period and so i'm
+[00:10:32] just getting the minute bars when the
+[00:10:34] market is open in this case
+[00:10:36] so the opening range breakout strategy
+[00:10:37] is not trading pre-market or after
+[00:10:39] market
+[00:10:39] so i'm filtering it down to the hours of
+[00:10:42] 9 30 to 4 pm here
+[00:10:44] and so if you if you remember in the
+[00:10:45] last video we're storing all of our
+[00:10:47] minute
+[00:10:48] minute part data uh in new york time so
+[00:10:50] eastern time
+[00:10:51] and so i'm selecting uh all the opening
+[00:10:53] bars
+[00:10:54] okay all the bars while the market is
+[00:10:56] open now uh someone on the message board
+[00:10:58] i think asked about a trading pre-market
+[00:11:01] and so if you want to trade pre-market
+[00:11:02] we've also we also have
+[00:11:04] that pre-market data in our database if
+[00:11:06] you want to use that right
+[00:11:07] so we're selecting all the minute bars
+[00:11:09] for a given day and we're
+[00:11:11] we're using these parameters here and
+[00:11:13] there's a couple of extra
+[00:11:16] uh prep extra options here where we
+[00:11:18] parse the date and time and specify the
+[00:11:20] index
+[00:11:21] of the data frame is the date time right
+[00:11:23] and so after we run this we'll just have
+[00:11:25] a big
+[00:11:25] pandas data frame as usual with that's
+[00:11:28] indexed by the date time
+[00:11:29] and we have all the price data okay so
+[00:11:31] then we add this data frame
+[00:11:33] as a data feed to backtrader right so
+[00:11:36] you instantiate
+[00:11:38] the main part of the program cerebro
+[00:11:40] give it some cash
+[00:11:41] you give it a feed of data and then you
+[00:11:44] need to apply
+[00:11:45] a strategy to that data okay so we're
+[00:11:48] going to add the data feed
+[00:11:50] and then we're going to add a strategy
+[00:11:52] and this opening range breakout is the
+[00:11:54] name of the strategy class
+[00:11:56] that we're going to run and so every
+[00:11:59] backtrader strategy needs to extend
+[00:12:01] a base strategy class so it uses object
+[00:12:03] oriented programming here
+[00:12:04] so far we've just written some scripts
+[00:12:07] that are just
+[00:12:08] run in order they're very procedural but
+[00:12:11] bactrator uses an object-oriented
+[00:12:12] approach here
+[00:12:13] which allows you to inherit some methods
+[00:12:15] and override some methods
+[00:12:17] to implement your strategy and so we're
+[00:12:18] going to talk about how to do that
+[00:12:20] and so once we have a data feed and a
+[00:12:22] strategy to apply that data
+[00:12:23] we do cerebral run and that just runs
+[00:12:26] through the strategy
+[00:12:27] and by running a strategy i mean it's
+[00:12:29] going to replay the minutes minute by
+[00:12:31] minute and apply
+[00:12:32] that strategy class to that minute part
+[00:12:34] data and then i have this commented out
+[00:12:36] right now
+[00:12:37] but you can plot the results to show on
+[00:12:39] a chart
+[00:12:41] it will indicate visually when buys and
+[00:12:43] sells occurred and i'll show your
+[00:12:44] account balance growing so you can see
+[00:12:46] a visual indication of your trading
+[00:12:48] strategy in action
+[00:12:50] right and so that's very useful as well
+[00:12:52] and i'll show that shortly
+[00:12:53] and i also have this part commented out
+[00:12:55] and this is the uh
+[00:12:56] optimize strategy function so after we
+[00:12:58] run it for just
+[00:12:59] a 15-minute strategy by default or a
+[00:13:02] 15-minute opening range by default
+[00:13:03] what we can do is give it some
+[00:13:05] parameters and say
+[00:13:07] optimize and show me the results for if
+[00:13:09] i used 15 minutes
+[00:13:10] 30 minutes and 60 minutes as my opening
+[00:13:13] range okay
+[00:13:14] so that's the main part of the program
+[00:13:16] and then next i'm going to talk
+[00:13:17] talk quickly about the
+[00:13:21] core the core strategy class here right
+[00:13:24] and so the other part of the program
+[00:13:27] here
+[00:13:28] is the strategy class if so this is a
+[00:13:30] class
+[00:13:32] right and you just give it a name
+[00:13:33] opening range breakout and it extends
+[00:13:35] back trader dot strategy so every uh
+[00:13:38] strategy needs to
+[00:13:39] extend this backtrader.strategy class
+[00:13:41] and that provides the base functionality
+[00:13:44] of the object okay and we're giving it
+[00:13:47] some parameters
+[00:13:48] by default so we're giving it some
+[00:13:49] default parameters where the number of
+[00:13:51] opening bars is 15
+[00:13:53] so we're doing an opening range of 15
+[00:13:55] minutes however
+[00:13:56] uh with that optimized strategy we can
+[00:13:58] specify to try different
+[00:14:00] values for opening bars and show the
+[00:14:02] results for each one okay
+[00:14:03] but by default when we first run it
+[00:14:05] we're just going to try out 15 minutes
+[00:14:07] before we optimize it okay when we
+[00:14:10] instantiate
+[00:14:11] the strategy class we're going to
+[00:14:12] initialize some values so that's our
+[00:14:14] init function
+[00:14:15] and initially the opening range is zero
+[00:14:17] the opening high is zero
+[00:14:19] the opening range is zero we haven't
+[00:14:21] bought anything today there's no orders
+[00:14:23] yet so we're just initializing it
+[00:14:25] with nothing and then we have a basic
+[00:14:28] logging utility function
+[00:14:29] and we can just call this function log
+[00:14:31] any time we want to print some output
+[00:14:32] and it'll just print a timestamp and
+[00:14:35] whatever
+[00:14:36] text that we pass so we can pass it some
+[00:14:38] text here
+[00:14:39] and then you know this is going to show
+[00:14:41] on the screen bought
+[00:14:42] at 12 22 sold at 12 31
+[00:14:46] and so forth so it's just a way to log
+[00:14:47] what's happening throughout the day
+[00:14:49] in the program and then we also have
+[00:14:51] this notify order function
+[00:14:53] so this is another function that's part
+[00:14:55] of a back trader strategy
+[00:14:57] and what that does is just a check on
+[00:14:59] the order status
+[00:15:00] so when you execute an order to buy or
+[00:15:02] sell that isn't filled necessarily
+[00:15:04] immediately right sometimes the order is
+[00:15:07] accepted
+[00:15:08] but it hasn't been filled right and so
+[00:15:10] this function lets us check on the
+[00:15:12] status of an order
+[00:15:14] and so you can see if the order status
+[00:15:16] is submitted or accepted right
+[00:15:18] uh this doesn't really do anything but
+[00:15:20] if we actually complete
+[00:15:21] and fill an order right if order is
+[00:15:23] completed
+[00:15:24] then we x we log the order details so
+[00:15:27] this is
+[00:15:28] when i use the log function so self.log
+[00:15:31] and it's calling this log function
+[00:15:33] right and so we're just going to show
+[00:15:34] the order details so we're going to
+[00:15:36] show the the price the fill price like
+[00:15:39] where the order was executed
+[00:15:41] we're going to show how much it cost and
+[00:15:42] show the commission and since we're
+[00:15:44] using alpaca here there's no commission
+[00:15:46] and i haven't configured the slippage
+[00:15:48] yet either okay
+[00:15:49] so this is just logging the price we got
+[00:15:52] and
+[00:15:52] when the order got filled and then if we
+[00:15:54] go over the amount of cash we have
+[00:15:56] we could have an error like order
+[00:15:58] cancelled or we went over
+[00:16:00] our account balance right and then once
+[00:16:03] uh we
+[00:16:03] we've successfully processed our order
+[00:16:05] we can reset self.order to none
+[00:16:08] okay so um that's just this is mostly
+[00:16:11] utility
+[00:16:12] functions and keeping track of the order
+[00:16:14] status the bulk of the trading strategy
+[00:16:16] is actually implemented
+[00:16:18] in this
+[00:16:21] in this next function okay i'm going to
+[00:16:24] pull that up
+[00:16:25] all right this is the most important i
+[00:16:28] would say this is the most important
+[00:16:29] function
+[00:16:30] to understand in the program because
+[00:16:31] this is where we're actually
+[00:16:32] implementing
+[00:16:33] the algorithm itself and so the next
+[00:16:36] function
+[00:16:37] calls is called minute by minute so this
+[00:16:40] next function is called
+[00:16:41] for every single minute of data so we
+[00:16:43] have a data feed
+[00:16:44] and then this self.data actually
+[00:16:48] contains the minute bar data okay
+[00:16:51] so you see how there's self.data.hi and
+[00:16:55] self.data.low here
+[00:16:57] a feed of data looks like a line here
+[00:17:00] and so
+[00:17:01] the self.data the zero with index is the
+[00:17:04] current bar
+[00:17:05] so that would be the current bar and
+[00:17:08] then
+[00:17:08] it backtrader uses this negative
+[00:17:10] indexing
+[00:17:12] where i can look at the previous bar
+[00:17:14] okay
+[00:17:15] and so the way this works is since we're
+[00:17:18] replaying
+[00:17:18] all the minute data in order it starts
+[00:17:21] at 9 30. so the market opens the first
+[00:17:23] minute bar is 9 30.
+[00:17:24] so the index of that bar will be 0. so
+[00:17:26] if we do self.data.low 0
+[00:17:29] that'll access the current bar right so
+[00:17:32] this next function runs all the way
+[00:17:33] through for the first minute of the day
+[00:17:35] then at 9 31
+[00:17:39] it runs again and then 9 30 is the
+[00:17:42] previous minute bar
+[00:17:43] so then the zeroth index is 9 31
+[00:17:47] and then the negative first index is 9
+[00:17:50] 30.
+[00:17:50] and so the tape kind of you got to think
+[00:17:53] of the tape playing minute by minute in
+[00:17:55] order
+[00:17:55] and the head or beginning of the tape
+[00:17:58] you know is the current minute and then
+[00:18:00] you can look back at previous minutes
+[00:18:02] and so you can see what i'm doing here
+[00:18:03] is i'm storing a reference to the
+[00:18:05] current bar
+[00:18:06] and the previous bar by accessing uh the
+[00:18:09] date time the zeroth date time and the
+[00:18:11] negative first date time
+[00:18:12] okay and then so what i'm doing is each
+[00:18:15] for each bar i'm going through
+[00:18:16] since we're processing multiple dates i
+[00:18:18] reset the opening range high and low
+[00:18:20] every single day
+[00:18:21] so if the current parts date bars date
+[00:18:23] time is not equal to the previous
+[00:18:25] bars date if the current bar's a date is
+[00:18:27] not equal to the previous
+[00:18:29] bar's date then i reset the date and
+[00:18:31] we're starting over i reset
+[00:18:32] the opening range high and low okay and
+[00:18:35] so
+[00:18:35] what we do right remember how opening
+[00:18:37] range breakout works
+[00:18:38] is uh the the start time is 9 30
+[00:18:42] right and then to get the end bar end
+[00:18:44] time
+[00:18:45] of the opening range i just add the
+[00:18:47] number of opening bars
+[00:18:49] so since by default this number is 15
+[00:18:51] we're adding 15 minutes to 9 30.
+[00:18:53] so i have an opening range start time of
+[00:18:54] 9 30 and an opening range
+[00:18:56] end time of 9 45 okay
+[00:19:00] and so there's two conditions to keep
+[00:19:02] track of are we inside of the opening
+[00:19:04] range currently
+[00:19:06] inside of that time range or have we
+[00:19:08] passed
+[00:19:10] that opening time range so at the
+[00:19:12] beginning if we're in the opening time
+[00:19:14] range
+[00:19:14] that would be 9 30 9 31 9 32 9 33 9 34
+[00:19:18] all the way to 9 45 right if we're in if
+[00:19:22] we've replayed all the bars and we're in
+[00:19:24] the first 15 minutes here
+[00:19:26] then we just keep track of the maximum
+[00:19:28] high and the maximum lo
+[00:19:30] or the minimum low that's occurred so
+[00:19:32] far so if we're in the opening range
+[00:19:35] if at 931 the high is
+[00:19:38] higher than it was at 9 30 then we're
+[00:19:40] going to point opening range high to the
+[00:19:42] new bar
+[00:19:43] and then we're just going to keep track
+[00:19:44] of the high minute by minute and keep
+[00:19:46] updating the opening range high
+[00:19:47] keep up updating the opening range for
+[00:19:49] low and to get the opening range value
+[00:19:52] we just subtract the high minus the low
+[00:19:54] okay and so
+[00:19:56] if it was you know apple stock goes from
+[00:19:59] 120 to 125 over the course of that range
+[00:20:02] uh that first 15 minutes then the
+[00:20:04] opening range would be five
+[00:20:06] and the opening range high would be 125
+[00:20:08] and the opening range low
+[00:20:10] would be 120 okay okay and so
+[00:20:13] this part we're processing the first 15
+[00:20:15] minutes
+[00:20:16] okay and then this else here we're going
+[00:20:19] through
+[00:20:20] all the time for the rest of the day and
+[00:20:22] so there's a few
+[00:20:23] conditions here we'll say if there's
+[00:20:25] already an order in
+[00:20:26] then return do nothing okay
+[00:20:30] uh and then here's our buy trigger here
+[00:20:32] see our self.buy
+[00:20:35] so if the close of the current minute
+[00:20:38] so that's the current minute is greater
+[00:20:40] than the opening range high
+[00:20:42] and we're not in the position already
+[00:20:44] and we have not bought yet today
+[00:20:46] we're only trading once a day then we're
+[00:20:49] going to do
+[00:20:50] self.buy and we're going to store the
+[00:20:52] results of that in self.order
+[00:20:54] and then we set self bought today equal
+[00:20:56] to true
+[00:20:57] okay so that's our buy trigger if we
+[00:21:00] closed
+[00:21:01] above the opening range high okay and
+[00:21:04] then
+[00:21:04] once we're in the position then we need
+[00:21:06] to know when to exit the position
+[00:21:08] so this is our entry when do we exit
+[00:21:11] couple places
+[00:21:12] the first place we can exit is if
+[00:21:16] we can set a target so we might want to
+[00:21:19] set a target to the opening range high
+[00:21:21] plus 1 times the opening range and so if
+[00:21:24] we close
+[00:21:25] above the opening range high 125
+[00:21:28] plus the opening range which was 5 in my
+[00:21:31] example
+[00:21:32] so that means if apple went to 130 then
+[00:21:35] we could close the position
+[00:21:37] okay so that's closing the position
+[00:21:40] profitably
+[00:21:41] the other way we can exit is exiting at
+[00:21:43] a loss so this is our stop loss so here
+[00:21:46] i'm saying uh if we're in the position
+[00:21:48] if self.position
+[00:21:50] and we close less than and then in this
+[00:21:53] case i'm doing the opening range high
+[00:21:54] minus the opening range so
+[00:21:56] 125 minus five so if we drop back down
+[00:22:00] to 120
+[00:22:01] then exit out of the position and
+[00:22:03] there's a lot of different ways to set
+[00:22:04] this that's just
+[00:22:05] one example that i chose so if it goes
+[00:22:07] up five dollars we sell if it goes down
+[00:22:10] five dollars then we sell okay so we
+[00:22:12] could do two times
+[00:22:13] uh the we can have the profit at two
+[00:22:15] times the loss and so forth
+[00:22:16] or use the atr a bunch of other
+[00:22:18] strategies but uh so
+[00:22:20] we have a way to enter the position and
+[00:22:23] we have a way to exit the position at a
+[00:22:24] profit and a wait to exit the position
+[00:22:27] at a stop loss right and the other thing
+[00:22:29] that can happen is we don't hit our
+[00:22:30] profit
+[00:22:31] target or hit our stop loss in this case
+[00:22:34] i have this
+[00:22:34] running out of time liquidating position
+[00:22:37] and this happens
+[00:22:38] at time 3 45 so if the current bar's
+[00:22:41] time is greater than 3 45 pm
+[00:22:44] mark's about to close i'm just going to
+[00:22:45] liquidate the position because
+[00:22:48] it was specified that we're doing a day
+[00:22:49] trade and we don't want to hold this
+[00:22:51] overnight
+[00:22:52] and so that's our processing we're we're
+[00:22:54] running this entire next function
+[00:22:56] for each and every minute and we're
+[00:22:58] looking at the current minute in any
+[00:23:00] previous minutes
+[00:23:01] and making all the adjustments and
+[00:23:02] reacting to
+[00:23:04] that minute tape being uh played by
+[00:23:07] trader right and then the final thing we
+[00:23:09] have here is
+[00:23:10] the stop function and this is called at
+[00:23:12] the end
+[00:23:13] of the strategy uh running all the way
+[00:23:15] through and you see this
+[00:23:17] logs out uh the number of bars and then
+[00:23:20] it it uh writes the the final value
+[00:23:24] so i'm writing out the ending value here
+[00:23:26] and so you can see
+[00:23:27] finally how much profit we made or how
+[00:23:30] much money we lost
+[00:23:31] and then i added this extra log here
+[00:23:33] just to uh
+[00:23:35] to note stocks that performed
+[00:23:37] exceptionally well
+[00:23:38] and i'm defining that as thirty percent
+[00:23:41] a thirty percent gain or loss
+[00:23:42] so if we finish this hundred thousand
+[00:23:44] dollar account uh for the year
+[00:23:46] uh above 130 000 then i'm just logging
+[00:23:49] the words
+[00:23:50] big winner and if we went down thirty
+[00:23:52] thousand dollars
+[00:23:53] i'm writing major loser and then we're
+[00:23:55] gonna look through our logs and see
+[00:23:57] uh which stocks perform the best using
+[00:23:59] this strategy
+[00:24:00] so hopefully that made sense i know i
+[00:24:03] drew a lot on this particular
+[00:24:05] chart here but i'm going to walk through
+[00:24:08] it step by step step but hopefully since
+[00:24:10] i explained it up front here
+[00:24:11] i can write the code a little bit faster
+[00:24:13] and move quicker when we write the
+[00:24:15] program so
+[00:24:16] let's go ahead and open up visual studio
+[00:24:18] code and write this
+[00:24:19] and run it and print out the output and
+[00:24:21] see what happens
+[00:24:22] all right let's do this i'm in visual
+[00:24:24] studio code i am going to create a new
+[00:24:26] file
+[00:24:27] i'm going to call it backtest.pi there
+[00:24:29] it is
+[00:24:30] and to make this easier on everyone i
+[00:24:32] posted this code in github under hacking
+[00:24:33] the markets
+[00:24:34] full stack trading app if you want to
+[00:24:36] follow along and also help me code it
+[00:24:38] quicker
+[00:24:38] because i don't feel like typing this
+[00:24:40] whole thing out right now to be honest
+[00:24:42] and so i'm going to raw here
+[00:24:45] and i'm going to paste this in and what
+[00:24:47] i do is comment a lot of it out and that
+[00:24:49] way i can type
+[00:24:51] i can talk about it as we build this
+[00:24:52] program up and so what i'll do here
+[00:24:55] is go ahead and leave this class
+[00:24:58] mostly empty so i'm gonna comment out
+[00:25:00] this whole thing
+[00:25:02] so we just have class opening range
+[00:25:04] breakout and i'll just do
+[00:25:06] pass here okay i'll leave my imports in
+[00:25:09] place
+[00:25:10] and then my main program here uh i'll
+[00:25:13] com
+[00:25:14] i'll basically comment everything out
+[00:25:16] and show you what's going on
+[00:25:17] okay so we'll run this in order
+[00:25:21] all right so let's look at this so if
+[00:25:24] name equals main
+[00:25:25] we have that here then we're going to
+[00:25:27] connect to our sqlite database
+[00:25:29] at the top here we're importing our
+[00:25:31] config and our config has the name
+[00:25:34] of our database file so we're using a
+[00:25:36] config.db file
+[00:25:38] we're creating our row factory here
+[00:25:40] which lets us access
+[00:25:42] our the rows that are returned from our
+[00:25:44] query let's just access them more like
+[00:25:46] an object or dictionary
+[00:25:47] right and then we're creating a new
+[00:25:49] cursor so that we can run a query
+[00:25:50] and i'm just going to select the unique
+[00:25:53] the distinct stock ids
+[00:25:54] from my stock price minute table and
+[00:25:57] that way i can
+[00:25:58] get all of these stocks that i've
+[00:25:59] populated in there remember i'm not
+[00:26:01] selecting from the stock table in this
+[00:26:02] case
+[00:26:03] because the stock table has every single
+[00:26:05] stock id
+[00:26:06] in it and i just want to run the ones
+[00:26:08] for the nasdaq 100 that i populated in
+[00:26:10] stock price minute
+[00:26:11] so those are the only ones we have
+[00:26:12] minute bar data for as of the last video
+[00:26:15] so i'm going to fetch all those stocks
+[00:26:17] and then i'm just going to print
+[00:26:19] uh which stock i'm on so we're looping
+[00:26:21] through each of the stocks
+[00:26:22] so i'm going to run this and we should
+[00:26:24] see a bunch of stock ids get printed to
+[00:26:26] the screen
+[00:26:27] okay so that's going to run
+[00:26:32] you see that was a bit slow because we
+[00:26:34] have a lot of data i can add an index to
+[00:26:35] make that run a little faster
+[00:26:37] and so i'll do that in a minute so you
+[00:26:39] see how it says testing 142 147 and so
+[00:26:41] forth
+[00:26:42] so we have a bunch of stock ids and so
+[00:26:44] we're going to do is run
+[00:26:45] our back test on every one of these
+[00:26:47] stock ids so when we're testing
+[00:26:50] at the beginning it's going to be like
+[00:26:52] testing 142
+[00:26:53] which corresponds to some stock in our
+[00:26:55] database and then we're going to
+[00:26:57] instantiate backtrader so this is
+[00:27:00] our cerebro object and we're going to
+[00:27:03] give it a certain amount of cash
+[00:27:04] right and then we're going to run our
+[00:27:08] cerebro here okay so if i run this
+[00:27:14] it's going to run and you see nothing
+[00:27:15] happened right because we instantiate it
+[00:27:17] but we didn't give it any data we didn't
+[00:27:19] give it any strategy or anything
+[00:27:21] okay so i'm going to leave the sizer out
+[00:27:23] for now and then i'm going to actually
+[00:27:26] run this query for our data frame so
+[00:27:29] what i'll do now
+[00:27:29] instead of running this for all 100
+[00:27:31] stocks at first i'm just going to get
+[00:27:33] run it for the first one
+[00:27:34] so i'm going to say i'm going to remove
+[00:27:36] this line shortly but i'm going to say
+[00:27:37] stocks equals stocks
+[00:27:39] 0 and that make that a list
+[00:27:42] and so basically this will just be a
+[00:27:44] list of one and that one will be just
+[00:27:46] the very first stock in the list and so
+[00:27:48] i'm going to loop through that list of
+[00:27:49] one
+[00:27:49] i'm going to instantiate cerebro i'm
+[00:27:51] going to fetch all of the minute data so
+[00:27:53] i'm going to let this run
+[00:27:54] and i'm going to print the data frame
+[00:27:56] and make sure that works
+[00:27:57] okay so i'm going to print the data
+[00:27:59] frame so this should be all of the
+[00:28:00] minute part data for
+[00:28:02] a single stock stock id 142 so there it
+[00:28:05] is
+[00:28:05] and so you see my query ran and i have
+[00:28:08] this starts at january 6 which is the
+[00:28:10] first week we stored minute data for
+[00:28:12] so this is data for the entire year so
+[00:28:14] january 9 30 a.m
+[00:28:16] and you can see it goes all the way down
+[00:28:17] until uh november 20th
+[00:28:20] at at the end of the day so we have tons
+[00:28:22] of minute data here
+[00:28:23] and we have 87 360 records just for that
+[00:28:27] one stock
+[00:28:28] so that's looking pretty good okay so
+[00:28:31] now that we have that
+[00:28:32] i can remove that part where i'm
+[00:28:34] printing it
+[00:28:35] i'm going to create a new pandas data
+[00:28:38] feed
+[00:28:39] and give it the name and so we're going
+[00:28:41] to pass it our data frame
+[00:28:43] we're going to add the data feed to
+[00:28:46] cerebro
+[00:28:47] and then we're going to add a strategy
+[00:28:50] to cerebro just like that and then we're
+[00:28:53] going to run our strategy again
+[00:28:54] okay and that's going to
+[00:28:58] run but it's not really going to do much
+[00:29:00] because our strategy doesn't have
+[00:29:02] anything really in it right so i'm
+[00:29:04] letting that run
+[00:29:10] and nothing happened right so now we
+[00:29:12] need to actually
+[00:29:14] uncomment some of this stuff out right
+[00:29:15] so i'm going to leave
+[00:29:17] these params in here so this is some
+[00:29:19] default parameters that are in a
+[00:29:20] dictionary here
+[00:29:22] and we're using num opening bars of 15.
+[00:29:24] we're going to
+[00:29:25] initialize the class and so when we run
+[00:29:29] the strategy initially
+[00:29:30] the opening range high and lower zero
+[00:29:32] the opening range is zero
+[00:29:34] we haven't bought anything there's no
+[00:29:35] orders we'll put back the log function
+[00:29:38] which we've already talked about
+[00:29:40] and we'll put back this notify order
+[00:29:42] function so this part is straight out of
+[00:29:44] the backtrader
+[00:29:45] documentation this notify order part so
+[00:29:48] if you need
+[00:29:49] more details on that go to the
+[00:29:51] documentation
+[00:29:53] and just go to the quick start guide
+[00:29:54] here and if you look at
+[00:29:56] a notify order right this code i wrote
+[00:30:00] here is straight out of there
+[00:30:01] so it's just checking on the status of
+[00:30:03] an order and printing it out
+[00:30:04] this and the the log function as well
+[00:30:06] come out of the documentation
+[00:30:08] okay so there's that and so the
+[00:30:11] important part here
+[00:30:12] is to understand this next function
+[00:30:15] and so i'm going to uncomment just one
+[00:30:18] piece of this
+[00:30:19] okay and let's see what next looks like
+[00:30:21] each time so i'm going to comment that
+[00:30:23] out and i'm just going to print
+[00:30:26] self dot data
+[00:30:29] dot yeah let's do self.data.open
+[00:30:35] zero okay so if i print that
+[00:30:39] and run this
+[00:30:42] this is going to play an entire line of
+[00:30:45] data so this next function
+[00:30:47] executes for every single data point in
+[00:30:50] the data feed so you see that
+[00:30:51] it's a streaming opening data and so you
+[00:30:54] can see
+[00:30:54] how we're basically just processing each
+[00:30:57] uh bar minute by minute
+[00:30:59] in this function right so that's the
+[00:31:01] open
+[00:31:02] but if we want to access the previous
+[00:31:04] minute
+[00:31:05] i can do a self self.data.open
+[00:31:10] a negative one and that'll show me the
+[00:31:13] current bar and the previous
+[00:31:14] bar if we want to look 15 minutes back
+[00:31:17] we could do -15 for instance right
+[00:31:19] so we just we just use negative indexing
+[00:31:22] to look back in time
+[00:31:23] okay at the previous bar previous bar
+[00:31:25] for that and so forth
+[00:31:27] and to show you that a little bit better
+[00:31:29] let's go ahead
+[00:31:31] i show the date times right so here
+[00:31:34] um i'm storing the current bar state
+[00:31:37] time in the previous bar state time
+[00:31:39] so if i print those current bar date
+[00:31:42] time
+[00:31:43] and i print the previous bars date time
+[00:31:46] um you'll see how this this is executing
+[00:31:49] minute by minute right
+[00:31:51] and this num to date function as a date
+[00:31:52] conversion function that's built into
+[00:31:54] backtrader
+[00:31:55] when it gets this a date time it's
+[00:31:56] actually in a in a certain format that
+[00:31:59] backtrader uses so this num today
+[00:32:01] converts it to the type of date you'd
+[00:32:02] expect right
+[00:32:03] so you see how this is playing through
+[00:32:05] minute by minute
+[00:32:06] and i'm showing the current bar in the
+[00:32:08] previous minute the current minute
+[00:32:09] previous minute
+[00:32:10] and so we're iterating over this data
+[00:32:12] feed so we're playing the entire data
+[00:32:14] feed
+[00:32:15] minute by minute but we can access the
+[00:32:17] previous minute by using
+[00:32:19] the index okay so
+[00:32:22] here what we're doing is resetting the
+[00:32:25] opening range low and high
+[00:32:26] the very beginning we're on like january
+[00:32:28] 6 right and so the
+[00:32:30] initial opening range low and high is
+[00:32:32] just whatever it is
+[00:32:33] the first minute of the day and we
+[00:32:35] haven't bought anything so bot today is
+[00:32:37] false
+[00:32:38] and then once we roll to uh january 7th
+[00:32:41] right we need to reset it and so the
+[00:32:43] the new opening range high and close
+[00:32:45] which be whatever the first minute bar
+[00:32:47] of that day is right
+[00:32:48] so uh we're we're running through this
+[00:32:50] day by day minute by minute we're
+[00:32:52] reinitializing it resetting everything
+[00:32:54] right we're calculating the opening
+[00:32:58] range
+[00:32:58] start time which is a time object so
+[00:33:01] we're using this time 930
+[00:33:03] and we're going to add we use this time
+[00:33:06] delta to add
+[00:33:08] minutes and so since we're using uh 15
+[00:33:10] minutes as our default opening bars
+[00:33:12] we're going to add 15 minutes to 9 30
+[00:33:14] and then convert that to a time and so
+[00:33:16] we'll have 9 30
+[00:33:17] and 9 45 here and then here
+[00:33:20] we do our calculations and so we're
+[00:33:22] going to say
+[00:33:24] if the current bar's date time we're
+[00:33:27] starting storing the current bar's date
+[00:33:28] time
+[00:33:29] if that's between the opening range
+[00:33:31] start time 9 30
+[00:33:32] and 9 45 then we can go ahead and update
+[00:33:36] our opening range high and low
+[00:33:38] so the first 15 minutes we're just
+[00:33:40] establish establishing
+[00:33:41] this opening range high and low if it
+[00:33:43] gets if the
+[00:33:44] the high gets larger and larger we'll
+[00:33:46] we'll keep storing that result in
+[00:33:48] opening range high
+[00:33:49] and we'll keep track of the opening
+[00:33:50] range low while we're in this range
+[00:33:52] until finally
+[00:33:53] we're outside of the first 15 minutes
+[00:33:55] and then we have a final value
+[00:33:56] for our opening range okay so
+[00:33:59] else this means it's after 9 45 then
+[00:34:02] we're going to run all this other code
+[00:34:04] okay and then as we discussed in the
+[00:34:06] drawing and i think the drawing actually
+[00:34:08] covered this pretty well that's why i'm
+[00:34:09] just kind of
+[00:34:10] racing through this because i already
+[00:34:11] like drew on the diagram
+[00:34:13] and talked about what this is doing but
+[00:34:15] the main parts are that we have an entry
+[00:34:17] in
+[00:34:18] exit defined and so our entry is if we
+[00:34:20] close
+[00:34:21] above the opening range high and we're
+[00:34:23] not in the position we haven't bought
+[00:34:24] yet then we can do self.buy
+[00:34:26] and set bot today to true and then we
+[00:34:28] have a few places we exit first
+[00:34:30] we can exit for a profit if the close of
+[00:34:32] the current bar
+[00:34:34] is greater than the opening range high
+[00:34:35] plus the opening range
+[00:34:37] then we can close it and we discuss that
+[00:34:40] you know throughout this entire series
+[00:34:42] so i don't want to go over that again we
+[00:34:44] can also close at a loss so we can get
+[00:34:46] stopped out
+[00:34:47] by saying if we're in the position and
+[00:34:49] the close is less than the opening range
+[00:34:51] high
+[00:34:52] minus the opening range or whatever
+[00:34:54] condition you use
+[00:34:55] we'll do that and then we can also
+[00:34:57] liquidate at the end of the day
+[00:34:59] and then finally we can print out the
+[00:35:02] results
+[00:35:02] when this stop function is called so
+[00:35:05] these functions are called automatically
+[00:35:07] by backtrader so we don't you notice
+[00:35:08] we're not calling next
+[00:35:10] it when a backtrader strategy runs it
+[00:35:12] just runs next over and over again
+[00:35:14] for the length of the data feed and then
+[00:35:16] once it's done processing data
+[00:35:18] it causes it calls the stop method so
+[00:35:20] these events are just built into the
+[00:35:22] class
+[00:35:23] and so when it's done we can print the
+[00:35:25] ending value of the account
+[00:35:27] with broker self.broker.getvalue
+[00:35:30] cool so yeah that's pretty much the
+[00:35:32] whole program
+[00:35:33] actually this took me a long time to
+[00:35:35] write so i saved you some frustration
+[00:35:38] of getting through this because working
+[00:35:39] through all these timestamps and
+[00:35:41] addition and getting this right actually
+[00:35:43] took a long time but uh presenting it it
+[00:35:45] looks very easy here but it's good
+[00:35:47] i want you you should take this code and
+[00:35:49] like wrestle with it
+[00:35:50] and just start a new strategy from
+[00:35:52] scratch and see if you can do it
+[00:35:54] so i'm going to run this and this is
+[00:35:55] just going to run for one stock we'll
+[00:35:56] see how this works
+[00:35:58] so see it says testing 142 and then if
+[00:36:01] this should call our log function
+[00:36:03] right and you see how it says buy sell
+[00:36:06] buy cell
+[00:36:06] executed so you can see this strategy
+[00:36:09] actually running in order
+[00:36:11] and that's pretty cool right so if i go
+[00:36:14] back you can see what happened
+[00:36:16] at the beginning so you can see it ran
+[00:36:18] for january 6
+[00:36:19] and you can see at 9 48 it must have
+[00:36:21] broke out of the opening range
+[00:36:22] so it executed a buy never reached the
+[00:36:26] target for that day so it liquidated
+[00:36:28] position at the end of the day
+[00:36:30] and then the cell executed when we
+[00:36:32] liquidated
+[00:36:33] and then uh january 7th it got right
+[00:36:37] back up and started over
+[00:36:38] it bought and then it sold at a profit
+[00:36:41] which is great
+[00:36:42] uh january 8th it bought but liquidated
+[00:36:45] ran out of time
+[00:36:46] uh january 9th bought and sold at a loss
+[00:36:50] right and so it just goes through day by
+[00:36:52] day and you see what the results would
+[00:36:54] have been
+[00:36:54] from the trading strategy that you coded
+[00:36:57] and it shows you
+[00:36:58] you know the price you paid what it
+[00:36:59] costs and you can even print out the
+[00:37:01] brokerage
+[00:37:02] balance as you go and you see i actually
+[00:37:06] the cost is only the cost of one share
+[00:37:08] and that's because i didn't use the
+[00:37:10] sizer and let's put this sizer back in
+[00:37:12] because we want to buy more than one
+[00:37:14] share right otherwise we're just buying
+[00:37:15] fifty dollars and selling it sixty
+[00:37:17] dollars and selling it right so let's do
+[00:37:19] this hundred thousand dollar number
+[00:37:20] and run this one more time to make it a
+[00:37:22] little more interesting
+[00:37:24] so i'm going to run this and this is
+[00:37:27] just running for one stock for
+[00:37:29] stock 142. okay so it's running through
+[00:37:32] line by line and now you see the cost is
+[00:37:34] like 99 000 dollars and things like that
+[00:37:37] and we're gonna see what happened at the
+[00:37:38] end and sure enough
+[00:37:41] uh at the very end this is when the stop
+[00:37:43] function executes
+[00:37:44] and you see for this particular stock at
+[00:37:46] least opening range breakout
+[00:37:48] was not a successful strategy so the
+[00:37:50] ending value of that account
+[00:37:52] was 96 663 so
+[00:37:56] lost money unfortunate so it didn't work
+[00:37:58] there so did it work
+[00:38:00] for any of the stocks let's check that
+[00:38:02] out
+[00:38:03] so instead of doing stock zero
+[00:38:06] i'm going to run this in order and i'm
+[00:38:09] gonna let it run through for every
+[00:38:10] single stock we have
+[00:38:12] so i'm going to use this little arrow to
+[00:38:15] lock the output to a file and then we'll
+[00:38:16] look at the file
+[00:38:18] so i'm going to output this to a text
+[00:38:20] file
+[00:38:21] so output.text and i'm going to let this
+[00:38:24] finish and this is going to actually
+[00:38:25] take a while to run
+[00:38:27] because it's going to play through all
+[00:38:28] the days for all stocks that we had
+[00:38:30] in our database so i'm gonna let that
+[00:38:32] run i'm gonna stop the video and then
+[00:38:33] show you
+[00:38:34] uh what the results look like all right
+[00:38:36] so i have the output file
+[00:38:38] loaded and it has tons of data now so
+[00:38:40] this is what it looks like when it has
+[00:38:42] um every when it runs through for every
+[00:38:44] single stock cc there's many
+[00:38:46] many lines here corresponding to every
+[00:38:48] single day and so if you'll remember
+[00:38:50] in our back test script here we printed
+[00:38:54] the uh we printed big winner and big
+[00:38:57] loser right
+[00:38:58] so let's see if there's any big winners
+[00:39:00] out of this and maybe this will give us
+[00:39:02] an idea
+[00:39:03] of the type of stocks this worked well
+[00:39:04] for so if i type winner here
+[00:39:06] you'll see there was a stock that was
+[00:39:09] traded
+[00:39:09] where the account balance finished at
+[00:39:11] 132 000
+[00:39:13] and let's see what that stock was if i
+[00:39:15] scroll
+[00:39:16] up a little bit we should be able to
+[00:39:17] find it so this was stock
+[00:39:19] 442 okay so what is that if i look
+[00:39:23] through
+[00:39:24] okay yeah 442 is actually amd
+[00:39:27] worked really well with the strategy and
+[00:39:29] just to make sure that
+[00:39:30] our script actually works let's look at
+[00:39:32] an example here
+[00:39:33] that was profitable so amd let's look at
+[00:39:36] uh
+[00:39:37] january 9th here yeah let's see january
+[00:39:40] 9th that bought
+[00:39:42] at right after the opening range and
+[00:39:44] sold so if i go back to
+[00:39:47] our app or trading view and then type
+[00:39:49] amd
+[00:39:51] amd and then let's look at the chart
+[00:39:56] for what is that january 9th
+[00:39:59] right so i'm going to go back on the
+[00:40:00] 15-minute chart we can go back to
+[00:40:03] january 9th
+[00:40:06] and let's see what that looks like
+[00:40:12] so if i zoom in here to
+[00:40:18] january 9th all right so that
+[00:40:21] looks like it makes sense so you see
+[00:40:23] this green bar here
+[00:40:25] that's the first 15 minute bar and if i
+[00:40:27] look at the open
+[00:40:28] high low and close so the high is 49 36
+[00:40:31] and the low is 48.84
+[00:40:35] and so our program here says i had
+[00:40:38] executed a buy
+[00:40:39] at 49.37 at 9 40 at 9 46
+[00:40:43] right so that was right at the beginning
+[00:40:46] of this bar basically
+[00:40:47] so you see how it closed outside of that
+[00:40:49] opening rate all right
+[00:40:50] yeah close outside that opening range so
+[00:40:52] we got this price up here
+[00:40:53] we bought and then we took a profit up
+[00:40:56] here
+[00:40:57] and so we sold at 10 18
+[00:41:00] for 49.93 so it didn't take very long
+[00:41:03] and then we just sold it
+[00:41:05] right here at 49.93 so that was a great
+[00:41:08] quick
+[00:41:09] entry quick exit fell back but we're
+[00:41:11] already out of the trade so
+[00:41:12] that looks like it worked actually so
+[00:41:14] that looks pretty good um
+[00:41:16] and we could verify more if we wanted to
+[00:41:18] but yeah you can see how amd
+[00:41:20] establishes the opening range breaks out
+[00:41:23] real quick
+[00:41:23] and so yeah it's a nice volatile stock
+[00:41:26] that we can trade and it looks like it
+[00:41:28] worked pretty well with the opening
+[00:41:29] range breakout
+[00:41:31] because we got a 30 profit and you can
+[00:41:33] compare that to buy and hold
+[00:41:35] and so forth if you would like the the
+[00:41:37] stock performed very well
+[00:41:38] on the year as as you know now right
+[00:41:42] you know i think amd at the beginning of
+[00:41:44] the year was like 30
+[00:41:45] and probably as nearly tripled right
+[00:41:47] nearly went to a hundred so
+[00:41:48] didn't beat buy and hold right but you
+[00:41:50] know it performed pretty well
+[00:41:51] and managed risk pretty well like we
+[00:41:53] didn't take any big drawdowns
+[00:41:55] so if amd if you would have bought it at
+[00:41:57] the beginning of the year
+[00:41:58] uh i think you had to watch it fall up
+[00:42:01] till
+[00:42:02] march 20th it fell with everything else
+[00:42:03] so it might have felt from like
+[00:42:06] let's actually we can look obviously so
+[00:42:09] uh yeah you can see amd you would have
+[00:42:11] if you had it you'd watch it go from 52
+[00:42:14] down to
+[00:42:19] uh 37 so pretty big drawdowns there so
+[00:42:22] that's kind of scary so
+[00:42:23] one nice thing about this is you get
+[00:42:24] stopped out pretty quickly and protect
+[00:42:27] your capital so that that's one benefit
+[00:42:29] here so
+[00:42:30] yeah so you can see it it worked out
+[00:42:32] pretty well there
+[00:42:33] so let's see if there are some other big
+[00:42:35] winners that performed even better if we
+[00:42:37] can look through our list
+[00:42:38] and i got one here big winner finished
+[00:42:41] at 164 thousand so
+[00:42:44] if i scroll back up you can see what
+[00:42:46] that is
+[00:42:47] so that is four six nine two and if i go
+[00:42:50] to my database
+[00:42:51] uh that is marriott
+[00:42:54] apparently was one of the best
+[00:42:56] performers with the strategy so
+[00:42:58] if we look at marriott stock
+[00:43:01] you can see it was probably very
+[00:43:03] volatile this year
+[00:43:05] and so if i look at marriott for the
+[00:43:07] year apparently this
+[00:43:09] performed very well with the opening
+[00:43:10] range breakout and
+[00:43:12] why is that let's look at some of the
+[00:43:14] example trades
+[00:43:16] that executed so if we look here you'll
+[00:43:19] see
+[00:43:19] where does the account balance really
+[00:43:21] start growing i'm going to guess that
+[00:43:22] volatility in march led to some big
+[00:43:24] gains yeah look at that
+[00:43:25] so uh march 19th you see where
+[00:43:29] uh we were in some trades here
+[00:43:33] where the account balance quickly went
+[00:43:34] up so if you look on
+[00:43:36] march 20th march 23rd march 24th this
+[00:43:39] account rapidly grew and so that was
+[00:43:42] around this bottom here
+[00:43:43] so those ranges were probably huge i'm
+[00:43:46] guessing
+[00:43:47] so if we look at uh march yeah march
+[00:43:50] 23rd
+[00:43:51] if we look at the opening range like the
+[00:43:53] 15 minutes
+[00:43:54] on those days they're probably really
+[00:43:56] crazy so
+[00:43:58] i'm going to zoom in
+[00:44:01] ah yeah look look at it
+[00:44:04] uh this capitulation down here and so
+[00:44:08] that
+[00:44:08] cue those huge candle sticks there so
+[00:44:10] you can see uh this opening range here
+[00:44:13] and then breaking out of that and having
+[00:44:16] a huge move here
+[00:44:17] from you know 60 to 71 in the same
+[00:44:21] hour right same thing there's this range
+[00:44:24] here where it sold off and
+[00:44:25] it spiked big so yeah there was a lot of
+[00:44:27] these huge moves like this and a lot of
+[00:44:29] gaps
+[00:44:30] there's another move down way back up so
+[00:44:33] it's very
+[00:44:34] very volatile stock here so uh you can
+[00:44:36] look through this list i'm not going to
+[00:44:37] analyze all of them but
+[00:44:39] you can see you know you can see what
+[00:44:41] how well it worked which stocks it
+[00:44:42] worked on and which it didn't
+[00:44:44] see if you can find any common patterns
+[00:44:46] there if you're interested
+[00:44:47] in using the strategy the other thing i
+[00:44:49] haven't done is we also ran this as a
+[00:44:51] short strategy so shorting a breakdown
+[00:44:54] of the opening range so we can also run
+[00:44:56] the strategy that way as well
+[00:44:57] so i ran this as a long only strategy
+[00:45:00] for every stock here and we can also
+[00:45:03] filter down the list
+[00:45:04] by some of the other indicators maybe we
+[00:45:06] only want to trade stocks
+[00:45:07] above the 200-day moving average or
+[00:45:09] 20-day moving average or whatever we
+[00:45:11] want to do there
+[00:45:12] um yeah and so yeah that's that's pretty
+[00:45:14] good so
+[00:45:16] we have an example of running a
+[00:45:19] trading strategy all the way through and
+[00:45:20] back testing it minute by minute
+[00:45:22] and the other thing i wanted to do oh
+[00:45:24] yeah so i wanted to show you how this
+[00:45:26] works
+[00:45:27] uh with this optimize strategy and i
+[00:45:29] also wanted to show
+[00:45:30] uh plotting so here's what we can do so
+[00:45:34] see how we have this cerebral run
+[00:45:36] there's also a cerebral plot here
+[00:45:39] and i'm just going to run this for one
+[00:45:40] stock because i can't plot all of them
+[00:45:42] so i'm going to go back to where i did
+[00:45:44] uh
+[00:45:46] so stocks equals
+[00:45:49] and then i'm gonna i'm just gonna hard
+[00:45:50] code a value stock id
+[00:45:52] and let's just do that amd stock again
+[00:45:55] so i think that was 442
+[00:45:57] and let me see if i can just run this
+[00:45:59] and get the plot
+[00:46:00] all right i'm going to run the program
+[00:46:02] real quick just for a single stock
+[00:46:04] so this is amd and i'm going to see if
+[00:46:07] we can show all the trades and plot it
+[00:46:09] and see if we can get a visualization of
+[00:46:12] what this back test looks like
+[00:46:14] all right so it's taken a second to run
+[00:46:16] through and i haven't added that index
+[00:46:17] yet
+[00:46:18] so i need to do that so it's running
+[00:46:21] through
+[00:46:21] and showing all the trades and then we
+[00:46:24] should get a plot come up
+[00:46:26] after it gets to the end here all right
+[00:46:29] so we printed big winner and you see it
+[00:46:33] pulled up a plot here
+[00:46:34] yeah it's kind of messy there's a lot of
+[00:46:36] data here it looks a little bit better
+[00:46:38] whenever it shows day by day
+[00:46:39] you can see backtrader here applauding
+[00:46:42] all the different trades
+[00:46:43] um yeah and we can't really zoom in and
+[00:46:45] see it very well but you see
+[00:46:47] the green arrows here are when the buy
+[00:46:49] was made the red ariels are when we exit
+[00:46:51] the trade
+[00:46:52] and so there's a trade made every single
+[00:46:53] day with the strategy so it's
+[00:46:55] pretty noisy um but you can see at the
+[00:46:58] top here
+[00:46:59] you can see the cash balance starting at
+[00:47:01] 100 000 and you can see how with amd
+[00:47:03] stock at least
+[00:47:04] how the account balance grew over the
+[00:47:06] course of the year so it started 100 000
+[00:47:08] on this side
+[00:47:09] and you see this little number on the
+[00:47:10] right is 132 000 showing the balance
+[00:47:12] going up and down
+[00:47:13] and then these blue this shows our
+[00:47:15] trades and so all the blue
+[00:47:18] dots here are the profitable trades and
+[00:47:21] the
+[00:47:21] red dots down here are the negative
+[00:47:24] trades
+[00:47:24] you see this is a profit of 3000 up here
+[00:47:28] and that's a loss of 3 000 and so you
+[00:47:30] can see
+[00:47:31] the profitable trades first of all
+[00:47:33] there's more of them
+[00:47:34] and then also the profits look like
+[00:47:37] they're a little bit higher
+[00:47:39] than the losses so uh looks pretty good
+[00:47:42] and you can see uh the trades the entry
+[00:47:45] and exits plotted
+[00:47:46] on top of the chart for amd and you see
+[00:47:48] how amd
+[00:47:49] actually performed really well this year
+[00:47:51] so buying and holding would work pretty
+[00:47:52] well
+[00:47:53] but also it was pretty brutal to live
+[00:47:56] through this
+[00:47:56] drawdown right here so uh yeah so that's
+[00:48:00] that's amd
+[00:48:01] and that's how you visualize and plot a
+[00:48:03] chart
+[00:48:04] in a backtrader and then also the final
+[00:48:07] thing i'm going to do
+[00:48:08] is show you this optimized strategy and
+[00:48:10] you cannot run a plot when you do this
+[00:48:12] and so if you call cerebro op strategy
+[00:48:14] you give it a strategy class
+[00:48:16] and then i'm going to comment out the ad
+[00:48:17] strategy so we're not going to add a
+[00:48:19] strategy we're going to optimize the
+[00:48:21] strategy
+[00:48:21] we give the name the class and then we
+[00:48:23] give it different parameters for num
+[00:48:25] opening bars so i'm going to let it run
+[00:48:26] for 15
+[00:48:27] 30 and 60 and see which one performed
+[00:48:29] the best
+[00:48:30] so i'm going to run it and i'm going to
+[00:48:32] let this run for amd only
+[00:48:34] and see which uh which parameter worked
+[00:48:37] the best
+[00:48:38] okay so it says testing 442 it's going
+[00:48:41] to run through the day
+[00:48:42] for all three different uh permutations
+[00:48:45] of the parameters here so now that it's
+[00:48:48] finished you see at the end it printed
+[00:48:50] the results so
+[00:48:51] opening bars for for 15 minutes is the
+[00:48:53] parameter the ending value is 132
+[00:48:54] 000. 30 minutes as the opening range it
+[00:48:57] did it was 130 000
+[00:48:59] and for 60 minutes is 117 000. so you
+[00:49:01] can see in this particular case
+[00:49:03] looks like it was better to use the 15
+[00:49:06] 15 minutes
+[00:49:07] as your opening range and that made the
+[00:49:09] strategy perform the best
+[00:49:11] and we could try to optimize this even
+[00:49:12] further by like passing all the
+[00:49:14] parameters like 15 minutes 16 minutes 17
+[00:49:16] minutes 18 minutes 19 minutes
+[00:49:18] or trying every single moving average
+[00:49:19] and things like that like the 197 day
+[00:49:22] moving average and such
+[00:49:24] to try to fit the strategy but that's
+[00:49:25] considered over
+[00:49:27] optimizing and so sure we could come up
+[00:49:29] with a back test
+[00:49:30] that perfectly predicts and works for
+[00:49:32] the past but that doesn't necessarily
+[00:49:34] mean
+[00:49:35] anything about the future so it's good
+[00:49:37] to have you know an actual theory behind
+[00:49:39] why your idea or strategy actually works
+[00:49:41] and to test it
+[00:49:42] with a few parameters like this but not
+[00:49:45] you don't want to overdo it
+[00:49:46] so um yeah that's pretty much it yeah we
+[00:49:49] we talked about how to
+[00:49:51] take advantage of the minute data that
+[00:49:53] we downloaded
+[00:49:54] in the previous video we wrote a back
+[00:49:57] test
+[00:49:58] to attest our opening range breakout
+[00:50:00] strategy for all stocks
+[00:50:02] in that list in the qqq and we talked
+[00:50:04] about how to optimize the parameters how
+[00:50:06] to visualize
+[00:50:08] the results and how to see the outcome
+[00:50:11] and test our
+[00:50:12] ideas to see their profitability based
+[00:50:15] on historical data
+[00:50:16] and we can continue to forward test
+[00:50:19] our strategies uh just using paper
+[00:50:21] trading but you can see how this
+[00:50:23] back testing strategy makes it very easy
+[00:50:26] to see how our performance would have
+[00:50:28] been over the course of a year rather
+[00:50:30] than having to wake up every morning
+[00:50:31] see how our strategy did day by day
+[00:50:33] that's very slow process
+[00:50:35] back testing lets us run our algorithm
+[00:50:37] quickly over
+[00:50:38] years and years of time and see the
+[00:50:40] results so hope you learned something
+[00:50:42] thanks for watching stay tuned for the
+[00:50:44] next video thanks

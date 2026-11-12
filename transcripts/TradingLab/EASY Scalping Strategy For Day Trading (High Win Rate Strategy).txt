@@ -1,0 +1,129 @@
+[00:00:00] In this video, I m going to show you a simple
+[00:00:00] scalping strategy that works perfect for the
+[00:00:04] 1 minute time frame.
+[00:00:05] It uses a special indicator called the Williams
+[00:00:05] Fractals indicator and we are going to combine
+[00:00:10] it with some other indicators to make it that
+[00:00:10] much more effective.
+[00:00:13] It s easy to use, works in almost all markets,
+[00:00:13] and most importantly it works.
+[00:00:18] Let s dive straight into it.
+[00:00:19] First things first, get on trading view or
+[00:00:19] whatever trading chart platform you use.
+[00:00:24] Right now I have my time frame set to 1 minute,
+[00:00:24] but this strategy will work for all time frames.
+[00:00:28] Let s add the Williams fractals indicator
+[00:00:28] first.
+[00:00:31] To do that, go the indicators tab . Type in
+[00:00:31] Williams fractals . And its going to be this
+[00:00:36] one right here.
+[00:00:37] The default settings will work perfect, just
+[00:00:37] make sure the period is set to 2, and for
+[00:00:42] the colors, it originally red then green,
+[00:00:42] but I flipped them to green then red, so its
+[00:00:47] easier to understand when reading the chart.
+[00:00:49] Next, we are going to add some moving averages.
+[00:00:52] Go back to the indicators tab, and type in
+[00:00:52] three moving averages , It should be this
+[00:00:56] one by advent trading.
+[00:00:59] Once you have that added, we are going to
+[00:00:59] change the settings up a bit.
+[00:01:01] Go into the settings of the indicator.
+[00:01:04] Change length 1 to 20, Length 2 to 50, and
+[00:01:04] length 3 to 100.
+[00:01:09] Then for simplicity sake I m going to change
+[00:01:09] the colors of the lines to green, yellow,
+[00:01:13] and red, in that order.
+[00:01:15] Now that we have the indicators added let
+[00:01:15] s go on to how the strategy actually works.
+[00:01:20] The first rule of this strategy is you can
+[00:01:20] only go long if the the 20 day (the green
+[00:01:25] line) is above the 50 day (the yellow line).
+[00:01:28] And the 50 day, is above the 100 day.
+[00:01:30] If they are crossing each other like this,
+[00:01:30] then you should not enter the trade.
+[00:01:34] So just to be clear, the lines should look
+[00:01:34] like this if you are entering a trade.
+[00:01:35] It s the complete opposite for a short trade,
+[00:01:35] so the 200 should be on top, the 50 in the
+[00:01:40] middle, and the 20 on the bottom.
+[00:01:42] Now that we know how the moving averages should
+[00:01:42] look, lets move on to know when to enter into
+[00:01:46] a trade.
+[00:01:47] To enter a long trade, the price has to pull
+[00:01:47] back under the 20 day moving average, or under
+[00:01:53] the 50 day moving average.
+[00:01:54] Then you also have to see a Williams Fractal
+[00:01:54] green arrow.
+[00:01:58] This will be your entry signal.
+[00:02:00] Let me show you an example so you can better
+[00:02:00] understand what I m talking about.
+[00:02:04] So first things first, we made sure the moving
+[00:02:04] averages are in the correct order and they
+[00:02:09] are not crossing each other.
+[00:02:11] Then we wait for price to cross under the
+[00:02:11] 20 day moving average.
+[00:02:14] We keep waiting till the Williams fractals
+[00:02:14] indicator gives us the green arrow for the
+[00:02:19] go a head to enter the trade.
+[00:02:21] Once it does we create a long position put
+[00:02:21] the stop loss right below the 50 day, and
+[00:02:25] the have a 1.5 profit ratio.
+[00:02:28] As you can see in this example the strategy
+[00:02:28] worked out perfectly and we made money.
+[00:02:33] If the price keeps moving down before the
+[00:02:33] Williams fractal gives a green arrow, and
+[00:02:37] crossed the 50 day then gives a green arrow.
+[00:02:39] Your going to do the same thing and enter
+[00:02:39] the trade here, but this time you are going
+[00:02:43] to add a stop loss right below the 100 day
+[00:02:43] and still set a 1.5 ratio.
+[00:02:48] Now, there is a very important rule you must
+[00:02:48] follow for this trading strategy to be profitable.
+[00:02:54] If the price moves below the 100 day moving
+[00:02:54] average, you do not enter a trade on the green
+[00:03:00] arrow from the Williams fractal indicator.
+[00:03:02] So as you can see here the price moves below
+[00:03:02] the 100 day, then the Williams fractal gives
+[00:03:07] a green arrow, and as you can see the price
+[00:03:07] drops again.
+[00:03:10] So if the price ever closes below the 100
+[00:03:10] just disregard the next green arrow.
+[00:03:15] Because the chance that it will drop even
+[00:03:15] more is a lot higher.
+[00:03:19] Now let s take an example of a short trade
+[00:03:19] with this strategy.
+[00:03:22] First, we make sure all of our lines our correct
+[00:03:22] by having the 100 on top, and the 20 on bottom.
+[00:03:27] The we wait for the price to cross above the
+[00:03:27] 20 day, then wait for a red arrow from the
+[00:03:33] Williams fractal indicator.
+[00:03:34] Once we get the signal, we enter the trade
+[00:03:34] here, add a stop loss right above the 50 day,
+[00:03:39] the set a 1.5 profit ratio.
+[00:03:42] You should also understand, that you have
+[00:03:42] to trust the strategy.
+[00:03:46] It may take some time, before the price hits
+[00:03:46] your profit mark.
+[00:03:49] As you can see here, the trading signals gave
+[00:03:49] us the go ahead to enter the trade, we make
+[00:03:50] our take profit and stop loss, and the price
+[00:03:50] makes multiple moves in each direction, and
+[00:03:51] takes a quite a long time to hit our mark.
+[00:03:52] It s important not to panic sell, as long
+[00:03:52] as you have a stop loss and a take profit
+[00:03:53] mark, you will be fine.
+[00:03:54] As an important note you should also realize
+[00:03:54] that you will get a ton of buy signals, especially
+[00:03:57] if you are trading on the 1 minute time frame.
+[00:03:59] If you are, it s extremely important you make
+[00:03:59] sure that your broker or exchange has low
+[00:04:04] fees, otherwise the fees will ruin the gains
+[00:04:04] because of the volume of trades you are taking.
+[00:04:10] I just shows you a winning strategy using
+[00:04:10] moving averages and the Williams fractal indicator.
+[00:04:15] All I ask in return is if you take 2 seconds
+[00:04:15] out of your day and like this video.
+[00:04:19] If you want to see one of my top favorite
+[00:04:19] strategies I use on a daily basis, check out
+[00:04:24] this video, and ill see you guys next time.

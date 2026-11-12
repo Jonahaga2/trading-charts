@@ -1,0 +1,170 @@
+[00:00:00] Bollinger Bands
+[00:00:00] In this video, I m going to show you a trading
+[00:00:01] strategy that works so good I just have to
+[00:00:01] tell you guys. And it involves using Bollinger
+[00:00:07] Bands and RS. It s simple, easy to use, and
+[00:00:07] has a pretty high success rate if you use
+[00:00:13] it correctly. Well enough talk, let s get
+[00:00:13] straight to it.
+[00:00:16] The first step for this strategy is setting
+[00:00:16] up the Bollinger bands. If you ve never used
+[00:00:19] Bollinger Bands before, your lucky you clicked
+[00:00:19] this video, because this indicator is absolutely
+[00:00:25] incredible and is great way to find support
+[00:00:25] and resistance levels.
+[00:00:29] So the first thing we want to do is to go
+[00:00:29] to trading view or whatever trading chart
+[00:00:33] platform you use, click the indicators tab,
+[00:00:33] and type in Bollinger Bands .
+[00:00:37] Now, the default settings trading view will
+[00:00:37] give you, are nice, but we want to change
+[00:00:42] them for this specific strategy.
+[00:00:42] First thing you want to do is go to the length
+[00:00:46] section and change this value to 30, make
+[00:00:46] sure the standard deviation is set to 2.
+[00:00:51] Then I m also going to remove the background
+[00:00:51] of the indicator, and change the lines to
+[00:00:54] red. This is all personal preference, you
+[00:00:54] can do whatever you prefer here.
+[00:00:57] So if you didn t know, this is how Bollinger
+[00:00:57] bands work. The center line, is a moving average.
+[00:01:02] So whatever amount the length is, this indicator
+[00:01:02] is going back that many candle sticks and
+[00:01:08] finding the average between them. So for this
+[00:01:08] strategy we are going back 30 candlesticks.
+[00:01:14] The lower and upper lines are standard deviation
+[00:01:14] lines.
+[00:01:17] Alright we got the Bollinger Bands setup,
+[00:01:17] now let s add the RSI.
+[00:01:20] To do this, just go to your indicators tab,
+[00:01:20] type in RSI and then click this top one that
+[00:01:25] says Relative strength index
+[00:01:25] Now that we have RSI added let s modify the
+[00:01:30] settings a bit. Make sure that upper band
+[00:01:30] is set to 70, and your lower band is set to
+[00:01:35] 30.
+[00:01:35] Then this length is probably going to be set
+[00:01:38] to 14, make sure to change that to 13 for
+[00:01:38] this strategy.
+[00:01:41] If you haven t used RSI before it s a great
+[00:01:41] indicator to tell you if a certain security
+[00:01:46] is being overbought or oversold.
+[00:01:46] If the line is above the 70 value, its being
+[00:01:51] overbought, if the line is below the 30 value,
+[00:01:51] its being oversold.
+[00:01:55] Now it s time to pair these 2 indicators together
+[00:01:55] and get some profitable trades going.
+[00:02:00] Make sure you watch the rest this video, because
+[00:02:00] im going to explain a crucial tip to make
+[00:02:04] this strategy working just okay, to turn into
+[00:02:04] a money making machine.
+[00:02:09] So there are 2 different strategies you can
+[00:02:09] choose from when using these indicators. Both
+[00:02:14] of these strategies are built around the concept
+[00:02:14] called mean reversion.
+[00:02:19] What s mean reversion you my ask? Well, mean
+[00:02:19] refers to the word average, and the word reversion
+[00:02:24] means returning to
+[00:02:24] So to put it simply, the phrase mean reversion
+[00:02:29] just means returning to the average. Which
+[00:02:29] is exactly what we are going to be shooting
+[00:02:33] for with this strategy.
+[00:02:33] So as an example, in most cases if there is
+[00:02:38] extreme price movement in one direction whether
+[00:02:38] its up or down, we can pretty much predict
+[00:02:44] after that big price movement, the price will
+[00:02:44] return back to the average (the moving average
+[00:02:49] right here).
+[00:02:49] So if the price goes above the upper Bollinger
+[00:02:52] band, we want to enter a short trade. If the
+[00:02:52] prices goes below the bottom Bollinger band,
+[00:02:57] we want to enter a long trade.
+[00:02:57] Simple enough right? Well, if you did this
+[00:03:01] by itself, odds are it wouldn t work to good.
+[00:03:01] That s why we added the RSI earlier.
+[00:03:06] So as you can see in this example the price
+[00:03:06] went above or below the Bollinger bands many
+[00:03:11] times giving lots of false signals. So if
+[00:03:11] you went in every time here, you probably
+[00:03:17] lost money.
+[00:03:17] To solve this issue we are going to add one
+[00:03:20] more requirement. You can only go in if the
+[00:03:20] RSI hits an extreme value.
+[00:03:25] Meaning, we can only enter a long trade if
+[00:03:25] the price moves below the lower Bollinger
+[00:03:30] band and the rsi goes below the value of 25.
+[00:03:30] For shorting, we will only enter a trade if
+[00:03:36] the price goes above the upper Bollinger band,
+[00:03:36] and the rsi goes over the value of 75.
+[00:03:42] So as an example here we are looing at apple
+[00:03:42] and the price starts going below the bottom
+[00:03:47] Bollinger band here, but at this point in
+[00:03:47] time the RSI is still not where we want it
+[00:03:52] to be. So we wait it out a bit until the line
+[00:03:52] goes below 25. which it proceeds to go down
+[00:03:58] all the way to 20, we enter a long trade at
+[00:03:58] this point, and the price returns to the average
+[00:04:04] just like we predicted it would.
+[00:04:04] Now there is some crucial information you
+[00:04:08] need to know about this strategy or else it
+[00:04:08] simply just wont work. This next tip im about
+[00:04:12] to tell you is the difference between making
+[00:04:12] this strategy profitable or making a money
+[00:04:17] loser.
+[00:04:17] Where this strategy has its faults is when
+[00:04:20] the market is moving sideways. For almost
+[00:04:20] all trading strategies when the markets is
+[00:04:25] moving sideways it s a lot harder to predict.
+[00:04:25] So as example here, the price goes below the
+[00:04:30] lower Bollinger band, and the RSI is below
+[00:04:30] 25, but the price just keeps on dropping.
+[00:04:37] So if you entered here, you would have an
+[00:04:37] absolute massive loss.
+[00:04:41] So now im going to show you a nice little
+[00:04:41] trick, so you know before hand before these
+[00:04:44] huge price movement even happen.
+[00:04:44] So in this example notice how skinny the Bollinger
+[00:04:49] bands are at this point in time, they are
+[00:04:49] very close together, and there is barely any
+[00:04:53] price movement, and the market is moving sideways.
+[00:04:53] You can also see that the RSI is being very
+[00:05:00] tame and staying in between the purple rectangle
+[00:05:00] and not going above or below the major points
+[00:05:06] we made before. This alone, should immediately
+[00:05:06] raise a huge red flag.
+[00:05:11] Most times when the market is like this for
+[00:05:11] a while, when the price does break in a certain
+[00:05:17] direction, it goes in that direction with
+[00:05:17] huge amounts of momentum.
+[00:05:21] So in these types of examples, you never want
+[00:05:21] to trade trying to catch a falling knife when
+[00:05:26] the price starts to act like this.
+[00:05:26] Let me show you another strategy we can use,
+[00:05:30] to help solve this, that works like absolute
+[00:05:30] magic.
+[00:05:34] Here you can see the price starts to drop
+[00:05:34] to the lower Bollinger band and then reverses.
+[00:05:38] The next time it comes down, it makes a new
+[00:05:38] lower lower from the previous low, but something
+[00:05:43] interesting is happening. The RSI made a higher
+[00:05:43] lower.
+[00:05:47] So we have price making a lower low, but the
+[00:05:47] RSI is making a higher low. This right here,
+[00:05:52] is called divergence and is an absolute great
+[00:05:52] sign to enter a trade, especially if rsi was
+[00:05:59] previously below 25, and the price went below
+[00:05:59] the lower Bollinger band.
+[00:06:03] If this happens, there s an extremely great
+[00:06:03] chance the price will reverse and make a new
+[00:06:08] higher high.
+[00:06:08] I just showed you how to pair Bollinger bands
+[00:06:12] with RSI and make it a profitable trading
+[00:06:12] strategy. All I ask for in return is if you
+[00:06:16] can take 2 seconds out of your day and like
+[00:06:16] this video.
+[00:06:19] You should also watch my other video where
+[00:06:19] I go over a MACD strategy which gets an 86%
+[00:06:24] win rate, which is absolutely insane when
+[00:06:24] it comes to trading.
+[00:06:28] So go check that out, and ill see you guys
+[00:06:28] next time.

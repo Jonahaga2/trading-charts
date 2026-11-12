@@ -1,0 +1,846 @@
+[00:00:00] Hello everyone, welcome back.  In
+[00:00:02] the last video, I showed you how to
+[00:00:04] program this super
+[00:00:06] trend indicator in Python.  I was able to obtain
+[00:00:08] opening, high, low and closing data
+[00:00:11] to generate these buy and
+[00:00:13] sell signals.  I made it change from true to
+[00:00:16] false every time it went from an
+[00:00:18] uptrend to a downtrend.  So
+[00:00:22] we can generate the location of
+[00:00:24] these buy and sell signals, which
+[00:00:26] are the green and red arrows in the
+[00:00:28] TradingView version of the indicator.
+[00:00:33] Now that we've done that, how do we
+[00:00:35] use this to buy and sell
+[00:00:37] cryptocurrencies or stocks
+[00:00:39] programmatically?  Instead of obtaining the
+[00:00:45] last 365 days of data and showing
+[00:00:47] where the signals would have been,
+[00:00:50] why not obtain more
+[00:00:52] recent data and continue monitoring it?  And
+[00:00:56] each time a new bar arrives,
+[00:00:58] we check if that bar generates a
+[00:01:00] buy or sell signal.  If we detect
+[00:01:03] that, then let's execute a purchase or
+[00:01:06] sale using our broker.  I'm going to
+[00:01:09] connect this to a
+[00:01:11] task scheduler.  I'm also going to connect it to
+[00:01:14] CCXT, which is the library we use
+[00:01:16] to connect to the exchange.  And I will
+[00:01:20] use it to execute commands in a
+[00:01:22] cross-platform manner.  This way you could
+[00:01:26] execute a buy order on
+[00:01:27] Coinbase, Binance, or any other
+[00:01:30] exchange on the list, as it
+[00:01:32] supports quite a few.  I'm going to use
+[00:01:35] Binance US and Coinbase, since I have a
+[00:01:37] couple of accounts with them with some
+[00:01:39] money to test.  But if you use another
+[00:01:41] exchange, it should be very easy
+[00:01:43] to switch, as it's a
+[00:01:45] common interface for different
+[00:01:47] cryptocurrency exchanges.  For scheduling,
+[00:01:49] I'm going to use a package called Python
+[00:01:51] schedule.  You can run `pip install
+[00:01:53] schedule` and you'll have it.  This
+[00:01:55] allows us to run a function according to a
+[00:01:57] schedule.  Let's say I have a function
+[00:01:59] called job, right?  It prints "
+[00:02:01] I am working".  I can program it
+[00:02:03] to run every 10 seconds,
+[00:02:05] every 10 minutes, every hour, or any
+[00:02:08] cron-type period we want to use.
+[00:02:10] So I just put this "while true",
+[00:02:12] indicate "run pending", add a "sleep"
+[00:02:15] and what I will do is continue executing
+[00:02:17] this job according to the schedule.  Okay, so yeah
+[00:02:19] , let's go ahead and
+[00:02:21] start coding this.  The first thing I'll do
+[00:02:23] is install this "
+[00:02:25] schedule" package.  Okay, so this is where
+[00:02:28] we leave off.  We have a
+[00:02:30] Python program that calculates the true range,
+[00:02:32] average true range, and
+[00:02:34] supertrend, and we return the
+[00:02:37] data frame that has these
+[00:02:39] final upper and lower bands calculated and whether it is
+[00:02:41] in an uptrend or not.  So
+[00:02:43] , let's calculate this according to a timeline.
+[00:02:46] When I was encoding this in the
+[00:02:47] last video, we used the
+[00:02:49] daily timeframe.  So you can see
+[00:02:51] all the data for April here, but
+[00:02:52] we're not using a timestamp,
+[00:02:54] right?  We are only using the
+[00:02:56] closing prices of the day.  Now, this video
+[00:02:58] won't be very easy to prove if I
+[00:03:00] have to wait, you know, 100 days
+[00:03:02] for a
+[00:03:04] buy or sell signal to be executed.  So I need to
+[00:03:06] shorten the timeframe here just
+[00:03:08] to be able to demonstrate this.  So what
+[00:03:10] I'm going to do is take this chart
+[00:03:12] and you'll see that I'm in the
+[00:03:14] daily timeframe here.  Uh, I'm going to reduce it.
+[00:03:16] Let's say we go down to the hourly time frame
+[00:03:18] .  You can see this trend
+[00:03:21] here in the hourly time frame.  And
+[00:03:22] that, in reality, still often takes several
+[00:03:25] days.  So you can see
+[00:03:27] that this upward trend started on
+[00:03:29] April 25th and it's already May 1st.  And
+[00:03:31] that won't work very well for a
+[00:03:33] demo video.  So I'm going to
+[00:03:35] narrow it down to a 1-
+[00:03:37] minute timeframe.  Although I expect this won't
+[00:03:39] generate any money in the
+[00:03:41] 1-minute timeframe because, as you can see, in
+[00:03:43] such a short timeframe, it's quite
+[00:03:45] unstable.  So I'll show you the
+[00:03:48] logic of how to execute all of this
+[00:03:50] according to a schedule, and then you can
+[00:03:51] experiment with different parameters
+[00:03:54] after that.  So, let's use the
+[00:03:56] one-minute timeframe just so
+[00:03:57] we can have the operations
+[00:03:59] run live on the video.  This
+[00:04:02] is the one-minute timeframe for
+[00:04:04] Ethereum here.  And what I'll do is
+[00:04:08] install this "schedule" library.
+[00:04:12] So I'm going back to my window
+[00:04:14] here, first I'll quickly clear the screen
+[00:04:16] and do a "pip install
+[00:04:18] schedule" to make sure I have it
+[00:04:20] installed.  And we also want to
+[00:04:23] make sure we have CCXT, which I already
+[00:04:26] did.  I already imported it above.  And
+[00:04:28] therefore, that's already installed.  And here
+[00:04:30] I can simply import 'schedule'.
+[00:04:33] And then, instead of this
+[00:04:35] 1-day timeframe, I'm going to use 1 minute,
+[00:04:38] 1 minute.  And let's get the last 100
+[00:04:41] bars of data per minute here.  And if
+[00:04:44] I run this, you should see our
+[00:04:46] data frame again, but you'll see
+[00:04:49] that instead of days, I'll see that these
+[00:04:51] bars are all from May 1st.  And they come
+[00:04:53] every minute, 1434, 1435, 1436, 1437, and so
+[00:04:58] on.  And they see that my
+[00:05:01] indicator changes from true to false,
+[00:05:03] which is good and is what I expect.  Let's
+[00:05:07] see.  So they have a sale
+[00:05:09] generated at 10:31 and a purchase at
+[00:05:13] 10:22.  So, if I look at 10:22,
+[00:05:15] you can see that it goes from false to true.  That's
+[00:05:18] my buy signal at 10:22, and
+[00:05:21] ignore the time zone there.  So
+[00:05:24] this is at 10:22 and then, at the
+[00:05:26] 31-minute mark right here,
+[00:05:29] you see it change to false.  So it's a
+[00:05:31] downward trend.  And that's my signal right there
+[00:05:33] .  So what I want to
+[00:05:35] do is focus on the present,
+[00:05:37] which is now 39 minutes past the
+[00:05:40] time where I am.  And they see that this is 30
+[00:05:42] minutes, the last 38 minutes.  That
+[00:05:45] 's the last closed bar.  And what
+[00:05:47] I want to focus on is when this
+[00:05:49] false changes to true, right?
+[00:05:51] Because this red arrow here indicates
+[00:05:53] that we have broken an upward trend.  And
+[00:05:56] then we want to see when a
+[00:05:59] new green arrow is generated and execute a
+[00:06:00] purchase, right?  So how do I
+[00:06:03] keep getting new bars?  And, you see,
+[00:06:05] at the beginning of the program, I
+[00:06:07] simply got all the bars at
+[00:06:09] once.  So I took the last 100 and
+[00:06:11] printed them on the screen.  So
+[00:06:13] what we want to do is, every minute,
+[00:06:15] get the last bar.  So let's
+[00:06:18] use this programming package
+[00:06:20] here.  I'm going to the
+[00:06:22] programming package and it says I have to
+[00:06:24] import 'schedule'.  It says I have to
+[00:06:26] import 'time', which is just
+[00:06:28] Python's built-in time module.  So
+[00:06:30] I'll import 'time' that way.  And
+[00:06:32] now, let's copy this example from
+[00:06:35] here.  So, let's get a
+[00:06:37] function called 'job'.  So in the
+[00:06:40] end here, I'll create a function
+[00:06:42] called 'job' that says I'm
+[00:06:43] working and schedule it to
+[00:06:45] do the 'job' every 10 seconds.  So it's going to
+[00:06:47] run a function called 'job'
+[00:06:49] every 10 seconds.  And then I need this
+[00:06:52] while loop at the end just to keep
+[00:06:53] running the pending tasks.  So I'll
+[00:06:56] leave it for last.  And I'll do a
+[00:06:59] schedule run pending.  And I should see "
+[00:07:02] I'm working" every 10 seconds.
+[00:07:04] So let's run it to make sure it
+[00:07:06] works.  I already have my super
+[00:07:09] trend because I called that function.
+[00:07:12] Now let's see if this
+[00:07:13] scheduling function works as expected.
+[00:07:15] You should see the message "I'm
+[00:07:16] working".  Very good.  As you can see,
+[00:07:19] "I am working" appears there.  That was
+[00:07:21] printed once.  If we wait another
+[00:07:23] 10 seconds, we should see "I'm
+[00:07:24] working" again.  So let's
+[00:07:26] wait for that.  And there you have it.    There's
+[00:07:28] another "I'm working" there.
+[00:07:30] So, what is the work we
+[00:07:31] really want to do?  I'm going to stop
+[00:07:33] that program.  I will press control C
+[00:07:35] to exit.  Instead of just saying "
+[00:07:38] I'm working on it", what if
+[00:07:40] I take this code in here, this
+[00:07:42] snippet that gets my
+[00:07:44] barcode data?  And let's put it inside the
+[00:07:47] schedule function.  I'll leave the connection
+[00:07:50] to the Binance exchange right there.  And
+[00:07:53] within my task, I will put this
+[00:07:55] logic that seeks the bar.  So
+[00:07:59] instead of "I'm working," I'll say "
+[00:08:02] looking for new bars for..." and
+[00:08:04] let's see what time it is when this
+[00:08:06] runs.  I'll use an f-string right there.
+[00:08:11] And I can do a datetime.now.isoformat
+[00:08:13] .  Format.  I think that should
+[00:08:17] work.  So, an f-string and
+[00:08:20] I'll say when this function is running
+[00:08:23] , and instead of jobs, I'll
+[00:08:25] call it fetch bars.  And I'll say that every
+[00:08:28] 10 seconds I should look for the bars.  Good.
+[00:08:32] Let's see if it works.  OK.  And then
+[00:08:35] I'll print it, and I'll also print what
+[00:08:40] the data frame I just
+[00:08:41] obtained looks like.  Good.  So I'll do that.
+[00:08:46] Instead of 100, let's get just five
+[00:08:48] quickly.  To avoid overloading the
+[00:08:50] screen by running this every 10
+[00:08:52] seconds.  The data frame is not
+[00:08:54] defined.  Yes ok.  I can no longer
+[00:08:57] run super trend here because I'm
+[00:08:59] getting the bars inside this
+[00:09:01] function.  So we'll address that
+[00:09:03] shortly.  I'm going to discuss the
+[00:09:04] super trend calculation and we'll also run that
+[00:09:07] calculation on a programmed basis.  Good.
+[00:09:09] Now I'm going to run this again.  Very
+[00:09:12] good.  Wait 10 seconds.  Then,
+[00:09:14] it will look for new bars.  Very good.  And
+[00:09:22] I got an error.  That time is not
+[00:09:25] defined, and that's because I wrote it wrong.  And
+[00:09:28] let me do it every two seconds
+[00:09:30] quickly.  So I'll run it
+[00:09:32] every two seconds so I don't have to
+[00:09:34] wait too long.  Okay, great.  He said he was
+[00:09:36] looking for new bars for
+[00:09:38] May 1st.  Um, 7:43 and 49 seconds, 51
+[00:09:41] seconds, 54 seconds, 56 seconds, 58
+[00:09:44] seconds.  So you can see that this
+[00:09:47] runs every two seconds to
+[00:09:48] search for new bars.  And then you see this
+[00:09:50] last bar, it's the 42-
+[00:09:51] minute mark.  Eventually, you'll see a
+[00:09:53] new one.  Yes. So, you see that the
+[00:09:55] last one says 43 minutes, right?  And
+[00:09:57] so, we are looking for new bars.
+[00:09:59] Uh, just like that.  And then you can see
+[00:10:02] that this is still in a downward trend.  And
+[00:10:04] you see that the 43-minute bar is right here
+[00:10:06] .  And then you see that minute
+[00:10:09] 44 is still being formed right now
+[00:10:11] .  And that's why I'm only showing
+[00:10:13] the bars that are closed.  And that's why it
+[00:10:15] continues at 43 minutes.  And after
+[00:10:18] a while, you'll see this change at
+[00:10:20] minute 44. And then, when a new
+[00:10:22] bar closes, what we'll do is
+[00:10:24] execute our supertrend.  See if
+[00:10:26] this last bar changed from
+[00:10:28] true to false.  So if the
+[00:10:30] previous bar was in a
+[00:10:32] downtrend, that is, if it was false
+[00:10:34] in an uptrend, and then it
+[00:10:36] changed to true, then we know
+[00:10:38] that it changed to an uptrend.
+[00:10:40] And at that point, we can call CCXT
+[00:10:43] to execute a command.  So you
+[00:10:45] can see that it's extracting.  And there you have it
+[00:10:47] .  I just got another bar,
+[00:10:49] right?  So we have successfully obtained data
+[00:10:51] according to a schedule.  And now
+[00:10:54] what we'll do with that data is move
+[00:10:56] this supertrend calculation inside
+[00:10:58] fetch bars here.  And so, when
+[00:11:01] we retrieve this data frame and
+[00:11:03] store it in DF, we can run
+[00:11:05] this supertrend calculation.
+[00:11:07] So I'll store it in a variable
+[00:11:09] called super trend data.  And then, what
+[00:11:11] we want to do with that
+[00:11:14] supertrend data, um, first we're going to
+[00:11:16] print it out.  So print out the super
+[00:11:18] trend data and then let's look for more
+[00:11:20] bars.  So I'm going to look for 100
+[00:11:23] bars and then I'm going to comment on that
+[00:11:25] printout and we'll just print
+[00:11:27] the populated supertrend data
+[00:11:29] .  So now we have the whole
+[00:11:32] data frame.  There's minute 45 and you can see
+[00:11:34] that our fakes are being
+[00:11:36] printed here.  So, uh,
+[00:11:38] we went from a true uptrend
+[00:11:40] to a false uptrend.  And then, uh,
+[00:11:42] these last ones, what, uh, 15 bars
+[00:11:45] or so, are fake.  Alright.
+[00:11:47] So that works as expected.
+[00:11:49] We are calculating super trend
+[00:11:50] repeatedly.  And you'll notice that here in
+[00:11:52] my super trend function, I
+[00:11:54] was actually just printing the data frame.  So that's what
+[00:11:57] the data frame is actually printing here.  What
+[00:11:58] I want to do here is actually
+[00:12:00] return the data frame.  In that way,
+[00:12:02] uh, these super trend data have
+[00:12:04] the results.  So this has the
+[00:12:06] data frame with super trend, uh,
+[00:12:07] completed.  Good.  And once I have
+[00:12:10] my super trend data actually in
+[00:12:12] this data frame, what I can do is
+[00:12:14] pass this data frame and say that
+[00:12:15] I will write a new function called,
+[00:12:17] uh, check buy and
+[00:12:19] sell signals.  So what I'll do is create
+[00:12:22] another function, uh, called def check by
+[00:12:25] sell signals.  Or to execute purchases and
+[00:12:29] sales, whatever you want to call it.  And this
+[00:12:31] will accept a data frame.  And this will be
+[00:12:33] my super trend data frame.  And then let
+[00:12:36] 's write here verifying purchases and
+[00:12:38] sales.  Good.  And then what I'm going to
+[00:12:42] do here is, uh, pass that on.  So
+[00:12:44] , uh, in my fetch bars, and let's not really
+[00:12:46] call them fetch bars, since they do more
+[00:12:48] than just get bars.  I'll just say it's
+[00:12:50] called a run bot.  And so, every time,
+[00:12:53] every two seconds, I'm going to run my
+[00:12:55] bot.  And we can change that time.
+[00:12:57] Let's say it's, uh, 5 seconds for
+[00:13:00] now.  We'll probably change it to 1
+[00:13:02] minute later.  So, every 5
+[00:13:03] seconds, I'm going to run my bot, and my
+[00:13:06] bot will get new bars.  It will calculate
+[00:13:08] my indicator, super trend, and then
+[00:13:10] check for buy and
+[00:13:12] sell signals and execute an order.  So I'll
+[00:13:14] do a check for buy signals for the
+[00:13:16] super trend data.  I'm going to pass it up here
+[00:13:18] .  And let's just say we
+[00:13:20] 're looking for buy and
+[00:13:22] sell signals.  And I will continue running it every 2
+[00:13:24] seconds.  Good.  So, I do that.
+[00:13:27] Getting new bars.  And it says
+[00:13:29] verifying purchases and sales.  And I have
+[00:13:31] these warnings here because I'm
+[00:13:33] modifying a Pandas data frame
+[00:13:35] directly.  So let me
+[00:13:37] remove that warning.  Um, the way
+[00:13:40] to do it is, I'm going to do, uh, import
+[00:13:43] warnings.  And I'm going to say, um,
+[00:13:46] warnings.filter warnings ignore, just
+[00:13:49] to ignore that.  Um, it's a
+[00:13:51] warning generated by Pandas and it's
+[00:13:53] because I'm doing this where, uh,
+[00:13:56] we directly modify this data frame
+[00:13:57] .  Technically, you should be
+[00:14:00] able to calculate these columns, um, without
+[00:14:02] iterating over a loop like that.  Well,
+[00:14:04] since I'm storing the
+[00:14:06] top and bottom bands in the same column
+[00:14:08] and adjusting it in a loop, that's why it's
+[00:14:10] throwing that warning.  He doesn't like that.    Alright
+[00:14:13] .  So, getting new
+[00:14:15] bars.  As you can see, I'm getting
+[00:14:17] new bars and reviewing purchases and
+[00:14:18] sales.  That's just an empty function
+[00:14:20] for now.  He's not actually checking
+[00:14:22] any purchases or sales.  And what
+[00:14:24] I want to do within checking
+[00:14:26] buy and sell signals is to
+[00:14:27] verify whether we should buy or
+[00:14:29] sell.  And the way I'll do that is
+[00:14:33] by looking at the last row and
+[00:14:35] comparing it to the previous one to see
+[00:14:37] if it changed from a false upward trend
+[00:14:39] to a true one.  Okay.  So
+[00:14:43] let's see how to do it.  Since I have a
+[00:14:47] copy of my supertrend data frame
+[00:14:49] here, I can do an "
+[00:14:51] if not df in uptrend".  So if the
+[00:14:56] upward trend was false, I'm going to
+[00:14:58] print the data frame here, just
+[00:15:01] the end.  I'm going to print the last
+[00:15:05] two bars so you can see what it looks like, and
+[00:15:07] I'll say whether there's no upward trend.
+[00:15:11] Actually, let me print the
+[00:15:12] last two bars of the data frame
+[00:15:14] just to see what it looks like.  Okay, so I'm
+[00:15:16] getting it.  Getting
+[00:15:18] new bars.  And we have these last
+[00:15:21] two bars for minutes 48 and 49. And
+[00:15:23] we're checking if the
+[00:15:25] upward trend changes from false to true.  What
+[00:15:29] I will do here is say, if there is no
+[00:15:31] upward trend in the current row or if
+[00:15:33] I want to get the last row.  To
+[00:15:37] get the index of the last row,
+[00:15:39] I can do: last row index
+[00:15:41] equals the length of the data frame.
+[00:15:44] This will give me the length of the
+[00:15:46] data frame minus one.  And that will give me the
+[00:15:48] index of the last row.  And then
+[00:15:50] I can get the index of the
+[00:15:51] previous row.  Obtaining the length or
+[00:15:55] simply the index of the last
+[00:15:57] row minus two.  And if I print the index
+[00:16:00] of the last row and the index of the
+[00:16:02] previous row.  Let me run that.
+[00:16:12] Very good.  So we'll get the
+[00:16:15] data frame and then the last rows.
+[00:16:17] So 98 and 96. Oh, I can just
+[00:16:20] make the index of the last row
+[00:16:22] minus one again.  That will give me the
+[00:16:24] correct value.  So, I do that.
+[00:16:29] And the last row is 98 and the row
+[00:16:32] before it is 97. So I'm going to
+[00:16:35] check the last row.  So what I'll do
+[00:16:39] here is stop this and say
+[00:16:41] : if it's not in an uptrend;  And
+[00:16:43] what I will do is say if the index in
+[00:16:45] the previous row is not in an
+[00:16:48] upward trend.  So, if the previous row index
+[00:16:51] is trending upwards for the DF,
+[00:16:53] if it's not trending upwards for the DF, uh, if the
+[00:16:55] previous row index and the DF are
+[00:16:59] trending upwards, uh, the
+[00:17:01] last row index, or you could call it the
+[00:17:04] current row index, right?,
+[00:17:06] then we know we should
+[00:17:08] buy, right?  Then, it changed to
+[00:17:11] buy on an upward trend, and
+[00:17:14] likewise, yes, uh, the DF is in an
+[00:17:16] upward trend, uh, index of the
+[00:17:22] previous row and DF in an upward trend
+[00:17:24] .  Oh, and now it's not trending
+[00:17:28] upward for the last
+[00:17:30] row index.  So we went from being in an
+[00:17:32] upward trend to not being in one.  And then
+[00:17:35] I can say, uh, change to a
+[00:17:37] bearish trend.  And then I'll make a sale and let's
+[00:17:40] execute that.  Very good.  So
+[00:17:46] we're still in the
+[00:17:48] downtrend here.  And then, we'll keep
+[00:17:49] checking, we'll keep checking
+[00:17:51] until, uh, there's a fake here and
+[00:17:53] then a real one there.  And then
+[00:17:55] we can make a purchase.  So I'll
+[00:17:57] let it keep running and see if we
+[00:17:59] can get it to activate.  But
+[00:18:00] while we wait, uh, let's start
+[00:18:02] writing the code to
+[00:18:04] actually execute the buy and
+[00:18:05] sell orders.  So, if you remember, uh, CCXT
+[00:18:08] , this library has a way of, uh
+[00:18:11] , creating commands.  And then let's see if
+[00:18:14] I can find one.  Yes. You can create
+[00:18:16] a market buy order or a
+[00:18:18] limit buy order, and so
+[00:18:20] on.  So let's go
+[00:18:21] ahead and see if we can write
+[00:18:23] the code, uh, to create those
+[00:18:25] commands.  And what I'm going to need
+[00:18:27] here is my API key.  Let me see if
+[00:18:29] I remember how to do it.  If I look up the
+[00:18:33] API key, you'll see that now that we're
+[00:18:35] accessing our account,
+[00:18:37] we'll need to pass an API key and an
+[00:18:40] API secret in a dictionary like this
+[00:18:42] .  And so, at first, uh, let's see if I
+[00:18:46] can connect.  So instead of
+[00:18:49] just CCXT Binance like this, I'm going to
+[00:18:52] pass you, uh, this dictionary that has
+[00:18:54] my API key and my secret key.  And I
+[00:18:57] still have this
+[00:18:59] configuration file from when, uh, we did
+[00:19:01] the CCXT demo.  So what I'll do
+[00:19:03] here is import my
+[00:19:04] configuration that I had
+[00:19:05] previously defined.  So I'm going to import the
+[00:19:07] config up here.  And this one actually
+[00:19:09] has my API key and my Binance secret key
+[00:19:11] .  And so, I'm just going to write
+[00:19:15] config Binance API key and config Binance
+[00:19:17] secret key.  I'll put a comma there.  And
+[00:19:20] I'm on Binance US, so I think I
+[00:19:23] need to use Binance US right there.  Let's
+[00:19:25] see.  I'm going to stop this for a moment,
+[00:19:28] run the program again, and see
+[00:19:30] if I can get my
+[00:19:33] balances, for example.  Uh, so I'll do a
+[00:19:36] fetch balance.  Yes, fetch balance.
+[00:19:40] I'll print exchange fetch balance
+[00:19:42] that way.  And let's see if it works to
+[00:19:46] see if I was able to connect successfully.  Okay
+[00:19:49] , it says the API key is not
+[00:19:51] defined.  And I think I copied the
+[00:19:54] JavaScript example because this needs
+[00:19:56] quotes.  Good.  API key, API secret.
+[00:20:03] Let's make sure we use the
+[00:20:05] Python version.  Yes, API key and API secret
+[00:20:08] in quotes.  Run it.  Look at that.
+[00:20:12] I received some balances from my account.
+[00:20:15] As you can see, I have a very
+[00:20:17] small amount of money here.  It seems I
+[00:20:20] have a fraction of Bitcoin.  Um, a
+[00:20:23] fraction of Ethereum here.  And
+[00:20:25] we'll probably have some
+[00:20:26] US dollars.  Yes, look, there are 256
+[00:20:29] dollars here.  So, uh, those are
+[00:20:32] my balances in JSON.  So I was able to
+[00:20:34] successfully connect to my
+[00:20:35] Binance account.  Everything was fine up to that point.  I'm going to
+[00:20:37] comment on this balance line now.  I
+[00:20:41] know I have a Binance connection and
+[00:20:43] should be able to create a
+[00:20:44] buy and sell order.  And then, um,
+[00:20:49] purchase order.  Yes. It's a create buy order,
+[00:20:52] right?  So I'll create a
+[00:20:55] market buy order.  So here, if
+[00:20:59] I execute a purchase, I can do
+[00:21:01] exchange.create market buy order.  Good.
+[00:21:08] And I need a symbol and a quantity.
+[00:21:10] I will buy Ethereum USDT.  And how much
+[00:21:14] can I afford?  It's much more expensive
+[00:21:16] than when I made my old video about the
+[00:21:18] price of Ethereum.  How much does it cost?
+[00:21:20] Uh, $2,851.  I said I have
+[00:21:24] $256 there.  Let's see.  28.50 times.  05.
+[00:21:30] Yes, let's buy 0.05 Ethereum.  Let's put about
+[00:21:34] $140 on that.  I'll do it
+[00:21:38] that way.  Create a market buy order
+[00:21:40] .  Yes, and then I'll save that in
+[00:21:43] the order and print the order, whatever it
+[00:21:46] returns.  And in this one I'll
+[00:21:52] create a market sell order and we'll do 05.
+[00:21:56] Obviously you can use a
+[00:21:57] limit order or dynamically calculate
+[00:21:59] how much to buy and sell depending on
+[00:22:01] the formula you want to use.  You might
+[00:22:04] also want to calculate the size of
+[00:22:06] the position.  I'm just going to put 05. And
+[00:22:11] yes, that looks pretty good.  So I'm going
+[00:22:14] to delete that.  Delete that.  And I'm going to
+[00:22:17] show the last five bars.  And let
+[00:22:21] 's execute this.  Very good.  So
+[00:22:27] we continue in that downward trend.  So
+[00:22:30] this continues.  Very good.  So it
+[00:22:34] looks good.  We are obtaining new
+[00:22:36] data.  Obtaining new data.  Um, and let's
+[00:22:38] think about what would happen here.
+[00:22:40] What's the problem here?  Um, so
+[00:22:43] I would get a new data bar and
+[00:22:45] this would eventually change to
+[00:22:47] true and trigger this
+[00:22:49] purchase order.  Um, but what happens the
+[00:22:52] next time it runs, right?  If I
+[00:22:55] keep running this every few
+[00:22:57] seconds, it will create another
+[00:22:59] market buy order, which I don't want
+[00:23:01] because I will have already bought it.  So what I
+[00:23:04] should do is create a
+[00:23:06] variable up here called "in
+[00:23:08] position".  Um, and simply
+[00:23:11] set it as false.  So I
+[00:23:13] 'm not in a position to be.  And if I make a
+[00:23:15] purchase here, can I, um, obviously
+[00:23:17] check for errors in my order.
+[00:23:20] Um, but I'll just say yes, um,
+[00:23:23] I'm not in a position.  I will only buy if I
+[00:23:26] am not in a position to do so.  So if I
+[00:23:29] 'm not in a position, then I'm going to
+[00:23:31] order.  And then I can set "in
+[00:23:37] position" to true and then I can
+[00:23:40] say otherwise, print "
+[00:23:42] I'm already in position, nothing to do."  Uh
+[00:23:47] , similarly, um, here in my sale
+[00:23:50] I can say, um, if "in position",
+[00:23:52] so if I really own it,
+[00:23:55] then I will make the sale.  So if
+[00:23:59] I'm in the right position, let's continue and
+[00:24:01] change the downtrend to a sell.
+[00:24:04] Change to sell due to bearish trend.
+[00:24:06] And I will set "in position" as
+[00:24:09] false.  And then I'll put "else", print
+[00:24:13] "you are not in position".  Nothing to
+[00:24:17] sell.  Good.  So we'll keep
+[00:24:19] track of whether we're in
+[00:24:20] position or not.  Um, this is a
+[00:24:22] global variable here that I initialized.
+[00:24:24] So I need to put a "global in
+[00:24:27] position" here inside the function.
+[00:24:29] That way I can change this from
+[00:24:31] true to false and modify this
+[00:24:33] global variable.  And instead of waiting
+[00:24:35] for this to happen, let me force this
+[00:24:37] buy and sell quickly to
+[00:24:39] make sure that part of the code
+[00:24:41] works.  So I'm just going to say, um
+[00:24:43] , index of the last row of df.  It is
+[00:24:48] equal to true.  So, let's see if
+[00:24:51] I can simply overwrite the
+[00:24:53] Panda data frame here and force this
+[00:24:55] fake buy signal to make sure
+[00:24:57] this purchase goes through, because I do
+[00:24:59] n't want to wait all day only to
+[00:25:01] find out later that this doesn't work
+[00:25:02] .  So I'm going to run this again
+[00:25:04] .  It says the Binance account does not
+[00:25:07] have enough balance for the
+[00:25:08] specified transaction.  So
+[00:25:11] I changed this to ETHUSD since my money
+[00:25:13] is in US dollars.  I
+[00:25:16] executed it and activated this
+[00:25:17] upward trend.  I set the last row of
+[00:25:20] uptrend to true, it said
+[00:25:22] change to buy on uptrend and I
+[00:25:24] printed the order, so it says change
+[00:25:26] to buy on uptrend.  So
+[00:25:28] I print a change to buy on an
+[00:25:30] upward trend.  I wasn't in the position,
+[00:25:31] so I created a market buy order
+[00:25:33] .  I printed the order and you can see
+[00:25:35] the actual order right here for 0.05
+[00:25:38] Ethereum.  You can see that it cost
+[00:25:40] approximately $142 what I just
+[00:25:42] spent there.  And yes, so it
+[00:25:45] must have been done.  If I check
+[00:25:47] my Binance account here, when looking at
+[00:25:49] this balance, it says a value of
+[00:25:52] $320.  You can see that I mentioned
+[00:25:54] earlier when checking my balances that my
+[00:25:56] balance in dollars was about
+[00:25:58] $256.  It appears I did indeed
+[00:26:00] buy some Ethereum here.  There
+[00:26:02] are the 0.05 Ethereum.  I spent
+[00:26:05] approximately $142, I think, and I
+[00:26:08] already had a small fraction of it in here
+[00:26:10] .  As you can see, this placed
+[00:26:13] a buy order on my account.
+[00:26:16] I want to try this from beginning to end.    I
+[00:26:18] don't want this Ethereum at the beginning
+[00:26:20] now.  Let's create the sales order.
+[00:26:22] Let's make sure the
+[00:26:24] sales order part works.  What I will do
+[00:26:26] here is the opposite.  I will say that the
+[00:26:29] upward trend of the dataframe is
+[00:26:30] true.  I will say that the index of the
+[00:26:35] previous row is equal to true.  And then
+[00:26:38] I'll say that it changed to false in the last
+[00:26:40] row.  I'm going to force a sell order
+[00:26:43] here.  Just to simulate this.  So I'll
+[00:26:47] run this.  Get new bars.
+[00:26:52] You're not in position.  Nothing to sell
+[00:26:54] .  And that's because I restarted my
+[00:26:57] trading bot.  What I want to do is say
+[00:27:00] that the position is true.  So I'm
+[00:27:03] going to force him to say that I'm in
+[00:27:05] position.  You can set the
+[00:27:06] position like this at the beginning,
+[00:27:08] initializing it to true or false
+[00:27:10] depending on whether you are in the
+[00:27:11] position.  But another way is to get
+[00:27:14] your balances and then check your balance
+[00:27:16] at the start of the program using the API instead
+[00:27:19] of just setting the position
+[00:27:21] to true or false.  Note that since
+[00:27:24] I stopped my program, I had to change the
+[00:27:26] position to true because I want to
+[00:27:28] force this sale.  So I'm going to
+[00:27:30] run this and that tested that side.
+[00:27:33] So he said to switch to a
+[00:27:35] bearish trend and sell, correct.  Then,
+[00:27:37] I switched to a bearish trend and sold
+[00:27:38] because I forced that to happen and
+[00:27:40] executed a sell order.  OK
+[00:27:42] .  And they notice that the timer started
+[00:27:44] running again and says, "Uh, looking for new bars
+[00:27:46] ."  Review buying and selling.  And then, since
+[00:27:49] the position changed to uh false here,
+[00:27:52] it says you're not in the position.
+[00:27:54] So there's nothing to sell.  So,
+[00:27:57] um, yes, I was no longer in the
+[00:27:59] position.  So it's not going to sell
+[00:28:01] repeatedly over and over again.  So that
+[00:28:03] worked for us.  OK.  So now let's
+[00:28:07] quickly review the Binance account.  You can see, so now I'm going
+[00:28:12] to refresh my Binance account.  And
+[00:28:14] look, it says US dollar.
+[00:28:16] So I went back to $256.  And
+[00:28:19] my Ethereum holdings have fallen to a
+[00:28:22] really low level, all on their own.  0.1 eh
+[00:28:25] Ethereum right there.
+[00:28:27] I have 31 US cents worth of Ethereum
+[00:28:30] now.  And now you can see that our
+[00:28:32] program is working quite
+[00:28:34] well.  And so, all we have to
+[00:28:36] do now, instead of uh
+[00:28:38] encoding this true and false here,
+[00:28:41] is use the actual true and false that
+[00:28:43] is calculated from the
+[00:28:45] actual values.  OK?  And I'm just going to
+[00:28:48] let this continue.  And then,
+[00:28:50] instead of running every two seconds,
+[00:28:52] I'm going to make it run every
+[00:28:55] minute.  And let me verify.  Is it a
+[00:28:57] minute?  Yes, every minute.  Okay, so I'm
+[00:29:02] going to put it on every minute.
+[00:29:06] Run bot.  And I'm going to let this run its course
+[00:29:10] .  And then they see that
+[00:29:12] we're still in a downtrend in, uh,
+[00:29:14] the TradingView version of this.  And
+[00:29:16] what I'm going to do now is simply
+[00:29:18] let this bot run for a while
+[00:29:20] until it calculates the first uh
+[00:29:22] green arrow here.  And I'm going to have it trigger
+[00:29:25] a purchase and let it sell for me
+[00:29:27] .  So I'm just going to
+[00:29:29] step away for a while and, you know, this
+[00:29:30] could take hours.  Who knows
+[00:29:32] how long it will take.  Maybe it will only
+[00:29:34] take 5 minutes.  Uh, so I'm going to
+[00:29:36] let this run for a while and stop
+[00:29:38] the camera for a bit.  And then I'll
+[00:29:39] come back after
+[00:29:41] these buy-sell transactions take off.
+[00:29:42] So, uh, see you in a minute.
+[00:29:44] So I'm going to check this
+[00:29:46] quickly because it looks like it's about to
+[00:29:47] break above this
+[00:29:49] previous upper band here.  And
+[00:29:51] so, as you can see here on
+[00:29:53] TradingView, we just
+[00:29:55] received a buy signal.  And if
+[00:29:56] I check my program right here, you can
+[00:29:58] see that I've switched to buying on an
+[00:30:00] uptrend and I actually executed
+[00:30:02] this buy order here.  So you
+[00:30:04] can see when this changed.  I had
+[00:30:06] the 15-minute mark, it was
+[00:30:08] false.  And then, at the 16-
+[00:30:10] minute mark, the upward trend changed to
+[00:30:13] true, and that's what triggered the
+[00:30:15] buy order.  And now, if I go to my
+[00:30:19] Binance account once again and
+[00:30:21] refresh my balance, you should see that my
+[00:30:24] dollar balance dropped from 256 to 113 and
+[00:30:27] my Ethereum balance rose to 0.5, and I
+[00:30:30] successfully executed that buy order
+[00:30:33] .  So now what I can do is
+[00:30:38] let this continue and see
+[00:30:40] if I can switch it to a sale and see
+[00:30:42] what happens.  So, I'm back
+[00:30:46] .  I went to have breakfast for a while and you can see
+[00:30:48] that, while I was gone, it seems that
+[00:30:50] everything here was immediately sold out.
+[00:30:53] There was a sell signal, but also
+[00:30:56] a little later there was another
+[00:30:59] buy signal at 11:45, as at the
+[00:31:02] 43-minute mark here.  And that triggered
+[00:31:05] another purchase order.  And this trend, to be
+[00:31:08] honest, looks pretty good.  It seems to be still
+[00:31:10] underway.  This
+[00:31:12] purchase order was placed when Ethereum
+[00:31:15] was at 2854. And you can see that as of
+[00:31:18] now, today is May 1st.  It looks like
+[00:31:21] Ethereum has risen to 2930. So it
+[00:31:24] might be heading towards 3000.
+[00:31:27] Yes, a good upward trend
+[00:31:29] over the last couple of hours on this
+[00:31:31] one-minute timeframe chart
+[00:31:33] .  So I'm still in the
+[00:31:35] operation.  Okay, I'll check my
+[00:31:37] program.  And you can see it here at the
+[00:31:39] 48-minute mark.  This took a
+[00:31:42] little over two hours, I'd say.
+[00:31:45] It changed from a true upward trend
+[00:31:47] to a false upward trend.  And this was
+[00:31:50] at the point where Ethereum closed back
+[00:31:52] at 2924. You see that it says to change to a
+[00:31:56] bearish sell trend and issued
+[00:31:58] a sell order, and I printed it.  So
+[00:32:02] this was a profitable operation on
+[00:32:04] camera, live.  That's great.
+[00:32:06] In the last videos I made, I lost
+[00:32:08] money on camera.  It's
+[00:32:10] nice when it goes well once in a
+[00:32:11] while.  And if I check my
+[00:32:13] Binance account now and refresh, you'll see that
+[00:32:16] a little while ago I had about $320 and
+[00:32:18] now I have $324.  And well,
+[00:32:21] unfortunately I only brought a
+[00:32:24] minuscule amount of 0.05 Ethereum.  So it's just a
+[00:32:27] few dollars.  and with the
+[00:32:29] commission and all that.  You know, it's not
+[00:32:31] a huge profit, but I still have
+[00:32:33] 4 dollars more than I had
+[00:32:35] when I left before.  So yes,
+[00:32:37] it was pretty good.  We used this
+[00:32:38] supertrend that someone suggested in
+[00:32:40] the comments.  I never knew much about it
+[00:32:43] , so I translated it to Python and
+[00:32:45] connected it to my Binance account using
+[00:32:47] CCXT, which is the
+[00:32:49] cryptocurrency exchange library we
+[00:32:52] talked about in the previous video.  I
+[00:32:54] programmed it, connected it to live data
+[00:32:56] using this programming package,
+[00:32:59] calculated the supertrend and created
+[00:33:01] buy and sell signals, actually bought and
+[00:33:03] sold on the
+[00:33:05] Binance account and made about $4,
+[00:33:07] which isn't an incredible amount of
+[00:33:09] money, but yeah, it's cool.  That's what
+[00:33:12] this channel is about.  Just discover
+[00:33:15] how to do cool things like this
+[00:33:17] with your brokerage account.  So,
+[00:33:19] quite a good lesson.  I hope you
+[00:33:22] enjoyed it.  Feel free to
+[00:33:24] experiment with this.  It's nice to
+[00:33:25] have one of these videos where I
+[00:33:27] actually make money.  Usually, there are
+[00:33:29] many where I just lose
+[00:33:30] money, but that's okay.  It's all part
+[00:33:32] of the learning process.  So
+[00:33:34] feel free to experiment with
+[00:33:36] this.  You might like it.  You might think
+[00:33:38] this won't make any money.
+[00:33:39] You might want to combine it with other
+[00:33:41] indicators or strategies and see what
+[00:33:43] else is available in this library.
+[00:33:45] And maybe you can...someone in the
+[00:33:47] comments mentioned that this version
+[00:33:50] is better, I think.  So maybe you
+[00:33:52] could try that version.  They are all
+[00:33:54] quite similar.  So yes,
+[00:33:57] thank you very much for watching.  I'll publish the
+[00:33:59] source code on GitHub so
+[00:34:00] you can experiment with it.  I hope you
+[00:34:02] liked it.  Stay tuned for the
+[00:34:04] next one.

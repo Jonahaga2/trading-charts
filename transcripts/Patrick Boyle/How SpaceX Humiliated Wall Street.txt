@@ -1,0 +1,1754 @@
+[00:00:00] Yesterday morning, the
+[00:00:01] largest publicly traded company in
+[00:00:02] history
+[00:00:04] began trading
+[00:00:05] on NASDAQ.  We'll talk
+[00:00:07] about that in a moment.  But
+[00:00:09] first, I have to
+[00:00:10] tell you
+[00:00:11] something even stranger: the
+[00:00:12] stock market
+[00:00:13] stopped
+[00:00:14] declining this week.    For
+[00:00:17] the past 20 years, the
+[00:00:19] US stock market has operated according to a
+[00:00:20] very simple and
+[00:00:21] reliable mechanical
+[00:00:22] law.  There
+[00:00:25] were always
+[00:00:27] fewer shares today than there were yesterday.    Since about
+[00:00:30] 2003,
+[00:00:31] we have lived in an era of
+[00:00:32] shrinking
+[00:00:33] public capital,
+[00:00:34] and it has been happening
+[00:00:36] simultaneously in three
+[00:00:37] directions.  The first
+[00:00:40] was the IPO deficit.
+[00:00:42] Companies that would have
+[00:00:43] gone public earlier
+[00:00:45] stayed
+[00:00:46] private much longer, so
+[00:00:48] fewer new shares were issued.
+[00:00:50] The second was the
+[00:00:52] share buyback boom.  Public
+[00:00:53] companies, with
+[00:00:54] plenty of cash and
+[00:00:55] few ideas, have been spending
+[00:00:56] huge sums
+[00:00:58] buying back their own shares,
+[00:00:59] which removes them from circulation
+[00:01:00] and reduces the total
+[00:01:01] supply.  And the third
+[00:01:04] was private
+[00:01:05] capital, which
+[00:01:06] during this
+[00:01:07] period bought up
+[00:01:08] public companies and
+[00:01:09] made them private,
+[00:01:10] completely removing them from the
+[00:01:11] market.  Less inflow
+[00:01:15] , less current
+[00:01:16] supply, and the
+[00:01:16] end result
+[00:01:18] was that there were
+[00:01:20] fewer and fewer shares for investors to choose from.
+[00:01:22] If you were an
+[00:01:23] investor, this would be
+[00:01:24] great news.  There was a
+[00:01:26] lot of money
+[00:01:27] looking for somewhere
+[00:01:28] to invest, and fewer and fewer
+[00:01:30] stocks to do it with.  And
+[00:01:31] when there is more money
+[00:01:32] than stocks, prices
+[00:01:34] tend to rise.
+[00:01:36] Company valuations
+[00:01:37] have increased significantly.
+[00:01:39] Ultimately, investors
+[00:01:40] paid much
+[00:01:41] more for each dollar of the
+[00:01:43] company's profits
+[00:01:44] than they did at the beginning.    To be
+[00:01:46] fair
+[00:01:47] , much of the
+[00:01:47] success
+[00:01:48] came from
+[00:01:49] real
+[00:01:51] income growth, and some from
+[00:01:52] ultra-low
+[00:01:53] interest rates
+[00:01:54] for much of the
+[00:01:55] era.  I'm not
+[00:01:56] going to
+[00:01:57] claim that the
+[00:01:59] stock reduction did all the
+[00:02:00] work, but it certainly didn't
+[00:02:01] hurt and
+[00:02:02] provided a
+[00:02:03] steady
+[00:02:04] tailwind for the longest
+[00:02:05] "bull" market in
+[00:02:06] history.
+[00:02:08] Personally, I really liked this state of
+[00:02:09] affairs,
+[00:02:10] and I hoped it would
+[00:02:11] last
+[00:02:13] forever.  There's a reason why
+[00:02:14] buybacks were
+[00:02:16] so massive, and
+[00:02:17] it's an indication of what
+[00:02:18] these companies
+[00:02:19] really were.
+[00:02:20] Big tech
+[00:02:21] firms, whose profits
+[00:02:22] explain much of the
+[00:02:24] better
+[00:02:24] performance of the US market
+[00:02:26] over that period,
+[00:02:27] were until recently “
+[00:02:28] light” on
+[00:02:29] website assets.  They
+[00:02:30] generated huge
+[00:02:31] amounts of cash and did
+[00:02:32] not require a
+[00:02:33] lot of capital
+[00:02:34] to operate.  So when
+[00:02:36] they went
+[00:02:37] public, it was often
+[00:02:38] not to raise the
+[00:02:39] necessary funds.  This
+[00:02:41] was done to
+[00:02:42] provide early
+[00:02:43] venture investors
+[00:02:45] and employees with
+[00:02:46] the opportunity to access
+[00:02:47] cash and create a
+[00:02:48] liquid public
+[00:02:49] currency that could be used to
+[00:02:50] pay
+[00:02:51] staff in shares.
+[00:02:53] Having gone public,
+[00:02:54] they received more
+[00:02:55] money than they could
+[00:02:56] spend, and a significant
+[00:02:58] part of it
+[00:02:58] was used to
+[00:02:59] buy back
+[00:03:00] their own shares.  Meta is the
+[00:03:02] most striking
+[00:03:04] example.  Facebook, as it
+[00:03:05] was called before and, in
+[00:03:07] truth, is
+[00:03:08] still called today,
+[00:03:09] raised about
+[00:03:10] $16 billion
+[00:03:11] when it went
+[00:03:12] public in 2012.  In
+[00:03:15] subsequent years,
+[00:03:16] the company spent
+[00:03:18] significantly more on buying back its own shares—
+[00:03:20] over a hundred billion,
+[00:03:21] including about
+[00:03:23] $45 billion
+[00:03:24] in 2021 alone.  To
+[00:03:27] avoid
+[00:03:27] misunderstandings: I'm
+[00:03:28] talking about dollars,
+[00:03:29] not the number of
+[00:03:30] shares.  The number of
+[00:03:32] Meta shares outstanding
+[00:03:33] has declined only
+[00:03:34] slightly because
+[00:03:35] the company is constantly
+[00:03:36] issuing new shares
+[00:03:37] for
+[00:03:38] employee benefits, and these
+[00:03:39] buybacks roughly
+[00:03:40] offset that
+[00:03:41] issuance.  But in
+[00:03:42] dollar
+[00:03:43] terms, Meta
+[00:03:44] paid out far more to shareholders
+[00:03:45] leaving the
+[00:03:46] company
+[00:03:47] than it
+[00:03:48] ever raised
+[00:03:49] from selling shares.
+[00:03:52] Incidentally, much of the
+[00:03:54] 2021 buyback
+[00:03:55] occurred at an
+[00:03:56] average price of
+[00:03:58] around $330 per
+[00:03:59] share, shortly before
+[00:04:01] the price fell to
+[00:04:02] $100.  So, they did
+[00:04:05] n't just
+[00:04:05] buy back their
+[00:04:06] shares, they did it
+[00:04:08] at the peak of the price.  But the
+[00:04:10] broader conclusion
+[00:04:11] remains valid.
+[00:04:12] For most of the
+[00:04:13] past
+[00:04:14] two decades,
+[00:04:15] American
+[00:04:15] companies have been
+[00:04:16] net buyers of
+[00:04:17] their own shares.  They were
+[00:04:19] removing stocks from the
+[00:04:20] market, not adding
+[00:04:21] them.  Everything changed this week
+[00:04:24] .  The stock
+[00:04:26] market stopped
+[00:04:27] contracting and began
+[00:04:28] expanding on a
+[00:04:29] scale we have never
+[00:04:31] seen before.  Goldman
+[00:04:33] Sachs predicts that
+[00:04:39] $225 billion worth of new IPOs will hit the market this year.  If
+[00:04:42] additional
+[00:04:43] offerings and
+[00:04:45] share issuance by incumbent
+[00:04:46] giants are included,
+[00:04:47] this figure is expected
+[00:04:48] to reach
+[00:04:49] $675 billion.  This is a
+[00:04:52] fairly significant change of
+[00:04:54] course.  The reason,
+[00:04:56] of course, is artificial
+[00:04:58] intelligence.  Before we
+[00:05:00] get into that,
+[00:05:01] let me tell you
+[00:05:02] about
+[00:05:03] this week's video sponsor—Airalo.
+[00:05:05] Every traveler
+[00:05:06] knows this feeling.  You
+[00:05:07] arrive in a new
+[00:05:08] country, turn on your
+[00:05:09] phone, and worry
+[00:05:10] about roaming
+[00:05:11] charges, which
+[00:05:12] can
+[00:05:13] skyrocket while you're still on
+[00:05:14] your way to
+[00:05:15] baggage claim.  Airalo completely
+[00:05:17] solves this problem
+[00:05:19] .  This is an eSIM application
+[00:05:21] that provides affordable
+[00:05:23] internet in over 200
+[00:05:24] countries around the world.  What
+[00:05:26] really makes life easier is that you
+[00:05:30] only need to install the app
+[00:05:31] once.  That's all you
+[00:05:32] need to
+[00:05:33] set up.  One
+[00:05:34] app, one
+[00:05:35] installation, and then
+[00:05:36] everything is simple.
+[00:05:37] Whenever you travel to a new
+[00:05:39] place, you simply
+[00:05:40] open Airalo and
+[00:05:41] choose the fare for
+[00:05:42] that country.  No
+[00:05:44] physical SIM cards, queues
+[00:05:46] at airport kiosks,
+[00:05:47] or searching for local
+[00:05:49] operators in a language
+[00:05:50] you don't know.  You
+[00:05:53] set everything up before you
+[00:05:54] leave home,
+[00:05:55] choosing a plan that
+[00:05:56] meets your
+[00:05:57] real
+[00:05:58] traffic needs.  As soon as you
+[00:06:00] land, your
+[00:06:01] phone automatically
+[00:06:02] connects to the
+[00:06:03] local network.
+[00:06:04] Since you
+[00:06:05] are using a
+[00:06:05] local data
+[00:06:07] plan and not
+[00:06:07] roaming, there will be
+[00:06:09] no
+[00:06:10] unpleasant surprises in your
+[00:06:11] bill when you return home.  You can
+[00:06:13] book a car,
+[00:06:14] open maps, or
+[00:06:15] call the
+[00:06:16] hotel right after
+[00:06:17] getting off the plane.
+[00:06:18] Get an
+[00:06:19] exclusive 15% discount
+[00:06:20] on promotional
+[00:06:22] data plans.
+[00:06:23] Download the
+[00:06:24] SY app using the
+[00:06:25] link in the description
+[00:06:26] or this QR code and
+[00:06:28] use
+[00:06:29] the promo code boil at
+[00:06:30] checkout.  Big
+[00:06:32] tech
+[00:06:33] companies are not
+[00:06:34] just websites anymore.  They
+[00:06:36] decided that to
+[00:06:36] win the
+[00:06:38] AI ​​arms race, they
+[00:06:39] needed to
+[00:06:39] become
+[00:06:40] capital-intensive
+[00:06:41] companies.  Build
+[00:06:43] huge data
+[00:06:44] centers, buy
+[00:06:45] millions of super-expensive
+[00:06:47] Nvidia chips, and
+[00:06:47] connect your own
+[00:06:48] power plants to
+[00:06:50] power them.  Some are
+[00:06:51] even talking about
+[00:06:52] building such
+[00:06:53] infrastructure in
+[00:06:54] outer space.
+[00:06:56] So companies that
+[00:06:58] have been buying back their own
+[00:07:00] shares for two decades are now all
+[00:07:01] together issuing
+[00:07:02] new ones for sale to the
+[00:07:03] public.  The stock
+[00:07:06] market has become a
+[00:07:07] giant
+[00:07:09] $675 billion pawnshop, where the
+[00:07:12] world's most valuable technology companies are
+[00:07:13] awkwardly raising
+[00:07:14] funds to pay their
+[00:07:16] infrastructure
+[00:07:17] bills.  Now
+[00:07:19] remember what
+[00:07:21] IPOs were originally intended for.    A
+[00:07:23] company usually
+[00:07:24] goes public for two
+[00:07:25] reasons.  To raise
+[00:07:27] capital for the business
+[00:07:29] and create a
+[00:07:29] public market where
+[00:07:30] founders and early
+[00:07:32] shareholders can
+[00:07:33] later convert
+[00:07:34] a portion of their shares into
+[00:07:35] cash.  But this is not
+[00:07:37] free cheese.  You
+[00:07:39] should listen
+[00:07:40] to investors and
+[00:07:41] open up your
+[00:07:42] reporting.  A private
+[00:07:44] company does not
+[00:07:46] show its figures to anyone,
+[00:07:47] while a public company is
+[00:07:48] required by law
+[00:07:50] to publish
+[00:07:50] audited reports every quarter, which
+[00:07:52] any competitor
+[00:07:53] can download
+[00:07:54] for free.
+[00:07:56] Researchers
+[00:07:57] note that everything is still more
+[00:07:59] subtle.  A high
+[00:08:01] stock price in itself is a
+[00:08:02] signal to all
+[00:08:04] competitors about
+[00:08:05] how
+[00:08:06] interested investors are in your
+[00:08:07] niche.  So, you
+[00:08:10] are giving your
+[00:08:10] competitors a double tip.  The first
+[00:08:12] time—with numbers, the second time—with an
+[00:08:13] estimate of value.  Over
+[00:08:15] time, standards
+[00:08:16] have dropped significantly.
+[00:08:20] According to a 2002 paper by
+[00:08:21] Ritter and Welsh
+[00:08:22] , in the 1960s and
+[00:08:23] 1970s, a prestigious
+[00:08:24] investment bank would
+[00:08:26] typically not take a
+[00:08:27] firm public unless
+[00:08:28] it had at least
+[00:08:30] four years of
+[00:08:31] profitability.  By the
+[00:08:33] 1980s, the bar had dropped
+[00:08:35] to four
+[00:08:36] blocks.  And even
+[00:08:38] then, only 19% of firms had
+[00:08:40] negative
+[00:08:41] earnings at the time of IPO.
+[00:08:44] This figure rose to
+[00:08:46] 37% in the late 1990s and
+[00:08:47] eventually reached 79% at
+[00:08:49] the peak of the
+[00:08:51] dot-com bubble.  When that
+[00:08:55] bubble burst, the
+[00:08:56] IPO market died down, and
+[00:08:57] the press started
+[00:08:58] talking about "
+[00:08:58] unicorns"—billion-
+[00:09:02] dollar private companies like Google and
+[00:09:03] Facebook that stayed
+[00:09:04] private much
+[00:09:05] longer than ever
+[00:09:07] before because they could
+[00:09:08] raise all the
+[00:09:08] capital they needed
+[00:09:10] privately without any of the
+[00:09:11] costs we
+[00:09:12] just mentioned.
+[00:09:15] Today, a private
+[00:09:16] company worth a
+[00:09:17] billion dollars will
+[00:09:18] not surprise anyone.  We
+[00:09:20] live in an era of
+[00:09:22] trillion-
+[00:09:23] dollar private companies, and now it
+[00:09:24] seems like they all
+[00:09:25] want to go public at the
+[00:09:26] same time.  The largest
+[00:09:29] of them started
+[00:09:29] trading yesterday.
+[00:09:31] SpaceX.  SpaceX
+[00:09:34] priced its IPO Thursday
+[00:09:36] night, selling
+[00:09:37] more than 555 million
+[00:09:39] shares at exactly
+[00:09:40] $135 each,
+[00:09:42] raising about
+[00:09:43] $75 billion, and
+[00:09:45] possibly $86
+[00:09:46] billion if banks
+[00:09:48] exercise their
+[00:09:49] “grinch” option.  This is an
+[00:09:51] additional
+[00:09:53] placement mechanism named
+[00:09:54] after the Green
+[00:09:56] Shoe Manufacturing company, which first
+[00:09:57] used it in
+[00:09:59] 1960.  At
+[00:10:01] $135 per share, the entire
+[00:10:03] company is valued
+[00:10:05] at $1.78 trillion
+[00:10:06] , making this the
+[00:10:07] largest IPO in
+[00:10:09] financial history by a
+[00:10:10] huge margin.
+[00:10:13] Another detail
+[00:10:14] deserves attention.
+[00:10:16] Selling $75–86 billion worth of stock
+[00:10:19] at a valuation of $
+[00:10:21] 1.78 trillion means
+[00:10:23] SpaceX has only sold
+[00:10:26] about 4 or 5% of itself to the public.
+[00:10:28] For the largest IPO in
+[00:10:30] history, this is a surprisingly
+[00:10:31] small share.  Typically,
+[00:10:33] companies offer
+[00:10:35] about 20% of their shares
+[00:10:36] .  The company raised a
+[00:10:40] huge amount of money while
+[00:10:41] giving almost nothing in return,
+[00:10:43] which tells you the
+[00:10:44] main thing: who
+[00:10:45] dictates the terms here.  This is
+[00:10:48] also reflected in the
+[00:10:50] structure of the deal, because
+[00:10:51] as a shareholder you
+[00:10:52] get
+[00:10:53] extremely little for
+[00:10:54] your money.  Like
+[00:10:56] Zuckerberg or Google before
+[00:10:58] him, Musk
+[00:10:58] used a
+[00:10:59] two-tier
+[00:11:00] share structure.  Its
+[00:11:03] Class B shares carry 10
+[00:11:04] votes each.
+[00:11:06] Class A shares, which are purchased by
+[00:11:07] the public, only give
+[00:11:08] one vote,
+[00:11:09] meaning Musk doesn't
+[00:11:11] have to
+[00:11:12] listen to the people
+[00:11:13] who just
+[00:11:14] funded him.  In
+[00:11:17] addition, in 2024, SpaceX
+[00:11:18] re-registered from
+[00:11:20] Delaware to Texas, and
+[00:11:21] Texas laws are much
+[00:11:23] less favorable to
+[00:11:24] shareholders.  They
+[00:11:27] require you to own a
+[00:11:28] 3% stake, which is
+[00:11:29] worth tens of
+[00:11:30] billions of dollars,
+[00:11:32] before you can
+[00:11:33] submit a
+[00:11:34] shareholder proposal, which
+[00:11:35] takes that
+[00:11:36] opportunity away from almost
+[00:11:37] everyone watching
+[00:11:38] this video.  And there is also a court.
+[00:11:43] SpaceX's charter directs
+[00:11:45] disputes to
+[00:11:46] binding
+[00:11:46] private arbitration,
+[00:11:48] eliminates the right to a
+[00:11:49] jury trial, and
+[00:11:50] prohibits class
+[00:11:51] actions.  As
+[00:11:55] shareholder advocate Bruce
+[00:11:56] Herbert noted, such a
+[00:11:57] structure simultaneously
+[00:11:58] closes the door to
+[00:11:59] voting, the door to
+[00:12:00] the courts, and the door to
+[00:12:01] submitting proposals,
+[00:12:03] which he called
+[00:12:03] unprecedented.
+[00:12:05] So, you can give
+[00:12:07] SpaceX your money, but you
+[00:12:08] can't vote, you
+[00:12:09] can't actually
+[00:12:10] sue, and you can't
+[00:12:11] make any
+[00:12:13] proposals.
+[00:12:14] In return, you
+[00:12:14] get a tiny,
+[00:12:16] voiceless,
+[00:12:16] unencumbered share of the
+[00:12:17] largest company
+[00:12:19] ever to
+[00:12:20] go public.    You would
+[00:12:22] think
+[00:12:23] that orchestrating the
+[00:12:24] largest
+[00:12:25] financial deal in
+[00:12:26] human history would
+[00:12:27] be a triumph for
+[00:12:29] Wall Street.  Circle of
+[00:12:31] honor, expensive dinners
+[00:12:32] , reminders to all
+[00:12:33] who run the global
+[00:12:35] economy.  But SpaceX's IPO
+[00:12:38] actually became an
+[00:12:39] exercise in profound,
+[00:12:40] almost painful,
+[00:12:41] public
+[00:12:42] humiliation for the
+[00:12:44] world's most prestigious banks.  If you
+[00:12:47] think small
+[00:12:48] investors got
+[00:12:49] unfair terms,
+[00:12:50] then look at what
+[00:12:51] happened to the bankers.
+[00:12:52] Okay, they still
+[00:12:53] feel good.  That's
+[00:12:55] half a billion dollars
+[00:12:56] in commissions, but they did
+[00:12:57] n't get as much
+[00:12:58] as they hoped.
+[00:13:00] Typically, the main
+[00:13:01] job of an
+[00:13:01] investment bank
+[00:13:02] during an IPO, which
+[00:13:03] justifies
+[00:13:05] its huge
+[00:13:06] commissions, is to
+[00:13:07] determine the price.  He
+[00:13:09] sets a reasonable
+[00:13:10] price range and
+[00:13:11] then spends weeks
+[00:13:12] calling
+[00:13:13] institutional
+[00:13:14] investors
+[00:13:14] asking how many
+[00:13:16] shares they will buy and
+[00:13:17] at what price,
+[00:13:18] building up an
+[00:13:19] order book and balancing the
+[00:13:20] interests of the company,
+[00:13:21] which wants a high price,
+[00:13:23] and investors, who
+[00:13:24] want a good deal.
+[00:13:26] SpaceX
+[00:13:27] has completely turned this on its
+[00:13:28] head.  Matt Lavin
+[00:13:30] explained this with his
+[00:13:33] Elon Markets Hypothesis, where SpaceX simply
+[00:13:35] announced that it
+[00:13:35] was going public and
+[00:13:37] that the price was
+[00:13:38] exactly $135 per
+[00:13:40] share.  No
+[00:13:41] range, no
+[00:13:42] negotiations, no
+[00:13:43] consideration of
+[00:13:44] market sentiment.  Elon Musk
+[00:13:46] simply decided the
+[00:13:47] company was worth
+[00:13:48] $135 a share and
+[00:13:50] ordered Wall Street to
+[00:13:51] go and sell it.  This is the
+[00:13:53] financial
+[00:13:53] equivalent of a
+[00:13:55] highly paid
+[00:13:56] surgeon being asked
+[00:13:57] to stand in the corner and
+[00:13:58] hold a tray while a
+[00:13:59] patient
+[00:14:00] happily operates on
+[00:14:01] themselves.  And since
+[00:14:03] banks were stripped of
+[00:14:04] their function, they were
+[00:14:05] also stripped of
+[00:14:06] commissions, which
+[00:14:07] is actually the
+[00:14:08] worst part.
+[00:14:10] Historically, the standard
+[00:14:11] fee for listing a
+[00:14:13] company on a US stock exchange
+[00:14:14] was 7%.  For
+[00:14:17] very large transactions,
+[00:14:18] these commissions
+[00:14:19] were significantly reduced.  Facebook
+[00:14:20] paid 1.1% in 2012.
+[00:14:24] Uber paid 1.3% in
+[00:14:27] 2019.  The world's
+[00:14:29] most powerful
+[00:14:30] investment banks
+[00:14:31] fought over the SpaceX deal and
+[00:14:33] ultimately
+[00:14:34] agreed to less
+[00:14:35] than 0.75%.  Of course, to be
+[00:14:37] fair
+[00:14:38] , 0.75% of 75
+[00:14:39] billion dollars
+[00:14:41] is still over half a
+[00:14:43] billion.  So
+[00:14:44] no one is collecting donations for them
+[00:14:46] .  But in what
+[00:14:49] the bankers considered a
+[00:14:50] measure of their
+[00:14:51] status, they have
+[00:14:52] completely
+[00:14:53] capitulated, taking on
+[00:14:54] the role of tightly
+[00:14:55] regulated
+[00:14:56] utilities handling
+[00:14:58] fixed-price securities with the
+[00:14:59] margin of a discount
+[00:15:01] supermarket.  And how did the
+[00:15:04] titans of Wall Street
+[00:15:05] react to being
+[00:15:06] stripped of their power
+[00:15:08] and paid a fraction
+[00:15:09] of their usual
+[00:15:10] rates?  Well, with
+[00:15:12] extreme,
+[00:15:13] desperate
+[00:15:14] gratitude.  The
+[00:15:15] Economist recently
+[00:15:16] wrote about this,
+[00:15:17] using a term
+[00:15:18] popularized by
+[00:15:19] buzzers—“the ick,
+[00:15:20] ” which they
+[00:15:21] describe as the sudden
+[00:15:23] loss of romantic
+[00:15:24] interest after
+[00:15:25] you see
+[00:15:26] someone you
+[00:15:27] admire do
+[00:15:28] something embarrassing.  And
+[00:15:29] watching
+[00:15:31] American
+[00:15:32] financial giants
+[00:15:33] court SpaceX
+[00:15:34] was truly disgusting.
+[00:15:36] The executives of Goldman Sachs and
+[00:15:37] Morgan Stanley transformed
+[00:15:38] their immaculate
+[00:15:39] corporate lobbies into
+[00:15:41] what can
+[00:15:42] only be described as a
+[00:15:43] high school science
+[00:15:44] fair:
+[00:15:44] they installed
+[00:15:45] decorative rockets
+[00:15:46] and hung
+[00:15:47] space banners above the
+[00:15:49] reception desks.
+[00:15:51] Bank of America lit up the
+[00:15:52] spire of its
+[00:15:54] Manhattan headquarters in the shape of a
+[00:15:55] rocket taking off.
+[00:15:58] There was also the question
+[00:15:59] of who it
+[00:16:00] needed to be
+[00:16:01] sold to.
+[00:16:03] A banker's natural environment
+[00:16:04] is a quiet room with a
+[00:16:05] sovereign
+[00:16:06] wealth fund, a trust
+[00:16:07] fund, or someone
+[00:16:08] who measures their
+[00:16:09] wealth in billions.
+[00:16:11] People who
+[00:16:12] speak the same
+[00:16:13] language and who you can
+[00:16:14] invite to dinner.
+[00:16:15] For SpaceX, however, the bankers
+[00:16:16] found themselves
+[00:16:17] in a situation where they
+[00:16:19] had to
+[00:16:20] essentially hold a very
+[00:16:21] large-scale lottery.    A
+[00:16:22] fifth of the
+[00:16:23] largest IPO in
+[00:16:24] history was
+[00:16:25] set aside for
+[00:16:26] retail
+[00:16:26] investors—
+[00:16:27] ordinary
+[00:16:27] members of the
+[00:16:28] public.  And
+[00:16:30] the public
+[00:16:31] came.  Retail
+[00:16:33] orders came in for
+[00:16:34] over a hundred
+[00:16:35] billion dollars,
+[00:16:36] claiming
+[00:16:37] approximately
+[00:16:38] $15 billion of
+[00:16:39] available shares.  So
+[00:16:41] , the order book was
+[00:16:42] oversubscribed by
+[00:16:43] individual
+[00:16:44] investors only
+[00:16:45] about 7 times.
+[00:16:49] Somewhere in the Goldman office, a
+[00:16:50] managing director
+[00:16:51] who had spent his career
+[00:16:53] flying to Abu Dhabi
+[00:16:54] to charm a
+[00:16:55] man with a trillion
+[00:16:56] dollars under
+[00:16:57] his belt was instead
+[00:16:58] watching a
+[00:16:59] tsunami of
+[00:17:00] $500 orders
+[00:17:01] coming in through the
+[00:17:02] app and explaining to
+[00:17:03] most of those people
+[00:17:05] that there wouldn’t be
+[00:17:05] enough for everyone.  This is not
+[00:17:09] exactly what they
+[00:17:10] signed up for.  At Morgan
+[00:17:12] Stanley, Michael Grimes, a
+[00:17:14] banker long
+[00:17:15] considered
+[00:17:16] Musk's closest advisor on
+[00:17:18] Wall Street, the man
+[00:17:19] who managed the IPOs of Facebook,
+[00:17:20] Uber and Palantir and
+[00:17:21] steered the $
+[00:17:23] 44 billion purchase of Twitter
+[00:17:24] , was seen as the
+[00:17:25] leading
+[00:17:26] contender to
+[00:17:27] handle the deal.  But
+[00:17:29] he didn't do it.
+[00:17:30] Goldman Sachs, having prepared a
+[00:17:32] prospectus months before
+[00:17:33] anyone
+[00:17:34] outside Davos
+[00:17:35] even heard about the
+[00:17:36] upcoming IPO,
+[00:17:37] took over
+[00:17:38] the role of lead
+[00:17:39] arranger from him.  So the
+[00:17:43] most important banker of the
+[00:17:44] Musk era was
+[00:17:45] outplayed in the
+[00:17:46] biggest
+[00:17:47] deal of his career.    The
+[00:17:50] official explanation
+[00:17:52] is that
+[00:17:53] Goldman did more
+[00:17:54] work and got there first
+[00:17:55] .  But I have another
+[00:17:57] theory, for which I
+[00:17:58] want to state clearly:
+[00:18:00] I have no
+[00:18:01] evidence.  The banker's
+[00:18:03] name is Michael Grimes.  And
+[00:18:06] Musk's former partner, a musician, is
+[00:18:07] also named Grimes.  And
+[00:18:11] I'm more comfortable
+[00:18:12] believing that Elon Musk
+[00:18:13] couldn't bring himself to
+[00:18:14] entrust the largest IPO
+[00:18:16] in history to a man whose
+[00:18:17] name
+[00:18:18] reminded him every morning of a
+[00:18:19] relationship that didn't
+[00:18:20] work out.  This is almost certainly
+[00:18:23] not what
+[00:18:24] actually happened,
+[00:18:26] but it embellishes
+[00:18:27] the story, and
+[00:18:28] that's enough for me.
+[00:18:32] Meanwhile, rumors were circulating at Goldman
+[00:18:33] that the bank had
+[00:18:34] gotten its role
+[00:18:35] thanks to a club
+[00:18:37] DJ known as DJ
+[00:18:38] Diesel, who
+[00:18:39] is also the
+[00:18:41] CEO of Goldman Sachs and has been
+[00:18:42] personally messaging Musk
+[00:18:44] on X,
+[00:18:45] which is, er, Twitter.
+[00:18:51] Solomon has since been
+[00:18:52] forced to publicly
+[00:18:53] deny this,
+[00:18:54] stating that he did
+[00:18:55] not actually get a
+[00:18:56] role in the largest IPO
+[00:18:58] in history, texting the
+[00:19:00] world's richest man and receiving a rocket
+[00:19:01] emoji in response
+[00:19:02] .  When the chairman of
+[00:19:06] Goldman Sachs, and also a very
+[00:19:08] important DJ,
+[00:19:09] is forced to officially
+[00:19:10] deny that he
+[00:19:11] got a deal
+[00:19:12] by writing to someone in a
+[00:19:13] private
+[00:19:14] message, you're
+[00:19:15] not looking at the
+[00:19:16] rulers of the universe.
+[00:19:20] According to Reuters, Musk
+[00:19:21] even got banks in the
+[00:19:22] deal to sign up for
+[00:19:24] his
+[00:19:25] maximum truth-seeking AI,
+[00:19:26] Grok, which may partly
+[00:19:28] explain why the
+[00:19:29] IPO prospectus was so
+[00:19:30] strange.  To
+[00:19:33] secure their
+[00:19:34] pitiful commission,
+[00:19:35] banks also
+[00:19:36] had to support
+[00:19:37] some pretty
+[00:19:38] aggressive numbers.
+[00:19:39] Mainly,
+[00:19:41] SpaceX's loud statement that
+[00:19:42] it aims to capture a
+[00:19:44] total target
+[00:19:45] market of
+[00:19:47] $28.5 trillion.
+[00:19:49] One can imagine a
+[00:19:50] mathematics student
+[00:19:52] who got a job at an
+[00:19:53] investment bank being
+[00:19:54] given the task
+[00:19:55] of explaining a grade in a
+[00:19:56] prospectus.  So 28.5
+[00:19:59] trillion—that's
+[00:20:00] about a quarter of the
+[00:20:01] world's total
+[00:20:02] annual economic
+[00:20:04] output, which
+[00:20:05] seems like a lot
+[00:20:06] to spend on missiles
+[00:20:08] and Grok.  And I imagine
+[00:20:10] this graduate
+[00:20:11] was initially
+[00:20:11] puzzled by that
+[00:20:13] number.  And if we
+[00:20:14] think about this number,
+[00:20:15] which you definitely
+[00:20:16] shouldn't do, thinking too much
+[00:20:18] won't
+[00:20:18] help here.  There
+[00:20:20] are approximately a billion
+[00:20:22] people on the planet who earn
+[00:20:23] more than about
+[00:20:24] $12,000 a year.
+[00:20:26] Let's call it everyone who
+[00:20:27] has any real
+[00:20:28] money to spend.
+[00:20:30] Divide that $28.5
+[00:20:31] trillion among
+[00:20:32] that billion people,
+[00:20:34] and the prospectus
+[00:20:35] assumes that every
+[00:20:37] financially active
+[00:20:38] person on Earth will
+[00:20:39] give the rocket
+[00:20:41] company about
+[00:20:42] $28,500.  every year,
+[00:20:45] every year, forever.
+[00:20:47] It's worth noting that
+[00:20:49] this is about three times
+[00:20:50] more than the planet
+[00:20:51] currently spends on food
+[00:20:53] .  Of course, this is just a
+[00:20:55] suggestion in the
+[00:20:56] prospectus.  If you
+[00:20:59] think people
+[00:21:00] will spend an
+[00:21:01] average of more
+[00:21:02] than $28,500 per
+[00:21:03] year on satellite
+[00:21:05] internet and other
+[00:21:06] AI-enabled services,
+[00:21:07] then the stock price is
+[00:21:08] actually cheap and
+[00:21:09] you should buy.  Of
+[00:21:13] this huge
+[00:21:14] total target
+[00:21:15] market, only about
+[00:21:16] $2 trillion
+[00:21:18] has any
+[00:21:19] relation to space.
+[00:21:21] That's because the
+[00:21:22] space launch market is
+[00:21:23] about half the
+[00:21:24] size of the
+[00:21:25] potato chip market.    The
+[00:21:27] remaining $26.5 trillion
+[00:21:29] is, therefore, AI
+[00:21:32] and Twitter.  So the rocket
+[00:21:34] company told
+[00:21:35] the market that its real
+[00:21:37] opportunity was to
+[00:21:38] sell
+[00:21:38] corporate AI to
+[00:21:39] the entire global
+[00:21:40] middle class for
+[00:21:41] the price of a small
+[00:21:42] car every year,
+[00:21:43] something that
+[00:21:44] even a
+[00:21:45] math student on their
+[00:21:46] first day in
+[00:21:47] banking couldn't do.
+[00:21:50] But that
+[00:21:51] math student is now a
+[00:21:52] banker, and he
+[00:21:53] had to turn off the
+[00:21:54] part of his brain that does
+[00:21:56] arithmetic and
+[00:21:56] write down a big
+[00:21:57] number, because that's what it
+[00:21:58] takes to
+[00:21:59] stay in the
+[00:22:00] syndicate and earn a
+[00:22:01] pitiful half a
+[00:22:02] billion dollars
+[00:22:03] in commissions.  The balance of
+[00:22:06] power
+[00:22:07] has changed one way or another.
+[00:22:09] For decades,
+[00:22:10] investment banks
+[00:22:11] have been the guardians of
+[00:22:12] capital.  If you
+[00:22:13] needed money,
+[00:22:14] you played by their
+[00:22:15] rules.  Today,
+[00:22:17] in the era of trillion-dollar
+[00:22:18] IPOs, they are just willing,
+[00:22:20] slightly desperate
+[00:22:21] suitors, ready
+[00:22:22] to put up with any
+[00:22:23] humiliation just to have
+[00:22:25] their logo
+[00:22:26] appear somewhere in the
+[00:22:27] prospectus.  So what does
+[00:22:29] the company do with
+[00:22:31] $75 billion in
+[00:22:32] cash?  One would
+[00:22:34] assume that
+[00:22:35] this would be more than enough
+[00:22:35] to
+[00:22:36] fund
+[00:22:37] SpaceX, its
+[00:22:38] Mars
+[00:22:39] projects, and
+[00:22:39] orbital
+[00:22:41] AI data centers for a
+[00:22:42] generation.  You
+[00:22:43] are wrong.  In the new
+[00:22:45] era of heavy
+[00:22:46] industrial AI,
+[00:22:48] $75 billion
+[00:22:49] is essentially a small
+[00:22:50] expense.
+[00:22:53] Research firm
+[00:22:54] Capefar Advisors
+[00:22:55] analyzed
+[00:22:56] SpaceX's reports and summarized the
+[00:22:58] disclosed contractual
+[00:22:59] cash commitments the
+[00:23:01] company has made
+[00:23:02] through 2030.  They
+[00:23:05] ended up with a cash deficit of
+[00:23:08] approximately
+[00:23:09] $235 billion.
+[00:23:11] So, the largest IPO in
+[00:23:12] history covers
+[00:23:13] just under a third of
+[00:23:15] what the company has already
+[00:23:16] committed to
+[00:23:17] spending over the
+[00:23:18] next four
+[00:23:19] years.  And this is still a
+[00:23:21] conservative estimate
+[00:23:22] .
+[00:23:24] SpaceX's lead underwriter
+[00:23:25] expects costs to be
+[00:23:26] even higher.
+[00:23:29] When the bank
+[00:23:30] trying to sell
+[00:23:31] you shares has a
+[00:23:32] bleaker outlook
+[00:23:33] than the critics, you
+[00:23:34] find yourself in an interesting
+[00:23:36] situation.  So where does the
+[00:23:38] money go?  Well, let's just
+[00:23:40] say right away that the first
+[00:23:41] $20 billion
+[00:23:43] doesn't go into space at all
+[00:23:44] .  They are
+[00:23:45] aimed at
+[00:23:46] repaying a bridge
+[00:23:46] loan taken out in
+[00:23:48] March to pay off a
+[00:23:49] high-
+[00:23:50] interest debt.
+[00:23:52] Some stakes were as high as 12
+[00:23:53] % and belonged to the
+[00:23:54] Everything app,
+[00:23:56] formerly known as
+[00:23:57] Twitter, and Musk's AI startup
+[00:23:58] XAI,
+[00:23:59] just before
+[00:24:01] they
+[00:24:02] were both acquired by the
+[00:24:03] SpaceX conglomerate.
+[00:24:06] So, of the $75 billion
+[00:24:07] raised for the
+[00:24:09] Mars mission, $20
+[00:24:10] billion immediately
+[00:24:11] goes out the back
+[00:24:12] door to
+[00:24:13] refinance the
+[00:24:14] social
+[00:24:15] network's buyout.  And then there's
+[00:24:18] computing
+[00:24:18] power, and this is where it
+[00:24:20] gets really weird.
+[00:24:22] SpaceX has signed a
+[00:24:23] contract under
+[00:24:25] which rival AI
+[00:24:26] firm Anthropic will pay
+[00:24:28] it $1.25 billion
+[00:24:29] per month until
+[00:24:31] May 2029.  That's a
+[00:24:35] $45 billion commitment to
+[00:24:36] AI computing that,
+[00:24:37] according to reports,
+[00:24:39] doesn't even
+[00:24:40] fully exist yet.  So,
+[00:24:42] Anthropic, a company that is
+[00:24:43] itself preparing to go
+[00:24:44] public to
+[00:24:45] raise funds,
+[00:24:46] has agreed to pay
+[00:24:49] Musk's rocket company $45 billion
+[00:24:50] to lease
+[00:24:52] data centers that apparently
+[00:24:53] haven't even been built yet.
+[00:24:55] And a few days before the IPO,
+[00:24:57] SpaceX
+[00:24:58] announced a second
+[00:24:59] lease deal.  This
+[00:25:01] time, it's a
+[00:25:02] $30 billion contract with
+[00:25:04] Google.  Some of these firms
+[00:25:06] are paying others with
+[00:25:07] money that none
+[00:25:08] of them have yet,
+[00:25:09] for things that haven't been
+[00:25:10] built yet.  And my
+[00:25:12] favorite note
+[00:25:13] is what FT calls the
+[00:25:15] cursor option.  SpaceX
+[00:25:17] has developed a
+[00:25:19] call option that
+[00:25:20] pushes it to
+[00:25:21] issue new shares.
+[00:25:22] And if it decides
+[00:25:24] not to proceed, it will
+[00:25:25] trigger a
+[00:25:28] $10 billion termination penalty.
+[00:25:30] Let me repeat.
+[00:25:31] The penalty for refusing
+[00:25:33] the deal is
+[00:25:34] $10 billion in
+[00:25:35] cash.  This IPO is not an
+[00:25:37] isolated case.
+[00:25:39] Today they are
+[00:25:40] raising 75
+[00:25:41] billion to
+[00:25:42] set a
+[00:25:43] share price, which they will then
+[00:25:44] use to
+[00:25:45] issue more and more
+[00:25:46] shares to cover a
+[00:25:48] $235 billion deficit
+[00:25:50] that could
+[00:25:50] continue to
+[00:25:51] grow.  And SpaceX is not
+[00:25:53] alone.  It is immediately followed by
+[00:25:56] Anthropic and OpenAI,
+[00:25:57] which have confidentially
+[00:25:58] filed for
+[00:25:59] IPO.  OpenAI
+[00:26:02] raised a record
+[00:26:03] private round of up
+[00:26:04] to $122 billion
+[00:26:05] back in March,
+[00:26:07] and now, months later, it is
+[00:26:08] filing to
+[00:26:09] raise even more
+[00:26:11] at a valuation
+[00:26:12] they hope will
+[00:26:13] top
+[00:26:14] $1 trillion.  In their
+[00:26:17] documentation, they
+[00:26:18] correctly clarified that they had
+[00:26:19] not actually
+[00:26:20] decided to go
+[00:26:22] public yet, that it could
+[00:26:23] take some time, and
+[00:26:24] that there are things that are
+[00:26:25] easier to do as a
+[00:26:26] private
+[00:26:27] company.  An impressive
+[00:26:30] statement in the document
+[00:26:31] you file to
+[00:26:32] become a public
+[00:26:33] company.  Anthropic,
+[00:26:36] the company paying
+[00:26:38] SpaceX that $45 billion,
+[00:26:39] was recently
+[00:26:40] valued at around
+[00:26:42] $900 billion
+[00:26:43] and filed its own
+[00:26:44] papers a few days
+[00:26:45] ago.  So, one firm
+[00:26:47] is funding the
+[00:26:48] other's cash gap, and
+[00:26:49] both are going to
+[00:26:50] ask
+[00:26:51] the public
+[00:26:52] to fund their
+[00:26:53] own.  And this
+[00:26:54] applies not only to
+[00:26:56] new companies.  Alphabet,
+[00:26:59] Google's parent company, just raised
+[00:27:00] about $85 billion
+[00:27:01] through a new
+[00:27:03] share offering—its
+[00:27:04] first stock sale
+[00:27:06] in more than two
+[00:27:06] decades.  It was the
+[00:27:08] largest
+[00:27:10] stock offering in history,
+[00:27:11] even larger than the
+[00:27:13] SpaceX IPO.  Meta, well, Facebook, which
+[00:27:17] spent over a hundred
+[00:27:18] billion on buying back
+[00:27:19] its own shares at the peak of the
+[00:27:20] market, took a completely
+[00:27:22] different path.  Its
+[00:27:25] capital expenditures are
+[00:27:26] now projected
+[00:27:27] at up to
+[00:27:28] $145 billion per
+[00:27:30] year.  To
+[00:27:30] finance this,
+[00:27:31] the company has already
+[00:27:32] completed its
+[00:27:33] largest ever
+[00:27:34] bond offering
+[00:27:35] worth about
+[00:27:36] $30 billion.
+[00:27:37] It struck a separate $
+[00:27:39] 27 billion deal
+[00:27:39] with private
+[00:27:41] lending firm Blue
+[00:27:42] Owl and now, after
+[00:27:43] a record
+[00:27:44] fundraising, Alphabet is
+[00:27:45] reportedly
+[00:27:46] considering
+[00:27:47] selling
+[00:27:49] tens of billions of
+[00:27:50] dollars in new shares on top of
+[00:27:51] all that.  Well,
+[00:27:52] that may not
+[00:27:53] happen.  Nothing has
+[00:27:55] been decided yet.  But
+[00:27:56] the direction of movement is
+[00:27:57] indicative.  The company,
+[00:27:59] which was an example of
+[00:28:00] buying back
+[00:28:01] its own shares, is now
+[00:28:03] using all
+[00:28:04] possible methods of
+[00:28:05] raising money.  And
+[00:28:06] when this report came out
+[00:28:08] , the stock fell
+[00:28:09] almost 7%.  Investors,
+[00:28:12] who
+[00:28:13] have applauded the company for decades
+[00:28:14] for reducing its
+[00:28:15] share count, are not thrilled
+[00:28:16] with the idea of
+[00:28:18] increasing it again.
+[00:28:20] So, the smartest and
+[00:28:22] most profitable
+[00:28:23] companies in the world
+[00:28:24] realized the same thing at the same time
+[00:28:25] .  That
+[00:28:27] building AI
+[00:28:27] infrastructure
+[00:28:28] costs more than
+[00:28:30] their
+[00:28:31] own cash
+[00:28:32] flows can cover.  So they "
+[00:28:33] went around with their hat in a
+[00:28:34] circle," which brings
+[00:28:35] us to an important
+[00:28:36] question.  Who exactly is
+[00:28:37] putting money in this
+[00:28:39] hat?  And what
+[00:28:40] happens when they
+[00:28:41] try to take them away?
+[00:28:44] The answer is
+[00:28:45] increasingly—you.  Typically,
+[00:28:47] the bank gives the hot IPO to
+[00:28:49] its favorite
+[00:28:50] institutional
+[00:28:51] clients, and
+[00:28:52] retail
+[00:28:53] investors
+[00:28:54] get maybe
+[00:28:55] 5–10%, if they're lucky.
+[00:28:58] SpaceX has allocated 20 to
+[00:28:59] 30% specifically for
+[00:29:01] retail
+[00:29:02] investors.  They
+[00:29:04] took the largest IPO in
+[00:29:06] history and
+[00:29:06] turned a quarter of it
+[00:29:07] into a mass
+[00:29:08] retail product.
+[00:29:11] Now, when a company
+[00:29:12] suddenly decides it
+[00:29:13] desperately needs to
+[00:29:14] sell
+[00:29:15] tens of billions of
+[00:29:16] dollars worth of stock to the general
+[00:29:17] public, it's worth
+[00:29:18] turning to the
+[00:29:19] scientific literature.
+[00:29:22] In 1986, economist
+[00:29:23] Kevin Rock, by the way, not
+[00:29:25] related to Kid Rock,
+[00:29:26] as far as I
+[00:29:27] know, published a
+[00:29:29] famous article in the Journal of
+[00:29:31] Financial Economics, "Why New
+[00:29:32] Issues Are Undervalued," in which he
+[00:29:34] described how
+[00:29:35] IPOs are valued and why
+[00:29:36] they "soar" on the
+[00:29:38] first day.
+[00:29:41] Argawala's 2002 article
+[00:29:43] explained the "
+[00:29:44] winner's curse."
+[00:29:45] The authors explained that
+[00:29:49] institutional
+[00:29:50] investors are
+[00:29:50] informed buyers
+[00:29:52] , while retail investors are not.
+[00:29:54] If the IPO is truly
+[00:29:55] profitable, knowledgeable
+[00:29:57] institutions
+[00:29:57] buy everything up, and the
+[00:29:59] share of retail
+[00:30:00] investors
+[00:30:01] is reduced.  But if
+[00:30:03] it's a "dummy",
+[00:30:04] the institutions leave, the
+[00:30:05] bank stays with
+[00:30:06] this asset and quickly
+[00:30:07] transfers it to
+[00:30:08] retail
+[00:30:09] investors.  So, if
+[00:30:12] you ask for 100 shares and
+[00:30:13] get all 100, you
+[00:30:14] shouldn't celebrate.
+[00:30:17] You should be afraid because the
+[00:30:18] smart money just
+[00:30:20] left the building.  I must
+[00:30:22] admit that
+[00:30:24] I personally received a full
+[00:30:25] share allocation in
+[00:30:26] every IPO I
+[00:30:27] applied for, which I always
+[00:30:29] considered a sign of my
+[00:30:30] excellent judgment.  In the
+[00:30:33] case of SpaceX, demand
+[00:30:34] among retail
+[00:30:35] investors was
+[00:30:36] extremely high.
+[00:30:39] So, that's not exactly what happened here
+[00:30:40] , but the
+[00:30:41] fact that Wall Street
+[00:30:42] engineered a deal that
+[00:30:43] needed
+[00:30:44] $20 billion in
+[00:30:45] retail money to
+[00:30:47] go through speaks volumes
+[00:30:48] about who they
+[00:30:49] wanted in that
+[00:30:50] building.  And the mechanics of
+[00:30:53] how they
+[00:30:53] keep them there—it's
+[00:30:55] a minor miracle of
+[00:30:56] financial engineering
+[00:30:57] , because Wall Street is
+[00:30:58] perfectly fine with
+[00:30:59] retail investors
+[00:31:01] buying IPOs, but
+[00:31:02] suddenly becomes very
+[00:31:03] strict about
+[00:31:04] letting them
+[00:31:05] sell them.  A
+[00:31:06] retail
+[00:31:07] investor's instinct for a
+[00:31:08] hot
+[00:31:08] tech IPO
+[00:31:09] may be to
+[00:31:10] quickly
+[00:31:11] resell the stock.
+[00:31:12] Buy at 135 on Thursday
+[00:31:13] evening, sell at 180
+[00:31:15] on Friday morning.
+[00:31:17] To prevent this,
+[00:31:18] brokers have introduced
+[00:31:20] new rules.  Fidelity
+[00:31:23] lowered the maximum
+[00:31:24] account balance for an IPO
+[00:31:25] from half a million to just
+[00:31:28] $2,000 to attract
+[00:31:29] smaller accounts to the
+[00:31:30] deal.  SoFi has set a
+[00:31:33] 30-day window against
+[00:31:35] reselling and
+[00:31:36] will block
+[00:31:36] investors who
+[00:31:37] sell their shares
+[00:31:39] early.  They are even
+[00:31:40] threatening a
+[00:31:42] $50 commission to
+[00:31:43] any retail
+[00:31:44] investor who
+[00:31:45] sells IPO shares
+[00:31:46] within the first 120
+[00:31:48] days of trading.  Nerd Wallet
+[00:31:50] explained that brokers
+[00:31:51] do this because they want
+[00:31:52] people to invest
+[00:31:54] in the IPO, believing in the
+[00:31:55] company and planning
+[00:31:56] to hold the stock
+[00:31:57] long-term, which is a
+[00:31:58] polite way of
+[00:31:59] saying that a massive
+[00:32:00] sell-off by retail
+[00:32:02] investors on the first
+[00:32:03] day would drive
+[00:32:04] the price down and
+[00:32:05] embarrass the
+[00:32:06] underwriters.  These
+[00:32:08] sales restrictions
+[00:32:09] come in conjunction with the
+[00:32:10] rapid
+[00:32:11] index inclusion that
+[00:32:12] Musk has reportedly
+[00:32:13] demanded from
+[00:32:14] index
+[00:32:15] providers like NASDAQ.
+[00:32:17] The major indexes
+[00:32:18] mostly
+[00:32:19] bowed to
+[00:32:20] Musk.  Typically,
+[00:32:22] a company goes through a
+[00:32:23] long
+[00:32:24] adaptation period before
+[00:32:25] joining a
+[00:32:26] major index.  For
+[00:32:29] SpaceX, NASDAQ created a
+[00:32:30] fast-track
+[00:32:32] entry rule, granting mega-IPOs
+[00:32:33] access to the NASDAQ 100 just
+[00:32:35] 15 trading days
+[00:32:36] after listing.  Footsie
+[00:32:40] Russell went further,
+[00:32:42] including the company
+[00:32:43] in the Russell 1000 in just 5
+[00:32:45] days.  The only one that
+[00:32:48] held out was the S&P 500,
+[00:32:49] which confirmed its
+[00:32:50] current rules and
+[00:32:51] refused to
+[00:32:52] speed up the process
+[00:32:54] for SpaceX.  So
+[00:32:55] take a look at these
+[00:32:56] mechanisms.  Retail
+[00:32:58] investors
+[00:32:59] poured in massive amounts into the largest
+[00:33:00] and most expensive
+[00:33:01] public offering
+[00:33:02] in history.  Their
+[00:33:03] brokers threaten
+[00:33:04] them with punishment if
+[00:33:05] they sell the shares
+[00:33:06] early.  And almost
+[00:33:08] exactly when they are
+[00:33:09] allowed to sell,
+[00:33:11] the giant passive
+[00:33:12] index funds that
+[00:33:13] manage the retirement
+[00:33:14] savings of
+[00:33:15] millions of people who
+[00:33:16] don't even
+[00:33:17] know it
+[00:33:18] will be forced by
+[00:33:19] NASDAQ rules
+[00:33:20] to buy
+[00:33:21] billions of dollars worth of SpaceX stock,
+[00:33:22] regardless of price.
+[00:33:26] Wall Street essentially
+[00:33:27] lured retail
+[00:33:28] investors into a room,
+[00:33:29] locked the door for a
+[00:33:30] few weeks, and
+[00:33:31] asked them
+[00:33:32] to hold the price
+[00:33:33] steady until
+[00:33:35] price-insensitive index funds
+[00:33:36] were required to
+[00:33:38] start buying.  And it's not
+[00:33:39] just American
+[00:33:40] retail investors who
+[00:33:41] fall into this
+[00:33:42] trap.  In the
+[00:33:45] UK, the
+[00:33:46] Financial
+[00:33:46] Conduct Authority
+[00:33:47] recently
+[00:33:48] introduced a
+[00:33:49] public
+[00:33:50] offering platform regime,
+[00:33:51] allowing UK
+[00:33:52] retail
+[00:33:53] investors to buy
+[00:33:54] shares in listed companies
+[00:33:56] without having to
+[00:33:57] study a traditional,
+[00:33:58] highly regulated
+[00:33:59] prospectus.  SpaceX was the
+[00:34:01] first company to
+[00:34:03] take advantage of this
+[00:34:04] mechanism,
+[00:34:05] attracting British
+[00:34:06] orders through a
+[00:34:07] broker called Marx
+[00:34:09] Financial.  The best
+[00:34:10] part of the new
+[00:34:11] UK
+[00:34:11] regulation is
+[00:34:13] that the
+[00:34:14] platform operator, Marx,
+[00:34:15] is required
+[00:34:16] to ensure that the
+[00:34:17] issuing company will
+[00:34:18] have sufficient
+[00:34:19] funds to operate for
+[00:34:20] at least 6
+[00:34:21] months after
+[00:34:22] the offer closes.
+[00:34:26] So, somewhere in London, a
+[00:34:27] small brokerage
+[00:34:28] firm has assured
+[00:34:29] the regulator that a
+[00:34:33] $1.78 trillion aerospace AI conglomerate, run by the
+[00:34:37] world’s most unpredictable billionaire and
+[00:34:38] relying on a
+[00:34:43] $45 billion computing power contract with a
+[00:34:44] not-yet-
+[00:34:45] public company for
+[00:34:47] data centers that
+[00:34:48] don’t yet exist, is
+[00:34:49] solvent,
+[00:34:50] at least until Christmas.
+[00:34:55] So we have a tsunami of
+[00:34:57] $675 billion in new shares
+[00:34:59] hitting the market,
+[00:35:00] retail
+[00:35:01] investors
+[00:35:02] locked out by
+[00:35:03] brokers, and a pipeline of
+[00:35:04] trillion-dollar
+[00:35:05] private companies
+[00:35:06] raising funds for
+[00:35:08] Nvidia chips.  The natural
+[00:35:11] question is: won't
+[00:35:12] this break the stock
+[00:35:13] market?  Is this the peak of
+[00:35:15] the cycle?  There are people who
+[00:35:17] think so.  A sudden
+[00:35:19] surge in IPOs is often a
+[00:35:20] signal that the
+[00:35:21] peak of
+[00:35:22] the cycle has been reached.  This happened
+[00:35:24] in 1929, in the late
+[00:35:26] 1960s, and, famously, during the
+[00:35:28] “dot-com bubble” of
+[00:35:30] 1999–2000.  When
+[00:35:33] company insiders
+[00:35:34] simultaneously decide
+[00:35:35] that now is the
+[00:35:36] best time
+[00:35:37] to sell you their
+[00:35:38] shares, they are usually
+[00:35:40] right and you are not.
+[00:35:43] But if you look at the
+[00:35:44] technical side of things, the
+[00:35:45] somewhat boring truth
+[00:35:47] is that
+[00:35:48] the market will probably
+[00:35:49] digest this easily.
+[00:35:51] Gavacal recently
+[00:35:52] noted that in the year to
+[00:35:53] last September,
+[00:35:55] S&P
+[00:35:56] 500 companies issued
+[00:35:58] about
+[00:35:59] $1.7 trillion in shares,
+[00:36:01] about $140
+[00:36:02] billion per month.
+[00:36:03] So,
+[00:36:04] SpaceX's historic $75 billion raise
+[00:36:07] is equivalent to a little
+[00:36:08] more than two
+[00:36:09] weeks of regular
+[00:36:10] share issuance.  Even
+[00:36:13] with Anthropic,
+[00:36:14] OpenAI, Alphabet, and Meta, the
+[00:36:15] US
+[00:36:16] capital markets can
+[00:36:17] digest all of this
+[00:36:19] without crashing.  So the
+[00:36:21] real question is not
+[00:36:22] whether
+[00:36:23] the markets can absorb it, but
+[00:36:25] whether it will be a
+[00:36:26] good investment.
+[00:36:28] History gives a clear
+[00:36:29] answer to this
+[00:36:30] question.  The size of the IPO has
+[00:36:32] virtually no impact
+[00:36:33] on whether
+[00:36:35] the investment will be successful.  Until
+[00:36:37] yesterday, the
+[00:36:38] largest IPO in
+[00:36:39] history was Saudi Aramco,
+[00:36:41] which raised
+[00:36:42] $25.6 billion in
+[00:36:44] 2019 and has been underperforming ever since
+[00:36:47] .  Visa
+[00:36:48] raised $17.9 billion
+[00:36:50] at the height of the
+[00:36:52] 2008 crisis and has since
+[00:36:54] generated
+[00:36:55] about 3,000% profit.
+[00:36:59] The size of
+[00:37:00] the deal is not important.  It's the sustainability
+[00:37:02] of the business and the price
+[00:37:04] you pay.  And now
+[00:37:06] investors are paying an
+[00:37:07] extraordinary price.  At
+[00:37:09] $135 per
+[00:37:11] share, SpaceX is valued
+[00:37:13] at over 90% of annual
+[00:37:14] revenue.  Not profits
+[00:37:17] , but income.  The company
+[00:37:19] is losing money on a
+[00:37:20] massive scale
+[00:37:21] .  If you're looking for
+[00:37:24] an analogy for buying a
+[00:37:25] truly revolutionary
+[00:37:26] technology
+[00:37:27] company at a high
+[00:37:29] valuation,
+[00:37:30] consider Cisco in 2000—the key
+[00:37:31] company
+[00:37:32] that provided
+[00:37:33] the tools for the
+[00:37:35] early internet.
+[00:37:37] Cisco built
+[00:37:37] the routers and
+[00:37:39] switches that made
+[00:37:41] the network work.  It was a
+[00:37:42] phenomenal business
+[00:37:43] .  In March 2000,
+[00:37:45] it briefly
+[00:37:46] surpassed Microsoft as the
+[00:37:47] most valuable company
+[00:37:49] in the world.  But the assessment was
+[00:37:50] out of touch with
+[00:37:52] reality.  And when the
+[00:37:54] bubble burst and stocks
+[00:37:55] fell, Cisco still
+[00:37:57] survived.  It
+[00:37:58] continued
+[00:37:59] to grow its profits,
+[00:38:00] remaining
+[00:38:01] dominant and
+[00:38:01] profitable.  But it still
+[00:38:03] took until
+[00:38:05] December 2025, over
+[00:38:06] 25 years, for stocks
+[00:38:08] to close at a new
+[00:38:09] record high
+[00:38:11] above the 2000 peak.
+[00:38:13] If you bought at
+[00:38:15] the peak, you waited
+[00:38:16] a quarter of a century, only
+[00:38:17] to break even on
+[00:38:18] one of the great
+[00:38:20] surviving companies of the internet age.
+[00:38:22] SpaceX may well
+[00:38:24] colonize Mars.
+[00:38:25] It can build the
+[00:38:26] grandest
+[00:38:27] orbital data centers the
+[00:38:30] world has ever seen.  But at a valuation of
+[00:38:31] $1.78 trillion,
+[00:38:33] its price tag is calculated
+[00:38:35] for perfection.
+[00:38:37] According to forecasts,
+[00:38:38] SpaceX will earn
+[00:38:39] twice as
+[00:38:40] much from advertising as Google does
+[00:38:41] today.  This, like
+[00:38:44] much else, must come
+[00:38:45] true to
+[00:38:46] justify such an
+[00:38:48] assessment.  The SpaceX IPO is the
+[00:38:50] most visible
+[00:38:51] symptom of a much
+[00:38:52] larger
+[00:38:53] shift.  The 23-year era of
+[00:38:56] stock
+[00:38:57] market declines is over.  Those
+[00:39:01] "light" software
+[00:39:02] businesses that
+[00:39:02] generated cash
+[00:39:04] and bought back
+[00:39:05] their own shares
+[00:39:06] turned into "
+[00:39:07] heavy" ones.  They need
+[00:39:09] power plants,
+[00:39:10] lay
+[00:39:10] fiber optic
+[00:39:11] cables, and launch
+[00:39:12] huge satellites.
+[00:39:14] They became the 21st century version of
+[00:39:15] 19th century railways
+[00:39:17] .  And, like
+[00:39:19] railroads, they
+[00:39:20] need a bottomless
+[00:39:22] pool of capital to
+[00:39:23] build out.  The stock
+[00:39:25] market won't crash.
+[00:39:27] He simply
+[00:39:27] returns to
+[00:39:28] his original
+[00:39:29] work.  It is no longer a
+[00:39:30] mechanism that
+[00:39:31] reduces the number of
+[00:39:32] shares to independently
+[00:39:34] increase your
+[00:39:34] retirement account.  This is
+[00:39:36] the pawnshop again, where the
+[00:39:38] most ambitious
+[00:39:38] companies in the world
+[00:39:39] come to ask
+[00:39:41] you for money.  When trading
+[00:39:43] opened on Friday
+[00:39:45] , investors poured into the
+[00:39:47] arena, exchanging their
+[00:39:48] savings for a
+[00:39:49] small, unclaimed
+[00:39:51] share of a dream worth $
+[00:39:52] 28.5 trillion.  The stock
+[00:39:55] closed today
+[00:39:56] up about
+[00:39:58] 19%, which is a typical
+[00:39:59] performance for an IPO.  At
+[00:40:01] the beginning, I told you
+[00:40:03] that I assumed the
+[00:40:04] easy times
+[00:40:05] would last forever.
+[00:40:06] They didn't last.  And
+[00:40:07] now I will go read the
+[00:40:08] next two
+[00:40:09] prospectuses, on which
+[00:40:10] I will probably have no
+[00:40:12] right to vote and in which I will
+[00:40:13] hardly be able to
+[00:40:14] condemn anyone.
+[00:40:15] Let's see what
+[00:40:16] comes of this.  If
+[00:40:18] you found this video
+[00:40:19] interesting, watch
+[00:40:20] my video about whether
+[00:40:22] OpenAI expects
+[00:40:22] government help.
+[00:40:25] Don't forget
+[00:40:25] to visit our
+[00:40:26] sponsor SY via the
+[00:40:27] link in the description.
+[00:40:29] See you in the
+[00:40:29] next video.
+[00:40:31] See you later.

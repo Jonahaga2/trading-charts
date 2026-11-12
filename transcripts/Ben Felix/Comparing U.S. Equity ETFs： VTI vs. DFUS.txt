@@ -1,0 +1,425 @@
+[00:00:00] In my video on the problem with index
+[00:00:01] funds, I compared DFUS, a lowcost total
+[00:00:04] US market ETF that doesn't follow an
+[00:00:06] index, to VTI, a total US market index
+[00:00:09] ETF. To illustrate how not following an
+[00:00:12] index can be beneficial. Despite these
+[00:00:15] two ETFs being total market funds that
+[00:00:17] are similar along most dimensions, DFUS
+[00:00:19] has outperformed VTI since it listed as
+[00:00:21] an ETF in June 2021. Many people were
+[00:00:25] upset by the suggestion that index funds
+[00:00:27] are not perfect investments and wanted
+[00:00:29] to poke holes in my comparison. I think
+[00:00:31] this is worth digging into further. In
+[00:00:33] this video, I'm going to take a more
+[00:00:34] detailed look at these two funds and
+[00:00:36] explain why index funds, while an
+[00:00:38] incredible innovation, still have room
+[00:00:40] to improve. I'm Ben Felix, chief
+[00:00:42] investment officer at PWL Capital, and
+[00:00:44] I'm going to compare in more detail than
+[00:00:47] you probably want DFUS and VTI.
+[00:00:51] [Music]
+[00:00:56] Let me be clear about something upfront.
+[00:00:58] Lowcost total market index funds are
+[00:01:00] great tools for building portfolios. If
+[00:01:02] you're a happy index fund investor,
+[00:01:04] don't let this video push you off
+[00:01:06] course. I am a big fan of index funds,
+[00:01:09] but I'm also aware that they're not
+[00:01:10] perfect and this channel doesn't exist
+[00:01:12] to coddle the beliefs of index fund
+[00:01:14] investors. That said, in the grand
+[00:01:16] scheme of things, choosing between two
+[00:01:17] lowcost, low turnover, and broadly
+[00:01:19] diversified funds like DFUS and VTI is
+[00:01:23] probably not a decision that will change
+[00:01:24] your ability to meet your long-term
+[00:01:26] financial goals. It is, however, a
+[00:01:28] reminder that it's important not to be
+[00:01:30] dogmatic about anything in investing. I
+[00:01:32] get it. Index investing stems from a
+[00:01:33] scientific approach to thinking about
+[00:01:35] managing portfolios. It's rooted in
+[00:01:37] theories like Marowitz portfolio theory,
+[00:01:39] the capital asset pricing model, and the
+[00:01:41] efficient market hypothesis, and
+[00:01:43] supported by mountains of empirical
+[00:01:44] evidence demonstrating the inability of
+[00:01:46] active managers to beat index funds most
+[00:01:48] of the time. The weight of this theory
+[00:01:50] and evidence should make it very
+[00:01:52] difficult for people to update their
+[00:01:54] prior belief that index funds are
+[00:01:56] optimal investments. But even in the
+[00:01:57] face of a strong prior belief, applying
+[00:01:59] the same type of scientific thinking and
+[00:02:02] more up-to-date theory can lead to
+[00:02:03] modest improvements. DFUS is the
+[00:02:06] dimensional US equity market ETF, a US
+[00:02:08] total market fund that aims to deliver
+[00:02:10] market returns without following an
+[00:02:12] index. And while making a few
+[00:02:13] evidence-based tweaks to how the fund is
+[00:02:15] managed and implemented, VTI is the
+[00:02:18] Vanguard total stock market ETF, a US
+[00:02:20] total market fund that tracks the crisp
+[00:02:22] US total market index. Its sole
+[00:02:25] objective is tracking the performance of
+[00:02:26] that index net of costs. Both funds
+[00:02:29] offer broad exposure to the US market,
+[00:02:31] but by not following an index and doing
+[00:02:33] a few other things that I'll detail in a
+[00:02:35] minute, DFUS has been able to outperform
+[00:02:37] VTI since it launched as an ETF in June
+[00:02:40] 2021 through July 15th, 2025, while
+[00:02:44] maintaining similar exposure to the
+[00:02:45] total US stock market. DFUS is not an
+[00:02:48] index fund, but it looks more like an
+[00:02:49] index fund than a traditional actively
+[00:02:51] managed fund. It differs from VTI in a
+[00:02:53] few nuanced, well-th thoughtout, and
+[00:02:55] important ways. First, index funds like
+[00:02:57] VTI follow rigid rebalancing rules to
+[00:03:00] match index returns, leading to some
+[00:03:02] potential costs that won't show up in
+[00:03:04] fees. A stock market index is a
+[00:03:06] representation of a stock market, but it
+[00:03:08] is not the stock market. Every day,
+[00:03:10] there are changes in market composition
+[00:03:11] due to things like initial public
+[00:03:13] offerings, new share issuance, and stock
+[00:03:15] buybacks. Most indexes rebalance to
+[00:03:18] reflect these changes quarterly. In
+[00:03:20] between rebalancings, the index and the
+[00:03:22] actual stock market will differ
+[00:03:24] slightly. The timing and nature of index
+[00:03:26] rebalancing ends up being really
+[00:03:28] important. The 2025 paper index
+[00:03:30] rebalancing and stock market
+[00:03:32] composition, do indexes time the market,
+[00:03:34] explains that indices and by extension
+[00:03:36] index funds are subject to adverse
+[00:03:39] selection due to when firms issue or buy
+[00:03:41] back stock? Firms, companies that list
+[00:03:44] on the stock market will issue stock
+[00:03:46] when they think their share price is
+[00:03:48] high and they'll buy back stock when
+[00:03:49] they think their share price is low.
+[00:03:51] It's a similar situation for IPOs. Firms
+[00:03:54] will go public when they believe their
+[00:03:55] share price is high. This makes sense
+[00:03:57] for firms and contains information for
+[00:04:00] investors in fulfilling their role of
+[00:04:02] representing the market. Total market
+[00:04:04] indexes quickly incorporate these
+[00:04:06] changes through their rebalancing
+[00:04:07] traits, buying stock when firms issue or
+[00:04:10] go public and selling when they buy
+[00:04:12] back. Index funds follow suit to fulfill
+[00:04:14] their role of closely tracking the
+[00:04:15] index. This puts index fund rebalancing
+[00:04:18] at odds with firms own beliefs about
+[00:04:20] their share prices and empirically it
+[00:04:22] results in an implicit cost for index
+[00:04:24] funds. The authors of this paper find
+[00:04:26] that the long short portfolios that
+[00:04:28] mirror index fund rebalancing trades
+[00:04:30] have a negative 3.5% annual return and
+[00:04:33] load negatively on the value
+[00:04:34] profitability and investment factors.
+[00:04:36] They estimate that this imposes a 60
+[00:04:38] basis point annual index level
+[00:04:40] performance drag on the total market
+[00:04:42] index. This can be thought of as the
+[00:04:44] cost for achieving the primary objective
+[00:04:46] of the index, which is to approximate
+[00:04:48] the returns of the market it represents.
+[00:04:50] It's not a cost that's easy to see
+[00:04:52] because it's equally reflected in the
+[00:04:54] returns of the index and the index fund.
+[00:04:57] One of the ways this paper measures the
+[00:04:58] cost of index rebalancing is by
+[00:05:00] constructing index portfolios that
+[00:05:02] rebalance less frequently and implement
+[00:05:03] a lag in incorporating changes in market
+[00:05:06] composition. These lazy indexes, as
+[00:05:08] they're called in the paper, boost
+[00:05:10] returns by 40 to 60 basis points per
+[00:05:12] year. A benefit mostly stemming from
+[00:05:14] waiting to incorporate changes in market
+[00:05:16] composition. Another interesting point
+[00:05:18] that the authors make is that both
+[00:05:19] normal quarterly rebalanced indexes and
+[00:05:21] the lazy rebalanced indexes that are
+[00:05:23] introduced in the paper have tracking
+[00:05:25] error relative to the actual stock
+[00:05:27] market. But lazy rebalancing improves
+[00:05:29] the return per unit of tracking error.
+[00:05:32] This is a fascinating point. An index is
+[00:05:34] not the market. Its returns are not
+[00:05:36] identical to the returns of the market.
+[00:05:38] In other words, it has tracking error to
+[00:05:40] the market. This is because the index
+[00:05:42] reflects changes to market composition
+[00:05:44] quarterly while actual market changes
+[00:05:46] are daily. A lazy index is even further
+[00:05:48] away from being the market because it
+[00:05:50] further delays incorporating changes to
+[00:05:52] market composition. But the increase in
+[00:05:54] tracking error is relatively less
+[00:05:56] significant than the increase in
+[00:05:57] expected returns. This is because the
+[00:06:00] lazy index is mechanically avoiding
+[00:06:02] buying stocks with low expected returns
+[00:06:04] and selling stocks with high expected
+[00:06:06] returns in response to changes in market
+[00:06:08] composition. Well, it's not quite a lazy
+[00:06:10] index as defined in this paper. By not
+[00:06:12] tracking an index at all, DFUS is able
+[00:06:14] to avoid this issue almost entirely.
+[00:06:17] DFUS delays buying IPOs and it follows
+[00:06:19] trading rules designed to increase
+[00:06:21] expected returns rather than trading to
+[00:06:23] match changes in market composition. It
+[00:06:25] also excludes certain types of stocks
+[00:06:27] entirely. These exclusions are important
+[00:06:29] to understand in making the DFUS to VTI
+[00:06:31] comparison. DFUS excludes small cap
+[00:06:34] growth stocks with weak profitability,
+[00:06:36] small cap growth stocks with aggressive
+[00:06:37] investment, and small cap stocks with
+[00:06:39] high securities lending fees. These
+[00:06:41] specific types of small cap stocks are
+[00:06:43] well known for having poor returns.
+[00:06:45] They're sometimes referred to as junk or
+[00:06:47] small crap growth stocks. The exclusions
+[00:06:50] in DFUS are not intended specifically to
+[00:06:52] avoid the effects of adverse selection
+[00:06:54] on changes in market composition, but
+[00:06:56] they do have an interesting interaction
+[00:06:58] with that research. In index rebalancing
+[00:07:00] and stock market composition, the
+[00:07:01] authors find that one of the reasons
+[00:07:02] that index fund rebalancing portfolios
+[00:07:04] perform poorly is because of their
+[00:07:06] factor exposures. These same factor
+[00:07:09] exposures are minimized by DFUS's
+[00:07:11] exclusions. DFUS also excludes REITs.
+[00:07:14] This exclusion is not based on any
+[00:07:15] particular evidence. It's simply a
+[00:07:17] product design choice by dimensional. If
+[00:07:19] people want to add REITs, they can do so
+[00:07:21] easily with a REIT ETF. REITs were one
+[00:07:23] of the common arguments I saw against my
+[00:07:25] comparison of DFUS and VTI in my
+[00:07:27] previous video. Some comments suggested
+[00:07:29] that the REIT exclusion explains all of
+[00:07:31] the performance difference over my
+[00:07:32] sample period. To address this, I built
+[00:07:34] a model portfolio that consists of DFUS
+[00:07:37] combined with VNQ, the Vanguard Real
+[00:07:39] Estate ETF, where the weight of VNQ in
+[00:07:42] my model is matched to the historical
+[00:07:43] weight of REITs in VTI. As you can see,
+[00:07:46] adding the real estate allocation to
+[00:07:48] DFUS does drag down returns over this
+[00:07:50] period, but there's still a huge portion
+[00:07:52] of excess return that can be attributed
+[00:07:53] to exclusions and avoiding adverse
+[00:07:55] selection. Interestingly, the 60 basis
+[00:07:58] point excess return after adjusting for
+[00:08:00] read exposure is identical to the
+[00:08:02] findings in index rebalancing and stock
+[00:08:04] market composition. It's also important
+[00:08:06] to understand how much of the market
+[00:08:08] DFUS excludes. This speaks to another
+[00:08:10] comment that I saw some people making
+[00:08:12] that DFUS is missing out on a large
+[00:08:14] portion of the US market, making it an
+[00:08:16] unwise investment choice. This argument
+[00:08:19] seems like it could make sense if you
+[00:08:20] look only at the number of securities in
+[00:08:22] the two ETFs. When I collected the data
+[00:08:24] for this video, VTI held 3564
+[00:08:27] stocks while DFUS held 2430. With more
+[00:08:31] than a thousand fewer holdings, it looks
+[00:08:32] like DFUS is covering much less of the
+[00:08:34] US stock market. But before drawing
+[00:08:36] conclusions here, it's important to
+[00:08:37] understand the market weight of the
+[00:08:39] stocks being excluded from DFUS. VTI
+[00:08:42] covers approximately 100% of the US
+[00:08:45] stock market reflective of its
+[00:08:46] underlying total market index. DFUS is
+[00:08:49] not tracking an index at all. It's
+[00:08:51] benchmarked against another US market
+[00:08:52] index, the Russell 3000. But the
+[00:08:55] universe of stocks that DFUS selects
+[00:08:57] from are not tied to that index. DFUS
+[00:09:00] holds 179 stocks that are not included
+[00:09:03] in the Russell 3000 and excludes 661
+[00:09:06] stocks that are included in the Russell
+[00:09:08] 3000. The Russell 3000 covers roughly
+[00:09:10] 98% of the US stock market and DFUS is
+[00:09:13] excluding 3.6% of the market cap weight
+[00:09:16] covered by the Russell 3000. As you can
+[00:09:18] see, while there are fewer stocks by
+[00:09:20] number, they make up a tiny portion of
+[00:09:22] the market. Another thing is that a big
+[00:09:23] portion of that 3.6% exclusion relative
+[00:09:26] to the Russell 3000, roughly 2.6 six
+[00:09:28] percentage points of it is rates which
+[00:09:31] we talked about earlier. The remaining
+[00:09:33] 1% are the previously mentioned small
+[00:09:35] cap exclusions. Over this period, the
+[00:09:37] excluded small cap stocks have returned
+[00:09:39] about -10% annualized at a 1% weight in
+[00:09:42] the portfolio. This represents a
+[00:09:44] negative0.1%
+[00:09:45] contribution from the excluded stocks
+[00:09:48] leaving a large portion of the excess
+[00:09:50] returns to be explained by things like
+[00:09:51] trading flexibility and avoiding adverse
+[00:09:54] selection on index rebalancing. The
+[00:09:56] other argument I want to address is that
+[00:09:57] while I focused on the returns of DFUS
+[00:09:59] since it listed as an ETF in June 2021,
+[00:10:02] it did trade as a mutual fund prior to
+[00:10:04] that. And over the full period since
+[00:10:06] inception, it has underperformed VTI
+[00:10:09] from inception on September 25th, 2001
+[00:10:11] through June 11th, 2021, prior to DFUS
+[00:10:14] listing as an ETF. VTI outperformed the
+[00:10:17] predecessor to DFUS, which at the time
+[00:10:19] traded as a mutual fund with the ticker
+[00:10:21] DTMEX by an annualized 0.47%.
+[00:10:25] Whether this preetf listing performance
+[00:10:27] means that the post ETF listing
+[00:10:29] performance has just been luck is a
+[00:10:31] valid question that requires
+[00:10:32] understanding where the difference came
+[00:10:33] from. DTMEX was similar to DFUS in many
+[00:10:36] ways, but there were some differences
+[00:10:38] that I think are material enough to make
+[00:10:39] the preetf conversion data difficult to
+[00:10:42] extrapolate from. DTMEX was still a
+[00:10:44] total market fund, but its objective was
+[00:10:46] to maximize tax efficiency. DFUS does
+[00:10:49] share this objective, but DTMEX
+[00:10:51] accomplished the objective in different
+[00:10:52] ways. For some of its history, it held
+[00:10:55] lower dividend yield stocks. It was also
+[00:10:57] careful to avoid unqualified dividends
+[00:10:59] and short-term capital gains by holding
+[00:11:01] stocks for longer than it would have
+[00:11:03] otherwise. Fast forward to today, DFUS
+[00:11:06] no longer aims to hold low dividend
+[00:11:07] yield stocks. And under the ETF
+[00:11:09] structure in the US, there are now more
+[00:11:11] efficient ways for the fund to deal with
+[00:11:12] capital gains. The other issue with the
+[00:11:14] pre-ETF comparison to VTI is that DTMEX
+[00:11:17] had a much higher expense ratio than VTI
+[00:11:19] for most of their shared lives. Back in
+[00:11:21] 2001, DTMEX had an expense ratio of
+[00:11:23] 0.25% while VTI was at 0.15%.
+[00:11:27] But by 2018, VTI was down to 0.03% while
+[00:11:31] DTMEX was at 0.22%
+[00:11:34] for a 0.19%
+[00:11:36] difference. When DTMEX began trading as
+[00:11:38] an ETF, DFUS, its expense ratio dropped
+[00:11:41] to 0.09%, only 0.06% higher than VTI.
+[00:11:45] Another issue with the historical data
+[00:11:47] is the exclusions. The current
+[00:11:48] exclusions being applied in DFUS stem
+[00:11:50] from research that had not been done yet
+[00:11:52] when DTMEX was launched. The exclusions
+[00:11:55] were added to DTMEX over time, but they
+[00:11:57] were not there for the full sample.
+[00:11:58] Overall, I don't think the pre and post
+[00:12:00] ETF conversion data are comparable. DFUS
+[00:12:03] is materially different from DTMEX on
+[00:12:05] multiple measures. All things
+[00:12:07] considered, while I do acknowledge that
+[00:12:09] data going back to June 2021 are not
+[00:12:11] sufficient to draw long-term conclusions
+[00:12:13] from, I don't think that the prior
+[00:12:15] history of this fund predating its ETF
+[00:12:17] conversion is representative of its
+[00:12:19] expected performance. This fund's
+[00:12:21] approach and performance contain
+[00:12:22] important information for investors to
+[00:12:24] consider. Total market index funds are
+[00:12:26] great investments because they are
+[00:12:27] lowcost, low turnover, broadly
+[00:12:28] diversified, and tax efficient. But
+[00:12:30] these favorable characteristics are not
+[00:12:32] exclusive to index funds. Indexes are
+[00:12:34] designed to be representations of the
+[00:12:36] stock market. Index funds blindly follow
+[00:12:38] them with the objective of matching
+[00:12:40] their performance. Recent research has
+[00:12:42] shown that due to the timing of changes
+[00:12:43] in market composition stemming from
+[00:12:45] things like share buybacks, share
+[00:12:46] issuance, and IPOs, total market indexes
+[00:12:49] are effectively bad market timers. An
+[00:12:52] index that delays incorporating changes
+[00:12:54] in market composition and considers the
+[00:12:56] expected returns of the stocks that it
+[00:12:57] owns can increase expected returns. This
+[00:13:00] is very different from traditional
+[00:13:02] active management which aims to beat the
+[00:13:03] market by picking relatively
+[00:13:05] concentrated portfolios of stocks or
+[00:13:07] timing exposure to the market.
+[00:13:08] Traditional active management has higher
+[00:13:10] fees and costs to overcome and by
+[00:13:12] holding concentrated portfolios often
+[00:13:14] fewer than 100 stocks risks missing out
+[00:13:16] on the subset of stocks that drive most
+[00:13:18] of the market's performance. This leads
+[00:13:20] to underperformance for most active
+[00:13:22] funds even before fees and costs are
+[00:13:24] considered. DFUS is still a total market
+[00:13:26] fund. It is lowcost, low turnover,
+[00:13:28] broadly diversified and tax efficient.
+[00:13:30] It does exclude some stocks
+[00:13:32] intentionally based on their expected
+[00:13:33] return profile, but it still holds
+[00:13:35] thousands of stocks. Between its
+[00:13:37] exclusions and its ability to avoid the
+[00:13:39] market timing costs that affect total
+[00:13:41] market index funds, DFUS represents
+[00:13:43] structural improvements to the already
+[00:13:45] incredible lowcost total market index
+[00:13:47] fund. The cost of being different from
+[00:13:48] the index, even if it does lead to
+[00:13:50] expected outperformance, is tracking
+[00:13:52] error. Performance that is different
+[00:13:54] from the index can be challenging for
+[00:13:55] investors. For example, I could make
+[00:13:57] this video and DFUS could go on to
+[00:13:59] underperform VTI for some period of
+[00:14:02] time. Even people who found the
+[00:14:03] arguments in the video compelling might
+[00:14:05] have trouble sticking with the strategy
+[00:14:07] through periods of underperformance
+[00:14:09] relative to well-known indexes. This is
+[00:14:11] likely a reason that many people will
+[00:14:13] not, and I might even say should not
+[00:14:16] pursue a non-indexed total market
+[00:14:18] strategy like DFUS. If you can get over
+[00:14:20] the possibility of tracking error and
+[00:14:22] are willing to update your beliefs about
+[00:14:24] the best way to invest, I do think it's
+[00:14:26] possible to make slight improvements to
+[00:14:28] the already great concept of lowcost
+[00:14:30] total market index funds. And I think
+[00:14:32] that is exactly what DFUS is doing.
+[00:14:34] Thanks for watching. I'm Ben Felix, CIO
+[00:14:36] at PWL Capital. Tell me how dogmatic
+[00:14:39] your beliefs about index funds are in
+[00:14:40] the comments.

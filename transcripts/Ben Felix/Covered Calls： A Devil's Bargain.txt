@@ -1,0 +1,466 @@
+[00:00:00] The idea that covered calls generate
+[00:00:02] income is financial These
+[00:00:05] strategies are mechanically expected to
+[00:00:07] underperform their underlying equity and
+[00:00:10] increasingly so at higher targeted
+[00:00:12] levels of distributions. For long-term
+[00:00:14] investors, covered calls increase risk
+[00:00:16] by leaving the downside unprotected
+[00:00:18] while capping the upside, eliminating
+[00:00:21] the mean reverting behavior of stocks,
+[00:00:22] an important feature of stock returns.
+[00:00:25] I'm Ben Felix, chief investment officer
+[00:00:27] at PWL Capital, and I'm going to tell
+[00:00:29] you why the so-called passive income
+[00:00:31] from covered calls is a devil's bargain.
+[00:00:38] The preference for income is one of the
+[00:00:40] strongest behavioral biases in
+[00:00:42] investing. It can make people do silly
+[00:00:44] things in their search for income. Some
+[00:00:46] investors look for funds that pay high
+[00:00:48] distributions. This is well known by
+[00:00:51] fund managers who use high distribution
+[00:00:53] yields to attract investor dollars. The
+[00:00:56] problem for investors is that marketing
+[00:00:58] these yields in the case of covered
+[00:00:59] calls as income or even worse as
+[00:01:02] expected returns is financial
+[00:01:05] is not a lie to be clear. It is
+[00:01:07] indifference for the truth. Selling a
+[00:01:09] high distribution yield as an expected
+[00:01:11] return ignores the fact that yields on
+[00:01:14] covered call strategies are inversely
+[00:01:16] related to their expected returns.
+[00:01:18] Higher yields mechanically mean lower
+[00:01:20] expected total returns. Total returns,
+[00:01:23] to be clear, are what you need to buy
+[00:01:25] groceries. I'm going to walk through why
+[00:01:27] distribution yields are not returns, how
+[00:01:30] covered calls reduce expected returns,
+[00:01:32] and why I think the return profile of
+[00:01:34] covered calls makes them particularly
+[00:01:36] risky for long-term investors. To avoid
+[00:01:39] being too theoretical, I'm also going to
+[00:01:40] go through the performance of a bunch of
+[00:01:42] covered call funds to show that what I'm
+[00:01:44] saying is not just theoretical. It is
+[00:01:46] exactly what's happening in the live
+[00:01:48] funds. Let's start with some background.
+[00:01:50] Selling a call option on an equity that
+[00:01:52] you own generates income and creates a
+[00:01:54] liability that empirically more than
+[00:01:57] offsets the income received. This makes
+[00:01:59] the distribution yield uncovered call
+[00:02:01] funds a misleading metric. Selling a
+[00:02:04] call option means selling the right to
+[00:02:05] buy the underlying stock at a
+[00:02:07] predetermined price called the strike
+[00:02:09] price in exchange for a premium. An
+[00:02:11] equity covered call strategy invests in
+[00:02:14] stocks and sells call options on those
+[00:02:16] stocks. A fund using the strategy
+[00:02:18] typically distributes the derivative
+[00:02:20] income from selling calls as cash to
+[00:02:22] investors, resulting in their high
+[00:02:25] distribution yields. While those
+[00:02:26] distributions may feel like investment
+[00:02:28] returns, selling the call is only the
+[00:02:31] first step in the trade. The fund has
+[00:02:33] sold the right to buy the underlying
+[00:02:35] stock at the strike price. If the price
+[00:02:37] of the underlying rises above the strike
+[00:02:40] price, the option holder, who the fund
+[00:02:42] sold the option to, will exercise their
+[00:02:44] call option, and the fund will have to
+[00:02:46] sell the stock at a price below its
+[00:02:48] market value, putting a cap on upside
+[00:02:50] returns. Okay, I want to dig a little
+[00:02:52] deeper into the mechanics of what's
+[00:02:54] going on from the perspective of
+[00:02:55] expected returns. Call options are
+[00:02:57] positively exposed to their underlying
+[00:02:59] equity measured by a term called delta.
+[00:03:02] Buying a call option on a stock gives
+[00:03:04] you positive exposure to the price
+[00:03:06] movements of that stock. Selling a call
+[00:03:08] on an asset that you own, a covered
+[00:03:09] call, reduces your exposure to the
+[00:03:12] underlying stock. You're shorting
+[00:03:14] exposure to the underlying equity by
+[00:03:16] selling the call option. Holding option
+[00:03:18] maturity constant, call option prices
+[00:03:20] and deltas monotonically increase in a
+[00:03:23] decreasing strike price. If you want
+[00:03:25] higher income on your covered call
+[00:03:27] strategy, you can sell options with
+[00:03:29] lower strike prices resulting in higher
+[00:03:31] income and importantly higher short
+[00:03:33] delta. This is crucial in understanding
+[00:03:36] how yields are related to expected
+[00:03:38] returns. In simple terms, higher yield
+[00:03:40] mechanically means lower exposure to the
+[00:03:43] underlying asset by being short a higher
+[00:03:45] delta option and correspondingly it
+[00:03:47] means lower expected returns. When you
+[00:03:50] sell the call option, you receive an
+[00:03:51] option premium that feels like income
+[00:03:53] and is packaged up and distributed by
+[00:03:55] covered call funds as a cash
+[00:03:57] distribution. But the fund now has this
+[00:03:59] liability, the potential need to sell
+[00:04:00] the underlying shares below their market
+[00:04:02] value if the price rises above the
+[00:04:04] strike price. This liability exists
+[00:04:05] until the position is sold or the option
+[00:04:07] expires. Remember, the expected return
+[00:04:09] of the short call is increasingly
+[00:04:11] negative with an increasing derivative
+[00:04:13] yield. Here's why this matters. Over the
+[00:04:15] full life cycle of this type of trade,
+[00:04:17] the outcome is generally worse than
+[00:04:19] simply having held the underlying
+[00:04:20] equity. Part of the reason is a lower
+[00:04:22] equity beta, meaning less exposure to
+[00:04:24] the equity risk premium. To be clear,
+[00:04:26] this is something that you could do by
+[00:04:27] simply reducing your exposure to the
+[00:04:29] stock directly and holding some cash.
+[00:04:32] I'll come back to that with an example
+[00:04:33] later. The problem is that the reduction
+[00:04:35] in exposure to the equity risk premium
+[00:04:36] is also asymmetric. You keep most of the
+[00:04:39] downside while capping your upside at
+[00:04:41] the strike price. This means that
+[00:04:43] through any periods of market
+[00:04:44] volatility, which are of course common
+[00:04:46] in equities, in stocks, you eat most of
+[00:04:48] the downside, but you do not participate
+[00:04:50] in a large portion of the upside.
+[00:04:52] Systematically missing out on stock
+[00:04:54] market recoveries, which are common
+[00:04:56] after major downturns, can be very
+[00:04:58] expensive. Before I continue, I do need
+[00:05:00] to mention a potential saving grace for
+[00:05:02] covered calls. The volatility risk
+[00:05:04] premium. Equity options tend to be
+[00:05:06] priced with an implied volatility higher
+[00:05:08] than realized volatility. This creates
+[00:05:11] the opportunity for option sellers to
+[00:05:13] earn an expected risk premium for
+[00:05:15] enduring the risk of an extreme event
+[00:05:17] where realized volatility exceeds
+[00:05:18] implied volatility. While it makes back
+[00:05:21] tested cover call strategies look really
+[00:05:23] good in recent history since about 2011,
+[00:05:26] the volatility risk premium has not been
+[00:05:28] anywhere near sufficient to offset the
+[00:05:30] reduction in equity exposure from
+[00:05:31] selling the options resulting in poor
+[00:05:34] performance for these strategies. This
+[00:05:35] kind of thing can happen when a trade
+[00:05:37] becomes too crowded by, say, the
+[00:05:39] proliferation of retail funds chasing
+[00:05:41] the strategy. I want to make sure it's
+[00:05:43] really clear that the point about
+[00:05:44] asymmetry is particularly important for
+[00:05:46] long-term equity investors who have
+[00:05:48] historically benefited from a little bit
+[00:05:50] of mean reversion in stocks, making
+[00:05:52] stocks a little bit less risky at long
+[00:05:54] horizons than they would be if returns
+[00:05:56] were completely random. In simple terms,
+[00:05:58] after stocks have performed really
+[00:06:00] poorly, they tend to perform a bit
+[00:06:02] better than average. This is in contrast
+[00:06:04] to bonds which do not tend to have the
+[00:06:06] same rebound effect after poor
+[00:06:07] performance. In fact, bonds often
+[00:06:09] continue having poor performance after
+[00:06:11] having poor performance. Based on this,
+[00:06:13] some research has suggested that the
+[00:06:15] higher expected returns and mean
+[00:06:16] reverting tendencies of stocks make them
+[00:06:19] less risky than bonds for long-term
+[00:06:21] investors, including long-term investors
+[00:06:23] who need to live off of their
+[00:06:24] investments. But here's the problem.
+[00:06:26] Selling calls on your equity positions
+[00:06:28] both lowers the expected returns and
+[00:06:30] eliminates the mean-reverting tendency
+[00:06:32] of stocks by capping the upside return
+[00:06:34] while only slightly improving the
+[00:06:35] downside by the amount of the option
+[00:06:37] premium. Again, getting most of the
+[00:06:39] downside with a limit on upside is not
+[00:06:41] good. I would argue that it makes
+[00:06:43] covered calls very risky for long-term
+[00:06:45] investors who are concerned with funding
+[00:06:47] their inflationadjusted spending. This
+[00:06:50] might be hard to believe given the large
+[00:06:51] distribution yields of these strategies.
+[00:06:53] But it's important to remember that
+[00:06:54] these distributions are not income in
+[00:06:56] the way that say bond interest is and
+[00:06:59] presenting them this way is
+[00:07:00] irresponsible. The option premiums come
+[00:07:03] with an associated liability that lowers
+[00:07:05] expected returns and transforms the
+[00:07:07] shape of the distribution of returns
+[00:07:09] into something much less favorable for
+[00:07:11] long-term investors. One of the biggest
+[00:07:12] problems I see for these funds is that
+[00:07:14] their distribution yields are often much
+[00:07:16] higher than their total expected
+[00:07:17] returns. Yet, they're occasionally
+[00:07:19] discussed in income investing and fire
+[00:07:21] communities as if their distributions
+[00:07:24] are perpetually sustainable. It even
+[00:07:26] gives some people the idea that they
+[00:07:28] should borrow money at say 5% to invest
+[00:07:30] in cover called funds with a 14%
+[00:07:33] distribution yield. The combination of
+[00:07:35] high distribution yields, lower expected
+[00:07:37] returns, an uncapped downside, and a
+[00:07:39] capped upside means that someone who's
+[00:07:42] spending the distributions could deplete
+[00:07:44] their capital fairly quickly. This is
+[00:07:46] another reason why calling these
+[00:07:47] distributions passive income is
+[00:07:49] financial If you need a
+[00:07:52] psychological trick to help you spend
+[00:07:53] down your capital, covered calls might
+[00:07:55] be the answer, but their distribution
+[00:07:57] yields are not a sustainable source of
+[00:07:59] long-term income. I'll say it one more
+[00:08:01] time. Covered calls are not good for
+[00:08:03] long-term investors. Stocks have
+[00:08:05] positive expected returns and
+[00:08:07] mean-reverting tendencies. Covered calls
+[00:08:09] reduce exposure to the underlying stocks
+[00:08:11] and chop off the right tail of the
+[00:08:13] distribution of returns, capping the
+[00:08:15] ability of the underlying to recover
+[00:08:17] from downturns. This effect compounds
+[00:08:19] over time, driving an increasingly large
+[00:08:22] wedge between the performance of the
+[00:08:23] covered call strategies and their
+[00:08:25] underlying equities. This is true in any
+[00:08:27] market conditions. I often hear that
+[00:08:29] covered calls are great in a sideways
+[00:08:30] market, but equity markets don't go
+[00:08:32] sideways. They are volatile even over
+[00:08:35] periods where they have flat returns.
+[00:08:37] Every time your covered call strategy
+[00:08:39] eats downside and is denied upside, you
+[00:08:42] are losing. Okay, that's all fine in
+[00:08:44] theory. Let's look at some live funds.
+[00:08:46] There are quite a few covered call ETFs
+[00:08:48] with reasonably long histories to
+[00:08:50] examine. These can be compared to ETFs
+[00:08:52] investing in the underlying equities
+[00:08:53] without selling calls to see all of the
+[00:08:56] points I've made so far happening in
+[00:08:58] live products. I looked for covered call
+[00:09:00] ETFs with minimum 10-year histories.
+[00:09:02] Beimo has a few that launched in 2011.
+[00:09:05] The Beimo covered call utilities ETF
+[00:09:07] launched October 20th, 2011. It
+[00:09:10] currently has a distribution yield of
+[00:09:11] 7.37%
+[00:09:13] compared to 3.43% for an ETF of the
+[00:09:16] underlying equities. In periods where
+[00:09:18] the underlying equities do not perform
+[00:09:20] well, the covered call fund has been
+[00:09:21] able to outperform, but these periods
+[00:09:23] have tended to be brief and in the long
+[00:09:25] run are far more than outweighed by the
+[00:09:27] capped upside. Over the full history
+[00:09:29] since inception, the covered call fund
+[00:09:30] has trailed the underlying by an
+[00:09:32] annualized 2.6 percentage points. and it
+[00:09:34] has trailed the underlying in more than
+[00:09:36] 70% of three-year rolling periods with a
+[00:09:38] one-mon step. Increasing the rolling
+[00:09:41] window to four years results in the
+[00:09:42] covered call fund trailing nearly 85% of
+[00:09:45] the time. The underperformance is
+[00:09:46] particularly pronounced when the
+[00:09:48] underlying equities drop dramatically
+[00:09:50] and then recover, which is a pretty
+[00:09:51] typical characteristic of equity
+[00:09:53] returns. As I mentioned earlier, I also
+[00:09:55] mentioned earlier that reducing equity
+[00:09:56] beta by holding cash can get you to a
+[00:09:58] similar place as a covered call, at
+[00:10:00] least from the perspective of beta. I
+[00:10:02] ran a portfolio of 60% Beimo equal
+[00:10:04] weight utilities and 40% cash well high
+[00:10:07] interest savings account from October
+[00:10:09] 2013 through August 25th 2025. You can
+[00:10:13] see they track pretty closely most of
+[00:10:16] the time except that the covered call
+[00:10:17] fund gives up extreme upside events and
+[00:10:20] eats the whole meal on the downside. I
+[00:10:22] won't keep repeating that equity plus
+[00:10:24] cash comparison, but Jeff Pac, managing
+[00:10:26] director for Morning Star Research
+[00:10:27] Services, recently showed in a sample of
+[00:10:29] 22 single stock covered call ETFs that a
+[00:10:33] combination of cash and the underlying
+[00:10:34] stock outperformed most of the funds had
+[00:10:37] lower volatility than all of the funds
+[00:10:39] and had a higher sharp ratio than most
+[00:10:41] of the funds. Another Beimo fund with a
+[00:10:43] reasonably long history is the Beimo
+[00:10:45] Covered Call Can Canadian Banks fund. It
+[00:10:47] launched January 28th, 2011. It has a
+[00:10:49] current distribution yield of 6.13%
+[00:10:52] compared to 3.61% for an ETF of the
+[00:10:54] underlying equities. It has
+[00:10:56] underperformed by an annualized 2.71
+[00:10:58] percentage points since inception and it
+[00:11:01] has only outperformed in less than 1% of
+[00:11:04] rolling 3-year periods since inception.
+[00:11:06] The Global X S&P TSX 60 covered call ETF
+[00:11:09] launched on March 16th, 2011. It
+[00:11:11] currently has a distribution yield of
+[00:11:13] 7.67%.
+[00:11:15] It has trailed the EyesShares S&P TSX 60
+[00:11:18] ETF by 3.65 percentage points since
+[00:11:21] inception and it has trailed in 92% of
+[00:11:23] three-year rolling periods since
+[00:11:25] inception. I can go on, but you get the
+[00:11:27] idea. Covered calls are not good for
+[00:11:30] long-term investors who expect positive
+[00:11:32] returns from the underlying assets. The
+[00:11:35] ones I have mentioned so far are pretty
+[00:11:37] tame with distribution yields in the 6
+[00:11:38] to 7% range. I think where these
+[00:11:40] products really go off the rails is when
+[00:11:42] they push for even higher yields.
+[00:11:44] Remember from earlier, if you want
+[00:11:46] higher income on your covered call
+[00:11:47] strategy, you can sell options with
+[00:11:49] lower strike prices, resulting in higher
+[00:11:51] income, and higher short delta. In other
+[00:11:54] words, targeting a higher income
+[00:11:55] exacerbates all of the issues I've
+[00:11:57] mentioned with covered calls. Lower
+[00:11:59] strike prices result in higher
+[00:12:01] distribution yields, less exposure to
+[00:12:02] the underlying equity, and a tighter cap
+[00:12:04] on upside performance. Hamilton ETF's
+[00:12:07] yield maximizer ETF series targets
+[00:12:09] yields well over 10% by selling at the
+[00:12:12] money call options. Take their US equity
+[00:12:15] yield maximizer ETF as an example. It
+[00:12:17] targets a distribution yield of 12% and
+[00:12:19] has underperformed an S&P 500 ETF by an
+[00:12:22] annualized 4.48 percentage points over
+[00:12:25] its admittedly short history. I also
+[00:12:27] want to mention JAPI. This is JP
+[00:12:29] Morgan's equity premium income ETF. It
+[00:12:31] gained a cult-like following around 2022
+[00:12:34] when it outperformed the S&P 500 by
+[00:12:36] nearly 15 percentage points. That
+[00:12:38] combined with its prominently marketed
+[00:12:40] high distribution yield has made it
+[00:12:43] extremely popular with retail investors
+[00:12:44] in general and income focused investors
+[00:12:47] in particular. It even has its own
+[00:12:49] subreddit. The problem is that like
+[00:12:51] other covered call strategies, it has
+[00:12:53] underperformed an S&P 500 ETF. In this
+[00:12:57] case, by 5.92 percentage points since
+[00:12:59] inception in May 2020. This one's not a
+[00:13:02] perfect comparison to the underlying
+[00:13:03] equity since JAPI's underlying equity
+[00:13:06] portfolio is actively managed. I don't
+[00:13:08] know if blaming the underperformance on
+[00:13:10] active management or uncovered calls is
+[00:13:12] worse, but in either case, we know these
+[00:13:14] things generally don't play out well for
+[00:13:16] investors in the long run. The most
+[00:13:18] recent and ridiculous development I've
+[00:13:20] seen in the covered call space is single
+[00:13:21] stock covered call ETFs. These are
+[00:13:24] exactly what they sound like, covered
+[00:13:25] calls on single stocks in an ETF rapper.
+[00:13:28] Some of their distribution yields are
+[00:13:30] astronomical, but as you might expect by
+[00:13:32] now, so is their underperformance. TSLY
+[00:13:35] writes covered calls on Tesla shares.
+[00:13:37] Its distribution rate at the time of
+[00:13:39] writing is 48.59%.
+[00:13:42] But since inception in November 22, it
+[00:13:44] has underperformed Tesla by more than 20
+[00:13:46] percentage points annualized. These
+[00:13:48] numbers are ridiculous, but they
+[00:13:50] certainly do highlight the previously
+[00:13:52] mentioned relationship between high
+[00:13:53] derivative income yields and low
+[00:13:55] expected returns. The last point worth
+[00:13:57] mentioning is that covered call funds
+[00:13:59] will tend to have higher fees and
+[00:14:01] transaction costs than funds holding
+[00:14:02] their underlying equities. For the
+[00:14:04] sample of funds that I mentioned in this
+[00:14:06] video, excluding the single stock fund,
+[00:14:08] the average management expense ratio is
+[00:14:10] 0.63%. 63% and the average trading
+[00:14:13] expense ratio is 0.16%.
+[00:14:16] While funds holding the same underlying
+[00:14:18] equities have an average management
+[00:14:19] expense ratio of 0.25% and an average
+[00:14:22] trading expense ratio of 0%. You are
+[00:14:25] paying a significant premium to access
+[00:14:28] all of the downsides of covered calls.
+[00:14:30] Those high income distributions have to
+[00:14:32] be really really psychologically
+[00:14:34] important to you for all of this to make
+[00:14:36] sense. For completeness, I do want to
+[00:14:38] say that some investment managers may
+[00:14:40] successfully use covered calls to access
+[00:14:43] the volatility risk premium, but this is
+[00:14:45] a fairly esoteric risk premium that is
+[00:14:48] probably not required for the typical
+[00:14:50] household saving for or living in
+[00:14:52] retirement. Even if there is a
+[00:14:54] volatility risk premium worth pursuing,
+[00:14:56] covered call funds are typically
+[00:14:58] marketed to retail investors based on
+[00:15:00] their distribution yields, not their
+[00:15:02] exposure to the volatility risk premium.
+[00:15:04] In my opinion, selling these products on
+[00:15:06] their yield, which in the case of
+[00:15:07] covered calls is inversely related to
+[00:15:10] their expected returns shows
+[00:15:11] indifference to the truth. It is bullit,
+[00:15:15] especially when it's held up next to
+[00:15:16] things like treasury bill yields. Taken
+[00:15:19] together, covered calls don't have
+[00:15:21] anything special to offer. They get you
+[00:15:23] to a place similar to holding a bunch of
+[00:15:24] cash, except that your upside is limited
+[00:15:27] and your downside is unlimited. They're
+[00:15:29] more likely to be detrimental to most
+[00:15:30] investors expected outcomes than to
+[00:15:32] improve them. Their high yields come at
+[00:15:34] the expense of lower expected returns
+[00:15:36] and historically lower realized returns.
+[00:15:38] The volatility risk premium, which could
+[00:15:41] theoretically help covered calls recoup
+[00:15:43] their lower expected returns, has not
+[00:15:45] been anywhere near sufficient to offset
+[00:15:47] the reduction in expected returns since
+[00:15:49] around 2011. All of these downsides show
+[00:15:52] up very clearly in the terrible
+[00:15:55] long-term performance of live covered
+[00:15:57] call strategies when measured properly
+[00:15:59] by their total returns. Thanks for
+[00:16:01] watching. I'm Ben Felix, chief
+[00:16:02] investment officer at PWL Capital. If
+[00:16:04] you enjoyed this video, please share it
+[00:16:06] with someone who thinks the 14%
+[00:16:08] distribution yield undercovered call
+[00:16:10] fund is an expected return.

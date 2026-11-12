@@ -1,0 +1,463 @@
+[00:00:00] I was not going to make another video on
+[00:00:02] covered calls, but I was at a retail
+[00:00:04] investor conference recently. That's me
+[00:00:05] and the plain bagel up on stage and I
+[00:00:07] spent the day talking to retail
+[00:00:09] investors. It struck me how hard the
+[00:00:11] conference attendees were being sold on
+[00:00:13] covered call funds and how frequently I
+[00:00:15] was being asked about them. When I made
+[00:00:17] my last video on this topic, I honestly
+[00:00:19] did not realize how widespread this
+[00:00:21] financial had become. These
+[00:00:24] products are likely to be detrimental to
+[00:00:26] long-term investors, including those who
+[00:00:28] need income. And I think it's important
+[00:00:30] for the truth about what they should be
+[00:00:32] expected to do to be articulated in an
+[00:00:34] understandable way. I'm Ben Felix, chief
+[00:00:37] investment officer at PWL Capital, and
+[00:00:39] I'm going to tell you again why the
+[00:00:41] passive income from covered calls is a
+[00:00:43] financial
+[00:00:52] I'm going to start with some quick
+[00:00:54] background uncovered calls, go through
+[00:00:55] some live fund examples with reasonably
+[00:00:58] long-term data, including dividend
+[00:01:00] reinvestment, and then go through
+[00:01:02] similar examples modeling spending from
+[00:01:04] the portfolios. As you will see, even in
+[00:01:06] that case, covered calls perform worse
+[00:01:08] than their underlying equities. If you
+[00:01:11] stick around to the end of the video, I
+[00:01:12] also have some comments on whether I, as
+[00:01:14] a chief investment officer and portfolio
+[00:01:16] manager, am professionally threatened by
+[00:01:19] covered calls and also why people need
+[00:01:21] to be aware of incentives when they are
+[00:01:23] consuming information. Covered calls are
+[00:01:26] a perfect storm of financial innovation,
+[00:01:28] which tends to favor the financial
+[00:01:30] product provider more than the end
+[00:01:32] consumer, and investor biases, which
+[00:01:34] lead people to seek income producing
+[00:01:36] investments without realizing the cost
+[00:01:38] to total returns. Selling a call option
+[00:01:41] means selling someone the right to buy a
+[00:01:43] stock from you at a predetermined price
+[00:01:46] called the strike price in exchange for
+[00:01:48] a premium. Say the stock is trading at
+[00:01:50] $100. You sell a call option with a
+[00:01:52] strike price of $15 and you collect a $2
+[00:01:56] premium. The effect of this trade will
+[00:01:58] depend on the future price of the stock.
+[00:02:00] If the stock stays below $105, the
+[00:02:02] option expires worthless. you keep the
+[00:02:04] $2 premium, which means in this whole
+[00:02:06] light green shaded range in the chart,
+[00:02:08] you're always doing a little bit better
+[00:02:10] than if you had just held the stock. As
+[00:02:12] long as the stock stays above $98,
+[00:02:14] you're not losing any money on the
+[00:02:15] trade. If the stock rises above $15, the
+[00:02:19] option gets exercised. Your upside is
+[00:02:21] capped. You do make $5 from the stock
+[00:02:23] price increase plus the $2 premium from
+[00:02:26] selling the option. That's a maximum
+[00:02:28] profit of $7 on the trade. If the price
+[00:02:30] goes higher than that, you don't
+[00:02:32] participate in the upside. The line on
+[00:02:34] the payoff diagram flattens right there.
+[00:02:36] Compared to simply holding the stock,
+[00:02:37] you're ahead as long as the price stays
+[00:02:39] below $17. That's the strike price plus
+[00:02:42] the premium. But once it climbs past
+[00:02:45] $17, you would have been better off
+[00:02:47] without the covered call. And on the
+[00:02:49] downside, say the stock crashes to $50,
+[00:02:51] you still pocket the $2 premium, but
+[00:02:54] you're taking nearly the full hit on the
+[00:02:56] price decline of the shares. The premium
+[00:02:58] softens the blow a little tiny bit on
+[00:03:00] the downside, but your downside risk is
+[00:03:02] mostly unchanged from simply owning the
+[00:03:04] stock. A fund using the strategy
+[00:03:06] typically distributes the option
+[00:03:08] premiums from selling calls to
+[00:03:09] investors, resulting in their high
+[00:03:11] distribution yields. Those distribution
+[00:03:13] yields are misleading due to their
+[00:03:15] effect on total returns. Remember,
+[00:03:17] selling the call is only the first step
+[00:03:19] in the trade. The fund has sold the
+[00:03:20] right to buy the underlying stock at the
+[00:03:22] strike price. If the price of the
+[00:03:24] underlying rises above the strike price,
+[00:03:26] the option holder, whoever the fund sold
+[00:03:28] the option to, will exercise their call
+[00:03:30] option and the fund will have to sell
+[00:03:32] their stock at a price below its market
+[00:03:34] value, putting a cap on upside returns.
+[00:03:37] The result is that selling the call has
+[00:03:39] reduced exposure to the underlying
+[00:03:41] equity primarily on the upside while
+[00:03:43] downside returns remained largely
+[00:03:45] exposed, reducing expected returns and
+[00:03:48] capping the ability of the fund to
+[00:03:49] recover after the inevitable downturns
+[00:03:52] that stocks experience. For long-term
+[00:03:54] investors, my view is that covered call
+[00:03:56] funds are not good investments. They do
+[00:03:58] not generate passive income and they
+[00:04:00] create unnecessary layers of risk and
+[00:04:02] cost. This is also true for investors
+[00:04:05] who need income as I will show you with
+[00:04:07] five examples in just a minute. These
+[00:04:09] funds create the illusion of income
+[00:04:10] while systematically lowering expected
+[00:04:13] returns and increasing risk by changing
+[00:04:15] the shape of the distribution of
+[00:04:16] returns. One of the most common
+[00:04:18] questions that I got on my last video
+[00:04:19] was whether my performance comparisons
+[00:04:21] assumed the reinvestment of
+[00:04:23] distributions. The yields on these
+[00:04:25] covered call funds are incredibly high.
+[00:04:27] So distributions being reinvested or not
+[00:04:30] does matter a lot. I can confirm that my
+[00:04:32] performance comparisons did assume
+[00:04:34] reinvestment of distributions and they
+[00:04:36] will in this video too. Let's look at
+[00:04:38] some quick examples. The Global X S&P
+[00:04:40] 500 covered call ETF has trailed the
+[00:04:43] EyesShares Core S&P 500 ETF by an
+[00:04:46] annualized 3.15 percentage points since
+[00:04:48] January 2014. The Global X S&P TSX 60
+[00:04:52] covered call ETF has trailed the
+[00:04:54] Eyesshares S&P TSX60 ETF by 3.81
+[00:04:58] percentage points since March 2011. and
+[00:05:00] the BIMO covered call Canadian banks ETF
+[00:05:03] has trailed the BEIMO equal weight banks
+[00:05:04] ETF by an annualized 2.86 percentage
+[00:05:07] points since February 2011. An important
+[00:05:10] question is whether total returns which
+[00:05:13] we just looked at are the right metric
+[00:05:15] for an income oriented investor. The
+[00:05:18] premise here is that showing wealth
+[00:05:19] accumulation and annualized returns, as
+[00:05:21] I just did, might itself be misleading
+[00:05:24] if covered calls actually perform better
+[00:05:25] in a scenario where funds from the
+[00:05:27] portfolio are needed each month to buy
+[00:05:29] your groceries and pay your property
+[00:05:31] taxes or rent or whatever. I'm going to
+[00:05:34] address this with a simple portfolio
+[00:05:36] withdrawal analysis. I have 10 years of
+[00:05:38] data for five pairs of funds. Each pair
+[00:05:41] has a covered call fund and a fund of
+[00:05:43] the underlying equity or a very close
+[00:05:45] proxy for the underlying equity. In my
+[00:05:47] model, the investor in the covered call
+[00:05:49] fund is spending approximately the
+[00:05:50] fund's distributions while the investor
+[00:05:53] in the underlying equities will spend
+[00:05:54] the same dollar amount as the covered
+[00:05:57] call investor each month through a
+[00:05:59] combination of portfolio dividends and
+[00:06:01] selling shares. I'll say it again since
+[00:06:03] this is really important to the example.
+[00:06:05] They are both spending the exact same
+[00:06:07] dollar amount each month. But the
+[00:06:09] investor in the regular equity fund in
+[00:06:11] the underlying equities is creating
+[00:06:13] their own income through a combination
+[00:06:14] of dividends and sales from the
+[00:06:16] portfolio. Believe it or not, whether
+[00:06:18] your returns come from income or
+[00:06:20] capital, it is the combination of the
+[00:06:23] two, the total return that actually
+[00:06:25] matters for funding your consumption.
+[00:06:27] And it is possible, contrary to popular
+[00:06:30] belief, to spend from the capital
+[00:06:32] portion of a portfolio sustainably. If
+[00:06:34] you do not believe this to be true, you
+[00:06:36] are suffering from the mental accounting
+[00:06:38] bias and it may be costing you a lot as
+[00:06:40] we are about to see. This withdrawal
+[00:06:42] analysis will give us ending portfolio
+[00:06:44] values to compare where a higher
+[00:06:46] portfolio value, remember holding
+[00:06:48] withdrawal amounts constant in dollar
+[00:06:50] terms suggests a better outcome. After
+[00:06:53] running through the withdrawal
+[00:06:54] scenarios, I found that not one of the
+[00:06:55] covered call funds had higher ending
+[00:06:57] wealth after 10 years than a comparable
+[00:06:59] fund of the underlying equities. The
+[00:07:01] investor in the underlying spent the
+[00:07:03] same dollar amount as the covered call
+[00:07:05] investor each month and had on average
+[00:07:08] 26% more capital left after 10 years.
+[00:07:11] Mind-blowing passive investment income
+[00:07:14] in shambles. I was not surprised by this
+[00:07:16] and you should not be either. Covered
+[00:07:18] calls are capping upside returns without
+[00:07:21] offering downside protection and their
+[00:07:23] yield is far from sufficient to offset
+[00:07:25] the lost upside. The implied cost of
+[00:07:28] these products is substantial. I solved
+[00:07:30] for the non- taxdeductible fee that you
+[00:07:33] would have to pay to invest in the
+[00:07:35] underlying equity funds such that the
+[00:07:37] ending wealth outcomes are equal to
+[00:07:38] their covered call counterparts. The
+[00:07:41] break even fee was between 1.5 and 2.7%
+[00:07:45] depending on the fund. That's not to
+[00:07:46] suggest that you should be paying a fee
+[00:07:48] that high to invest. It just illustrates
+[00:07:50] how much the covered call strategy is
+[00:07:52] costing you relative to simply investing
+[00:07:54] in the underlying equities and creating
+[00:07:56] your own income stream by receiving
+[00:07:58] dividends and selling some shares. The
+[00:08:00] other thing I looked at is how much cash
+[00:08:02] you would need to hold alongside the
+[00:08:04] underlying equities in each case such
+[00:08:06] that the ending wealth for the covered
+[00:08:08] calls fund and the portfolio of the
+[00:08:10] underlying equities plus cash have the
+[00:08:12] same ending wealth. Again, holding
+[00:08:14] withdrawals constant. Remember that
+[00:08:16] covered calls reduce your exposure to
+[00:08:18] the underlying equities asymmetrically
+[00:08:20] by capping upside while leaving downside
+[00:08:22] mostly exposed. Another way to reduce
+[00:08:24] your exposure to an equity is to
+[00:08:26] explicitly reduce your exposure to it by
+[00:08:28] selling some of your position and then
+[00:08:30] holding the sale proceeds in a low-risk
+[00:08:32] investment like a high interest savings
+[00:08:33] account. I found that the cash
+[00:08:35] allocation, the high interest savings
+[00:08:37] account allocation that make the wealth
+[00:08:39] outcomes equal range from 19% to 36%.
+[00:08:42] This means that in the most extreme case
+[00:08:44] in my examples, you could hold a
+[00:08:45] portfolio of 36% cash and 64% stock and
+[00:08:50] holding monthly spending constant at the
+[00:08:52] yield of the covered call fund have an
+[00:08:54] outcome equal to writing covered calls
+[00:08:56] on the same underlying equities. Again,
+[00:08:58] I am not suggesting that you should be
+[00:09:00] holding high cash allocations if you're
+[00:09:02] living off your portfolio, but I think
+[00:09:04] this is another great way to illustrate
+[00:09:05] the effect that cover calls have on
+[00:09:07] expected returns, including in cases
+[00:09:09] where the portfolio is funding cash flow
+[00:09:11] needs. It's similar to holding a whole
+[00:09:14] bunch of cash, except in the case of
+[00:09:16] covered calls, you're fully exposed to
+[00:09:17] the downside risk of the stock. At least
+[00:09:19] holding cash reduces downside risk
+[00:09:21] exposure. Again, this should not be
+[00:09:23] surprising. If you want income, creating
+[00:09:25] it yourself through a combination of
+[00:09:27] dividends and sales produces a better
+[00:09:29] expected outcome than writing covered
+[00:09:30] calls. Their high distribution yields
+[00:09:33] create the illusion of income. But that
+[00:09:35] income comes with a liability. The
+[00:09:37] capped upside on returns in the event
+[00:09:39] that the option is exercised. That at
+[00:09:40] least in these examples far more than
+[00:09:42] offsets the income. The other big
+[00:09:44] trade-off for long-term investors is
+[00:09:46] that by capping upside returns, you are
+[00:09:48] removing the mean reversion that
+[00:09:49] historical stock returns have exhibited.
+[00:09:51] After bad returns, stock returns tends
+[00:09:54] to bounce back. Those bouncebacks are
+[00:09:56] important to long-term returns and make
+[00:09:58] stocks a bit less risky than they would
+[00:10:00] be if returns were completely random. To
+[00:10:02] broaden my sample, I collected data for
+[00:10:04] 20 Canadian listed covered call ETFs
+[00:10:06] with closely or identically matched ETFs
+[00:10:09] of the underlying holdings and I
+[00:10:10] compared their performance. To be clear,
+[00:10:12] we are back to total return comparisons
+[00:10:14] now, not withdrawal analysis, just
+[00:10:15] because it's a short time series of
+[00:10:17] data. In cases where the covered call
+[00:10:19] fund is not an index fund, I found a
+[00:10:21] fund with a high holdings overlap and
+[00:10:23] high return correlation to compare it to
+[00:10:25] for the underlying. I excluded really
+[00:10:28] niche funds and those without any
+[00:10:30] obvious comparables for the underlying.
+[00:10:32] This speaks to another problem that I
+[00:10:33] see with a lot of these products.
+[00:10:34] They're often really, really niche
+[00:10:36] sector funds and they often hold
+[00:10:38] concentrated, actively managed
+[00:10:39] underlying portfolios. Those sector bets
+[00:10:42] and the individual stock risk and the
+[00:10:44] active management all add to the risk of
+[00:10:46] these products for long-term investors.
+[00:10:48] I limited my sample to funds with at
+[00:10:50] least one year of history. I know that's
+[00:10:52] still way too short to draw conclusions
+[00:10:54] from, but this is what I had to work
+[00:10:56] with. There's just not a lot of funds
+[00:10:58] with really long histories. And the
+[00:10:59] newer funds tell the exact same story as
+[00:11:01] the older ones. Out of the 20 funds,
+[00:11:04] only two have outperformed a comparable
+[00:11:06] underlying equity fund. Both of them
+[00:11:08] were technology covered call funds with
+[00:11:09] fairly short histories and imperfectly
+[00:11:12] matched underlying equity portfolios.
+[00:11:14] So, I wouldn't read too much into those
+[00:11:15] two that under outperformed. On average,
+[00:11:18] the covered call funds in this sample
+[00:11:20] underperform comparable underlying
+[00:11:21] equity funds by an annualized 3.25
+[00:11:24] percentage points and the median
+[00:11:26] underperformance is 2.96 percentage
+[00:11:28] points. As we saw earlier, this
+[00:11:30] underperformance matters for both
+[00:11:32] accumulators and people drawing from
+[00:11:34] their portfolios. The last point I'll
+[00:11:36] cover is what are generally called
+[00:11:37] enhanced covered call funds. These funds
+[00:11:40] not only employ a covered call strategy,
+[00:11:41] but also use leverage to increase their
+[00:11:44] yield and their expected returns. I'll
+[00:11:45] be honest, these things are fascinating
+[00:11:47] pieces of financial technology. The
+[00:11:49] problem though is that the history of
+[00:11:51] financial innovation has tended to
+[00:11:52] create profits for financial product
+[00:11:54] manufacturers at the expense of end
+[00:11:56] investors. That aside, I think you have
+[00:11:59] to appreciate how incredible it is that
+[00:12:00] a fairly complex portfolio like this is
+[00:12:03] available under a single ticker. For
+[00:12:05] better or for worse, let's look at some
+[00:12:08] enhanced covered call funds. To keep it
+[00:12:10] simple, I will look at the Global X
+[00:12:12] index series of funds. Since they have
+[00:12:14] ETFs for the underlying, the underlying
+[00:12:16] with covered calls and enhanced versions
+[00:12:18] for both, they are targeting a leverage
+[00:12:21] ratio of 125% in their enhanced funds.
+[00:12:24] Across five index funds, all over
+[00:12:26] periods where returns have been overall
+[00:12:28] positive for the underlying equities,
+[00:12:30] the performance of the enhanced covered
+[00:12:32] call fund is above the regular covered
+[00:12:34] call funds and below the returns of the
+[00:12:36] underlying equities. The leverage
+[00:12:38] covered call funds have also performed
+[00:12:39] worse than the others during periods of
+[00:12:41] negative returns. What we'll generally
+[00:12:43] see is that leverage boosts returns of
+[00:12:46] these portfolios when times are good and
+[00:12:48] makes their draw downs more severe when
+[00:12:50] times are bad. No surprises there.
+[00:12:52] Overall though, leverage has helped all
+[00:12:54] of these enhanced funds outperform their
+[00:12:56] notenhanced covered call counterparts
+[00:12:58] over this short period, which should be
+[00:13:00] expected again when returns are
+[00:13:02] positive. Leverage is not a bad thing,
+[00:13:04] but I find the case for applying
+[00:13:05] leverage to a covered call fund to be a
+[00:13:08] little bit odd. Remember, covered calls
+[00:13:09] are capping upside and not helping much
+[00:13:12] on the downside. Leverage is enhancing
+[00:13:14] both the upside and the downside. If
+[00:13:16] you're comfortable with higher
+[00:13:17] volatility and leverage, leveraging the
+[00:13:19] underlying equity without writing calls
+[00:13:22] likely makes more sense. The data
+[00:13:24] support this. In all five of my example
+[00:13:26] funds, the leveraged version of the
+[00:13:28] underlying has outperformed the
+[00:13:29] underlying, the covered call fund, and
+[00:13:31] the leveraged cover call fund. One last
+[00:13:33] thing I want to address is whether I, as
+[00:13:35] a financial professional, feel
+[00:13:37] threatened by covered call funds, which
+[00:13:39] is something that has come up a few
+[00:13:40] times since I made my last video. The
+[00:13:42] idea seems to be that these products are
+[00:13:44] so good that they will put wealth
+[00:13:46] management firms out of business
+[00:13:48] entirely. They won't. Wealth management
+[00:13:50] is about much more than creating an
+[00:13:52] income stream in retirement. Expert
+[00:13:54] financial advice can be categorized into
+[00:13:56] areas where knowledge of base rates,
+[00:13:58] technical competence in financial
+[00:14:00] planning, and an understanding of human
+[00:14:02] psychology can be applied to help people
+[00:14:03] arrive at highquality financial
+[00:14:05] decisions. Those areas are goal
+[00:14:07] formation and quantification, asset
+[00:14:10] allocation, cash flow planning,
+[00:14:11] insurance needs analysis, financial
+[00:14:13] product allocation, and tax awareness.
+[00:14:16] Covered calls may kind of sort of solve
+[00:14:18] cash flow planning, but that's about it.
+[00:14:20] I also have some comments on where the
+[00:14:21] information promoting covered calls is
+[00:14:23] coming from. It is a requirement in
+[00:14:25] Canada for content creators to disclose
+[00:14:27] when their content is sponsored. This is
+[00:14:30] intended to avoid hidden conflicts of
+[00:14:31] interest. A lot of the content out there
+[00:14:33] promoting covered calls as a strategy
+[00:14:35] is, drum roll, sponsored by companies
+[00:14:38] selling covered call ETFs. This is
+[00:14:40] obviously a conflict of interest. At
+[00:14:42] least it isn't hidden, but it still
+[00:14:44] warrants caution. I have my own
+[00:14:45] conflicts of interest to be clear. I
+[00:14:47] work for PWL Capital which is a wealth
+[00:14:49] management firm. It is good for us if
+[00:14:51] people decide to delegate their
+[00:14:53] portfolio management and the financial
+[00:14:54] planning that informs that portfolio
+[00:14:56] management to us. But we have nothing to
+[00:14:58] gain or lose based on whether you invest
+[00:15:00] in covered call funds. As discretionary
+[00:15:03] portfolio managers, we can and as
+[00:15:05] fiduciaries, we must use covered call
+[00:15:07] ETFs in our clients portfolios if we
+[00:15:09] believe that is what is in the client's
+[00:15:11] best interest. We do not use them
+[00:15:13] because we think they are detrimental to
+[00:15:15] investors at any stage in life for the
+[00:15:17] reasons I have shown in this video and
+[00:15:19] in my last video. Other than the
+[00:15:21] psychological pacification that may come
+[00:15:23] from income distributions, these funds,
+[00:15:25] in my opinion, do not have any redeeming
+[00:15:27] qualities. I urge any investors who've
+[00:15:30] been wooed by the promise of so-called
+[00:15:31] passive income to ensure that they
+[00:15:33] understand exactly what they're
+[00:15:35] investing in and why those specific
+[00:15:37] investment characteristics are worth the
+[00:15:39] high implied costs I have detailed in
+[00:15:41] this video. I also implore you to
+[00:15:43] understand where you are getting your
+[00:15:45] information and what the information
+[00:15:47] sources incentives are. Thanks for
+[00:15:49] watching. I'm Ben Felix, chief
+[00:15:50] investment officer at PWL Capital. If
+[00:15:52] you enjoyed this video, please share
+[00:15:54] with someone who is not yet aware of the
+[00:15:56] high implied costs of covered calls.

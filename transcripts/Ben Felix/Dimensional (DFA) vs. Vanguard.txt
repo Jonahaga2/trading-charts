@@ -1,0 +1,953 @@
+[00:00:00] Most people with even the
+[00:00:01] slightest
+[00:00:01] interest in
+[00:00:02] investing have heard
+[00:00:03] of Vanguard—the company
+[00:00:04] that has become synonymous with
+[00:00:05] index funds.
+[00:00:06] Fewer people have heard of
+[00:00:07] Dimensional Fund Advisors, but
+[00:00:08] these two companies share a
+[00:00:10] common history and
+[00:00:11] philosophy that
+[00:00:12] originated at the
+[00:00:12] beginning of the
+[00:00:13] index
+[00:00:14] investing revolution.  Vanguard
+[00:00:15] is known for its
+[00:00:16] low-cost index funds—an
+[00:00:19] approach to
+[00:00:19] investing
+[00:00:20] backed by theory
+[00:00:21] and evidence.  Dimensional
+[00:00:22] similarly applies
+[00:00:23] theory and evidence to
+[00:00:24] portfolio construction,
+[00:00:25] but unlike
+[00:00:26] index funds,
+[00:00:27] they aim to
+[00:00:28] outperform the market.  This
+[00:00:29] sounds good in
+[00:00:30] theory, but the
+[00:00:31] obvious question is: does
+[00:00:32] it work in
+[00:00:33] practice?  I'm Ben
+[00:00:34] Felix, Chief
+[00:00:35] Investment
+[00:00:36] Officer of PWL Capital, and I'll
+[00:00:37] tell you how
+[00:00:38] Dimensional Fund Advisors
+[00:00:39] stacks up against Vanguard
+[00:00:40] .  Before I begin, let me be
+[00:00:44] clear: my
+[00:00:46] firm, PWL Capital,
+[00:00:46] uses
+[00:00:47] Dimensional Fund Advisors funds in
+[00:00:48] our
+[00:00:49] clients' portfolios.  We don't
+[00:00:50] get any money from
+[00:00:51] Dimensional.  No
+[00:00:52] commissions or kickbacks,
+[00:00:53] and I don't get anything
+[00:00:55] for sharing this
+[00:00:56] information in the video.
+[00:00:57] Their products are
+[00:00:58] available as ETFs that
+[00:00:59] anyone can buy.
+[00:01:00] However, I truly believe
+[00:01:02] that Dimensional implements
+[00:01:03] some of the best ideas
+[00:01:04] in finance, as you
+[00:01:05] will now learn, and I
+[00:01:06] invest 100% of my own
+[00:01:08] liquid assets in
+[00:01:09] their funds.  The history of
+[00:01:10] Dimensional and Vanguard
+[00:01:11] began in 1964 with
+[00:01:12] M. McQueen, the
+[00:01:13] founding director of
+[00:01:15] Dimensional, who
+[00:01:16] had previously created the first
+[00:01:18] index fund.  He
+[00:01:19] joined the
+[00:01:21] Quantitative
+[00:01:22] Investment
+[00:01:22] Strategies Research Center at Wells Fargo and
+[00:01:24] assembled a team of
+[00:01:24] scientists to work on
+[00:01:26] quantum
+[00:01:26] strategies.  Six
+[00:01:27] people from this group
+[00:01:29] later received the
+[00:01:29] Nobel Prize in
+[00:01:31] Economics for their
+[00:01:32] respective works.  It
+[00:01:33] was a very strong
+[00:01:34] team.  It is important
+[00:01:35] to remember that at that
+[00:01:36] time academic
+[00:01:37] finance was experiencing
+[00:01:38] something of a
+[00:01:39] renaissance.
+[00:01:40] Harry Markowitz's work on
+[00:01:41] the importance of
+[00:01:42] diversification
+[00:01:43] was published 12 years ago.
+[00:01:44] Eugene Fama's work
+[00:01:45] on efficient markets,
+[00:01:46] which suggested that it
+[00:01:48] should be quite difficult to beat the market
+[00:01:49] , was quite new.  And
+[00:01:50] Bill Sharpe's work
+[00:01:51] on a
+[00:01:52] capital asset pricing model,
+[00:01:53] which allows
+[00:01:54] explaining
+[00:01:55] portfolio performance by the impact of
+[00:01:56] market risk,
+[00:01:57] was published in the
+[00:01:58] same year.  Theory and
+[00:02:01] evidence began
+[00:02:02] to suggest that the
+[00:02:03] then-common
+[00:02:04] approach of picking stocks and
+[00:02:05] trying to time the
+[00:02:06] market was probably not
+[00:02:08] as useful
+[00:02:09] as previously thought.
+[00:02:12] In addition, such
+[00:02:13] services were charged a
+[00:02:14] high price.  If
+[00:02:15] active managers do not
+[00:02:16] outperform the market and
+[00:02:17] returns
+[00:02:18] depend largely on
+[00:02:19] market risk, the
+[00:02:20] smartest approach
+[00:02:21] to investing is to
+[00:02:22] minimize costs
+[00:02:22] and obtain
+[00:02:23] market returns.
+[00:02:24] Based on this
+[00:02:25] sound premise,
+[00:02:26] a group at Wells Fargo
+[00:02:27] came up with the idea of ​​the
+[00:02:28] index fund.  This is a
+[00:02:30] fund that, instead of
+[00:02:30] trying to outperform the
+[00:02:31] market, simply
+[00:02:32] replicates an index that
+[00:02:33] reflects that market.    The
+[00:02:35] first-ever
+[00:02:36] large-
+[00:02:37] cap index fund was
+[00:02:38] created by
+[00:02:39] Wells Fargo Investment Advisors for the
+[00:02:40] retirement plan of
+[00:02:41] luggage manufacturer
+[00:02:42] Samsonite in 1971.  Because of the
+[00:02:44] Glass-
+[00:02:44] Steagall Act, Wells Fargo
+[00:02:45] could not offer
+[00:02:46] index funds to
+[00:02:47] retail
+[00:02:48] investors.
+[00:02:49] Realizing the
+[00:02:49] potential impact
+[00:02:50] of their innovation, they
+[00:02:52] gave their research for free to
+[00:02:54] John Bogle, the
+[00:02:54] founder of Vanguard, who
+[00:02:56] was also
+[00:02:56] interested in
+[00:02:57] pursuing these ideas at the
+[00:02:58] same time.  Knowing
+[00:02:59] now what it
+[00:03:00] led to, this act of
+[00:03:01] research
+[00:03:02] generosity is a pretty
+[00:03:03] incredible piece of
+[00:03:04] history.  In 1976,
+[00:03:05] Vanguard launched the
+[00:03:06] first
+[00:03:08] large-
+[00:03:09] cap stock index mutual fund for
+[00:03:10] retail
+[00:03:11] investors.  The first
+[00:03:12] launch was
+[00:03:12] a failure, and for a
+[00:03:13] time the index fund
+[00:03:15] was called "
+[00:03:16] Bogle's Folly," but
+[00:03:17] Vanguard later became one of the
+[00:03:18] largest
+[00:03:18] investment
+[00:03:19] managers in the world with
+[00:03:20] over $10 trillion in assets
+[00:03:22] under management.  Vanguard is
+[00:03:24] best known for
+[00:03:24] its index
+[00:03:25] funds, but it
+[00:03:26] is also one of the
+[00:03:27] largest active
+[00:03:28] managers in the world,
+[00:03:29] with about
+[00:03:30] $1.8 trillion in
+[00:03:30] total assets in
+[00:03:31] actively
+[00:03:32] managed funds.
+[00:03:33] Dimensional Fund
+[00:03:34] Advisors, led by
+[00:03:35] David Booth,
+[00:03:36] formerly part of the
+[00:03:37] Wells Fargo group that
+[00:03:38] created the first
+[00:03:38] index fund,
+[00:03:39] launched the first
+[00:03:40] small-cap stock fund
+[00:03:41] in
+[00:03:42] 1981, and while it is
+[00:03:43] much smaller than
+[00:03:44] Vanguard, today Dimensional
+[00:03:45] is one of the world's largest
+[00:03:47] asset managers with
+[00:03:47] $814 billion
+[00:03:48] under management.
+[00:03:50] Booth's idea was
+[00:03:51] that institutions like the
+[00:03:52] Samsonite pension plan
+[00:03:53] could use a
+[00:03:54] small-
+[00:03:54] cap fund to
+[00:03:55] diversify their
+[00:03:56] portfolios beyond the
+[00:03:57] large-
+[00:03:57] cap, which is what
+[00:03:59] most institutions invested in.
+[00:04:00] Because small-cap stocks are
+[00:04:02] more expensive to trade, and a
+[00:04:03] small-cap index
+[00:04:04] didn't exist back then anyway,
+[00:04:05] Dimensional didn't
+[00:04:06] implement an
+[00:04:06] index fund
+[00:04:07] because it would require
+[00:04:08] heavy
+[00:04:09] trading around the
+[00:04:11] index reconstitution dates to
+[00:04:12] replicate it.
+[00:04:13] Instead, they created a
+[00:04:14] more flexible
+[00:04:15] product that is
+[00:04:15] much more
+[00:04:16] like an index
+[00:04:17] fund than a
+[00:04:17] traditional
+[00:04:18] actively managed fund
+[00:04:19] , even though it technically
+[00:04:20] isn't.  It is commonly
+[00:04:21] believed that index
+[00:04:22] funds
+[00:04:24] are inherently good and everything else is
+[00:04:25] bad.  But that's not
+[00:04:26] necessarily the case.
+[00:04:28] Total market index funds, weighted
+[00:04:29] by market
+[00:04:29] cap,
+[00:04:30] make sense because
+[00:04:31] they are inexpensive and
+[00:04:31] broadly
+[00:04:32] diversified.
+[00:04:32] They outperform the
+[00:04:33] vast majority of
+[00:04:34] actively
+[00:04:35] managed funds in
+[00:04:35] most cases.
+[00:04:36] They are tax
+[00:04:37] efficient and
+[00:04:37] easy to
+[00:04:38] understand.  And they are
+[00:04:39] consistent with
+[00:04:40] fundamental
+[00:04:40] financial theory.    Well
+[00:04:41] , all of this is true and
+[00:04:43] important.  Tracking a
+[00:04:45] market
+[00:04:45] cap-weighted index is not a
+[00:04:46] mandatory requirement
+[00:04:47] to achieve all of
+[00:04:48] these favorable
+[00:04:49] characteristics.
+[00:04:50] Shortly after
+[00:04:51] Dimensional launched
+[00:04:51] its first
+[00:04:52] small-
+[00:04:53] cap equity fund, Ralph
+[00:04:54] Bonds, one of
+[00:04:54] Eugene
+[00:04:55] Fama's students, published a
+[00:04:56] paper on the
+[00:04:57] small-cap premium.
+[00:04:58] He found that
+[00:04:58] small-cap stocks
+[00:04:59] had systematically
+[00:05:00] higher returns, which
+[00:05:01] could be explained by
+[00:05:02] their exposure to
+[00:05:03] market risk.
+[00:05:04] It turned out that
+[00:05:05] small-cap stocks are
+[00:05:06] not only suitable for
+[00:05:07] diversifying
+[00:05:07] large-cap portfolios
+[00:05:08] , as
+[00:05:09] David Booth originally envisioned,
+[00:05:10] but can also
+[00:05:11] provide access
+[00:05:12] to another source of
+[00:05:12] expected
+[00:05:13] returns.  Following the
+[00:05:14] small-cap premium,
+[00:05:15] academic
+[00:05:16] research has identified
+[00:05:17] other systematic
+[00:05:18] premiums, where stocks with
+[00:05:18] certain
+[00:05:19] characteristics outperformed
+[00:05:21] theory.
+[00:05:22] Some important
+[00:05:23] examples are the
+[00:05:24] value premium.  Stocks with
+[00:05:25] low prices
+[00:05:25] relative to their
+[00:05:26] fundamentals usually
+[00:05:27] outperform the market, all else being
+[00:05:28] equal.
+[00:05:29] as well as a
+[00:05:29] profitability bonus.  Stocks
+[00:05:31] with higher
+[00:05:31] returns
+[00:05:32] typically
+[00:05:32] outperform the market, all
+[00:05:33] else being equal.
+[00:05:34] These findings would
+[00:05:34] seem to
+[00:05:35] violate the
+[00:05:36] efficient market hypothesis.
+[00:05:37] If market risk is
+[00:05:38] the only risk
+[00:05:39] explaining the difference in
+[00:05:40] returns, and some
+[00:05:41] types of stocks have
+[00:05:42] systematically higher
+[00:05:43] returns than
+[00:05:44] theory predicts, this
+[00:05:45] could mean one of
+[00:05:46] two things.  Either markets are not
+[00:05:47] efficient, or we
+[00:05:49] need a better
+[00:05:49] model of market
+[00:05:50] efficiency.  This idea
+[00:05:52] prompted Eugene
+[00:05:52] Fama and Kenneth
+[00:05:53] French to propose a
+[00:05:54] new
+[00:05:56] asset pricing model.  Bill Sharpe's
+[00:05:57] capital asset pricing model
+[00:05:59] assumed that the impact of
+[00:06:00] market risk was the
+[00:06:01] only factor in
+[00:06:01] expected
+[00:06:02] returns, but
+[00:06:03] empirically the model
+[00:06:03] worked with
+[00:06:04] difficulties.  Fama and
+[00:06:05] French, based on the
+[00:06:06] observation that
+[00:06:07] Sharpe theory
+[00:06:08] is systematically violated by certain
+[00:06:09] types of stocks, suggested in a
+[00:06:10] landmark 1992 paper
+[00:06:11] that,
+[00:06:12] in addition to
+[00:06:13] market risk, the unique risks of small-cap and value stocks may be needed to
+[00:06:14] explain the difference in
+[00:06:15] expected
+[00:06:16] returns
+[00:06:20] .
+[00:06:21] This work
+[00:06:22] was followed in 2015 by another
+[00:06:23] widely cited
+[00:06:23] paper by the same
+[00:06:24] authors, which
+[00:06:25] suggested that
+[00:06:26] profitability and
+[00:06:27] investment are
+[00:06:27] additional
+[00:06:28] factors
+[00:06:28] necessary to
+[00:06:29] explain the difference in
+[00:06:30] expected
+[00:06:31] returns.  And in a
+[00:06:31] 2017 article, the model
+[00:06:33] was expanded to
+[00:06:34] international markets.  These
+[00:06:35] five factors are able
+[00:06:37] to explain the vast
+[00:06:38] majority, about 95%,
+[00:06:39] of the difference in returns
+[00:06:40] between
+[00:06:41] diversified
+[00:06:42] portfolios.  This
+[00:06:43] means that if two
+[00:06:44] funds have different
+[00:06:45] returns, this
+[00:06:45] difference is most likely
+[00:06:46] due to the
+[00:06:47] influence of factors
+[00:06:48] included in the model.  This is
+[00:06:49] important because if,
+[00:06:50] for example, an active
+[00:06:51] manager outperforms the
+[00:06:52] market by targeting
+[00:06:55] high-
+[00:06:56] yielding small-cap value stocks and
+[00:06:57] charging high
+[00:06:57] fees for services,
+[00:06:58] investors can
+[00:06:59] alternatively
+[00:07:00] obtain that
+[00:07:01] return
+[00:07:01] systematically
+[00:07:02] through cheaper
+[00:07:03] funds.  A 2020 book
+[00:07:04] called it “an
+[00:07:05] incredible
+[00:07:06] alpha contraction.”
+[00:07:07] The fact that what
+[00:07:08] previously appeared to be
+[00:07:09] excess
+[00:07:10] risk-adjusted returns (
+[00:07:11] alpha) is increasingly
+[00:07:12] being explained by the impact of
+[00:07:13] additional
+[00:07:14] systematic
+[00:07:14] risks.  Today, the
+[00:07:17] Fama-French five-factor asset pricing model is a
+[00:07:18] major working
+[00:07:19] tool in
+[00:07:20] academic finance
+[00:07:21] .  Dimensional Fund Advisors
+[00:07:21] maintains close
+[00:07:22] ties to
+[00:07:23] academia,
+[00:07:24] and as
+[00:07:25] theories develop and
+[00:07:25] data accumulate, in
+[00:07:26] addition to
+[00:07:27] small-cap companies
+[00:07:28] , they have added
+[00:07:29] value stocks and
+[00:07:30] high-
+[00:07:31] yield stocks, which
+[00:07:31] have higher expected
+[00:07:33] returns, and have
+[00:07:33] excluded
+[00:07:34] small-cap stocks with
+[00:07:35] aggressive
+[00:07:36] investments, which
+[00:07:37] have lower
+[00:07:37] expected returns
+[00:07:38] .  These scientifically
+[00:07:39] sound
+[00:07:39] adjustments are
+[00:07:40] designed to
+[00:07:41] give Dimensional
+[00:07:42] an edge over
+[00:07:44] market
+[00:07:44] cap-weighted index funds.  The line
+[00:07:45] between indexing,
+[00:07:46] active management,
+[00:07:47] and what
+[00:07:48] Dimensional does is quite
+[00:07:49] blurred.  But in both the
+[00:07:51] indexing and
+[00:07:52] Dimensional cases, the theory
+[00:07:53] is that
+[00:07:53] it is
+[00:07:54] risk-taking, not
+[00:07:55] individual stock selection or
+[00:07:56] trying to time the
+[00:07:57] market, that explains
+[00:07:58] the difference in
+[00:07:58] returns.
+[00:07:59] The difference is
+[00:08:00] that market cap
+[00:08:01] weighted index funds
+[00:08:03] provide a premium
+[00:08:04] for market risk,
+[00:08:05] while Dimensional funds
+[00:08:06] provide premiums
+[00:08:07] for size, value,
+[00:08:08] and yield.
+[00:08:08] Building portfolios
+[00:08:10] around multiple
+[00:08:11] risk factors should
+[00:08:12] both increase
+[00:08:12] expected returns
+[00:08:14] and increase the
+[00:08:15] reliability of
+[00:08:15] long-term
+[00:08:16] outcomes,
+[00:08:17] as different
+[00:08:18] risk premiums
+[00:08:19] manifest themselves at
+[00:08:19] different times,
+[00:08:20] providing a
+[00:08:21] form of diversification
+[00:08:22] .  This is great in theory,
+[00:08:24] but it brings us back to the
+[00:08:25] original
+[00:08:26] question.  Did
+[00:08:27] it
+[00:08:28] actually work?  Does Dimensional's
+[00:08:29] academic approach add
+[00:08:30] value
+[00:08:31] compared to the
+[00:08:31] relative simplicity of
+[00:08:33] Vanguard's
+[00:08:34] market
+[00:08:35] cap-weighted index funds?
+[00:08:36] Comparing
+[00:08:37] Dimensional's performance to a
+[00:08:39] capitalization-weighted index is
+[00:08:39] interesting, but indexes
+[00:08:41] don't take into account
+[00:08:41] fees,
+[00:08:42] transaction costs
+[00:08:43] , foreign taxes on
+[00:08:44] dividends, and other
+[00:08:45] operating frictions that an
+[00:08:46] actual fund incurs
+[00:08:47] to generate
+[00:08:48] profits.  Comparing
+[00:08:49] actual
+[00:08:50] Dimensional and Vanguard funds gives us a
+[00:08:51] more realistic
+[00:08:52] investment
+[00:08:53] benchmark for evaluating
+[00:08:54] both approaches.  And
+[00:08:55] thanks to their long
+[00:08:56] shared history, we
+[00:08:57] have plenty of
+[00:08:58] data to compare.
+[00:08:59] Vanguard is best
+[00:09:00] known for its
+[00:09:02] market
+[00:09:02] cap-weighted index funds.  But
+[00:09:03] they also have style
+[00:09:04] index funds that
+[00:09:05] represent the types of
+[00:09:06] stocks that
+[00:09:07] Dimensional targets,
+[00:09:07] such as
+[00:09:08] value stocks and
+[00:09:09] small-cap
+[00:09:10] value stocks.  Where
+[00:09:11] possible, I will
+[00:09:11] compare Dimensional to
+[00:09:12] Vanguard
+[00:09:14] cap-weighted funds and
+[00:09:14] style funds.
+[00:09:15] I think this highlights an
+[00:09:16] important point, which
+[00:09:17] I will return to
+[00:09:18] later.  I will compare the
+[00:09:19] full history of
+[00:09:20] comparable
+[00:09:21] Dimensional and Vanguard mutual funds
+[00:09:23] registered in the US
+[00:09:24] that have at least
+[00:09:25] 25 years of history.
+[00:09:26] Comparable funds,
+[00:09:27] Dimensional and Vanguard, will often
+[00:09:28] have different
+[00:09:29] launch dates.  So,
+[00:09:30] the comparisons
+[00:09:31] will start from the
+[00:09:32] launch of the
+[00:09:33] newer fund and
+[00:09:34] end on February 14,
+[00:09:35] 2025—the most recent
+[00:09:36] data as of the date
+[00:09:37] of writing
+[00:09:38] this video script.  I think it's
+[00:09:39] important to note
+[00:09:40] that this is not a case of
+[00:09:41] looking for funds with
+[00:09:42] good past
+[00:09:43] performance
+[00:09:44] after the fact, which would be
+[00:09:45] boring.  Some funds
+[00:09:46] will perform
+[00:09:47] well
+[00:09:48] over any given
+[00:09:48] historical period
+[00:09:49] due to luck, but
+[00:09:50] they are unlikely
+[00:09:51] to continue to do so
+[00:09:52] in the future.  You
+[00:09:52] should be
+[00:09:53] skeptical whenever
+[00:09:54] someone
+[00:09:54] tries to
+[00:09:55] boast about past
+[00:09:56] fund performance.  In
+[00:09:57] this case, theory
+[00:09:58] and data predicted
+[00:09:59] that these funds
+[00:10:00] would outperform the market over the
+[00:10:01] long
+[00:10:02] term, and
+[00:10:03] for the most part, they
+[00:10:04] did.
+[00:10:04] At least for me it's
+[00:10:06] interesting.
+[00:10:07] Dimensional's first fund, the DFA US Micro Cap Portfolio
+[00:10:08] , has underperformed the
+[00:10:10] Vanguard 500 index fund
+[00:10:12] since the
+[00:10:12] DFA funds were founded
+[00:10:14] in December 1981, with
+[00:10:15] much of
+[00:10:15] that
+[00:10:16] underperformance coming
+[00:10:18] in the last five
+[00:10:19] years during the
+[00:10:19] epic rise of
+[00:10:21] large-cap
+[00:10:21] U.S. stocks.
+[00:10:23] It has outperformed the
+[00:10:23] Vanguard
+[00:10:25] Small Cap index fund since the
+[00:10:27] Vanguard fund converted from active to
+[00:10:28] index in September
+[00:10:30] 1989.  Incidentally,
+[00:10:31] it
+[00:10:32] also outperformed the
+[00:10:33] Vanguard 500 index fund over the same period. The
+[00:10:35] DFA US Small Cap Portfolio
+[00:10:36] has underperformed the
+[00:10:38] Vanguard 500 index fund
+[00:10:40] , but has outperformed the
+[00:10:41] Vanguard
+[00:10:42] Small Cap index fund since the
+[00:10:43] DFA funds were launched in
+[00:10:44] March 1992.    The
+[00:10:46] DFA US Large Cap Value Portfolio has
+[00:10:47] also lagged the
+[00:10:50] Vanguard 500 Index Fund but has outperformed the
+[00:10:52] Vanguard Value Index Fund
+[00:10:53] since the
+[00:10:54] DFA fund was inducted in
+[00:10:55] February 1993.    The
+[00:10:57] DFA US Small Cap Value Portfolio
+[00:10:58] has outperformed the Vanguard
+[00:11:00] 500 Fund and the
+[00:11:01] Vanguard Small Cap Index Fund since the
+[00:11:03] DFA funds were inducted in
+[00:11:05] March 1993.  Vanguard
+[00:11:06] launched a
+[00:11:08] small-cap value stock index fund
+[00:11:09] in May
+[00:11:11] 1998, and the DFA Small Cap
+[00:11:12] Value fund has significantly outperformed
+[00:11:13] it since its
+[00:11:14] inception, while
+[00:11:15] both funds have outperformed the
+[00:11:16] Vanguard 500 index fund
+[00:11:17] over the same period
+[00:11:19] .  The DFA Large Cap
+[00:11:20] International Portfolio has outperformed the
+[00:11:21] Vanguard
+[00:11:23] Total International Stock index fund since the
+[00:11:25] Vanguard fund's inception in April
+[00:11:27] 1996.  The DFA
+[00:11:28] International Value and Small Cap
+[00:11:29] Value portfolios outperformed the
+[00:11:31] same Vanguard index over the
+[00:11:32] same time period
+[00:11:33] .  In emerging markets
+[00:11:34] , the
+[00:11:35] DFA Emerging Markets Portfolio
+[00:11:36] has outperformed the
+[00:11:38] Vanguard Emerging Markets Equity Index Fund
+[00:11:39] since the
+[00:11:40] Vanguard fund's inception
+[00:11:41] in May 1994.
+[00:11:42] Dimensional launched
+[00:11:43] three more emerging markets funds
+[00:11:44] that
+[00:11:45] subsequently outperformed
+[00:11:48] Vanguard's emerging markets index fund.  Finally, the
+[00:11:49] DFA US Targeted Value Portfolio has
+[00:11:51] significantly outperformed the
+[00:11:52] Vanguard 500 Index Fund
+[00:11:53] since the
+[00:11:54] DFA funds were founded
+[00:11:56] in February 2000.
+[00:11:57] Looking back, we
+[00:11:58] now know that it
+[00:11:59] was a terrible time to
+[00:12:00] invest in
+[00:12:01] US large-cap stocks.
+[00:12:02] Accordingly, the Vanguard
+[00:12:03] Small Cap Value Stock Fund
+[00:12:05] also
+[00:12:06] outperformed the
+[00:12:07] Vanguard 500 Index Fund over this
+[00:12:08] period, although not by
+[00:12:09] as much as the
+[00:12:10] Dimensional Fund.  Notably,
+[00:12:12] Dimensional's recent results have been better
+[00:12:13] in developed
+[00:12:13] international
+[00:12:14] and
+[00:12:15] emerging markets than in the
+[00:12:16] U.S. market.  This
+[00:12:17] shouldn't be too
+[00:12:18] surprising, as it's
+[00:12:19] well known that
+[00:12:19] abnormal returns
+[00:12:21] , another way
+[00:12:21] to describe the
+[00:12:22] yield premiums that
+[00:12:23] Dimensional seeks to
+[00:12:24] capture, have fallen in the U.S.
+[00:12:25] over the past
+[00:12:26] decades but
+[00:12:27] have remained strong
+[00:12:28] in other markets.  Whether
+[00:12:29] this is a permanent
+[00:12:30] structural change
+[00:12:31] or just an anomaly—
+[00:12:33] time will tell.  I can't help but
+[00:12:34] notice that by
+[00:12:35] some measures the
+[00:12:36] US market today looks
+[00:12:37] very similar to what it
+[00:12:38] was in 2000, at the
+[00:12:38] beginning of a period when,
+[00:12:39] as I'll detail in
+[00:12:40] a minute,
+[00:12:41] large-cap stocks
+[00:12:42] struggled while
+[00:12:43] small-
+[00:12:44] cap
+[00:12:44] value stocks
+[00:12:45] performed
+[00:12:46] incredibly well
+[00:12:46] .  Overall,
+[00:12:47] I find Dimensional's ideas
+[00:12:48] impressive, and their
+[00:12:49] experience implementing them
+[00:12:51] proves that it's
+[00:12:51] more than just an
+[00:12:52] academic curiosity
+[00:12:54] .  This suggests that
+[00:12:55] the ideas of academic
+[00:12:55] finance are practically
+[00:12:56] useful to
+[00:12:57] investors beyond
+[00:12:59] market
+[00:12:59] cap-weighted index funds.
+[00:13:00] Another conclusion that
+[00:13:01] emerges from this data is that
+[00:13:03] whether
+[00:13:04] it's a Dimensional fund or a
+[00:13:04] Vanguard fund, targeting
+[00:13:05] styles such as
+[00:13:06] value stocks or
+[00:13:07] small-
+[00:13:07] cap stocks may
+[00:13:08] be advisable.  If
+[00:13:09] all this sounds
+[00:13:10] too good to
+[00:13:11] be true, then
+[00:13:12] Dimensional funds have a
+[00:13:13] significant drawback.  Over
+[00:13:14] time, they
+[00:13:14] will perform differently
+[00:13:15] than the market because they are subject to
+[00:13:17] different risk
+[00:13:18] premiums.  In
+[00:13:19] the long
+[00:13:19] run, I think it is
+[00:13:20] quite reasonable
+[00:13:21] to expect a small
+[00:13:22] advantage from these
+[00:13:23] risk premiums.  But
+[00:13:24] there are times, such
+[00:13:25] as recent history
+[00:13:26] in the US market, when
+[00:13:27] a focus on
+[00:13:28] value stocks and
+[00:13:28] small-
+[00:13:29] cap stocks results in
+[00:13:30] significant losses.  Over
+[00:13:31] the past 10 years, the
+[00:13:32] DFA US small cap value portfolio
+[00:13:34] has lagged the
+[00:13:36] Vanguard 500 index fund by 4.5
+[00:13:37] percentage points,
+[00:13:38] year-on-year.
+[00:13:40] This really hurts.  And
+[00:13:41] this is not the
+[00:13:42] first time this has happened.  From its
+[00:13:44] inception in 1993
+[00:13:45] through February 2000, the
+[00:13:46] DFA US Small Cap Value Portfolio
+[00:13:48] lagged the
+[00:13:50] Vanguard 500 index fund by 6.3
+[00:13:50] percentage points on an
+[00:13:52] annualized basis.  In
+[00:13:53] that case,
+[00:13:54] the situation for
+[00:13:55] small-cap
+[00:13:56] value stocks changed
+[00:13:57] after the dot-com crash.
+[00:13:58] And then small-
+[00:13:59] cap
+[00:14:00] value stocks
+[00:14:00] delivered
+[00:14:01] annualized returns of
+[00:14:02] over 9% during the so-
+[00:14:03] called “lost
+[00:14:04] decade,” while the
+[00:14:05] U.S. market remained
+[00:14:06] flat.  It is important
+[00:14:06] to remember that while
+[00:14:07] they have struggled in the US
+[00:14:08] , value
+[00:14:09] stocks and small-cap stocks have
+[00:14:11] performed well in
+[00:14:12] markets outside the US.
+[00:14:13] In recent history,
+[00:14:13] during past
+[00:14:14] periods of outperformance of
+[00:14:16] small-cap
+[00:14:17] and value stocks in the
+[00:14:17] US market, at least
+[00:14:18] according to the data
+[00:14:19] presented
+[00:14:20] earlier in this video,
+[00:14:21] Dimensional funds have managed to
+[00:14:22] capture more
+[00:14:22] premiums than
+[00:14:23] Vanguard funds with similar
+[00:14:24] styles.  I can't
+[00:14:25] say how the
+[00:14:25] current
+[00:14:26] period of
+[00:14:27] value and
+[00:14:28] small-
+[00:14:29] cap lag in the US will end.
+[00:14:30] But we do know that
+[00:14:31] despite these two
+[00:14:32] historical periods of
+[00:14:33] considerable pain, the
+[00:14:35] DFA US small cap value portfolio
+[00:14:36] has outperformed the
+[00:14:37] Vanguard 500 index fund over
+[00:14:39] its entire history.
+[00:14:40] Without pain, there is no
+[00:14:41] result, I think.
+[00:14:42] But seriously, they're not
+[00:14:43] called
+[00:14:44] risk premiums for nothing.
+[00:14:46] Sometimes chasing
+[00:14:47] them can be very
+[00:14:48] unpleasant.  Dimensional and
+[00:14:49] Vanguard are two
+[00:14:49] investment
+[00:14:50] companies with
+[00:14:51] related
+[00:14:51] histories,
+[00:14:52] starting with the
+[00:14:53] development of the first ever
+[00:14:53] index
+[00:14:54] fund.
+[00:14:56] Vanguard's
+[00:14:57] market-
+[00:14:57] cap-weighted index funds
+[00:14:58] have become a true
+[00:14:59] revolution for
+[00:15:00] investors and
+[00:15:01] synonymous with smart
+[00:15:02] investing.  While
+[00:15:04] Dimensional, which went further
+[00:15:05] in implementing the ideas of
+[00:15:06] academic finance
+[00:15:08] , is less well-known, despite
+[00:15:09] impressive results
+[00:15:10] compared to Vanguard and
+[00:15:12] other
+[00:15:13] industry players.  For
+[00:15:14] most of
+[00:15:15] Dimensional's history, its
+[00:15:15] funds were
+[00:15:16] only available to institutional
+[00:15:17] investors or
+[00:15:18] private clients
+[00:15:19] through financial
+[00:15:20] advisors.  But since
+[00:15:21] 2020, they have started
+[00:15:22] issuing ETFs in the
+[00:15:23] US market, and now the entire
+[00:15:23] range of their
+[00:15:24] strategies is available
+[00:15:25] as ETFs listed
+[00:15:26] on US
+[00:15:27] exchanges.  They also have a
+[00:15:28] competitor,
+[00:15:29] Avantis, which began
+[00:15:30] issuing ETFs in the US in
+[00:15:32] 2019.  Here in Canada,
+[00:15:33] Dimensional funds are still
+[00:15:34] available primarily
+[00:15:35] through financial
+[00:15:36] advisors.  Although
+[00:15:37] Manulife offers
+[00:15:38] a line of ETFs that
+[00:15:39] track indexes
+[00:15:40] managed by
+[00:15:42] Dimensional Fund Advisors.  You
+[00:15:43] shouldn't pay
+[00:15:44] a commission to a financial
+[00:15:45] advisor just
+[00:15:46] to access
+[00:15:47] Dimensional funds.  But
+[00:15:48] if you've already decided
+[00:15:49] to hire a financial
+[00:15:49] advisor for other
+[00:15:50] reasons, choosing one
+[00:15:51] who uses
+[00:15:52] Dimensional funds is a good
+[00:15:53] idea, as it
+[00:15:54] demonstrates a
+[00:15:54] commitment to a
+[00:15:55] science-
+[00:15:55] based
+[00:15:56] approach.  Thanks for
+[00:15:57] watching.  I'm Ben
+[00:15:58] Felix, Chief
+[00:15:59] Investment
+[00:16:00] Officer of PWL Capital.  If
+[00:16:01] you would like to learn
+[00:16:02] more about how PWL
+[00:16:02] uses
+[00:16:03] Dimensional funds to manage
+[00:16:04] our
+[00:16:05] clients’ portfolios, you can
+[00:16:05] book an appointment
+[00:16:06] with us below.

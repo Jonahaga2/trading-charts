@@ -1,0 +1,696 @@
+[00:00:00] The 2025 paper, Beyond the Status Quo, a
+[00:00:02] critical assessment of life cycle
+[00:00:04] investment advice, suggests that
+[00:00:05] investors should hold globally
+[00:00:07] diversified 100% stock portfolios for
+[00:00:09] their entire lives, including through
+[00:00:11] retirement. Unsurprisingly, since an
+[00:00:13] initial draft of the paper was released
+[00:00:15] in 2023, it has been met with intense
+[00:00:18] criticism. I'll admit, I like this
+[00:00:20] paper. I like the methodology, and I
+[00:00:22] think the findings are useful and
+[00:00:23] informative. I've spent so much time
+[00:00:25] nerding out with one of the co-authors
+[00:00:27] that I'm acknowledged in the current
+[00:00:28] draft. This is a paper that everyone
+[00:00:30] should read carefully, even if they
+[00:00:32] disagree with the results. I'm going to
+[00:00:34] tell you what it says. I'm Ben Felix,
+[00:00:36] chief investment officer at PWL Capital,
+[00:00:38] and I'm going to tell you why this
+[00:00:39] controversial paper on life cycle asset
+[00:00:42] allocation should not be
+[00:00:44] [Music]
+[00:00:48] ignored. This will be a nerdy video. I'm
+[00:00:51] going to go through an academic paper in
+[00:00:53] detail, including its methodology,
+[00:00:55] findings, and practical implications. I
+[00:00:57] think it'll be worth it. This paper has
+[00:00:59] insights on asset allocation, home
+[00:01:01] country bias, leverage, human capital,
+[00:01:03] the role of stock market valuations in
+[00:01:05] asset allocation decisions, and a ton of
+[00:01:07] answers to the implications of whatif
+[00:01:09] scenarios like what if the US stock
+[00:01:11] market is superior to international
+[00:01:13] markets. I do want to mention that this
+[00:01:15] paper has not been published in a
+[00:01:16] peer-reviewed academic journal. The
+[00:01:18] co-authors have other publications in
+[00:01:20] top journals, including one in the
+[00:01:21] journal of financial economics using the
+[00:01:23] same block bootstrap methodology as this
+[00:01:26] paper. And this paper has gone through
+[00:01:28] multiple iterations based on feedback
+[00:01:30] from practitioners and academics,
+[00:01:32] including at academic conferences. The
+[00:01:34] most recent version of the paper that
+[00:01:35] we're going to talk about incorporates
+[00:01:37] feedback from the American Finance
+[00:01:38] Association 2025 annual meeting. This
+[00:01:40] current draft, as you will see in a
+[00:01:42] second, addresses many of the common
+[00:01:44] criticism directed at its earlier
+[00:01:45] versions. All that to say, while it's
+[00:01:47] not a published paper, for now at least,
+[00:01:49] the authors are credible. and while has
+[00:01:52] not gone through a blind peer review.
+[00:01:54] The paper incorporates feedback from
+[00:01:55] academic conference attendees. That
+[00:01:57] setup is important because the paper's
+[00:01:59] findings are unquestionably
+[00:02:01] controversial and have resulted in
+[00:02:03] criticism from many of the most
+[00:02:04] respected practitioners in portfolio
+[00:02:06] management and financial planning. Let's
+[00:02:09] get into it. Status quo life cycle
+[00:02:10] investment advice, which means
+[00:02:12] investment advice that spans the stages
+[00:02:14] of life from early savings through to
+[00:02:15] estate planning, is a portfolio that
+[00:02:17] starts off in stocks and then gradually
+[00:02:19] increases its weight in bonds over the
+[00:02:21] life cycle, generally resulting in an
+[00:02:23] aggressive equityheavy portfolio early
+[00:02:25] in life and a more conservative bond
+[00:02:27] heavy portfolio in retirement. This
+[00:02:29] advice is present in academic
+[00:02:31] literature, practitioner textbooks, and
+[00:02:33] even embedded in financial products like
+[00:02:35] target date funds with trillions of
+[00:02:37] dollars invested in them. Rather than
+[00:02:38] relying on the same kinds of basic
+[00:02:40] assumptions about expected returns that
+[00:02:42] support status quo life cycle asset
+[00:02:44] allocation, this paper uses a method
+[00:02:46] called block bootstrap to simulate
+[00:02:48] possible return scenarios for stocks,
+[00:02:50] bonds, and bills based on historical
+[00:02:52] data for 39 developed countries with
+[00:02:55] data going as far back as 1890. This
+[00:02:57] gives more than 2,600 years of
+[00:03:00] countrymon return data to draw from. The
+[00:03:02] data being examined include market
+[00:03:04] capitalization weighted stock market
+[00:03:06] indexes, government bonds, and
+[00:03:08] government bills. That detail matters
+[00:03:09] because changing the inputs by adding in
+[00:03:11] corporate bonds, which total market bond
+[00:03:13] index funds tend to contain, or tilts in
+[00:03:16] the stock portfolio toward things like
+[00:03:18] small cap value stocks, could change the
+[00:03:20] results. The results I'm going to talk
+[00:03:22] about are specific to the assets being
+[00:03:23] tested. Next, I'm going to explain how
+[00:03:25] the block bootstrap methodology works
+[00:03:27] and why it's used for the analysis. I
+[00:03:30] told you this would be nerdy. block
+[00:03:31] bootstrap randomly grabs a chunk of data
+[00:03:33] with an average length of 10 years from
+[00:03:35] the large sample of historical returns
+[00:03:37] and places it in the simulated series.
+[00:03:39] It then grabs another chunk with an
+[00:03:41] average length of 10 years and so on
+[00:03:42] until the bootstrap data series is long
+[00:03:44] enough to fill the hypothetical
+[00:03:46] investor's life cycle. Block bootstrap
+[00:03:48] maintains important characteristics of
+[00:03:50] stock and bond returns that don't show
+[00:03:52] up in a normal distribution of
+[00:03:53] independent and identically distributed
+[00:03:55] returns. Assumptions often used in
+[00:03:57] modeling asset allocation decisions. For
+[00:04:00] example, long-term stock returns tend to
+[00:04:02] be serially correlated, meaning that
+[00:04:04] what happened yesterday affects what
+[00:04:05] happens tomorrow. Extreme negative
+[00:04:08] returns tend to be followed by positive
+[00:04:09] returns. Periods of high volatility tend
+[00:04:12] to be clustered together, and returns
+[00:04:14] tend to be skewed, meaning that they do
+[00:04:16] not follow a normal distribution. Bonds
+[00:04:18] tend to exhibit mean aversion, where bad
+[00:04:20] returns are often followed by more bad
+[00:04:22] returns, and domestic stock and bond
+[00:04:24] returns are increasingly correlated at
+[00:04:26] longer horizons. The authors of this
+[00:04:28] paper take the view that the historical
+[00:04:30] experiences of developed countries are
+[00:04:31] interchangeable for the purpose of
+[00:04:33] thinking about the expected distribution
+[00:04:35] of returns for any given country. For
+[00:04:37] example, the historical experiences of
+[00:04:38] Australia, Japan or Italy are relevant
+[00:04:41] for thinking about the expected future
+[00:04:43] experience for Canada. Domestic stocks
+[00:04:45] in this setting does not refer to any
+[00:04:47] specific country but to the possible
+[00:04:49] experience of a domestic investor in any
+[00:04:51] developed country based on the combined
+[00:04:54] experience of all countries in the
+[00:04:55] sample. As an example, one domestic
+[00:04:57] bootstrap draw might pull eight years of
+[00:04:59] returns from Canada, 14 from Australia,
+[00:05:02] 10 from Japan, 15 from New Zealand, 13
+[00:05:05] from Finland, and 10 from Germany. All
+[00:05:08] domestic data are real returns for a
+[00:05:10] given country measured in that country's
+[00:05:12] currency. They're then strung together
+[00:05:14] into, in the case of this example, 70
+[00:05:16] years of data representing one possible
+[00:05:18] return experience that a domestic stock
+[00:05:20] investor in a developed country could
+[00:05:22] expect based on what has happened in
+[00:05:24] other developed countries throughout
+[00:05:26] history. For each draw of domestic
+[00:05:27] returns, international returns are the
+[00:05:29] market cap weighted portfolio of all
+[00:05:31] countries excluding the domestic country
+[00:05:33] measured in the domestic country's
+[00:05:35] currency. Bonds and bills are also
+[00:05:37] matched to the domestic country for each
+[00:05:39] draw. Following this procedure, each
+[00:05:40] simulation produces a real return series
+[00:05:42] for domestic stocks, international
+[00:05:44] stocks, domestic bonds, and domestic
+[00:05:46] bills. The process is followed to create
+[00:05:48] 1 million simulated life cycles for a
+[00:05:50] hypothetical couple. And in that
+[00:05:52] setting, the authors look for the
+[00:05:54] optimal life cycle asset allocation.
+[00:05:56] Block bootstrap is used because if we
+[00:05:58] say a couple's investing life cycle
+[00:05:59] around 70 years, we don't have that many
+[00:06:02] non-over overlapping historical periods
+[00:06:04] to look at, even if we go back to 1890.
+[00:06:07] This method allows for many more
+[00:06:08] plausible simulated return series based
+[00:06:10] on history while maintaining the
+[00:06:12] long-term characteristics of returns.
+[00:06:15] Using these data, the optimal asset
+[00:06:16] allocation is measured on utility over
+[00:06:18] real retirement consumption and bequest
+[00:06:21] and includes labor income risk, social
+[00:06:23] security income, and longevity risk.
+[00:06:25] Utility is like a way of quantifying
+[00:06:27] satisfaction. In the base case, the
+[00:06:29] authors test all possible combinations
+[00:06:31] of stocks, bonds, and bills for a couple
+[00:06:33] saving 10% of their income for
+[00:06:34] retirement to find the optimal life
+[00:06:36] cycle asset allocation. That ends up
+[00:06:39] being 33% domestic stocks and 67%
+[00:06:42] international stocks. Remember, domestic
+[00:06:45] in this case means any developed
+[00:06:46] country. I'm in Canada, so I'd be
+[00:06:48] looking at 33% in Canada, which is a
+[00:06:51] significant home country bias. my actual
+[00:06:53] portfolio and most of PWL Capital's
+[00:06:55] client portfolios do have around 33% in
+[00:06:57] Canadian stocks and they did before this
+[00:07:00] paper came out. Nice confirmation bias
+[00:07:02] there for me. I'll take it. Someone in
+[00:07:04] the US would similarly be 33% in US
+[00:07:07] stocks which is a significant
+[00:07:08] underweight relative to market
+[00:07:09] capitalization weights. It's really
+[00:07:11] important to note here that there is a
+[00:07:12] wide range of domestic allocations where
+[00:07:14] the difference in outcomes is not huge.
+[00:07:16] So while 33% domestic is optimal in the
+[00:07:19] base case result, we're really splitting
+[00:07:21] hairs between kind of 11% and 55% in
+[00:07:24] domestic stocks. They test this optimal
+[00:07:27] base case against 100% bills, 100%
+[00:07:30] domestic stocks, a portfolio of 60%
+[00:07:33] domestic stocks and 40% bonds, and a
+[00:07:35] target date fund allocated to domestic
+[00:07:38] stocks, international stocks, bonds, and
+[00:07:39] bills that evolves over time. One of the
+[00:07:41] things I really appreciate about this
+[00:07:43] paper is how they compare the investment
+[00:07:45] strategies. Common measures like the
+[00:07:47] sharp ratio or the total return
+[00:07:48] completely ignore many important
+[00:07:50] long-term characteristics of return
+[00:07:52] distributions and their interactions
+[00:07:54] with saving and spending over the life
+[00:07:56] cycle. The authors address this by
+[00:07:57] measuring utility of retirement
+[00:07:59] consumption and bequest. But those are
+[00:08:01] not easy figures to interpret. So they
+[00:08:03] compare strategies by the portion of
+[00:08:05] income that would have to be saved to
+[00:08:07] match the utility of the base case. The
+[00:08:09] base case is saving 10% of household
+[00:08:11] income into the optimal 100% equity
+[00:08:13] portfolio. The 60/40 portfolio would
+[00:08:16] require saving 19.3% of income to
+[00:08:18] achieve the same expected utility, while
+[00:08:20] the target date fund would require
+[00:08:22] saving 16.1% of income. Even adding a
+[00:08:25] modest 12% allocation to bonds increases
+[00:08:28] the equivalent savings rate to 11% of
+[00:08:30] income. A common retort here is that
+[00:08:32] 100% equity might look better on
+[00:08:34] average, but it's more likely to have a
+[00:08:36] catastrophically bad outcome. The
+[00:08:38] pre-retirement analysis finds that the
+[00:08:39] optimal all equity portfolio performs
+[00:08:41] better in the fifth percentile of
+[00:08:42] outcomes than bills, domestic stocks,
+[00:08:44] and the target date fund. During
+[00:08:46] retirement, they find using the 4% rule
+[00:08:48] that bills give a 38.9% chance of
+[00:08:51] running out of money, domestic stocks
+[00:08:53] 17.1%, the 60/40 portfolio
+[00:08:56] 16.9%, and the target date fund a 19.7%
+[00:09:00] chance. The optimal all equity portfolio
+[00:09:02] only has a 7% chance. measured by worst
+[00:09:05] case wealth accumulation and retirement
+[00:09:07] failure rates. The all equity portfolio
+[00:09:08] looks pretty good. It still has a wide
+[00:09:11] dispersion of outcomes. So I'm not
+[00:09:13] saying that the stock portfolio is safe,
+[00:09:15] but its distribution compares favorably
+[00:09:17] to the other allocations. Average
+[00:09:19] retirement drawdowns that is peak to
+[00:09:20] trough portfolio declines are 46% for
+[00:09:23] bills, 62% for domestic stocks, 50% for
+[00:09:27] the balance portfolio, 40% for the
+[00:09:29] target date fund, and 48% for the
+[00:09:31] optimal strategy. highlighting that
+[00:09:33] downside volatility while scary
+[00:09:35] psychologically is not always the best
+[00:09:37] measure of risk. The base result has a
+[00:09:39] fixed investment strategy over the full
+[00:09:40] life cycle. In an alternative analysis,
+[00:09:42] the household can choose different
+[00:09:44] portfolio weights in each year of their
+[00:09:46] life rather than holding one strategy.
+[00:09:48] In this case, the optimal portfolio is
+[00:09:49] similarly all equity at every age except
+[00:09:51] for a brief period at retirement where
+[00:09:53] the optimal portfolio allocates 27% to
+[00:09:55] bills shrinking to 0% over 5 years.
+[00:09:59] Instead of saving 10% of their income in
+[00:10:01] the base case, the household with the
+[00:10:02] bills allocation at retirement needs to
+[00:10:04] save 9.9% of their income to match the
+[00:10:06] expected retirement utility of the base
+[00:10:09] case. Not a huge optimization, but still
+[00:10:11] kind of interesting. The author
+[00:10:13] suggested this result is driven by the
+[00:10:14] fixed inflationadjusted withdrawals
+[00:10:16] under the 4% rule. And they do show that
+[00:10:19] the cash allocation disappears from the
+[00:10:20] optimal portfolio when they switch to a
+[00:10:22] flexible spending strategy. It's worth
+[00:10:24] pointing out here that this result is
+[00:10:26] based on block bootstrap drawing from
+[00:10:28] the large global sample for
+[00:10:29] international and domestic stocks that I
+[00:10:31] described earlier. But when the authors
+[00:10:33] run the analysis constrained to domestic
+[00:10:35] data only or all data but with
+[00:10:38] independent and identically distributed
+[00:10:40] returns, bonds and bills play a much
+[00:10:42] more important role in optimal
+[00:10:44] allocations. This highlights why the
+[00:10:46] status quo advice is so common, the
+[00:10:48] importance of including international
+[00:10:50] stocks and the importance of capturing
+[00:10:52] the characteristics of long-term
+[00:10:54] returns. Next, the authors allow the
+[00:10:55] household to condition their asset
+[00:10:56] allocation on the price dividend ratio
+[00:10:58] of the domestic stock market. This is
+[00:11:01] another common rebuttal to the papers
+[00:11:02] base case finding. Sure, 100% equity
+[00:11:05] made sense in the past, but US
+[00:11:06] valuations are historically high. It
+[00:11:08] makes no sense now. So they divide the
+[00:11:10] months into quintiles on the lagged
+[00:11:12] price to dividend ratio and allow
+[00:11:13] households to choose a different asset
+[00:11:15] allocation in each quintile. The optimal
+[00:11:17] portfolio is roughly the same as the
+[00:11:19] base case across all the middle
+[00:11:20] quintiles. In the highest valuation
+[00:11:23] quintile, the domestic stock allocation
+[00:11:24] is decreased to 16%. 75% is allocated to
+[00:11:28] international stocks and 9% does get
+[00:11:31] allocated to bonds. To achieve the same
+[00:11:33] expected utility as the household saving
+[00:11:35] 10% with the optimal fixed weight
+[00:11:37] strategy, using the price to dividend
+[00:11:39] conditional strategy requires saving
+[00:11:40] only
+[00:11:42] 9.73%. Not bad, but not huge. The vast
+[00:11:45] majority of the economic benefit here
+[00:11:47] comes from decreasing the allocation to
+[00:11:48] domestic stocks when valuations are
+[00:11:50] high, not from allocating to bonds. For
+[00:11:53] example, the valuation conditional
+[00:11:54] strategy in the highest valuation
+[00:11:56] quintile with bonds restricted to 0%
+[00:11:59] allocates 22% to domestic stocks and 78%
+[00:12:02] to international stocks resulting in a
+[00:12:04] utility matched savings rate of
+[00:12:06] 9.79% barely higher than
+[00:12:08] 9.73%. In the lowest valuation quintile
+[00:12:11] for domestic stocks, the household
+[00:12:13] chooses a much higher 65% allocation to
+[00:12:16] domestic stocks with the remainder in
+[00:12:17] international. To be clear, I'm not
+[00:12:19] suggesting that you should market time
+[00:12:21] your asset allocation. The problem with
+[00:12:23] real life is that we can only know how
+[00:12:24] high valuations are relative to the
+[00:12:26] past, not relative to the future. US
+[00:12:29] valuations have been historically high
+[00:12:31] for years now, and underweing them on
+[00:12:33] that basis would have been regrettable.
+[00:12:35] I think the main takeaway is that even
+[00:12:37] when stock valuations are extremely high
+[00:12:39] or low, the optimal portfolio doesn't
+[00:12:41] change that much and the optimizations
+[00:12:43] don't have huge effects on the expected
+[00:12:45] outcome. Where this paper gets really
+[00:12:47] exciting is all the alternative
+[00:12:48] scenarios that examine whether and if so
+[00:12:51] how changing the data affects the
+[00:12:53] optimal life cycle asset allocation.
+[00:12:55] Critics have claimed that the premise of
+[00:12:56] the paper is flawed because very
+[00:12:58] longdated data are not representative of
+[00:13:00] the current global market because
+[00:13:02] diversification into other asset classes
+[00:13:04] is just important because optimal
+[00:13:06] portfolio should theoretically be
+[00:13:08] levered up to the desired level of
+[00:13:09] expected return. And because the paper's
+[00:13:11] result is biased by the past success of
+[00:13:14] the US stock market. All these critiques
+[00:13:16] are addressed in the paper. They
+[00:13:17] restrict the sample to the postworld war
+[00:13:19] II period on the premise that the world
+[00:13:21] might just be too different today for
+[00:13:22] the earlier sample to be relevant. And
+[00:13:24] they find that the optimal portfolio
+[00:13:26] barely changes. They restrict the sample
+[00:13:28] to countries with relatively large
+[00:13:30] populations on the premise that small
+[00:13:32] countries may skew the results. And
+[00:13:34] again, they find only slight changes to
+[00:13:35] the optimal portfolio. They restrict the
+[00:13:37] sample to countries with relatively
+[00:13:39] developed financial markets and find
+[00:13:41] again little change in the optimal
+[00:13:42] portfolio. One of the most interesting
+[00:13:44] whatifs addressed is excluding the US
+[00:13:46] market from the sample entirely. Since
+[00:13:48] the US has been such an outlier with
+[00:13:49] incredibly high returns and currently
+[00:13:52] high valuations, and it's made up a
+[00:13:54] large portion of the market for decades,
+[00:13:56] it's plausible that having US stocks
+[00:13:58] appear in the international portfolio
+[00:14:00] would make international stocks look
+[00:14:01] much better in the past than any
+[00:14:04] reasonable forward-looking expectation.
+[00:14:06] Excluding US stocks from the sample
+[00:14:07] entirely does decrease the optimal
+[00:14:09] weight to international stocks, but not
+[00:14:11] by that much. and bonds still do not
+[00:14:13] earn a place in the optimal portfolio.
+[00:14:15] Another interesting one is Germany,
+[00:14:17] which had a brutal period of real bond
+[00:14:19] returns where bonds basically lost all
+[00:14:21] of their value, potentially making bonds
+[00:14:23] look much worse on average in the
+[00:14:24] sample. Excluding all German data from
+[00:14:27] the model does not change the optimal
+[00:14:28] portfolio. One sensible critique of this
+[00:14:31] paper is that historical global stock
+[00:14:32] correlations were lower than they are
+[00:14:34] today. This makes sense. Capital markets
+[00:14:36] today are more open than they've been in
+[00:14:38] the past. International diversification
+[00:14:40] is easily achieved using tools like ETFs
+[00:14:42] and developed markets are highly
+[00:14:44] integrated. It's plausible that
+[00:14:46] international diversification was a more
+[00:14:47] powerful tool in the historical data
+[00:14:49] when it was much harder to invest
+[00:14:51] internationally than it is today. One
+[00:14:53] note on that is that while stock market
+[00:14:55] correlations have increased in recent
+[00:14:56] history, this observation seems to be
+[00:14:58] more relevant at short horizons than at
+[00:15:00] the long horizons this paper is
+[00:15:01] concerned with. But it's still worth
+[00:15:03] keeping in mind. In the paper, the
+[00:15:04] authors look at financial ruin
+[00:15:06] probabilities conditional on the
+[00:15:07] realized correlation between real
+[00:15:09] returns for domestic stocks and
+[00:15:10] international stocks. They find that the
+[00:15:12] 4% rule ruin probabilities of the
+[00:15:14] optimal strategy are pretty stable
+[00:15:16] across the correlation quintiles ranging
+[00:15:18] from 5.3% to 7.9%. The authors conclude
+[00:15:22] that changing correlations over time do
+[00:15:24] not invalidate the all equity strategy.
+[00:15:26] It's still always important to be
+[00:15:27] careful with conclusions influenced by
+[00:15:29] correlations which are notoriously
+[00:15:31] unstable. The optimal portfolio
+[00:15:32] similarly remains almost completely
+[00:15:34] unchanged for a range of specifications
+[00:15:36] for bootstrap block length, household
+[00:15:38] risk aversion, bequest motives,
+[00:15:40] withdrawal strategies, retirement age,
+[00:15:42] savings rates, and household composition
+[00:15:44] among other variables they tested. In
+[00:15:46] short, the headline result is robust to
+[00:15:48] pretty much anything you can throw at
+[00:15:49] it. And any changes to the optimal
+[00:15:51] portfolio based on pretty extreme
+[00:15:53] adjustments to the data, like
+[00:15:54] eliminating the US entirely, are pretty
+[00:15:56] small. Another interesting analysis in
+[00:15:58] the paper considers whether the US is
+[00:16:00] special and should therefore be expected
+[00:16:02] to continue having outlier returns. I
+[00:16:04] know this is something I deal with all
+[00:16:06] the time talking to people on the
+[00:16:07] internet. People really want to believe
+[00:16:09] that the past US experience should be
+[00:16:11] expected to continue. The authors assign
+[00:16:14] various probabilities to the US being
+[00:16:16] special and then fix that portion of the
+[00:16:18] block bootstrap draws to come from the
+[00:16:20] US rather than it being a completely
+[00:16:22] random draw. This does have an impact on
+[00:16:24] optimal portfolio allocations. If an
+[00:16:26] American investor is 0% sure that future
+[00:16:28] US market returns will look like the
+[00:16:30] past, they will hold 33% in domestic
+[00:16:32] stocks, the same as the base case. If
+[00:16:34] they're 90% sure that the US is special,
+[00:16:37] they will hold 96% in US stocks. For
+[00:16:40] anyone who is that sure that the US is
+[00:16:42] special, I do think it's worth asking
+[00:16:44] whether US exceptionalism will be
+[00:16:46] expressed as high future stock returns
+[00:16:48] resembling the past or high US stock
+[00:16:51] valuations which imply lower future
+[00:16:53] returns. I'd personally lean toward the
+[00:16:55] second one. They also look at the
+[00:16:56] relationship between labor income, the
+[00:16:58] domestic stock market, and optimal home
+[00:17:00] country bias. If the income from your
+[00:17:02] job is exposed to the same risks as your
+[00:17:04] domestic stock market, it could make
+[00:17:06] sense to have less exposure to stocks in
+[00:17:08] your home country. They find that at a
+[00:17:10] high correlation, the optimal home
+[00:17:11] country allocation drops from 33% in the
+[00:17:13] base case, which has a correlation of
+[00:17:15] zero, to 18%. The last analysis from
+[00:17:18] this paper that I'm going to cover is
+[00:17:20] leverage. In my experience, my viewers
+[00:17:22] get really excited about leverage, maybe
+[00:17:24] a little bit too excited. One of the
+[00:17:26] biggest criticisms when this paper first
+[00:17:27] came out was that it's theoretically
+[00:17:29] ridiculous to be 100% in stocks.
+[00:17:32] Investors should build diversified
+[00:17:33] portfolios with high sharp ratios and
+[00:17:35] then lever them up to the desired level
+[00:17:37] of expected return. For example, a 60%
+[00:17:40] stock and 40% bond portfolio levered up
+[00:17:42] to the expected return of a 100% stock
+[00:17:44] portfolio is theoretically superior. One
+[00:17:47] of the problems with basic finance
+[00:17:48] theory for long-term investors is that
+[00:17:50] it's typically based on a single period
+[00:17:52] model and normally distributed IID
+[00:17:54] returns. One of this paper's biggest
+[00:17:56] critics, Cliff Asnice, notably one of
+[00:17:59] the last people on this planet that I
+[00:18:00] would ever want to argue with,
+[00:18:02] acknowledges in a 1996 paper on this
+[00:18:04] topic that while he finds a levered
+[00:18:06] 60/40 portfolio to be optimal using
+[00:18:08] annualized monthly data, introducing the
+[00:18:11] characteristics of long-term returns
+[00:18:13] could change the results. And that is
+[00:18:15] exactly what beyond the status quo is
+[00:18:17] doing with the block bootstrap. When the
+[00:18:19] authors allow the household to use
+[00:18:20] leverage to build their optimal
+[00:18:21] portfolio, they look at a range of
+[00:18:23] borrowing costs from a high cost
+[00:18:24] resembling typical margin loan rates, a
+[00:18:27] medium cost resembling very low margin
+[00:18:29] loan rates, and a low cost resembling
+[00:18:31] the cost of borrowing implied in
+[00:18:32] derivative instruments. They set a 100%
+[00:18:35] borrowing limit and for each borrowing
+[00:18:37] cost allow the household to choose their
+[00:18:38] optimal portfolio and leverage ratio. At
+[00:18:41] the high borrowing cost, leverage is
+[00:18:43] unsurprisingly not used at all. At the
+[00:18:45] medium cost of leverage, the household
+[00:18:46] borrows 55% of their wealth and invests
+[00:18:49] in the base case optimal all equity
+[00:18:50] portfolio. Their utility matched savings
+[00:18:53] rate is 8.1%. That finding is important.
+[00:18:56] If you can access leverage at a rate
+[00:18:57] 1.4% 4% above treasury bills, the medium
+[00:19:00] cost of borrowing, probably the most
+[00:19:02] reasonable leverage cost assumption for
+[00:19:03] a retail investor. The optimal levered
+[00:19:05] portfolio uses 55% leverage on an all
+[00:19:08] equity portfolio and materially
+[00:19:10] decreases utility matched savings
+[00:19:12] relative to the unlevered base case.
+[00:19:14] Using the same amount of leverage to
+[00:19:15] invest in a portfolio of 60% domestic
+[00:19:18] stocks and 40% bonds would require a
+[00:19:20] savings rate of 19.1% to match the
+[00:19:22] utility of the base case unlevered 100%
+[00:19:24] equity portfolio. In the lowest cost of
+[00:19:26] leverage case, which keep in mind likely
+[00:19:28] requires using derivatives, the
+[00:19:30] household borrows 100% of their wealth
+[00:19:32] and invests in a portfolio of 28%
+[00:19:34] domestic stocks, 57% international
+[00:19:37] stocks, and 15% bonds. Bonds finally
+[00:19:40] make an appearance in the optimal
+[00:19:42] levered portfolio. There are some
+[00:19:43] investment products that have built-in
+[00:19:45] lowcost leverage using derivatives and
+[00:19:47] offer access to a levered portfolio of
+[00:19:49] stocks and bonds. In those cases, the
+[00:19:51] fee charged on the product would need to
+[00:19:53] be included in estimating the cost of
+[00:19:55] leverage. The average expense ratio on a
+[00:19:57] leveraged ETF is
+[00:19:59] 1.05%, much higher than most total
+[00:20:01] market index funds. The 2025 paper,
+[00:20:03] Beyond the Status Quo, a critical
+[00:20:05] assessment of life cycle investment
+[00:20:06] advice, is a thoughtful analysis of life
+[00:20:08] cycle investment advice using an
+[00:20:10] innovative method to simulate the
+[00:20:12] expected distributions of stock, bond,
+[00:20:14] and bill returns from the actual
+[00:20:16] historical experience of investors in
+[00:20:18] developed countries around the world. as
+[00:20:20] far back as 1890. Capturing the
+[00:20:22] characteristics of long-term returns and
+[00:20:24] using global data produces results that
+[00:20:26] challenge the conventional wisdom on
+[00:20:27] life cycle asset allocation. I would not
+[00:20:29] take the precise results from this paper
+[00:20:31] as instructions for what to do with your
+[00:20:33] portfolio, but I do think that they are
+[00:20:35] directionally useful. Stocks look better
+[00:20:38] at long horizons than at short horizons.
+[00:20:40] Nominal bonds look worse, and the
+[00:20:42] correlation between domestic stocks and
+[00:20:44] bonds increases at long horizons. All
+[00:20:46] making bonds less attractive for
+[00:20:48] long-term investors. Even the paper's
+[00:20:50] critics agree on this directionally, but
+[00:20:52] disagree on the magnitude and
+[00:20:54] interpretation of the result.
+[00:20:56] International diversification is very
+[00:20:58] important. Again, critics agree here,
+[00:21:00] too. And a little bit of home country
+[00:21:02] bias for investors outside the US is
+[00:21:04] probably not a bad thing. Timing asset
+[00:21:06] class exposures based on valuations has
+[00:21:08] little effect on long-term outcomes.
+[00:21:10] Even if you know you're living in a high
+[00:21:11] valuation quintile, a bit of leverage
+[00:21:14] can look pretty good if you can access
+[00:21:15] it at a low cost and stick with it for
+[00:21:17] the long term. But the basic finance
+[00:21:20] theory suggesting that levering up
+[00:21:21] portfolios of stocks and bonds is
+[00:21:23] universally superior to investing 100%
+[00:21:26] in stocks falls apart at long horizons.
+[00:21:29] It's also important for me to reiterate
+[00:21:30] that this analysis is based on
+[00:21:31] simulations derived from historical data
+[00:21:34] and that the future could look different
+[00:21:36] from history. Expected stock returns
+[00:21:38] could be lower in the future than the
+[00:21:39] past due to regulations and innovations
+[00:21:41] like index funds making investing easier
+[00:21:43] and safer for most investors today than
+[00:21:45] it was in 1890. Other research going
+[00:21:48] back further in history for the US stock
+[00:21:49] market finds that over the period 1792
+[00:21:52] to 1862, US stocks and bonds had more
+[00:21:55] similar returns than the post 1890
+[00:21:57] sample where stocks are dominant. This
+[00:21:59] does not invalidate the data and beyond
+[00:22:01] the status quo, but it is worth
+[00:22:02] considering that even this longdated
+[00:22:04] data series does not represent the full
+[00:22:06] range of possible outcomes for asset
+[00:22:08] class returns. Additionally, this paper
+[00:22:09] is a partial equilibrium model, meaning
+[00:22:11] that it does not account for what would
+[00:22:13] happen in equilibrium. If everyone took
+[00:22:15] its advice and invested 100% in stocks.
+[00:22:18] Other research suggests that if everyone
+[00:22:19] switched from individual stocks and
+[00:22:21] bonds to equity index funds, it could
+[00:22:23] make investors in aggregate worse off. A
+[00:22:25] partial equilibrium model is still
+[00:22:27] useful for household decision-making as
+[00:22:29] long as everyone doesn't actually decide
+[00:22:31] to follow the advice. Finally, investor
+[00:22:33] behavior needs to be accounted for. As
+[00:22:35] we have seen, downside volatility is not
+[00:22:37] the best measure of risk for long-term
+[00:22:39] investors. But try telling that to your
+[00:22:41] spouse when the market crashes. Even if
+[00:22:43] bonds are relatively risky for long-term
+[00:22:45] investors in real terms, their nominal
+[00:22:48] volatility tends to be a lot lower than
+[00:22:50] the volatility of stocks. Downside
+[00:22:52] volatility aversion alone is probably
+[00:22:54] enough to stop all investors from
+[00:22:55] holding 100% equity portfolios in
+[00:22:58] equilibrium, preserving the opportunity
+[00:23:00] for those who can handle it. Thanks for
+[00:23:01] watching. I'm Ben Felix, chief
+[00:23:03] investment officer at PWL Capital.

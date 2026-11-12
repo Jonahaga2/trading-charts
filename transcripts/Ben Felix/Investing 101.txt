@@ -1,0 +1,605 @@
+[00:00:00] When I started my career in finance, one
+[00:00:01] of my first big assignments was
+[00:00:03] delivering a 45minute investing 101 talk
+[00:00:06] to employees at a local tech company. I
+[00:00:08] got good feedback on the talk and I was
+[00:00:09] invited to keep coming back every month,
+[00:00:11] which I did for years. In many ways,
+[00:00:13] those talks early in my career were a
+[00:00:15] precursor to this YouTube channel. I'm
+[00:00:17] going to cover that same investing 101
+[00:00:19] information in this video. I'm Ben
+[00:00:21] Felix, chief investment officer at PWL
+[00:00:23] Capital, and I'm going to teach you
+[00:00:24] investing 101.
+[00:00:30] I'm going to cover why investing
+[00:00:31] matters, what stocks and bonds are, what
+[00:00:33] a sensible approach to investing looks
+[00:00:35] like, and what tools you should consider
+[00:00:37] using to implement these ideas. At the
+[00:00:40] most basic level, investing is important
+[00:00:41] because inflation is a real thing.
+[00:00:43] Inflation means that stuff gets more
+[00:00:45] expensive, measured in dollars over
+[00:00:47] time. Central banks in countries like
+[00:00:49] Canada and the United States target low
+[00:00:51] but stable inflation rates for reasons
+[00:00:53] beyond the scope of this video. The
+[00:00:55] important thing to understand is that
+[00:00:56] inflation should be expected. Meaning
+[00:00:59] that dollars held under your proverbial
+[00:01:01] mattress should be expected to lose
+[00:01:03] purchasing power over time. The same
+[00:01:06] number of dollars will be able to buy
+[00:01:07] less stuff in the distant future than
+[00:01:09] they buy today. This isn't a grand
+[00:01:11] conspiracy and the solution is actually
+[00:01:13] pretty simple. Don't hold dollars that
+[00:01:15] you plan to use in the distant future
+[00:01:16] under your mattress. That is at a
+[00:01:18] baseline why investing is important.
+[00:01:20] rather than under your mattress.
+[00:01:22] Investing your dollars into assets with
+[00:01:24] positive expected returns can generally
+[00:01:26] offset the effects of inflation and then
+[00:01:28] some. Stable investments like treasury
+[00:01:31] bills and high interest savings accounts
+[00:01:33] should generally be sufficient to keep
+[00:01:34] pace with inflation. Not always, but
+[00:01:36] generally. And investing in riskier
+[00:01:38] assets with higher expected returns can
+[00:01:40] help you on your way to becoming
+[00:01:41] financially independent. Financial
+[00:01:44] independence means that over your
+[00:01:45] working life, you save a portion of your
+[00:01:47] income, converting your human capital,
+[00:01:49] your ability to earn income by working
+[00:01:51] into financial capital, the ownership of
+[00:01:53] financial assets, eventually reaching a
+[00:01:56] state where you do not need to work for
+[00:01:57] money, financial independence. Let's
+[00:02:00] look at a couple simple examples to see
+[00:02:02] why investing matters. If you're 30
+[00:02:04] today, saving 10% of your income and
+[00:02:06] expect to earn a 7% rate of return on
+[00:02:09] your investments, you could retire at 65
+[00:02:11] and replace 60% of your pre-tax income
+[00:02:14] from your savings until age 95. That's
+[00:02:17] not including government pension
+[00:02:18] benefits like CPP and OAS in Canada or
+[00:02:21] Social Security in the US. If instead of
+[00:02:24] earning a 7% expected return, you earn
+[00:02:26] 2%, which is a number in line with the
+[00:02:29] inflation rate in this simple model that
+[00:02:30] we're playing with, you would need to
+[00:02:32] save a little more than 50% of your
+[00:02:34] income. The difference between saving
+[00:02:36] 10% of your income and 50% obviously has
+[00:02:39] huge implications for your lifestyle
+[00:02:41] today. One way to think about this is
+[00:02:43] that by taking on some risk to earn
+[00:02:45] higher expected returns with your
+[00:02:47] investments, you're letting the
+[00:02:48] financial markets do a lot of the heavy
+[00:02:50] lifting toward funding your financial
+[00:02:52] independence. That is the main premise
+[00:02:53] of investing. At a minimum, you need to
+[00:02:55] keep pace with inflation. And if you're
+[00:02:57] strategic about taking the right kinds
+[00:02:59] of risk at the right time in your
+[00:03:00] investing lifetime, you can use
+[00:03:02] financial markets as a very powerful
+[00:03:04] tool on the path toward financial
+[00:03:06] independence. The next important concept
+[00:03:08] is understanding what I'm talking about
+[00:03:10] when I say things like taking risk and
+[00:03:12] investing in higher expected return
+[00:03:14] assets. I'm not talking about trying to
+[00:03:17] pick winning stocks or getting ahead of
+[00:03:18] the next market trend. Two of the
+[00:03:21] largest and most practically relevant
+[00:03:22] types of assets, types of investments
+[00:03:25] for long-term investors are stocks and
+[00:03:27] bonds. Stocks and bonds are both
+[00:03:29] financial assets. A financial asset is
+[00:03:31] not a physical asset like a house or a
+[00:03:33] piece of gold. It is a contractual claim
+[00:03:36] on expected future cash flows. I'll
+[00:03:38] explain what that means, don't worry. A
+[00:03:40] stock is a piece of ownership in a
+[00:03:42] company. When you invest in a stock,
+[00:03:44] you're buying an asset whose value today
+[00:03:46] is based on the expected future profits
+[00:03:48] of that business. As a shareholder, you
+[00:03:50] participate in the ups and downs of the
+[00:03:52] company's successes and failures. If the
+[00:03:54] company does well, you can earn high
+[00:03:56] returns. And if it does poorly, you can
+[00:03:58] lose money or even lose your entire
+[00:04:00] investment. Stocks in aggregate have
+[00:04:02] performed well historically. Global
+[00:04:05] stocks have returned a little more than
+[00:04:06] 8% annualized before inflation or a
+[00:04:09] little more than 5% after inflation for
+[00:04:11] the last 125 years. The stock markets of
+[00:04:14] some individual countries have performed
+[00:04:16] much better than the global average,
+[00:04:17] while others have performed worse. It's
+[00:04:20] important not to read too much into this
+[00:04:21] when deciding where to invest. For
+[00:04:23] example, the US stock market has
+[00:04:25] delivered huge returns in recent
+[00:04:26] history, but this will not necessarily
+[00:04:29] always be the case. The Japanese stock
+[00:04:31] market is a cautionary tale. From 1970
+[00:04:33] through January 1990, Japanese stocks
+[00:04:36] more than doubled the annualized return
+[00:04:38] of world excluding Japan stocks. over so
+[00:04:40] many years. That means that $1 invested
+[00:04:42] in Japanese stocks grew to $53.56
+[00:04:46] while investment in rest of world stocks
+[00:04:48] grew to only $6.72.
+[00:04:51] Japan had become a dominant stock market
+[00:04:53] at the time and it might have seemed
+[00:04:55] crazy to invest anywhere else. There
+[00:04:57] were narratives about Japanese
+[00:04:59] innovation and efficiency making them
+[00:05:00] economically unstoppable. However, if
+[00:05:03] you had invested in Japanese stocks in
+[00:05:05] January 1990, after that period of crazy
+[00:05:08] good performance, you would have $1.90
+[00:05:11] in August 2025, while the cost of
+[00:05:13] purchasing $1 of stuff that people need
+[00:05:16] had increased to $2.54.
+[00:05:19] This means that you lost money after
+[00:05:20] inflation over this period investing in
+[00:05:23] Japanese stocks. An investment in rest
+[00:05:25] of world stocks would be worth $22.94
+[00:05:28] over the same period. That Japan example
+[00:05:30] is for sure an extreme outcome. But
+[00:05:32] given the challenges in selecting which
+[00:05:34] country will perform well in the future,
+[00:05:36] holding a globally diversified portfolio
+[00:05:38] of stocks covering a cross-section of
+[00:05:40] the world's stock markets is generally
+[00:05:43] wise. It's common for investors to want
+[00:05:45] to invest in countries that have
+[00:05:46] recently performed well or avoid
+[00:05:48] investing in ones that have performed
+[00:05:49] poorly. But this performance chasing
+[00:05:51] behavior is more likely to do harm than
+[00:05:53] good. Past country performance does not
+[00:05:55] tell us much about future country
+[00:05:57] performance. Figuring out how much to
+[00:05:59] put into each country is another
+[00:06:00] interesting problem. But the good news
+[00:06:02] here, and this gets really interesting,
+[00:06:04] is that the market has answered that
+[00:06:06] question for us. The market is shorthand
+[00:06:08] for the huge amounts of buying and
+[00:06:10] selling of stocks that occurs around the
+[00:06:12] world every day. Each transaction in the
+[00:06:14] in the stock market contributes a little
+[00:06:17] bit of information into the price of a
+[00:06:19] stock. All that buying and selling
+[00:06:21] ultimately determines the value of the
+[00:06:22] companies traded on the stock market.
+[00:06:24] The market pricing machine assigns value
+[00:06:27] to companies based on things like their
+[00:06:28] expected future profits, their
+[00:06:30] riskiness, and how they behave relative
+[00:06:32] to other stocks in the market. In
+[00:06:34] general, more profitable and less risky
+[00:06:37] companies become more valuable, all else
+[00:06:39] equal, earning them a larger weight in
+[00:06:41] the market. Similarly, the combined size
+[00:06:44] of the companies in each country
+[00:06:45] determines that countries weight in the
+[00:06:47] global market. Those are called market
+[00:06:49] capitalization weights, and they're a
+[00:06:51] very, very good starting point for an
+[00:06:53] investment portfolio. In simple terms,
+[00:06:55] this means that you can look at the
+[00:06:56] relative size of each country's stock
+[00:06:58] market and allocate your portfolio
+[00:07:00] accordingly and you need a good reason
+[00:07:02] to be different from those weights.
+[00:07:04] Today, that means a large portion of a
+[00:07:06] market capitalization weighted stock
+[00:07:08] portfolio is invested in the US market.
+[00:07:11] All that said, taxes, costs, and the
+[00:07:13] currency that you spend your money in
+[00:07:15] could all be reasons to somewhat
+[00:07:17] increase the weight of your home country
+[00:07:19] relative to its market capitalization
+[00:07:21] weight. Too much home country exposure
+[00:07:23] is generally not a good thing, but some
+[00:07:25] overweighting of home country stocks
+[00:07:27] relative to their market capitalization
+[00:07:29] weights can be sensible. This will come
+[00:07:31] up when we look at some sample
+[00:07:32] portfolios later in the video. While
+[00:07:34] global stocks collectively have done
+[00:07:36] well historically, individual stocks
+[00:07:38] have been very risky. Many of them
+[00:07:40] perform poorly, often going to zero,
+[00:07:43] while a relative few of them have
+[00:07:44] performed exceptionally well. Picking
+[00:07:47] those exceptional winners ahead of time
+[00:07:48] is really, really hard to do. Similar to
+[00:07:50] not picking countries, it generally
+[00:07:52] makes sense to hold a diversified
+[00:07:54] portfolio of many stocks. Again, market
+[00:07:56] capitalization weights are a good
+[00:07:58] starting point. The good news is that
+[00:08:00] today there are lowcost investment
+[00:08:02] products that make it easy to buy a
+[00:08:04] globally diversified market
+[00:08:05] capitalization weighted portfolio of
+[00:08:07] stocks. It's important to mention that
+[00:08:09] even a properly diversified portfolio of
+[00:08:11] stocks can have violent ups and downs.
+[00:08:13] When your stock portfolio represents
+[00:08:15] your financial future, your financial
+[00:08:17] independence, it can be very hard to
+[00:08:19] watch its value swing wildly, which
+[00:08:21] makes stocks difficult for a lot of
+[00:08:23] people to invest in. Somewhat
+[00:08:25] paradoxically, that difficulty or
+[00:08:27] riskiness is exactly what makes stocks
+[00:08:30] good long-term investments. If stocks
+[00:08:32] were safer and their prices didn't
+[00:08:33] change much day-to-day, they would have
+[00:08:35] lower expected returns. Not everyone can
+[00:08:38] comfortably hold a portfolio of 100%
+[00:08:40] stocks. This is where bonds come in.
+[00:08:42] Bonds are loans made to companies and
+[00:08:44] governments. Instead of buying a piece
+[00:08:46] of ownership in a business, like with a
+[00:08:48] stock, with bonds, you're effectively
+[00:08:50] making a loan to a business or a
+[00:08:52] government. Unlike a stock, if a company
+[00:08:54] performs better than expected, its bonds
+[00:08:56] won't change in value much. And if a
+[00:08:58] company does poorly, its bonds still
+[00:09:00] won't change in value much. Even if a
+[00:09:02] company goes bust and its stock becomes
+[00:09:04] worthless, its bond holders may be able
+[00:09:06] to recoup some, not all, but some of
+[00:09:08] their value. Government bonds tend to be
+[00:09:11] even more stable. Bonds are still not
+[00:09:13] guaranteed investments and they come
+[00:09:15] with their own unique risks, but they
+[00:09:17] generally do not change in value from
+[00:09:18] daytoday as much as stocks do. In
+[00:09:21] finance jargon, finance speak, they are
+[00:09:23] less volatile. Bonds are less volatile
+[00:09:25] than stocks. While bonds are less
+[00:09:27] volatile than stocks, they also have
+[00:09:29] lower expected returns. That's the risk
+[00:09:31] expected return trade-off with stocks
+[00:09:33] and bonds. Bonds are also sensitive to
+[00:09:35] inflation. Periods of high inflation can
+[00:09:37] reduce the purchasing power of money
+[00:09:39] invested in bonds, which is a problem
+[00:09:41] for long-term investors. Stocks aren't
+[00:09:44] inflation hedges, but they do tend to
+[00:09:45] perform better after inflation than
+[00:09:47] bonds over long periods of time. Using
+[00:09:49] these two asset classes as building
+[00:09:50] blocks, you can create an investment
+[00:09:52] portfolio that matches your desired
+[00:09:53] levels of expected return and
+[00:09:55] volatility. A stockheavy portfolio
+[00:09:58] should be expected to be more volatile
+[00:10:00] and have higher expected returns while a
+[00:10:02] bond heavy portfolio should be less
+[00:10:04] volatile and have lower expected
+[00:10:05] returns. I am being intentional about
+[00:10:08] referring to stocks as being more
+[00:10:09] volatile rather than more risky than
+[00:10:11] bonds because risk is a pretty ambiguous
+[00:10:13] term. Volatility is certainly one way to
+[00:10:16] think about risk and commonly how it's
+[00:10:17] framed for investors. The risk of not
+[00:10:20] being able to meet your long-term
+[00:10:21] financial goals is another way to think
+[00:10:23] about risk. Some research has suggested
+[00:10:25] that from the perspective of meeting
+[00:10:26] your long-term goals, stocks may be
+[00:10:28] safer than many types of bonds despite
+[00:10:31] their higher volatility as long as you
+[00:10:33] can handle the ups and downs. Okay, so
+[00:10:35] these broad asset classes, stocks and
+[00:10:37] bonds exist and their expected returns
+[00:10:39] are useful tools to plan for the future.
+[00:10:42] It's not terribly complicated, but many
+[00:10:44] people have been taught that investing
+[00:10:45] means guessing and predicting.
+[00:10:47] Predicting which stocks or markets will
+[00:10:48] do well or predicting when to get out of
+[00:10:50] the market to avoid a crash. This
+[00:10:52] general concept of following the market
+[00:10:54] really closely in an effort to gain an
+[00:10:56] edge by guessing and predicting is
+[00:10:57] typically referred to as active
+[00:10:59] management. At the most basic level,
+[00:11:02] active management is the idea that you
+[00:11:03] can use your knowledge, your
+[00:11:05] information, to outguess the market,
+[00:11:07] resulting in improved performance. The
+[00:11:09] problem with this idea is that the
+[00:11:11] market's main function is aggregating
+[00:11:13] all available information, including
+[00:11:15] expectations about the future, into the
+[00:11:17] prices of stocks and bonds. The idea
+[00:11:19] that any one person or even team of
+[00:11:21] people can consistently outguess the
+[00:11:23] combined information production of all
+[00:11:25] market participants is kind of
+[00:11:27] far-fetched. An economist named Eugene
+[00:11:29] FMA shared the 2013 Nobel Memorial Prize
+[00:11:32] in Economic Sciences for his work on the
+[00:11:34] efficient market hypothesis which
+[00:11:36] formalizes the idea that prices are
+[00:11:39] pretty good representations of all
+[00:11:40] available information about stocks and
+[00:11:42] bonds. From the perspective of
+[00:11:44] investors, the people probably watching
+[00:11:46] this video, one of the best tests of
+[00:11:48] market efficiency, as FMA explained to
+[00:11:50] me when he was on my podcast, is whether
+[00:11:52] professional active managers can
+[00:11:54] consistently beat the market. If prices
+[00:11:56] do not reflect all available
+[00:11:58] information, if markets are not
+[00:12:00] efficient, a savvy active manager should
+[00:12:02] be able to learn things about a stock
+[00:12:04] that are not currently reflected in the
+[00:12:05] price and profit from trading on that
+[00:12:07] information. What we see in practice is
+[00:12:09] that only a small percentage of
+[00:12:11] professional active managers are able to
+[00:12:12] outperform the market and even the ones
+[00:12:14] that do outperform over one period
+[00:12:16] rarely go on to continue outperforming
+[00:12:18] in the future. This makes it very hard
+[00:12:21] to pick winning managers before the
+[00:12:23] fact. I would also say that this extends
+[00:12:25] to individuals trying to devise their
+[00:12:27] own active investment strategy.
+[00:12:28] Sometimes active managers get thrown
+[00:12:30] under the bus. Uh people make excuses
+[00:12:32] like well they can't because of their
+[00:12:34] fees or they can't because their funds
+[00:12:35] are too large. But very few individual
+[00:12:38] investors beat the market. I think the
+[00:12:39] same concepts apply to both professional
+[00:12:41] active managers and individual
+[00:12:43] investors. The alternative to active
+[00:12:45] management is typically referred to as
+[00:12:47] index investing. An index is a
+[00:12:49] representation of a stock market. In
+[00:12:51] Canada, we have the S&P TSX composite
+[00:12:53] index. The US market has a whole bunch
+[00:12:55] of different indexes tracking it, but
+[00:12:57] most people are familiar with the S&P
+[00:12:58] 500 index. These are groupings of stocks
+[00:13:01] that have been put together by a
+[00:13:02] research firm, in these cases by S&P, to
+[00:13:05] be a representation of a country's stock
+[00:13:07] market. These indices are market
+[00:13:09] capitalization weighted, meaning that
+[00:13:11] larger companies get a larger weight in
+[00:13:13] the index than smaller companies. Since
+[00:13:15] they simply hold stocks as they exist in
+[00:13:18] the market, they're often used as the
+[00:13:19] benchmark for active managers. It's
+[00:13:21] basically like an index is like what if
+[00:13:23] you just did nothing? What if you just
+[00:13:24] took the market values of stocks and
+[00:13:26] held them like that? And so it's it's an
+[00:13:28] obvious comparison to an active manager
+[00:13:30] who's trying to do something. So the
+[00:13:32] index are used as a benchmark for the
+[00:13:34] active managers. Now an index is not
+[00:13:36] itself an investment. It's a
+[00:13:38] representation of a market. But there
+[00:13:39] are funds that rather than trying to
+[00:13:41] beat the market simply invest in the
+[00:13:43] stocks in the index in an effort to
+[00:13:45] capture the market's returns. Index
+[00:13:47] funds were first created in the 1970s
+[00:13:49] based on the observation that active
+[00:13:50] managers were not delivering index
+[00:13:52] beating returns. The other issue that I
+[00:13:54] haven't mentioned yet for active
+[00:13:55] management is that to do all of the
+[00:13:56] analysis and other work that's required
+[00:13:58] to run an actively managed fund that
+[00:14:00] tries to beat the market. These funds
+[00:14:01] have to charge higher fees and even
+[00:14:04] small fees in investing matter a lot due
+[00:14:06] to compounding over long periods of
+[00:14:08] time. If we think back to the earlier
+[00:14:10] example of saving 10% of your income for
+[00:14:12] retirement and earning a 7% expected
+[00:14:14] return on your investments, if you pay
+[00:14:16] an extra 0.64% 64% in fees. That's the
+[00:14:19] average fee difference between fee based
+[00:14:21] active funds and index funds in Canada.
+[00:14:23] And you don't earn higher returns in
+[00:14:25] exchange for the higher fees. You would
+[00:14:27] need to save 12.5% of your income or 25%
+[00:14:30] more to have a similar long-term outcome
+[00:14:33] to the cases I talked about earlier. If
+[00:14:35] the active fund that you choose
+[00:14:36] underperforms by more than its fees,
+[00:14:37] which is often the case since it's so
+[00:14:39] hard to pick winning stocks before the
+[00:14:40] fact, the numbers will look worse still.
+[00:14:43] When you sit down with a financial
+[00:14:44] adviser, they may well be able to show
+[00:14:46] you a list of actively managed funds
+[00:14:48] that have outperformed, making active
+[00:14:50] management seem compelling. But the
+[00:14:52] problem here is that over any 10-year
+[00:14:54] period, for example, less than half of
+[00:14:57] actively managed funds survive. The
+[00:14:59] remainder close or get merged with other
+[00:15:01] funds. Funds that merge or close tend to
+[00:15:03] be poor performers that have failed to
+[00:15:05] attract investors, which is why they are
+[00:15:07] closing or merging. This creates a
+[00:15:09] problem of survivorship bias. The sample
+[00:15:12] of actively managed funds that exist at
+[00:15:14] any point in time are not a good
+[00:15:16] representation of the performance of
+[00:15:18] actively managed funds in aggregate when
+[00:15:20] survivorship bias is accounted for. The
+[00:15:22] other problem is that funds that perform
+[00:15:24] well and survive in one period are no
+[00:15:26] more likely to continue winning in
+[00:15:28] future periods. Index funds take the
+[00:15:29] guesswork out of investing and make it
+[00:15:31] accessible to anyone. You don't need to
+[00:15:33] know how to analyze companies or predict
+[00:15:34] the economy or identify successful
+[00:15:37] active managers before the fact to be a
+[00:15:39] successful index fund investor. You
+[00:15:41] don't even need to be interested in the
+[00:15:42] stock market. You just need some
+[00:15:44] baseline knowledge about index funds and
+[00:15:45] enough conviction in your chosen
+[00:15:47] strategy and your chosen portfolio to
+[00:15:49] stay disciplined through inevitable
+[00:15:51] difficult market conditions. That point
+[00:15:54] is really important. You have to be able
+[00:15:56] to stick with whatever you decide to
+[00:15:57] invest in. To put this information into
+[00:15:59] practice as opposed to just talking
+[00:16:00] about it from a theoretical perspective,
+[00:16:02] we need to talk about investment
+[00:16:03] products. In 2018, Vanguard launched the
+[00:16:06] first asset allocation ETFs in Canada.
+[00:16:09] An ETF is an exchangeraded fund, which
+[00:16:12] is a fund that you purchase on a stock
+[00:16:13] exchange like you would purchase a
+[00:16:15] stock, but it gives you exposure to a
+[00:16:17] diversified portfolio of assets and you
+[00:16:20] you pay a fee to own it. Asset
+[00:16:22] allocation ETFs are now offered by a ton
+[00:16:23] of different financial companies in
+[00:16:25] Canada. We're going to look at one of
+[00:16:26] Vanguard's ETFs so that you can see what
+[00:16:28] I'm talking about. VGRO is the Vanguard
+[00:16:30] Growth ETF portfolio. It holds a US
+[00:16:33] total market index ETF, a Canadian total
+[00:16:35] market index ETF, a developed markets
+[00:16:37] excluding North America index ETF which
+[00:16:40] covers countries like Japan, the UK,
+[00:16:42] France, Germany, Switzerland, Australia,
+[00:16:44] and a whole bunch of others. And an
+[00:16:46] emerging markets index ETF covering
+[00:16:48] China, Taiwan, India, and a whole bunch
+[00:16:50] of others. And also three bond ETFs
+[00:16:52] covering Canadian, US, and global
+[00:16:55] excluding Canadian and US bonds. The
+[00:16:58] overall portfolio consists of 80% stocks
+[00:17:00] and 20% bonds. Canada in this portfolio
+[00:17:04] receives a much higher weight in the
+[00:17:06] fund than its market capitalization
+[00:17:08] weight. Canada's about 3% of the global
+[00:17:10] market and it makes up about 30% of the
+[00:17:13] equity portion of this portfolio. Now,
+[00:17:15] that is a deliberate decision by
+[00:17:16] Vanguard reflecting an intentional home
+[00:17:18] country bias which may be appropriate
+[00:17:21] for Canadians. I've got a video on that
+[00:17:22] if you want to learn more about why that
+[00:17:24] is. Vanguard has also created asset
+[00:17:26] allocation portfolios for more
+[00:17:28] conservative and more aggressive asset
+[00:17:30] allocations allowing investors to choose
+[00:17:32] the product that makes sense for them.
+[00:17:34] Since Vanguard had success with those
+[00:17:35] products, uh Beimo, RBCI shares, TD,
+[00:17:38] McKenzie, and and other companies too
+[00:17:40] have have launched similar asset
+[00:17:42] allocation products. An important point
+[00:17:44] is that these asset allocation ETFs are
+[00:17:46] rebalanced for you. Rebalancing is the
+[00:17:49] action of keeping your portfolio's asset
+[00:17:51] allocation targets in check as markets
+[00:17:53] change over time. For example, if you
+[00:17:55] were to build your own ETF portfolio
+[00:17:56] with the same underlying ETFs as VGRO,
+[00:18:00] you would need to keep an eye on the
+[00:18:01] weights of each fund. If the US market
+[00:18:03] does particularly well over some period,
+[00:18:05] it would end up making up more of your
+[00:18:07] portfolio than you had initially
+[00:18:08] intended it to. To resolve this, you
+[00:18:11] need to buy more of the other ETFs or
+[00:18:13] sell some of the US equity ETF or
+[00:18:15] whatever. Rebalancing is not
+[00:18:17] insurmountable, but it's it's work. It's
+[00:18:19] real work that needs to be done and it
+[00:18:21] often requires some math and a
+[00:18:22] spreadsheet. Asset allocation ETFs take
+[00:18:24] that off your plate and they and they do
+[00:18:26] the rebalancing for you, which is pretty
+[00:18:27] incredible and it makes investing just
+[00:18:29] that much easier and that much more
+[00:18:31] accessible. VGRO is just one example,
+[00:18:33] but each individual would need to choose
+[00:18:35] an asset allocation or an asset
+[00:18:37] allocation product that has the mix
+[00:18:39] between stocks and bonds that makes
+[00:18:40] sense for their behavioral loss
+[00:18:42] tolerance, their ability to take risk,
+[00:18:44] and their financial goals. I've also got
+[00:18:46] a whole video on that topic on asset
+[00:18:48] allocation if you want to learn more
+[00:18:49] about that. Investing is important
+[00:18:50] because it combats inflation at a
+[00:18:52] baseline and when some risk is taken, it
+[00:18:55] offers the expectation, not the
+[00:18:56] guarantee, but the expectation of
+[00:18:58] growing your wealth above inflation for
+[00:19:00] your future financial independence. The
+[00:19:02] two main asset classes to think about,
+[00:19:04] at least at the 101 level, are stocks
+[00:19:06] and bonds, both of which are financial
+[00:19:09] assets. Stocks are more volatile and
+[00:19:11] have higher expected returns, while
+[00:19:12] bonds are less volatile and have lower
+[00:19:14] expected returns. Depending on your
+[00:19:16] goals and your ability to withstand the
+[00:19:18] volatility of your investments from day
+[00:19:20] to day, you can arrive at some mix of
+[00:19:22] stocks and bonds that make sense for you
+[00:19:24] specifically. People tend to believe
+[00:19:26] that successful investing requires
+[00:19:28] understanding the stock market, the
+[00:19:29] economy, and individual companies in
+[00:19:31] order to guess and predict what to
+[00:19:32] invest in and when to get in and out of
+[00:19:34] the market. But decades of research
+[00:19:36] suggests that these are fool's errands.
+[00:19:38] Successful investing simply requires
+[00:19:40] capturing the returns that financial
+[00:19:42] markets have to offer, which can be
+[00:19:44] accomplished using globally diversified,
+[00:19:45] lowcost index funds. This is achievable
+[00:19:48] in Canada today with the many low fee
+[00:19:50] asset allocation ETFs that we have
+[00:19:52] available to us. Thanks for watching.
+[00:19:53] I'm Ben Felix, chief investment officer
+[00:19:55] at PWL Capital. If you enjoyed this
+[00:19:57] video, I discussed the same topic in
+[00:19:59] episode 381 of the Rational Reminder
+[00:20:02] podcast with Dan Bordalotti, aka the
+[00:20:04] Canadian couch potato, the OG of index
+[00:20:07] investing education in Canada. You
+[00:20:09] should check it out.

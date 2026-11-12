@@ -1,0 +1,542 @@
+[00:00:00] Index funds are known for their ultra
+[00:00:02] low fees, which don't get me wrong are a
+[00:00:04] great attribute for an investment
+[00:00:06] product, but fees are not the only cost
+[00:00:08] that investors need to think about. The
+[00:00:10] details of index and by extension index
+[00:00:13] fund rebalancing lead to hard to see but
+[00:00:15] significant costs far in excess of index
+[00:00:18] fund fees. This fact shows cracks in the
+[00:00:21] famous arithmetic of active management.
+[00:00:23] Index fund implementation is focused on
+[00:00:26] matching index returns, minimizing
+[00:00:28] tracking error to the index, not
+[00:00:30] maximizing investment returns. A more
+[00:00:33] flexible approach that doesn't rigidly
+[00:00:35] trade to match the index could increase
+[00:00:37] returns for investors. There are some
+[00:00:39] funds doing this, but most investors
+[00:00:41] have never heard of them. I'm Ben Felix,
+[00:00:43] chief investment officer at PWL Capital,
+[00:00:45] and I'm going to tell you why index
+[00:00:46] funds, as great as they are, still have
+[00:00:48] room to improve.
+[00:00:50] [Music]
+[00:00:55] The hidden costs for index funds come
+[00:00:57] from three potentially related sources,
+[00:00:59] all occurring when index funds trade.
+[00:01:02] Adverse selection, price impact, and
+[00:01:04] mean reversion. Index funds are
+[00:01:07] synonymous with sensible investing for
+[00:01:09] good reason. They're lowcost and broadly
+[00:01:11] diversified. They beat the vast majority
+[00:01:13] of actively managed funds most of the
+[00:01:15] time. They're tax efficient and easy to
+[00:01:17] understand. And they're consistent with
+[00:01:19] foundational finance theory. Index funds
+[00:01:21] emerged from the observation in the late
+[00:01:23] 1960s and early 1970s that most active
+[00:01:26] managers who aimed to beat the market
+[00:01:28] were not actually beating market
+[00:01:30] indexes. As the evidence continued to
+[00:01:31] mount, some very smart people realized
+[00:01:33] that simply investing in the market
+[00:01:35] indexes that most managers couldn't beat
+[00:01:37] while minimizing costs could be a
+[00:01:39] winning investment strategy. The first
+[00:01:41] index fund available to retail investors
+[00:01:44] was launched in 1976 by Vanguard. And
+[00:01:47] while it was initially criticized mostly
+[00:01:49] by active managers, the index fund has
+[00:01:51] since become one of the most impactful
+[00:01:53] financial market innovations in history.
+[00:01:55] Index funds do deserve their glowing
+[00:01:57] reputation. And to be clear, I have not
+[00:02:00] changed my mind on them being the most
+[00:02:01] sensible investments for most people,
+[00:02:03] but they are not perfect. Indexes are
+[00:02:06] fundamentally designed to represent a
+[00:02:08] market or market segment, not to be an
+[00:02:10] investment. The market isn't a static
+[00:02:13] thing that stays the same forever. There
+[00:02:15] are IPOs, seasoned equity offerings,
+[00:02:17] buybacks, D-listings, and indexes add or
+[00:02:20] drop constituents based on their
+[00:02:21] inclusion criteria. Since the sole job
+[00:02:24] of an index fund is to match the returns
+[00:02:26] of the index it's tracking, they quickly
+[00:02:29] trade to reflect these changes. I'll
+[00:02:32] explain later why the specific details
+[00:02:34] of changes in market composition are
+[00:02:36] problematic for index fund investors.
+[00:02:38] But first, I want to revisit the famous
+[00:02:40] arithmetic of active management, one of
+[00:02:42] the foundations of index investing. Bill
+[00:02:44] Sharp's 1991 arithmetic of active
+[00:02:47] management states in simple terms that
+[00:02:50] in aggregate investors in actively
+[00:02:52] managed funds must underperform
+[00:02:54] investors in index funds because in
+[00:02:56] aggregate they both own the market but
+[00:02:59] active funds have higher fees and costs.
+[00:03:02] That is a simple and powerful argument
+[00:03:04] for lowcost index funds. An argument
+[00:03:06] that I have used many times myself but
+[00:03:08] few people pay attention to footnote 4
+[00:03:10] in Sharp's paper. The footnote explains
+[00:03:13] that in Sharp's model, passive managers
+[00:03:15] purchase their securities before the
+[00:03:17] beginning of the period in question and
+[00:03:19] do not sell them until after the period
+[00:03:21] ends. In other words, they don't trade
+[00:03:23] at all in the model. Sharp does
+[00:03:25] acknowledge that when passive managers
+[00:03:27] do buy or sell, they may have to trade
+[00:03:30] with active managers. At such times, the
+[00:03:32] active managers may gain from the
+[00:03:34] passive managers because of the active
+[00:03:36] managers willingness to provide desired
+[00:03:37] liquidity at a price. This is important
+[00:03:40] because in reality there is trading.
+[00:03:43] Even index funds which generally don't
+[00:03:45] trade much do have to trade to respond
+[00:03:47] to changes in the market and changes in
+[00:03:50] the index that they're tracking. Like I
+[00:03:51] mentioned earlier, companies go public
+[00:03:53] while others get delisted. Listed
+[00:03:55] companies may buy back shares or issue
+[00:03:57] shares. And indexes add or remove stocks
+[00:04:00] based on their inclusion criteria. The
+[00:04:02] fact that index funds do need to trade
+[00:04:04] breaks the basic principle of the
+[00:04:05] arithmetic of active management, at
+[00:04:07] least as it's commonly understood. It
+[00:04:09] doesn't shatter it. The general logic is
+[00:04:11] still very useful, but it at least shows
+[00:04:13] some cracks around the edges. This idea
+[00:04:15] was articulated in the 2018 paper
+[00:04:17] sharpening the arithmetic of active
+[00:04:19] management. The author argues, similar
+[00:04:21] to what I just described, that sharps
+[00:04:22] equality is based on the implicit
+[00:04:24] assumption that the market portfolio
+[00:04:26] never changes, which does not hold in
+[00:04:28] the real world. The author argues that
+[00:04:30] this leaves room for informed active
+[00:04:32] managers to add value by trading against
+[00:04:34] uninformed index funds. I actually do
+[00:04:37] buy this argument. I'm not about to sell
+[00:04:39] you on active management. Don't worry,
+[00:04:42] just stick with me for a minute. There
+[00:04:43] is evidence from multiple studies on
+[00:04:45] active management that active managers
+[00:04:47] in aggregate really do have prefee
+[00:04:49] returns above the returns of index
+[00:04:51] funds. The problem is that the high fees
+[00:04:53] of active management eat up any benefit
+[00:04:55] for investors on average. That doesn't
+[00:04:58] make this information useless, though.
+[00:05:00] I'll get to how it can be useful to
+[00:05:01] index investors or investors who think
+[00:05:03] like index investors in a minute. The
+[00:05:05] main issue for index funds is that the
+[00:05:07] nature and timing of index fund trading
+[00:05:09] results in significant quantifiable
+[00:05:11] costs that could be avoided relatively
+[00:05:13] easily with more intentional
+[00:05:15] implementation. Basically, what if we
+[00:05:17] had a fund like an index fund that was
+[00:05:19] actually designed to be an investment
+[00:05:21] rather than rigidly tracking an index
+[00:05:23] designed to represent a market? Index
+[00:05:25] fund implementation costs come in three
+[00:05:27] main forms. Adverse selection, buying
+[00:05:29] stocks when firms, the underlying
+[00:05:31] businesses issuing stock, wants to sell,
+[00:05:33] and selling when firms want to buy.
+[00:05:35] Price impact, buying stocks after they
+[00:05:38] have become more expensive due to being
+[00:05:40] included in an index and selling stocks
+[00:05:42] after they have become less expensive
+[00:05:44] due to being removed from an index. And
+[00:05:46] mean reversion, buying stocks with high
+[00:05:48] valuations that soon fall and selling
+[00:05:50] stocks with low valuations that soon
+[00:05:52] rise. Stocks added to an index tend to
+[00:05:54] have high valuations while stocks
+[00:05:56] removed tend to have relatively low
+[00:05:58] valuations. Let's start with adverse
+[00:06:00] selection. Likely the largest cost to
+[00:06:02] total market index funds like VTI. These
+[00:06:05] effects are described in the 2025 paper
+[00:06:07] index rebalancing and stock market
+[00:06:09] composition. Do index funds incur
+[00:06:11] adverse selection costs? The authors
+[00:06:14] explained that indices are subject to
+[00:06:16] adverse selection on changes to market
+[00:06:18] composition due to who is choosing to
+[00:06:20] enter or exit the market. This adverse
+[00:06:22] selection can happen when firms move
+[00:06:24] between the private and public markets
+[00:06:26] and when existing public firms issue and
+[00:06:28] buy back shares. The authors show in the
+[00:06:30] paper as we should expect that index
+[00:06:32] funds mechanically respond to these
+[00:06:34] changes in market composition and as a
+[00:06:36] result they incur adverse selection
+[00:06:38] costs. It's pretty simple when you think
+[00:06:40] about it. Firms companies that list on
+[00:06:42] the stock market are generally pretty
+[00:06:43] savvy and they act in their own best
+[00:06:45] interests. For example, firms will issue
+[00:06:48] stock when they think their share price
+[00:06:49] is high and they will buy back stock
+[00:06:51] when they think their share price is
+[00:06:53] low. Indexes quickly incorporate these
+[00:06:55] changes to market composition. Buying
+[00:06:57] stock when firms issue and selling when
+[00:06:59] they buy back and index funds follow
+[00:07:01] suit. That makes perfect sense if the
+[00:07:03] objective of the index is to represent
+[00:07:05] the market. But it puts index fund
+[00:07:07] rebalancing exactly at odds with firms
+[00:07:10] own beliefs about their share prices.
+[00:07:11] It's a similar situation for IPOs, which
+[00:07:13] tend to occur in waves, often coinciding
+[00:07:16] with high market valuations and to
+[00:07:18] underperform in the long run. I've got a
+[00:07:20] video on IPOs if you want to learn more
+[00:07:21] about that. But in short, buying IPOs on
+[00:07:24] the secondary market shortly after they
+[00:07:26] have started trading has generally been
+[00:07:27] a losing bet and index funds are buying
+[00:07:30] them. The low returns of IPOs are even
+[00:07:32] lower during IPO waves like the dot
+[00:07:34] runup. The surprising thing here is that
+[00:07:36] while the rebalancing volume of these
+[00:07:38] types of transactions make up less than
+[00:07:40] 10% of the assets of a typical index
+[00:07:42] fund, the adverse selection costs are so
+[00:07:44] large that they are able to materially
+[00:07:46] affect index fund returns. The authors
+[00:07:48] find that the long short portfolio that
+[00:07:50] buys new issuance and sells buybacks
+[00:07:53] mirroring index fund rebalancing trades
+[00:07:56] has a negative 4% annual return and a
+[00:07:58] negative 2.8% five factor alpha. This
+[00:08:01] portfolio has negative loadings on the
+[00:08:03] value and profitability factors
+[00:08:05] suggesting that index rebalancing leads
+[00:08:06] to buying growth stocks and stocks with
+[00:08:09] weak profitability which have lower
+[00:08:11] expected returns while selling value
+[00:08:13] stocks and stocks with robust
+[00:08:15] profitability which have higher expected
+[00:08:17] returns. The fact that the alpha the
+[00:08:19] portion of returns unexplained by factor
+[00:08:21] exposures is negative and statistically
+[00:08:23] significant suggests that there are
+[00:08:25] adverse selection costs beyond the
+[00:08:27] factor loadex. The long short portfolio
+[00:08:29] that buys index additions and IPOs and
+[00:08:31] sells index deletions and delistings has
+[00:08:34] an annual return of negative 5.5% with a
+[00:08:37] statistically insignificant alpha. These
+[00:08:39] findings are consistent with
+[00:08:40] observations from other research
+[00:08:42] suggesting that IPOs and seasoned equity
+[00:08:44] offerings have poor returns in general,
+[00:08:46] that firms issue stock to meet index
+[00:08:48] fund buying demand when stock valuations
+[00:08:50] are high, and that the mechanical index
+[00:08:52] fund buying of stocks after IPOs leads
+[00:08:54] to underperformance. Figuring out how
+[00:08:56] much this is actually costing index
+[00:08:57] funds is not easy to do because the same
+[00:08:59] trades affecting the index fund are
+[00:09:02] affecting the benchmark index.
+[00:09:03] Benchmarking an index fund against its
+[00:09:06] underlying index will make it look like
+[00:09:08] everything is fine. The authors get
+[00:09:10] around this issue by creating
+[00:09:11] counterfactual index funds that
+[00:09:13] rebalance on a rolling basis and allow
+[00:09:15] the period of time the index fund waits
+[00:09:17] to rebalance in response to changes in
+[00:09:19] the market composition to vary from 1
+[00:09:21] month to four years. This just delays
+[00:09:23] trading after changes in the market,
+[00:09:25] potentially reducing the effects of
+[00:09:27] adverse selection costs. The
+[00:09:28] counterfactual index fund is largely
+[00:09:30] identical to real world index funds like
+[00:09:32] VTI, but differs in how quickly it
+[00:09:34] responds to changes in the composition
+[00:09:36] of the stock market. The authors compare
+[00:09:38] these counterfactual delayed rebalancing
+[00:09:40] portfolios to a quarterly calendar-based
+[00:09:43] rebalancing portfolio, which resembles
+[00:09:45] how live index funds actually implement.
+[00:09:47] They find that the counterfactual annual
+[00:09:49] rolling rebalancing beats the quarterly
+[00:09:51] calendar rebalancing fund, the one that
+[00:09:53] resembles a real index fund by 0.32%
+[00:09:56] annualized over the full sample from
+[00:09:57] 1981 through 2023. The slower
+[00:10:00] rebalancing index has the strongest
+[00:10:01] relative returns in years after booms in
+[00:10:04] growth stocks like the 1990s where it
+[00:10:06] avoids buying equity issuance and IPOs
+[00:10:08] at high valuations. Longer rebalancing
+[00:10:10] horizons produce monotonically larger
+[00:10:13] outperformance up to 0.81% 81%
+[00:10:15] annualized with a 4-year waiting period
+[00:10:17] for rebalancing. Even if we take the
+[00:10:19] lower end of that estimate,
+[00:10:21] 0.32%, that is a big deal. VTI has an
+[00:10:24] expense ratio of
+[00:10:26] 0.03%. Which is great. But if it's
+[00:10:28] costing another 0.32% to own relative to
+[00:10:31] a more flexible rebalancing strategy,
+[00:10:33] it's actually kind of expensive. That's
+[00:10:36] it. That's adverse selection. The second
+[00:10:38] potential issue with mechanical
+[00:10:39] rebalancing is price pressure on index
+[00:10:41] reconstitution. This is distinct from
+[00:10:44] adverse selection, but has historically
+[00:10:45] had estimated costs of a similar
+[00:10:47] magnitude. When an index changes to
+[00:10:49] include or exclude a stock, those
+[00:10:51] changes are announced before index funds
+[00:10:53] buy or sell the stock. This effect
+[00:10:55] increases or decreases the price of the
+[00:10:57] stock in anticipation of it being bought
+[00:10:59] or sold in the future. But that effect
+[00:11:01] is not permanent. The result is that
+[00:11:04] index funds may have a drag on returns
+[00:11:06] stemming from their predictable buying
+[00:11:07] and selling behavior. Similar to adverse
+[00:11:10] selection, this cost is not easily
+[00:11:12] visible because it affects indexes and
+[00:11:14] index funds equally. Research on this
+[00:11:16] idea goes back to the 1980s with two
+[00:11:18] highly cited 1986 papers where the
+[00:11:20] authors document that when stocks get
+[00:11:22] added to the S&P 500, their price goes
+[00:11:24] up and that these increases are likely
+[00:11:26] due to anticipation of index funds
+[00:11:28] buying the stocks in the future. The
+[00:11:30] problem is that the price effect
+[00:11:31] reverses after the stocks have been
+[00:11:33] bought, resulting in index funds buying
+[00:11:35] at temporarily high prices. The opposite
+[00:11:37] effect happens for stocks removed from
+[00:11:39] the index. The 2011 paper, the index
+[00:11:42] premium and its hidden costs for index
+[00:11:44] funds, estimates the lower bound cost of
+[00:11:46] this index premium for S&P 500 index
+[00:11:49] funds to be 0.21% to
+[00:11:52] 0.28% annually over the period 1990 to
+[00:11:55] 2005, peaking at between 0.65% and 0.82%
+[00:11:59] in the year 2000. More recent research,
+[00:12:02] the disappearing index effect, has
+[00:12:04] argued that the effect has
+[00:12:05] counterintuitively declined over time
+[00:12:07] despite the growth of index funds. One
+[00:12:09] surprising reason for this is that since
+[00:12:10] index funds own so many stocks of all
+[00:12:12] shapes and sizes today, a stock
+[00:12:14] migrating from one index to another
+[00:12:17] reduces the price effects compared to
+[00:12:19] net buying and selling of stocks that
+[00:12:20] were not previously included in index
+[00:12:22] funds at all. A 2024 paper from
+[00:12:25] Dimensional Fund Advisors looks at index
+[00:12:26] reconstitution costs for securities
+[00:12:29] added to and removed from 10 indexes
+[00:12:31] excluding stocks that migrate across
+[00:12:33] indexes over the period 2014 to 2023.
+[00:12:36] The paper finds unsurprisingly that
+[00:12:38] trade volumes and stock prices spike
+[00:12:40] around index reconstitution dates and
+[00:12:43] then decline thereafter. The average
+[00:12:45] excess return to added or deleted
+[00:12:47] securities is 4% over the 20 trading
+[00:12:49] days leading up to reconstitution with a
+[00:12:51] reversal of negative 5.7% in the next
+[00:12:54] month. Again, index funds are buying
+[00:12:56] high, selling low based on short-term
+[00:12:58] price pressure, and then eating the
+[00:13:00] reversal when the price pressure is
+[00:13:02] gone. The authors argue that an index
+[00:13:04] tracking approach generally lacks
+[00:13:06] flexibility, which can leave returns on
+[00:13:08] the table. Another interesting point
+[00:13:09] that is less frequently discussed is the
+[00:13:11] valuations of stocks that get added to
+[00:13:13] and removed from indexes. We have
+[00:13:15] established that in addition to adverse
+[00:13:17] selection, there is still meaningful
+[00:13:19] short-term price pressure on index
+[00:13:21] inclusion and exclusion, at least for
+[00:13:23] non-migrating stocks that reverses after
+[00:13:26] index funds buy or sell. This has an
+[00:13:29] implicit cost for index funds. Looking
+[00:13:31] at longer horizons, the 2023 paper,
+[00:13:33] earning alpha by avoiding the index
+[00:13:35] rebalancing crowd shows that in the year
+[00:13:37] before S&P 500 index inclusion, stocks
+[00:13:40] tend to have very high returns and in
+[00:13:42] the year after they tend to have very
+[00:13:44] low returns. The opposite is true for
+[00:13:46] index deletions. Over such a long time
+[00:13:48] frame, this can't all be the index
+[00:13:50] inclusion effect. Instead, the author
+[00:13:52] showed that additions are 92% more
+[00:13:54] expensive based on multiple valuation
+[00:13:56] ratios than the market and discretionary
+[00:13:58] deletions are 55% cheaper than the
+[00:14:01] market at the times of their respective
+[00:14:02] additions and deletions. This total
+[00:14:05] effect has declined in the second half
+[00:14:06] of the sample, but from 2005 to 2021,
+[00:14:09] the total one-year difference in returns
+[00:14:11] between index additions and deletions is
+[00:14:14] still a statistically significant
+[00:14:16] 14.8% in favor of deletions. This is
+[00:14:19] likely a combination of the index
+[00:14:20] inclusion effect and a mean reversion
+[00:14:22] related to valuations. The authors show
+[00:14:24] that alternative index fund
+[00:14:26] implementations, including delaying
+[00:14:28] index rebalancing by 12 months after a
+[00:14:30] change in the index, can add up to 0.23%
+[00:14:33] to index fund returns. Both the index
+[00:14:35] inclusion effect and the buy high sell
+[00:14:37] low effect would be less pronounced for
+[00:14:39] a total market fund like VTI than an S&P
+[00:14:42] 500 fund like VO. But the adverse
+[00:14:45] selection cost discussed earlier still
+[00:14:47] applies to VTI from multiple angles.
+[00:14:49] Adverse selection, the index inclusion
+[00:14:51] effect, and buying high and selling low.
+[00:14:53] Index funds are not as efficient as they
+[00:14:55] could be. To bring this back to
+[00:14:58] practical reality, Dimensional Fund
+[00:15:00] Advisors, a fund company that I reviewed
+[00:15:01] in detail in a recent video, is known
+[00:15:03] for funds that tilt towards certain
+[00:15:05] types of stocks like small caps, value
+[00:15:07] stocks, and stocks with robust
+[00:15:08] profitability in an effort to beat the
+[00:15:10] market. They look a lot like index
+[00:15:12] funds, but they have much more flexible
+[00:15:14] implementations. While their bread and
+[00:15:16] butter is pursuing small cap and value
+[00:15:18] stocks, they do run a fund that aims to
+[00:15:20] simply capture the US market return. It
+[00:15:22] does not have any tilts towards small
+[00:15:24] cap and value stocks or any tilts at
+[00:15:26] all. But it does follow Dimensional's
+[00:15:28] more flexible implementation. It is, if
+[00:15:30] I may, a non-indexed index fund. If we
+[00:15:32] put it side by side with something like
+[00:15:34] VTI, they almost identical in terms of
+[00:15:36] factor exposures, market cap exposures,
+[00:15:39] sector exposures, and top holdings. But
+[00:15:41] DFUS does not follow an index and does
+[00:15:44] not have rigid rebalancing rules to
+[00:15:46] follow. Dimensional also delays
+[00:15:48] investing in IPOs to avoid the messiness
+[00:15:50] that tends to happen immediately after
+[00:15:51] listing as the market figures out how to
+[00:15:53] value the stock. Full disclosure real
+[00:15:55] quick, my firm uses Dimensional Fund
+[00:15:57] Advisor funds, though we don't use this
+[00:15:59] fund specifically because we actually
+[00:16:00] want the tilts towards small cap and
+[00:16:02] value stocks, but we as a firm are not
+[00:16:04] paid by Dimensional and I am not being
+[00:16:06] paid to say this. I just think it's a
+[00:16:08] really interesting example because it
+[00:16:09] fits the topic so well. This fund is
+[00:16:11] basically the answer to the question,
+[00:16:12] how would you build a fund with all the
+[00:16:14] positive attributes of an index fund and
+[00:16:16] none of the downsides? The fact that
+[00:16:18] this non-indexed index fund exists is
+[00:16:20] itself interesting, but its performance
+[00:16:23] is even more interesting because of how
+[00:16:24] well it fits the data. Looking at
+[00:16:26] adverse selection, price impact, and
+[00:16:28] buying high and selling low, it would
+[00:16:30] not be unreasonable to expect a total
+[00:16:32] market fund that operates with more
+[00:16:34] flexibility and delays trading around
+[00:16:36] changes in market composition to
+[00:16:38] outperform an otherwise similar
+[00:16:39] mechanically rebalanced index fund by
+[00:16:41] somewhere between 30 and 80 basis points
+[00:16:44] on average, if not more. Since it listed
+[00:16:46] as an ETF on June 14, 2021 through March
+[00:16:50] 31st, 2025, DFUS, which has an expense
+[00:16:53] ratio of nine basis points, has
+[00:16:56] outperformed VTI, which has an expense
+[00:16:58] ratio of three basis points by 56 basis
+[00:17:01] points annualized net of fees. This fund
+[00:17:04] did exist as a mutual fund with a
+[00:17:06] different strategy prior to becoming an
+[00:17:07] ETF, so using the correct start date is
+[00:17:10] important. Admittedly, over such a short
+[00:17:12] period of time, this could just be
+[00:17:14] noise. And due to tracking error, it
+[00:17:16] could reverse in the future, but you
+[00:17:18] can't deny that it's interesting to see
+[00:17:20] the live implementation of these ideas
+[00:17:22] performing within the range of how the
+[00:17:23] research discussed in this video would
+[00:17:25] predict. Index funds are one of the best
+[00:17:27] things to happen to investors in
+[00:17:29] history. They make investing in the
+[00:17:30] stock market and beating the vast
+[00:17:32] majority of active managers easy for
+[00:17:34] anyone to do. Despite them being a huge
+[00:17:36] upgrade from expensive traditional
+[00:17:38] active management, indexes were never
+[00:17:40] designed to be investments. The nature
+[00:17:42] of indexes and of funds that track them
+[00:17:44] results in hidden costs related to
+[00:17:46] adverse selection, price impact, and
+[00:17:48] mean reversion. Together, these
+[00:17:50] inefficiencies could be costing index
+[00:17:52] investors an order of magnitude more
+[00:17:54] than index fund fees. With some small
+[00:17:56] adjustments mostly related to
+[00:17:58] flexibility around trading, investors
+[00:18:00] can recapture those lost returns and
+[00:18:02] through a live products doing so
+[00:18:04] successfully. I do want to reiterate
+[00:18:06] that I am not saying index funds are bad
+[00:18:08] investments. I'll quote the author of
+[00:18:09] sharpening the arithmetic of active
+[00:18:11] management. I think that lowcost index
+[00:18:13] funds are one of the most
+[00:18:14] investor-friendly inventions in finance
+[00:18:16] and this paper should not be used as an
+[00:18:18] excuse by active managers who charge
+[00:18:20] high fees while adding little or no
+[00:18:22] value. I feel the same way. But indexes
+[00:18:24] were never designed to be investments.
+[00:18:26] Designing an investment that takes all
+[00:18:28] the good aspects of index funds, low
+[00:18:30] cost, broad diversification, tax
+[00:18:32] efficiency, but implements them
+[00:18:34] intentionally to maximize investment
+[00:18:35] returns rather than mechanically
+[00:18:37] following an index is an idea that has
+[00:18:39] merit both in theory and as we just saw
+[00:18:42] in practice. Thanks for watching. I'm
+[00:18:44] Ben Felix, chief investment officer at
+[00:18:46] PWL Capital. Tell me what you think
+[00:18:48] about non-indexed index investing in the
+[00:18:50] comments.

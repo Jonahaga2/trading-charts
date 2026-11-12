@@ -1,0 +1,644 @@
+[00:00:00] Canada just got a new suite of ETFs that
+[00:00:02] could change how a lot of Canadian
+[00:00:03] investors build their portfolios. They
+[00:00:05] have all the good aspects of index
+[00:00:07] funds, low fees, low turnover, and broad
+[00:00:09] diversification, while making some
+[00:00:11] evidence-based tweaks to improve
+[00:00:13] expected returns. If you've been
+[00:00:15] watching this channel, you've heard me
+[00:00:16] talk about ETF slop. These ETFs are not
+[00:00:20] slop, and I'm going to tell you why. I'm
+[00:00:22] Ben Felix, chief investment officer at
+[00:00:24] PWL Capital, and I'm going to tell you
+[00:00:25] about the new Avantis ETFs from CIBC.
+[00:00:33] This video is not meant to make you drop
+[00:00:35] your index fund strategy and go all in
+[00:00:37] on these new ETFs. These funds won't be
+[00:00:39] for everyone, and low-cost index funds
+[00:00:41] are still a sensible option for most
+[00:00:43] people. All I'm aiming to do in this
+[00:00:44] video is tell you what these new funds
+[00:00:46] are, the theory and evidence supporting
+[00:00:48] them, and uh why they are an interesting
+[00:00:50] development for Canadian investors. That
+[00:00:52] said, if you're currently holding the
+[00:00:53] VEQT or XEQT or any of the other EQTs in
+[00:00:57] your RRSP, TFSA, or whatever,
+[00:00:59] you'll want to pay attention. I want to
+[00:01:01] note this video is not sponsored. I have
+[00:01:03] no financial relationship with CIBC or
+[00:01:05] Avantis, and have no conflicts of
+[00:01:07] interest to disclose. Before we can get
+[00:01:09] into the funds themselves, we have to
+[00:01:10] talk about why they're worth talking
+[00:01:12] about. A lot of Canadians still invest
+[00:01:13] in old-school actively managed funds,
+[00:01:15] which represent over 80% of the Canadian
+[00:01:18] fund market based on year-end 2024 data.
+[00:01:21] Active management is, broadly speaking,
+[00:01:22] a losing game. Active managers rarely
+[00:01:25] outperform the market, especially over
+[00:01:27] longer time horizons. That means the
+[00:01:29] vast majority of Canadian investors are
+[00:01:30] still paying well over 1% in fund fees,
+[00:01:33] probably to one of the big five Canadian
+[00:01:35] banks, to probably underperform the
+[00:01:37] market. Not a great situation, but there
+[00:01:40] are better alternatives increasingly
+[00:01:41] gaining traction today, like low-cost
+[00:01:43] index funds. Low-cost index funds have
+[00:01:45] been consistently gaining market share
+[00:01:47] since they were first launched by
+[00:01:48] Vanguard in 1976.
+[00:01:50] An index fund simply replicates the
+[00:01:52] holding of an index, which is a list of
+[00:01:54] stocks designed to represent a stock
+[00:01:56] market. Index funds make sense because
+[00:01:58] they keep costs low and capture the
+[00:01:59] returns of the broad market rather than
+[00:02:02] unsuccessfully trying to beat it like
+[00:02:04] like actively managed funds do. This
+[00:02:06] works as long as markets are efficient
+[00:02:08] and active managers, to their credit,
+[00:02:10] actually keep markets efficient through
+[00:02:12] all the analysis, trading, and stock
+[00:02:13] selection they do in their effort to
+[00:02:16] outperform, even though that effort
+[00:02:17] doesn't usually deliver excess returns
+[00:02:19] after fees to investors. Active
+[00:02:21] investors effectively pay for the cost
+[00:02:23] of keeping markets efficient in exchange
+[00:02:25] for a tiny chance of outperformance,
+[00:02:27] while index funds reap the benefits.
+[00:02:29] Index funds are the investing equivalent
+[00:02:31] of never interrupt your enemy when
+[00:02:33] they're making a mistake. All that said,
+[00:02:35] index funds, while in my view a huge
+[00:02:37] upgrade from traditional active
+[00:02:38] management for most investors most of
+[00:02:39] the time, are not perfect. Many index
+[00:02:42] funds track an index that weights its
+[00:02:43] holdings by their market capitalization.
+[00:02:46] They are cap-weighted. This means that
+[00:02:48] index funds will hold more weight in the
+[00:02:50] biggest stocks and less weight in the
+[00:02:51] smaller stocks. There's nothing
+[00:02:53] inherently wrong with market
+[00:02:54] capitalization weighting. Owning the
+[00:02:55] market gives you exposure to the equity
+[00:02:57] risk premium, which has historically
+[00:02:59] delivered solid long-term returns for
+[00:03:00] investors, but since index funds were
+[00:03:03] first created in the 1970s, financial
+[00:03:05] economics has identified other return
+[00:03:07] premiums, premiums that typical index
+[00:03:09] fund Canadians are increasingly
+[00:03:10] investing in do not capture. Basically,
+[00:03:13] we've known for a long time that stocks
+[00:03:15] have higher expected returns than bonds,
+[00:03:17] which makes sense in theory and has
+[00:03:19] worked out in practice, but we also know
+[00:03:21] that certain types of stocks have higher
+[00:03:22] expected returns than others. By tilting
+[00:03:25] your portfolio toward these types of
+[00:03:27] stocks, you can capture higher expected
+[00:03:29] returns. The same theoretical principles
+[00:03:31] that explain why stocks should
+[00:03:33] outperform bonds also tell us that some
+[00:03:35] types of stocks should outperform
+[00:03:38] others. I did a deep dive on this in a
+[00:03:39] recent video about the famous 1993 Fama
+[00:03:42] and French paper on the common risk
+[00:03:43] factors in stocks and bonds. In short,
+[00:03:46] theory supports different expected
+[00:03:47] returns across stock types, and the
+[00:03:50] empirical data backs it up. The other
+[00:03:52] issue is that index funds also by their
+[00:03:54] nature of tracking an index trade when
+[00:03:56] the composition of the index changes.
+[00:03:58] For example, if there is an initial
+[00:04:00] public offering, shares of the newly
+[00:04:02] listed company will be added to many
+[00:04:04] indices and index funds will then buy
+[00:04:06] them to match the index. There are other
+[00:04:08] examples too like existing companies
+[00:04:10] issuing more stock and companies buying
+[00:04:12] back stock. These are all changes in
+[00:04:13] market composition. Research on this
+[00:04:15] suggests that the systematic trading
+[00:04:17] done by index funds to match changes in
+[00:04:19] market composition results in an
+[00:04:20] implicit cost of somewhere around 0.5%
+[00:04:23] per year. I did a whole video on this
+[00:04:25] too if you want to learn more. Between
+[00:04:27] there being multiple known drivers of
+[00:04:28] expected returns that go beyond what cap
+[00:04:30] weighted index funds capture and index
+[00:04:32] funds having their own implementation
+[00:04:34] quirks with implied costs that far
+[00:04:35] exceed their fees, constructing a
+[00:04:37] portfolio that improves on indexing is
+[00:04:40] an interesting premise. That might sound
+[00:04:42] like active management which I just
+[00:04:43] finished telling you does not work, but
+[00:04:45] unlike trying to pick stocks or time the
+[00:04:46] market, this approach is like a slightly
+[00:04:48] more advanced version of the principles
+[00:04:50] behind market cap weighted index funds.
+[00:04:53] Investing this way still results in low
+[00:04:54] cost broadly diversified portfolios, but
+[00:04:57] rather than just trying to capture the
+[00:04:58] equity risk premium while mechanically
+[00:05:00] following an index, it aims to capture
+[00:05:02] multiple return premiums while being
+[00:05:04] intentional about implementation.
+[00:05:06] Dimensional Fund Advisors has been a
+[00:05:07] leader in this space since 1981, but
+[00:05:09] their funds are not super accessible to
+[00:05:11] Canadians. Their products are mostly
+[00:05:12] limited to financial advisors. My firm
+[00:05:15] PWL Capital does make extensive use of
+[00:05:17] Dimensional funds and I invest in them
+[00:05:19] personally. As always, Dimensional did
+[00:05:21] not pay me to say any of this.
+[00:05:22] Dimensional did launch publicly
+[00:05:24] available ETFs in the US in 2020, but
+[00:05:26] not in Canada. As a result, Canadian
+[00:05:29] investors without a financial advisor
+[00:05:30] have been left out in the cold with
+[00:05:32] respect to this investment strategy. I
+[00:05:34] put together a model portfolio for
+[00:05:36] Canadian investors back in 2020
+[00:05:38] consisting of Canadian listed ETFs and
+[00:05:40] two US listed ETFs. I'll be the first to
+[00:05:42] admit that the model portfolio was a bit
+[00:05:44] clunky. I think a lot of people might
+[00:05:46] have tried to implement it and then
+[00:05:47] abandon it. It did mean buying and
+[00:05:49] rebalancing multiple ETFs, dealing with
+[00:05:51] currency conversion to purchase US
+[00:05:53] listed ETFs, and considering the foreign
+[00:05:55] withholding tax implications of US
+[00:05:57] listed ETFs of foreign stocks in some
+[00:06:00] Canadian account types. Blogger Rob
+[00:06:02] Engen, who's a friend of mine, predicted
+[00:06:03] that there would be thousands of Ben
+[00:06:05] Felix investing refugees who tried to
+[00:06:08] implement my model and then realized it
+[00:06:10] was too much work, later abandoning it
+[00:06:12] in favor of easy-to-use asset allocation
+[00:06:14] ETFs. The good news is that a direct
+[00:06:16] competitor to Dimensional Fund Advisors,
+[00:06:18] Avantis Investors, has now launched
+[00:06:20] Canadian listed ETFs including a single
+[00:06:23] ticker asset allocation ETF like the
+[00:06:26] EQTY ETFs through CIBC. Avantis has been
+[00:06:29] around since 2019 when they were
+[00:06:31] launched by a group of former
+[00:06:32] Dimensional employees including their
+[00:06:34] former co-CEO and CIO Eduardo Repetto.
+[00:06:38] Avantis is sort of a new fund company,
+[00:06:40] but they exist inside of American
+[00:06:42] Century Investments which has been
+[00:06:43] around since 19 58 and manages more than
+[00:06:46] $300 billion today. Avantis is cut from
+[00:06:49] the same cloth as Dimensional and is
+[00:06:51] backed by a long-standing and a large
+[00:06:53] asset manager. Like I think they're not
+[00:06:54] going to disappear is the point there.
+[00:06:56] Dimensional and Avantis do each have
+[00:06:57] their own flavor of the approach, but
+[00:06:59] the underlying principles are
+[00:07:01] fundamentally similar. This CIBC ETF
+[00:07:04] launch is a big deal for a few reasons.
+[00:07:05] The Canadian listed products mean that
+[00:07:07] Canadian investors don't need to convert
+[00:07:09] currency to buy them, which is great.
+[00:07:11] The Canadian listed ETFs hold securities
+[00:07:14] directly which eliminates the double
+[00:07:15] withholding tax concern for foreign
+[00:07:17] stocks in TFSA, RESP, and taxable
+[00:07:20] accounts.
+[00:07:21] And the Canadian listed international
+[00:07:23] funds carve out the Canadian allocation
+[00:07:25] while Canada is included in Avantis's US
+[00:07:28] listed international funds. Small
+[00:07:30] detail, but it does matter. What this
+[00:07:31] means is that Canadian investors get a
+[00:07:33] hassle-free way to invest in this type
+[00:07:35] of strategy without needing to use US
+[00:07:38] listed funds. In the remainder of this
+[00:07:39] video, I want to walk through what some
+[00:07:41] of these funds look like and how they
+[00:07:43] compare to market cap weighted index
+[00:07:45] funds. Then I'll get properly nerdy
+[00:07:48] and explain the underlying principles
+[00:07:49] behind this approach in more detail,
+[00:07:51] which is important to understand for
+[00:07:52] anyone who wants to pursue this
+[00:07:53] investment strategy. One thing to note
+[00:07:55] is that as I have mentioned, these are
+[00:07:56] not index funds. Since they don't track
+[00:07:59] an index, they do address one of the
+[00:08:00] current concerns that many investors
+[00:08:02] have. They do not mechanically invest in
+[00:08:04] the shares of newly listed IPOs just
+[00:08:06] because an index told them to. I talked
+[00:08:09] to Avantis about their approach here.
+[00:08:10] They don't have a blanket exclusion for
+[00:08:12] newly listed companies, which
+[00:08:13] Dimensional Fund Advisors does, and they
+[00:08:15] will include them if they have enough
+[00:08:17] information on their full set of
+[00:08:18] financials and the company trades at an
+[00:08:20] attractive price relative to those
+[00:08:22] financials. They are well aware of the
+[00:08:24] issues around index inclusion that I
+[00:08:26] mentioned in my last video on IPOs, and
+[00:08:28] they're careful not to get caught up in
+[00:08:29] the mechanical price increases following
+[00:08:31] index inclusion. Before I walk through
+[00:08:33] each fund, here's the mental model.
+[00:08:35] Every one of these funds does the same
+[00:08:37] basic thing. They tilt toward smaller,
+[00:08:39] cheaper, and more profitable stocks
+[00:08:41] relative to their benchmarks. The
+[00:08:42] difference is how aggressively each one
+[00:08:44] tilts and which part of the market it
+[00:08:46] covers. The more aggressive the tilt,
+[00:08:48] the higher the expected return, but also
+[00:08:50] the bigger the tracking error. That's
+[00:08:52] like performance that's different from
+[00:08:54] the index. Keep that trade-off in mind
+[00:08:56] as I go through each one because it does
+[00:08:58] matter for investor psychology. Okay,
+[00:09:00] let's dig into what these funds look
+[00:09:01] like under the hood starting with CACE,
+[00:09:04] the Avantis CIBC Canadian Equity ETF. It
+[00:09:06] has a management fee of 0.19%.
+[00:09:09] Note that the management fee is not the
+[00:09:11] MER, which can't be calculated until the
+[00:09:13] fund has been operating for a while. The
+[00:09:15] MER will be slightly higher, but not too
+[00:09:17] much, roughly just by the amount of
+[00:09:18] sales tax on the management fee.
+[00:09:20] This is a Canadian total market fund
+[00:09:22] that tilts moderately toward higher
+[00:09:24] expected return stocks. The way that
+[00:09:26] this shows up in the fund's
+[00:09:27] characteristics is that it has a lower
+[00:09:28] average market capitalization than the
+[00:09:30] market cap weighted index, meaning that
+[00:09:33] it underweights larger stocks and
+[00:09:34] overweights smaller stocks. It has a
+[00:09:37] higher average book-to-market ratio,
+[00:09:39] meaning that it overweights low-priced
+[00:09:41] stocks and underweights high-priced
+[00:09:42] stocks. And it has a higher average
+[00:09:45] profits-to-book ratio, which means that
+[00:09:47] it is underweight less profitable stocks
+[00:09:49] and overweight more profitable stocks.
+[00:09:51] Overall, you can see that the portfolio
+[00:09:52] tilts smaller, cheaper, and more
+[00:09:54] profitable than the Canadian market. The
+[00:09:56] biggest underweight is in mega-cap
+[00:09:57] stocks with high prices and low
+[00:09:59] profitability, and the biggest
+[00:10:00] overweight is in small-cap stocks with
+[00:10:02] low prices and high profitability. This
+[00:10:04] reflects the underlying principles of
+[00:10:06] Avantis as I described earlier. This
+[00:10:08] ETF's sector mix is generally pretty
+[00:10:10] close to the Canadian market with some
+[00:10:11] overweights and underweights. Before I
+[00:10:13] continue, I do want to reiterate one of
+[00:10:15] the big tradeoffs of setting portfolios
+[00:10:17] up this way. Being different from the
+[00:10:18] market means you will perform
+[00:10:20] differently from it. Obviously.
+[00:10:23] And increasingly so the more different
+[00:10:24] you are. In the long run, we expect that
+[00:10:26] difference to be positive from the tilts
+[00:10:28] that Avantis applies. But the reality is
+[00:10:30] that there can be long periods where
+[00:10:32] tilting a portfolio towards smaller,
+[00:10:34] cheaper, and more profitable stocks
+[00:10:36] leads to underperformance. The US market
+[00:10:38] has been a recent example of this where
+[00:10:39] the largest companies in the market,
+[00:10:41] often companies with high prices, have
+[00:10:43] delivered exceptional returns. Tilting
+[00:10:45] away from those stocks and towards
+[00:10:47] smaller and cheaper stocks has been
+[00:10:49] painful for many years now in the US
+[00:10:51] market, though it has paid off in other
+[00:10:52] markets. Those performance differences
+[00:10:54] relative to market indexes can be really
+[00:10:56] hard for some investors to live through.
+[00:10:59] If you're worried about short-term
+[00:11:00] underperformance and even the
+[00:11:01] possibility of long-term
+[00:11:03] underperformance, this approach may not
+[00:11:04] be for you. If you're wondering whether
+[00:11:06] this kind of approach makes sense for
+[00:11:08] your specific psychology, account types,
+[00:11:10] tax brackets, time horizon, all that
+[00:11:12] kind of stuff, this is the kind of
+[00:11:13] question a good portfolio manager can
+[00:11:15] answer in the context of a financial
+[00:11:16] plan. There's a link in the description
+[00:11:18] if you want to talk to someone at my
+[00:11:19] firm, PWL Capital. Okay, onto the US
+[00:11:22] equity funds from Avantis. CALV, the
+[00:11:25] Avantis CIBC US Large Cap Value ETF. It
+[00:11:28] has a management fee of 0.25%.
+[00:11:31] It focuses on large-cap stocks, as the
+[00:11:33] name suggests, but tilts towards
+[00:11:35] smaller, cheaper, and more profitable
+[00:11:36] large-caps while excluding small stocks
+[00:11:38] and high price stocks entirely. CALV is
+[00:11:41] similar to the US-listed AVLV, which has
+[00:11:44] beaten the US market since it launched
+[00:11:45] in September 2021. I know that's too
+[00:11:48] short of a horizon to tell us anything
+[00:11:50] useful, but it's the data we have, and
+[00:11:52] it's worth mentioning. CAUS, the Avantis
+[00:11:55] CICC
+[00:11:55] US All Cap Equity ETF, has a management
+[00:11:58] fee of 0.19%.
+[00:12:00] It's a US total market fund with
+[00:12:02] moderate tilts towards cheaper and more
+[00:12:04] profitable stocks. This is an
+[00:12:05] interesting fund for total US market
+[00:12:07] exposure without taking on too much
+[00:12:09] tracking error. That's the performance
+[00:12:11] differences relative to the market since
+[00:12:12] its tilts are not that aggressive. Its
+[00:12:15] US-listed equivalent has beaten the US
+[00:12:17] market since it launched in September
+[00:12:19] 2019.
+[00:12:20] CAUV, the Avantis CICC
+[00:12:23] US Small Cap Value ETF, has a management
+[00:12:26] fee of 0.35%.
+[00:12:27] It's heavily tilted towards the smallest
+[00:12:30] cheapest and most profitable stocks in
+[00:12:31] the US market while excluding large
+[00:12:33] stocks entirely. This fund, while having
+[00:12:35] high expected returns, should be
+[00:12:37] expected to have a lots of tracking
+[00:12:38] error since it's very different from the
+[00:12:41] market. Its US-listed equivalent, AVUV,
+[00:12:43] has beaten the US market since it
+[00:12:45] launched in September 2019, but you can
+[00:12:47] also see in the chart how significant
+[00:12:49] the performance difference has been over
+[00:12:51] intermediate periods, including some
+[00:12:52] periods of underperformance. The
+[00:12:54] international funds follow a similar
+[00:12:55] logic, so I'll move through them a bit
+[00:12:57] faster before getting to what is, in my
+[00:12:59] opinion, the most exciting fund in the
+[00:13:00] lineup. CADE is the Avantis CICC
+[00:13:03] International Equity ETF. It has a
+[00:13:05] management fee of 0.29%.
+[00:13:07] It invests in total market international
+[00:13:09] developed market stocks with a moderate
+[00:13:11] tilt towards smaller, cheaper, and more
+[00:13:13] profitable companies. It doesn't have an
+[00:13:15] exact US-listed equivalent since CADE,
+[00:13:18] as I mentioned earlier, excludes Canada,
+[00:13:20] while the US-listed AVDE includes it,
+[00:13:23] but AVDE, for what it's worth, has
+[00:13:25] beaten international developed markets
+[00:13:27] since it launched in September 2019.
+[00:13:29] CASV is the Avantis CIBC Global Small
+[00:13:33] Cap Value ETF with a management fee of
+[00:13:35] 0.39%. It offers exposure to a globally
+[00:13:38] diversified portfolio of small cap value
+[00:13:40] stocks that emphasizes the smallest,
+[00:13:42] lowest priced, and most profitable
+[00:13:43] companies. Again, this fund should be
+[00:13:45] expected to perform very differently
+[00:13:47] from the global stock market due to its
+[00:13:48] exclusion of the larger stocks and
+[00:13:50] emphasis on the lowest price and highest
+[00:13:52] profitability small caps.
+[00:13:54] There's no US equivalent for CASV, which
+[00:13:56] includes US and international developed
+[00:13:58] stocks, but AV DV, the Avantis
+[00:14:01] International Small Cap Value ETF, which
+[00:14:03] excludes US stocks, has beaten
+[00:14:04] international developed markets by a
+[00:14:06] wide margin since it launched. There's
+[00:14:08] also an emerging markets fund CAEM with
+[00:14:11] a management fee of 0.39%
+[00:14:13] for which the characteristics details
+[00:14:15] have not yet been published, but it
+[00:14:17] follows the same principles of tilting
+[00:14:18] toward higher expected return stocks
+[00:14:20] across emerging markets. The US listed
+[00:14:23] version of this fund, AVEM, has
+[00:14:25] outperformed cap-weighted emerging
+[00:14:26] markets since inception. All those
+[00:14:28] performance histories were short since
+[00:14:30] Avantis hasn't been around that long,
+[00:14:31] but if you want to see how this
+[00:14:32] investment approach has performed over
+[00:14:34] the long run, I detailed Dimensional's
+[00:14:36] long-term performance relative to
+[00:14:37] comparable Vanguard funds in another
+[00:14:39] video, and they have decades of history.
+[00:14:41] I know there was a lot of tickers and
+[00:14:42] your head might be spinning wondering
+[00:14:43] how to use them, which is why CAGE, the
+[00:14:46] Avantis CIBC All Equity Asset Allocation
+[00:14:48] ETF, is probably the most exciting
+[00:14:50] product in the lineup. It's like VEQT,
+[00:14:52] Vanguard's Equity Asset Allocation ETF,
+[00:14:54] but made up of the ETFs I just
+[00:14:56] described. So, you get exposure to a
+[00:14:58] globally diversified portfolio of stocks
+[00:15:00] with a Canadian home country bias and
+[00:15:02] built-in tilts toward the type of stocks
+[00:15:03] I've been talking about. This is a
+[00:15:05] one-stop shop for a low-cost broadly
+[00:15:07] diversified portfolio that takes full
+[00:15:08] advantage of the last 30 years of
+[00:15:10] financial economics research and
+[00:15:12] mitigates the nuanced downsides of index
+[00:15:14] funds all in a single ticker. Just like
+[00:15:16] VEQT and XEQT and all the other EQTs
+[00:15:19] that we have in Canada. It even has its
+[00:15:21] own subreddit just like the others. To
+[00:15:23] understand whether you should care about
+[00:15:24] this, I'll get a little nerdy, and by
+[00:15:26] that I mean excessively nerdy, since I
+[00:15:28] know you guys are into that kind of
+[00:15:29] thing. In their 2015 paper detailing
+[00:15:31] their five-factor asset pricing model,
+[00:15:33] Eugene Fama and Ken French explain the
+[00:15:35] theoretical rationale for the factors in
+[00:15:37] their empirical asset pricing model. The
+[00:15:39] dividend discount model, which is a
+[00:15:40] model for what the price of a stock
+[00:15:42] should be, says that the theoretical
+[00:15:44] value of a share of stock is the
+[00:15:45] discounted value of expected dividends
+[00:15:47] per share. Equation one here shows that
+[00:15:49] the price M at time T is equal to the
+[00:15:51] expected future dividends per share
+[00:15:53] discounted at the long-term average
+[00:15:55] expected stock return R.
+[00:15:57] Miller and Modigliani's famous 1961
+[00:16:00] paper showed that given investment
+[00:16:01] policy, dividend policy is irrelevant to
+[00:16:04] the valuation of shares. Yes, this is
+[00:16:05] the same reason that dividends are
+[00:16:07] irrelevant when evaluating the expected
+[00:16:08] returns of a stock. With dividend policy
+[00:16:11] irrelevance, the value of expected
+[00:16:12] dividends is equal to expected earnings
+[00:16:14] minus expected investment. Following
+[00:16:16] Miller and Modigliani, the total market
+[00:16:18] value of the firm's stock is given by
+[00:16:20] equation two. Here we have the expected
+[00:16:22] earnings and the expected change in book
+[00:16:24] equity, which is another way of saying
+[00:16:26] asset growth or investment. Scaling both
+[00:16:28] sides of equation two by the book value
+[00:16:30] of equity, equation three gives the
+[00:16:32] theoretical valuation equation as
+[00:16:34] presented by Fama and French in their
+[00:16:35] 2015 paper. This valuation equation
+[00:16:38] makes three statements about expected
+[00:16:40] stock returns. One, if we hold
+[00:16:41] everything in equation three constant
+[00:16:43] except for the market value of the stock
+[00:16:44] M and the expected stock return R, then
+[00:16:47] a lower ratio of market value to book
+[00:16:50] value must imply a higher expected stock
+[00:16:52] return. All else equal, a company with a
+[00:16:54] lower price must have a higher discount
+[00:16:56] rate. This is called the value premium.
+[00:16:58] Two, if we hold everything in equation
+[00:17:00] three constant except for expected
+[00:17:02] future earnings and the expected stock
+[00:17:04] return, then higher expected earnings
+[00:17:06] must imply a higher expected stock
+[00:17:08] return. All else equal, if two companies
+[00:17:10] trade at the same price, the company
+[00:17:11] with higher profits must have a higher
+[00:17:13] discount rate. This is an expression of
+[00:17:15] the profitability premium. The discount
+[00:17:17] rate is sort of interchangeable with the
+[00:17:19] expected return.
+[00:17:20] Three, if we hold everything in equation
+[00:17:22] three constant except for the expected
+[00:17:23] growth in book value of equity and the
+[00:17:25] expected stock return, then higher
+[00:17:26] expected asset growth must imply a lower
+[00:17:29] expected stock return. All else equal,
+[00:17:31] if two companies trade at the same
+[00:17:32] price, the company with higher
+[00:17:34] investment must have a lower discount
+[00:17:36] rate. This is an expression of the
+[00:17:38] investment premium. To bring it back to
+[00:17:40] the Avantis ETFs, they use these
+[00:17:42] valuation concepts to systematically
+[00:17:44] tilt their holdings towards smaller,
+[00:17:46] cheaper, and more profitable companies,
+[00:17:48] targeting companies with quantifiably
+[00:17:50] higher expected returns. While the
+[00:17:52] theory is there to support it, the
+[00:17:53] reason that these ideas are interesting
+[00:17:55] to investors is that these premiums have
+[00:17:57] existed in stock returns around the
+[00:17:59] world as far back as we have data. That
+[00:18:01] does not mean that stocks with these
+[00:18:02] characteristics will always outperform.
+[00:18:04] They can have and have had some periods
+[00:18:07] of severe underperformance, but they
+[00:18:09] have outperformed in the long run and
+[00:18:11] over most historical time periods. An
+[00:18:13] important insight from the valuation
+[00:18:15] equation and the observed empirical
+[00:18:17] characteristics of stocks is that the
+[00:18:18] premiums should not be considered in
+[00:18:20] isolation. For example, a portfolio that
+[00:18:22] focuses on profitability without
+[00:18:24] controlling for relative price is likely
+[00:18:26] to result in a portfolio high-priced
+[00:18:28] growth stocks. Think overpaying for
+[00:18:30] growth. And a portfolio that focuses on
+[00:18:32] value without controlling for
+[00:18:33] profitability is likely to result in a
+[00:18:36] portfolio of stocks with weak
+[00:18:37] profitability. Think cheap for a reason.
+[00:18:40] These characteristics are related to
+[00:18:42] each other and those relationships can't
+[00:18:44] be ignored. The stocks with the highest
+[00:18:46] expected returns in the market will tend
+[00:18:47] to be the stock with both low relative
+[00:18:49] prices and robust profitability. This
+[00:18:52] makes targeting value and profitability
+[00:18:54] jointly one of the most important
+[00:18:55] aspects of managing a portfolio
+[00:18:57] targeting these expected return
+[00:18:58] premiums, and it is exactly what Avantis
+[00:19:01] is doing. This isn't only about earning
+[00:19:03] higher expected returns, either. It's
+[00:19:04] about targeting multiple return premiums
+[00:19:06] that may show up at different times. For
+[00:19:09] example, over a a where the equity risk
+[00:19:11] premium, that is what you get with a
+[00:19:12] market cap weighted index fund, does
+[00:19:15] poorly, other premiums may do well. It's
+[00:19:17] not really diversification since we're
+[00:19:19] not adding any new assets, but it is
+[00:19:21] providing access to more sources of
+[00:19:23] expected return, which can mean a more
+[00:19:25] reliably positive long-term outcome. One
+[00:19:28] notable example is the US lost decade
+[00:19:30] from 1999 through 2010. The US market
+[00:19:33] was flat for more than a decade, but
+[00:19:35] small cap and value stocks in the US
+[00:19:37] delivered meaningfully positive returns.
+[00:19:40] There are other historical examples like
+[00:19:41] this, Japan being at least as
+[00:19:43] interesting, though it's important to
+[00:19:44] keep in mind that small cap value can
+[00:19:46] also go through long periods of
+[00:19:47] underperformance. Low-cost market cap
+[00:19:50] weighted index funds are sensible
+[00:19:51] investments for most people most of the
+[00:19:53] time, much more sensible than the
+[00:19:55] traditional actively managed funds that
+[00:19:56] many Canadians still invest in, but
+[00:19:58] market cap weighted index funds are not
+[00:20:00] perfect. They offer exposure to a single
+[00:20:02] expected return premium, the market
+[00:20:04] premium, but they ignore other
+[00:20:06] well-established return premiums that
+[00:20:07] can be pursued systematically and at a
+[00:20:10] low cost. For many years Canadians had
+[00:20:12] to jump through hoops to invest this
+[00:20:13] way, but the launch of CIBC's Avantis
+[00:20:15] ETFs has made this investment approach
+[00:20:18] more easily accessible. One thing I
+[00:20:19] mentioned earlier is that unlike index
+[00:20:21] funds, these Avantis funds don't
+[00:20:23] mechanically buy IPO stocks just because
+[00:20:25] an index tells them to. If you're
+[00:20:27] holding VEQT or any cap weighted index
+[00:20:29] fund in your RRSP, TFSA, or whatever
+[00:20:31] account, that distinction may matter now
+[00:20:33] more than ever. Some of the largest
+[00:20:35] private companies in the world, SpaceX,
+[00:20:37] OpenAI, and Anthropic among them, are
+[00:20:39] set to go public, and when they do, your
+[00:20:41] index fund may be forced to buy their
+[00:20:43] shares, very likely at high prices. It's
+[00:20:47] worth understanding how that works and
+[00:20:48] what it could cost your portfolio in the
+[00:20:50] long run. That video is right here.

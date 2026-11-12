@@ -1,0 +1,1563 @@
+[00:00:00] Anthropic, the
+[00:00:01] artificial intelligence company
+[00:00:03] whose
+[00:00:04] CEO just
+[00:00:04] called on the industry
+[00:00:05] to slow down the pace of
+[00:00:07] AI development and
+[00:00:07] asked the government
+[00:00:08] to regulate everyone to
+[00:00:10] ensure it does,
+[00:00:10] is expected to go
+[00:00:12] public in the
+[00:00:13] next few
+[00:00:14] months,
+[00:00:14] hoping to
+[00:00:15] raise more
+[00:00:16] money faster than
+[00:00:17] any other
+[00:00:18] company in history.
+[00:00:21] Anthropic is reportedly seeking a valuation of
+[00:00:23] around
+[00:00:24] $2 trillion, which
+[00:00:25] , as The Economist notes, is
+[00:00:27] roughly equal to
+[00:00:28] the sum of the 10 largest
+[00:00:29] tech IPOs of
+[00:00:31] all time combined
+[00:00:32] .  So it's a pretty big
+[00:00:34] event.  And on paper,
+[00:00:36] they chose the
+[00:00:37] perfect moment.  The NASDAQ
+[00:00:38] , an index of mostly
+[00:00:39] technology stocks,
+[00:00:40] is at a
+[00:00:41] record
+[00:00:42] high.  A survey of
+[00:00:44] purchasing managers just
+[00:00:45] showed that
+[00:00:46] US manufacturing output
+[00:00:47] is growing at the
+[00:00:48] fastest pace
+[00:00:49] in 5 years.  And yet
+[00:00:51] IPOs are being canceled.
+[00:00:53] Jay Ritter, who
+[00:00:55] leads the
+[00:00:56] IPO initiative at
+[00:00:56] the University of Florida
+[00:00:58] , told Bloomberg that this is
+[00:00:59] especially surprising
+[00:01:00] given the record-breaking
+[00:01:02] NASDAQ performance.
+[00:01:06] Anthropic's public reporting was expected to appear at
+[00:01:07] the end of August,
+[00:01:09] but it still hasn't arrived.  OpenAI
+[00:01:11] has postponed its
+[00:01:12] listing until next
+[00:01:14] year.  Meanwhile, Nvidia,
+[00:01:17] the company making
+[00:01:18] all its money from AI, is
+[00:01:19] the most valuable
+[00:01:20] company in the world, with
+[00:01:22] its stock price up
+[00:01:24] more than 1,600% in the
+[00:01:25] past four years.
+[00:01:28] But relative to
+[00:01:29] the profits it
+[00:01:30] expects to make,
+[00:01:31] Bloomberg notes that
+[00:01:33] it is the cheapest in
+[00:01:34] more than a decade.
+[00:01:36] So today I wanted to
+[00:01:37] find out why a
+[00:01:38] company that sells
+[00:01:39] shovels looks
+[00:01:40] cheap, while a
+[00:01:41] company that
+[00:01:42] digs with them hopes
+[00:01:43] for a
+[00:01:44] $2 trillion valuation.
+[00:01:46] To be clear, I'm
+[00:01:48] not one of those people who
+[00:01:49] claims that AI is
+[00:01:50] useless.  People clearly
+[00:01:51] find it
+[00:01:52] useful, but great
+[00:01:53] technology
+[00:01:55] can still be a terrible
+[00:01:56] investment if you
+[00:01:57] overpay at the time of
+[00:01:58] purchase.  And that's what this
+[00:02:00] video is about—about price.
+[00:02:03] So, first, how do
+[00:02:04] you get to $2 trillion
+[00:02:05] ?  Typically,
+[00:02:07] investment bankers
+[00:02:08] have two main
+[00:02:09] ways of valuing a
+[00:02:10] company.  They can
+[00:02:12] forecast its
+[00:02:13] future cash
+[00:02:13] flows and
+[00:02:14] discount them to
+[00:02:15] today,
+[00:02:16] which is called a
+[00:02:17] discounted
+[00:02:18] cash flow model.  Or
+[00:02:19] they can
+[00:02:20] look at what
+[00:02:21] prices
+[00:02:22] similar public
+[00:02:23] companies are trading at relative to
+[00:02:24] their sales,
+[00:02:25] earnings, or other
+[00:02:26] key metrics,
+[00:02:27] and apply an
+[00:02:28] industry
+[00:02:28] multiple.
+[00:02:29] Then they
+[00:02:30] organize a
+[00:02:31] roadshow for the company,
+[00:02:32] ask big
+[00:02:33] investors how much
+[00:02:34] they are willing
+[00:02:35] to pay, and
+[00:02:35] set the price
+[00:02:36] where there is an order.
+[00:02:38] Spreadsheets are
+[00:02:39] needed mainly
+[00:02:40] to make this figure
+[00:02:41] look at least somewhat like a
+[00:02:42] reasonable
+[00:02:43] reality.  Anthropic
+[00:02:44] creates problems for
+[00:02:46] both of these methods.
+[00:02:49] There are few similar
+[00:02:50] public companies
+[00:02:51] to compare, and
+[00:02:52] forecasting the
+[00:02:53] cash flows of a
+[00:02:54] firm from a new industry
+[00:02:55] whose revenue has grown
+[00:02:56] more than 10 times in a year
+[00:02:57] will be a difficult
+[00:02:58] task.  In August,
+[00:03:01] its annual revenue
+[00:03:02] was about
+[00:03:04] $65 billion.
+[00:03:06] But, as the
+[00:03:07] Lex column in the FT points out, these
+[00:03:08] unofficial figures
+[00:03:10] should be treated with great
+[00:03:11] caution.  The
+[00:03:13] discounted
+[00:03:14] cash flow model
+[00:03:14] requires an interest
+[00:03:16] rate because the
+[00:03:17] time value of
+[00:03:18] money matters.
+[00:03:19] And this is the only dark
+[00:03:20] spot on that
+[00:03:21] perfect picture
+[00:03:22] I painted earlier
+[00:03:23] .  The same survey
+[00:03:24] that showed an
+[00:03:25] economic boom
+[00:03:26] sent the
+[00:03:29] 10-year
+[00:03:29] Treasury yield soaring
+[00:03:30] to 5.23% on
+[00:03:31] Thursday night—the
+[00:03:32] highest since
+[00:03:34] 2004.  This is roughly what you would
+[00:03:37] expect when
+[00:03:38] the economy is overheated,
+[00:03:39] inflation is persistent, and
+[00:03:40] the government has a large
+[00:03:42] budget deficit.
+[00:03:45] The Fed raised rates earlier this month.
+[00:03:47] Matt Kennedy of Renaissance
+[00:03:48] Capital told Bloomberg that the
+[00:03:49] rate hike
+[00:03:51] is a double whammy for
+[00:03:52] such companies.  They
+[00:03:54] reduce the value of
+[00:03:56] profits
+[00:03:56] expected
+[00:03:57] many years from now and
+[00:03:58] make
+[00:03:59] loans for
+[00:04:00] building data
+[00:04:01] centers more expensive.  This may
+[00:04:03] help explain the
+[00:04:04] strange IPO cancellations
+[00:04:06] we are seeing.
+[00:04:07] WholeTech, a nuclear
+[00:04:08] power company
+[00:04:10] —and nuclear power is the
+[00:04:11] source the
+[00:04:13] tech industry relies on to
+[00:04:14] power its data
+[00:04:15] centers—
+[00:04:16] postponed its
+[00:04:18] IPO last week, citing
+[00:04:19] market conditions.  SB Energy, a
+[00:04:21] developer of SoftBank
+[00:04:22] 's data centers
+[00:04:23] , filed
+[00:04:24] before Labor Day but has
+[00:04:26] not yet started selling
+[00:04:27] shares.  We'll get back
+[00:04:29] to them in a moment.
+[00:04:32] There have been only
+[00:04:33] three IPOs since Labor Day, and five of the 10
+[00:04:34] largest offerings
+[00:04:36] this year are now
+[00:04:37] trading below the
+[00:04:38] offering price.  By
+[00:04:40] the way, the last time the Fed
+[00:04:42] raised rates
+[00:04:43] during such a boom was in
+[00:04:45] 1999.  So
+[00:04:48] how
+[00:04:49] crazy is the
+[00:04:50] $2 trillion estimate?
+[00:04:52] Well, before we get
+[00:04:53] to that, let me
+[00:04:54] tell you about
+[00:04:55] this week's sponsor,
+[00:04:56] Plaude.  You
+[00:04:57] know how the best
+[00:04:58] ideas often come
+[00:05:00] at the most inopportune
+[00:05:01] moment.  While driving, while
+[00:05:02] walking, at the
+[00:05:03] gym, or in
+[00:05:04] between
+[00:05:05] meetings.  This is exactly the
+[00:05:06] problem Plaude was
+[00:05:07] created to solve
+[00:05:08] .  Plaude is not just
+[00:05:09] a voice recorder or a
+[00:05:11] note-taking device.  It's
+[00:05:12] more like a
+[00:05:12] memory system
+[00:05:13] that you can
+[00:05:14] search.
+[00:05:15] It helps
+[00:05:16] turn
+[00:05:17] meetings, calls,
+[00:05:18] conversations, and ideas into a
+[00:05:20] searchable archive that you
+[00:05:21] can always
+[00:05:22] return to.  Notep is
+[00:05:23] great for
+[00:05:25] taking notes on the go,
+[00:05:26] capturing quick
+[00:05:27] thoughts, personal
+[00:05:28] conversations, or moments
+[00:05:29] when an idea comes to mind and you
+[00:05:30] need to save it with a
+[00:05:32] simple click of a
+[00:05:33] button.  Then, when I
+[00:05:35] get home,
+[00:05:36] Plaude turns everything
+[00:05:37] I said into an
+[00:05:38] organized summary
+[00:05:39] and to-do list.  It is
+[00:05:40] worn as an accessory.
+[00:05:41] I wore mine all week
+[00:05:43] , clipped to my
+[00:05:44] jacket.  This is the Note Pro that
+[00:05:45] I talked about
+[00:05:46] a while ago.  It's
+[00:05:48] better suited for
+[00:05:49] more
+[00:05:49] focused
+[00:05:50] recordings: meetings,
+[00:05:51] interviews, phone
+[00:05:52] conversations, and business
+[00:05:53] conversations that you'll
+[00:05:54] want to come back to
+[00:05:56] later.  And with Ask Plot, you
+[00:05:57] can easily search
+[00:05:58] through everything you've
+[00:05:59] recorded instead of
+[00:06:00] digging through
+[00:06:02] old voice
+[00:06:03] notes.  Everything also
+[00:06:04] syncs with the
+[00:06:05] desktop app.
+[00:06:06] So it's all at my fingertips
+[00:06:07] when I get back to
+[00:06:09] my computer.
+[00:06:10] Plaude has a 30-day
+[00:06:11] free
+[00:06:12] return policy.  You won't
+[00:06:13] know
+[00:06:14] how
+[00:06:15] useful it is until you
+[00:06:16] try it yourself.
+[00:06:17] Check it out
+[00:06:18] using the QR code or
+[00:06:19] link in the description.  And
+[00:06:21] don't forget
+[00:06:21] to use the code PEBOIL
+[00:06:22] to get an
+[00:06:23] exclusive discount
+[00:06:24] at
+[00:06:26] checkout.  Since
+[00:06:27] many people talk
+[00:06:29] about AI labs in
+[00:06:30] terms of revenue rather than
+[00:06:31] profit or
+[00:06:32] cash flow, I am
+[00:06:34] reminded of a famous quote by
+[00:06:35] Scott McNeely,
+[00:06:36] co-founder of Sun
+[00:06:37] Microsystems.  In 2002,
+[00:06:39] after the dot-com crash,
+[00:06:41] he explained to Business Week
+[00:06:42] how crazy it
+[00:06:44] was to pay 10 times
+[00:06:45] earnings for
+[00:06:47] his company's stock at its peak
+[00:06:48] .  And Sun was a good
+[00:06:50] company.  Its servers
+[00:06:52] powered
+[00:06:53] much of the
+[00:06:54] early internet.    The
+[00:06:55] only problem was the
+[00:06:56] price.  At 10x
+[00:06:57] earnings, he said, "
+[00:06:59] To give you a
+[00:07:00] 10-year payback,
+[00:07:01] I have to pay you
+[00:07:02] 100% of my earnings for 10
+[00:07:04] years in
+[00:07:05] the form of dividends.
+[00:07:06] That assumes I
+[00:07:07] can get the shareholders to agree to that
+[00:07:08] . That
+[00:07:09] assumes I have
+[00:07:10] zero cost of
+[00:07:12] goods sold, which is very
+[00:07:13] difficult for a
+[00:07:13] computer
+[00:07:14] company. That
+[00:07:15] assumes zero
+[00:07:16] expenses, which is really
+[00:07:18] difficult with 39,000
+[00:07:19] employees. That
+[00:07:20] assumes I don't
+[00:07:22] pay taxes, which is
+[00:07:23] really difficult. And that
+[00:07:24] assumes you don't
+[00:07:25] pay taxes on
+[00:07:27] your dividends, which
+[00:07:28] is kind of
+[00:07:29] illegal. And that
+[00:07:30] assumes that with
+[00:07:31] zero
+[00:07:32] R&D spending over the
+[00:07:33] next 10 years, I
+[00:07:34] can maintain my
+[00:07:35] current level of
+[00:07:36] income. Now, after
+[00:07:38] all of that, do
+[00:07:39] any of you want to buy
+[00:07:40] my stock at $64 a
+[00:07:42] share? Do you
+[00:07:43] realize how
+[00:07:45] ridiculous these
+[00:07:46] basic assumptions are?
+[00:07:47] You don't need  no
+[00:07:48] transparency. You don't
+[00:07:49] need any
+[00:07:50] footnotes. What were you
+[00:07:52] thinking? This is probably the
+[00:07:53] only time
+[00:07:55] I can think of where a
+[00:07:56] CEO has given investors a detailed explanation of
+[00:07:57] why they
+[00:07:59] shouldn't
+[00:07:59] buy his stock.
+[00:08:01] Unfortunately, by 2002, it
+[00:08:03] was a little
+[00:08:04] too late. As
+[00:08:06] crazy as
+[00:08:07] those assumptions were,
+[00:08:08] McNeely was still
+[00:08:09] a bit generous in that he
+[00:08:11] didn't factor in the time
+[00:08:12] value of money. At
+[00:08:13] the height of the bubble in
+[00:08:14] early 2000, 10-
+[00:08:16] year bonds
+[00:08:17] were yielding about 6.5%.
+[00:08:19] At that rate, a
+[00:08:20] dollar you
+[00:08:21] get in 10
+[00:08:22] years is worth a lot
+[00:08:23] less than a dollar you
+[00:08:24] get today.
+[00:08:26] So, even without
+[00:08:27] expenses, taxes, and R&D
+[00:08:28] , an investor
+[00:08:30] paying 10 times
+[00:08:31] revenue wouldn't make
+[00:08:32] their money back in 10 years. It would
+[00:08:34] take about
+[00:08:36] 17 years. Anthropic, if
+[00:08:38] it were valued at
+[00:08:39] $2 trillion, would be
+[00:08:40] trading at
+[00:08:42] about 31 times
+[00:08:43] revenue. So  Let's
+[00:08:44] be even more generous
+[00:08:46] than McNeely.
+[00:08:47] Let's assume that Anthropic
+[00:08:48] has no expenses, no
+[00:08:49] employees, no taxes, no
+[00:08:51] electricity bills, and that it
+[00:08:52] pays
+[00:08:54] shareholders every
+[00:08:55] dollar of revenue forever. And
+[00:08:56] instead of
+[00:08:57] adding a
+[00:08:58] risk premium, as is usually
+[00:08:59] done, let's
+[00:09:00] discount it at the
+[00:09:01] Treasury
+[00:09:02] bond rate. Under those
+[00:09:03] assumptions, you'll never get
+[00:09:04] your
+[00:09:05] money back. Not in 10
+[00:09:07] years, not in 100.
+[00:09:08] All that revenue
+[00:09:09] forever
+[00:09:11] is worth about
+[00:09:12] $1.27 trillion today. That's $
+[00:09:14] 0.73 trillion less
+[00:09:17] . So almost all of that
+[00:09:18] $2 trillion
+[00:09:20] is a rate of
+[00:09:20] growth. And the higher the
+[00:09:22] interest rates,
+[00:09:23] the higher that growth has to be
+[00:09:25] . So if the
+[00:09:27] regular math
+[00:09:28] doesn't give you $2 trillion
+[00:09:29] , you need some
+[00:09:31] new math.
+[00:09:32] The output is TAM, which stands for
+[00:09:35] total addressable market.
+[00:09:37] It's the amount of money a
+[00:09:38] company could
+[00:09:39] make if it
+[00:09:41] took over an entire industry.
+[00:09:43] Although this metric has been around for a
+[00:09:44] long time,  The idea
+[00:09:45] really took off in the
+[00:09:47] late 1990s, when
+[00:09:49] internet analyst
+[00:09:50] Henry Blodgett
+[00:09:51] used it to
+[00:09:53] prove that Amazon,
+[00:09:54] then trading at
+[00:09:56] $240 a share,
+[00:09:57] was worth $400 a
+[00:09:59] share. Amazon did
+[00:10:00] this in a matter of
+[00:10:01] weeks, which made
+[00:10:02] Blodgett famous.
+[00:10:04] He was later
+[00:10:05] banned from working
+[00:10:06] in the securities industry for life
+[00:10:07] , which made
+[00:10:08] him even more famous.
+[00:10:10] Lex’s column in the FT does a good job
+[00:10:12] of showing how these numbers
+[00:10:13] have been growing for the
+[00:10:14] AI ​​industry. In
+[00:10:16] May, SpaceX, which I’ve
+[00:10:18] always thought of as a
+[00:10:19] rocket company
+[00:10:20] but which also makes the
+[00:10:22] chatbot Grok and owns
+[00:10:23] Twitter, told
+[00:10:24] investors that the market for
+[00:10:26] enterprise
+[00:10:27] applications, including
+[00:10:29] its AI products,
+[00:10:30] was worth
+[00:10:31] $22.7 trillion,
+[00:10:32] about three-quarters of the
+[00:10:34] entire US economy.
+[00:10:36] Then, as Lex describes it,
+[00:10:37] “TAM inflation” set in
+[00:10:39] . The Wall Street Journal
+[00:10:41] reports that
+[00:10:42] Anthropic’s filing could
+[00:10:43] be worth
+[00:10:44] $30 trillion.
+[00:10:46] And  Last week, Morgan
+[00:10:47] Stanley estimated that
+[00:10:49] generative AI could
+[00:10:50] capture $60 trillion
+[00:10:51] , or
+[00:10:52] about half of
+[00:10:53] everything
+[00:10:54] produced on the
+[00:10:55] planet in a year. Lex
+[00:10:57] notes that Morgan Stanley
+[00:10:59] is likely to
+[00:11:00] underwrite
+[00:11:02] Anthropic’s IPO, which is of course
+[00:11:03] just a coincidence. Bankers are
+[00:11:05] notoriously
+[00:11:06] conservative
+[00:11:07] when it comes to
+[00:11:08] valuing things
+[00:11:09] they can
+[00:11:10] charge interest on.
+[00:11:12] In just 4 months, the
+[00:11:13] target market has grown
+[00:11:14] by $37 trillion
+[00:11:15] , faster than
+[00:11:17] Anthropic’s revenues and significantly
+[00:11:18] faster than the economy it’s supposed to
+[00:11:21] spin off from. You
+[00:11:23] might be surprised to learn
+[00:11:25] that companies don’t
+[00:11:26] always capture the
+[00:11:27] large market share (
+[00:11:28] TAM) on which they
+[00:11:29] base their
+[00:11:30] valuation. Uber
+[00:11:31] advertised a
+[00:11:32] market of $122.3 trillion
+[00:11:34] when it went
+[00:11:35] public in 2019.
+[00:11:37] Its annual revenue
+[00:11:38] today is
+[00:11:39] less than $60 billion
+[00:11:40] . So 99.5% of
+[00:11:42] its market is still
+[00:11:44] ahead. WeWork had a
+[00:11:47] market of 3  trillions of
+[00:11:48] dollars, and then
+[00:11:49] went bankrupt. Apparently
+[00:11:51] that market was left
+[00:11:52] untapped. And then there are the
+[00:11:55] really big
+[00:11:56] numbers. Anthropic's internal
+[00:11:57] research
+[00:11:58] arm
+[00:11:59] has modeled an
+[00:12:00] extreme
+[00:12:01] scenario in which AI
+[00:12:02] adds over
+[00:12:03] $10 trillion
+[00:12:04] to U.S. GDP by 2030,
+[00:12:06] which
+[00:12:07] Lex roughly estimates
+[00:12:08] translates to
+[00:12:09] about a hundred
+[00:12:10] trillion dollars in
+[00:12:11] capital value
+[00:12:12] today. And beyond
+[00:12:15] that, recursive
+[00:12:16] self-improvement.
+[00:12:18] AI that designs
+[00:12:19] better AI, which then
+[00:12:20] designs even better AI
+[00:12:21] , where
+[00:12:22] so much economic
+[00:12:24] value is added that money and
+[00:12:25] asset prices no
+[00:12:26] longer
+[00:12:27] mean anything—that's one
+[00:12:28] way to reach the
+[00:12:30] target price. Elon
+[00:12:33] Musk has predicted that
+[00:12:34] AI and robots will make
+[00:12:35] work
+[00:12:36] unnecessary and
+[00:12:37] money
+[00:12:38] irrelevant. For
+[00:12:40] someone who expects
+[00:12:41] money to become
+[00:12:42] meaningless, he's
+[00:12:43] confidently hoarding a lot of it
+[00:12:45] . I should
+[00:12:47] note that in
+[00:12:48] such a scenario  I’m
+[00:12:49] probably going to be
+[00:12:50] a lot richer than
+[00:12:52] Elon Musk, because
+[00:12:53] while he may be
+[00:12:54] worth trillions of
+[00:12:55] dollars, I have this
+[00:12:56] 100
+[00:12:57] trillion
+[00:12:58] Zimbabwean
+[00:12:59] dollar bill that’s also
+[00:13:01] worthless. So
+[00:13:03] how close are we
+[00:13:04] to recursive
+[00:13:05] self-improvement?
+[00:13:08] Last year,
+[00:13:09] Google DeepMind’s AlphaDev found a
+[00:13:10] better way
+[00:13:11] to multiply certain
+[00:13:13] matrices than the one
+[00:13:14] mathematicians
+[00:13:15] had been using for 56
+[00:13:16] years, and it’s impressive.
+[00:13:19] But as House of
+[00:13:20] AI, a YouTube channel
+[00:13:21] run by a PhD-degreed
+[00:13:22] computer scientist
+[00:13:23] , points out in a
+[00:13:24] recent review of the
+[00:13:26] research, all of these
+[00:13:27] impressive results
+[00:13:28] had a
+[00:13:29] scoring system,
+[00:13:30] i.e. a test with a
+[00:13:31] correct
+[00:13:32] answer. Anthropic’s own
+[00:13:34] automated
+[00:13:35] researcher
+[00:13:36] closed about 97% of the
+[00:13:38] performance gap on its
+[00:13:39] task, in part by
+[00:13:40] finding ways to
+[00:13:42] cheat in
+[00:13:43] the experiment. And when
+[00:13:44] its best idea
+[00:13:45] was tested at
+[00:13:46] production scale
+[00:13:47] , the improvement was
+[00:13:48] about half a point,
+[00:13:49] which was within the
+[00:13:51] statistical margin of error.
+[00:13:52] . To be fair
+[00:13:54] , Anthropic
+[00:13:55] did publish this themselves,
+[00:13:56] which not
+[00:13:57] all companies with
+[00:13:58] disappointing
+[00:13:59] numbers do. If you
+[00:14:01] want to learn
+[00:14:02] more about the state of this
+[00:14:03] research, I
+[00:14:04] highly
+[00:14:05] recommend its video,
+[00:14:06] linked in the
+[00:14:07] description. It’s a welcome
+[00:14:09] change from the numbers that are
+[00:14:10] just taken from the
+[00:14:11] ceiling. Back
+[00:14:14] on Earth 18 months
+[00:14:16] ago, Anthropic expected
+[00:14:17] its revenue
+[00:14:19] to be $12 billion in 2027,
+[00:14:21] which in a history full of
+[00:14:22] optimistic
+[00:14:23] forecasts turned out to be
+[00:14:25] quite pessimistic
+[00:14:27] . And in August, Aswath
+[00:14:29] Damodaran, the “dean of
+[00:14:31] valuation,” mused on the
+[00:14:32] Prof G Markets podcast
+[00:14:33] whether
+[00:14:35] Anthropic’s target might be lowered from $1
+[00:14:37] trillion to
+[00:14:38] $800 billion
+[00:14:39] as enthusiasm
+[00:14:40] faded somewhat. Seven
+[00:14:43] weeks later, they’re talking
+[00:14:45] about $2 trillion.
+[00:14:47] Forecasting in this
+[00:14:48] space is tough in both
+[00:14:49] directions these days. But be that as it may
+[00:14:52] , we’ve
+[00:14:53] been talking about markets
+[00:14:55] that don’t exist yet. But the
+[00:14:57] boom in artificial intelligence
+[00:14:58] AI
+[00:14:59] has also found a way
+[00:15:00] to value buildings
+[00:15:01] that don’t yet exist. SB
+[00:15:02] Energy,
+[00:15:04] SoftBank’s US data center developer,
+[00:15:05] which I mentioned
+[00:15:06] earlier, hopes to
+[00:15:08] go
+[00:15:09] public at a valuation of
+[00:15:10] around $50 billion
+[00:15:11] . $50 billion
+[00:15:13] is a considerable
+[00:15:14] achievement for
+[00:15:16] any company, but
+[00:15:17] it’s especially impressive
+[00:15:18] considering that SB
+[00:15:20] Energy has yet to launch a
+[00:15:21] single
+[00:15:22] data center. As
+[00:15:24] Lex’s column in the
+[00:15:25] Financial Times notes, they’ve
+[00:15:27] never built
+[00:15:28] one themselves, although they
+[00:15:29] recently acquired a
+[00:15:30] consulting
+[00:15:31] firm that
+[00:15:32] built 15. Lex also
+[00:15:34] calculated that at a
+[00:15:37] $50 billion valuation, SB Energy
+[00:15:38] would be worth
+[00:15:38] about 400 times
+[00:15:40] its annual
+[00:15:41] earnings before
+[00:15:43] interest, taxes,
+[00:15:44] depreciation and amortization.
+[00:15:46] Their own
+[00:15:47] prospectus says
+[00:15:48] they’ll need
+[00:15:49] $174 billion to
+[00:15:50] build what
+[00:15:51] they’ve already promised to
+[00:15:52] build. Their
+[00:15:53] new debt
+[00:15:54] instrument,
+[00:15:55] issued on Thursday,
+[00:15:56] yields 9.75% per annum, the
+[00:15:58] highest
+[00:15:59] offering  junk
+[00:16:00] bonds in history.
+[00:16:01] and lenders won't
+[00:16:02] allow
+[00:16:04] dividends until 2029.
+[00:16:06] The company has postponed
+[00:16:07] its IPO while it waits for
+[00:16:08] investors
+[00:16:09] to start
+[00:16:10] looking more favorably at
+[00:16:11] data centers. Now,
+[00:16:13] I can't lie to you.
+[00:16:14] Those numbers are
+[00:16:16] encouraging. I'm currently
+[00:16:17] preparing documents to
+[00:16:19] list my own
+[00:16:20] company, Boil Compute, on the
+[00:16:22] NASDAQ. We don't have a
+[00:16:24] single operating
+[00:16:26] data center either,
+[00:16:27] but we have a great
+[00:16:28] PowerPoint presentation
+[00:16:29] and I somehow successfully
+[00:16:31] connected a Wi-Fi router,
+[00:16:32] which is essentially the same thing. I'm
+[00:16:33] going to target a
+[00:16:35] valuation of around
+[00:16:36] $25 billion
+[00:16:37] because I'm hoping to
+[00:16:38] attract
+[00:16:40] value-oriented investors. Some
+[00:16:43] traditional investors
+[00:16:44] might see the complete
+[00:16:45] lack of
+[00:16:46] operating
+[00:16:47] buildings as a disadvantage
+[00:16:48] for an infrastructure
+[00:16:49] company, but from an
+[00:16:51] accounting perspective, it's
+[00:16:52] actually a huge
+[00:16:53] advantage. A
+[00:16:56] data center that's still under
+[00:16:57] construction
+[00:16:57] is shown on the
+[00:16:58] balance sheet as
+[00:17:00] construction in progress, and
+[00:17:02] construction in progress is not
+[00:17:02] depreciated. Jim
+[00:17:04] Chanos made a similar
+[00:17:06] point about the
+[00:17:07] tech
+[00:17:08] giants' GPUs.  Chips that
+[00:17:10] have been purchased but
+[00:17:11] not yet connected are also
+[00:17:13] not depreciated.
+[00:17:15] So, if you think about it, an
+[00:17:16] unfinished
+[00:17:17] data center can
+[00:17:18] be a perfect
+[00:17:19] high-
+[00:17:20] margin business. It doesn't
+[00:17:21] use
+[00:17:22] electricity. It doesn't
+[00:17:23] require
+[00:17:24] maintenance. And no
+[00:17:25] one ever
+[00:17:26] complains about
+[00:17:27] delays because the product
+[00:17:28] doesn't exist yet. The only
+[00:17:30] problem is that
+[00:17:31] eventually someone
+[00:17:32] will make you
+[00:17:33] build it. And
+[00:17:34] construction is
+[00:17:36] where things go wrong. Lex
+[00:17:39] points to the Danish scientist Bent Flevierg's "iron
+[00:17:40] law" of megaprojects
+[00:17:42] : they
+[00:17:43] consistently run over
+[00:17:45] budget and
+[00:17:46] over time.
+[00:17:48] Connecting to
+[00:17:49] the grid in
+[00:17:50] some states can
+[00:17:51] take up to 10 years. A
+[00:17:52] Gallup poll
+[00:17:53] found that 71% of
+[00:17:54] Americans are against
+[00:17:56] building
+[00:17:57] data centers near
+[00:17:58] them. And
+[00:18:00] SB Energy's own reporting
+[00:18:01] warns that if
+[00:18:02] a project is delayed,
+[00:18:03] the client can in some
+[00:18:04] cases
+[00:18:05] buy it
+[00:18:06] outright, potentially
+[00:18:08] at a low price. Its
+[00:18:10] main client, by
+[00:18:11] the way, is OpenAI. The bad
+[00:18:14] news is that the
+[00:18:15] day the data center launches,
+[00:18:17] its  depreciation. SB
+[00:18:20] Energy only owns
+[00:18:21] the buildings. The chips
+[00:18:23] inside are owned
+[00:18:24] by the tenants, and they
+[00:18:25] age much
+[00:18:26] faster than the buildings.
+[00:18:30] Paul Kadrosky, in
+[00:18:31] a study for Man Group,
+[00:18:33] notes that
+[00:18:33] lenders are financing
+[00:18:35] these projects as if they were
+[00:18:36] durable
+[00:18:37] infrastructure, like
+[00:18:38] commercial
+[00:18:39] real estate, even though the
+[00:18:40] chips will be obsolete in a
+[00:18:41] year or two—a bit
+[00:18:42] like a 30-year
+[00:18:43] mortgage on an iPhone. So
+[00:18:48] who pays for all this?
+[00:18:50] Well, this is where things get
+[00:18:51] a bit cyclical.
+[00:18:53] Let’s start with
+[00:18:55] SB Energy’s parent company, SoftBank,
+[00:18:56] which also pays
+[00:18:58] junk interest.
+[00:19:00] It’s currently issuing
+[00:19:01] more than $11
+[00:19:02] billion in bonds to
+[00:19:03] fund its
+[00:19:05] next investment in
+[00:19:06] OpenAI. And the FT reported
+[00:19:08] that those bonds were
+[00:19:10] issued at a
+[00:19:11] yield of 9.75%. OpenAI
+[00:19:13] needs the money,
+[00:19:14] because,
+[00:19:15] according to the FT, it
+[00:19:17] expects to spend
+[00:19:18] almost $280 billion
+[00:19:20] by the end of
+[00:19:21] 2030. Some of that
+[00:19:23] money is going to rent
+[00:19:26] SB Energy’s massive campus in  Ohio for 20
+[00:19:27] years, giving
+[00:19:29] SoftBank’s data center the
+[00:19:30] revenue it needs to
+[00:19:31] justify its
+[00:19:33] valuation. OpenAI is also
+[00:19:35] an investor in SB Energy. And
+[00:19:38] to keep everyone
+[00:19:39] properly motivated,
+[00:19:40] the company holds
+[00:19:41] warrants that
+[00:19:42] will pay dividends
+[00:19:43] if SB Energy’s valuation
+[00:19:45] ever reaches
+[00:19:46] $80 billion.
+[00:19:48] Then there’s Nvidia.
+[00:19:50] SB Energy’s filing
+[00:19:51] shows that Nvidia
+[00:19:52] bought
+[00:19:54] $1.5 billion worth of shares in
+[00:19:56] August at a 10% discount
+[00:19:58] to the future
+[00:20:00] IPO price and will buy another $1.5
+[00:20:01] billion at the IPO.
+[00:20:05] Nvidia has also agreed
+[00:20:06] to guarantee up to
+[00:20:07] $105 billion
+[00:20:09] for the Ohio campus. The FT
+[00:20:11] reports that Nvidia
+[00:20:12] will not take any
+[00:20:14] obligations on that until
+[00:20:16] 2028, when
+[00:20:17] OpenAI’s lease begins.
+[00:20:19] Instead, the campus
+[00:20:20] will run entirely
+[00:20:22] on Nvidia hardware
+[00:20:23] for 20 years.
+[00:20:25] If you’ve watched my
+[00:20:26] video about the hidden
+[00:20:27] debt of big
+[00:20:27] tech
+[00:20:28] companies, this will sound
+[00:20:29] familiar. So
+[00:20:30] SoftBank is borrowing at
+[00:20:32] junk interest rates
+[00:20:33] to fund OpenAI,
+[00:20:34] which  rents a
+[00:20:35] space that
+[00:20:36] Nvidia guarantees and
+[00:20:37] fills it with
+[00:20:39] Nvidia chips. It's a very neat
+[00:20:40] arrangement. Boil Compute is
+[00:20:42] now looking for someone to
+[00:20:44] guarantee my Wi-Fi
+[00:20:45] router. You see the
+[00:20:47] exact same
+[00:20:48] problem across the
+[00:20:49] industry. According to the
+[00:20:51] Wall Street Journal, SpaceX is
+[00:20:52] leasing computing
+[00:20:54] power to Anthropic for
+[00:20:56] $1.25 billion
+[00:20:57] a month. And on the
+[00:20:59] Prof Markets podcast, Ed
+[00:21:01] Ellson noted that 85% of
+[00:21:02] Amazon's net income
+[00:21:04] in its most recent report
+[00:21:05] came from
+[00:21:06] unrealized
+[00:21:08] gains on its
+[00:21:09] stakes in Anthropic and
+[00:21:10] OpenAI. For Google, the
+[00:21:13] figure was 87% from its
+[00:21:15] stakes in SpaceX and Anthropic.
+[00:21:18] Deodaran's response
+[00:21:19] was that
+[00:21:20] he used to hate
+[00:21:21] valuing family-owned
+[00:21:23] conglomerates in Asia
+[00:21:24] because to value
+[00:21:25] one company, you had to
+[00:21:27] value four
+[00:21:28] others. Now, to
+[00:21:30] value Microsoft, you
+[00:21:31] have to value OpenAI.
+[00:21:35] So the industry has essentially
+[00:21:36] agreed to buy
+[00:21:37] each other's products,
+[00:21:38] guarantee
+[00:21:40] each other's debt, and
+[00:21:41] inflate
+[00:21:42] each other's valuations, which  Which
+[00:21:43] brings us to the
+[00:21:44] biggest mystery in
+[00:21:45] the whole chain: Nvidia.
+[00:21:47] Nvidia is the company that's
+[00:21:49] actually selling
+[00:21:50] the picks and shovels
+[00:21:51] during this gold
+[00:21:53] rush, and
+[00:21:54] Nvidia is doing well. Bloomberg
+[00:21:56] reports that
+[00:21:58] sales have grown
+[00:21:59] from about
+[00:22:00] $27 billion
+[00:22:01] four years ago to
+[00:22:02] an estimated
+[00:22:03] $410 billion
+[00:22:04] this year, and net
+[00:22:06] income is expected to nearly
+[00:22:07] double. And
+[00:22:09] yet, at less than 17
+[00:22:10] times
+[00:22:13] next year's expected earnings, Nvidia
+[00:22:15] is trading at nearly its
+[00:22:16] cheapest level
+[00:22:17] in more than a decade
+[00:22:18] . Investors are now
+[00:22:20] paying about
+[00:22:21] half as much for every
+[00:22:23] dollar of Nvidia's earnings
+[00:22:24] as they did last year.
+[00:22:26] Jensen Huang,
+[00:22:28] Nvidia's chief executive, told a
+[00:22:29] Goldman Sachs conference
+[00:22:30] this month that Nvidia
+[00:22:32] is the world's first and only
+[00:22:33] value
+[00:22:35] growth stock, telling
+[00:22:36] the audience that
+[00:22:37] the company is incredibly
+[00:22:39] misunderstood. It's not every day that the
+[00:22:41] boss of the world's most valuable
+[00:22:42] company
+[00:22:43] pitches his stock to
+[00:22:46] value investors. Although, as
+[00:22:48] the founder of Boil Compute, I
+[00:22:49] understand that  he
+[00:22:51] feels. So why is the
+[00:22:53] shovel seller
+[00:22:54] so cheap? You might
+[00:22:56] think the market is
+[00:22:57] simply punishing
+[00:22:58] reality and
+[00:22:58] rewarding
+[00:22:59] promise. But there are
+[00:23:01] four pretty
+[00:23:02] reasonable explanations.
+[00:23:04] First, the market
+[00:23:05] views Nvidia as a
+[00:23:07] cyclical company at the
+[00:23:08] peak of its cycle. Gross
+[00:23:10] margin was 75%
+[00:23:12] last quarter,
+[00:23:13] but analysts
+[00:23:14] expect it to
+[00:23:15] fall below 72% by
+[00:23:17] the end of the year, in part
+[00:23:18] because Nvidia
+[00:23:20] has had to buy
+[00:23:21] memory chips from other
+[00:23:22] companies, which are
+[00:23:24] raising prices.
+[00:23:25] Shares of
+[00:23:27] memory maker Micron are up
+[00:23:28] more than 180% this
+[00:23:30] year. In
+[00:23:32] addition,
+[00:23:33] Nvidia's biggest customers, such as
+[00:23:34] Meta and Alphabet,
+[00:23:35] are developing their own
+[00:23:36] competing chips
+[00:23:37] in-house.
+[00:23:39] David Russell of Trade
+[00:23:41] Station told Bloomberg
+[00:23:42] that Nvidia's earnings are
+[00:23:43] likely to fall rather than
+[00:23:45] rise. Cyclical
+[00:23:47] stocks often look
+[00:23:49] the cheapest at their
+[00:23:50] earnings peaks, as
+[00:23:51] investors
+[00:23:51] pull back, not
+[00:23:52] believing that the peak
+[00:23:54] will last long.
+[00:23:57] Second, Nvidia's revenue is
+[00:23:58] everyone else's expense. And a
+[00:24:00] significant  some of that
+[00:24:01] spending depends on
+[00:24:03] labs
+[00:24:04] burning cash.
+[00:24:07] TCW’s Eli Horton told
+[00:24:08] Bloomberg that
+[00:24:09] Nvidia’s multiplier
+[00:24:10] only makes sense if
+[00:24:11] AI spending
+[00:24:12] slows—whether
+[00:24:14] because
+[00:24:15] tech giants pull back or because
+[00:24:16] regulatory
+[00:24:17] restrictions
+[00:24:18] slow or
+[00:24:19] shut down projects,
+[00:24:21] which is exactly what the
+[00:24:23] Anthropic CEO suggested. The
+[00:24:27] main semiconductor
+[00:24:28] index
+[00:24:30] fell nearly 6% on Monday after his essay was published. The
+[00:24:32] Economist and Lex have noted
+[00:24:33] that the slowdown could
+[00:24:35] be good for
+[00:24:37] labs’ own profits. It would
+[00:24:38] allow them
+[00:24:38] to save a
+[00:24:39] fortune on
+[00:24:40] computing, which is
+[00:24:41] great for them, but
+[00:24:42] less so for
+[00:24:43] the companies that
+[00:24:44] sell that computing.
+[00:24:45] Third,
+[00:24:46] uncertainty can
+[00:24:47] be valuable.
+[00:24:48] Analysts
+[00:24:49] know roughly how much Nvidia
+[00:24:50] will sell next
+[00:24:52] year. The AI ​​lab
+[00:24:53] could go bankrupt
+[00:24:54] or capture a share of
+[00:24:56] that
+[00:24:57] $60 trillion market.
+[00:25:00] Financial academics
+[00:25:01] Lubos Pastor and Pietro
+[00:25:02] Veresi argue
+[00:25:03] that uncertainty
+[00:25:05] about a
+[00:25:06] young
+[00:25:07] company’s future earnings can
+[00:25:07] increase its
+[00:25:08] value, and Barbaris
+[00:25:09] and Wang argue that
+[00:25:11] investors
+[00:25:11] overpay for
+[00:25:12] stocks that are like
+[00:25:13] lottery tickets.
+[00:25:16] Fourth, the prices
+[00:25:18] are set by very
+[00:25:19] different people in both cases. Nvidia’s price
+[00:25:21] is set every second by
+[00:25:21] millions of
+[00:25:22] investors, including
+[00:25:23] short sellers
+[00:25:24] who can
+[00:25:25] play against it.
+[00:25:27] Anthropic’s price was
+[00:25:27] set in
+[00:25:28] private
+[00:25:29] funding rounds,
+[00:25:30] partly by cloud
+[00:25:31] giants whose own
+[00:25:32] earnings grow
+[00:25:34] with the
+[00:25:35] startup’s capitalization, and no one in a
+[00:25:36] private round
+[00:25:37] can play against
+[00:25:38] it. The economist
+[00:25:40] Edward Miller argued back in
+[00:25:41] 1977 that when
+[00:25:43] pessimists can’t
+[00:25:44] play against a stock,
+[00:25:47] optimists set the price. Which
+[00:25:49] brings us back to
+[00:25:50] Scott McNeely. Anthropic,
+[00:25:52] with a valuation of
+[00:25:53] $2 trillion,
+[00:25:54] fails his test
+[00:25:56] of reasonable
+[00:25:56] pricing. Nvidia, on the
+[00:25:58] other hand,
+[00:25:58] trades
+[00:26:00] at 17 times
+[00:26:01] its
+[00:26:01] actual earnings. And
+[00:26:03] those earnings are
+[00:26:04] rising so far. It’s the only
+[00:26:06] company in
+[00:26:07] history to
+[00:26:07] pass the test.
+[00:26:08] McNeely. And that’s what they’re
+[00:26:10] trying
+[00:26:11] to devalue right now. So why
+[00:26:14] don’t the labs just agree to a
+[00:26:15] break? Well, because
+[00:26:17] a slowdown
+[00:26:19] would also reduce their
+[00:26:19] technological
+[00:26:20] advantage, which
+[00:26:21] allows them
+[00:26:22] to charge
+[00:26:22] premium prices, and
+[00:26:24] their competitors do
+[00:26:24] n’t seem to be
+[00:26:26] stopping. The FT
+[00:26:28] reports that
+[00:26:29] cheaper
+[00:26:30] open-source models,
+[00:26:31] mostly from
+[00:26:32] Chinese companies
+[00:26:33] like DeepSeek and Moonshot,
+[00:26:35] are approaching
+[00:26:36] Frontier’s performance
+[00:26:37] and
+[00:26:38] gaining
+[00:26:39] market share. And on Tuesday,
+[00:26:42] Anthropic and OpenAI simultaneously
+[00:26:44] released cheaper
+[00:26:45] models that are 40-50% more
+[00:26:46] affordable than the ones
+[00:26:48] they replaced. A price
+[00:26:52] war is good for
+[00:26:53] customers, but it’s hard
+[00:26:54] to imagine a worse
+[00:26:55] time for it than before the
+[00:26:57] IPO. I’m happy to
+[00:27:00] report that Boil Compute
+[00:27:01] hasn’t been hit by
+[00:27:03] any price wars,
+[00:27:04] as we don’t have
+[00:27:05] any customers. These
+[00:27:07] discounts are part of a
+[00:27:08] broader trend.
+[00:27:11] New research by Epoch
+[00:27:12] AI suggests that
+[00:27:13] the cost of getting a
+[00:27:14] given level of
+[00:27:15] performance from an
+[00:27:16] AI model is
+[00:27:18] about 13 times lower
+[00:27:19] every year since 2023, which
+[00:27:20] they say could
+[00:27:22] be faster than
+[00:27:23] any other
+[00:27:24] transformative
+[00:27:25] technology in history,
+[00:27:27] including electricity,
+[00:27:28] computing, and
+[00:27:29] DNA sequencing.
+[00:27:31] They also found
+[00:27:33] that prices fall
+[00:27:34] fastest right
+[00:27:35] after a new
+[00:27:36] top-of-the-line model is released. That
+[00:27:37] means any
+[00:27:39] premium a
+[00:27:39] lab might
+[00:27:40] charge for its
+[00:27:41] best model doesn’t
+[00:27:42] last long. As
+[00:27:44] Epoch points out, the AI ​​boom is
+[00:27:45] driving up the price of everything
+[00:27:47] that goes into the process.
+[00:27:49] Chips, energy, even
+[00:27:51] electricity, while
+[00:27:52] the price of what
+[00:27:53] comes out of it
+[00:27:54] plummets.  So that's
+[00:27:56] great if you're
+[00:27:57] selling chips, but it's
+[00:27:58] worrisome if you're
+[00:27:59] selling a mindset.
+[00:28:01] Last week,
+[00:28:02] a startup called
+[00:28:03] Typesafe AI launched a
+[00:28:04] Jev model that is
+[00:28:05] aimed almost
+[00:28:06] exclusively at
+[00:28:08] software developers.  Its
+[00:28:10] creators claim
+[00:28:11] that it is 440 times
+[00:28:13] cheaper than
+[00:28:14] Frontier models for simple
+[00:28:16] decision-making tasks.  Jev was
+[00:28:18] built on
+[00:28:19] $40 million in
+[00:28:21] seed
+[00:28:22] funding, which
+[00:28:23] is about 0.002
+[00:28:24] % of $2 trillion.
+[00:28:26] Eric Gliman,
+[00:28:27] co-
+[00:28:28] CEO of
+[00:28:30] enterprise
+[00:28:30] payments company RAMP,
+[00:28:31] told the FT that his
+[00:28:33] company has cut its
+[00:28:34] AI bills by 40%
+[00:28:35] by routing different
+[00:28:36] tasks to different
+[00:28:37] models using
+[00:28:39] routers that
+[00:28:40] make it easier to switch
+[00:28:41] providers.  As
+[00:28:43] he said, you don't
+[00:28:44] need a Ferrari to
+[00:28:45] go
+[00:28:46] grocery shopping.  He
+[00:28:47] even asked if
+[00:28:48] we had reached
+[00:28:49] intellectual
+[00:28:50] saturation—a point I
+[00:28:51] feel I
+[00:28:52] reached a long time ago.
+[00:28:54] After all, tech
+[00:28:55] leaders have always
+[00:28:57] had a smart
+[00:28:57] answer to cheap
+[00:28:58] competition.  Scott
+[00:29:00] McNeely once said
+[00:29:01] that
+[00:29:02] open source software is
+[00:29:03] free in the same way that a
+[00:29:05] puppy is free.  This means that
+[00:29:06] it costs nothing at first
+[00:29:07] , and then you
+[00:29:08] have to take care
+[00:29:09] of it for years.  This is the
+[00:29:10] best argument
+[00:29:11] laboratories have against
+[00:29:12] cheap open
+[00:29:13] models.  Although we all
+[00:29:15] know what cheap
+[00:29:16] software on
+[00:29:17] cheap hardware
+[00:29:19] eventually did to Sun
+[00:29:20] Microsystems, which was eventually
+[00:29:21] sold to Oracle for a fraction
+[00:29:23] of its peak
+[00:29:24] value.  To be
+[00:29:25] fair to
+[00:29:26] the labs, there is a
+[00:29:27] real
+[00:29:27] optimistic
+[00:29:28] scenario.  People
+[00:29:29] are using these
+[00:29:30] tools more and more
+[00:29:31] often.  The FT
+[00:29:32] has captured data from Open
+[00:29:33] Router, a platform that
+[00:29:35] routes requests between
+[00:29:36] AI models,
+[00:29:37] showing that
+[00:29:38] weekly
+[00:29:39] usage has increased by
+[00:29:40] around 25,000% since
+[00:29:43] the start of last
+[00:29:44] year.  Alle Tinsky, a
+[00:29:46] professor of economics at
+[00:29:47] Yale
+[00:29:48] University,
+[00:29:49] found that 22.5% of
+[00:29:50] Anthropic's users
+[00:29:52] continued
+[00:29:53] to use its
+[00:29:54] models after a year,
+[00:29:56] compared to
+[00:29:56] about 13.2% for OpenAI.
+[00:29:59] Damodaran believes that
+[00:30:00] Anthropic may be the
+[00:30:01] only AI
+[00:30:01] lab with
+[00:30:02] real revenue
+[00:30:03] from end
+[00:30:04] users.  And
+[00:30:06] analyst Ben Thompson
+[00:30:07] argues that if
+[00:30:08] labs create
+[00:30:09] both a model and software
+[00:30:10] tools around
+[00:30:11] it, they will be able to
+[00:30:12] retain customers and
+[00:30:14] make a profit.
+[00:30:16] Although RAMP data suggests
+[00:30:17] that customers
+[00:30:18] are making considerable
+[00:30:19] efforts to avoid
+[00:30:20] falling into such a
+[00:30:21] trap.  So it's entirely
+[00:30:25] possible that AI
+[00:30:26] labs
+[00:30:27] will eventually find a
+[00:30:28] highly profitable
+[00:30:29] business model, but
+[00:30:30] for now they want to
+[00:30:31] sell you shares.  This does
+[00:30:34] not mean at all that
+[00:30:35] AI is just a
+[00:30:36] passing fad.
+[00:30:37] He could very well
+[00:30:38] change the world.
+[00:30:40] The Internet
+[00:30:42] has certainly changed things, but before
+[00:30:43] Google came along, it gave us
+[00:30:45] Yahoo, Lycos, and AltaVista.  And
+[00:30:47] it's possible that AI will become
+[00:30:49] like
+[00:30:50] email—something we
+[00:30:51] use every day
+[00:30:52] but that no one
+[00:30:54] makes much
+[00:30:55] money from.  That would be
+[00:30:56] great news for
+[00:30:57] customers and not so
+[00:30:58] great for those who
+[00:30:59] paid $2 trillion
+[00:31:01] for the company
+[00:31:02] that sells it.  An IPO is the
+[00:31:04] moment when a company
+[00:31:05] and its first investors
+[00:31:07] decide that the
+[00:31:08] time has come to
+[00:31:09] sell.  This is also the
+[00:31:11] moment when this entire
+[00:31:12] chain
+[00:31:13] receives a real
+[00:31:14] market price for the first time.  For
+[00:31:17] SoftBank, this is somewhat of a
+[00:31:18] trap.  A large
+[00:31:20] portion of their
+[00:31:21] balance sheet rests
+[00:31:23] on a stake in OpenAI, which was
+[00:31:24] last
+[00:31:26] privately valued at
+[00:31:26] $852 billion.  And in
+[00:31:30] August, Bloomberg
+[00:31:30] reported that SoftBank
+[00:31:32] had taken out a $
+[00:31:33] 10 billion margin loan
+[00:31:34] against
+[00:31:36] its OpenAI shares.
+[00:31:38] Going public would
+[00:31:39] allow SoftBank
+[00:31:40] to convert paper
+[00:31:41] value into cash,
+[00:31:42] but would also set a
+[00:31:44] market price for
+[00:31:45] shares that have never
+[00:31:46] traded.  If
+[00:31:47] investors decide
+[00:31:49] that OpenAI is not worth
+[00:31:50] $852 billion,
+[00:31:52] SoftBank's provision
+[00:31:53] will decrease.  Anthropic's IPO
+[00:31:56] will be the first
+[00:31:57] public test of the
+[00:31:58] value of a pure AI
+[00:31:59] lab, which
+[00:32:01] will also set a market
+[00:32:02] price for the paper
+[00:32:03] earnings of Amazon and Google.
+[00:32:07] The inconvenience for SoftBank
+[00:32:08] is that time
+[00:32:10] is choosing OpenAI.  Sam
+[00:32:12] Altman told Fortune
+[00:32:13] that given all the
+[00:32:14] security developments,
+[00:32:15] now is a bad
+[00:32:16] time to go
+[00:32:18] public.
+[00:32:19] Meanwhile, OpenAI is
+[00:32:20] reportedly in
+[00:32:21] talks to
+[00:32:22] raise private
+[00:32:24] funds at a valuation of
+[00:32:25] $1.2 trillion.
+[00:32:26] So, it seems that
+[00:32:28] $1.2 trillion
+[00:32:29] is a price only for
+[00:32:31] professionals.  As
+[00:32:33] Damodaran pointed out, the
+[00:32:34] dot-com crash was caused
+[00:32:35] by the accumulation of
+[00:32:36] little things—trees
+[00:32:38] falling in the forest until you
+[00:32:39] wake up and
+[00:32:40] realize that
+[00:32:41] half the forest is
+[00:32:42] gone.  Canceled IPOs,
+[00:32:44] junk
+[00:32:45] bond yields, and
+[00:32:46] reporting delays
+[00:32:47] may be the
+[00:32:48] same little
+[00:32:49] trees.  His call
+[00:32:50] to AI companies
+[00:32:51] is: “
+[00:32:52] Show me numbers,
+[00:32:53] not just words.”  “And the
+[00:32:55] prospectus is the
+[00:32:56] only document that
+[00:32:58] forces them to do this.”
+[00:32:59] Meanwhile, Wall Street
+[00:33:01] is preparing to sell a
+[00:33:02] huge amount of
+[00:33:04] stock.  Jim Cheynas
+[00:33:06] expects this year
+[00:33:07] to break records for
+[00:33:08] equity issuance, and
+[00:33:09] academic
+[00:33:09] research in the
+[00:33:10] field is disappointing.  Loan
+[00:33:12] and Ritter found that
+[00:33:13] companies that
+[00:33:14] issue new
+[00:33:15] shares tend to perform
+[00:33:16] worse
+[00:33:17] in
+[00:33:18] subsequent years.  And
+[00:33:19] Baker and Vleer
+[00:33:20] found that when
+[00:33:21] a lot of
+[00:33:23] new stocks are issued, the overall
+[00:33:24] market tends to
+[00:33:25] perform worse in
+[00:33:26] subsequent years.
+[00:33:27] It turns out that
+[00:33:28] insiders
+[00:33:29] know quite well when to
+[00:33:30] sell.
+[00:33:33] Investor Mike Paulus
+[00:33:34] told the FT that while
+[00:33:36] lab executives
+[00:33:37] are urging
+[00:33:37] slowness and
+[00:33:39] caution, the market
+[00:33:40] is proving that the thirst for
+[00:33:41] profit is winning.
+[00:33:43] We can look
+[00:33:44] back, he said, and
+[00:33:45] ask ourselves why
+[00:33:46] we didn't take their
+[00:33:47] words seriously.  This
+[00:33:48] may be sound
+[00:33:49] advice about
+[00:33:51] AI security, but we should
+[00:33:52] also take seriously what
+[00:33:54] vendors say
+[00:33:55] about price.  Because if you
+[00:33:56] buy assets for
+[00:33:57] $2 trillion—
+[00:33:58] a price that makes no
+[00:33:59] sense, even
+[00:34:01] assuming
+[00:34:02] no costs, no
+[00:34:03] taxes, no
+[00:34:03] staff—and
+[00:34:04] in the end, nothing
+[00:34:05] happens, someone is going to
+[00:34:06] ask you the same
+[00:34:08] question that Scott
+[00:34:09] McNeely asked in
+[00:34:10] 2002.  What were you just
+[00:34:12] thinking about?  If
+[00:34:13] you found this video interesting,
+[00:34:14] you should watch the
+[00:34:16] next one about the IPO indexing scandal
+[00:34:18] , where I
+[00:34:19] examined how
+[00:34:19] index providers
+[00:34:21] changed the rules to
+[00:34:22] speed up the
+[00:34:22] entry of these
+[00:34:23] huge IPOs into your
+[00:34:25] retirement funds.  Don't
+[00:34:26] forget to visit
+[00:34:27] our sponsor, Plaude,
+[00:34:28] via the link in the
+[00:34:29] video description.  See you in the
+[00:34:31] next video.
+[00:34:32] See you later.

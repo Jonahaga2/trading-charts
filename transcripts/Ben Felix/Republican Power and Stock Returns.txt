@@ -1,0 +1,316 @@
+[00:00:00] Donald Trump won the 2024 US
+[00:00:02] presidential election and is set to
+[00:00:03] become the 47th president of the United
+[00:00:05] States this Republican Victory likely
+[00:00:08] contains information about expected
+[00:00:10] stock returns but it's probably not the
+[00:00:11] information that you expect to hear an
+[00:00:14] interesting empirical fact is that the
+[00:00:15] historical Equity risk premium going
+[00:00:17] back to 1927 has been much higher under
+[00:00:20] Democratic than Republican presidents
+[00:00:23] this has been referred to as the
+[00:00:24] presidential puzzle and its explanation
+[00:00:26] may have implications for expected us
+[00:00:28] stock returns today I'm Ben Felix Chief
+[00:00:30] investment officer at pwl Capital and
+[00:00:33] I'm going to tell you what politics can
+[00:00:34] tell us about expected stock returns
+[00:00:36] everyone is going to have a different
+[00:00:37] opinion on what the recent election
+[00:00:39] results mean for the stock market one of
+[00:00:41] the problems with opinions is that
+[00:00:43] everybody has one based on their own
+[00:00:44] model of the world the 2020 paper belief
+[00:00:47] disagreement and portfolio Choice finds
+[00:00:50] that households likely to be Republican
+[00:00:51] increase the equity share and Market
+[00:00:53] beta of their portfolios following the
+[00:00:55] 2016 presidential election while likely
+[00:00:58] Democrats rebalance into safe assets the
+[00:01:00] authors control for multiple factors to
+[00:01:02] rule out non-belief based explanations
+[00:01:05] concluding that the behavior is driven
+[00:01:06] by investors interpreting public
+[00:01:08] information using different models of
+[00:01:10] the world this is both obvious and kind
+[00:01:13] of crazy to think about Democrat
+[00:01:15] households in 2016 believed Trump would
+[00:01:17] crash the market and went to cash while
+[00:01:19] Republican households believed that
+[00:01:21] Trump would Kickstart the rocket ship
+[00:01:23] and they increased their allocation to
+[00:01:24] stocks the problem of course is that
+[00:01:26] individual beliefs are not a great model
+[00:01:28] for how the world actually works Works
+[00:01:30] making decisions on that basis is likely
+[00:01:32] to lead to errors fortunately there are
+[00:01:34] more robust models that explain the
+[00:01:36] relationship between political cycles
+[00:01:38] and stock returns these models were
+[00:01:40] developed in response to an empirical
+[00:01:41] puzzle known as the presidential puzzle
+[00:01:44] the empirical fact here is striking the
+[00:01:46] vast majority of the historical us
+[00:01:48] Equity risk premium has been delivered
+[00:01:50] under Democratic presence this is based
+[00:01:52] on a November 2020 paper in the Journal
+[00:01:54] of political economy looking at data up
+[00:01:56] to 2015 the headline empirical result
+[00:01:59] discussed in the the paper is that from
+[00:02:01] 1927 to 2015 the average Market return
+[00:02:04] in excess of three-month treasury bills
+[00:02:06] under democratic presidents is 10.7% per
+[00:02:09] year while under Republican presidents
+[00:02:11] it is negative 0.2% per year the
+[00:02:14] theoretical explanation is the meat of
+[00:02:16] the paper and what makes the paper
+[00:02:17] interesting today I'll get there in a
+[00:02:19] minute the overall return difference of
+[00:02:21] nearly 11% per year is economically and
+[00:02:23] statistically significant stock returns
+[00:02:25] under the most recent Republican Trump
+[00:02:27] and Democratic Biden presidential terms
+[00:02:30] don't fit with the model the equity risk
+[00:02:31] premium under Trump was an annualized
+[00:02:33] 14.4% while it has been 9.12% so far
+[00:02:36] under Biden ending October 2024 no model
+[00:02:40] is perfect but they can still be useful
+[00:02:42] when I include those more recent data in
+[00:02:43] the larger data set back to 1927 the
+[00:02:46] overall results stayed directionally the
+[00:02:47] same with the average Equity risk
+[00:02:49] premium under democratic presidents far
+[00:02:51] exceeding Republican presidents in my
+[00:02:53] updated data set from 1927 right up to
+[00:02:56] October 2024 the equity risk premium is
+[00:02:59] 10.2 29% annualize on average when the
+[00:03:01] president is a Democrat and 2.23% when
+[00:03:04] the president is a republican this
+[00:03:06] empirical puzzle was first identified in
+[00:03:08] a 2003 paper in the Journal of Finance
+[00:03:10] the presidential puzzle political cycles
+[00:03:12] and the stock market and found to
+[00:03:14] persist out of sample in the 2020 paper
+[00:03:16] political cycles and stock Returns the
+[00:03:19] tempting explanation for the puzzle is
+[00:03:21] the different economic policies that the
+[00:03:22] two parties represent but that's not
+[00:03:24] really how markets work the expected
+[00:03:27] effects of economic policies are quickly
+[00:03:29] reflected in stock prices that
+[00:03:31] explanation would imply that investors
+[00:03:32] persistently Miss price Stocks by
+[00:03:34] failing to anticipate the expected
+[00:03:36] policy effects there is a simpler
+[00:03:38] explanation offered by the authors of
+[00:03:39] political cycles and stock returns
+[00:03:41] Democrats tend to get elected when
+[00:03:43] expected future stock returns are higher
+[00:03:45] and Republicans tend to get elected when
+[00:03:47] they are lower this could happen because
+[00:03:49] investors aversion to risk varies over
+[00:03:51] time depending on what's happening
+[00:03:53] around them for example risk aversion is
+[00:03:55] likely to be high during an economic
+[00:03:56] crisis when risk aversion is high
+[00:03:59] investors demand and more compensation
+[00:04:00] for taking risk which on average plays
+[00:04:03] out as higher realized stock returns how
+[00:04:06] this relates back to politics is that
+[00:04:07] when risk aversion is high like during
+[00:04:09] an economic crisis voters are more
+[00:04:11] likely to elect a Democratic president
+[00:04:13] because they demand more social
+[00:04:15] insurance well when risk aversion is low
+[00:04:17] like during a booming economy and stock
+[00:04:19] market voters are more likely to elect a
+[00:04:21] Republican president because they want
+[00:04:23] to take more business risk the result is
+[00:04:25] that when Democrats get elected risk
+[00:04:27] aversion tends to be higher leading to
+[00:04:29] higher expected stock returns and when
+[00:04:31] Republicans are elected risk aversion
+[00:04:33] tends to be lower leading to lower
+[00:04:34] expected stock returns importantly in
+[00:04:36] this model democratic presidents do not
+[00:04:38] cause high expected stock returns high
+[00:04:41] risk aversion causes both democratic
+[00:04:43] presidents to get elected and expected
+[00:04:45] stock returns to be high at around the
+[00:04:47] same time it's a similar story in the
+[00:04:49] other direction for Republican
+[00:04:51] presidents they do not cause stock
+[00:04:53] returns to be low but lowrisk aversion
+[00:04:55] tends to result in Republican presidents
+[00:04:57] getting elected and expected stock
+[00:04:59] returns being low going back through
+[00:05:01] history the model seems to make sense in
+[00:05:03] November 1932 in the midst of the Great
+[00:05:05] Depression Republican Herbert Hoover
+[00:05:07] lost the election to Democrat Franklin
+[00:05:09] Roosevelt Kennedy was elected during the
+[00:05:12] 1960-61 recession Carter after the
+[00:05:15] 1973-75 recession and Clinton after 1990
+[00:05:18] 91 recession in November 2008 in the
+[00:05:20] depths of the great financial crisis
+[00:05:22] Democrat Obama beat Republican John
+[00:05:24] McCain and then in 2020 Democrat Biden
+[00:05:27] beat Republican Trump as the United
+[00:05:29] States and the rest of the world
+[00:05:30] navigated the covid-19 pandemic in 2024
+[00:05:34] with the US economy looking objectively
+[00:05:36] pretty great and US stock prices nearing
+[00:05:39] all-time highs Republican Trump beat
+[00:05:42] Democrat Harris this all makes sense in
+[00:05:44] the model of democratic presidents being
+[00:05:46] elected when risk aversion is high and
+[00:05:48] Republicans when it is low overall
+[00:05:50] transitions from Republican to
+[00:05:52] democratic presidents tend to be
+[00:05:53] preceded by low market returns low GDP
+[00:05:57] growth and high volatility further
+[00:05:59] supporting the model the time series of
+[00:06:01] four proxies for risk aversion indicate
+[00:06:03] that risk aversion tends to start out
+[00:06:05] high and then decline over the course of
+[00:06:07] a democratic presidency this change in
+[00:06:09] risk aversion contributes to such a
+[00:06:11] large gap between returns under
+[00:06:13] Democrats and Republicans as risk
+[00:06:15] aversion reverts to the mean after a
+[00:06:17] Democrat is elected expected returns
+[00:06:19] fall and stock prices increase fitting
+[00:06:22] with the model and with history Trump
+[00:06:24] will likely be inheriting a stock market
+[00:06:26] with high valuations related to low risk
+[00:06:28] aversion Republicans are most likely to
+[00:06:31] get elected when risk aversion is at its
+[00:06:32] lowest often at the peak of the business
+[00:06:34] cycle and it is therefore not surprising
+[00:06:36] to observe a downturn shortly after a
+[00:06:39] republican takes office this model
+[00:06:41] predicts a larger return Gap in the
+[00:06:42] early years of presidential terms which
+[00:06:44] is exactly what we see in the data in
+[00:06:46] the 1927 to 2015 data the Gap in returns
+[00:06:49] is largest in the early years of
+[00:06:51] presidencies this model is highly
+[00:06:53] relevant today the US economy is
+[00:06:55] objectively doing well and stock prices
+[00:06:58] are high indicating that risk of
+[00:06:59] conversion and expected returns are low
+[00:07:02] vanguard's Capital Market expectations
+[00:07:04] indicate that US Stock returns will be
+[00:07:05] between 3.2 and 5.2% for the next 10
+[00:07:09] years trailing Global xus Stocks by a
+[00:07:11] wide margin pwl Capital has a slightly
+[00:07:14] higher expected return at
+[00:07:16] 6.54% but we similarly expect us stocks
+[00:07:19] to Trail Global xus stocks one argument
+[00:07:21] often given for why Republicans are good
+[00:07:24] for the stock market is that they are
+[00:07:25] more likely to lower taxes it is true
+[00:07:28] that after Republicans are elected the
+[00:07:29] stock market tends to respond favorably
+[00:07:31] in the short term likely due to the
+[00:07:33] expectation of higher after tax cash
+[00:07:35] flows for corporations well this effect
+[00:07:37] is well documented it is completely
+[00:07:40] swamped in magnitude by the presidential
+[00:07:42] puzzle which unfolds over a longer
+[00:07:44] period what you should do with this
+[00:07:45] information depends on your confidence
+[00:07:47] in the model if you knew for sure that
+[00:07:49] things would play out similar to the
+[00:07:51] Past you might change your asset
+[00:07:53] allocation to reflect those expectations
+[00:07:55] but you don't have that much confidence
+[00:07:57] at least you shouldn't nobody can
+[00:07:58] predict the future and economic models
+[00:08:00] only make conditional predictions there
+[00:08:02] are too many confounding factors that
+[00:08:04] can affect actual outcomes I would not
+[00:08:06] use this information to time the market
+[00:08:09] the presidential puzzle analysis looks
+[00:08:10] at the equity risk premium which is the
+[00:08:12] premium for owning stocks over
+[00:08:13] short-term government bonds but raw
+[00:08:16] stock returns have been reliably
+[00:08:17] positive on average through Democratic
+[00:08:19] and Republican leadership we're not
+[00:08:21] talking about losing money by staying
+[00:08:23] invested when Republican presidents are
+[00:08:25] in power the puzzle is that historically
+[00:08:27] the risk of owning stocks has been
+[00:08:28] better compens sted while a Democratic
+[00:08:30] president leads the country but stock
+[00:08:33] returns have typically been reliably
+[00:08:34] positive no matter what the most recent
+[00:08:36] out of sample period for the political
+[00:08:38] cycles and stock returns paper shows
+[00:08:40] that predicting the future is hard if
+[00:08:42] you had gotten out of US Stocks when
+[00:08:44] Trump was elected the first time as I
+[00:08:46] know many people either did or
+[00:08:47] considered doing particularly if they
+[00:08:49] were Democrats or held similar beliefs
+[00:08:51] you missed out on four years of great
+[00:08:53] returns even models that have been
+[00:08:55] historically successful at explaining
+[00:08:57] returns are not perfect guides for
+[00:08:58] future decision- making caution is
+[00:09:00] warranted in the other direction too
+[00:09:02] particularly in light of the model
+[00:09:03] explaining the presidential puzzle
+[00:09:05] believing that the incredible recent US
+[00:09:07] Stock returns will persist Forever at a
+[00:09:10] time when valuations are high and risk
+[00:09:11] aversion is low does not seem wise again
+[00:09:15] I am not suggesting reducing or
+[00:09:17] eliminating US Stock exposure but I
+[00:09:19] wouldn't be going all in either
+[00:09:21] diversification is important and like an
+[00:09:24] umbrella you don't want to have to buy
+[00:09:26] it after it starts pouring rain
+[00:09:28] individual beliefs affect how people
+[00:09:29] respond to information like election
+[00:09:31] results this is not great because
+[00:09:34] individual beliefs are often incomplete
+[00:09:35] models of the world stepping back and
+[00:09:38] looking more objectively at the
+[00:09:39] empirical data a puzzle emerges the
+[00:09:42] equity risk premium has been much higher
+[00:09:43] under democratic presidents than
+[00:09:45] Republican presidents likely due to time
+[00:09:47] varying risk aversion causing expected
+[00:09:49] returns to be high when Democrats are
+[00:09:51] elected and low when Republicans are
+[00:09:53] elected while this may make Market
+[00:09:55] timing tempting no model is perfect and
+[00:09:58] the reality is that while the risk
+[00:09:59] premium has varied Average stock returns
+[00:10:02] have been reliably positive through
+[00:10:03] political Cycles staying invested in a
+[00:10:06] lowcost globally Diversified portfolio
+[00:10:08] is as always probably the most sensible
+[00:10:11] thing for most people to do I know
+[00:10:13] politics can get emotional but don't let
+[00:10:14] your individual beliefs Cloud your
+[00:10:16] judgment based on the findings from the
+[00:10:18] previously mentioned paper one of the
+[00:10:19] best ways to reduce the impact of
+[00:10:21] individual beliefs on investment
+[00:10:22] decisions is to delegate your portfolio
+[00:10:25] management to an automated investment
+[00:10:26] product like an asset allocation ETF or
+[00:10:29] to a professional financial adviser
+[00:10:31] ideally one that doesn't have commission
+[00:10:32] incentives to sell you certain Financial
+[00:10:34] products thanks for watching I'm Ben
+[00:10:36] Felix Chief investment officer at pwl
+[00:10:38] Capital if you want to learn how pwl
+[00:10:40] helps Canadians manage their individual
+[00:10:42] beliefs to make better financial
+[00:10:43] decisions you can book a meeting with us
+[00:10:45] below

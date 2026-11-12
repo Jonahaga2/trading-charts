@@ -1,0 +1,798 @@
+[00:00:00] After many years of hiding behind
+[00:00:01] mystique and illiquidity, private
+[00:00:03] markets are being forced into the light.
+[00:00:05] Private equity, private credit, and
+[00:00:07] private real estate have been sold hard
+[00:00:09] to investors on the premise that they
+[00:00:11] offer higher returns with less risk. As
+[00:00:14] fund managers push for these investments
+[00:00:15] to become more accessible to retail
+[00:00:17] investors, I think caution is warranted.
+[00:00:20] I've always been skeptical of private
+[00:00:22] assets, and I think my skepticism is
+[00:00:24] being validated. 2026 has been a wake-up
+[00:00:27] call for everyone who was convinced that
+[00:00:29] private assets were special. I'm Ben
+[00:00:31] Felix, Chief Investment Officer at PWL
+[00:00:33] Capital, and I'm going to tell you why
+[00:00:35] what we're seeing in private markets
+[00:00:37] should not surprise anymore.
+[00:00:43] Private markets are having an
+[00:00:44] objectively bad time right now. Some
+[00:00:47] private equity funds are having trouble
+[00:00:48] selling their holdings, often resorting
+[00:00:50] to selling private company shares to
+[00:00:52] themselves. Well, we'll get into that.
+[00:00:54] Some private real estate funds can't
+[00:00:55] sell their underlying real estate assets
+[00:00:57] to meet investors' demands for liquidity
+[00:00:59] and are having to gate or lock up their
+[00:01:01] funds. And private credit funds, many of
+[00:01:03] which are also gating redemptions, are
+[00:01:05] realizing that a lot of the loans
+[00:01:07] they've made might have been a little on
+[00:01:09] the risky side.
+[00:01:10] I'm not really surprised to see any of
+[00:01:11] this, but I think a lot of investors in
+[00:01:13] private market funds will be. Again,
+[00:01:16] fund managers have pushed private market
+[00:01:17] investments relentlessly on the premise
+[00:01:19] that they offer lower volatility and
+[00:01:22] higher expected returns than what can be
+[00:01:24] found in public markets. A compelling
+[00:01:26] sales pitch, for sure,
+[00:01:29] but it doesn't smell right, and it never
+[00:01:30] did.
+[00:01:31] In this video, I'm going to discuss each
+[00:01:33] of the major private asset classes,
+[00:01:34] private equity, private credit, and
+[00:01:36] private real estate. I'll review what
+[00:01:38] the evidence says and what is happening
+[00:01:39] in each asset class right now. But
+[00:01:42] first, a little context. Private assets
+[00:01:44] are simply assets like stocks, loans
+[00:01:47] made to companies, infrastructure
+[00:01:49] assets, which I'm not going to talk
+[00:01:50] about, and real estate. And they're
+[00:01:52] assets that have not been listed on a
+[00:01:54] public exchange. This means you can't
+[00:01:56] log into your brokerage account and
+[00:01:57] trade private assets like you can trade
+[00:02:00] stocks or REITs or whatever.
+[00:02:02] It also means that the underlying
+[00:02:03] companies disclosure requirements are
+[00:02:05] not as strict. Since they don't trade on
+[00:02:07] public exchanges, the prices of private
+[00:02:09] assets are not being set throughout the
+[00:02:11] day like what we see with publicly
+[00:02:13] listed stocks, bonds, and REITs, making
+[00:02:15] them appear the private assets appear
+[00:02:17] less volatile. Appear is the keyword
+[00:02:21] there. For decades, private market
+[00:02:22] investments were largely contained
+[00:02:24] within the realm of institutional
+[00:02:25] investors, entities like university
+[00:02:27] endowments, pension funds, and
+[00:02:28] not-for-profit reserves, entities with a
+[00:02:31] lot of capital, extremely long time
+[00:02:33] horizons, and professional staff. I
+[00:02:35] would argue, with supporting evidence of
+[00:02:37] course, that private markets are even
+[00:02:39] questionable for those types of
+[00:02:41] investors, but more recently private
+[00:02:43] assets have been increasingly pushed
+[00:02:44] onto retail investors, whether they're
+[00:02:47] asking for them or not. In my day job as
+[00:02:49] the CIO of a Canadian wealth management
+[00:02:50] firm, I see these sales pitches all the
+[00:02:52] time and they're only increasing. The
+[00:02:55] Ontario Securities Market Regulator is
+[00:02:57] being pressured to authorize a new class
+[00:02:58] of mutual funds that can hold higher
+[00:03:00] risk private assets aimed at retail
+[00:03:02] investors. Similar things are happening
+[00:03:04] in the US targeting the retirement
+[00:03:05] accounts of American families. Even if
+[00:03:08] you could convince me, and I don't think
+[00:03:09] you can, but even if you could convince
+[00:03:11] me that institutions should be investing
+[00:03:14] in private assets, the case for retail
+[00:03:16] investors is a lot harder to make. The
+[00:03:18] underlying assets are illiquid, the fees
+[00:03:21] are high, and the agreements governing
+[00:03:23] fees and liquidity are complex.
+[00:03:27] There is, however, huge incentive to
+[00:03:28] convince retail investors otherwise.
+[00:03:31] Retail investors in aggregate have a lot
+[00:03:33] of money, and the high fees charged by
+[00:03:35] private market fund managers make them
+[00:03:37] very attractive for the financial
+[00:03:39] institutions selling them. This is
+[00:03:41] especially true in a world where
+[00:03:42] investors are increasingly adopting
+[00:03:44] low-cost index funds for their public
+[00:03:46] market investments, driving down profit
+[00:03:48] margins for financial firms. Retail
+[00:03:50] investors are also a huge source of
+[00:03:52] potential liquidity for anyone currently
+[00:03:54] invested in private markets who wants to
+[00:03:56] get out. Liquidity has been a huge
+[00:03:58] problem for private markets lately, but
+[00:04:00] we'll get more into that later. This
+[00:04:02] leads to the potential for adverse
+[00:04:04] selection where retail investors are
+[00:04:06] showing up to the party a bit late, and
+[00:04:08] they're the ones getting saddled with
+[00:04:09] the illiquid stuff that nobody else
+[00:04:11] wants to buy. Well, the debate about
+[00:04:12] retail access to private markets
+[00:04:14] continues. Current investors in these
+[00:04:16] funds have been forced to learn that
+[00:04:17] their private market investments are in
+[00:04:19] fact quite risky. We've seen private
+[00:04:22] funds write down the value of their
+[00:04:23] assets, and we've seen them tell
+[00:04:24] investors they can't have their money
+[00:04:26] back right now.
+[00:04:28] We've even seen some of the biggest
+[00:04:29] historical proponents of private market
+[00:04:31] investing, Ivy League educational
+[00:04:32] endowments, start to dial back their
+[00:04:34] exposure and to lower their expected
+[00:04:36] returns for their private market
+[00:04:38] allocations. Some large wealth
+[00:04:40] management firms have been aggressively
+[00:04:41] promoting their private market funds
+[00:04:43] while criticizing the traditional 60/40
+[00:04:45] stock bond portfolio. They performed
+[00:04:48] well for a while while public markets
+[00:04:49] were volatile, but now those same firms
+[00:04:52] are facing serious problems. They've had
+[00:04:54] to write down the value of some of their
+[00:04:55] private funds by huge amounts, and
+[00:04:58] they've had to tell investors that they
+[00:04:59] can't access their own money right now
+[00:05:02] because the underlying assets are too
+[00:05:03] illiquid to sell. Classic problem of
+[00:05:06] private markets. This speaks to one of
+[00:05:08] the inherent tradeoffs with private
+[00:05:10] assets. You do get less reported
+[00:05:12] volatility.
+[00:05:13] Awesome.
+[00:05:15] Because the underlying assets are valued
+[00:05:17] infrequently.
+[00:05:18] Not so great. But you might access to
+[00:05:21] your money if the private fund does not
+[00:05:23] want to be forced to sell its underlying
+[00:05:25] illiquid assets when you need access to
+[00:05:27] your money.
+[00:05:28] Not great. In public markets, you can
+[00:05:30] pretty easily sell at any time, but
+[00:05:32] you're subject to market prices when you
+[00:05:34] sell. It's an interesting question
+[00:05:36] whether it's worse to live with
+[00:05:37] volatility, but always have access to
+[00:05:39] your money, even if your investment has
+[00:05:41] declined in value, or to be artificially
+[00:05:43] shielded from volatility while
+[00:05:45] potentially being denied the option to
+[00:05:47] sell your investments at a loss.
+[00:05:50] I don't have the universal answer, but I
+[00:05:51] would generally prefer it liquidity and
+[00:05:54] knowing what my investments are actually
+[00:05:56] worth. Private assets started gaining
+[00:05:58] popularity following the 2008 financial
+[00:06:00] crisis, likely at least in part in
+[00:06:02] response to the traumatic levels of
+[00:06:03] volatility in publicly listed assets
+[00:06:05] over that period and the need for
+[00:06:07] investors to find ways to recover from
+[00:06:09] the losses they sustained in that market
+[00:06:11] decline. Private markets were sold as a
+[00:06:13] less volatile place to invest while
+[00:06:15] earning potentially higher returns. That
+[00:06:17] alone, that combination of hey, you can
+[00:06:20] take less risk and earn higher returns
+[00:06:22] should be a major red flag, but people
+[00:06:24] really want to believe that they are not
+[00:06:26] subject to the economics of risk and
+[00:06:28] expected return. They want to believe
+[00:06:30] that they can find something special.
+[00:06:32] Another big selling point for private
+[00:06:34] assets has always been Yale's endowment.
+[00:06:36] Yale had pioneered this strategy and had
+[00:06:38] earned years of famously high returns in
+[00:06:40] private markets with the legendary late
+[00:06:42] David Swensen at the helm.
+[00:06:44] Other investors have wanted to emulate
+[00:06:46] that outcome ever since.
+[00:06:48] Yale certainly did perform well, but
+[00:06:50] recent analysis has suggested that their
+[00:06:52] famed 30% annualized returns that a lot
+[00:06:55] of people used as the backbone for the
+[00:06:56] argument to go into private markets were
+[00:06:58] not really returns. They are something
+[00:07:00] called IRRs, which can be very
+[00:07:02] misleading. My view has always been that
+[00:07:04] net of fees and properly benchmarked,
+[00:07:06] there's nothing special in private
+[00:07:08] markets. I think this only gets more
+[00:07:10] true in the realm of retail investors
+[00:07:12] who generally pay even higher fees than
+[00:07:14] their institutional counterparts.
+[00:07:17] This point can be contentious and I do
+[00:07:19] acknowledge that there's a lot of room
+[00:07:21] for nuance. There are some good private
+[00:07:23] market funds, at least after the fact we
+[00:07:25] can find ones that did perform well.
+[00:07:27] Just like there are some good
+[00:07:28] traditional actively managed mutual
+[00:07:29] funds after the fact. Identifying them
+[00:07:32] ahead of time is not so easy, but there
+[00:07:34] are ones that have outperformed and
+[00:07:35] there are ones that will outperform. But
+[00:07:37] on balance, when you look at the data,
+[00:07:39] I'm not convinced that the sales pitch
+[00:07:41] matches the economic reality for private
+[00:07:43] assets.
+[00:07:44] Before we dive deeper, if you haven't
+[00:07:46] already subscribed to this channel,
+[00:07:47] please do. I make evidence-based videos
+[00:07:50] on investing in financial
+[00:07:51] decision-making, helping you make more
+[00:07:53] informed financial decisions. Okay,
+[00:07:54] let's look at each asset class
+[00:07:56] individually. There's some wild stuff
+[00:07:58] happening in each one. Private equity
+[00:08:00] invests in private companies, attempts
+[00:08:01] to increase the value, and then exit the
+[00:08:03] investment at a profit. Private equity
+[00:08:05] has multiple underlying strategies with
+[00:08:07] the two largest being buyouts and
+[00:08:09] venture capital. Buyouts, the largest
+[00:08:11] segment by assets, are where firms
+[00:08:13] acquire a stake in a larger and more
+[00:08:14] established private company, often using
+[00:08:17] a lot of debt. Venture capital invests
+[00:08:19] in early-stage high-growth companies
+[00:08:20] with the expectation that a small
+[00:08:22] percentage of those companies will be
+[00:08:23] massively successful, while many will
+[00:08:26] lose money. The private equity
+[00:08:27] industry's value proposition for
+[00:08:29] investors rests on two main pillars, in
+[00:08:31] my view: diversification and
+[00:08:33] market-beating returns. These are
+[00:08:36] testable claims. I'm not going to
+[00:08:37] recount all the research on this topic
+[00:08:39] right now. I've done that in a past
+[00:08:41] video, but there are two main takeaways
+[00:08:42] you should know. First is that net of
+[00:08:44] fee private equity returns can be
+[00:08:45] largely replicated using public stocks
+[00:08:48] selected to match the characteristics of
+[00:08:50] private equity holdings. Second is that
+[00:08:52] when you adjust private equity returns
+[00:08:54] for the fact that private company shares
+[00:08:55] are not valued every day, there is a
+[00:08:57] dramatic reduction in any
+[00:08:59] diversification benefit that may have
+[00:09:01] been observed with the raw, smoothed
+[00:09:03] returns. In other words, they're a lot
+[00:09:05] more volatile than they appear. This is
+[00:09:07] a concept that has been referred to as
+[00:09:08] volatility laundering. Just because you
+[00:09:11] don't see the price change every day
+[00:09:12] like you do with public stocks, doesn't
+[00:09:14] mean the asset's value isn't
+[00:09:15] fluctuating. A private equity fund may
+[00:09:17] look stable on paper while the
+[00:09:19] underlying economic risks are exactly
+[00:09:21] the same as or even worse than public
+[00:09:23] market equivalents. There's also massive
+[00:09:25] dispersion in private equity fund
+[00:09:27] returns, meaning that there is a huge
+[00:09:29] gap between the best and worst funds,
+[00:09:31] increasing the penalty for choosing a
+[00:09:33] bad fund. While private equity has
+[00:09:35] delivered returns roughly in line with
+[00:09:37] risk-matched public equity. The asset
+[00:09:39] class has made private equity fund
+[00:09:40] managers extremely wealthy. This is not
+[00:09:42] an eat-the-rich type of comment. Private
+[00:09:44] equity managers have been able to
+[00:09:45] generate massive returns before fees.
+[00:09:48] They're clearly skilled at their craft,
+[00:09:50] and I have no doubt that they are
+[00:09:51] brilliant people running these funds.
+[00:09:53] The problem is that, as economic theory
+[00:09:55] would predict, they are the ones the
+[00:09:57] managers of the ones that reap the
+[00:09:58] benefits of their skill, not the
+[00:10:00] investors in their funds. Well, the
+[00:10:02] before-fee returns of private equity
+[00:10:03] have been huge, the net-of-fee returns
+[00:10:06] have been in line with public markets.
+[00:10:08] This is explained by the exceptionally
+[00:10:10] high fees charged by the managers. These
+[00:10:12] include both management fees and
+[00:10:14] performance fees and several other
+[00:10:15] potential layers of fees that all add up
+[00:10:18] to around 6%. The fee problem isn't the
+[00:10:21] only issue plaguing private equity right
+[00:10:22] now. The current state of private equity
+[00:10:24] is a lot of funds have been unable to
+[00:10:26] sell a lot of their underlying holdings,
+[00:10:28] not to meet investor redemption requests
+[00:10:30] necessarily, but just to turn over the
+[00:10:31] holdings in their portfolio at a normal
+[00:10:33] pace. Usually, private equity companies
+[00:10:35] want to sell their underlying companies
+[00:10:37] at a sort of 3-7 year cadence to return
+[00:10:40] capital to fund investors and make new
+[00:10:42] investments. The result has not been
+[00:10:44] falling prices for these unsold
+[00:10:45] companies, which is probably what we
+[00:10:46] would see if they were publicly traded,
+[00:10:48] but in the rise of more creative ways to
+[00:10:50] get cash into the hands of investors.
+[00:10:52] One prominent example is continuation
+[00:10:54] funds. A continuation fund is a fund
+[00:10:55] that buys portfolio assets from an
+[00:10:57] existing private equity fund, often
+[00:10:59] managed by the same manager, to give the
+[00:11:01] fund liquidity. An increasingly common
+[00:11:03] investor in continuation funds are
+[00:11:06] called evergreen funds. Evergreen funds
+[00:11:08] are semi-liquid vehicles that promise
+[00:11:09] ease of use for investors and give fund
+[00:11:12] managers flexible capital, which can be
+[00:11:14] used to support continuation funds and
+[00:11:16] make other investments. Evergreen funds
+[00:11:18] often have lower barriers to entry than
+[00:11:20] a traditional private equity fund, and
+[00:11:22] they offer more liquidity, making them
+[00:11:24] accessible to retail investors. While
+[00:11:26] they have become an important source of
+[00:11:27] secondary market capital, they raise a
+[00:11:29] major concern. The fund manager often
+[00:11:31] controls both sides of the deal. This
+[00:11:33] makes the accuracy of the secondary
+[00:11:35] market valuations a little bit murky and
+[00:11:37] creates conditions for adverse
+[00:11:39] selection. I think a reason that
+[00:11:41] investors can more easily buy into these
+[00:11:43] evergreen funds is that the manager has
+[00:11:45] investments in an existing fund nearing
+[00:11:47] maturity that they have not yet sold.
+[00:11:50] This creates a structural need for exit
+[00:11:52] liquidity to pay off the original
+[00:11:54] investors. Private equity funds ideally
+[00:11:56] want to exit their investments to an
+[00:11:57] outside buyer after a few years. Instead
+[00:12:00] sell the assets to an evergreen fund or
+[00:12:02] a continuation fund that they also
+[00:12:03] manage, it may indicate that the manager
+[00:12:06] struggled to find an external buyer
+[00:12:07] suggesting that the assets might not be
+[00:12:09] something that you, the investor in the
+[00:12:11] evergreen fund, actually want to buy. I
+[00:12:14] think that there's a risk that you're
+[00:12:15] buying a lemon that the broader market
+[00:12:17] would not have touched at that price.
+[00:12:20] This isn't necessarily always the case,
+[00:12:22] but that's the problem. You don't know.
+[00:12:24] They're not market tested valuations in
+[00:12:26] these transactions. Add on top of this
+[00:12:28] risk that net of fees, as I mentioned
+[00:12:29] earlier, the average private equity fund
+[00:12:31] performs roughly in line with public
+[00:12:33] market equivalents, and investors in
+[00:12:35] these evergreen vehicles may be taking
+[00:12:36] on significant complexity and valuation
+[00:12:39] risk without being properly compensated
+[00:12:41] for it. Another way that investors in
+[00:12:43] private equity funds have gotten around
+[00:12:45] the difficulties in selling their
+[00:12:46] holdings is by selling them at pretty
+[00:12:48] major discounts. Say you have invested
+[00:12:50] in a private equity fund, but you need
+[00:12:52] some cash. The fund isn't liquid, but
+[00:12:54] you can find someone to buy your stakes
+[00:12:56] at a deep discount. This comes with its
+[00:12:58] own problem that's emerged known as NAV
+[00:13:01] squeezing. We've seen this issue surface
+[00:13:03] recently with universities that hold
+[00:13:05] private equity investments in their
+[00:13:06] endowments like Yale and Harvard.
+[00:13:08] Universities, Yale in particular as I
+[00:13:10] mentioned earlier, were among the
+[00:13:11] earliest adopters of private equity
+[00:13:13] funds as their long time horizons made
+[00:13:15] them well suited to lock up capital in
+[00:13:16] illiquid assets in exchange for what
+[00:13:19] they hoped for and and maybe in some
+[00:13:21] cases generally got
+[00:13:23] uh higher expected returns. Even if this
+[00:13:25] strategy was historically effective in a
+[00:13:27] slow market with high interest rates and
+[00:13:28] private equity funds taking longer than
+[00:13:30] usual to return capital, universities
+[00:13:32] have been forced to sell their stakes
+[00:13:33] sooner than planned to free up cash and
+[00:13:36] fund their operations. This has been
+[00:13:37] true for other investors, too.
+[00:13:39] To do this, universities like Harvard
+[00:13:40] and Yale have been selling parts of
+[00:13:42] their private equity portfolios to
+[00:13:43] secondary buyers at discounts averaging
+[00:13:46] around 11% at least in this data.
+[00:13:49] This discount is a markdown from the
+[00:13:50] position's net asset value or NAV, which
+[00:13:53] is what the fund manager is saying that
+[00:13:54] the assets are worth.
+[00:13:56] What gets crazy here, though, is that
+[00:13:58] the secondary market buyers can put the
+[00:14:00] purchase price on their own books and
+[00:14:03] immediately mark it back up to the
+[00:14:04] original NAV. So, if Harvard sells a
+[00:14:07] $100 million stake in a private equity
+[00:14:08] fund at a at an 11% discount as the
+[00:14:12] average shows, the secondary market
+[00:14:14] buyer can purchase that stake for $89
+[00:14:16] million,
+[00:14:17] but then immediately mark it back up to
+[00:14:18] $100 million because that's still the
+[00:14:20] fund's initial net asset value. This is
+[00:14:23] allowed in the accounting rules. So,
+[00:14:25] they paid less for it,
+[00:14:26] and it's usually a private equity fund
+[00:14:28] that is buying these fund stakes like a
+[00:14:30] fund of funds. On paper, the purchase
+[00:14:32] has generated an immediate 11% return
+[00:14:35] for the purchasing fund, even though
+[00:14:37] nothing about the underlying value of
+[00:14:39] the companies or fund stakes has
+[00:14:41] changed. This process has become
+[00:14:42] increasingly common with secondary
+[00:14:44] market sales increasing 45% to $162
+[00:14:47] billion last year, and it could be seen
+[00:14:49] as a win-win for those involved in the
+[00:14:50] transaction. Universities free up some
+[00:14:52] capital, often still more than they paid
+[00:14:54] for the initial investment in the fund,
+[00:14:56] and the secondary buyer of the fund
+[00:14:57] stakes reports a massive return for
+[00:14:59] their fund.
+[00:15:01] Recently, some fund managers have even
+[00:15:03] adapted their fee structure to
+[00:15:05] capitalize on this. Fund manager
+[00:15:06] Hamilton Lane has updated their fee
+[00:15:08] structure to collect performance fees
+[00:15:10] based on the unrealized gains rather
+[00:15:12] than waiting until a company is actually
+[00:15:14] sold as would usually be the case.
+[00:15:16] Hamilton Lane reportedly took in $58
+[00:15:18] million in incentive fees shortly after
+[00:15:21] changing its fee structure, which they
+[00:15:23] may not have seen for years if ever
+[00:15:24] under the old fee rules. Again, if this
+[00:15:27] whole thing smells a little bit fishy, I
+[00:15:29] think you've got a good nose. Some
+[00:15:31] people have speculated that this change
+[00:15:32] in fee rules is because the fund manager
+[00:15:35] themselves may suspect that these higher
+[00:15:37] paper valuations may not last.
+[00:15:40] And the mere presence of the discount
+[00:15:41] when they buy the fund stakes lends some
+[00:15:44] credence to this suspicion. It raises
+[00:15:45] the question of whether the fund was
+[00:15:47] ever worth the $100 million
+[00:15:49] to begin with. When retail investors are
+[00:15:50] sold and believe the idea that private
+[00:15:52] equity funds can actually generate these
+[00:15:54] returns for them, that becomes a
+[00:15:56] problem. You may hold an investment
+[00:15:57] showing strong official paper returns on
+[00:16:00] your monthly statements, but when you
+[00:16:02] actually need liquidity, you discover
+[00:16:04] that you're either unable to access your
+[00:16:06] funds or that you need to sell your fund
+[00:16:08] stakes at a deep discount. Another
+[00:16:10] current concern is the private equity
+[00:16:11] industry's heavy exposure to software
+[00:16:13] companies where private equity has
+[00:16:15] concentrated a huge portion of its deals
+[00:16:16] over the past decade. The private equity
+[00:16:18] playbook of borrowing a bunch of money
+[00:16:20] to buy a successful SaaS business and
+[00:16:22] then improving it a bit for an exit a
+[00:16:24] few years later works when the economy
+[00:16:26] is good and the demand for software is
+[00:16:28] high, but it kind of falls apart when
+[00:16:30] corporate spending is strained and
+[00:16:32] something like AI threatens to disrupt
+[00:16:34] the SaaS revenue model altogether.
+[00:16:36] This exposure is now affecting other
+[00:16:38] parts of the private market because
+[00:16:40] who's private equity borrowing from to
+[00:16:42] get leverage for these software buyouts?
+[00:16:44] In many cases, private credit. Private
+[00:16:47] credit consists of loans to private
+[00:16:48] companies, kind of like bonds except the
+[00:16:50] loans are not publicly traded and
+[00:16:52] they're created by non-bank entities
+[00:16:54] like private credit funds or business
+[00:16:56] development companies, BDCs for short.
+[00:16:59] We're going to talk more about them in a
+[00:17:00] minute. These funds raise money from
+[00:17:02] investors and make direct loans, often
+[00:17:04] with flexible terms and covenants, to
+[00:17:06] private companies. These loans, by their
+[00:17:09] nature, by being loans to private
+[00:17:11] companies, are risky. Like private
+[00:17:13] equity, private credit funds will not
+[00:17:15] have their assets marked to market
+[00:17:17] daily. This allows them to appear low
+[00:17:19] risk and if the value of their
+[00:17:21] underlying assets, of the underlying
+[00:17:22] loans would be fluctuating wildly in the
+[00:17:24] public markets. And there's an
+[00:17:26] interesting way where we can see that
+[00:17:27] that's actually what's happening and and
+[00:17:29] I'll talk about that in a sec. Similar
+[00:17:30] to private equity, when the returns on
+[00:17:32] private credit funds are properly
+[00:17:34] evaluated against risk appropriate
+[00:17:36] benchmarks, I don't think there's
+[00:17:37] anything special there. One important
+[00:17:39] point is that similar to publicly traded
+[00:17:41] high yield bonds, private loans often
+[00:17:43] share return characteristics with
+[00:17:45] riskier stocks. While private credit has
+[00:17:47] seen enormous growth, the assets has
+[00:17:49] recently started to see investors
+[00:17:50] wanting their money back. But due to the
+[00:17:52] illiquidity in the underlying loans,
+[00:17:54] some private credit funds have had to
+[00:17:56] gate redemptions. Think about this as an
+[00:17:58] investor. You put your money in a
+[00:18:00] private credit fund to try to get some
+[00:18:02] nice juicy yield which was marketed to
+[00:18:04] you super hard in whatever app you're
+[00:18:06] using or whatever financial advisor you
+[00:18:08] were talking to,
+[00:18:09] you start to feel a little bit uneasy
+[00:18:10] for whatever reason about the underlying
+[00:18:12] assets or about the economy, about your
+[00:18:14] job. So you ask for your money back. The
+[00:18:16] problem is that people usually start to
+[00:18:18] feel uneasy about those things around
+[00:18:20] the same time. So while everyone wants
+[00:18:22] their money back, the private credit
+[00:18:23] fund has to say no. Now, to be clear,
+[00:18:26] this is not private credit funds being
+[00:18:28] evil. This is a feature, not a bug, at
+[00:18:31] least if you are the private credit
+[00:18:32] fund. Private loans are typically
+[00:18:34] long-term loans that are not expected to
+[00:18:36] be or designed to be liquid. Investors
+[00:18:39] in these funds should understand that
+[00:18:41] going in, but I think that's easier said
+[00:18:43] than done especially in retail as we
+[00:18:46] have seen recently. In some cases, gated
+[00:18:49] funds can be locked up for years.
+[00:18:51] Publicly listed BDCs on the other hand
+[00:18:54] offer a fascinating contrast to unlisted
+[00:18:57] BDCs or private credit funds. Rather
+[00:19:00] than gating, they feel the full force of
+[00:19:02] the markets assessment of the value of
+[00:19:04] their underlying loans. Take the FS KKR
+[00:19:07] Capital Corporation as one example. It
+[00:19:10] reported an increase in troubled loans
+[00:19:12] and lower investment income, and the
+[00:19:13] market responded swiftly. Again, this is
+[00:19:16] publicly traded. The fund is down
+[00:19:18] significantly for the 12 months ending
+[00:19:20] February 27th. Another BDC, MidCap
+[00:19:23] Financial Investment Corp, has similarly
+[00:19:25] marked down some of its loans and been
+[00:19:27] recognized by the public market for
+[00:19:29] their honesty about their disclosures,
+[00:19:31] again with the price of that BDC
+[00:19:33] dropping significantly. If nothing else,
+[00:19:35] that should indicate how much risk
+[00:19:37] private credit funds, unlisted private
+[00:19:39] credit funds, where you don't get to see
+[00:19:40] the the valua- valuations fluctuating in
+[00:19:42] the public market, it should really
+[00:19:44] indicate how much risk they're actually
+[00:19:45] taking.
+[00:19:46] Again, these are very similar things.
+[00:19:48] One's publicly listed, one's not.
+[00:19:50] When you have risky underlying assets,
+[00:19:52] you're either going to get volatility,
+[00:19:54] or if you say, "I don't want to see the
+[00:19:56] volatility, so I'm going to get invest
+[00:19:58] in a private fund," then you're going to
+[00:20:00] get illiquidity when public markets get
+[00:20:01] volatile. One of the problems with
+[00:20:03] illiquidity is that you have to own
+[00:20:05] assets that you know kind of stink. Once
+[00:20:07] the fund manager says, "No, you can't
+[00:20:09] have your your money back," that's
+[00:20:10] usually at a time when the underlying
+[00:20:12] are stressed, are struggling, which is
+[00:20:15] why they can't be sold. And you have to
+[00:20:16] then continue to pay fees on those
+[00:20:19] stinky assets to to own them while while
+[00:20:21] you're not able to sell. The other crazy
+[00:20:23] thing that's happening in private
+[00:20:24] credit, where firms are getting
+[00:20:25] increasingly creative for ways to come
+[00:20:27] up with with cash, with liquidity for
+[00:20:29] the underlying funds,
+[00:20:30] uh is they're turning to some pretty
+[00:20:32] interesting shenanigans with insurance
+[00:20:34] companies uh to to meet their liquidity.
+[00:20:36] So, life insurance companies have
+[00:20:38] traditionally kept their massive cash
+[00:20:40] reserves in stable, conservative
+[00:20:43] investments, like whatever, stocks and
+[00:20:44] bonds, things like that.
+[00:20:46] Diversified portfolios. They're they're
+[00:20:48] kind of the classic uh conservative
+[00:20:50] institutional investor. Private equity
+[00:20:52] firms are now buying insurance
+[00:20:54] companies, moving significant portions
+[00:20:56] of their portfolio into private credit
+[00:20:59] for its higher yield. And insurance
+[00:21:01] companies, so they they take in
+[00:21:02] insurance premiums, they have to be able
+[00:21:04] to pay out uh the death benefit or
+[00:21:06] disability benefit or whatever when
+[00:21:08] someone dies or becomes disabled, but in
+[00:21:10] the interim, they can invest those the
+[00:21:13] the excess premiums that they don't need
+[00:21:15] to to run the business, and they get to
+[00:21:17] keep the difference between what they
+[00:21:19] earn on their investments and what they
+[00:21:20] pay out to policy holders. That's a
+[00:21:22] simplification, but it's it's basically
+[00:21:24] like that.
+[00:21:25] So, the the recent playbook that has
+[00:21:26] emerged is that private equity buys an
+[00:21:29] insurance company,
+[00:21:30] and then instead of maintaining the
+[00:21:32] typically conservative investment
+[00:21:33] portfolio, they stuff its portfolio with
+[00:21:36] private credit funds,
+[00:21:38] often from lenders that are owned by the
+[00:21:39] same private equity firm that owns the
+[00:21:42] that now owns the insurer. Kind of
+[00:21:43] crazy, and this process is creating a
+[00:21:45] closed loop of risk with hopefully
+[00:21:48] obvious potential repercussions if the
+[00:21:49] private loans go sour. The issues
+[00:21:52] rattling private equity and private
+[00:21:53] credit are becoming increasingly clear
+[00:21:55] to the market. Major publicly listed
+[00:21:57] players in these asset classes, that is
+[00:21:59] publicly listed companies who sell and
+[00:22:01] manage private equity and private credit
+[00:22:03] funds, have seen their share prices get
+[00:22:05] obliterated in recent history as the
+[00:22:07] underlying risks in what they have been
+[00:22:09] selling are increasingly pushed into the
+[00:22:11] light. The last asset I'll cover is
+[00:22:12] private real estate. Private real estate
+[00:22:14] funds directly own real estate assets
+[00:22:16] like apartment buildings, office towers,
+[00:22:17] and shopping malls. They can have
+[00:22:19] various strategies, but the general idea
+[00:22:20] of owning real buildings inside of a
+[00:22:22] private fund is consistent across this
+[00:22:25] asset class. They're often not unlike a
+[00:22:27] publicly traded REIT, except that the
+[00:22:29] private funds don't trade on the stock
+[00:22:31] market, similar to what we talked about
+[00:22:32] with private equity and private credit.
+[00:22:34] Also, like private equity and private
+[00:22:35] credit, some private real estate funds
+[00:22:37] in Canada have struggled with liquidity.
+[00:22:39] This is not super surprising. The
+[00:22:41] Canadian real estate market has
+[00:22:42] experienced its worst real price decline
+[00:22:44] going back to 1975. Public residential
+[00:22:47] REITs have taken a beating, and private
+[00:22:49] fund managers, understandably, don't
+[00:22:51] want to be forced to sell assets that
+[00:22:53] have declined in price. That's fine, and
+[00:22:56] it's why their contracts with their
+[00:22:57] investors allow them to gate their funds
+[00:23:00] when too many people are asking for
+[00:23:01] liquidity at the same time.
+[00:23:03] In the midst of the liquidity crunch for
+[00:23:05] many private Canadian real estate funds,
+[00:23:06] some are considering going public as a
+[00:23:08] source of liquidity. Being public means
+[00:23:10] that investors can buy and sell their
+[00:23:12] shares on the open market without the
+[00:23:13] fund needing to sell its underlying
+[00:23:15] assets, but it also exposes the value of
+[00:23:16] the funds units to market prices. While
+[00:23:19] these funds consider going public,
+[00:23:21] they've halted redemptions for current
+[00:23:22] investors.
+[00:23:24] I can't tell you what will happen with
+[00:23:25] these IPOs, but I can tell you what
+[00:23:28] happened in similar situations in the
+[00:23:29] US. In November of last year, FS
+[00:23:32] Specialty Lending Fund listed on the New
+[00:23:34] York Stock Exchange at a net asset value
+[00:23:36] of $18.67
+[00:23:38] a share. On the end of its first day on
+[00:23:40] the market, it closed at $14. In
+[00:23:42] December, Blue Rock's Total Income Plus
+[00:23:44] Real Estate Fund began trading on the
+[00:23:46] New York Stock Exchange with a stated
+[00:23:48] NAV of $24.36
+[00:23:51] a share. At close, the fund was trading
+[00:23:54] at a market price of $14.70
+[00:23:56] a share, nearly a 40% drawdown from the
+[00:23:59] beginning of the day. It's kind of
+[00:24:00] funny, but funny's not the right word
+[00:24:01] because there are real investors who are
+[00:24:04] in difficult situations because because
+[00:24:05] of this, but these funds are sold as
+[00:24:08] protection against stock market or or
+[00:24:10] public market volatility, but they often
+[00:24:12] take huge hits once they themselves are
+[00:24:15] exposed to genuine price discovery in
+[00:24:17] the market. The risk was still there,
+[00:24:19] they just weren't telling you about it
+[00:24:21] or showing it to you. An important
+[00:24:23] question then in private real estate is
+[00:24:25] whether private real estate funds are
+[00:24:26] adding anything special that cannot be
+[00:24:28] found in a liquid public REIT. A 2018
+[00:24:32] paper finds that public REITs behave a
+[00:24:33] lot like a portfolio of 60% small value
+[00:24:36] stocks and 40% long-term high-yield
+[00:24:39] bonds, and that private REITs behave
+[00:24:41] almost exactly the same way when a
+[00:24:43] valuation lag is accounted for. In other
+[00:24:45] words, the stock and bond factors that
+[00:24:47] explain public REIT returns also fully
+[00:24:49] explain private real estate returns. A
+[00:24:51] 2019 paper similarly finds that when
+[00:24:53] adjusted for the different leverage and
+[00:24:55] sector composition of public and private
+[00:24:57] real estate indices, there's no special
+[00:24:59] return premium in private real estate.
+[00:25:01] Again, this does not mean that there are
+[00:25:03] no good private real estate funds. I'm
+[00:25:05] sure they're out there. Private markets
+[00:25:07] have been sold to investors as a way to
+[00:25:08] increase their expected returns without
+[00:25:10] increasing and maybe even decreasing the
+[00:25:12] amount of risk they are taking relative
+[00:25:14] to public markets. Recent red flags in
+[00:25:16] private equity, credit, and real estate
+[00:25:18] have shown that these assets are at
+[00:25:19] least as risky as their public
+[00:25:21] counterparts and maybe hiding additional
+[00:25:24] layers of risk due to high fees,
+[00:25:26] illiquidity, and less scrutiny in how
+[00:25:28] assets are valued. I'm glad that my firm
+[00:25:31] did not jump headfirst into the space
+[00:25:33] when it started getting pushed hard into
+[00:25:34] retail channels and I hope retail
+[00:25:36] investors will approach these assets
+[00:25:38] carefully as they continue to be
+[00:25:40] promoted. If you want to know more about
+[00:25:42] PWL's super boring investing philosophy,
+[00:25:44] you can click here. Or if you'd like to
+[00:25:46] learn about the research on private
+[00:25:48] equity, you can click here. Stay safe
+[00:25:50] out there.

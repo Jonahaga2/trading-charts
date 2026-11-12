@@ -1,0 +1,622 @@
+[00:00:00] The Turkish financier Emre Tezmen
+[00:00:00] did not believe that anyone could
+[00:00:05] control the stock market. He told
+[00:00:05] Bloomberg this back in April, saying:
+[00:00:09] "You cannot control anything 100% in a market.
+[00:00:09] If that were the case, prices would only go up."
+[00:00:17] Now, that's a great point – but - for the
+[00:00:17] better part of three years, prices at Tera,
+[00:00:22] his financial group, did only go up. Its
+[00:00:22] flagship investment fund reported a return
+[00:00:28] of more than sixty-six thousand percent over
+[00:00:28] three years, and that’s considered really good.
+[00:00:36] Tera itself, a brokerage firm with around 130
+[00:00:36] employees, was at times worth more than the
+[00:00:42] global investment bank Lazard, which employs
+[00:00:42] several thousand people. Which does seem a bit
+[00:00:48] strange – but maybe his 130 employees were just
+[00:00:48] much more productive than the slackers at Lazard.
+[00:00:56] Then, about five months after that
+[00:00:56] interview, everything fell apart.
+[00:01:01] Turkey's capital markets regulator ordered the
+[00:01:01] liquidation of 131 investment funds holding
+[00:01:08] about 20 billion dollars, and 455,758 people
+[00:01:08] found that their savings were locked inside.
+[00:01:17] Turkey's justice minister has since described
+[00:01:17] the whole thing as a "Ponzi-like scheme"… which
+[00:01:23] is never a good sign. And when a fund's returns
+[00:01:23] depend on a steady stream of new money coming in,
+[00:01:30] its collapse is going to raise the question
+[00:01:30] of who exactly was buying at the top.
+[00:01:36] So, in this video, we'll look at
+[00:01:36] how the alleged scheme worked,
+[00:01:41] why some Turkish money market funds (the product
+[00:01:41] people treat like cash) ended up holding the bag,
+[00:01:48] what Bill Hwang and Bernie Cornfeld have to
+[00:01:48] do with any of this, and what lessons the
+[00:01:53] rest of the world might want to take from it.
+[00:01:53] Mostly though, we are going to try to solve a
+[00:01:59] mystery. As his funds collapsed, Tezmen posted
+[00:01:59] a statement on social media blaming the whole
+[00:02:06] thing on a "planned, deliberate and organized
+[00:02:06] speculative attack" by "notorious malevolent
+[00:02:13] forces" (the worst kind of malevolent
+[00:02:13] forces). That is a serious allegation,
+[00:02:19] and I think we should take it seriously. Over
+[00:02:19] the course of this video, let's try to work
+[00:02:24] out who these malevolent forces might be.
+[00:02:24] It would appear that Emre Tezmen was rarely
+[00:02:30] troubled by self-doubt. He told
+[00:02:30] Bloomberg that his ambition was
+[00:02:34] to build "the Goldman Sachs of Turkey."
+[00:02:34] We should note that Goldman Sachs took more
+[00:02:40] than 150 years to build, surviving several
+[00:02:40] financial panics, and grew to employ tens of
+[00:02:46] thousands of people while building the reputation
+[00:02:46] that Matt Taibbi of Rolling Stone summed up as "a
+[00:02:53] great vampire squid wrapped around the face of
+[00:02:53] humanity." Tera was a lot younger and smaller,
+[00:03:00] but it had recently signed a deal
+[00:03:00] to sponsor the Turkish football
+[00:03:04] club Beşiktaş… which is roughly the same thing.
+[00:03:04] Tezmen had a straightforward view of finance too.
+[00:03:11] "I make money, the investor makes money,"
+[00:03:11] he told one interviewer. "And what does the
+[00:03:16] state lose? There is no problem here." We'll
+[00:03:16] have to come back to that question later…
+[00:03:22] So, how did the Goldman Sachs of
+[00:03:22] Turkey manage to so comprehensively
+[00:03:28] outperform the actual Goldman Sachs?
+[00:03:28] Well, if you want a stock price to go up, you
+[00:03:34] need buyers. And if you run an investment fund,
+[00:03:34] the most convenient buyer you can find is (of
+[00:03:40] course) yourself… using your customers' money.
+[00:03:40] Bloomberg found regulatory filings showing that
+[00:03:47] at one point in 2023, Tera's flagship fund had 99%
+[00:03:47] of its assets in a single stock: shares of its own
+[00:03:56] parent company, Tera. Most fund managers would
+[00:03:56] consider that a fairly concentrated position.
+[00:04:04] Orkun Saka, a lecturer at City St George's,
+[00:04:04] University of London, described how this
+[00:04:11] works to Bloomberg back in April, before any
+[00:04:11] of it had fallen apart. The fund's purchases,
+[00:04:17] he said, "push up affiliated stock prices, which
+[00:04:17] inflates the fund's net asset value, which makes
+[00:04:23] the fund management business appear more valuable,
+[00:04:23] which elevates the parent company's earnings and
+[00:04:30] stock price." As he put it: "This loop is
+[00:04:30] self-reinforcing by construction." That’s a
+[00:04:37] very academic way of describing a perpetual motion
+[00:04:37] machine. Turkey's justice minister later went with
+[00:04:44] a less academic description: “Ponzi-like.”
+[00:04:44] Before I dig into how Tera kept that machine
+[00:04:51] running, let me tell you about this week's
+[00:04:51] video sponsor Saily. Mobile roaming is one
+[00:04:56] of the last industries still run
+[00:04:56] on the hotel minibar pricing model:
+[00:05:00] the product is perfectly fine - but the price is
+[00:05:00] revealed later, and it's always considerably more
+[00:05:06] expensive than you expected. You land somewhere,
+[00:05:06] check a map, send a few emails, and a month
+[00:05:12] later you discover that finding directions to
+[00:05:12] your hotel cost about as much as the hotel.
+[00:05:17] Saily is an eSIM app that solves this problem.
+[00:05:17] You pick a prepaid data plan for wherever you're
+[00:05:25] going, and they offer affordable plans in
+[00:05:25] over 200 destinations. Because it's prepaid,
+[00:05:31] you know exactly what you'll pay, so
+[00:05:31] there are no surprise roaming fees and
+[00:05:35] no angry calls to your phone company.
+[00:05:35] What I like most is the convenience.
+[00:05:40] You install the Saily eSIM once, and that's it.
+[00:05:40] There's no need to install a new eSIM for every
+[00:05:47] country you visit. You just choose a plan in
+[00:05:47] the app, and it activates automatically when
+[00:05:52] you land. If anything does go wrong, their live
+[00:05:52] chat support is available 24/7, which is useful
+[00:05:58] when you're in a different time zone and your
+[00:05:58] problem doesn't care what time it is back home.
+[00:06:04] Saily also blocks malicious sites,
+[00:06:04] trackers, and ads while you browse,
+[00:06:08] which has the pleasant side effect of saving you
+[00:06:08] data. They now offer app-based phone numbers too,
+[00:06:14] so you can hand out a Saily number to shops and
+[00:06:14] delivery apps and keep your real one to yourself.
+[00:06:20] To get an exclusive 15% discount on
+[00:06:20] Saily data plans, download the Saily
+[00:06:26] app and use code BOYLE at checkout,
+[00:06:26] or click the link in the description.
+[00:06:31] So, anyhow… a mild version of this happens
+[00:06:31] everywhere. Academics call it "portfolio
+[00:06:38] pumping." In a 2002 paper called "Leaning for the
+[00:06:38] Tape," Carhart, Kaniel, Musto, and Reed showed
+[00:06:46] that some American mutual fund managers buy extra
+[00:06:46] shares of stocks they already own at the very end
+[00:06:52] of the quarter, nudging up the closing prices
+[00:06:52] their performance is measured on. The prices
+[00:06:57] then drift back down the following morning.
+[00:06:57] The American version is worth a few basis points,
+[00:07:04] a few times a year, in time for the
+[00:07:04] quarterly rankings. Tera's fund was
+[00:07:10] buying the shares of its own affiliated
+[00:07:10] companies all year round, and it reported
+[00:07:16] sixty-six thousand percent. Which just shows
+[00:07:16] what you can achieve with a bit of ambition.
+[00:07:23] To keep a machine like this running, you need
+[00:07:23] a steady supply of new money, and in Turkey,
+[00:07:29] that wasn't hard to find. Inflation had averaged
+[00:07:29] about 50% a year for three years, eating away at
+[00:07:37] people's savings, so a fund reporting more than
+[00:07:37] 1,500% in a single year was going to get a lot
+[00:07:44] of attention. And when prices are rising 50% a
+[00:07:44] year, a big number on a fund statement probably
+[00:07:51] seems a bit less crazy than it would elsewhere.
+[00:07:51] Back in 1998, the economists Sirri and Tufano
+[00:08:00] showed that investors pile into top-performing
+[00:08:00] funds far more eagerly than they pull money out
+[00:08:06] of bad ones… and nobody was performing like Tera.
+[00:08:06] Tera's brokerage also took companies public (after
+[00:08:11] all they were trying to be the Goldman Sachs
+[00:08:11] of Turkey) and its fund would then buy their
+[00:08:17] shares. Now, a small free float (the portion
+[00:08:17] of a company's shares actually available to
+[00:08:23] trade) isn't unusual on its own. But when
+[00:08:23] the underwriter's own fund is one of the
+[00:08:30] main buyers of the few shares that do trade,
+[00:08:30] it doesn't take much to move the price.
+[00:08:35] Take Vişne Madencilik, a mining company – that
+[00:08:35] I’m fairly sure I mispronounced there - which Tera
+[00:08:42] took public in February 2025, putting 21% of its
+[00:08:42] shares in public hands. By the end of July, the
+[00:08:50] stock was up more than 2,100%. That same month,
+[00:08:50] Tera's fund and brokerage sold the shares they had
+[00:08:59] bought in the IPO. In August, the stock fell 75%.
+[00:08:59] The Capital Markets Board fined two of Tera's fund
+[00:09:07] managers 8.9 million lira each, about $199,000,
+[00:09:07] for creating a "misleading perception on the
+[00:09:16] price, supply and demand" of the shares. Keep the
+[00:09:16] size of that fine in mind. We'll need it later.
+[00:09:26] Then there was Destek Finans Faktoring, an
+[00:09:26] invoice factoring company Tera took public in
+[00:09:32] 2025. Its shares rose more than 4,700%, making
+[00:09:32] it Turkey's third-largest listed company. Even
+[00:09:41] after the market turmoil started, it was still
+[00:09:41] trading at about 132 times earnings (JPMorgan
+[00:09:49] trades at about 15). And after the crash
+[00:09:49] wiped about $4 billion off his paper fortune,
+[00:09:56] Destek's controlling shareholder, Altunç
+[00:09:56] Kumova, was left roughly as rich as the
+[00:10:00] founder of Chobani yogurt. Invoice factoring is
+[00:10:00] a perfectly respectable business… but it doesn't
+[00:10:07] usually produce Greek-yogurt levels of wealth.
+[00:10:07] It’s really just Greek yogurt that does that…
+[00:10:14] Anyhow, back to our search for
+[00:10:14] the notorious malevolent forces.
+[00:10:19] Our first suspect is Ramazan Başak, the former
+[00:10:19] deputy head of MASAK, Turkey's financial crimes
+[00:10:27] agency. Mr. Başak says he repeatedly warned
+[00:10:27] the authorities about suspicious transactions,
+[00:10:34] and that his warnings were ignored. According to
+[00:10:34] the FT, he was detained in April for disseminating
+[00:10:41] misleading information in two social media
+[00:10:41] posts, one of which questioned whether a
+[00:10:46] fund could really have returned 10,128%.
+[00:10:46] Which I suppose makes sense. If people start
+[00:10:55] doubting ten-thousand-percent
+[00:10:55] returns, where does it end?
+[00:10:59] Still, Mr. Başak's attack consisted mainly of
+[00:10:59] asking questions on social media, which isn't
+[00:11:06] usually enough to bring down a 20-billion-dollar
+[00:11:06] fund industry. So, we'll have to keep looking.
+[00:11:13] How did Tera pay for all of this? A fund that
+[00:11:13] keeps buying its own affiliated stocks needs a
+[00:11:20] steady supply of cash, and so Tera borrowed a lot
+[00:11:20] of it. According to Bloomberg, its brokerage's
+[00:11:27] borrowing went from 132 million lira at the end
+[00:11:27] of 2024 to 59.8 billion lira a year later. That
+[00:11:36] is about 450 times as much… in just a year...
+[00:11:36] And a convenient place to find
+[00:11:44] cash is in a money market fund.
+[00:11:44] People think of money market funds as more or
+[00:11:50] less the same as a bank account. They're supposed
+[00:11:50] to hold boring, safe, liquid things – and earn an
+[00:11:57] interest rate. But Bloomberg reports that some of
+[00:11:57] the firms at the center of this were lending money
+[00:12:02] and taking hugely inflated stocks as collateral.
+[00:12:02] This type of loan is known as reverse repo – where
+[00:12:10] the fund makes a loan taking securities as
+[00:12:10] collateral, which it can sell if the borrower
+[00:12:16] doesn't pay it back. That should be very safe, as
+[00:12:16] long as the collateral is good - but in this case,
+[00:12:23] the collateral was pumped up shares
+[00:12:23] in the thinly traded companies that
+[00:12:27] the affiliated funds were busy buying.
+[00:12:27] It’s a bit like taking a ten-dollar watch
+[00:12:32] to a pawnbroker, explaining that it's actually
+[00:12:32] worth ten thousand dollars because you just sold
+[00:12:38] one to yourself for that price, and walking out
+[00:12:38] with a nine-thousand-dollar loan. And as Hilmi
+[00:12:45] Güvenal points out on his Substack, the money
+[00:12:45] market funds booked these loans at face value,
+[00:12:52] so their prices stayed perfectly stable…
+[00:12:52] right up until the collateral had to be sold.
+[00:12:58] If this sounds familiar, it's because it’s
+[00:12:58] similar to what Bill Hwang did at Archegos. Hwang
+[00:13:04] used swaps from global banks to build enormous
+[00:13:04] leveraged positions in stocks like ViacomCBS.
+[00:13:11] The Turkish funds did their borrowing at home,
+[00:13:11] and financial experts who've looked at the trades
+[00:13:17] say they borrowed against the inflated stocks
+[00:13:17] themselves. When Hwang's stocks fell in 2021,
+[00:13:24] his banks made margin calls. When
+[00:13:24] Tera's prices stopped rising,
+[00:13:28] it faced a run from retail savers.
+[00:13:28] Both collapses happened very quickly,
+[00:13:35] and economists have a name for why this happens.
+[00:13:35] Brunnermeier and Pedersen called it a 'liquidity
+[00:13:41] spiral.' When prices fall, the collateral
+[00:13:41] is worth less, so you can borrow less,
+[00:13:47] which forces you to sell, which pushes
+[00:13:47] prices down further. And the faster you're
+[00:13:52] forced to sell, the less anyone wants to pay.
+[00:13:52] Which brings us to our second suspect, and I feel
+[00:14:00] we're getting closer… Bloomberg spoke to Mehmed
+[00:14:00] Kervanci, a 28-year-old who had put his savings
+[00:14:07] into a high-flying Turkish stock fund to help
+[00:14:07] pay for his upcoming wedding. Two weeks later,
+[00:14:13] he was frantically hitting the sell button
+[00:14:13] on his phone's trading app. Another investor,
+[00:14:18] a 30-year-old trader, had put in the
+[00:14:18] gold he received as wedding gifts,
+[00:14:23] hoping to use it towards a deposit on a home.
+[00:14:23] So, it's possible that the planned, deliberate,
+[00:14:29] and organized speculative attack on Tera
+[00:14:29] was carried out by a 28-year-old trying
+[00:14:34] to pay for a wedding. But I don't want to jump to
+[00:14:34] conclusions, so we should probably keep looking.
+[00:14:41] If you've pushed a stock up a few thousand
+[00:14:41] percent, you only really make money if you
+[00:14:46] can sell it at that high price. And to sell
+[00:14:46] at the top, you need someone who is willing
+[00:14:51] to buy at the top – which is really the
+[00:14:51] core question here. Who was buying?
+[00:14:56] Hilmi Güvenal, writing on his Substack, which I'll
+[00:14:56] link to in the description because it's one of the
+[00:15:02] clearest explanations of this whole mess that I've
+[00:15:02] found, points to one example: a shipbuilder called
+[00:15:08] Özata. According to its June financial statements,
+[00:15:08] Özata was losing money and had equity of around
+[00:15:15] 4.5 billion lira. By September, its share price
+[00:15:15] had reached 4,482 lira, giving it a market value
+[00:15:24] of about 320 billion lira, or 71 times book
+[00:15:24] value. Which is a lot for any shipbuilder… but
+[00:15:31] especially so for a loss-making shipbuilder.
+[00:15:31] At that point, one of Tera's hedge funds
+[00:15:37] owned about 15% of the company.
+[00:15:37] Valued at the September price,
+[00:15:42] that's roughly 48 billion lira of investors'
+[00:15:42] money in a single loss-making shipyard.
+[00:15:49] Turkey's capital markets regulator has
+[00:15:49] since filed criminal complaints against
+[00:15:54] eleven people over trading in Özata shares.
+[00:15:54] Özata has also made its way into Turkish politics.
+[00:16:02] An opposition spokesman, Zeynel Emre, alleged
+[00:16:02] that a deputy chair of the ruling AK Party
+[00:16:08] bought about 63 million lira of Özata shares in
+[00:16:08] April and sold them in September for about 1.34
+[00:16:16] billion. He said the sales were completed before
+[00:16:16] the turmoil hit the stock market on September 16,
+[00:16:23] and he made similar claims about her husband.
+[00:16:23] Bloomberg notes that none of this has been
+[00:16:29] independently confirmed. She stepped down
+[00:16:29] from her party post, saying she wanted the
+[00:16:35] claims clarified "without leaving any room for
+[00:16:35] doubt." She hasn't been charged with anything,
+[00:16:41] and neither she nor her husband was among
+[00:16:41] the eleven people named by the regulator.
+[00:16:47] To be clear, nobody has said who bought any
+[00:16:47] of those shares. Güvenal notes that the answer
+[00:16:53] exists, since every trade is logged day by day.
+[00:16:53] But his broader point is the more important one.
+[00:17:00] When a fund is one of the biggest buyers of
+[00:17:00] an inflated stock, it can become the exit door
+[00:17:05] for anyone selling at the top… and the people
+[00:17:05] paying for that exit are the fund's investors.
+[00:17:14] Economists have a name for insiders moving money
+[00:17:14] out at the expense of outside investors. In a 2000
+[00:17:21] paper, a group of researchers including the Nobel
+[00:17:21] laureate Simon Johnson called it “tunneling.” The
+[00:17:28] classic example is a controlling shareholder
+[00:17:28] selling something to their own company at an
+[00:17:34] inflated price: the insider gets the cash, and the
+[00:17:34] minority shareholders pay for it. A fund can work
+[00:17:41] the same way. If it pays an inflated price for
+[00:17:41] shares, the seller walks away with real money, and
+[00:17:48] the fund's investors are left holding the bag.
+[00:17:48] So, how did a machine that was
+[00:17:54] running so smoothly seize up?
+[00:17:54] On August 29th, the Capital Markets Board,
+[00:17:59] Turkey's securities regulator, introduced a new
+[00:17:59] rule capping how much of a company's free float
+[00:18:06] a single fund could hold. And as Hilmi Güvenal
+[00:18:06] points out, the rule was surprisingly gentle.
+[00:18:14] Funds that were already over the limit were given
+[00:18:14] until 2029 to comply, so nobody had to dump their
+[00:18:22] shares. They just couldn't buy any more. And
+[00:18:22] a system that depends on somebody buying every
+[00:18:28] single day has a problem when the buying stops.
+[00:18:28] Which brings us to our third suspect for
+[00:18:35] the malevolent forces: the regulator.
+[00:18:35] John Paul Rathbone of the FT said on the
+[00:18:41] Unhedged podcast that the regulator had described
+[00:18:41] some of these fund prices as fictitious in an
+[00:18:48] internal memo back in December. It then spent
+[00:18:48] eight months tightening things around the edges,
+[00:18:55] and when the big rule finally arrived, all
+[00:18:55] it did was stop funds from adding to their
+[00:19:00] positions. Which, it turns out, was enough.
+[00:19:00] With nobody left to keep buying, the prices had
+[00:19:08] nothing holding them up. In mid-September,
+[00:19:08] Tera announced that it was buying Pusula,
+[00:19:13] another fund manager. The next day, Pusula
+[00:19:13] said it couldn't meet redemption requests.
+[00:19:21] This was not reassuring.
+[00:19:21] Investors pulled about 4.7
+[00:19:26] billion dollars out of Turkish investment funds
+[00:19:26] in just over two weeks, and on September 16th,
+[00:19:33] Tera said that it, too, was unable to
+[00:19:33] pay clients who wanted their money back.
+[00:19:39] The football club Tera sponsored played its
+[00:19:39] next match without the Tera logo on its shirts,
+[00:19:46] and the club's own shares lost about
+[00:19:46] a third of their value that week.
+[00:19:51] I would have expected the lack of writing on their
+[00:19:51] shirts to be viewed positively – but I guess they
+[00:19:56] probably needed the sponsorship money.
+[00:19:56] Runs like this tend to feed on themselves,
+[00:20:02] and there's a good reason for that. If you have
+[00:20:02] to sell your house in the next hour instead of
+[00:20:08] the next month, you're going to have to cut the
+[00:20:08] price, however nice the house is. A fund facing
+[00:20:15] a wave of redemptions has the same problem. It
+[00:20:15] pays the first people out by selling whatever
+[00:20:21] is easiest to sell, and the people who stay
+[00:20:21] are left owning the thinly traded stocks,
+[00:20:27] which can only be sold in a hurry at a discount.
+[00:20:27] A well-known 2010 study of American mutual funds
+[00:20:35] found exactly this: funds holding illiquid
+[00:20:35] assets see much bigger outflows after bad news,
+[00:20:42] because investors understand that waiting costs
+[00:20:42] them. So, the people rushing for the exit that
+[00:20:49] week were being shrewd. The ones who waited were
+[00:20:49] the ones who ended up paying for the discount.
+[00:20:57] For the people who didn't get out in time, the
+[00:20:57] results have been devastating. One investor told
+[00:21:03] Bloomberg that he had moved 2.4 million lira out
+[00:21:03] of gold and into two Tera equity funds at the end
+[00:21:09] of August. "My nerves are wrecked," he said.
+[00:21:09] "I can't sleep." And as an entrepreneur who
+[00:21:14] lost 90% of his investment in Pusula funds put
+[00:21:14] it: "These were all regulator-approved funds."
+[00:21:22] How did this go on for so long? Well, as Robert
+[00:21:22] Armstrong put it on the FT's Unhedged podcast, the
+[00:21:29] problems were something of an open secret – quite
+[00:21:29] a lot of people could see what was going on.
+[00:21:35] In February 2025, Istanbul's chief prosecutor
+[00:21:35] wrote to the capital markets regulator asking
+[00:21:42] it to look into unusual share trading by
+[00:21:42] the chairman of Pusula. In November 2025,
+[00:21:49] Turkey's finance minister publicly stated that
+[00:21:49] the government knew stock price manipulation was
+[00:21:54] taking place through certain funds. In June 2026,
+[00:21:54] MSCI warned about "recurring instances of possible
+[00:22:03] coordinated trading behavior." And yet, the big
+[00:22:03] rule change didn't come until the end of August.
+[00:22:10] Part of the reason this went on for so long may
+[00:22:10] be that getting caught just wasn't very expensive.
+[00:22:17] The economist Gary Becker, who later won a Nobel
+[00:22:17] Prize, argued back in 1968 that criminals approach
+[00:22:25] crime much like the way businessmen approach any
+[00:22:25] other business decision – they weigh the expected
+[00:22:31] gains against the chance of getting caught,
+[00:22:31] multiplied by the penalty. If stock market
+[00:22:37] manipulation can make you hundreds of millions of
+[00:22:37] dollars, and the fine if you get caught is just
+[00:22:44] $199,000, the math is not very complicated. A
+[00:22:44] fine like that is just a small operating expense.
+[00:22:52] Deterrence needs more than just fines. In 2001,
+[00:22:52] the legal scholar Bernard Black analyzed the
+[00:23:00] institutions a country needs to have strong stock
+[00:23:00] markets. His list includes an honest regulator,
+[00:23:07] independent courts, auditors that can be held
+[00:23:07] liable, and a free press. Turkey has all of
+[00:23:14] these on paper. In practice, as the Economist has
+[00:23:14] noted, officials were slow to act on the warnings,
+[00:23:21] the former financial crimes official
+[00:23:21] we met earlier says he was detained
+[00:23:25] twice after raising concerns about Tera, and
+[00:23:25] Tera threatened to sue reporters and social
+[00:23:32] media users who accused it of wrongdoing.
+[00:23:32] When people don't trust the institutions,
+[00:23:38] they often rely on connections instead. As the
+[00:23:38] FT noted, the boards of companies caught up in
+[00:23:45] the scandal included a former ambassador
+[00:23:45] to the OECD and a university rector,
+[00:23:51] and Tera's financial holding company was run
+[00:23:51] by a former deputy governor of the central
+[00:23:56] bank. Americans may remember that Theranos had two
+[00:23:56] former secretaries of state on its board – Henry
+[00:24:03] Kissinger and George Shultz – which was comforting
+[00:24:03] to investors, even if neither of them had any
+[00:24:09] background in science or blood testing.
+[00:24:09] In a famous 2001 paper, the economist
+[00:24:15] Raymond Fisman put a number on this sort of
+[00:24:15] thing. He looked at Indonesia under Suharto
+[00:24:22] and found that whenever rumors spread about
+[00:24:22] Suharto's health, the shares of companies
+[00:24:27] closely connected to him fell much further than
+[00:24:27] those of less well-connected firms. Connections
+[00:24:34] can be very valuable… for as long as they last.
+[00:24:34] Our fourth suspect for the notorious malevolent
+[00:24:42] forces has to be MSCI, a foreign
+[00:24:42] index provider based in New York.
+[00:24:48] The Turkish government has spent years promoting
+[00:24:48] Istanbul as a global financial center, so I
+[00:24:55] imagine they were excited to read MSCI's June 2026
+[00:24:55] Market Classification Review. It opened with good
+[00:25:03] news for Bulgaria, which is being promoted up to
+[00:25:03] Frontier Market status, and closed with a reminder
+[00:25:10] that Greece is being promoted to Developed Market
+[00:25:10] status. In between, it warned Turkey and Indonesia
+[00:25:17] about coordinated trading activity on their stock
+[00:25:17] markets. Turkey was told that MSCI "may launch
+[00:25:24] a consultation on the appropriate treatment for
+[00:25:24] Turkey," which is probably not a positive review.
+[00:25:32] As the Economist read it, Turkey was being warned
+[00:25:32] that it might pass Bulgaria on the way down,
+[00:25:39] and S&P Dow Jones has since put Turkey
+[00:25:39] under review for exactly that downgrade.
+[00:25:45] They point out that frontier status would
+[00:25:45] put Turkey in the same category as much
+[00:25:51] smaller markets like Tunisia and Romania.
+[00:25:51] This isn't what you want to hear when you're
+[00:25:58] trying to build a global financial center, and
+[00:25:58] John Paul Rathbone suggested on the Unhedged
+[00:26:04] podcast that the threat of a downgrade in
+[00:26:04] November was probably what finally pushed
+[00:26:09] the regulator to act. So, MSCI may have set the
+[00:26:09] whole thing in motion, although calling a press
+[00:26:16] release a speculative attack does seem like a
+[00:26:16] bit of a stretch. Still, we should probably keep
+[00:26:22] them on our list of suspects – the alternative
+[00:26:22] would be to start looking at the people who were
+[00:26:27] running the funds, and that hardly seems fair.
+[00:26:27] It would be easy to assume that a scandal like
+[00:26:33] this only affects the people who lost
+[00:26:33] money in the funds, but unfortunately,
+[00:26:39] the damage spreads a lot further than that.
+[00:26:39] Back in 1970, the economist George Akerlof,
+[00:26:46] who later won a Nobel Prize, explained why
+[00:26:46] dishonesty is so harmful, using the market
+[00:26:52] for used cars as an example. When buyers
+[00:26:52] can't tell the good cars from the bad ones,
+[00:26:58] (the "lemons,") they'll only pay an average price
+[00:26:58] for a used car. So, the owners of good cars stop
+[00:27:06] selling, and the market fills up with lemons.
+[00:27:06] Turkish stocks now have a “market for lemons”
+[00:27:12] problem. Turkey's finance minister has been
+[00:27:12] trying to get companies to raise money on the
+[00:27:18] stock market rather than relying on expensive bank
+[00:27:18] loans, and it was working. According to the FT, 34
+[00:27:26] companies raised 82.4 billion lira through IPOs in
+[00:27:26] the first eight months of this year, far more than
+[00:27:34] in all of 2025. But if investors can't tell which
+[00:27:34] small companies are good businesses and which are
+[00:27:42] propped up by a friendly fund, they'll either stay
+[00:27:42] away from the stock market altogether - or demand
+[00:27:48] a discount on all of them. Honest companies end up
+[00:27:48] paying a higher cost of capital. This scandal also
+[00:27:57] hits Turkish asset managers - a recent working
+[00:27:57] paper found that money was already leaving
+[00:28:04] independent fund managers with no connection to
+[00:28:04] the scandal and heading for funds owned by banks.
+[00:28:11] None of this is uniquely Turkish, of course.
+[00:28:11] Financial history is mostly just different
+[00:28:17] people discovering the same trick a few
+[00:28:17] decades apart and calling it innovation.
+[00:28:23] In the 1960s, Bernie Cornfeld, who happened
+[00:28:23] to have been born in Istanbul, built Investors
+[00:28:30] Overseas Services into one of the biggest fund
+[00:28:30] businesses in the world, selling funds door to
+[00:28:36] door across Europe. His famous recruiting line was
+[00:28:36] "Do you sincerely want to be rich?", a question to
+[00:28:43] which most people answer – I sincerely do...
+[00:28:43] One of his funds owned oil and gas exploration
+[00:28:51] permits in the Canadian Arctic, which it
+[00:28:51] had bought from an oilman named John King.
+[00:28:56] According to a later US court ruling, in
+[00:28:56] December 1969 King arranged the sale of a
+[00:29:03] small slice of his own group's Arctic permits
+[00:29:03] at a much higher price, and that same night,
+[00:29:09] a Friday, the fund used that price to revalue
+[00:29:09] its entire holding upward. A few weeks later,
+[00:29:16] the fund effectively reimbursed King by selling
+[00:29:16] him an identical slice on the same terms. It was
+[00:29:23] the same trick: a tiny trade, a big revaluation,
+[00:29:23] and a price that nobody could actually sell at.
+[00:29:30] Most American savers avoided all of this
+[00:29:30] for a fairly boring reason. Back in 1967,
+[00:29:37] the SEC had forced IOS to stop selling its funds
+[00:29:37] to Americans. The institutions did their job.
+[00:29:46] Then there's Bill Hwang. His lawyers argued that
+[00:29:46] buying shares on the open market, at whatever
+[00:29:53] price the market is offering, can't be illegal
+[00:29:53] manipulation. It's an idea legal scholars have
+[00:30:00] debated for decades. A jury in New York disagreed,
+[00:30:00] and in 2024 Hwang was convicted of fraud, market
+[00:30:07] manipulation, and racketeering, and sentenced
+[00:30:07] to eighteen years in prison. He's free on bail
+[00:30:13] while he appeals, and according to Bloomberg,
+[00:30:13] he has also applied for a presidential pardon.
+[00:30:20] What can the rest of the
+[00:30:20] world take from all this?
+[00:30:24] Be wary of any price that's mostly set by
+[00:30:24] the people who already own large positions
+[00:30:30] in the asset. Whether it's a company that keeps
+[00:30:30] raising money to buy more of the same thing,
+[00:30:36] or a hot new stock where only a few percent of
+[00:30:36] the shares ever trade, the price on the screen
+[00:30:42] can tell you very little about what the asset
+[00:30:42] would be worth if it traded freely in a deep,
+[00:30:48] liquid market. And when bad actors can pump stocks
+[00:30:48] without paying much of a price, honest businesses
+[00:30:55] eventually stop trying to compete.
+[00:30:55] So, where do things stand now?
+[00:31:01] According to Turkey's justice minister, 217
+[00:31:01] suspects have been targeted in the probe so far,
+[00:31:08] and 56 people have been jailed pending trial.
+[00:31:08] The capital markets regulator has given İşbank
+[00:31:15] and the state-run Ziraat Bank up to six
+[00:31:15] months to liquidate the 131 frozen funds.
+[00:31:22] But as Hilmi Güvenal points out, anyone whose
+[00:31:22] sell order was cancelled when the funds were
+[00:31:29] frozen is no longer owed money. They're simply
+[00:31:29] entitled to their share of whatever the banks
+[00:31:35] manage to raise. And when you try to sell
+[00:31:35] billions of lira of inflated factoring
+[00:31:40] companies and loss-making shipyards all at
+[00:31:40] once, you run into problems. Murat Gulkan,
+[00:31:46] the CEO of OMG Capital Advisors, estimates that
+[00:31:46] the assets would fetch "pennies on the dollar."
+[00:31:54] So, who is stepping in as the buyer of last
+[00:31:54] resort? Well, the Turkish sovereign wealth
+[00:32:00] fund has reportedly been buying blue-chip
+[00:32:00] stocks to prevent the wider market from
+[00:32:06] crashing. A state-owned Islamic bank is in talks
+[00:32:06] to take over two savings-finance companies from
+[00:32:13] the Pusula group. The deposit insurance fund is
+[00:32:13] set to receive any assets the courts decide are
+[00:32:20] the proceeds of crime. And the country's
+[00:32:20] vice president has been put in charge of
+[00:32:25] a council overseeing the whole liquidation.
+[00:32:25] Which brings us back to Emre Tezmen's philosophy
+[00:32:31] of finance: "I make money, the investor
+[00:32:31] makes money. And what does the state lose?"
+[00:32:38] It appears the state is now finding out.
+[00:32:38] And it also brings us to the end of our
+[00:32:44] search for the notorious malevolent forces.
+[00:32:44] After ruling out whistleblowers, regulators,
+[00:32:50] New York index providers, and 28-year-olds
+[00:32:50] trying to pay for a wedding, we finally have
+[00:32:56] our answer. The planned, deliberate, and organized
+[00:32:56] speculative attack that brought down the Goldman
+[00:33:02] Sachs of Turkey was carried out by sellers.
+[00:33:02] Tezmen had built a perfect financial machine.
+[00:33:09] Its only design flaw was that it
+[00:33:09] required an economy in which absolutely
+[00:33:14] nobody ever pressed the sell button.
+[00:33:14] If you found this video interesting,
+[00:33:19] you should watch my video on the crypto
+[00:33:19] infinite money glitch next. Don’t forget to
+[00:33:24] check out our sponsor Saily using the link in the
+[00:33:24] description and see you in the next video, bye.

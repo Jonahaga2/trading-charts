@@ -1,0 +1,782 @@
+[00:00:00] hey everyone welcome back today i'm
+[00:00:02] going to be discussing vector bt
+[00:00:04] hyper-fast quantitative analysis it
+[00:00:07] describes itself on its website as the
+[00:00:09] ultimate python library for technical
+[00:00:11] analysis and back testing at speed and
+[00:00:14] scale sounds great sounds amazing who
+[00:00:17] wouldn't want that in fact several of
+[00:00:19] you have already commented on the
+[00:00:20] youtube channel saying please do a video
+[00:00:23] on vector bt and maybe compare it to
+[00:00:25] some other back testing frameworks that
+[00:00:28] i've discussed on this channel including
+[00:00:29] backtrader and pi algo trade so i
+[00:00:32] thought on this video i will do exactly
+[00:00:34] that i'm going to start off with a quick
+[00:00:37] overview of all of the source code and
+[00:00:40] make a couple more videos showing more
+[00:00:42] in-depth how to use this particular
+[00:00:44] library
+[00:00:45] we're going to go over how to
+[00:00:47] generate a back test like the one shown
+[00:00:49] here where you can similar to backtrader
+[00:00:51] uh program in a strategy that shows all
+[00:00:54] your buy and sell signals so this green
+[00:00:57] arrow here is where you would buy and
+[00:00:59] this red arrow is where you would have
+[00:01:00] sold according to the strategy i've
+[00:01:02] programmed and it also
+[00:01:03] shows your returns on each one of these
+[00:01:05] trades and compares your performance
+[00:01:07] against whatever benchmark you're trying
+[00:01:09] to compare against for instance buying
+[00:01:11] and holding the s p 500 or buying and
+[00:01:13] holding bitcoin seeing if your strategy
+[00:01:16] would have done better or whether you're
+[00:01:17] better off just sitting there doing
+[00:01:18] nothing at all so uh this is pretty cool
+[00:01:21] lets you generate these nice web-based
+[00:01:23] visualizations it also lets you do this
+[00:01:25] hyper parameter optimization uh some
+[00:01:28] people might say this is overfitting
+[00:01:30] where you can run many different
+[00:01:31] combinations of your strategy parameters
+[00:01:34] so for instance if you're doing this
+[00:01:35] moving average crossover why not just
+[00:01:37] try all of them see which one is the
+[00:01:39] best you can generate this heat map to
+[00:01:41] show which areas or which different
+[00:01:43] combinations would have performed the
+[00:01:44] best on historical data in case that's
+[00:01:46] of interest to you you can also do
+[00:01:49] things like label generation for
+[00:01:51] ml models so for instance this one
+[00:01:53] called xlb is labeling a local extrema
+[00:01:56] so you can see this like a local peak
+[00:01:59] and a bottom and there's another peak
+[00:02:01] there's another bottom and there's
+[00:02:03] another peak in yellow so maybe you want
+[00:02:05] to run all of these labels on many
+[00:02:07] different charts and feed it into some
+[00:02:10] other system that you have
+[00:02:11] and also there's a bunch of other labels
+[00:02:13] that you can generate i ran this one on
+[00:02:15] zillow stock to show these
+[00:02:17] up trends and down trends and you can
+[00:02:19] customize all these with different
+[00:02:20] parameters saying you know maybe
+[00:02:22] highlight all the 30 drawdowns for
+[00:02:24] instance i'll also show you how to use
+[00:02:26] this vector vt data updater so you see i
+[00:02:28] have a class extending vbt data updater
+[00:02:31] and what this does is allows you to
+[00:02:32] programmatically fetch new data on a
+[00:02:35] schedule so let's say you want to fetch
+[00:02:36] data hourly or minutely or maybe every
+[00:02:38] 15 seconds you can fetch new data and
+[00:02:41] program your strategy into this data
+[00:02:42] updater maybe you want to place a trade
+[00:02:44] or send yourself some type of alert when
+[00:02:46] a certain condition happens on price or
+[00:02:49] volume and one other nice thing that's
+[00:02:51] built in is telegram messaging so maybe
+[00:02:54] when you receive this signal on new data
+[00:02:56] that comes in you want to send yourself
+[00:02:58] a little telegram message i'll show you
+[00:03:00] how to use that and since everyone likes
+[00:03:01] to create little bots i'll program a bot
+[00:03:04] in an upcoming video and we'll deploy it
+[00:03:06] to lenode so if anyone has any requests
+[00:03:08] on a particular strategy to program in
+[00:03:11] i'm taking requests now and i'll make it
+[00:03:13] on this channel and show it to you i'll
+[00:03:15] probably upload that like thursday or
+[00:03:16] friday so let me know by tuesday or
+[00:03:19] wednesday what you want to see and i'll
+[00:03:21] program that in
+[00:03:23] so let's go ahead and get started by
+[00:03:24] jumping into the documentation all right
+[00:03:26] so i'm on the vector bt website at
+[00:03:29] vectorbt.dev there's a link to the
+[00:03:31] documentation or we can go to the github
+[00:03:33] page and browse the source code i'm
+[00:03:35] going to click on documentation and
+[00:03:36] we're going to look at how to install
+[00:03:38] this thing so this is the package it
+[00:03:40] describes some of the benefits of using
+[00:03:42] it so we can just install it with pip as
+[00:03:44] usual so i have an empty visual studio
+[00:03:46] code editor here and i have a script i
+[00:03:48] just made called backtest.pi i'm going
+[00:03:50] to run it just to get a command line
+[00:03:53] and i don't have it doing anything yet
+[00:03:55] so i can just do pip install as usual so
+[00:03:57] i'm going to do pip3 install vector bt
+[00:04:00] and that will install the vector bt
+[00:04:02] package and let us use it okay so now
+[00:04:05] that that's done we're all set up so the
+[00:04:07] first thing i want to do is briefly
+[00:04:08] touch on vector bt versus backtrader
+[00:04:11] everyone's always asking me what's the
+[00:04:13] best back testing framework first of all
+[00:04:15] i don't think it's pi algo trade i
+[00:04:16] briefly tried that but i just don't
+[00:04:18] think that's an answer there's not a ton
+[00:04:19] of examples there's not a ton of
+[00:04:20] documentation there and it wasn't clear
+[00:04:22] to me how to do everything we want to do
+[00:04:24] at least backtrader there's a lot of
+[00:04:25] documentation there's a lot of examples
+[00:04:28] and a lot of tutorials on how to use it
+[00:04:30] vector bt here which describes a few
+[00:04:32] benefits that i think are worthwhile the
+[00:04:34] first thing in the vector bt
+[00:04:36] documentation it discusses is
+[00:04:38] performance so if you look at the first
+[00:04:40] paragraph it says it was implemented in
+[00:04:43] order to address common uh performance
+[00:04:46] shortcomings of backtesting library so
+[00:04:48] if you've seen in these videos where
+[00:04:49] people make their own backtesting
+[00:04:51] framework you'll notice they just loop
+[00:04:53] through a lot of data and order using
+[00:04:55] python lists for instance and a lot of
+[00:04:56] them are really slow if you actually try
+[00:04:58] to run it for large amounts of data or
+[00:05:00] very short time frame data like minute
+[00:05:02] data like a lot of you want to do so
+[00:05:04] maybe you want to run some strategy for
+[00:05:06] every minute of data for the past 20
+[00:05:07] years and you run one of these and you
+[00:05:09] run it on every single instrument
+[00:05:11] it'll be really slow
+[00:05:13] in fact if you look at my backtrader
+[00:05:16] tutorial i believe it was yeah the stock
+[00:05:18] trading app tutorial part 19 where i
+[00:05:20] back tested opening range breakout with
+[00:05:22] backtrader what i did was run this orb
+[00:05:25] back test
+[00:05:26] on every stock in the nasdaq 100 so 100
+[00:05:29] stocks and i did it for three different
+[00:05:31] values of the opening range and i posted
+[00:05:34] the source code you'll see where i did
+[00:05:35] this opt strategy so i optimized the
+[00:05:37] strategy for the number of opening bars
+[00:05:40] at 15 minutes 30 minutes and 60 minutes
+[00:05:42] and i ran through all of them and i
+[00:05:43] think this actually took hours i can't
+[00:05:44] remember the exact amount of time it
+[00:05:46] took but i had to let it run for a long
+[00:05:48] time it's not like i could just show it
+[00:05:49] in real time
+[00:05:50] on the video so vector bt claims to
+[00:05:54] solve some of these performance
+[00:05:56] bottlenecks by using these optimize
+[00:05:58] number num numpy arrays with this thing
+[00:06:01] called numba if you go to
+[00:06:03] number.pidata.org
+[00:06:06] number makes python code fast it's an
+[00:06:08] open source just-in-time compiler that
+[00:06:10] translates a subset of python and numpy
+[00:06:12] code into fast machine code so there's
+[00:06:14] these all these optimizations that are
+[00:06:16] happening under the hood here and so it
+[00:06:18] claims that uses these highly
+[00:06:20] optimized numpy arrays and it also
+[00:06:24] overhauls the traditional
+[00:06:25] object-oriented approach and so if you
+[00:06:27] look at the source code for my
+[00:06:30] opening range breakout strategy what you
+[00:06:32] do in backtrader is you extend this
+[00:06:34] backtrader strategy class so i have this
+[00:06:36] class called opening range breakout and
+[00:06:39] so there's this object here where i
+[00:06:41] define a number of parameters and you
+[00:06:43] see how there's this next function and
+[00:06:45] what you do with backtrader as you're
+[00:06:47] basically playing the tape in order in
+[00:06:49] this list and you're saying next bar
+[00:06:51] next bar next bar if this do that if
+[00:06:53] this do this other thing
+[00:06:55] notify order place an order check on the
+[00:06:57] order status and so basically you're
+[00:06:59] right you're filling in this long next
+[00:07:01] function over and over again so a vector
+[00:07:03] bt
+[00:07:04] says it's able to process these arrays
+[00:07:06] and run all these operations all at once
+[00:07:09] somehow so that runs in a more highly
+[00:07:11] efficient manner so i haven't personally
+[00:07:12] benchmarked the a similar strategy on
+[00:07:15] both of these to see
+[00:07:17] whether this is the case but it looks
+[00:07:18] like they have some benchmarks here
+[00:07:20] showing uh using
+[00:07:22] vector bt versus just a regular pandas
+[00:07:24] data frame for instance and it looks
+[00:07:27] like it is much much faster here and
+[00:07:29] it's definitely much faster than
+[00:07:31] backtrader which i think just uses pure
+[00:07:33] like python classes and python data
+[00:07:35] structures so this uses these very
+[00:07:37] highly optimized numpy arrays the second
+[00:07:40] comparison i'd like to do between vector
+[00:07:42] bt and bactrator is the community and
+[00:07:46] documentation so let's say you adopt one
+[00:07:48] of these open source back testing
+[00:07:50] library and you're relying on on it for
+[00:07:51] your own
+[00:07:52] trading your own strategies and you run
+[00:07:55] into a problem how likely is it you're
+[00:07:57] going to be able to google it and find
+[00:07:59] an answer how likely is it you're going
+[00:08:01] to be able to look in the documentation
+[00:08:02] and figure out how to do it and if you
+[00:08:04] reach out for help is anyone going to
+[00:08:06] help you if you submit a pull request or
+[00:08:08] a bug report in the github repository
+[00:08:11] how likely is it anyone's going to reply
+[00:08:13] to you
+[00:08:14] and i'll say vector bt does very well in
+[00:08:17] this department i found this
+[00:08:19] documentation very well organized
+[00:08:21] there's a lot of these jupiter notebooks
+[00:08:23] here where you can run through a variety
+[00:08:25] of examples there's actually a dashboard
+[00:08:27] example here using plotly and there's a
+[00:08:29] few articles that the author of the
+[00:08:32] library has written himself and before i
+[00:08:35] forget let's thank the author oleg
+[00:08:37] palakkaw here who has generously written
+[00:08:40] many many thousands of lines of code to
+[00:08:43] implement this library that we will rely
+[00:08:46] on so thanks for that if you click on
+[00:08:48] getting help here looks like there's a
+[00:08:50] private chat you can go to stack
+[00:08:51] overflow or the github discussions here
+[00:08:55] and what i've noticed here that's pretty
+[00:08:56] nice is this uh library is very actively
+[00:08:59] maintained so like one thing i like to
+[00:09:01] look at how many stars forks people are
+[00:09:04] watching it so how active is it and how
+[00:09:06] many commits are there recently because
+[00:09:07] there's a lot of just dead projects out
+[00:09:09] there including some of the repositories
+[00:09:12] that i've put online so it's very
+[00:09:13] difficult to maintain an open source
+[00:09:16] project when lots of people are asking
+[00:09:17] for things all the time and you'll see
+[00:09:19] the author committed code just three
+[00:09:21] days ago you see there's commits in
+[00:09:23] august here so this library is very
+[00:09:25] actively maintained if you look at the
+[00:09:27] pull requests here there's a lot of
+[00:09:29] close pull requests and not that many of
+[00:09:31] them open meaning contributions are
+[00:09:33] accepted and merged into the source code
+[00:09:36] pretty frequently
+[00:09:38] on the other hand backtrader
+[00:09:40] while it has great documentation and i
+[00:09:42] will say the backtrader documentation is
+[00:09:44] quite good there's documentation on each
+[00:09:46] feature of the bactrader library and
+[00:09:49] another nice thing of it about it is the
+[00:09:51] community so there's a forum here with
+[00:09:53] tons of posts where people have asked
+[00:09:55] each other questions and gotten answers
+[00:09:57] and uh here's the source code here and
+[00:10:00] so one downside i've noticed on
+[00:10:01] backtrader recently when i first started
+[00:10:04] discussing it it was very actively
+[00:10:06] maintained but if you look recently uh
+[00:10:08] the commit frequency is getting less and
+[00:10:11] less so you see
+[00:10:12] back in july 2020 there's only been a
+[00:10:14] couple commits in the last year and i
+[00:10:16] think that's because the author who
+[00:10:18] replied to many many posts on the forums
+[00:10:21] by the way and did a great job
+[00:10:23] he's a bit
+[00:10:24] i find him a little condescending at
+[00:10:26] times if you if you look at his post
+[00:10:27] when people ask questions uh however i
+[00:10:29] could see where it gets irritating to
+[00:10:31] answer the same questions over and over
+[00:10:32] again so he kept pointing people to the
+[00:10:34] documentation um so
+[00:10:38] good support here but also this this
+[00:10:40] project is kind of considered complete i
+[00:10:42] think some members of the community have
+[00:10:44] forked it and maintained like back
+[00:10:46] trader 2 or something but
+[00:10:48] it's not quite as actively maintained by
+[00:10:50] the original author which means over
+[00:10:51] time there's not going to be as many new
+[00:10:53] features added whereas vector bt i think
+[00:10:56] is a little more actively maintained
+[00:10:57] right now and there's a lot more commits
+[00:10:59] and activity uh occurring right now so i
+[00:11:01] have a lot of confidence that this is
+[00:11:02] being actively maintained i also
+[00:11:04] mentioned pi algo traded in the past um
+[00:11:07] i want to say the documentation here
+[00:11:10] covers some basics like doing the very
+[00:11:12] basic things but if you actually dive in
+[00:11:14] it appears to be very well documented
+[00:11:16] but if you dive in more and more beyond
+[00:11:17] these simple examples here i think
+[00:11:19] there's actually not that much there and
+[00:11:22] you'll you'll have some trouble figuring
+[00:11:23] out how to how to do new things with pi
+[00:11:26] i would trade and there's not like a
+[00:11:27] forum
+[00:11:28] or much activity in github on that right
+[00:11:31] now so as of right now i'm not really
+[00:11:33] considering using pi i'll go trade much
+[00:11:35] in the future the third thing i want to
+[00:11:36] talk about is ease of use how easy is it
+[00:11:39] to get up and running write a back test
+[00:11:41] maybe do some live trading using that
+[00:11:43] back test well the easiest way to figure
+[00:11:46] out ease of use is to look at a couple
+[00:11:48] code examples for the same simple
+[00:11:50] strategy between each framework and so
+[00:11:53] if you look an example here on backtest
+[00:11:55] rookies this website shows a simple rsi
+[00:11:58] strategy
+[00:11:59] using backtrader and we've written
+[00:12:01] something like this before on the
+[00:12:02] channel
+[00:12:03] with backtrader if you're familiar with
+[00:12:04] object oriented programming it's pretty
+[00:12:06] straightforward but also that it's a
+[00:12:08] little bit confusing how it works at
+[00:12:09] first but it if you look here what they
+[00:12:12] do is they create a strategy
+[00:12:14] and you need to extend the backtrader
+[00:12:16] strategy class
+[00:12:18] you run some indicator in the
+[00:12:20] constructor so this is the rsi indicator
+[00:12:24] and so this indicator is running and you
+[00:12:27] give it a period that you're running it
+[00:12:28] on and then you just need to override
+[00:12:30] this next function and so you just go
+[00:12:32] through all the data in order and you're
+[00:12:35] saying if you're not in the position if
+[00:12:36] the rsi is less than 30 by
+[00:12:38] 100 units else if the rsi is greater
+[00:12:41] than 70 then you're gonna sell 100 units
+[00:12:44] so you're just buying the oversold
+[00:12:45] condition and selling uh the overbought
+[00:12:48] condition just a basic strategy not a
+[00:12:50] very good strategy by the way um but so
+[00:12:52] the way backtrader works um before you
+[00:12:55] run this class what you want to do is
+[00:12:57] instantiate this cerebro object which is
+[00:12:59] like the brain cerebros like the brain
+[00:13:01] of the program you set a certain amount
+[00:13:05] of starting cache you need to add the
+[00:13:07] strategy to this cerebro object you need
+[00:13:09] to provide it a data feed so they're
+[00:13:11] using quandl here as their data feed and
+[00:13:13] they're using apple
+[00:13:15] uh between the time frame of 20 for the
+[00:13:17] year 2016 and they're just adding that
+[00:13:20] data feed to cerebro they're running the
+[00:13:22] strategy on that data feed they're
+[00:13:24] setting an initial amount of cash and
+[00:13:26] then they're calling this run to run it
+[00:13:28] and they're just showing the final value
+[00:13:30] after running the strategy so
+[00:13:32] not that many lines of code and then you
+[00:13:34] can also plot that strategy using a
+[00:13:36] candlestick chart so that's not not too
+[00:13:39] complicated now let's look at what the
+[00:13:41] equivalent looks like in vector bt and
+[00:13:43] i'll go ahead and just write this code
+[00:13:45] real quick just to show you a quick
+[00:13:46] example
+[00:13:47] so this is an example on the
+[00:13:50] documentation of vector bt and so you
+[00:13:52] see the first thing you do is import
+[00:13:53] vector bt as vbt and then you just need
+[00:13:56] to get some price data so it looks like
+[00:13:58] they use yahoo finance to get bitcoin
+[00:14:01] prices and so i'll do that real quick so
+[00:14:03] we have a simple uh empty script here
+[00:14:06] and i'm just going to import vector bt
+[00:14:08] or vector bt as vbt
+[00:14:13] and then i'm going to do bitcoin price
+[00:14:15] equals
+[00:14:17] vbt.yfdata.download so we're using the
+[00:14:19] yahoo finance data that's built into
+[00:14:22] vectorbt and so this wraps a number of
+[00:14:24] data provider libraries which is kind of
+[00:14:26] cool so if i jump into here you'll see
+[00:14:28] there's yf data here so you'll see some
+[00:14:30] other places you can get data from so
+[00:14:32] let me quickly talk about that
+[00:14:34] so we have yahoo finance data we also
+[00:14:36] see it imports binance as well so we
+[00:14:39] have a binance client which is kind of
+[00:14:41] cool if we want to use binance as a data
+[00:14:43] source they have a synthetic data source
+[00:14:46] here if we want to generate fake data to
+[00:14:48] test our application we also have this
+[00:14:51] geometric brownian motion
+[00:14:54] so that extends synthetic data so we can
+[00:14:56] generate all this random data if we want
+[00:14:58] to test that out and then also we can
+[00:15:00] use yahoo finance data so that's good
+[00:15:02] for pulling in stock data right and it
+[00:15:05] can also pull in a crypto data but not
+[00:15:07] as detailed of crypto crypto data as
+[00:15:09] other providers and then you look
+[00:15:11] there's also a binance data class here
+[00:15:13] which is cool because it includes python
+[00:15:15] binance which we've used for our binance
+[00:15:17] trading bot and you can also see they
+[00:15:20] include ccxt data so i've also done a
+[00:15:23] video on ccxt the cryptocurrency
+[00:15:25] exchange
+[00:15:26] trading library which allows us to use
+[00:15:28] multiple cryptocurrency exchange
+[00:15:30] providers like kraken and uh coinbase
+[00:15:34] and a lot of other different providers
+[00:15:36] ftx and we can even get a one-minute
+[00:15:38] time frame data from these data
+[00:15:41] providers so if you want to do focus on
+[00:15:43] crypto this is probably a good way to go
+[00:15:45] instead of using yahoo finance i don't
+[00:15:46] think
+[00:15:47] i don't think yahoo finance provides
+[00:15:49] really detailed crypto data but but
+[00:15:50] maybe it does or it probably only
+[00:15:52] provides it under on the top tokens so
+[00:15:54] you can probably get more obscure tokens
+[00:15:57] using something like ccxt or binance
+[00:15:59] okay so we got our data provider here
+[00:16:02] and so i'm getting the bitcoin price and
+[00:16:04] i'll just take off the start and end i'm
+[00:16:06] just going to get all of it and get the
+[00:16:08] closing prices
+[00:16:10] and actually i'll get all of the prices
+[00:16:12] not just the close and let's see what
+[00:16:14] that looks like so i get the bitcoin
+[00:16:15] price
+[00:16:16] and i print it like that
+[00:16:18] and let's see what the data structure
+[00:16:20] looks like
+[00:16:21] so just with that one line of code right
+[00:16:23] there we're able to download yahoo
+[00:16:25] finance data and it gives us this yf
+[00:16:28] data object and so if we want to get the
+[00:16:31] actual data and show it i need to
+[00:16:33] call.get here so i'm going to print btc
+[00:16:36] price
+[00:16:37] dot get
+[00:16:39] and let's look at that data structure
+[00:16:42] okay and that should show us a pandas
+[00:16:45] data frame so
+[00:16:47] if i do get you see our we have our
+[00:16:49] typical uh date open hilo close
+[00:16:52] dividends stock splits shows us the
+[00:16:54] number of rows and columns and it gets
+[00:16:56] us all the bitcoin data that's available
+[00:16:58] so yahoo finance only has this back to
+[00:17:01] 2014 when bitcoin was only 465 us
+[00:17:04] dollars a share now at 62 000 so buy and
+[00:17:07] hold just there is pretty dang good okay
+[00:17:11] and so
+[00:17:12] when we want to run our strategy we
+[00:17:14] don't want to run it on this entire data
+[00:17:15] frame we might just want to run it on
+[00:17:17] the open or the closed price so in this
+[00:17:19] case i can do get and i can do dot get
+[00:17:21] close
+[00:17:22] and that will give me the closing price
+[00:17:24] so if i print the closing price like
+[00:17:26] that
+[00:17:27] you should just see one column here so
+[00:17:29] we have just the date and just the close
+[00:17:31] so i'm going to assign that to a
+[00:17:32] variable
+[00:17:33] and so i'm going to do closing prices
+[00:17:36] equals btc price dot get close
+[00:17:40] and then also let's just print a btc
+[00:17:43] price.get and i'll put the source code
+[00:17:45] up so that's our closing uh prices right
+[00:17:48] there and then we need to run some type
+[00:17:50] of strategy on those closing prices so
+[00:17:52] you can see here they're running you
+[00:17:54] know your typical fast m a slo-ma and
+[00:17:57] running that for uh looks like a
+[00:18:00] 10-day moving average and a 20-day
+[00:18:02] moving average and they're naming them
+[00:18:04] fast and slow uh the strategy we just
+[00:18:06] showed on
+[00:18:08] this backtest rookies is an rsi strategy
+[00:18:10] so to reproduce the strategy that we
+[00:18:12] just saw let's use the rsi indicator
+[00:18:15] that's built into vector bt so i'm going
+[00:18:17] to do vbt.rsi.run
+[00:18:19] and i'm going to run the rsi indicator
+[00:18:22] on closing prices just like this so i'll
+[00:18:25] do closing prices now one thing that's
+[00:18:28] kind of cool is i can jump into the
+[00:18:30] source code if you have the python
+[00:18:32] extension installed in your visual
+[00:18:34] studio code i'm going to jump into rsi
+[00:18:36] here and this is the rsi that's built in
+[00:18:39] to vector bt so you see this indicator
+[00:18:41] factory
+[00:18:42] is instantiated and applies rsi to that
+[00:18:45] series of data and you can pass a
+[00:18:47] variety of parameters like the window
+[00:18:49] for instance and so i'm going to jump
+[00:18:51] into this indicator factory so you can
+[00:18:54] see when i jump into rsi i go into
+[00:18:57] this basic dot pi so this is organized
+[00:19:00] into
+[00:19:01] data so our data had yahoo finance data
+[00:19:04] it had binance data and ccxt data so
+[00:19:07] this package is kind of cool in that it
+[00:19:09] bundles in a lot of best of breed
+[00:19:10] libraries that we discuss on this
+[00:19:12] channel right i've discussed what yahoo
+[00:19:14] finance i've discussed uh ccxt and
+[00:19:17] python binance packages on this channel
+[00:19:19] we've already used them
+[00:19:20] it also bundles a variety of technical
+[00:19:22] indicator libraries so if you look in
+[00:19:24] indicator under factories here you'll
+[00:19:27] see
+[00:19:28] on from here if i type from underscore
+[00:19:31] you'll see there's from
+[00:19:33] ta lib so you can actually run any
+[00:19:35] indicator that's built into ta lib right
+[00:19:38] and you can run anything that's built
+[00:19:40] into pandas ta so this is from pandas ta
+[00:19:44] and i think there's also from ta so
+[00:19:46] there's this python ta as well and so
+[00:19:49] what you're able to do is call any
+[00:19:51] indicator that's built into any of these
+[00:19:53] other indicator libraries and it
+[00:19:55] provides a wrapper and a nice abstract
+[00:19:57] way of accessing all of these right and
+[00:19:59] so what i'm doing is just calling the
+[00:20:01] basic rsi indicator here but you'll also
+[00:20:04] see you know there's b bands for
+[00:20:06] instance for bollinger bands you'd
+[00:20:08] probably find stochastic here
+[00:20:11] any any other moving average or whatever
+[00:20:13] else you can think of it's probably
+[00:20:14] built in here and if it's not built in
+[00:20:16] right here you can probably use the name
+[00:20:18] of one of the functions that are built
+[00:20:20] into pandas ta which has like hundreds
+[00:20:22] of them right
+[00:20:23] so what we'll do here is apply the rsi
+[00:20:25] indicator to the closing prices and then
+[00:20:28] we just want to calculate our entries
+[00:20:30] and our exits so what we can do here is
+[00:20:32] set entries equal to rsi.rsi
+[00:20:36] below 30 and then our exits
+[00:20:40] equals rsi.rsi above 70. so we'll entry
+[00:20:44] enter if rsi goes below 30 that oversold
+[00:20:47] threshold a lot of people use and exit
+[00:20:50] when rsi is overbought at 70. right so
+[00:20:52] if i print my entries
+[00:20:55] and i print my exits
+[00:20:59] you should see some true and false
+[00:21:00] values coming through saying whether we
+[00:21:02] should enter or not whether we should
+[00:21:04] exit or not and you can see
+[00:21:06] there's my entries they're all false
+[00:21:08] right now and it says exit true in the
+[00:21:11] last few days so it's saying i should be
+[00:21:13] selling my bitcoin and that's why this
+[00:21:15] is not a great strategy because you
+[00:21:18] don't want to sell your bitcoin right so
+[00:21:20] i'm gonna look at the bitcoin price on
+[00:21:22] trading view here uh so we'll do btc usd
+[00:21:27] under crypto
+[00:21:29] yeah so let's look at that
+[00:21:31] and why is it saying to exit so if i
+[00:21:34] look at relative strength index and i
+[00:21:36] plot this on the graph you'll see that
+[00:21:39] bitcoin is currently overbought right
+[00:21:41] because it was like 40 000 a couple
+[00:21:43] weeks ago right
+[00:21:45] and then let me look at the daily chart
+[00:21:48] here and i have too much crap on my
+[00:21:50] chart right here now hold on let me
+[00:21:51] close this uh
+[00:21:52] stochastic here okay yeah you see you
+[00:21:55] can see uh bitcoin was at like 40 000
+[00:21:58] about
+[00:21:59] a few weeks ago right and then you can
+[00:22:01] see it quickly
+[00:22:03] moved up and you can see it's an
+[00:22:04] overbought territory so according to
+[00:22:06] this simple rsi strategy you should be
+[00:22:09] selling right now
+[00:22:11] bold strategy let's see how that plays
+[00:22:13] out for us so one thing you'll notice
+[00:22:15] here is there's multiple truths in a row
+[00:22:17] it's because bitcoin is overbought here
+[00:22:19] for multiple days in a row multiple
+[00:22:21] closes right so since these are all
+[00:22:23] consecutively true we really just wanted
+[00:22:25] to exit this one time when it first
+[00:22:26] crossed over into overbought territory
+[00:22:30] and so what we're going to do here is
+[00:22:31] set a crossover equals true and then
+[00:22:35] also
+[00:22:36] when it first becomes oversold we're
+[00:22:39] going to enter and where first becomes
+[00:22:41] overbought we're going to exit right and
+[00:22:43] so if i run that that'll only do true on
+[00:22:46] the very first time when it crosses over
+[00:22:49] the threshold okay so now we have our
+[00:22:51] list of entries and exits all right now
+[00:22:53] that we have our entries and exits we
+[00:22:55] need to apply these entries and exits to
+[00:22:58] our
+[00:22:59] closing prices and actually run a
+[00:23:01] strategy and so to do that i can create
+[00:23:03] a new portfolio variable here and i can
+[00:23:06] use vbt.portfol
+[00:23:09] and i can do from signals so you can see
+[00:23:12] whenever i type dot here my auto
+[00:23:15] completion shows me a variety of methods
+[00:23:17] so there's a from holding so we can see
+[00:23:19] our performance when we just hold we can
+[00:23:21] do from orders to see
+[00:23:24] enter in a number of discrete orders and
+[00:23:27] see the results and you can also do this
+[00:23:28] from signals so i'm going to see the
+[00:23:31] portfolio from signals the performance
+[00:23:34] from signals and then i'm just going to
+[00:23:36] pass it my closing prices
+[00:23:38] and then my entries and my exits and i
+[00:23:40] also need to
+[00:23:42] pass it some initial cash i'm going to
+[00:23:43] do init cash equals and we'll just do
+[00:23:46] ten thousand dollars here right and then
+[00:23:48] so i should be able to just run
+[00:23:49] portfolio.show
+[00:23:51] no portfolio.plot.show
+[00:23:54] to show the results of this overbought
+[00:23:57] oversold strategy okay so i'm going to
+[00:23:59] run that and it should fire up a web
+[00:24:01] browser for me
+[00:24:02] and let's see how it goes
+[00:24:04] and it runs just like that and just with
+[00:24:07] how many lines of code do we have it's
+[00:24:09] like 10 lines of code really i put a
+[00:24:10] bunch of spaces in there and printed out
+[00:24:12] a lot of stuff so
+[00:24:14] you'll see just how easy this is
+[00:24:16] actually so if i were to
+[00:24:17] condense this down a bit i'm not saying
+[00:24:19] compress all your code i'm just showing
+[00:24:21] you
+[00:24:23] that this is like 10 lines of code right
+[00:24:25] and we can space it out a little bit to
+[00:24:28] generate this back test of this
+[00:24:29] overbought oversold strategy you don't
+[00:24:31] have to know anything about
+[00:24:32] object-oriented programmer
+[00:24:34] programming really and initialize the
+[00:24:36] constructor and all this stuff or
+[00:24:38] cerebro object just 10 lines of function
+[00:24:40] calls and you're able to get this nice
+[00:24:42] visualization
+[00:24:43] of buying and selling and see the
+[00:24:46] performance so there you have it this is
+[00:24:48] our performance look at us with bitcoin
+[00:24:50] trying to time it and buy and sell it
+[00:24:52] and there's a buy and sell buy and sell
+[00:24:54] buy and sell let's look at this one so
+[00:24:56] uh this is our oversold we sold here we
+[00:24:59] missed this entire
+[00:25:00] run up here
+[00:25:01] and then we waited until it was oversold
+[00:25:03] right here we bought but then we sold
+[00:25:05] really quickly
+[00:25:06] and
+[00:25:07] you can see we bought again
+[00:25:09] and then we sold at a loss so you can
+[00:25:11] see all these losing trades where we
+[00:25:13] lost 40 percent 20
+[00:25:15] 23
+[00:25:17] 25
+[00:25:18] on bitcoin one of the best maybe the
+[00:25:20] best performing asset of the decade and
+[00:25:22] then you can see the cumulative returns
+[00:25:24] here
+[00:25:25] this here isn't our strategy this is the
+[00:25:27] returns from buying and holding so
+[00:25:30] that's the benchmark the actual return
+[00:25:33] we got from our strategy is down here it
+[00:25:34] looks like we didn't make any money
+[00:25:36] maybe we even
+[00:25:37] lost money so you can see this rsi thing
+[00:25:40] that people talk about all over the
+[00:25:42] internet all over youtube turns out it's
+[00:25:45] a horrible strategy and it's not going
+[00:25:47] to make you
+[00:25:48] any money at all so it's almost like we
+[00:25:51] should have done the exact opposite yeah
+[00:25:54] i should do the opposite i should if
+[00:25:56] every instinct you have is wrong then
+[00:25:58] the opposite would have to be right
+[00:26:04] yes
+[00:26:05] i will do the opposite
+[00:26:07] i used to sit here and do nothing and
+[00:26:09] regret it for the rest of the day so now
+[00:26:11] i will do the opposite and i will do
+[00:26:13] something
+[00:26:14] so let's try this out let's go ahead
+[00:26:16] since that's completely wrong let's see
+[00:26:18] what happens if we uh buy when the rsi
+[00:26:22] is
+[00:26:23] above 70. so let's make the rsi above
+[00:26:26] 70r entry and rsi below
+[00:26:29] 30 our exit exits and let's just reverse
+[00:26:33] it
+[00:26:34] and do the costanza strategy and see
+[00:26:36] what happens so i'm gonna run that
+[00:26:39] so it turns out uh bitcoin goes
+[00:26:41] parabolic right and so you want to
+[00:26:44] actually enter when bitcoin is
+[00:26:46] overbought right so you buy when it's
+[00:26:48] overbought you catch this entire move
+[00:26:50] right because it's never uh oversold
+[00:26:53] right and then when it's oversold then
+[00:26:55] you then you exit right and then you it
+[00:26:58] proceeds up really quickly it's
+[00:26:59] overbought there you enter again then
+[00:27:02] it's oversold right so it turns out
+[00:27:04] actually buying the overbought condition
+[00:27:06] actually makes you more money in this
+[00:27:08] particular case so uh yeah i think
+[00:27:11] that's it for now i think this video has
+[00:27:12] run a bit long i touched on vector bt
+[00:27:15] versus backtrader made a few comparisons
+[00:27:17] on the ease of use the speed
+[00:27:20] uh the usability the
+[00:27:22] the community and the documentation so
+[00:27:24] far i'm liking this vector bt library
+[00:27:27] quite a bit and so in the next video i
+[00:27:30] will dive into some more of the
+[00:27:32] functionality and depth i'll use this
+[00:27:34] data updater i'll talk about telegram
+[00:27:36] notifications uh do a new strategy fetch
+[00:27:39] some data in real time do some buys and
+[00:27:41] sells and also deploy this onto lynnode
+[00:27:44] let me know if there's something
+[00:27:45] specific you want to see otherwise see
+[00:27:47] you in the next video thanks

@@ -1,0 +1,198 @@
+[00:00:00] I'm going to show you a strategy that
+[00:00:01] involves trading with the trend I'm
+[00:00:03] going to give you a combination of
+[00:00:04] indicators a list of rules to follow and
+[00:00:07] show you a scalping strategy that has
+[00:00:08] been back tested and proven to work it
+[00:00:11] works with almost all markets all time
+[00:00:13] frames and most importantly it works
+[00:00:16] what I see a lot of people doing is
+[00:00:17] trying to buy the absolute low on a
+[00:00:19] downtrend and trying to hit that exact
+[00:00:22] point of a reversal and while yes it
+[00:00:23] would be nice to hit that exact point of
+[00:00:25] a downwards reversal and make a ton of
+[00:00:27] money when it reverses it's extremely
+[00:00:30] unlikely you'll find that exact point
+[00:00:32] the majority of the time if you've
+[00:00:33] watched my videos before I'm all about
+[00:00:36] probability and success rate I'm a huge
+[00:00:38] fan of trading with the chart not
+[00:00:40] against it what I mean by that is that I
+[00:00:42] will only enter trades if the chart is
+[00:00:44] in an uptrend with all that said let's
+[00:00:46] get started with the strategy rule
+[00:00:49] number one and probably the most
+[00:00:50] important rule is that we will only be
+[00:00:52] trading with the trend at least with
+[00:00:54] this strategy you may be asking yourself
+[00:00:57] how do I know if a chart is in an
+[00:00:58] uptrend or a downtrend well it's pretty
+[00:01:01] simple just go to trading view click the
+[00:01:03] indicators Tab and type in EMA for
+[00:01:06] exponential moving average then go to
+[00:01:08] the settings of the indicator and change
+[00:01:10] the length to 200 this will give us a
+[00:01:13] 200 day moving average I'm also going to
+[00:01:15] change my line to Red just so you can
+[00:01:17] see it better but this is optional so
+[00:01:19] with this strategy we will only enter a
+[00:01:21] trade if the chart is in an uptrend
+[00:01:24] which means we will only enter a trade
+[00:01:26] if the price is above the 200 day line
+[00:01:28] if the price is below the 200 day line
+[00:01:31] we will not enter the trade so this is
+[00:01:33] the first rule of the strategy you must
+[00:01:35] be trading with the trend meaning we
+[00:01:37] will only enter a trade if the price is
+[00:01:39] above the 200 day line now that we know
+[00:01:42] rule number one let's move on to the
+[00:01:44] rest of the rules that must be met in
+[00:01:46] order for you to enter the trade rule
+[00:01:48] number two involves using the RSI
+[00:01:50] indicator but with a Twist go to the
+[00:01:53] indicators Tab and type in RSI
+[00:01:55] Divergence make sure to pick this one
+[00:01:57] right here next we're going to change
+[00:01:59] the settings a bit go to the settings
+[00:02:01] then uncheck these bottom three check
+[00:02:03] boxes so this will clean our chart up a
+[00:02:05] bit then go to the middle line tab and
+[00:02:08] change the color to white and make it a
+[00:02:10] solid line this is just so it's easier
+[00:02:13] to see now usually the RSI indicator is
+[00:02:15] used for seeing if the market is
+[00:02:17] overbought or oversold but in this
+[00:02:20] strategy we're going to be using it to
+[00:02:21] find momentum in the market so rule
+[00:02:23] number two is that we will only enter a
+[00:02:26] trade if the RSI line is above the
+[00:02:28] middle white line if all the other rules
+[00:02:30] are met and the RSI is below the line we
+[00:02:34] will not enter the trade the cool thing
+[00:02:36] about this customized RSI indicator is
+[00:02:38] that it also shows Divergence if you
+[00:02:41] don't know what Divergence is to put it
+[00:02:43] simply without going too in depth it's
+[00:02:45] basically when the price is moving in
+[00:02:46] the opposite direction as the indicator
+[00:02:49] so if you're seeing higher highs on the
+[00:02:51] chart and lower highs on the RSI that's
+[00:02:54] Divergence the cool thing about this RSI
+[00:02:56] indicator is it will automatically show
+[00:02:58] us if bullish Divergence is occurring as
+[00:03:00] a quick disclaimer though I've seen this
+[00:03:02] indicator messed up and not show
+[00:03:04] Divergence sometimes so you may have to
+[00:03:06] look yourself a time or two just keep
+[00:03:08] that in the back of your head but
+[00:03:09] nonetheless this is a great indicator so
+[00:03:12] this bullish Divergence is not exactly a
+[00:03:14] rule that we have to follow but it's a
+[00:03:16] great sign if you see it when all the
+[00:03:18] other rules are aligned let's move to
+[00:03:20] rule number three if you've watched my
+[00:03:22] other videos before you probably know I
+[00:03:24] love momentum candles this can be a
+[00:03:26] great way to find the start of a trend
+[00:03:29] the spefic specific momentum candle
+[00:03:30] we're going to be looking for is what is
+[00:03:32] called an engulfing candle to put it
+[00:03:34] simply an engulfing candle is a candle
+[00:03:37] where engulfs the previous candle a
+[00:03:39] bullish engulfing candle opens at or
+[00:03:41] lower than the previous candle's close
+[00:03:44] the length of the bullish candle body
+[00:03:46] engulfs the previous red candle then the
+[00:03:49] bullish candle closes above the previous
+[00:03:52] candle's open this is an engulfing
+[00:03:54] candle and it's a great way to find the
+[00:03:56] start of a trend instead of looking for
+[00:03:58] this candle our eles and just looking at
+[00:04:00] the chart all day we're going to let an
+[00:04:02] indicator do the work for us go to the
+[00:04:04] indicators Tab and type in engulfing
+[00:04:07] candle you're going to choose this one
+[00:04:09] right here when you add it you're going
+[00:04:10] to be seeing a bunch of red and green
+[00:04:12] arrows since we're going to be doing
+[00:04:14] long trades in this example you can just
+[00:04:16] disregard the Red Arrows so all of these
+[00:04:18] green arrows are bullish engulfing
+[00:04:21] candles rule number three is we will
+[00:04:23] only enter a trade if we see a green
+[00:04:25] arrow so let's go over what a successful
+[00:04:28] trade would look like one we see the
+[00:04:30] price is over the 200 day line which
+[00:04:32] implies the chart is in an uptrend so so
+[00:04:35] far so good we then make sure the RSI
+[00:04:38] line is above the 50 Mark which it is so
+[00:04:41] we're all good there we do not need to
+[00:04:43] see a bullish Divergence but if we do
+[00:04:45] see one it's a plus one and makes this
+[00:04:48] trade even more bullish next we look for
+[00:04:50] a green arrow which I should also
+[00:04:53] mention right now we will only enter the
+[00:04:55] trade after the Green Arrow candle
+[00:04:57] closes I repeat only enter after the
+[00:05:01] Green Arrow candle closes this candle
+[00:05:04] could show a green arrow but then change
+[00:05:06] while the candle is still forming and
+[00:05:08] not end up being an engulfing candle
+[00:05:10] when it closes so once the candle closes
+[00:05:13] and there's a green arrow we will enter
+[00:05:15] the trade then for this specific
+[00:05:17] strategy we will set our stop loss two
+[00:05:19] times the length of the entry candle we
+[00:05:21] then set our takeprofit to a 2:1 ratio
+[00:05:25] it's that simple and boom as you can see
+[00:05:27] the price hits our Mark now if you're
+[00:05:29] one of those people who gets panicked
+[00:05:31] easily or gets out of Trades too early
+[00:05:33] or late literally just set your
+[00:05:35] takeprofit set your stop loss and just
+[00:05:37] close your computer and let the strategy
+[00:05:40] do its work this will help you stop
+[00:05:42] trading emotionally and selling too
+[00:05:43] early or even worse getting greedy and
+[00:05:46] moving your takeprofit it is also
+[00:05:48] important to note you probably won't be
+[00:05:50] trading every day with this strategy
+[00:05:52] since we're only trading with the trend
+[00:05:55] the chart isn't going to be in a trend
+[00:05:56] 100% of the time so there will be days
+[00:05:59] where you simp simply won't be able to
+[00:06:00] trade this is okay you just need to
+[00:06:03] understand that this is a thing and you
+[00:06:04] will only trade when the market is
+[00:06:06] working for you not against you let's do
+[00:06:08] one more example first we make sure our
+[00:06:11] price is above the 200 day line we then
+[00:06:13] make sure the RSI is above the 50 line
+[00:06:16] we also see that the RSI has a bullish
+[00:06:19] Divergence which is not needed but it
+[00:06:21] increases the chance that this will be a
+[00:06:23] winning trade so that's good then we see
+[00:06:26] a candle with a green arrow under it
+[00:06:28] indicating it's a bullish engulfing
+[00:06:30] candle we then wait for that specific
+[00:06:33] candle to close once it does we enter
+[00:06:35] the trade we set our stop-loss two times
+[00:06:38] the length of the engulfing candle then
+[00:06:40] put our take profit Mark to a two profit
+[00:06:42] ratio then wait we see the price move up
+[00:06:45] hater take profit Mark and we exit the
+[00:06:47] trade I just showed you a successful
+[00:06:49] trading strategy that works great
+[00:06:51] because you trade with the trend all I
+[00:06:53] ask in return is if you take 2 seconds
+[00:06:55] out of your day and like this video it
+[00:06:57] seriously means the world to me and
+[00:06:58] helps me out so much if you want to see
+[00:07:01] my secret strategy to avoid false
+[00:07:03] breakouts watch this video because there
+[00:07:05] are some pretty insane hidden gems in
+[00:07:07] there that'll improve your trading so
+[00:07:09] much thanks for watching and I'll see
+[00:07:11] you guys next time
+[00:07:16] [Music]

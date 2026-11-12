@@ -1,0 +1,277 @@
+[00:00:00] reversals one of the best ways to trade
+[00:00:02] because you are sniping the exact point
+[00:00:05] of where price changes Direction meaning
+[00:00:07] if you trade the exact reversal point
+[00:00:09] you are not only getting insane RIS
+[00:00:11] reward ratios but you're also making a
+[00:00:13] [ __ ] ton of profit on top of it I found
+[00:00:16] a perfect way to find reversals like
+[00:00:18] this like this and like
+[00:00:24] thisam it works for everything stocks
+[00:00:27] Forex crypto it doesn't matter and the
+[00:00:29] even cooler thing it works on all time
+[00:00:31] frames that does sound awesome I'm going
+[00:00:34] to go over how to perform this strategy
+[00:00:36] what to look for specifically and I'm
+[00:00:38] going to go over some special little
+[00:00:39] tricks to make it perform even better
+[00:00:41] and I'm going to even share some back
+[00:00:43] test results for it let's not waste any
+[00:00:45] time let's get straight to
+[00:00:47] it so this strategy is price action
+[00:00:50] based and really it only has a couple
+[00:00:53] steps for the first step we are looking
+[00:00:55] for what's called a liquidity grab a
+[00:00:57] liquidity grab is simply when price
+[00:00:59] breaks a support or resistance and does
+[00:01:01] a fake out and heads in the opposite
+[00:01:03] direction we want a liquidity grab
+[00:01:05] because it adds fuel to the reversal we
+[00:01:06] are looking for the reason being think
+[00:01:08] of it like this if we have a resistance
+[00:01:11] right here and price breaks this
+[00:01:13] resistance like this a lot of Traders
+[00:01:15] will enter along right at this point
+[00:01:17] because they think the price is going to
+[00:01:19] start heading upwards because of this
+[00:01:21] break they'll enter along here and set
+[00:01:23] their stop losses around this area
+[00:01:25] meaning if this is a liquidity grab and
+[00:01:27] price fix this upwards movement when
+[00:01:29] price versus it's going to hit all of
+[00:01:31] these Trader stop losses making the
+[00:01:33] price move downwards even harder so if
+[00:01:36] we found this liquidity grab and entered
+[00:01:38] a short we would benefit from the strong
+[00:01:40] impulsive movement making us some easy
+[00:01:42] profits pretty simple and the statistics
+[00:01:45] even back this up these back test
+[00:01:46] results are from Thomas Bowski a famous
+[00:01:49] Trader and look just how interesting
+[00:01:51] this is so comparing at the first Valley
+[00:01:53] is above the second so that being a
+[00:01:55] liquidity grab like we just talked about
+[00:01:57] like this compare that to if the first
+[00:01:59] first Valley is below the second so
+[00:02:01] something like this you can clearly see
+[00:02:04] the liquidity grab version performs way
+[00:02:07] better so out of the 14,000 trades that
+[00:02:09] he tested the percentage game for
+[00:02:11] liquidity grabs performed way better
+[00:02:14] than a pattern that did something like
+[00:02:16] this so pretty interesting so now we
+[00:02:18] know why we are looking for a liquidity
+[00:02:20] grab so that's Step One is finding a
+[00:02:22] liquidity grab it can be either
+[00:02:23] sell-side liquidity or buy side
+[00:02:25] liquidity whichever you prefer to trade
+[00:02:27] once we find this liquidity grab we move
+[00:02:29] to step two which involves the entry but
+[00:02:32] wait aren't you forgetting something who
+[00:02:34] the hell are you well I'm Mr double your
+[00:02:37] money of course Mr wait what how are you
+[00:02:40] doubling your money it's simple have you
+[00:02:42] heard of panker trade panker trade which
+[00:02:45] is the Forex broker I use is running a
+[00:02:47] special promotion where if you deposit
+[00:02:49] money using the link in my description
+[00:02:51] they will match it up to 25 Grand so if
+[00:02:53] you deposit say
+[00:02:56] $696 the first time you deposit they
+[00:02:58] will match that in and give you
+[00:03:02] $6,999 and that's just one of the
+[00:03:04] benefits of using them they have some of
+[00:03:06] the lowest fees on the market they have
+[00:03:08] up to 500x leverage they have extremely
+[00:03:10] low spreads negative balance protection
+[00:03:12] and overall just a really great broker
+[00:03:14] if you need one for Forex I cannot
+[00:03:17] recommend them enough so yeah if you
+[00:03:18] want to be like Mr double your money go
+[00:03:20] to the link in my description and get
+[00:03:21] that first time deposit bonus like
+[00:03:23] seriously it's free money okay let's go
+[00:03:25] back to the most important part of the
+[00:03:27] strategy which involves the entry I
+[00:03:30] demand entry the entry is pretty simple
+[00:03:32] you were going to mark your entry point
+[00:03:34] at the candle that made the liquidity
+[00:03:36] grab for example here we have a nice
+[00:03:39] little support price breaks this support
+[00:03:41] with this candle right here our entry
+[00:03:43] would be at the candle that made the
+[00:03:45] liquidity grab so your long entry would
+[00:03:47] be at this point right here because this
+[00:03:50] candle made this liquidity grab it's the
+[00:03:53] same thing with shorts you have a
+[00:03:54] resistance price breaks this resistance
+[00:03:57] barely does a liquidity grab your short
+[00:03:59] entry would be at the bottom of this
+[00:04:01] candle that initiated this liquidity
+[00:04:04] grab so right here so going back to our
+[00:04:06] first example this candle initiated this
+[00:04:09] liquidity grab so we set our entry point
+[00:04:11] right here now what makes this strategy
+[00:04:13] so successful is the risk reward ratios
+[00:04:16] are absolutely insane because you are
+[00:04:18] finding the exact bottom or top of the
+[00:04:20] move the profits are going to be really
+[00:04:22] big and the losses are going to be very
+[00:04:25] small so for this example you would
+[00:04:27] enter here set your stop loss right
+[00:04:29] right below the liquidity grab and
+[00:04:31] you're going to set your take profit at
+[00:04:32] a recent high so like this and just look
+[00:04:35] at this risk to reward ratio even if
+[00:04:37] this trade is a loss it's going to be a
+[00:04:39] very small loss and if it's a win well
+[00:04:43] we're [ __ ] Rich so in this example
+[00:04:45] you can see price reversed exactly at
+[00:04:47] this point and hit our huge takeprofit
+[00:04:50] for a perfect trade now I'm going to
+[00:04:51] show you guys just how successful this
+[00:04:53] strategy is and then I'm going to give
+[00:04:55] you guys some tips to improve the
+[00:04:56] strategy even more now I know a lot of
+[00:04:58] you guys are lazy
+[00:05:00] that's exactly why I added this little
+[00:05:02] strategy to my private indicator this
+[00:05:04] strategy performs so well that I just
+[00:05:06] had to add it the indicator will
+[00:05:08] automatically find everything for you
+[00:05:09] it'll find the liquidity grab Mark the
+[00:05:11] entry point and will also tell you
+[00:05:14] exactly when to enter it's basically
+[00:05:16] spoon feeding you it even color grades
+[00:05:18] it depending on if it's a long or short
+[00:05:20] trade it saves you a ton of time with
+[00:05:21] the strategy so you don't have to look
+[00:05:23] for the liquidity grabs all day and
+[00:05:25] basically does all the work for you all
+[00:05:26] you have to do is basically follow the
+[00:05:28] signal if you're interested in checking
+[00:05:30] out the indicator you can go to
+[00:05:31] tradinglab doai or I'll leave the link
+[00:05:33] in the description so in order to enable
+[00:05:35] the strategy on the indicator you would
+[00:05:37] go to the settings of the indicator by
+[00:05:39] double clicking on any of the signals
+[00:05:41] and set show reversals to Tru and just
+[00:05:44] like that it'll find all the liquidity
+[00:05:46] grabs and entries for you so just look
+[00:05:48] how good the strategy performs here the
+[00:05:50] indicator marks the liquidity grab for
+[00:05:52] us it starts to Mark the entry point and
+[00:05:54] the signal to enter we enter a short
+[00:05:56] trade since the indicator is red set our
+[00:05:58] stop loss right above the liquidity grab
+[00:06:01] and setad her take profit at a recent
+[00:06:03] low and look how this chart fell
+[00:06:05] extremely hard after this signal another
+[00:06:07] example here the indicator automatically
+[00:06:09] marks a bullish liquidity grab we wait
+[00:06:11] for the entry signal once we get it we
+[00:06:14] enter set our stop loss right below the
+[00:06:16] liquidity grab set a take profit at this
+[00:06:18] recent High all the way up here and then
+[00:06:21] there's this strong impulsive move to
+[00:06:23] the upside giving us a massive win and
+[00:06:25] we can really just keep repeating this
+[00:06:27] indicator marks bearish liquidity and
+[00:06:29] entry signal stop loss take profit at a
+[00:06:32] recent low strong impulsive move
+[00:06:34] indicator marks bullish liquidity entry
+[00:06:36] signal stop loss take profit at a recent
+[00:06:38] High strong impulsive move now of course
+[00:06:41] this strategy isn't absolutely perfect
+[00:06:43] and there are going to be times when it
+[00:06:45] doesn't work for example here the
+[00:06:46] indicator indicated bullish liquidity so
+[00:06:49] we set her take profit and stop- loss
+[00:06:51] like usual but the chart ended up not
+[00:06:53] going in our favor funny enough right
+[00:06:55] after it hit or stoploss it skyrocketed
+[00:06:57] classic but if we take a close look look
+[00:06:59] at how small this loss was so sure we
+[00:07:02] lost this trade but if we compare it to
+[00:07:05] all of our winners with these huge
+[00:07:06] massive wins this loss is really just a
+[00:07:09] pebble that's what makes the strategy so
+[00:07:11] profitable so as for improving the
+[00:07:13] strategy even more like I promised
+[00:07:15] before here's some interesting
+[00:07:17] statistics from the B test results on
+[00:07:19] The Daily time frame Peaks closer
+[00:07:22] together than 10 days saw a slightly
+[00:07:25] larger drop compared to Peaks farther
+[00:07:27] apart so if the liquidity grab and and
+[00:07:29] the entry candle were closer than 10
+[00:07:31] candles apart the drop was a lot larger
+[00:07:34] compared to the Peaks further apart so
+[00:07:36] the back test results are saying Peaks
+[00:07:38] like this had a more impulsive drop than
+[00:07:40] Peaks like this so that's very
+[00:07:42] interesting to note so if you want
+[00:07:44] optimal entries you should look for
+[00:07:46] liquidity grabs with Peaks closer
+[00:07:48] together another way to improve this is
+[00:07:50] by adding confluences like divergences
+[00:07:53] to do this simply go to metatrader click
+[00:07:56] insert then indicators scroll down to
+[00:07:58] oscillate and click momentum so here you
+[00:08:02] can see the indicator gave us a long Buy
+[00:08:04] Signal but something else to notice is
+[00:08:07] that here the chart did a liquidity grab
+[00:08:09] so it's making lower lows but if we look
+[00:08:11] at the momentum oscillator it's making
+[00:08:14] higher highs so this is a Divergence and
+[00:08:17] is also a very bullish signal so we
+[00:08:19] combine both the powers of the
+[00:08:21] Divergence and the bullish liquidity
+[00:08:23] grab and it gives us a higher
+[00:08:25] probability of working in our favor and
+[00:08:27] just like that we have an amazing trade
+[00:08:30] then my final tip will also make this
+[00:08:32] perform a lot better so this whole
+[00:08:34] liquidity grab strategy works best if
+[00:08:36] you're finding reversals at the bottoms
+[00:08:38] or tops of big moves if you're trying to
+[00:08:41] find liquidity grabs in the middle of
+[00:08:43] moves while the chart is going up or
+[00:08:44] down like this it doesn't work so good
+[00:08:47] so to find bottoms or tops of moves do
+[00:08:50] this so here we are on the 15-minute
+[00:08:52] time frame and we get a Buy Signal so
+[00:08:54] what we end up doing is we then move to
+[00:08:56] a 1hour time frame and we see this Buy
+[00:08:59] Signal signal happened exactly at a
+[00:09:01] support on a higher time frame so we
+[00:09:03] know there's a strong demand here on the
+[00:09:06] higher time frame and on top of that we
+[00:09:08] have a liquidity grab on a lower time
+[00:09:10] frame which is a great Confluence we
+[00:09:12] move back to the 15-minute time frame
+[00:09:15] and do our normal stop loss and take
+[00:09:17] profit and it was another beautiful
+[00:09:19] trade so just for a bad example if we
+[00:09:21] were on the 15-minute time frame and got
+[00:09:23] a signal like this and then moved to the
+[00:09:25] higher time frame like the hour and the
+[00:09:28] signal happened here we would not enter
+[00:09:30] on this trade because the move is
+[00:09:32] happening in the middle of this range on
+[00:09:34] a higher time frame and like I said
+[00:09:36] before this strategy performs the best
+[00:09:38] if it's on the absolute top or bottom of
+[00:09:41] the range so if you pair all of these
+[00:09:43] together the normal liquidity grab
+[00:09:44] strategy the 10 candle Rule divergences
+[00:09:47] and higher time frame support and
+[00:09:49] resistance I'll tell you this strategy
+[00:09:51] performs absolutely amazing go try it
+[00:09:55] out let me know what you guys think if
+[00:09:56] you're interested in the indicator I'll
+[00:09:58] leave a link to in the description
+[00:10:00] thanks for watching and I'll see you
+[00:10:01] guys next time well I'm Mr double your
+[00:10:04] money of course

@@ -1,0 +1,264 @@
+[00:00:00] Everybody hate s false breakouts.
+[00:00:00] But what if I told you there were indicators
+[00:00:07] out there, to one, not only give you confirmation
+[00:00:07] on your trades, but to also help prevent you
+[00:00:11] from entering trades like this.
+[00:00:11] That would be pretty cool right?
+[00:00:18] Well luckily for you, I have been scavenging
+[00:00:18] TradingView the last couple weeks for indicators
+[00:00:23] for this exact purpose.
+[00:00:23] Tradingview default indicators, community
+[00:00:27] scripts, custom scripts, private indicators.
+[00:00:27] And ohhhh boy have I found some good ones.
+[00:00:32] You can add any one of these indicators to
+[00:00:32] your already made strategy to improve it and
+[00:00:37] hopefully increase the winrate of your very
+[00:00:37] own strategy.
+[00:00:39] I will be showing you confirmation indicators
+[00:00:39] for lower times frames like the 1 and 5 minute,
+[00:00:44] and I ll also show you ones that are more
+[00:00:44] for longer time frames like the 1 hour or
+[00:00:48] daily.
+[00:00:48] All of these indicators im about to show you
+[00:00:51] are a complete game changer and will forever
+[00:00:51] change the way you trade.
+[00:00:54] Let s get straight into it.
+[00:00:54] To start our list off strong we are going
+[00:00:57] to start with the trend meter indicator.
+[00:00:57] Now if you ve watched before, I ve used this
+[00:01:02] indicator in many of strategies. And there
+[00:01:02] s a reason for that. It s a fcn good indicator.
+[00:01:06] To add it to your chart, go to Tradingview.
+[00:01:06] Click the indicators tab and type in trend
+[00:01:11] meter and click this one by this guy.
+[00:01:11] Once you have it added it to your chart, this
+[00:01:15] little guy will show up.
+[00:01:15] Now this one is extremely easy to use. All
+[00:01:20] you need is to have all of these dots and
+[00:01:20] lines green. Including this dot up here that
+[00:01:24] will occasionally show up.
+[00:01:24] Every. Single. One of them. Must be green.
+[00:01:29] This is important as this will confirm the
+[00:01:29] signal is strong.
+[00:01:32] Each one of these dots or lines represents
+[00:01:32] a specific indicator. When green, that means
+[00:01:36] the indicator is giving a bullish signal.
+[00:01:36] When red that means that indicator is giving
+[00:01:40] a bearish signal.
+[00:01:40] If you go to the settings of the indicator
+[00:01:43] it will show you all the indicators it uses.
+[00:01:43] I personally keep all these settings at default,
+[00:01:47] but you can change them if you desire.
+[00:01:47] The one setting I do like to change is go
+[00:01:51] to the Styles tab and uncheck the signals
+[00:01:51] 1 box.
+[00:01:54] Now, I already know im going to get this question.
+[00:01:54] What timeframe does this indicator work best
+[00:01:59] on
+[00:01:59] So I might as well answer it now. This indicator
+[00:02:01] will work for all time frames. BUT. After
+[00:02:01] using it for many trades myself, I have figured
+[00:02:06] that it works best on larger timeframes like
+[00:02:06] the 1 hour or daily.
+[00:02:10] let me show you an example of how we can use
+[00:02:10] this indicator to get more profitable trades
+[00:02:14] and not get as many false breakouts.
+[00:02:16] But first It would be pretty rude of me not
+[00:02:16] to talk about today s sponsor. C-e-x.io. The
+[00:02:22] cexiest crypto exchange on the internet.
+[00:02:22] See what I did there?
+[00:02:25] Now you might be asking.
+[00:02:25] What makes them so c-e-x-y
+[00:02:28] Well for starters, they have instant buy and
+[00:02:28] sell for all cryptos. And they accept basically
+[00:02:33] every payment method out there. Credit and
+[00:02:33] debit cards, bank transfers, ewallets, EVERYTHING.
+[00:02:38] They have 100+ crypto currencies to choose
+[00:02:38] from, instant crypto/fiat withdrawals, and
+[00:02:42] they ve been in the game since 2013, so yeah,
+[00:02:42] they know what they re doing.
+[00:02:46] They also have a nice API so if you ever wanted
+[00:02:46] to make bot to automate your trades, you could
+[00:02:51] easily hook it up to their exchang e.
+[00:02:51] On top of that they have one of the most user
+[00:02:55] friendly interfaces I ve ever seen.
+[00:02:55] And one of the coolest parts is they offer
+[00:02:59] a staking program, to where you can get up
+[00:02:59] to 23% APY.
+[00:03:06] Just choose whichever coin you want to stake,
+[00:03:06] sit on your couch for a year, and you made
+[00:03:10] 23% of what you put in. For doing absolutely
+[00:03:10] nothing. Which is pretty crazy.
+[00:03:15] So go check them out, I ll leave a link in
+[00:03:15] the description. Back to the video.
+[00:03:18] let me show you an example of how we can use
+[00:03:18] this indicator to get more profitable trades
+[00:03:22] and not get as many false breakouts.
+[00:03:22] for this example my base trading strategy
+[00:03:26] will be one that you learn straight out of
+[00:03:26] kindergarden. just a simple moving average
+[00:03:30] strategy. Where I have a 50 ema and 200ema
+[00:03:30] and I only enter a trade when the 50 ema crosses
+[00:03:36] above the 200ema.
+[00:03:36] Now the problem is, with this strategy you
+[00:03:40] are going to have times when the market is
+[00:03:40] consolidating and gives you an entry point,
+[00:03:44] but it turns out it was a false signal and
+[00:03:44] gave you a losing trade.
+[00:03:48] We do not like this.
+[00:03:48] How do you fix this?
+[00:03:51] Add the trend meter.
+[00:03:51] So you will only enter if you base strategy
+[00:03:54] gives you an entry signal and all the dots
+[00:03:54] and lines are green on the trend meter.
+[00:03:59] So as an example the ema s crossed giving
+[00:03:59] us an entry signal for our base strategy,
+[00:04:03] but not all the dots were green on the trend
+[00:04:03] meter. So we wouldn t enter this trade, and
+[00:04:08] look what happens, it was a false signal.
+[00:04:08] Then this time we see the ema s crossed and
+[00:04:12] gave us another entry signal, we look at the
+[00:04:12] trend meter and all the dots and lines are
+[00:04:15] green, so we would enter this trade.
+[00:04:15] This time it works out and the chart goes
+[00:04:20] up.
+[00:04:20] You can do the same thing with shorts, just
+[00:04:22] make sure all the dots and lines are red.
+[00:04:22] This will insanely increase the chance of
+[00:04:26] the chart going in the direction you want
+[00:04:26] it to. You can replace the moving averages
+[00:04:30] with whatever strategy you personally use.
+[00:04:32] Now it s time to move on to the next confirmation
+[00:04:32] indicator, and this one is one of my all time
+[00:04:37] favorites.
+[00:04:37] Go to the indicators tab and type in donchian
+[00:04:40] trend ribbon. This one right here.
+[00:04:40] Once you have it added to your chart, you
+[00:04:44] ll get something that looks like this.
+[00:04:44] It s a pretty straight forward indicator,
+[00:04:48] but it gives so much value.
+[00:04:48] When the bars are green, you should be buying,
+[00:04:52] when the bars are red you should be selling
+[00:04:52] - But what timeframe does it work on?
+[00:04:56] You again? Well this indicator actually works
+[00:04:56] on all timeframes a lot better than the last
+[00:05:01] one, so it can be used to filter out trades
+[00:05:01] on shorter times frames like the 1 minutes
+[00:05:05] or 5 minute but It can also be used on the
+[00:05:05] , hour, daily, whatever you want.
+[00:05:10] Of course this indicator will perform better
+[00:05:10] on higher timeframes, so just keep that in
+[00:05:14] mind.
+[00:05:14] Let me show you an example of how to use this
+[00:05:16] indicator.
+[00:05:16] So for this example I m using the supertrend
+[00:05:19] indicator as my base strategy. It just gives
+[00:05:19] you very basic buy and sell signals.
+[00:05:24] If we look at this bitcoin chart you can see
+[00:05:24] the supertrend indicator gives you a buy signal,
+[00:05:28] but if we look at the donchian indicator it
+[00:05:28] has red bars, so we would not end up taking
+[00:05:33] this trade.
+[00:05:33] If we move a little bit forward, the supertrend
+[00:05:36] indicator gives a sell signal, if we scroll
+[00:05:36] down, the donchian is also red.
+[00:05:40] So, we would enter a short here. And Look
+[00:05:40] what happens, price falls. So you could of
+[00:05:44] very easily predicted the fall of bitcoin
+[00:05:44] with this simple strategy.
+[00:05:48] Here s another example.
+[00:05:48] Supertrend just turned green, so we take a
+[00:05:51] look at the donchian indicator to confirm
+[00:05:51] this signal.
+[00:05:54] We see that it is also green, so we enter
+[00:05:54] a trade. Look what happens, a huge uptrend.
+[00:05:58] With this indicator, I like to keep all the
+[00:05:58] settings at default.
+[00:06:01] Onto the next one!
+[00:06:01] For this next one, go to the indicators tab
+[00:06:06] and type in EFMUS System. 3 different indicators
+[00:06:06] will show up, you can choose any one of them
+[00:06:11] as they are all the same.
+[00:06:11] When you add it your chart it will look like
+[00:06:14] this.
+[00:06:14] There are going to be many rows of rectangles.
+[00:06:17] Each rectangle represents a different indicator.
+[00:06:17] With this specific indicator you can add up
+[00:06:21] to 10.
+[00:06:21] Including but not limited to.
+[00:06:25] Ema cross, rsi, ema 20, sma50 ema 55, ema
+[00:06:25] 75, sma 100, sma 200, pivot, and macd
+[00:06:31] You have the option to enable or disable any
+[00:06:31] indicator your so please, just go to the style
+[00:06:35] tab, and say if you didn t want rsi enabled.
+[00:06:35] Because for some reason you ve had an absolute
+[00:06:37] hatred for RSI since you were 4 years old.
+[00:06:37] You can simple just uncheck the check box
+[00:06:42] and it won t show up on the indicator.
+[00:06:42] So just like the other confirmation indicators,
+[00:06:46] this one is very easy to use.
+[00:06:46] - But what timefr-
+[00:06:49] All time frames, this indicator works on all
+[00:06:49] time frames. Remember higher timeframes will
+[00:06:54] work better though.
+[00:06:54] So with this indicator a buy signal would
+[00:06:57] be every single rectangle is green for a strong
+[00:06:57] bullish uptrend.
+[00:07:00] So here we have our super trend indicator
+[00:07:00] again for the base strategy. We get a buy
+[00:07:04] signal but we look at our efmus system and
+[00:07:04] see that not all the rectangles are green,
+[00:07:09] so we don t enter this trade.
+[00:07:09] And that ended up being a good decision because
+[00:07:13] the market was consolidating and this ended
+[00:07:13] up being a false signal.
+[00:07:16] Here s an example where we get a buy signal
+[00:07:16] from the super trend indicator. We the check
+[00:07:21] efmus system and it has all green rectangles.
+[00:07:21] Confirming that we are good to go.
+[00:07:25] So we enter. The price heads upwards making
+[00:07:25] this a successful trade.
+[00:07:29] Now it s time for the fourth and final indicator.
+[00:07:29] This fourth and final indicator works wonders
+[00:07:36] for long term trades. When I say long term
+[00:07:36] I mean a trade that is on the 1 hour timeframe
+[00:07:40] or higher. Just like the other indicators
+[00:07:40] the higher the time frame the more accurate
+[00:07:44] this indicator will be.
+[00:07:44] I also did some testing with shorter term
+[00:07:45] time frames with this indicator and it doesn
+[00:07:45] t work too well with smaller time frames.
+[00:07:46] So mainly use this indicator for the larger
+[00:07:46] ones.
+[00:07:47] Go to the indicators tab and type in HACOLT?
+[00:07:47] Hacolt. Yeah, this one right here.
+[00:07:51] Same type of strategy applies. You only buy
+[00:07:51] when the indicator is green and you only short
+[00:07:55] when the indicator is red.
+[00:07:55] As you can see this indicator is pretty accurate
+[00:07:58] on higher time frames. When the indicator
+[00:07:58] is green, the market is trending up. When
+[00:08:02] the indicator is red that market is trending
+[00:08:02] downwards.
+[00:08:05] All of these indicators I shared with you
+[00:08:05] are really great at confirming entries and
+[00:08:08] exits. But none of them should be used by
+[00:08:08] themselves.
+[00:08:11] These are confirmation indicators, not entry
+[00:08:11] indicators.
+[00:08:14] Pair them with whatever strategy you are currently
+[00:08:14] using and it will help you make better confirmed
+[00:08:19] trading decisions.
+[00:08:19] Test them out with your own strategies and
+[00:08:22] let our community know which one worked best
+[00:08:22] for you.
+[00:08:24] You can do that by joining the TradingLab
+[00:08:24] discord where you can talk to other like minded
+[00:08:28] traders about trading. I ll leave a link to
+[00:08:28] discord in the description.
+[00:08:32] If you see how to double your account size
+[00:08:32] within 30 days, watch this video because I
+[00:08:37] backtested strategy a 100 times and the results
+[00:08:37] were pretty good.
+[00:08:41] Thanks for watching, and I ll see you guys
+[00:08:41] next time.

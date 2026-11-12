@@ -1,0 +1,443 @@
+[00:00:00] sequence of returns risk is the risk of
+[00:00:02] a series of negative returns early in
+[00:00:04] retirement doing irreparable damage to
+[00:00:06] your retirement savings this happens
+[00:00:09] when spending from a portfolio after a
+[00:00:10] significant portfolio decline
+[00:00:12] dramatically reduces the amount of
+[00:00:14] capital available to fund your future
+[00:00:16] spending sequence of returns risk
+[00:00:18] typically associated with stocks strikes
+[00:00:21] fear into the hearts of investors in
+[00:00:23] general and retirees in particular but I
+[00:00:25] think it's overblown and that common
+[00:00:27] attempts to mitigate it do more harm
+[00:00:29] than good rather than asset allocation
+[00:00:32] gymnastics or overly conservative safe
+[00:00:34] withdrawal rates there are simple and
+[00:00:36] effective ways to deal with it I'm Ben
+[00:00:38] Felix Chief investment officer at pwl
+[00:00:40] Capital and I'm going to tell you what
+[00:00:42] you can do about sequence of returns
+[00:00:47] risk let's start out with an example to
+[00:00:50] describe the problem imagine two
+[00:00:52] retirees we'll call them Alex and Jamie
+[00:00:54] who each start retirement with $1
+[00:00:56] million in savings they expect to earn a
+[00:00:58] 4% real annualized return throughout
+[00:01:01] their retirements in our example they
+[00:01:03] will both get their expected return on
+[00:01:05] average but they will earn it in
+[00:01:07] different sequences Alex is going to get
+[00:01:10] a bad sequence of returns while jimie
+[00:01:12] will get a good one they will both spend
+[00:01:15] $50,000 annually from their portfolios
+[00:01:17] adjusted for inflation to cover their
+[00:01:19] expenses and they need to fund their
+[00:01:21] expenses for 30 years Alex's portfolio
+[00:01:24] returns netive -1% each year for the
+[00:01:26] first 5 years of retirement and just
+[00:01:28] over positive 20% % each year for the
+[00:01:30] next 5 years returns for the remainder
+[00:01:33] of the retirement period are 4% and the
+[00:01:35] annualized return for the full period is
+[00:01:38] 4% as expected Jamie's returns are the
+[00:01:41] inverse with just over 20% each year for
+[00:01:43] the first 5 years followed by -1% for
+[00:01:46] the next 5 years and 4% thereafter Jim's
+[00:01:49] annualized return for the full period is
+[00:01:51] 4% identical to Alex's return but the
+[00:01:54] different sequence of those returns
+[00:01:55] results in Alex falling short of the
+[00:01:57] spending Target in year 25 and running
+[00:02:00] out of money altogether in year 26 while
+[00:02:03] Jamie still has a sizable portfolio in
+[00:02:05] year 30 same average returns different
+[00:02:08] sequence of returns materially different
+[00:02:10] retirement outcomes that is sequence of
+[00:02:13] returns risk early negative returns
+[00:02:15] combined with persistent withdrawals
+[00:02:17] deplete the portfolio even when a strong
+[00:02:19] recovery follows the example clearly
+[00:02:22] illustrates how sequence of returns risk
+[00:02:24] can destroy a retirement plan the risk
+[00:02:26] is so pervasive that all kinds of
+[00:02:28] solutions have been proposed both from
+[00:02:30] the asset allocation perspective and the
+[00:02:33] portfolio withdrawals perspective common
+[00:02:35] asset allocation Solutions like
+[00:02:37] increasing the bond allocation leading
+[00:02:39] up to and into retirement a Glide path
+[00:02:42] and holding part of the portfolio in
+[00:02:43] cash to avoid drawing from it after a
+[00:02:45] decline often called a cash wedge or a
+[00:02:47] bucket strategy likely have detrimental
+[00:02:50] effects on long-term retirement outcomes
+[00:02:53] the most common portfolio withdrawal
+[00:02:54] solution has been safe withdrawal rates
+[00:02:56] but safe withdrawal rates result in
+[00:02:58] overly conservative spending and poor
+[00:03:00] risk management I'm going to go into
+[00:03:01] more detail on asset allocation but
+[00:03:03] stick around for when I get to
+[00:03:04] withdrawal strategies they are at least
+[00:03:06] as important the reason the Glide path
+[00:03:08] and the cash wedge don't solve the
+[00:03:10] sequence of returns problem is fairly
+[00:03:12] simple catastrophic real losses that is
+[00:03:14] losses in purchasing power are
+[00:03:16] historically more common in cash and
+[00:03:18] bonds than in stocks stocks are volatile
+[00:03:21] and risky at long Horizons but cash and
+[00:03:23] bonds can be counterintuitively riskier
+[00:03:26] for long-term investors with real
+[00:03:28] long-term liability ities real long-term
+[00:03:30] liabilities are things you need to pay
+[00:03:32] for in the future like groceries and
+[00:03:34] housing costs the main culprit is
+[00:03:36] inflation stocks are volatile but their
+[00:03:39] higher expected returns have
+[00:03:40] historically allowed them to outpace
+[00:03:41] inflation in the long run most of the
+[00:03:43] time they've also tended to have higher
+[00:03:46] returns following crashes helping them
+[00:03:48] to recover cash and nominal bonds have
+[00:03:50] lower expected returns in normal times
+[00:03:53] they occasionally get decimated by
+[00:03:55] inflation and unlike stocks they don't
+[00:03:57] have the same tendency to bounce back
+[00:03:59] after big losses to be clear stocks are
+[00:04:02] still very risky but relative to cash
+[00:04:04] and bonds from the perspective of a
+[00:04:06] long-term investor with real liabilities
+[00:04:08] they've tended to look relatively safe
+[00:04:10] another way to think about this is that
+[00:04:12] while sequence of returns risk is a real
+[00:04:14] problem for stocks it may be a bigger
+[00:04:16] problem for cash and bonds due to their
+[00:04:18] low average returns and occasional
+[00:04:20] extreme negative returns this has been
+[00:04:22] studied in the context of retirement
+[00:04:24] asset allocation in the 2016 paper the
+[00:04:27] retirement Glide path an international
+[00:04:29] perspective I the author uses data from
+[00:04:31] a sample of 19 countries and the World
+[00:04:33] Market over the 110 years from 1900
+[00:04:36] through 2009 to test multiple retirement
+[00:04:39] Glide path strategies the retirement
+[00:04:41] scenario has an initial withdrawal rate
+[00:04:43] of 4% of the starting portfolio value
+[00:04:45] with that dollar amount adjusted for
+[00:04:47] inflation thereafter and covers a
+[00:04:49] 30-year withdrawal period strategies
+[00:04:50] tested include declining Equity
+[00:04:52] strategies where the allocation to
+[00:04:54] stocks decreases over time Rising Equity
+[00:04:58] stocks increases over time and static
+[00:05:00] allocations where the chosen asset
+[00:05:02] allocation remains constant over time
+[00:05:03] the author finds that static strategies
+[00:05:05] tend to offer the lowest or near lowest
+[00:05:07] failure rates the highest or near
+[00:05:09] highest expected the quest good upside
+[00:05:12] potential and overall the best downside
+[00:05:14] protection the author points out that
+[00:05:15] the static strategy that fully invests
+[00:05:17] in stocks has the lowest failure rate
+[00:05:19] performs reasonably well when tail risks
+[00:05:21] strike and provides much higher upside
+[00:05:24] potential than the other strategies the
+[00:05:26] strategy does have a higher standard
+[00:05:27] deviation of outcomes but as the author
+[00:05:29] points out the standard deviation
+[00:05:31] indicates uncertainty about how much
+[00:05:32] better off not worse off a retire will
+[00:05:34] be after 30 years the author also
+[00:05:37] comments that although a strategy that
+[00:05:38] fully invests a retirement portfolio in
+[00:05:40] stocks can be perceived as riskier it's
+[00:05:42] kind of hard to call a strategy that has
+[00:05:44] a low probability of failure provides
+[00:05:46] similar downside protection and higher
+[00:05:48] upside potential riskier than
+[00:05:50] alternative strategies he also explains
+[00:05:52] that however plausible sequence of
+[00:05:54] returns risk is in theory it does not
+[00:05:56] seem to have been a key determinant of
+[00:05:58] portfolio failure in their broad Global
+[00:06:00] sample this finding fits with a more
+[00:06:02] recent paper with even more data to back
+[00:06:03] up its conclusions the 2024 paper beyond
+[00:06:06] the status quo a critical assessment of
+[00:06:08] life cycle investment advice uses block
+[00:06:11] bootstrap a method for simulating
+[00:06:13] hypothetical data from historical data
+[00:06:15] to simulate 1 million investor life
+[00:06:17] cycles for an American couple who
+[00:06:19] followed the 4% rule to spend from their
+[00:06:21] portfolio in retirement the historical
+[00:06:23] data source with simulations includes 39
+[00:06:25] developed countries with data as far
+[00:06:26] back as 1890 and through 2023 spanning
+[00:06:30] more than 2,600 years of country month
+[00:06:33] return data the authors established an
+[00:06:35] optimal 100% Equity portfolio allocated
+[00:06:37] 33% to domestic stocks and 67% to
+[00:06:40] International Stocks by testing all
+[00:06:43] possible allocations to domestic stocks
+[00:06:45] International stocks bonds and bills the
+[00:06:48] tests evaluated wealth at retirement
+[00:06:50] retirement income conservation of
+[00:06:52] savings through retirement and bequest
+[00:06:54] at death they then test this optimal all
+[00:06:56] Equity portfolio against multiple life
+[00:06:58] cycle asset allocations strategies
+[00:07:00] including a portfolio of 60% domestic
+[00:07:02] stocks and 40% bonds and a Target date
+[00:07:05] fund with a decreasing Equity Glide path
+[00:07:07] they find that the optimal all Equity
+[00:07:09] portfolio dominates all other strategies
+[00:07:12] the all Equity portfolio has a lower
+[00:07:13] probability of running out of money
+[00:07:14] under the 4% spending rule than the 6040
+[00:07:17] portfolio and the target day fund the
+[00:07:19] au's also run a simulation where rather
+[00:07:21] than picking an optimal fixed allocation
+[00:07:23] for the full life cycle they allow this
+[00:07:25] hypothetical couple to pick the optimal
+[00:07:27] portfolio for each individual year year
+[00:07:29] of the simulation in this case the
+[00:07:31] optimal portfolio is again all Equity
+[00:07:34] leading up to retirement but it shifts
+[00:07:36] to a 27% allocation to bills a cash
+[00:07:39] equivalent at retirement and then shifts
+[00:07:42] back toward 100% equity in the following
+[00:07:43] years the authors note that the modest
+[00:07:45] allocation to bills early in retirement
+[00:07:47] in this scenario is their simulated
+[00:07:49] investors response to the sequence of
+[00:07:51] returns risk that is created by the 4%
+[00:07:53] rules fixed real withdrawal amount
+[00:07:56] before anyone gets too excited about the
+[00:07:57] idea of a cash cushion early on
+[00:07:59] retirement stick with me until later in
+[00:08:01] the video so far we've established that
+[00:08:03] at least in the historical data a 100%
+[00:08:06] Equity portfolio has looked pretty good
+[00:08:07] relative to more conservative static
+[00:08:09] allocations declining Equity Glide paths
+[00:08:12] and Rising Equity Glide paths this flies
+[00:08:14] in the face of sequence of returned risk
+[00:08:16] as it is generally understood another
+[00:08:18] popular strategy to deal with sequence
+[00:08:20] of returns risk is the bucket approach
+[00:08:21] or cash wedge holding a few years of
+[00:08:24] cash to cover living expenses during
+[00:08:26] Market downturns avoiding spending from
+[00:08:28] the portfolio in those bad years in the
+[00:08:31] 2019 paper the bucket approach for
+[00:08:33] retirement a suboptimal behavioral trick
+[00:08:35] the author explains that the approach is
+[00:08:37] appealing to retirees because it sounds
+[00:08:39] plausible it's psychologically
+[00:08:41] comforting it's consistent with the
+[00:08:43] well-known behavioral bias of mental
+[00:08:44] accounting and it's easy to implement
+[00:08:46] that all sounds nice but the paper
+[00:08:49] proceeds to test whether the bucket
+[00:08:50] approach has actually been helpful in
+[00:08:52] historical data from 1900 through 2014
+[00:08:55] the author examines a two bucket
+[00:08:57] strategy including a cash bucket with
+[00:08:59] enough cash to fund two years of annual
+[00:09:01] draws and a risky bucket consisting of a
+[00:09:03] portfolio of stocks this is tested
+[00:09:05] against various static allocations
+[00:09:07] between stocks and bonds these
+[00:09:09] strategies are then tested for a 30-year
+[00:09:11] retirement period with retirement
+[00:09:12] spending following the 4% rule across
+[00:09:15] multiple performance metrics static
+[00:09:17] strategies outperform the bucket
+[00:09:19] strategies okay we've seen so far that
+[00:09:22] Glide paths and cash buckets do not
+[00:09:24] solve sequence of returns risk and that
+[00:09:27] counterintuitively stock heavy static
+[00:09:29] allocation portfolios tend to look
+[00:09:31] better than Bond heavy portfolios Glide
+[00:09:33] paths and portfolios with cash buckets
+[00:09:36] that may seem discouraging for anyone
+[00:09:38] worried about sequence of returns risk
+[00:09:40] but I have good news all the retirement
+[00:09:43] simulations discussed so far have used
+[00:09:45] constant inflation adjusted spending
+[00:09:47] following the 4% rule the 4% rule was
+[00:09:50] developed by a financial planner William
+[00:09:51] benan in 1994 great guy by the way you
+[00:09:54] can hear him discuss his work on my
+[00:09:56] podcast benan wanted to find the amount
+[00:09:58] of a portfolio that could be spent in
+[00:09:59] the first year of retirement and
+[00:10:01] adjusted for inflation thereafter
+[00:10:03] without running out of money using us
+[00:10:05] historical data he found that a 4%
+[00:10:07] initial withdrawal rate would have never
+[00:10:09] exhausted a portfolio in under 33 years
+[00:10:12] and deemed the 4% withdrawal rate safe
+[00:10:14] for retirees safe withraw rates have
+[00:10:17] become a focal point of retirement
+[00:10:18] analyses including academic papers like
+[00:10:20] those mentioned in this video and are
+[00:10:22] ubiquitous in the financial planning
+[00:10:23] Community the 4% rule does have lots of
+[00:10:26] problems which I've detailed in other
+[00:10:27] videos in short 4% % is probably not as
+[00:10:30] safe as Ban's us Centric analysis
+[00:10:32] suggests what most people don't realize
+[00:10:35] is that before bengan Robert Merton had
+[00:10:37] published papers on How to optimally
+[00:10:39] consume from a portfolio and his
+[00:10:41] solution was not constant inflation
+[00:10:43] adjusted spending Merton's withdraw
+[00:10:45] strategy use an amortization method that
+[00:10:47] calculates the amount to withdraw in
+[00:10:49] each individual year it's a little bit
+[00:10:51] more complicated than a 4% rule which is
+[00:10:53] probably why it didn't catch on in the
+[00:10:54] same way let me explain how it works
+[00:10:56] using Excel formulas in each year you
+[00:10:59] solve for payment by inputting the
+[00:11:01] portfolio's expected return the number
+[00:11:03] of remaining periods and the portfolio
+[00:11:05] value the payment is the amount that can
+[00:11:07] be spent from the portfolio sustainably
+[00:11:09] in that year based on the other
+[00:11:10] assumptions the same calculation is done
+[00:11:13] the following year and so on the result
+[00:11:15] is a spending path that responds to
+[00:11:17] changes in portfolio values changes in
+[00:11:19] expected returns and the remaining time
+[00:11:21] Horizon this approach solves some of the
+[00:11:23] biggest problems with safe withdrawal
+[00:11:25] rates safe withdrawal rates never adjust
+[00:11:28] in a scenario like Alex bad sequence of
+[00:11:30] returns this can mean running out of
+[00:11:32] money sooner than intended amortization
+[00:11:34] based spending spreads that risk out by
+[00:11:36] reducing spending after bad returns and
+[00:11:39] increasing it after good ones this means
+[00:11:41] making some adjustments to spending
+[00:11:43] along the way but minimizes the risk of
+[00:11:45] catastrophically running out of money on
+[00:11:47] the other hand in a good sequence of
+[00:11:49] returns like Jim's safe withraw rates
+[00:11:51] leave you with a huge pile of money at
+[00:11:52] the end amortization based withdrawals
+[00:11:55] address that issue along the way
+[00:11:56] allowing you to spend more throughout
+[00:11:58] your life this makes sense portfolios
+[00:12:01] are variable trying to squeeze constant
+[00:12:03] spending from a variable asset is bound
+[00:12:05] to cause problems flexible spending
+[00:12:07] transforms sequence of returns risk from
+[00:12:09] a potential catastrophe Laten retirement
+[00:12:12] to periodic spending adjustments
+[00:12:13] throughout retirement remember in beyond
+[00:12:16] the status quo a critical assessment of
+[00:12:18] life cycle investment advice the authors
+[00:12:19] find a brief optimal cash allocation
+[00:12:21] early in retirement under 4% rule
+[00:12:24] spending but when they test a flexible
+[00:12:26] spending strategy not amortization based
+[00:12:28] withdrawals but an approach that
+[00:12:30] similarly responds to changes in
+[00:12:31] portfolio values that the cash
+[00:12:33] allocation disappears from the optimal
+[00:12:35] portfolio the lesson here is that
+[00:12:37] sequence of returns risk can be
+[00:12:38] addressed through spending adjustments I
+[00:12:41] might even say that sequence of returns
+[00:12:42] risk is better described as sequence of
+[00:12:44] withdrawals risk returns will be what
+[00:12:47] they will be they are out of your
+[00:12:49] control making the same inflation
+[00:12:51] adjusted portfolio withdrawals through
+[00:12:52] bad market conditions is a choice that
+[00:12:55] puts unnecessary and potentially
+[00:12:57] catastrophic strain on a portfolio
+[00:12:59] flexible spending mitigates a bad
+[00:13:01] sequence of returns and increases
+[00:13:03] lifetime spending without increasing the
+[00:13:05] risk of running out of money I built a
+[00:13:06] model using Global stock data back to
+[00:13:08] 1900 and found a 30-year safe withdrawal
+[00:13:11] rate of 3.2% with a 0% failure rate this
+[00:13:15] means that in the worst 30-year period
+[00:13:16] in my sample which happens to be a
+[00:13:18] period starting in 1913 a retiree could
+[00:13:21] spend 3.2% of their portfolio in the
+[00:13:23] first year and adjust for inflation
+[00:13:25] thereafter without running out of money
+[00:13:27] in the same data the worst case for
+[00:13:29] amortization based withdrawals sustained
+[00:13:31] average annual spending of 3.65% of the
+[00:13:34] starting portfolio value without running
+[00:13:36] out of money but it did require spending
+[00:13:39] adjustments instead of a catastrophe
+[00:13:41] later on some Sharp Cuts were made to
+[00:13:43] spending early on and spending increased
+[00:13:45] over time as conditions improved
+[00:13:47] importantly under my very conservative
+[00:13:49] 3.2% spending rule adjustments would not
+[00:13:52] be made if returns turn out to not be
+[00:13:55] the worst returns in history while under
+[00:13:57] amortization based spending upward
+[00:13:59] adjustments would be made each year it's
+[00:14:01] important for me to say here that while
+[00:14:02] static allocations to equity heavy
+[00:14:04] portfolios have looked good in the
+[00:14:05] historical data historical data do not
+[00:14:08] predict the future Equity heavy
+[00:14:10] portfolios can also be a challenge
+[00:14:11] behaviorally asset allocation is not a
+[00:14:14] decision that should be taken lightly or
+[00:14:15] made based on a single piece of
+[00:14:17] information if you want to learn more
+[00:14:18] about choosing an asset allocation I've
+[00:14:20] got another video on that topic sequence
+[00:14:22] of returns risk often associated with
+[00:14:24] investing in stocks during retirement is
+[00:14:26] intimidating for retirees for good
+[00:14:29] reason a bad sequence of returns can
+[00:14:31] materially impact long-term retirement
+[00:14:33] outcomes the problem is that most
+[00:14:35] attempted asset allocation Solutions
+[00:14:37] like Glide paths and cash buckets make
+[00:14:40] expected retirement outcomes worse
+[00:14:41] rather than better it is worth saying
+[00:14:43] here that even if holding some cash is
+[00:14:45] empirically suboptimal if it makes you
+[00:14:47] feel better or more confident in your
+[00:14:49] retirement plan it's probably fine
+[00:14:52] statistically optimal and optimal for
+[00:14:54] each individual person are not the same
+[00:14:56] thing the most common portfolio
+[00:14:58] withdrawals solution to sequence of
+[00:15:00] returns risk the safe withdrawal rate
+[00:15:02] produces extremely conservative and
+[00:15:04] rigid spending rules amortization based
+[00:15:06] spending or flexible spending more
+[00:15:08] generally address sequence of returns
+[00:15:10] risk or should I say sequence of
+[00:15:12] withdrawals risk headon adjusting
+[00:15:14] spending to market conditions and the
+[00:15:16] remaining retirement period results in
+[00:15:18] increasing total spending while
+[00:15:19] decreasing the risk of running out of
+[00:15:21] money thanks for watching I'm Ben Felix
+[00:15:23] Chief investment officer at pwl Capital
+[00:15:25] if you want to learn more about how pwl
+[00:15:27] addresses sequence of returns risk
+[00:15:29] through portfolio management and
+[00:15:30] financial planning you can book a
+[00:15:32] meeting with us below

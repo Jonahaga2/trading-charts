@@ -1,0 +1,462 @@
+[00:00:00] I was not planning on making another
+[00:00:01] video on covered calls, but my last two
+[00:00:04] videos started a lot of discussion that
+[00:00:05] I think is worth pursuing. There are a
+[00:00:07] ton of these products being launched in
+[00:00:09] Canada, and I believe people are making
+[00:00:10] serious errors in their assessments of
+[00:00:12] them. I feel a personal responsibility
+[00:00:15] to give some final comments. I think the
+[00:00:17] best way to approach this is to respond
+[00:00:19] to comments from my last video. I'll
+[00:00:21] address whether covered calls protect
+[00:00:23] you in a downturn, whether the new age
+[00:00:26] of covered call funds are better than
+[00:00:27] the old ones, whether I have any
+[00:00:29] integrity, and why I keep coming back to
+[00:00:32] this topic. I'm Ben Felix, chief
+[00:00:33] investment officer at PWL Capital, and
+[00:00:35] I'm going to tell you one last time why
+[00:00:38] covered calls are destructive to
+[00:00:39] long-term wealth, even if you need
+[00:00:41] income from your portfolio.
+[00:00:47] The financial product landscape has come
+[00:00:49] full circle. For decades, actively
+[00:00:51] managed mutual funds siphoned dollars
+[00:00:53] out of investor pockets and into the
+[00:00:55] financial industry without offering much
+[00:00:57] if anything in return. Eventually,
+[00:00:59] investors started to realize that paying
+[00:01:01] 2% or more to own actively managed
+[00:01:03] mutual funds sold by commission
+[00:01:05] salespeople was a losers game. At first,
+[00:01:08] that led people toward lowcost index
+[00:01:10] funds slowly, which was a good thing.
+[00:01:12] But now, high fee products that look
+[00:01:14] different enough from traditional
+[00:01:16] actively managed mutual funds while
+[00:01:18] carrying many of the same issues are
+[00:01:20] being promoted by unlicensed financial
+[00:01:22] content creators. I have a lot of
+[00:01:24] sympathy for the people using these
+[00:01:26] products, being being sold on these
+[00:01:27] products. They're being sold hope.
+[00:01:29] They're being sold a better future, but
+[00:01:31] I don't think they understand the true
+[00:01:33] costs. I want to read you a quote that
+[00:01:34] has stuck with me since I read it a few
+[00:01:36] weeks ago. Capitalists respond to the
+[00:01:39] actual demand for their products, not
+[00:01:40] the demand that would exist if people
+[00:01:42] were perfectly rational and truly
+[00:01:44] understood their own best interests.
+[00:01:46] Since people's demands are driven by the
+[00:01:48] benefits they perceive rather than the
+[00:01:50] benefits they actually get, the
+[00:01:52] financial system supplies too many
+[00:01:54] products with exaggerated benefits and
+[00:01:56] too few products with underappreciated
+[00:01:58] benefits. And since perceived costs
+[00:02:00] rather than actual costs drive people's
+[00:02:02] demands, the financial system supplies
+[00:02:05] too many products with hidden costs. I
+[00:02:07] need you to think about that. It comes
+[00:02:09] from John Campbell's new book, Fixed.
+[00:02:11] Campbell's a professor at Harvard and
+[00:02:13] one of the top living financial
+[00:02:14] economists. He's basically saying that
+[00:02:16] capitalism doesn't work properly when
+[00:02:18] people don't know which products are
+[00:02:20] good for them or how much those products
+[00:02:22] cost. When it comes to covered call
+[00:02:24] funds, people seem to want them because
+[00:02:26] they are so psychologically attached to
+[00:02:28] income, even when the income comes in a
+[00:02:31] package that makes them worse off.
+[00:02:33] Overall, capitalists, the the fund
+[00:02:35] companies are more than happy to meet
+[00:02:37] this demand because they can launch
+[00:02:39] products that cater to investor biases
+[00:02:41] while charging a high fee for the
+[00:02:43] service. There's no money to be made in
+[00:02:45] lowcost index funds. So, it's not
+[00:02:47] surprising to see this shift. Something
+[00:02:49] I didn't appreciate when I started
+[00:02:50] making videos on covered calls is that
+[00:02:52] there is a whole cottage industry of
+[00:02:54] unlicensed financial content creators
+[00:02:56] promoting these products and in many
+[00:02:57] cases selling access to coaching
+[00:02:59] sessions or research to help you build
+[00:03:02] your covered call income portfolio.
+[00:03:04] Financial markets and financial advice
+[00:03:06] are regulated for a reason. Regulation
+[00:03:09] in Canada has not been perfect and our
+[00:03:11] long history of high fee actively
+[00:03:13] managed funds being sold on commission
+[00:03:14] is a blemish that will take decades to
+[00:03:16] recover from. But taking advice from
+[00:03:18] unregulated content creators with
+[00:03:20] limited financial background is risky
+[00:03:23] business. There's nothing inherently
+[00:03:25] wrong with selling options. Where I take
+[00:03:27] issue is with these products being
+[00:03:29] marketed and sold on their yields as if
+[00:03:31] the yields were returns when in reality
+[00:03:34] the yields are at best irrelevant and
+[00:03:36] more likely have a negative relationship
+[00:03:38] with expected returns. Okay, on to the
+[00:03:41] comments. Let's start with covered calls
+[00:03:43] in down markets. In my last video, I
+[00:03:45] showed five examples of covered call
+[00:03:46] funds underperforming their underlying
+[00:03:48] equities when monthly withdrawals are
+[00:03:50] held constant at the distribution yield
+[00:03:52] of the covered call fund. In those
+[00:03:54] examples, the investor in the covered
+[00:03:56] call fund and the underlying fund were
+[00:03:58] spending the same dollar amount at the
+[00:03:59] same time intervals. I did include the
+[00:04:02] 2022 downturn in my previous examples.
+[00:04:04] Going back further, the Invesco S&P 500
+[00:04:07] buy ETF started in December 2007 just in
+[00:04:10] time for the great financial crisis. I
+[00:04:12] set up a similar side-by-side comparison
+[00:04:14] of the covered call fund and an S&P 500
+[00:04:16] index fund. Spending from both
+[00:04:18] portfolios in this simple model is
+[00:04:21] matched to the distributions of the
+[00:04:22] covered call fund. To be completely
+[00:04:24] clear, both sides of the comparison are
+[00:04:26] spending the same dollar amounts which
+[00:04:29] is based on the covered call funds
+[00:04:30] distributions. Keeping in mind that this
+[00:04:32] is one of the worst periods for the US
+[00:04:33] stock market in recorded history, we do
+[00:04:36] see that the covered call strategy is
+[00:04:38] helpful. It slightly reduces the
+[00:04:39] downside. However, the covered call fund
+[00:04:42] quickly falls behind as equities
+[00:04:44] recover. The option premiums from
+[00:04:46] selling calls are creating a bit of a
+[00:04:47] buffer when stocks are down. But writing
+[00:04:49] those options into an eventual recovery
+[00:04:51] is destructive to wealth because they
+[00:04:53] limit upside participation. Over the
+[00:04:55] full history of this fund, including the
+[00:04:57] great financial crisis, the COVID crash,
+[00:04:59] and the 2022 decline, and holding
+[00:05:01] spending constant for the covered call
+[00:05:03] fund and the underlying equity fund, an
+[00:05:05] investor in the underlying would have
+[00:05:07] 3.8 8 times the amount of wealth as an
+[00:05:09] investor in the covered call strategy at
+[00:05:11] the end of September 2025. What is not
+[00:05:13] relevant here is whether or not you had
+[00:05:15] to sell shares in a down market to fund
+[00:05:17] your spending. This is a tough one to
+[00:05:19] grasp, but it's really important. Let's
+[00:05:20] look at JAPI as an example. I will walk
+[00:05:23] through this in excruciating detail. I'm
+[00:05:26] sorry and you're welcome. Let's step
+[00:05:28] back in time to May 2020. JP Morgan
+[00:05:31] launches the JP Morgan Equity Premium
+[00:05:32] Income ETF. You have a bit of extra
+[00:05:35] stimulus cash kicking around. So, you
+[00:05:37] buy $1 million of JAPI. I know that's a
+[00:05:40] ridiculous amount for stimulus cash, but
+[00:05:42] bear with me. That that's 20,000 shares
+[00:05:44] of JAPI at at the share price at that
+[00:05:47] time. You spend all the monthly
+[00:05:49] distributions from JAPI, but you don't
+[00:05:52] touch your 20,000 shares. Your neighbor
+[00:05:54] puts $1 million into IVV, the iShares
+[00:05:57] Core S&P 500 ETF on the same day. That
+[00:06:00] amounts to 3,355
+[00:06:02] shares of the ETF and a little bit of
+[00:06:04] cash left over. Your neighbor matches
+[00:06:06] all the spending that you're doing from
+[00:06:08] your JAPI distributions through a
+[00:06:10] combination of of IV's quarterly
+[00:06:12] dividends and selling off shares of IVV
+[00:06:15] each month. For example, your first
+[00:06:17] distribution from JAPI is $9,882
+[00:06:20] while your neighbor receives a $4,230
+[00:06:23] dividend and sells 17 shares of their
+[00:06:26] ETF to bring their total cash, their
+[00:06:29] total spending cash roughly in line with
+[00:06:31] yours. Fast forward to September 2022
+[00:06:34] and IVV is down a lot from its recent
+[00:06:37] peak. You receive an $11,178
+[00:06:40] dividend from JAPI while your neighbor
+[00:06:42] has to sell 28 shares at a depressed
+[00:06:45] price to match your spending. This seems
+[00:06:48] really bad for your neighbor, but what
+[00:06:50] happens next is important. Your neighbor
+[00:06:52] continues to sell IVV shares to fund
+[00:06:54] their spending, but the value of their
+[00:06:56] remaining shares is increasing faster
+[00:06:58] than they spent. You still have 20,000
+[00:07:01] shares of JAPI, but their value has
+[00:07:03] barely increased since you bought them.
+[00:07:05] Keep in mind that you and your neighbor
+[00:07:07] have spent the same dollar amount from
+[00:07:09] the portfolios. Covered calls were
+[00:07:11] successful in this example at avoiding
+[00:07:13] selling shares in a downturn, but they
+[00:07:15] also capped upside participation
+[00:07:17] significantly, resulting in less wealth
+[00:07:19] overall, holding spending constant. I
+[00:07:22] saw a lot of comments saying, "Well,
+[00:07:23] what if you sell your last shares to
+[00:07:25] fund your spending?" To which I would
+[00:07:26] ask, what if the value of your constant
+[00:07:29] number of shares declines to zero? Two
+[00:07:31] different ways to arrive at the same
+[00:07:32] outcome. It's the number of shares
+[00:07:35] multiplied by the price that matters.
+[00:07:37] Either one on its own contains very
+[00:07:39] limited information. As these examples
+[00:07:41] show, covered calls do offer some
+[00:07:43] protection in a falling market due to
+[00:07:44] the option premiums generated by selling
+[00:07:46] calls. But I can't tell you when the
+[00:07:48] market will fall or more importantly,
+[00:07:50] when it will recover. I get the appeal
+[00:07:52] of living off the income in a down
+[00:07:54] market. But when the cost of that income
+[00:07:56] is missing out on expected returns both
+[00:07:58] before and potentially more importantly
+[00:08:01] after a stock price decline, it is
+[00:08:03] increasing, not decreasing the risk of
+[00:08:05] your ability to pay your bills in the
+[00:08:07] future. Remember, covered calls look a
+[00:08:10] lot like holding a large portion of your
+[00:08:11] portfolio in cash. That can look good
+[00:08:14] over some periods when stocks perform
+[00:08:16] poorly, but in the long run, it is
+[00:08:18] expected to be very expensive. Another
+[00:08:21] interesting question is whether
+[00:08:22] reinvesting rather than spending the
+[00:08:24] distributions gives covered calls a
+[00:08:26] magical advantage in a market downturn.
+[00:08:28] As Andy suggests in a comment, as you
+[00:08:30] can see here, with dividends reinvested,
+[00:08:32] it does not make a difference to the
+[00:08:34] general story. Covered calls continue to
+[00:08:36] dramatically underperform when both
+[00:08:38] sides of the comparison are left to
+[00:08:40] accumulate and reinvest their
+[00:08:41] distributions. One of the mistakes I
+[00:08:43] think a lot of people are making with
+[00:08:44] these products is thinking, as Andy
+[00:08:46] suggests, that covered calls allow you
+[00:08:48] to spend more in retirement or retire
+[00:08:50] sooner with less savings. The only way
+[00:08:52] this is true is if there was no other
+[00:08:54] way, psychologically speaking, for you
+[00:08:57] to spend your own money. That aside,
+[00:08:59] covered calls result in lower, not
+[00:09:01] higher, sustainable spending for
+[00:09:02] long-term investors for the simple
+[00:09:04] reason that they reduce expected
+[00:09:06] returns. Addressing the questions about
+[00:09:08] when covered calls may or may not shine
+[00:09:10] was important. There were also a ton of
+[00:09:13] comments from people claiming that I
+[00:09:14] picked the wrong funds to analyze in my
+[00:09:16] previous videos. The interesting thing
+[00:09:18] to me is that most of the tickers that
+[00:09:20] people offered up as superior performers
+[00:09:22] and better representations of covered
+[00:09:24] call funds as a strategy have similarly
+[00:09:27] underperformed their underlying
+[00:09:28] equities. These repeated interactions
+[00:09:30] led me to believe with all due respect
+[00:09:33] to everyone watching that many investors
+[00:09:36] have no idea what their investment
+[00:09:38] returns actually are. And that is an
+[00:09:40] observation backed up by academic
+[00:09:42] research. People really don't know what
+[00:09:44] their returns are, which makes it hard
+[00:09:45] to make good decisions. Let's go through
+[00:09:48] all the examples that I was given. These
+[00:09:50] first ones are US-listed ETFs. SPYI, the
+[00:09:53] NEOS S&P 500 highinccome ETF, has
+[00:09:56] trailed the Vanguard 500 index fund by
+[00:09:58] 4.61% annualized since August 2022. Not
+[00:10:03] off to a good start here. QQQI, the NEOS
+[00:10:06] NASDAQ 100 high-inccome ETF, has trailed
+[00:10:09] the Invesco NASDAQ 100 ETF by 2%
+[00:10:12] annualized since January 2024. Not as
+[00:10:15] bad. JPQ, the JP Morgan NASDAQ equity
+[00:10:18] premium income ETF, has trailed the
+[00:10:20] Invesco NASDAQ 100 ETF by an annualized
+[00:10:23] 4.36% since May 2022. To its credit, in
+[00:10:27] the 2022 downturn, JAPQ did better than
+[00:10:30] its underlying, but any advantage was
+[00:10:31] short-lived as it gave up the upside in
+[00:10:33] the subsequent recovery. Okay, DIVO, the
+[00:10:37] Amplify CWP enhanced dividend income
+[00:10:39] ETF, if I have any integrity, I had to
+[00:10:43] put some effort into the underlying
+[00:10:44] comparison here since DIVO is not an
+[00:10:46] index fund. It holds a portfolio of
+[00:10:48] highquality dividend oriented stocks.
+[00:10:51] So, it doesn't make sense to compare it
+[00:10:52] to, say, an S&P 500 ETF. I compared it
+[00:10:55] to the Vanguard Dividend Appreciation
+[00:10:56] Index Fund ETF. They have moderate
+[00:10:59] holdings overlap and a very high return
+[00:11:01] correlation. So, I think it's a
+[00:11:02] reasonable comparison. DIVO has
+[00:11:04] underperformed by an annualized 51 basis
+[00:11:07] points since December 2016. I know I
+[00:11:10] said an S&P 500 comparison made no sense
+[00:11:12] here, but DIVO has performed far worse
+[00:11:14] against that benchmark for whatever
+[00:11:16] that's worth. QQQI we did earlier.
+[00:11:19] Another underperformer. At least I still
+[00:11:21] have my integrity. Ah, okay. Income and
+[00:11:25] growth. Let's take a look. Hyld is the
+[00:11:28] Hamilton Enhanced US Covered Call ETF.
+[00:11:31] This is a Canadian listed ticker. Let's
+[00:11:33] keep in mind that this fund does have a
+[00:11:35] modest 25% cash leverage. It aims to be
+[00:11:38] a higher yielding alternative to the S&P
+[00:11:40] 500 with similar volatility. So, I will
+[00:11:43] compare it to an S&P 500 ETF hedged to
+[00:11:46] Canadian dollars since HyLD is also
+[00:11:48] hedged. It has underperformed by 0.9%
+[00:11:52] annualized since February 2022.
+[00:11:55] HD div, the Hamilton enhanced multis
+[00:11:57] sector covered call ETF, is a portfolio
+[00:11:59] of primarily sector covered call ETFs
+[00:12:01] with a sector mix intended to be broadly
+[00:12:04] similar to the S&P TSX60. It has beaten
+[00:12:07] the S&P TSX60 as proudly proclaimed on
+[00:12:10] the fund website, but this fund has a
+[00:12:11] third of its assets invested in US
+[00:12:13] equities. To make a proper comparison, I
+[00:12:16] did my best to reconstruct an index fund
+[00:12:18] portfolio matched to the underlying
+[00:12:19] equities of HDIV. My model had no
+[00:12:23] leverage while HDIV has cash leverage of
+[00:12:25] 25%. My model outperforms HD since
+[00:12:28] inception. Properly benchmark, I don't
+[00:12:31] think this fund is beating anything.
+[00:12:32] It's levering up for more downside
+[00:12:34] volatility and still underperforming.
+[00:12:36] There is an interesting discussion point
+[00:12:37] here. This fund and its underlying
+[00:12:39] equities are different from a Canadian
+[00:12:41] market index and a US market index and
+[00:12:43] they have beaten both since inception. I
+[00:12:45] would tend to say this type of
+[00:12:46] short-term performance is unlikely to
+[00:12:48] repeat in the long run. The evidence
+[00:12:51] against active management's ability to
+[00:12:52] beat the market in the long run is
+[00:12:54] absolutely overwhelming. I would
+[00:12:56] approach short-term performance like
+[00:12:57] this with extreme caution. And note that
+[00:13:00] if you believe in this specific sector
+[00:13:02] and country mix, getting exposure to it
+[00:13:05] without covered calls would be cheaper
+[00:13:07] and have higher expected returns. The
+[00:13:09] same thing goes for HHIS, the Harvest
+[00:13:11] Diversified High Income Shares ETF. It
+[00:13:14] is an equally weighted portfolio of 15
+[00:13:16] trending companies using covered calls
+[00:13:18] and 25% leverage. This fund has not been
+[00:13:21] around long and for the first few months
+[00:13:23] of its life, it only had nine holdings.
+[00:13:25] All of its holdings are single stock
+[00:13:27] covered call ETFs from Harvest. I ran
+[00:13:30] the portfolio of underlying stocks with
+[00:13:31] no leverage and no covered calls. My
+[00:13:34] waitings won't match perfectly, but I
+[00:13:35] find that the underlying stocks have
+[00:13:37] performed about the same as the fund. In
+[00:13:39] other words, you were not any better off
+[00:13:41] from the leverage and covered calls in
+[00:13:43] HHIS compared to just owning the same
+[00:13:45] stocks directly over this relatively
+[00:13:47] short period. If I allow 25% leverage
+[00:13:50] for the underlying stock portfolio, it
+[00:13:51] has outperformed HHIS significantly,
+[00:13:54] which again is exactly what we should
+[00:13:56] expect when the effects of covered calls
+[00:13:58] are isolated. Now, to be fair here, HHIS
+[00:14:01] has beaten indexes like the NASDAQ 100
+[00:14:03] and the S&P 500. But let's keep in mind
+[00:14:05] that we are talking about a fund that
+[00:14:07] has existed since January 2025, has had
+[00:14:10] as few as nine holdings, and currently
+[00:14:12] has only 15 holdings. It would be
+[00:14:14] exceptionally rare for a concentrated
+[00:14:16] portfolio of attention-grabbing stocks
+[00:14:18] like this to deliver outperformance over
+[00:14:20] an extended period of time. The vast
+[00:14:23] majority of professional active managers
+[00:14:25] underperform index funds in the long
+[00:14:26] run. I see people online putting their
+[00:14:28] faith into these products and I find it
+[00:14:30] really concerning. I honestly hope I'm
+[00:14:32] proven wrong, but at the very least, I
+[00:14:35] hope that people recognize the risk they
+[00:14:37] are taking. This is not a free lunch.
+[00:14:39] Okay, that's the full tour of
+[00:14:41] performance comparisons. Fundamentally,
+[00:14:42] a covered call changes the shape of the
+[00:14:44] distribution of expected returns in a
+[00:14:46] way that I think is detrimental to
+[00:14:48] long-term investors. And this shows up
+[00:14:50] clearly in the data. Lastly, I want to
+[00:14:52] address why I keep making videos on this
+[00:14:54] topic. I have nothing to sell you by
+[00:14:56] telling this information. If you listen
+[00:14:57] to what I'm saying in these videos,
+[00:14:58] you'll invest in lowcost total market
+[00:15:01] index funds, which I have nothing to do
+[00:15:03] with personally or professionally,
+[00:15:06] rather than high-cost covered call
+[00:15:08] funds, which I also have nothing to do
+[00:15:09] with personally or professionally. So,
+[00:15:11] why am I doing this? Understanding
+[00:15:13] complex financial products, both
+[00:15:14] analytically and psychologically, is a
+[00:15:16] huge part of my job as the chief
+[00:15:18] investment officer at PWL Capital. And I
+[00:15:21] don't know if you know this, but telling
+[00:15:22] strangers on the internet what you think
+[00:15:24] you know about something is one of the
+[00:15:26] best ways to assess and strengthen your
+[00:15:28] knowledge. I actually gain a lot from
+[00:15:30] making these videos and engaging in the
+[00:15:32] discussions that follow. More
+[00:15:33] altruistically, I want to see a
+[00:15:35] financial product marketplace in Canada
+[00:15:37] that isn't overwhelming, intimidating,
+[00:15:39] or dangerous for people who are just
+[00:15:40] starting out. The way that a lot of
+[00:15:42] financial products, not just covered
+[00:15:44] call funds, just a lot of financial
+[00:15:46] products, the way they're marketed and
+[00:15:47] sold makes it really confusing for
+[00:15:49] investors to understand what they're
+[00:15:51] buying, but also what they should be
+[00:15:53] buying. Covered calls are a particularly
+[00:15:55] challenging example because they cater
+[00:15:57] to the strong mental accounting bias
+[00:15:58] that many investors have. by providing
+[00:16:01] fundamental information and basic
+[00:16:03] performance comparisons rather than
+[00:16:05] marketing hype. I hope these videos help
+[00:16:08] a few people make better decisions or at
+[00:16:10] the very least help them ask the right
+[00:16:12] questions. Thanks for watching. I'm Ben
+[00:16:15] Felix, chief investment officer at PWL
+[00:16:16] Capital. I'm going to leave this topic
+[00:16:18] alone for a while now, but I hope that
+[00:16:20] we can keep the conversation going.

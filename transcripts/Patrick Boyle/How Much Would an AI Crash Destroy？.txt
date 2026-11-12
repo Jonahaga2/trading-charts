@@ -1,0 +1,846 @@
+[00:00:00] Back in May, Micron and SK Hynix, two
+[00:00:03] memory chip companies, produced 17% of
+[00:00:07] the entire global stock market's return
+[00:00:10] for the month. Not 17% of the chip
+[00:00:13] sector, 17% of everything. Every listed
+[00:00:17] company in every country added together.
+[00:00:21] That's from a report by Acadian Asset
+[00:00:24] Management. The global market they're
+[00:00:26] measuring is the MSCI All Country World
+[00:00:29] Index, which holds thousands of stocks
+[00:00:32] across dozens of countries. And Micron
+[00:00:35] and SK Hynix are about 1% of it. So, for
+[00:00:40] every dollar the global market rose in
+[00:00:42] May, about 17 cents of it came from just
+[00:00:46] those two stocks. This raises the
+[00:00:49] awkward question, if two chip stocks
+[00:00:52] that most people on the street have
+[00:00:53] never heard of, it's not like it's Apple
+[00:00:56] and Google, can haul the entire planet's
+[00:00:59] equity markets upwards, what happens to
+[00:01:01] your portfolio on the way back down? So,
+[00:01:04] today we're going to look at how exposed
+[00:01:06] ordinary investors are to the AI trade,
+[00:01:10] why the usual places to hide may not be
+[00:01:13] working anymore, and roughly how much
+[00:01:15] money would disappear if the whole thing
+[00:01:18] fell apart. Now, let me clarify
+[00:01:20] something up front, as we're going to
+[00:01:22] spend a while looking at what happens if
+[00:01:24] this all goes wrong. There's no
+[00:01:27] consensus that it is going to all go
+[00:01:29] wrong. Plenty of smart people think that
+[00:01:32] we're standing at the start of an
+[00:01:34] enormous boom, that AI is a real
+[00:01:37] technology that's going to reshape the
+[00:01:39] economy, and eventually more than
+[00:01:41] justify the money being poured into it.
+[00:01:44] And they might well be right. In fact,
+[00:01:47] you have to assume that most of the
+[00:01:48] people involved believe exactly that,
+[00:01:51] because it's the only thing that
+[00:01:53] explains what they're doing. This is why
+[00:01:56] investors are putting money in at these
+[00:01:59] valuations. It's why the tech CEOs are
+[00:02:01] committing hundreds of billions of
+[00:02:03] dollars to data centers. No one spends
+[00:02:06] like this unless they're convinced that
+[00:02:08] the payoff is going to be huge. The
+[00:02:11] optimists, to be really clear, aren't a
+[00:02:14] fringe. They are the majority, and their
+[00:02:17] optimism is the reason all of this
+[00:02:19] exists in the first place. So, I'm not
+[00:02:23] here to tell you the crash is coming.
+[00:02:25] Nobody knows that, and anyone who says
+[00:02:28] that they do is guessing. In fact, later
+[00:02:30] on, we'll look at some of the confident
+[00:02:32] but wrong predictions from the past.
+[00:02:35] What this video is about is trying to
+[00:02:37] estimate the downside risk. If the bulls
+[00:02:40] are right, everything works out fine,
+[00:02:43] and we'll all look back and wonder what
+[00:02:44] all the fuss was about. But, if the
+[00:02:47] bears are right, even if some of this
+[00:02:49] turns out to be a bubble, it's worth
+[00:02:52] looking at the estimates of how much is
+[00:02:54] actually at stake, particularly when the
+[00:02:57] party's still on. So, diversification,
+[00:03:01] it's the one thing in finance everybody
+[00:03:03] agrees is a good idea. Investors treat
+[00:03:07] the word like a magical incantation, one
+[00:03:10] which can protect them from market
+[00:03:12] crashes, inflation, and poor
+[00:03:14] decision-making. You spread your money
+[00:03:16] across lots of different things so that
+[00:03:19] when one of them blows up, the others
+[00:03:21] keep your returns steady. It's the
+[00:03:23] closest the industry has to a free
+[00:03:26] lunch. And for most of history, it has
+[00:03:29] worked. A couple of years ago, the big
+[00:03:31] worry amongst those who worry for a
+[00:03:34] living was sector concentration in the
+[00:03:37] S&P 500. They worried that seven
+[00:03:40] companies, the Magnificent Seven, had
+[00:03:43] grown so large that the index everyone
+[00:03:45] thought of as the American stock market,
+[00:03:48] was really just seven tech stocks in a
+[00:03:50] trench coat. The concern has since
+[00:03:53] grown. It's no longer seven stocks that
+[00:03:56] we have to worry about, but a whole
+[00:03:58] sector, and a sector which famously
+[00:04:01] doesn't stay in its lane.
+[00:04:04] AI started out looking like a handful of
+[00:04:07] tech giants, and it's worked its way
+[00:04:09] into nearly everything. And I don't just
+[00:04:11] mean the companies pretending to use it.
+[00:04:14] The obvious ones are the chip makers,
+[00:04:17] but it's also the utilities as data
+[00:04:19] centers need huge amounts of power. So,
+[00:04:22] a company whose job it is to keep the
+[00:04:24] lights on in Ohio is now partially an AI
+[00:04:28] stock, or at least its valuation is tied
+[00:04:31] to the idea that data centers will soon
+[00:04:34] become huge customers. It's real estate,
+[00:04:37] too, because someone has to own the
+[00:04:39] warehouses full of servers. And it's
+[00:04:42] construction, as there's a huge boom in
+[00:04:45] data center construction across the
+[00:04:47] United States. The AI trade now employs
+[00:04:51] electricians and lots of them. Then,
+[00:04:54] there's the money that the boom has
+[00:04:56] already made. A few weeks ago, SpaceX
+[00:04:59] went public, turning around 4,400
+[00:05:02] of its employees into millionaires
+[00:05:04] overnight, including 400 of them who are
+[00:05:08] now worth more than $100 million each.
+[00:05:11] The people whose job it is to sell
+[00:05:14] things to the rich noticed this
+[00:05:16] immediately. Estate agents in California
+[00:05:18] and Texas reported a wave of inquiries
+[00:05:21] about new homes. Private jet firms
+[00:05:24] report extra business from those who
+[00:05:26] wanted to celebrate the IPO with a trip
+[00:05:29] somewhere. And apparently, the single
+[00:05:32] most popular purchase after an event
+[00:05:34] like this is a luxury watch, because as
+[00:05:37] one watch dealer explained it, the share
+[00:05:39] certificate sits in a brokerage account
+[00:05:42] where nobody can see it, but the watch
+[00:05:44] goes on your wrist. Which is a nice way
+[00:05:47] of describing the urge to let strangers
+[00:05:49] know how well everything's been going
+[00:05:52] for you.
+[00:05:53] The point is that the wealth doesn't
+[00:05:55] stay with the AI workers. It disperses
+[00:05:58] out into the whole economy to estate
+[00:06:01] agents, watch dealers, pilots, interior
+[00:06:04] designers, the people who installed a
+[00:06:06] wine cellar, and the people who stock
+[00:06:08] it. All of them now care about the AI
+[00:06:11] trade, whether they put it this way or
+[00:06:13] not. Your florist may have a position in
+[00:06:16] Nvidia. She just doesn't call it that.
+[00:06:20] SpaceX, of course, was just the opening
+[00:06:23] act. Anthropic is expected to go public
+[00:06:25] in October at a valuation of between $1
+[00:06:28] trillion and $2 trillion.
+[00:06:30] And OpenAI is in this Q2. Employees
+[00:06:34] don't all have to wait for the IPO,
+[00:06:36] either. According to the FT, OpenAI
+[00:06:40] recently completed a near $7 billion
+[00:06:42] tender offer, buying back shares from
+[00:06:45] employees. So, the watches, the jet
+[00:06:48] charters, and the new homes near the
+[00:06:50] office don't have to wait for the bell
+[00:06:52] to ring at Nasdaq. The money is already
+[00:06:56] spilling out into the economy as we
+[00:06:58] speak, one $7 billion buyback at a time,
+[00:07:02] which means the sensible question is,
+[00:07:05] can you get out of the way of AI, or are
+[00:07:08] we all stuck in a possible boom and bust
+[00:07:10] cycle? Before we go any further, let me
+[00:07:13] tell you about this week's video
+[00:07:15] sponsor, Taylor Stitch, where I've been
+[00:07:17] getting my shirts from for more than a
+[00:07:19] year. Taylor Stitch make custom clothes
+[00:07:22] designed for your body, so everything
+[00:07:25] fits perfectly. You enter a few details
+[00:07:28] on their website, they calculate your
+[00:07:30] size, and make a custom shirt for you.
+[00:07:34] If it's not right the first time,
+[00:07:35] they'll remake it for free. You can pick
+[00:07:38] one of their designs or use their
+[00:07:41] software to design your own shirt,
+[00:07:43] specifying collars, cuffs, fabrics,
+[00:07:46] buttons, even monograms. I'm wearing
+[00:07:49] their Phoenix white shirt with cutaway
+[00:07:51] classic collar, convertible cuffs, and
+[00:07:54] mother-of-pearl buttons.
+[00:07:56] At Tailor Store, nothing is produced in
+[00:07:59] advance, so there's no unsold stock and
+[00:08:02] far less waste. And because they own
+[00:08:05] their own production facilities, there
+[00:08:07] are no middle layers pushing prices up.
+[00:08:10] What you're paying for is quality. If
+[00:08:13] you want a smarter way to shop for
+[00:08:15] clothes that actually fit, click the
+[00:08:17] link in the description. Tailor Store is
+[00:08:20] offering my viewers 25% off their first
+[00:08:23] order with the link and discount code in
+[00:08:25] the description. Custom clothes at a
+[00:08:28] price that actually makes sense. Okay,
+[00:08:31] so let's say you were worried about AI
+[00:08:34] investment and bought small-cap US
+[00:08:36] stocks instead. Well, you're doing quite
+[00:08:40] well. The Russell 2000 had its best
+[00:08:43] first half since 1991,
+[00:08:45] up around 22%.
+[00:08:48] You might take that as a sign that small
+[00:08:50] ordinary American businesses are
+[00:08:52] booming. In reality, 16 of the 50 best
+[00:08:56] performers in the index are
+[00:08:58] semiconductor and chip equipment firms.
+[00:09:01] Companies like MaxLinear and Airtest
+[00:09:04] Systems are up 250 and 380%
+[00:09:08] respectively this year. You didn't dodge
+[00:09:11] the AI boom, you bought the companies
+[00:09:14] that sell it cables and testing gear.
+[00:09:17] Or maybe you're a sensible value
+[00:09:19] investor. You don't touch overpriced
+[00:09:22] growth stocks. You bought the Russell
+[00:09:24] 1000 value index, and right now you feel
+[00:09:27] pretty clever because value is up about
+[00:09:30] 20% this year, while the growth index
+[00:09:33] has actually fallen. Value investing, it
+[00:09:36] seems, is back. The reason your value
+[00:09:39] fund did so well this year is that until
+[00:09:41] recently it was packed with high-flying
+[00:09:43] semiconductor stocks, Micron, AMD,
+[00:09:47] Western Digital, which had been on an
+[00:09:49] enormous tear. Then, in late June, the
+[00:09:52] index providers did their annual
+[00:09:54] rebalance. They moved those chip stocks
+[00:09:57] out of the value index and into the
+[00:09:59] growth index and moved Amazon, Apple,
+[00:10:02] and Microsoft the other way into value.
+[00:10:05] And the timing was, by complete
+[00:10:08] accident, absolutely perfect. The chips
+[00:10:11] got sold right at the top of their run,
+[00:10:14] just before they rolled over, and the
+[00:10:16] value index picked up the big tech names
+[00:10:19] right as they were touching their lows.
+[00:10:21] Nobody made any big decisions here. A
+[00:10:24] calendar reminder did it. A value fund
+[00:10:28] manager, quoted in the Wall Street
+[00:10:30] Journal, could only stand back and
+[00:10:32] admire how it had worked. "It was like
+[00:10:34] the index got so lucky," he said. "It
+[00:10:37] caught that blow-off top in momentum and
+[00:10:39] then sold it right before they rolled
+[00:10:42] over, which I imagine is a slightly
+[00:10:44] painful thing to say out loud if your
+[00:10:47] actual job is picking value stocks and a
+[00:10:50] mechanical rebalance just did a better
+[00:10:52] job than you." So, as a value investor,
+[00:10:56] you did well twice over. You made money
+[00:10:59] on the chips and sold them at the top.
+[00:11:01] The only small catch is where it left
+[00:11:04] you. Your sensible value portfolio is
+[00:11:06] now stuffed with Amazon, Apple, and
+[00:11:08] Microsoft, three of the biggest tech
+[00:11:11] companies on Earth, and quite possibly
+[00:11:13] the exact stocks you bought a value fund
+[00:11:16] to avoid owning. You escaped the AI
+[00:11:19] trade and landed in what was effectively
+[00:11:21] the AI trade wearing a false mustache.
+[00:11:25] So, if you're stuck in this trade,
+[00:11:27] whether you want to be in it or not, the
+[00:11:30] obvious question to ask is how much
+[00:11:32] money are we talking about? If the AI
+[00:11:35] bubble deflates, how much wealth is
+[00:11:37] likely to be wiped out? Well, let's
+[00:11:40] start with the economist Dean Baker who
+[00:11:43] runs a website called the AI bubble
+[00:11:45] monitor, which sounds like a relaxing
+[00:11:48] website to check over your morning
+[00:11:50] coffee right next to the weather report.
+[00:11:53] Baker's arithmetic goes like this. The
+[00:11:56] total US stock market is worth around 80
+[00:11:59] trillion dollars. If price-to-earnings
+[00:12:02] ratios simply drifted back to their
+[00:12:04] long-run average, not a crash, just a
+[00:12:07] return to normal valuations, that would
+[00:12:10] erase something like 40 trillion dollars
+[00:12:12] of stock market wealth, which he notes
+[00:12:15] averages out to nearly 300,000 dollars
+[00:12:18] per US household. Now, we need to be
+[00:12:21] careful with the per household figure
+[00:12:24] like that, as it's an average and
+[00:12:26] averages can be sneaky. Stock ownership
+[00:12:29] in America is wildly lopsided. The
+[00:12:32] richest 10% of households own something
+[00:12:35] like 90% of the shares. So, if Elon Musk
+[00:12:38] lost, say, 200 billion dollars from
+[00:12:41] SpaceX, and your neighbor lost 4,000,
+[00:12:45] the average loss is a very impressive
+[00:12:47] number that describes almost nobody. The
+[00:12:51] typical household would lose far less
+[00:12:54] for the simple reason that the typical
+[00:12:56] household doesn't have 300,000 dollars
+[00:12:59] in stocks to lose in the first place.
+[00:13:02] >> [snorts]
+[00:13:02] >> So, let's get some other opinions. Gita
+[00:13:05] Gopinath, the former chief economist at
+[00:13:08] the IMF, reckons a dot-com style
+[00:13:10] correction today would destroy about 20
+[00:13:13] trillion dollars of American wealth,
+[00:13:16] plus another 15 trillion dollars in
+[00:13:19] wealth held by foreigners. That American
+[00:13:22] 20 trillion is roughly 70% of US GDP.
+[00:13:27] Consultants at Oliver Wyman ran their
+[00:13:30] own version and landed near $33 trillion
+[00:13:33] of value wiped out. Again, more than the
+[00:13:37] entire US economy produces in a year.
+[00:13:40] And then, for a number that puts those
+[00:13:42] estimates in perspective, when the
+[00:13:45] actual dot-com bubble burst, it
+[00:13:47] destroyed about $6 trillion of equity
+[00:13:50] value. So, the mainstream estimates for
+[00:13:53] this one run somewhere between five and
+[00:13:56] six times the size of the crash many of
+[00:13:59] us still reach for as a cautionary tale.
+[00:14:02] So, three different methods that all
+[00:14:05] land in the tens of trillions of
+[00:14:07] dollars. We can at least agree on the
+[00:14:10] order of magnitude of the potential
+[00:14:12] hole.
+[00:14:13] Now, you might reasonably say, "So what?
+[00:14:16] It's paper wealth anyhow. If your
+[00:14:18] retirement account falls by $100,000,
+[00:14:22] you've no less cash in your pocket this
+[00:14:24] morning than you did yesterday."
+[00:14:26] That is true, but it matters anyway, and
+[00:14:30] it matters more now than it used to.
+[00:14:33] According to Goldman Sachs and the
+[00:14:34] Federal Reserve, stocks overtook real
+[00:14:37] estate as the single biggest component
+[00:14:40] of American household wealth this year
+[00:14:43] for the first time since the Second
+[00:14:45] World War.
+[00:14:46] For most of modern history, the average
+[00:14:49] family's net worth was mostly their
+[00:14:51] house. So, a stock market crash was
+[00:14:54] mainly a rich person's problem. That is
+[00:14:58] no longer the case. The stock market is
+[00:15:00] now where the median household's wealth
+[00:15:03] actually lives, which means a crash
+[00:15:06] today reaches into the middle of the
+[00:15:08] country in a way that it didn't in 2000.
+[00:15:12] That's then where the wealth effect
+[00:15:14] comes in. When people log into their
+[00:15:17] brokerage accounts and see a big number,
+[00:15:19] they feel rich and they spend more. The
+[00:15:22] nicer car, the kitchen, the holiday. The
+[00:15:25] research rule of thumb is that for every
+[00:15:28] hundred dollars of paper stock wealth,
+[00:15:30] people spend about three real dollars in
+[00:15:33] the actual economy. It may not sound
+[00:15:36] like much until you multiply it by tens
+[00:15:39] of trillions of dollars. And the whole
+[00:15:42] thing runs in reverse, too, just as
+[00:15:44] reliably. If 30 odd trillion dollars of
+[00:15:47] household wealth were to evaporate,
+[00:15:50] people would drastically slash their
+[00:15:52] spending. The new kitchen gets canceled,
+[00:15:55] the contractor loses his job, the car
+[00:15:58] salesman has a dreadful quarter, the
+[00:16:00] dealership lays someone off. The damage
+[00:16:03] cascades out from the stock market into
+[00:16:06] the real economy without a single bank
+[00:16:08] having to fail. It just requires people
+[00:16:11] to feel a bit poorer.
+[00:16:13] The problem for anyone who thinks
+[00:16:15] they're safely on the sidelines is that
+[00:16:18] AI is now propping up whole chunks of
+[00:16:20] the non-AI economy. Harvard's Jason
+[00:16:23] Furman calculated that AI-related
+[00:16:26] infrastructure spending accounted for
+[00:16:29] something like 90% of America's economic
+[00:16:32] growth in the first half of last year.
+[00:16:35] More conservative estimates put it at
+[00:16:37] around a quarter. Either way, an
+[00:16:40] enormous share of recent economic growth
+[00:16:43] is simply just data center construction.
+[00:16:46] So, think about who depends on that
+[00:16:49] spending continuing. It isn't just
+[00:16:52] Nvidia shareholders, it's the
+[00:16:54] electricians we talked about at the top
+[00:16:56] of the video, it's the construction
+[00:16:58] crews pouring the concrete, it's the
+[00:17:00] firms that make the air conditioning
+[00:17:02] units that stop the servers from cooking
+[00:17:04] themselves, it's the people running the
+[00:17:06] cables, manufacturing the transformers,
+[00:17:09] and driving the trucks, even the
+[00:17:12] astronauts installing them in outer
+[00:17:14] space. If AI capital spending slows, all
+[00:17:18] of those people see their income slow
+[00:17:21] with it. And not one of them needs to
+[00:17:23] have ever bought a single share of
+[00:17:25] anything.
+[00:17:26] The Nobel laureate, Joseph Stiglitz,
+[00:17:29] puts the grim vision plainly. A crash
+[00:17:32] like this would land at the same moment
+[00:17:34] AI starts displacing workers. So, a lot
+[00:17:37] of households could get hit twice at
+[00:17:40] once. Their savings falling while their
+[00:17:43] jobs get less secure. As he put it, "The
+[00:17:46] breaking of any bubble is really bad in
+[00:17:48] the short term for the macroeconomy."
+[00:17:51] Which from a Nobel economist is
+[00:17:53] practically a scream. Now, if your mind
+[00:17:56] is going to 2008 at this point, you
+[00:17:59] might be worrying a bit too much. The
+[00:18:02] big banks are in much better shape than
+[00:18:04] they were back then. They hold far more
+[00:18:07] capital. They've got real liquidity
+[00:18:09] buffers, and they get stress tested
+[00:18:12] every year. There's no reason to expect
+[00:18:14] a repeat of Lehman Brothers. But, the
+[00:18:17] reason it isn't a banking story is that
+[00:18:20] we made the banks safer. And when you
+[00:18:22] make one part of the financial system
+[00:18:25] safer, the risky lending doesn't
+[00:18:27] necessarily stop. It just moves
+[00:18:30] somewhere else with fewer rules. A few
+[00:18:32] weeks ago, the Wall Street Journal
+[00:18:34] published an analysis with the wonderful
+[00:18:37] title, "Why Big Tech's AI spending is $3
+[00:18:40] trillion higher than it seems." They
+[00:18:43] reported that every quarter, the big
+[00:18:46] tech companies proudly report their
+[00:18:48] capital spending on AI. The data
+[00:18:50] centers, the chips, all of it. That
+[00:18:53] reported figure across the whole group
+[00:18:55] is about $600 billion over the last
+[00:18:58] year. Here's the problem, though. The
+[00:19:01] Journal went through the footnotes of
+[00:19:03] these companies' filings and found
+[00:19:05] roughly $3 trillion of additional AI
+[00:19:08] commitments that don't appear on the
+[00:19:10] balance sheet at all. Five times the
+[00:19:13] CapEx everyone's been staring at. These
+[00:19:16] are things like long-term leases on data
+[00:19:18] centers and locked-in purchase
+[00:19:20] commitments for chips, computing power,
+[00:19:23] and energy. Money that the companies are
+[00:19:25] absolutely on the hook to spend, tucked
+[00:19:28] away in the footnotes rather than
+[00:19:30] sitting on the balance sheet where you
+[00:19:32] might think you would find it. Alphabet
+[00:19:35] alone has over $800 billion of this type
+[00:19:38] of purchase commitment. Analysts have
+[00:19:41] started calling it an AI spending
+[00:19:43] iceberg. The enormous part above the
+[00:19:46] water turns out to be the small part.
+[00:19:49] None of this is technically hidden, and
+[00:19:52] none of it is illegal. It's all
+[00:19:54] disclosed if you happen to be the sort
+[00:19:56] of person who reads footnotes. But, it
+[00:19:59] means that the true scale of what these
+[00:20:01] companies have promised to spend is far
+[00:20:04] bigger than the headline numbers
+[00:20:06] suggest, and every dollar of it rests on
+[00:20:09] the assumption that the AI revenues will
+[00:20:12] eventually turn up to pay for it. The
+[00:20:15] market has started to notice. The cost
+[00:20:18] of insuring Big Tech's debt against
+[00:20:20] default has hit record highs recently.
+[00:20:24] And when the companies at the center of
+[00:20:26] all this start to strain, the pressure
+[00:20:28] travels to wherever the lending
+[00:20:30] happened, which brings us to private
+[00:20:33] credit. Over the past few years, private
+[00:20:36] credit funds, lightly regulated outfits
+[00:20:39] that lend directly to companies outside
+[00:20:42] the traditional banking system, have
+[00:20:44] poured money into the AI and software
+[00:20:47] world. This is now something like a
+[00:20:49] two-to-three trillion-dollar market, and
+[00:20:52] it has started to creak. The Financial
+[00:20:55] Times reported this month that troubled
+[00:20:58] loans at the 20 largest listed private
+[00:21:00] credit funds have climbed to their
+[00:21:02] highest level since 2017.
+[00:21:05] Fitch says private credit defaults hit a
+[00:21:08] record in July. One large fund reported
+[00:21:12] that 7% of its entire loan book was in
+[00:21:15] trouble. The co-head of one of the big
+[00:21:17] lenders told investors more or less that
+[00:21:20] the denial phase is over.
+[00:21:23] Now, we have to be fair. Many people
+[00:21:26] think that this is overblown, too.
+[00:21:28] Pointing out that the default rates
+[00:21:30] we're talking about are still low in
+[00:21:33] absolute terms. And if the lenders
+[00:21:35] recover most of their money, the actual
+[00:21:38] losses are still small. So, there's no
+[00:21:40] catastrophe today. The worry, however,
+[00:21:44] isn't the current number. It's the
+[00:21:46] direction the numbers moving in and the
+[00:21:49] fact that private credit is deliberately
+[00:21:51] hard to see into. In a lightly regulated
+[00:21:54] opaque corner of finance, nobody quite
+[00:21:57] knows who's holding the risky loans
+[00:22:00] until something goes wrong and everyone
+[00:22:03] finds out at the same time.
+[00:22:05] We ran this exact experiment in 2008
+[00:22:09] with a different set of acronyms and it
+[00:22:11] didn't go especially well. We're now
+[00:22:14] running the experiment presumably to
+[00:22:17] confirm that the result replicates. Now,
+[00:22:20] whenever you point any of this stuff
+[00:22:22] out, someone always turns up in the
+[00:22:24] comments within about 90 seconds to say
+[00:22:27] that none of this matters because AI is
+[00:22:29] a real technology that's going to change
+[00:22:31] the world and they may well be right.
+[00:22:34] There might be huge productivity gains
+[00:22:36] in the pipeline. Businesses, just to be
+[00:22:39] clear, already find AI really useful.
+[00:22:43] But, here's the uncomfortable thing. A
+[00:22:46] technology being real and useful and
+[00:22:48] world-changing still does absolutely
+[00:22:51] nothing to protect you if you initially
+[00:22:54] overpaid for the stock. Good businesses
+[00:22:57] and good investments are totally
+[00:22:59] different things. The Bank for
+[00:23:02] International Settlements put out a
+[00:23:04] report recently comparing the current AI
+[00:23:07] build-out to the British Railway Mania
+[00:23:09] of the 1840s, and they weren't being
+[00:23:12] flattering. Trains were obviously a real
+[00:23:15] and transformative technology. They
+[00:23:18] changed the world, how people traveled,
+[00:23:21] how goods moved, where people lived.
+[00:23:24] Investors in the 1840s who understood
+[00:23:27] how important this technology was got
+[00:23:30] extremely excited and did exactly what
+[00:23:33] investors always do, which is to take a
+[00:23:35] good idea and overdo it. Hundreds of new
+[00:23:39] railway lines were proposed, and the
+[00:23:41] money involved was staggering. By 1850,
+[00:23:45] cumulative investment in railways had
+[00:23:47] reached close to half of Britain's
+[00:23:50] entire GDP. The snag was that in all the
+[00:23:54] excitement, companies started laying
+[00:23:55] down expensive railway track to tiny
+[00:23:58] villages that turned out to contain
+[00:24:01] almost no passengers. Amazing
+[00:24:03] engineering, but nobody on the platform,
+[00:24:06] which as a business model has some
+[00:24:08] well-documented weaknesses.
+[00:24:11] By 1850, railway shares had lost about
+[00:24:15] two-thirds of their value. The tracks
+[00:24:17] remained in place, the trains ran, the
+[00:24:20] technology went on to power a century of
+[00:24:23] British industrial dominance, but the
+[00:24:25] people who paid for it were wiped out.
+[00:24:28] The railways changed the world, the
+[00:24:30] railway investors changed their spending
+[00:24:33] habits.
+[00:24:34] This pattern is what the BIS is worried
+[00:24:37] about. According to their research,
+[00:24:39] relative to where each boom started, the
+[00:24:42] AI build-out has already grown faster
+[00:24:45] than the railway mania, faster than the
+[00:24:48] electrification boom of the 1920s, and
+[00:24:51] faster than the dot-com bubble. On their
+[00:24:53] chart, it's the steepest line of the
+[00:24:56] lot. Those earlier manias tended to
+[00:24:59] break around year five and then drag
+[00:25:01] their economies into a recession. We're
+[00:25:04] currently at year three, so there's
+[00:25:07] plenty of time left to go.
+[00:25:09] For a more recent example, we can look
+[00:25:11] at the dot-com bubble. The internet,
+[00:25:14] once again, was real. No one's claiming
+[00:25:16] that it turned out to be a fad. And at
+[00:25:19] the time, telecom companies were so
+[00:25:22] certain that the future would need
+[00:25:23] infinite bandwidth that they borrowed
+[00:25:25] huge sums of money and laid tens of
+[00:25:28] millions of miles of fiber optic cable
+[00:25:30] across the country. So much of it sat
+[00:25:33] unused for years afterwards that the
+[00:25:36] industry gave it a name, dark fiber.
+[00:25:39] They built the road system for the
+[00:25:41] modern internet roughly a decade before
+[00:25:44] there was enough traffic to justify it,
+[00:25:46] and most of them went bankrupt waiting
+[00:25:48] for the eventual revenues. When that
+[00:25:51] bubble burst, the S&P 500 fell by about
+[00:25:54] half, and the Nasdaq lost nearly 80%.
+[00:25:58] But here's the part that really matters
+[00:26:00] for anyone who thinks they can outsmart
+[00:26:02] this by simply buying the eventual
+[00:26:05] winner. Even if you pick correctly, even
+[00:26:08] if you identified the single best
+[00:26:10] company of the entire era, it could
+[00:26:12] still ruin your decade. Amazon is the
+[00:26:15] obvious example of a winner that you
+[00:26:18] could have picked. Amazon survived the
+[00:26:20] crash and became one of the most
+[00:26:22] valuable companies in human history, but
+[00:26:25] its stock still fell about 90% when the
+[00:26:29] bubble burst. If you bought at the peak
+[00:26:32] in 1999,
+[00:26:34] you were absolutely right about the
+[00:26:36] future of online commerce, and you then
+[00:26:39] would have had to wait until 2009
+[00:26:42] to get back to break even on your
+[00:26:44] investment. Being right cost you a
+[00:26:47] decade. Jeff Bezos' own letter to
+[00:26:50] shareholders about that year opened with
+[00:26:52] a single word, "Ouch." It's worth noting
+[00:26:56] that there are very few people who would
+[00:26:59] have bought just Amazon, either. In the
+[00:27:02] typical tech investor's portfolio in
+[00:27:04] 1999,
+[00:27:06] along with Amazon, was a basket of
+[00:27:08] stocks like pets.com that all went to
+[00:27:10] zero, diluting their long-term returns
+[00:27:13] significantly.
+[00:27:15] For investors, the hard part isn't
+[00:27:18] believing in the technology. It's
+[00:27:20] picking which specific company is going
+[00:27:23] to win while you're standing inside the
+[00:27:26] bubble. If you cast your mind back to
+[00:27:28] the late '90s and you're convinced the
+[00:27:31] internet is the future, and you're right
+[00:27:33] about that, and you started looking for
+[00:27:35] a company that will own internet search,
+[00:27:38] the obvious choice at the time might
+[00:27:40] have been Infoseek or Lycos or AltaVista
+[00:27:43] or Excite, the biggest, best-funded
+[00:27:46] search leaders that had become household
+[00:27:48] names. Every one of them is now a trivia
+[00:27:51] question. The company that eventually
+[00:27:54] won, Google, barely existed during the
+[00:27:57] bubble and only came to prominence in
+[00:27:59] the early 2000s after the bubble had
+[00:28:02] burst. It's very easy, looking
+[00:28:04] backwards, to assume today's winners
+[00:28:07] were always destined to win, but history
+[00:28:10] is fairly blunt on this topic. Being
+[00:28:13] first to build a transformative
+[00:28:15] technology mostly just makes you a very
+[00:28:18] expensive rough draft for whatever shows
+[00:28:21] up later and actually makes the money.
+[00:28:24] Now, before you take any of this as a
+[00:28:26] signal to sell everything you own to buy
+[00:28:29] canned food and guns, I want to give you
+[00:28:32] the other warning, too, as calling the
+[00:28:34] top on tech is a game people have been
+[00:28:37] losing for quite some time, too.
+[00:28:39] Back in April 2022, The New York Times
+[00:28:42] ran a piece called The Tech Bubble That
+[00:28:45] Never Burst. It laid out a full decade
+[00:28:48] of famous investors sounding the alarm
+[00:28:50] on tech and being wrong over and over
+[00:28:53] again. In 2011, the entrepreneur Steve
+[00:28:56] Blank announced we were in a second
+[00:28:59] internet bubble and that the signals are
+[00:29:01] loud and clear. In 2014, the VC investor
+[00:29:06] Marc Andreessen warned that high-burn
+[00:29:09] startups would, and he wrote this in all
+[00:29:11] caps, vaporize. In 2015, Mark Cuban
+[00:29:16] declared that this bubble was worse than
+[00:29:18] the tech bubble of 2000. In 2016, the
+[00:29:22] veteran investor Jim Breyer saw blood in
+[00:29:25] the water, predicting that 90% of
+[00:29:28] unicorns would be repriced or die. And
+[00:29:31] in 2021, Jeremy Grantham, a legendary
+[00:29:34] investor who has correctly called some
+[00:29:37] of history's great bubbles, promised
+[00:29:39] that this one, too, would burst in due
+[00:29:42] time. The bit I love, though, is that
+[00:29:45] the New York Times published that
+[00:29:46] article in April 2022, which was more or
+[00:29:50] less the exact month that tech stocks
+[00:29:52] began one of their worst declines in a
+[00:29:55] generation. The Nasdaq fell by about a
+[00:29:58] third that year, so the definitive piece
+[00:30:01] on doom-mongers always being wrong came
+[00:30:04] out at almost the precise moment the
+[00:30:06] doom-mongers were briefly right. And
+[00:30:09] that is the whole problem in one story.
+[00:30:12] The bears are usually early, frequently
+[00:30:15] wrong, and then occasionally, with no
+[00:30:17] warning, they're right. And by that
+[00:30:20] point, most people have stopped
+[00:30:21] listening, which is exactly why this
+[00:30:24] video isn't a prediction and why sell
+[00:30:26] everything is not the lesson. In fact,
+[00:30:29] if you had bought at the highs in 1999
+[00:30:32] or right before the credit crunch or
+[00:30:34] right before COVID and just held on till
+[00:30:37] now, you will have done just fine. And
+[00:30:40] the problem with selling early, or even
+[00:30:42] selling in a timely manner, is that it's
+[00:30:44] very difficult to time rebuying. So, if
+[00:30:48] nobody can time this, the lesson is
+[00:30:51] something much more boring than that.
+[00:30:53] Jason Zweig wrote a column in the Wall
+[00:30:55] Street Journal a little while back
+[00:30:58] making the case that if you actually
+[00:31:00] want to get some distance from the AI
+[00:31:02] trade, one place to look is Europe. He
+[00:31:05] was not especially flattering about it.
+[00:31:07] He called the continent, and I'm quoting
+[00:31:09] here, "an open-air museum of aging
+[00:31:12] populations and arthritic economies."
+[00:31:15] Which is a rough sentence to read if you
+[00:31:18] live in Europe and would make for a
+[00:31:20] fairly grim tourism campaign. But, the
+[00:31:23] unflattering description is sort of the
+[00:31:26] whole point. European stocks are cheap
+[00:31:30] precisely because so few people are
+[00:31:32] excited about them. Tech is only about
+[00:31:34] 10% of the European index versus nearly
+[00:31:38] half of the S&P 500. And value investors
+[00:31:41] are looking there exactly because the
+[00:31:44] excitement and the high prices that come
+[00:31:47] with it simply hasn't arrived. Instead
+[00:31:50] of AI and Mars colonization, the index
+[00:31:53] is mostly banks, industrial
+[00:31:55] manufacturers, and healthcare companies.
+[00:31:58] The sort that generate steady cash and
+[00:32:00] pay you a dividend of around 3% while
+[00:32:03] you wait. And to be fair to Europe, this
+[00:32:06] isn't just buy the boring stuff and hope
+[00:32:08] for the best. Zweig quotes a fund
+[00:32:11] manager at Fidelity who describes the 3%
+[00:32:14] dividend as the ballast you'd look for
+[00:32:17] if the AI story fails to meet
+[00:32:19] expectations.
+[00:32:21] The idea being that if the S&P 500
+[00:32:24] falls, European stocks will probably
+[00:32:26] fall less simply because there's less
+[00:32:29] speculative price build-up to unwind. A
+[00:32:33] port in the storm, as he puts it.
+[00:32:35] Another manager Zweig spoke to argues
+[00:32:38] the ossified Europe stereotype is out of
+[00:32:41] date, that big European companies are
+[00:32:43] reforming and cutting costs faster than
+[00:32:46] she's seen in her entire career. So, the
+[00:32:50] case isn't that these are sad, dusty
+[00:32:52] companies, it's that low investor
+[00:32:54] expectations leave room for upside
+[00:32:57] surprises, which is roughly the opposite
+[00:33:00] of what you get when you buy the most
+[00:33:02] exciting stock in the world at 40 times
+[00:33:05] earnings.
+[00:33:06] Now, I should be clear that Zweig is not
+[00:33:08] predicting a crash in his column,
+[00:33:10] either. He goes out of his way to say
+[00:33:13] the fears about US market concentration
+[00:33:15] are probably overblown, that history
+[00:33:18] doesn't show that a few giant stocks
+[00:33:20] lead to bad returns, and that if you're
+[00:33:23] already globally diversified, you might
+[00:33:26] not need to do anything at all. His
+[00:33:28] suggestion is simply to add a little
+[00:33:31] European exposure at the margin, not to
+[00:33:34] run for the hills, which fits the whole
+[00:33:36] spirit of this video. The point was
+[00:33:39] never to tell you that the sky is
+[00:33:41] falling. It's that if you've somehow
+[00:33:43] ended up with everything you own riding
+[00:33:46] on a single trade, it's worth knowing
+[00:33:48] that there are other rooms in the
+[00:33:50] building.
+[00:33:51] And that brings us back to the magic
+[00:33:53] word from the start of the video,
+[00:33:55] diversification.
+[00:33:57] People often think diversification means
+[00:33:59] owning 50 different technology stocks
+[00:34:02] that all go up together.
+[00:34:04] >> [laughter]
+[00:34:08] >> That isn't diversification, that's just
+[00:34:10] piling in in a bull market. As Zweig
+[00:34:13] puts it, if all of your assets go up at
+[00:34:16] the same time, they're also likely to go
+[00:34:18] down at the same time, which is the
+[00:34:20] thing you were trying to avoid. Real
+[00:34:23] diversification means deliberately
+[00:34:25] owning things that don't all fall over
+[00:34:28] on the same afternoon, which in practice
+[00:34:31] means holding some assets you feel
+[00:34:33] faintly embarrassed about. While your
+[00:34:36] neighbor is at the barbecue talking
+[00:34:38] about his SpaceX allocation and his
+[00:34:40] Nvidia call options, you have to admit
+[00:34:42] that a meaningful chunk of your net
+[00:34:44] worth is riding on the dependable
+[00:34:46] performance of a Swiss pharmaceutical
+[00:34:48] company and a Scottish water utility.
+[00:34:51] It's not a story that gets you invited
+[00:34:53] back, but the boring assets are the ones
+[00:34:57] still standing when the exciting ones
+[00:34:59] aren't. And that's the real lesson here,
+[00:35:02] because long-term investing isn't
+[00:35:04] supposed to be exciting. When you look
+[00:35:06] back through financial history, the most
+[00:35:09] thrilling trade of any given era is very
+[00:35:12] often the one that goes on to ruin the
+[00:35:14] people who piled into it. In the early
+[00:35:17] 1970s,
+[00:35:18] the Nifty Fifty were the 50 blue-chip
+[00:35:21] American stocks that you could
+[00:35:23] supposedly buy and hold forever, right
+[00:35:26] up until they lost most of their value
+[00:35:28] in the 1973 to '74 crash. By the end of
+[00:35:32] the 1980s, the Japanese stock market was
+[00:35:35] widely regarded as the unstoppable
+[00:35:38] future of the global economy. Then it
+[00:35:40] spent the next three decades going
+[00:35:42] essentially nowhere. An investor who
+[00:35:45] bought Japan at the peak in 1989 waited
+[00:35:48] more than 30 years just to get back to
+[00:35:51] break even.
+[00:35:52] And as we've already discussed, the
+[00:35:55] Nasdaq needed about 15 years to climb
+[00:35:57] back to where it stood in the year 2000.
+[00:36:00] None of these were stupid bets at the
+[00:36:02] time. They were the consensus. They were
+[00:36:05] the exciting, obvious, everybody already
+[00:36:08] knows it trade, which is precisely what
+[00:36:10] made them so dangerous. So, this is
+[00:36:13] where we land. You don't have to attend
+[00:36:16] every party. You don't have to put your
+[00:36:18] whole net worth into the hottest corner
+[00:36:20] of the market because it's what everyone
+[00:36:22] is talking about and someone on the the
+[00:36:25] told you it only goes up. The AI boom
+[00:36:28] may well work out to be as good as
+[00:36:31] advertised. A lot of serious people
+[00:36:33] think it will, and they might be right.
+[00:36:36] But, this technology is real and these
+[00:36:39] stocks are a good investment at these
+[00:36:41] prices are two completely different
+[00:36:44] statements. And, a good chunk of
+[00:36:46] financial history is just people
+[00:36:49] confusing the first one for the second.
+[00:36:51] The point of investing for retirement
+[00:36:54] isn't to have interesting things to say
+[00:36:56] at dinner parties. It's to eventually
+[00:36:58] retire. If you found this video
+[00:37:01] interesting, you should watch this video
+[00:37:04] on what's been driving the rise in
+[00:37:05] long-term borrowing costs next. Don't
+[00:37:08] forget to check out our sponsor Taylor
+[00:37:10] Stitch using the link in the video
+[00:37:12] description. See you in the next video.
+[00:37:14] Bye.
+[00:37:18] >> [music]

@@ -1,0 +1,362 @@
+[00:00:00] i spent the last eight months carefully
+[00:00:02] coding the best indicator i possibly
+[00:00:04] could spending months after months
+[00:00:06] optimizing the performance to the best
+[00:00:08] it could possibly be back test after
+[00:00:10] back test and i'd like to say i think my
+[00:00:13] work has finally paid off
+[00:00:17] now you guys know i deal with a lot of
+[00:00:19] indicators a lot of indicators i've
+[00:00:22] curated my own personal private strategy
+[00:00:24] that i haven't shared on this channel
+[00:00:26] ever before and engineered it into one
+[00:00:29] single
+[00:00:30] indicator adding features to it that no
+[00:00:32] other premium indicator has when i said
+[00:00:35] i wanted to make the best indicator out
+[00:00:36] there i meant it my god real time buy
+[00:00:40] and sell signals giving you the best
+[00:00:41] entries for longs or shorts optimize
+[00:00:44] take profit points so you get out of the
+[00:00:45] trade at perfect spots automatic support
+[00:00:48] and resistances so you don't have to
+[00:00:50] waste time drawing them a trend table
+[00:00:52] that will give you useful metrics and
+[00:00:53] let you know how the market is trending
+[00:00:55] with just a glance fair value gap
+[00:00:57] signals where the bot will automatically
+[00:00:59] tell you if there's a fair value gap on
+[00:01:01] the chart in real time customizable
+[00:01:03] settings to where you can change the
+[00:01:04] sensitivity based on if you're a more
+[00:01:06] aggressive or passive trader other
+[00:01:08] popular indicators already pre-installed
+[00:01:11] into one indicator so you don't need
+[00:01:13] tradingview premium to have three or
+[00:01:14] more indicators on your chart and all of
+[00:01:16] these features are just the tip of the
+[00:01:19] iceberg all right that sounds awesome
+[00:01:21] i'm going to show you how to use this
+[00:01:22] indicator correctly the best optimal
+[00:01:24] settings for it how to avoid false
+[00:01:26] signals and how to use it to the best of
+[00:01:28] its ability well enough talk let's see
+[00:01:30] how it works in a real trade example so
+[00:01:33] for this first example we only have
+[00:01:34] custom bar coloring and baseline enabled
+[00:01:37] in the settings so our chart is pretty
+[00:01:39] simple right now but i really just want
+[00:01:40] to show you what a simple trade looks
+[00:01:42] like first and then we can get into all
+[00:01:43] the advanced settings after the chart we
+[00:01:45] are looking at is amd on the three hour
+[00:01:48] time frame from all the back tests we
+[00:01:50] did the three hour time frame seemed to
+[00:01:52] provide the best results this indicator
+[00:01:54] works on all time frames and all markets
+[00:01:57] that have sufficient volume including
+[00:01:59] stocks forex crypto futures etc but just
+[00:02:02] know from our back test results the
+[00:02:04] three hour time frames seem to perform
+[00:02:06] the best now first off you have four
+[00:02:08] different entry types strong buy buy
+[00:02:11] sell strong sell a strong buy has a
+[00:02:13] greater chance of being a successful
+[00:02:15] trade than a normal buy same thing goes
+[00:02:17] with the sell signals so just keep that
+[00:02:19] in mind when using the indicator so look
+[00:02:21] how beautiful this indicator works so
+[00:02:23] here we have a strong buy so we enter
+[00:02:26] the trade we wait a little bit and then
+[00:02:28] we see the first take profit mark the
+[00:02:29] cool thing about this indicator is it'll
+[00:02:31] give you a take profit mark based on
+[00:02:33] your trading sensitivity from the
+[00:02:34] sensitivity you put in the settings this
+[00:02:36] is also where you can start putting your
+[00:02:38] own twist on the indicator depending on
+[00:02:40] your risk tolerance so if you wanted to
+[00:02:42] be on the safer side you would sell 75
+[00:02:44] of your position at the first take
+[00:02:46] profit mark if you wanted to be a little
+[00:02:48] on the riskier side you would only sell
+[00:02:50] 25 here and let the other portion ride
+[00:02:53] it really depends on the style of trader
+[00:02:54] you are and what you're comfortable with
+[00:02:56] but just make sure you sell a certain
+[00:02:58] percentage here for guaranteed profits
+[00:03:00] so we sell some of our position here and
+[00:03:02] let the other half ride the chart
+[00:03:04] continues to go up and we end up getting
+[00:03:06] another take profit mark this is where
+[00:03:08] you would close the rest of your
+[00:03:09] position and look what ends up happening
+[00:03:11] after the market starts to consolidate
+[00:03:13] so the indicator got us out right at the
+[00:03:16] perfect point right before the market
+[00:03:17] starts consolidating and we ended up
+[00:03:19] making some pretty good profits as this
+[00:03:21] was a seven percent gain after that
+[00:03:23] trade we look for another we wait a
+[00:03:24] little and end up getting another buy
+[00:03:26] signal now like i said earlier strong
+[00:03:28] buyers perform better than regular buys
+[00:03:30] but the regular buys can still give some
+[00:03:32] really good entries so we enter the
+[00:03:34] trade the market goes up we get our
+[00:03:36] first take profit we sell a percentage
+[00:03:38] of our trade here and let the rest ride
+[00:03:40] the market starts losing a bit of its
+[00:03:41] momentum and then we get our final take
+[00:03:43] profit mark getting the absolute top of
+[00:03:46] this move as well so that's two
+[00:03:48] successful trades so far let's see what
+[00:03:49] happens next the market starts heading
+[00:03:51] downwards now and we end up getting our
+[00:03:53] first sell signal which is a signal to
+[00:03:55] go short so we enter our first short
+[00:03:57] trade we then see what the market does
+[00:03:59] next it looks like the indicator was
+[00:04:00] right because the market starts heading
+[00:04:02] downwards we get our first take profit
+[00:04:04] mark so we sell a percentage of our
+[00:04:06] position here and let the rest ride the
+[00:04:08] market continues to head downwards and
+[00:04:09] we get our final take profit mark and
+[00:04:11] sell the rest of our position so this
+[00:04:13] indicator does work with both long and
+[00:04:16] short trades and you can disable or
+[00:04:18] enable them in the settings in case you
+[00:04:19] prefer one over the other this is
+[00:04:21] amazing
+[00:04:23] as you can see this indicator is working
+[00:04:25] beautifully so far and we are three for
+[00:04:27] three these are just the basic entries
+[00:04:29] and exits oh just wait till i show you
+[00:04:31] how to actually optimize this indicator
+[00:04:33] i'm gonna speed through these last
+[00:04:34] couple trades as i think you guys are
+[00:04:36] starting to get the hang of it we get a
+[00:04:37] buy signal take profit mark sell a
+[00:04:40] percentage market goes up get our final
+[00:04:42] take profit mark sell the position mark
+[00:04:44] consolidates for a few we get a sell
+[00:04:46] signal take profit mark sell a
+[00:04:48] percentage of the position wait get a
+[00:04:50] second take profit mark sell the rest of
+[00:04:51] our position now if you just look at
+[00:04:53] this chart look how beautifully the
+[00:04:55] indicator bought and sold the bottoms
+[00:04:57] and tops i'm so proud you did good son
+[00:04:59] you did good now sadly the indicator
+[00:05:02] isn't always gonna give us perfect
+[00:05:04] entries and exits like this
+[00:05:07] sometimes it'll give you a false entry
+[00:05:09] signal in a consolidating market and
+[00:05:11] it'll end up being a losing trade but
+[00:05:13] luckily for you i'm about to show you
+[00:05:15] ways you can know it's a false signal
+[00:05:17] before it even happens introducing
+[00:05:21] the trend
+[00:05:22] the trend table provides useful metrics
+[00:05:25] so you can easily see how the market is
+[00:05:26] performing with just a glance it'll tell
+[00:05:28] you the trend trend strength momentum
+[00:05:31] volatility volume ema closed and the
+[00:05:34] stocks flow which are all very key areas
+[00:05:36] you should be looking at before entering
+[00:05:38] a trade you can turn this option on in
+[00:05:40] the settings of the indicator called
+[00:05:41] show key metrics so going back to the
+[00:05:44] false entry signal example here the
+[00:05:45] indicator gives us a buy signal but if
+[00:05:47] we look at the trend table nearly all
+[00:05:49] the metrics are bearish which could be a
+[00:05:51] good indication this is not a good buy
+[00:05:53] signal so we would disregard this signal
+[00:05:56] and look what happens we were actually
+[00:05:57] in a consolidating market and the price
+[00:05:59] starts moving sideways giving us what
+[00:06:01] would have been a losing trade so we
+[00:06:03] really dodged a bullet there in order to
+[00:06:05] get a high probability setup for a long
+[00:06:07] you want most of these metrics to be
+[00:06:09] bullish and obviously for short trades
+[00:06:11] you want most of the metrics to be
+[00:06:12] bearish if a lot of the metrics are the
+[00:06:14] opposite of the entry signal it's a
+[00:06:16] pretty good indication the market is
+[00:06:18] consolidating you can even confirm
+[00:06:19] trades with their custom baseline
+[00:06:21] feature if you don't see it on your
+[00:06:23] chart go to the settings and check this
+[00:06:24] baseline feature you would only enter a
+[00:06:26] trade if you get a buy signal and the
+[00:06:28] baseline is green if you get a buy
+[00:06:30] signal and the baseline is red or gray
+[00:06:32] you would not enter that trade i've even
+[00:06:34] got some messages from viewers that said
+[00:06:36] they just entered trades depending on
+[00:06:38] purely the color of the baseline without
+[00:06:40] using any buy or sell signals and they
+[00:06:42] said it actually worked pretty well even
+[00:06:44] though i wouldn't recommend this just
+[00:06:46] know you could always do that too the
+[00:06:47] next tip i have to optimize this
+[00:06:49] indicator's performance is using the
+[00:06:51] automatic support and resistances now i
+[00:06:53] do have to say these things are really
+[00:06:56] cool what the indicator will do is show
+[00:06:58] you the closest support and the closest
+[00:07:00] resistance to the current price this is
+[00:07:02] so you don't get something like this
+[00:07:06] where you have 10 000 different lines of
+[00:07:09] support and resistances on your chart
+[00:07:10] making it super cluttered the red line
+[00:07:12] is the resistance the green line is the
+[00:07:14] support the indicator will automatically
+[00:07:16] adjust the support and resistances in
+[00:07:18] real time which is pretty damn cool so
+[00:07:21] how i like to use them is by using them
+[00:07:23] as potential take profit points as an
+[00:07:25] example we know this red line is a point
+[00:07:27] in the chart where price is likely to
+[00:07:29] hesitate so we should sell a percentage
+[00:07:31] of our position at this resistance if
+[00:07:33] price ever hits it that way if price
+[00:07:35] can't break the resistance and rejects
+[00:07:37] we still made some money so here's an
+[00:07:39] example we get a buy entry signal we
+[00:07:41] enter and as you can see price starts
+[00:07:43] heading towards our resistance then it
+[00:07:45] hits even though we did not get a take
+[00:07:47] profit signal we are still gonna close a
+[00:07:49] percentage of our position here as we
+[00:07:51] know this is a key resistance level so
+[00:07:54] we do just that price actually does
+[00:07:55] exactly as we expected and bounces off
+[00:07:58] the resistance and then later the
+[00:07:59] indicator tells us to exit the trade
+[00:08:01] where this originally would have been a
+[00:08:03] losing trade we actually made money from
+[00:08:05] this and made it a winning trade it's
+[00:08:07] definitely important to use these
+[00:08:08] automatic support and resistances to
+[00:08:10] really make sure you're getting the most
+[00:08:11] out of the indicator if you really
+[00:08:13] really want to optimize the indicator
+[00:08:15] and go the extra mile you can manually
+[00:08:17] plot support and resistances on the
+[00:08:19] daily time frame by seeing really key
+[00:08:21] turning points in the market these will
+[00:08:22] be very strong resistances and you can
+[00:08:25] use these levels as take profit points
+[00:08:27] as well you can also do the same type of
+[00:08:29] thing with pivot points which we
+[00:08:30] actually pre-built in the indicator with
+[00:08:33] many others now these are daily pivot
+[00:08:35] points which means price usually
+[00:08:36] respects them pretty heavily so they can
+[00:08:39] also be great support and resistances
+[00:08:41] and potential take profit points here's
+[00:08:42] an example we get a buy signal price
+[00:08:44] heads upwards and start slowing down at
+[00:08:46] the pivot point even though we didn't
+[00:08:48] get a take profit point it might be a
+[00:08:49] good idea to close your position here as
+[00:08:51] we know the pivot point will have a lot
+[00:08:53] of resistance which if you did you turn
+[00:08:55] what would have been a losing trade into
+[00:08:56] a winning one you can also use them as
+[00:08:58] supports and put your stop losses below
+[00:09:00] them so if you entered a trade and price
+[00:09:02] ends up breaking the pivot point it
+[00:09:04] might be a good idea to exit the trade
+[00:09:06] even though you didn't get an exit
+[00:09:08] signal as price breaking a daily pivot
+[00:09:10] point is usually a pretty bearish signal
+[00:09:12] these are just some simple ways of how
+[00:09:13] you can increase the win rate and
+[00:09:15] profitability of the indicator the last
+[00:09:17] feature i really want to talk about is
+[00:09:19] probably the coolest feature of the
+[00:09:20] indicator and that is the fair value gap
+[00:09:23] if you don't know what the fair value
+[00:09:24] gap is to put it quick and simply it's
+[00:09:27] basically when price spikes up or down
+[00:09:29] super fast to where buyers or sellers
+[00:09:31] don't have enough time to counter at the
+[00:09:33] movement so there's basically an
+[00:09:34] imbalance in the market and price will
+[00:09:36] usually retrace back to this point and
+[00:09:38] then after that head back to where it
+[00:09:40] was before giving us a great trade
+[00:09:42] opportunity how you would mark an
+[00:09:44] imbalance is taking the candle before
+[00:09:46] the move and the candle after the move
+[00:09:48] and this is the area where the imbalance
+[00:09:50] is we have an option on the indicator
+[00:09:52] where it'll automatically spot these
+[00:09:54] imbalances for you and tell you if they
+[00:09:56] are bullish or bearish in real time so
+[00:09:59] you don't have to do any of the work
+[00:10:00] here's an example price shot up super
+[00:10:02] fast right here not giving the sellers
+[00:10:04] enough time to counteract the movement
+[00:10:05] so naturally there's an imbalance and
+[00:10:07] the indicator senses this and draws a
+[00:10:09] green rectangle for the bullish
+[00:10:11] imbalance area price continues to head
+[00:10:13] upwards but naturally price will want to
+[00:10:15] head back to this area for a retracement
+[00:10:17] so what you would do is wait for price
+[00:10:19] to come back to this area enter when it
+[00:10:21] does set your stop loss at the swing low
+[00:10:24] and set your take profit mark at the
+[00:10:25] recent high and look what happens it was
+[00:10:27] a winning trade and you can see it
+[00:10:29] retraced right exactly at the fair value
+[00:10:32] gap i think it's also very important to
+[00:10:33] mention that you want to wait for price
+[00:10:35] to get to the halfway mark of the fair
+[00:10:37] value gap as this will give you the best
+[00:10:39] risk to reward ratio and sure you're
+[00:10:41] going to miss out on some of the trades
+[00:10:42] because sometimes they won't come all
+[00:10:44] the way down to the halfway mark but a
+[00:10:46] lot of the time price will come to this
+[00:10:48] halfway mark and bounce there you can do
+[00:10:50] the exact same thing for shorts the
+[00:10:51] imbalance will just be red they can also
+[00:10:53] be used as great take profit marks and
+[00:10:56] stop losses green ones being supports
+[00:10:58] and red ones being resistances you
+[00:11:00] should also know that imbalances on
+[00:11:01] higher time frames will be more accurate
+[00:11:04] and hold a lot more weight than ones on
+[00:11:06] lower time frames this is a very
+[00:11:07] simplified and basic tutorial on how to
+[00:11:10] do this you can get much more advanced
+[00:11:12] with it but you'd be surprised on how
+[00:11:14] often this works in your favor if you
+[00:11:16] implement volume trading patterns
+[00:11:18] divergences price action risk management
+[00:11:21] etc this indicator performs extremely
+[00:11:24] well hopefully i got across the point
+[00:11:26] you shouldn't just simply blindly follow
+[00:11:28] the buy and sell entries you should be
+[00:11:29] incorporating other trading techniques
+[00:11:31] on top of the indicator to improve it
+[00:11:34] that much more but if you made it this
+[00:11:35] far in the video i'd simply just like to
+[00:11:37] say thanks for watching all the way
+[00:11:39] through and as a token of my
+[00:11:40] appreciation here's the coupon code for
+[00:11:42] the indicator i'll just make it end a
+[00:11:44] video i know real original right but
+[00:11:46] seriously thanks for watching all the
+[00:11:48] way through if you would like to check
+[00:11:49] out the indicator i'll leave a link in
+[00:11:51] the description or you can just go to
+[00:11:52] tradinglab.ai to read more about it
+[00:11:54] thanks for watching and happy trading

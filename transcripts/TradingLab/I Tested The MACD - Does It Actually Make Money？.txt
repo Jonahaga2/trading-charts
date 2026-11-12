@@ -1,0 +1,493 @@
+[00:00:00] i studied for the past seven days
+[00:00:01] researching everything there is to know
+[00:00:03] about the macd one of the most installed
+[00:00:06] indicators of all time sure i knew a lot
+[00:00:08] about this indicator already but did i
+[00:00:10] really know it to its full potential i
+[00:00:12] wanted to go as deep down the rabbit
+[00:00:13] hole as possible and find every trick
+[00:00:15] tip or as much information as i could
+[00:00:18] about the specific indicator i watched
+[00:00:19] hundreds of videos read tons of articles
+[00:00:22] trying to learn as much as i could about
+[00:00:23] the macd and to my surprise i actually
+[00:00:26] learned a lot of stuff i didn't know
+[00:00:28] before i even back tested the macd on
+[00:00:30] real past market data to see if it lived
+[00:00:32] up to all the hype and to see if it
+[00:00:34] actually made money or not and just as a
+[00:00:36] heads up i even back tested to see what
+[00:00:38] the best settings were for the macd and
+[00:00:40] just as a quick hint it's not the
+[00:00:42] default settings so that's exactly why i
+[00:00:44] wanted to make this video i don't want
+[00:00:46] you guys to have to search through
+[00:00:47] multiple videos like i did i'm making
+[00:00:49] this one video so you can have the
+[00:00:50] ultimate guide and learn everything
+[00:00:52] there is to know about the macd from one
+[00:00:55] single video the macd stands for moving
+[00:00:58] average convergence divergence and was
+[00:01:00] created by this guy gerald lapel in the
+[00:01:02] 1970s what gerald was trying to achieve
+[00:01:05] is to make an indicator show how strong
+[00:01:07] or weak a market's momentum was
+[00:01:09] indicated by the relative strength
+[00:01:11] between two moving averages and to be
+[00:01:13] honest he did a damn good job of doing
+[00:01:15] that the macd has four main parts the
+[00:01:18] macd line the signal line the histogram
+[00:01:20] and the zero line it comes with a 12 day
+[00:01:22] exponential moving average and a 26 day
+[00:01:25] exponential moving average now these
+[00:01:27] settings can be customized to whatever
+[00:01:29] you want by default it's set to 12 and
+[00:01:31] 26. this is foreshadowing if you
+[00:01:33] couldn't tell then we have the histogram
+[00:01:35] which represents the difference between
+[00:01:37] the macd line and the signal line so for
+[00:01:40] example the smaller the space between
+[00:01:42] the two lines the smaller the histogram
+[00:01:44] the larger the space between the two
+[00:01:45] lines the larger the histogram you can
+[00:01:47] also see once the macd line crosses
+[00:01:50] above the signal line the histogram will
+[00:01:52] automatically turn green if the macd
+[00:01:54] line crosses below the signal line the
+[00:01:56] histogram will turn red then finally we
+[00:01:58] have the zero line which is represented
+[00:02:01] at the zero level and will tell us the
+[00:02:02] center of the macd indicator as you may
+[00:02:05] already know there are tons of different
+[00:02:07] strategies and ways to use the macd and
+[00:02:09] i wanted to put each and every one of
+[00:02:11] these strategies to the test to decipher
+[00:02:13] not only how to use the macd but find
+[00:02:15] out how we can use it to help predict
+[00:02:17] market movement i asked you guys on
+[00:02:19] instagram what your favorite way to use
+[00:02:21] the macd was and surprisingly i got a
+[00:02:23] lot of responses also if you're not
+[00:02:24] following my instagram what are you
+[00:02:26] doing so i decided to use the four most
+[00:02:28] used strategies and decided to test them
+[00:02:31] so here's what we're gonna do we're
+[00:02:32] gonna first go through each of the four
+[00:02:34] different strategies and show you guys
+[00:02:35] exactly how to execute them and then i'm
+[00:02:37] gonna actually test these strategies on
+[00:02:39] real market data so we can see if they
+[00:02:41] would have even actually made money or
+[00:02:43] not almost kind of like a game show i'm
+[00:02:45] gonna call it does this macd strategy
+[00:02:47] really work or is it a money loser
+[00:02:51] game show
+[00:02:52] by trading lab the first strategy is
+[00:02:54] probably one of the most common ways to
+[00:02:56] use the macd the strategy is pretty
+[00:02:58] simple you buy when the macd line
+[00:03:00] crosses above the signal line in other
+[00:03:02] words when the histogram turns green and
+[00:03:04] then you're gonna sell when the macd
+[00:03:05] line crosses below the signal line or
+[00:03:07] when the histogram turns red the logic
+[00:03:09] behind this is you're essentially buying
+[00:03:11] when the short-term average is higher
+[00:03:13] than the long-term average meaning
+[00:03:14] there's a short-term momentum heading
+[00:03:16] upwards so as an example you would have
+[00:03:18] bought here because the macd line
+[00:03:20] crosses above the signal line and you
+[00:03:22] would have sold here because the macd
+[00:03:24] line crosses below the signal line you
+[00:03:26] can also do the same strategy for
+[00:03:27] shorting just do the complete opposite
+[00:03:29] the next strategy is to use the macd
+[00:03:31] with divergence which basically means if
+[00:03:33] the chart is heading upwards but the
+[00:03:35] macd isn't making higher highs this
+[00:03:37] means the market is slowly starting to
+[00:03:39] lose momentum so this strategy can be
+[00:03:41] really great to know when turning points
+[00:03:43] in the market are about to happen so as
+[00:03:45] an example the market is heading upwards
+[00:03:47] here but if we take a look at the macd
+[00:03:49] it's not making higher highs which is
+[00:03:51] what it should be doing if the market is
+[00:03:53] heading upwards like this so we can
+[00:03:54] pretty much assume the market is losing
+[00:03:56] momentum and the chart is about to head
+[00:03:58] downwards which is what it does you can
+[00:04:00] also do it the other way the market is
+[00:04:02] heading downwards but at the same time
+[00:04:04] the macd isn't making lower lows so we
+[00:04:07] can assume there's about to be a
+[00:04:08] reversal which there was the next
+[00:04:10] strategy is trading off the extremes of
+[00:04:12] the macd what i mean is whenever a
+[00:04:14] market has huge amounts of momentum and
+[00:04:16] goes upwards super fast
+[00:04:20] almost always it heads back down at some
+[00:04:22] point so we're trying to take advantage
+[00:04:24] of that and whenever the macd hits an
+[00:04:26] extremely high peak we're gonna look to
+[00:04:28] short as it's got to lose its momentum
+[00:04:30] at some point same thing if the market
+[00:04:31] dips way too fast if there's a very low
+[00:04:33] peak on the macd we can look to enter a
+[00:04:35] long position as it's likely to move
+[00:04:37] upwards after the fourth and final
+[00:04:39] strategy is using the macd as a trend
+[00:04:42] filter if you've watched any of my
+[00:04:43] videos before you should definitely know
+[00:04:45] by now i absolutely love trading with
+[00:04:48] the trend
+[00:04:49] we're trending up boys we are trending
+[00:04:52] up what i mean by that is that i like
+[00:04:53] taking long positions when the market is
+[00:04:55] trending upwards and i like taking short
+[00:04:57] positions when the market is trending
+[00:04:59] downwards sounds like common sense right
+[00:05:01] but believe it or not it's a lot harder
+[00:05:03] to spot a trend with real-time market
+[00:05:05] data than you might think so how can we
+[00:05:07] tell when a market is in an uptrend or a
+[00:05:09] downtrend so the steps for this strategy
+[00:05:11] are as follows you first go to your
+[00:05:13] preferred time frame whether that's the
+[00:05:15] five minute one hour one day week
+[00:05:17] whatever then you're going to open a
+[00:05:18] separate tab and have your macd on one
+[00:05:20] time frame higher so for example if your
+[00:05:23] preferred time frame is the daily you
+[00:05:25] would set your macd indicator to the one
+[00:05:27] week time frame if the macd histogram is
+[00:05:29] positive in green you look for long
+[00:05:31] trades if it's negative in red you look
+[00:05:34] for short trades now before you say it i
+[00:05:36] already know these four strategies
+[00:05:38] weren't made in a lab somewhere in
+[00:05:39] germany and are super highly effective
+[00:05:41] winning trading strategies that hedge
+[00:05:43] funds use these strategies can be found
+[00:05:45] on basically anywhere hell i bet even
+[00:05:47] your uncle rob knows about them however
+[00:05:49] you have to realize most of these
+[00:05:51] websites or gurus that are telling you
+[00:05:53] these strategies are trying to sell you
+[00:05:54] something so in most cases they're
+[00:05:56] either straight up lying to you
+[00:05:58] inflating the results of the strategy or
+[00:06:00] only telling you the positives so you go
+[00:06:02] by their ebook or whatever they're
+[00:06:03] trying to sell you well here's the thing
+[00:06:04] i'm not trying to sell you anything as i
+[00:06:06] am for the people
+[00:06:07] [Music]
+[00:06:10] i don't get any benefit from telling you
+[00:06:11] the macd works or if it doesn't work so
+[00:06:13] i'm going to be brutally honest and tell
+[00:06:15] you the exact results i get from these
+[00:06:17] various strategies on real market data
+[00:06:19] no lies no fairy dust just good old
+[00:06:22] plain statistics well before we talk
+[00:06:24] about which strategy works we first have
+[00:06:26] to understand why the macd may not work
+[00:06:28] fair enough
+[00:06:29] so going back to strategy one as a quick
+[00:06:31] refresh this strategy was all about
+[00:06:34] buying when the histogram turns green
+[00:06:36] and selling when the histogram turned
+[00:06:38] red so in this strategy the traders
+[00:06:40] looking to turn bearish when the
+[00:06:41] market's upward momentum weakens or turn
+[00:06:44] bullish when the market's downward
+[00:06:46] momentum weakens now when first hearing
+[00:06:48] this i can already think of a critical
+[00:06:50] issue around this style of thinking one
+[00:06:52] just because a market has upwards
+[00:06:53] momentum and its weakening doesn't
+[00:06:55] necessarily mean it's done going upwards
+[00:06:57] it could just be taking a little break
+[00:06:59] markets need breaks too guys same thing
+[00:07:01] with the market heading downwards just
+[00:07:03] because the mark is slowing down the
+[00:07:04] downwards momentum doesn't necessarily
+[00:07:06] mean it's done going down so with this
+[00:07:08] first strategy here's an example of it
+[00:07:10] failing the market falls so the
+[00:07:12] histogram turns red but then the macd
+[00:07:14] turns bullish and the chart starts
+[00:07:16] moving sideways but it was just a little
+[00:07:18] pause and the market continues to fall
+[00:07:20] downwards after moving on to strategy 2
+[00:07:22] where we use the macd's divergence to
+[00:07:24] help spot reversals in the market here's
+[00:07:26] the main issue with this one i found
+[00:07:28] that divergence is kind of hard to
+[00:07:30] quantify what i mean by that is
+[00:07:31] whoever's trading is going off their
+[00:07:33] opinion on what they see and as we all
+[00:07:36] know the human eye is prone to seeing
+[00:07:38] whatever it wants to see as an example
+[00:07:40] this chart is moving upwards if you were
+[00:07:42] bullish you could say yeah the smackdi's
+[00:07:44] making higher highs so it's going to
+[00:07:46] continue to head upwards or if you were
+[00:07:47] bearish you could say oh this macd line
+[00:07:50] is heading downwards giving us bearish
+[00:07:52] divergence so this is the top it could
+[00:07:54] easily be seen both ways which is
+[00:07:56] definitely a problem in trading in a
+[00:07:58] fast-paced market like the stock market
+[00:08:00] moving on to strategy three this
+[00:08:01] strategy was all about entering when the
+[00:08:03] histogram was at very big peaks the
+[00:08:05] thing about trading is extreme can
+[00:08:07] easily become even more extreme it's
+[00:08:10] extreme just because the histogram is
+[00:08:12] very high doesn't necessarily mean it
+[00:08:14] can't go higher and just because the
+[00:08:16] histogram is very low doesn't mean it
+[00:08:18] can't keep dropping then finally the
+[00:08:19] last strategy i do have to save right
+[00:08:21] off the get-go i have the least amount
+[00:08:23] of doubt towards this strategy because
+[00:08:24] there's actual data to back it up if you
+[00:08:26] remember this trading strategy was
+[00:08:28] moving the macd one time frame higher
+[00:08:31] than you're trading at to make sure
+[00:08:32] you're trading with the trend the one
+[00:08:34] thing i will say about this is that if
+[00:08:36] you watch my videos before i normally
+[00:08:38] use the 200 exponential moving average
+[00:08:40] to tell if a market is in an uptrend or
+[00:08:42] a downtrend if price is above the moving
+[00:08:44] average it's an uptrend if it's below
+[00:08:46] it's a downtrend so why not just use
+[00:08:48] that in order to tell which way the
+[00:08:50] trend is heading now that we've looked
+[00:08:52] at all the potential problems with the
+[00:08:53] macd it's time to do the exciting stuff
+[00:08:56] calculating and testing how successful
+[00:08:59] the macd actually is now as a reminder
+[00:09:02] forget everything that gurus and trading
+[00:09:04] books have taught you in the past your
+[00:09:06] job as a trader is to stay as objective
+[00:09:08] as possible let's really just focus on
+[00:09:10] the statistics and numbers from these
+[00:09:12] results so there were four strategies
+[00:09:14] that we talked about buy and sell in the
+[00:09:16] macd crossover look for macd divergences
+[00:09:19] use extreme macd readings to predict
+[00:09:21] market tops and bottoms and then use the
+[00:09:23] macd as a trend filter when finding
+[00:09:25] trades now i've kind of ran into a
+[00:09:27] problem i've decided to remove the
+[00:09:28] second strategy the divergence one just
+[00:09:31] because it's extremely objective and no
+[00:09:33] two traders staring at the same chart
+[00:09:35] will count the same exact divergences
+[00:09:37] plus it's kind of hard to back test
+[00:09:39] divergences i'm not lazy you're lazy so
+[00:09:42] i decided to take it out of the results
+[00:09:43] i also decided to ignore the fourth
+[00:09:46] strategy as it really wasn't a complete
+[00:09:48] trading strategy on its own as usually
+[00:09:50] you would add different indicators on
+[00:09:52] top the macd results please don't hate
+[00:09:53] me so that leaves us with two strategies
+[00:09:56] but i do promise you will still learn a
+[00:09:58] lot from these two i'll be testing these
+[00:10:00] strategies on three different markets
+[00:10:02] the s p 500 gold and the us dollar index
+[00:10:05] feel free to share your results if you
+[00:10:06] tested it on a different market i just
+[00:10:08] wanted to keep it simple with three
+[00:10:09] different markets to keep this video
+[00:10:11] short and juicy also so i don't get
+[00:10:13] millions of comments like these time
+[00:10:15] frame great video what time frame is
+[00:10:17] applicable what is the time frame time
+[00:10:20] frame how use time frame what time frame
+[00:10:22] did you use for this strategy what is
+[00:10:24] the time frame for this one day time
+[00:10:26] frame right what time frame best i'll be
+[00:10:28] using the daily time frame for these
+[00:10:30] tests so first we're going to test the
+[00:10:31] first strategy with the buy and sell
+[00:10:33] macd crossover signals on the s p 500 so
+[00:10:36] only entering a long position if the
+[00:10:38] histogram was positive then a short
+[00:10:40] strategy when the histogram was negative
+[00:10:42] then i'm also going to be comparing it
+[00:10:44] to if i just bought the s p 500 and just
+[00:10:46] simply held throughout the years i
+[00:10:48] should also mention these results were
+[00:10:50] from 1928 to 2018. so as you can see
+[00:10:53] with the bullish macd signals it
+[00:10:55] actually somewhat worked while oddly
+[00:10:57] enough the short only macd signals did
+[00:10:59] not work too well which i found really
+[00:11:01] interesting but while the bullish macd
+[00:11:03] signals were close both of these
+[00:11:04] strategies didn't do as well as just
+[00:11:06] buying and holding the s p 500 but then
+[00:11:08] we move on to gold and this is where it
+[00:11:10] starts getting really interesting so if
+[00:11:13] you did long only entries with the
+[00:11:15] histogram you would have done pretty
+[00:11:16] well as it actually outperformed if you
+[00:11:19] just bought gold and held same thing
+[00:11:20] with short entries though still positive
+[00:11:23] but not as good as the other two then
+[00:11:25] finally we have the us dollar index and
+[00:11:27] how interesting is this the short only
+[00:11:30] strategy did the best out of all three
+[00:11:32] for this one then the long only strategy
+[00:11:34] came in a close second place both way
+[00:11:36] above the buy and hold results now we
+[00:11:39] move on to the macd extreme strategy
+[00:11:41] where we enter a trade based off the
+[00:11:43] opposite extreme now this one was kind
+[00:11:45] of difficult to test simply because it's
+[00:11:47] very hard to tell a computer hey see
+[00:11:50] this right here this is an extreme dip
+[00:11:52] because it's not a number value so what
+[00:11:54] i did is i decided to take the histogram
+[00:11:56] of the macd and turn it into a
+[00:11:58] percentage of whatever market we were
+[00:12:00] trading this way the bot could tell what
+[00:12:02] was considered a big dip so as an
+[00:12:05] example this is kind of what the bot
+[00:12:06] sees so now i can use a number value to
+[00:12:09] tell if a huge spike happened or not
+[00:12:10] compared to the past like these huge
+[00:12:12] spikes upward or downwards here if one
+[00:12:14] of these big spikes happens it'll
+[00:12:16] calculate what the market does and just
+[00:12:18] as a quick hint these results were
+[00:12:20] pretty interesting also as a quick side
+[00:12:22] note i go through all the data and
+[00:12:24] statistics pretty fast so feel free to
+[00:12:25] pause the video if you want to so
+[00:12:27] whenever the macd was in the top five
+[00:12:29] percent of its readings so when it had a
+[00:12:31] big spike upwards compared to the past
+[00:12:33] the s p 500 did this when the macd was
+[00:12:36] in the bottom five percent of its
+[00:12:37] readings meaning it had a big dip
+[00:12:39] downwards the s p 500 did this so what i
+[00:12:42] learned from these results overall
+[00:12:44] extremely high macd readings were more
+[00:12:46] bullish than bearish for the s p 500.
+[00:12:48] this is because strong momentum is
+[00:12:50] usually followed by more strong momentum
+[00:12:52] meaning extremely low macd histogram
+[00:12:54] readings weren't constantly bullish or
+[00:12:56] bearish here's the results for gold
+[00:12:58] these are the top five percent of the
+[00:13:00] readings these are the bottom five
+[00:13:01] percent of the readings overall from
+[00:13:03] these results there wasn't really a
+[00:13:05] statistical edge for using the macd
+[00:13:07] strategy in gold then if we move to the
+[00:13:09] us dollar index these are the readings
+[00:13:11] for the top five percent and these are
+[00:13:13] the readings for the bottom five percent
+[00:13:14] what i learned from this is that
+[00:13:16] extremes often bring more extremes
+[00:13:18] whenever the histogram went high the
+[00:13:20] dollar kept on climbing whenever the
+[00:13:21] histogram went low the dollar kept
+[00:13:23] falling next we move on to the juicy
+[00:13:25] part the best optimal settings for macd
+[00:13:28] when you first add the macd to the chart
+[00:13:30] usually the default settings are as
+[00:13:32] follows 12 for the fast length 26 for
+[00:13:34] the slow length and 9 for the signal
+[00:13:36] smoothing i decided to put all my
+[00:13:38] knowledge aside and see what the best
+[00:13:39] settings are statistically based off the
+[00:13:42] past history for this part i'm only
+[00:13:44] going to be testing the s p 500 you want
+[00:13:46] to see the results for the best settings
+[00:13:47] for the macd on gold forex crypto or
+[00:13:50] even some of the top stocks like apple
+[00:13:52] and tesla i'll leave all the back test
+[00:13:54] results in my discord plus i usually
+[00:13:56] post some pretty cool tips and tricks in
+[00:13:58] there like my back test results for
+[00:14:00] certain strategies or even sometimes my
+[00:14:02] entries and exits for certain trades so
+[00:14:05] yeah come say what's up i'll leave a
+[00:14:06] link in the description but i'm gonna
+[00:14:08] use two different time frames the daily
+[00:14:10] and the weekly so these results could
+[00:14:12] definitely vary if you're using a
+[00:14:14] different time frame or trading in a
+[00:14:16] different market just keep that in mind
+[00:14:17] and here are my entry and exit rules i
+[00:14:20] will enter a long position when the macd
+[00:14:22] histogram is positive and sell when the
+[00:14:24] macd histogram goes negative i also told
+[00:14:26] the bot to test every number between 2
+[00:14:29] and 60 to see which numbers are the most
+[00:14:31] optimal which basically means the bot
+[00:14:33] will scrape through tens of thousands of
+[00:14:36] different setting combinations so for
+[00:14:37] example it'll try 2 26 and 9 and then 3
+[00:14:41] 26 and 9 and so on but for every single
+[00:14:45] section let's jump straight into the
+[00:14:46] results the first test was on the daily
+[00:14:49] time frame the optimal macd settings on
+[00:14:51] the daily time frame for the s p 500
+[00:14:54] were 2 60 and 2. this strategy made a
+[00:14:57] total average profit of 9.41
+[00:15:01] per year versus the buy and hold average
+[00:15:03] of 5.78
+[00:15:05] per year keep in mind though this is not
+[00:15:07] including dividends being reinvested for
+[00:15:09] the weekly time frame on the s p 500 the
+[00:15:12] best settings were 30 57 and 27. the
+[00:15:15] strategy yielded 6.12 percent while the
+[00:15:19] buy and hold mean an average of 5.78
+[00:15:22] these are the best macd settings you can
+[00:15:24] possibly get with these specific
+[00:15:26] scenarios at least from past history
+[00:15:28] that's why i absolutely love back
+[00:15:30] testing you can learn so much from past
+[00:15:32] history and there's not really any
+[00:15:34] reason to guess for the future but with
+[00:15:36] that said the best settings for the past
+[00:15:38] may not even be the best settings for
+[00:15:40] the future things are always changing so
+[00:15:42] you do have to keep that in mind so
+[00:15:44] after doing all this research i've
+[00:15:45] learned a lot even though macd is one of
+[00:15:48] the most installed indicators out there
+[00:15:50] it's not exactly the secret formula you
+[00:15:52] need for massive success in trading it
+[00:15:54] can be a great indicator and tell you
+[00:15:56] lots of information about a chart but
+[00:15:58] just like any indicator it should never
+[00:16:00] really be used as an exact science you
+[00:16:02] have to pair it with other indicators
+[00:16:04] price movements strategies research and
+[00:16:06] do so many other trading techniques that
+[00:16:08] make a successful trader successful i've
+[00:16:11] been thinking making this a type of
+[00:16:12] series and doing this style video with
+[00:16:14] all the main indicators so if you guys
+[00:16:16] are interested in that let me know which
+[00:16:18] indicator you would like to see next in
+[00:16:20] the comments again i posted all the
+[00:16:22] other backtest results in my discord if
+[00:16:24] you want to check those out also if you
+[00:16:25] wanted to learn how to backtest the macd
+[00:16:27] i made a full beginner tutorial teaching
+[00:16:29] you all the basics go check that out
+[00:16:31] thanks for watching and i'll see you
+[00:16:33] guys next time
+[00:16:37] [Music]
+[00:16:42] you

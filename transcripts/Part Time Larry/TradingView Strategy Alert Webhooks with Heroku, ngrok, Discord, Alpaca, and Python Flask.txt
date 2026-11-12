@@ -1,0 +1,1901 @@
+[00:00:00] Hey, welcome back. In this video, we're
+[00:00:01] going to continue our discussion of
+[00:00:03] TradingView strategy alerts.
+[00:00:06] Specifically, we're going to focus on
+[00:00:08] the webhook alert functionality. So,
+[00:00:11] what we're going to do is take an
+[00:00:13] example Pine Script tutorial. We're
+[00:00:15] going to walk through that Pine Script
+[00:00:16] tutorial and talk about when it would
+[00:00:18] enter and exit a position. And we're
+[00:00:21] going to create an alert for that Pine
+[00:00:23] Script strategy, and I'm going to show
+[00:00:26] you what the message looks like when an
+[00:00:29] alert is triggered. We're going to take
+[00:00:31] that message and convert it to a JSON
+[00:00:33] format that can be processed by a Python
+[00:00:36] program.
+[00:00:37] So, then once we have this message in a
+[00:00:40] nice structured format, we're going to
+[00:00:42] create a Python Flask web application
+[00:00:44] that receives this message and can do
+[00:00:47] whatever we want. In this case, we're
+[00:00:49] going to place buy and sell orders using
+[00:00:51] the Alpaca API, and I'm also going to
+[00:00:53] show you how to add some additional
+[00:00:55] functionality. So, we're going to post a
+[00:00:58] message to a Discord chatbot whenever
+[00:01:01] this TradingView strategy alert gets
+[00:01:03] fired. In addition to developing this
+[00:01:05] Flask application locally, I want to
+[00:01:07] also show you how to deploy this
+[00:01:09] application to the cloud. So, when I
+[00:01:11] previously discussed webhooks in some of
+[00:01:13] my other videos, I used AWS Lambda
+[00:01:16] functions. Specifically, I used a
+[00:01:18] framework called AWS Chalice. And what I
+[00:01:21] found is that some people had trouble
+[00:01:22] with that or just didn't want to
+[00:01:23] configure AWS. So, I thought I'd provide
+[00:01:27] a couple of alternatives for people that
+[00:01:29] don't want to use AWS Lambda. So, the
+[00:01:32] first alternative that I'll demonstrate
+[00:01:34] is how to build a webhook using the
+[00:01:36] Flask framework, which is just a simple
+[00:01:39] microframework for Python. And I'm going
+[00:01:41] to show you how to develop develop that
+[00:01:43] application locally, and then I'm going
+[00:01:44] to show you how to deploy it to the
+[00:01:46] cloud using Heroku, which is a platform
+[00:01:49] as a service that is owned by
+[00:01:51] Salesforce.
+[00:01:52] This is going to be free, and it just
+[00:01:54] makes it really easy to take whatever
+[00:01:56] web application you have. It has a
+[00:01:58] variety of supported frameworks, and you
+[00:02:00] can just deploy it to the cloud by just
+[00:02:01] pushing a Git commit, and then it'll
+[00:02:04] deploy it. It'll give you a URL that's
+[00:02:06] generated, and we're just going to plug
+[00:02:08] that URL into TradingView, and it'll
+[00:02:10] start executing our trades. The second
+[00:02:13] alternative I want to demonstrate is how
+[00:02:14] you can just host your Flask application
+[00:02:17] on your local machine, so on your
+[00:02:18] laptop, and then generate a URL that can
+[00:02:20] be accessed from the outside world. And
+[00:02:23] so, we're going to use a utility some
+[00:02:24] people mentioned in the comments called
+[00:02:25] ngrok. And what that'll do is generate a
+[00:02:28] little hostname URL for our webhook that
+[00:02:30] can be publicly accessed, and we're
+[00:02:33] going to have TradingView post to that
+[00:02:34] URL and authenticate it with a
+[00:02:36] passphrase, and then have our local
+[00:02:38] machine execute those orders for us. So,
+[00:02:41] that's enough talking for now. Let's go
+[00:02:42] ahead and start building this out. If
+[00:02:44] you like the content I create on this
+[00:02:46] channel, please like and subscribe,
+[00:02:48] follow me on Twitter, and check out the
+[00:02:50] links below. There's a variety of ways
+[00:02:51] to support the channel. So, let's go
+[00:02:53] ahead and get started.
+[00:02:54] So, the first thing you'll need, since
+[00:02:56] this is a TradingView tutorial, is
+[00:02:58] you'll need a TradingView account. So,
+[00:03:00] if you don't have one already, if you go
+[00:03:01] to any video on my channel and scroll
+[00:03:04] down, this is a video where I talked
+[00:03:06] about how to integrate TradingView
+[00:03:08] strategy alerts with the Binance API.
+[00:03:10] So, this is the stock version of that,
+[00:03:12] and so I'm going to scroll down. It says
+[00:03:14] sign up for sign up for TradingView. So,
+[00:03:16] if you click that, you'll get this
+[00:03:18] chart, and you can just say sign up for
+[00:03:20] a free trial. And since webhooks are a
+[00:03:22] pro account feature, you need a pro
+[00:03:24] account, and so you can try that free
+[00:03:26] for 30 days. So, I'm logged into my
+[00:03:28] TradingView account now, and the first
+[00:03:30] thing I'll do is just pull up a ticker
+[00:03:32] of interest. Let's do Apple, since it's
+[00:03:34] a popular example, and then I'm going to
+[00:03:36] click full feature chart. That's going
+[00:03:38] to bring up a full window with a
+[00:03:39] candlestick chart for Apple, and I'm
+[00:03:41] going to go to the daily timeframe. So,
+[00:03:44] at the bottom of the screen here, you
+[00:03:45] have this Pine editor. You can click
+[00:03:47] that, bring up this editor, and you can
+[00:03:49] start entering in Pine Script code. And
+[00:03:51] so, we're going to we're going to use a
+[00:03:53] pre-written example. So, I'm going to go
+[00:03:55] to codify.net, and there's some
+[00:03:57] strategies this person has written out
+[00:03:59] detailed tutorials on how to use Pine
+[00:04:02] Script, and so we're just going to use
+[00:04:03] this as an example, and then have it
+[00:04:05] trigger some alerts and talk about what
+[00:04:08] it looks like. And so, this article is
+[00:04:10] called Programming the Bollinger Band
+[00:04:12] Breakout Strategy. And so, you can
+[00:04:14] scroll through this. If you want to read
+[00:04:15] through this, you can. I'm going to talk
+[00:04:16] about real quick the basics of what it's
+[00:04:18] doing. And so, at the bottom of this
+[00:04:21] article, he actually has the final code
+[00:04:23] here, and I made some slight tweaks cuz
+[00:04:25] it looks like this is for Pine Script 3.
+[00:04:28] So, this actually throws some errors, so
+[00:04:29] I modified this slightly just to
+[00:04:31] simplify it a little bit and also to put
+[00:04:33] Pine Script version 4.
+[00:04:35] Okay? So, I have this saved out already
+[00:04:37] where I've copied this down, and I will
+[00:04:40] load it into my chart. So, I'm going to
+[00:04:43] click open, and I have this script. And
+[00:04:46] I'll post the source code to this if you
+[00:04:47] want to copy it down and use this one,
+[00:04:50] or you can just load any other of the
+[00:04:52] scripts here. If you go to indicators,
+[00:04:55] you know, there's some favorites like
+[00:04:56] the squeeze momentum indicator that I
+[00:04:58] talked about in a previous video by Lazy
+[00:05:01] Bear, but you can browse the public
+[00:05:02] library and use whatever script you
+[00:05:03] want. I'm just going to load this one as
+[00:05:05] an example.
+[00:05:06] So, I have this one already saved. I'm
+[00:05:09] going to say open script. I'm going to
+[00:05:10] open my Bollinger Band Breakout script.
+[00:05:12] Okay? And so, when I do that, you'll see
+[00:05:15] it starts with version 4. So, this is
+[00:05:18] version 4 of Pine Script, and then each
+[00:05:20] Pine Script strategy has to start with
+[00:05:22] its strategy word here, and you give it
+[00:05:25] a few parameters. And so, for
+[00:05:27] simplicity, I've made this just a simple
+[00:05:30] initial capital. I set it to $1,000. You
+[00:05:33] can bump this to $10,000 or however much
+[00:05:35] money you want to trade for your overall
+[00:05:37] account. We're saying we want to overlay
+[00:05:40] the Bollinger Bands on top of the chart
+[00:05:42] rather than being an indicator that's
+[00:05:44] graphed on a separate chart below. And
+[00:05:47] we give it a title of Bollinger
+[00:05:48] Breakout. And so, you see in the top
+[00:05:49] left here, it says Bollinger Breakout,
+[00:05:51] right? And then we also give it some
+[00:05:54] settings. And so, the Bollinger Band
+[00:05:56] Breakout strategy has a few settings.
+[00:05:58] So, let's talk about what the chart
+[00:06:00] looks like. First of all,
+[00:06:01] so you'll see this red and green line
+[00:06:04] around the chart. So, those are the
+[00:06:06] upper and lower Bollinger Bands. So, the
+[00:06:08] way the Bollinger Band Breakout strategy
+[00:06:10] works here is you'll see this middle
+[00:06:12] line here, which is like a light blue
+[00:06:14] color it looks like, is a moving
+[00:06:16] average. In this case, the default here
+[00:06:18] is the 350-day simple moving average.
+[00:06:21] And so, this is kind of tracking the
+[00:06:23] moving average of Apple stock over time.
+[00:06:27] And this Bollinger Band Breakout
+[00:06:28] strategy, the way it works, it's not
+[00:06:30] like a revert to the mean strategy. It's
+[00:06:32] saying when this pegs the upper
+[00:06:34] Bollinger Band, then we're saying
+[00:06:36] there's strong momentum, and we're going
+[00:06:38] to ride that trend until it falls back
+[00:06:40] to the moving average. So, let's look at
+[00:06:43] this real quick. So, the simple moving
+[00:06:45] average length here, we're saying is an
+[00:06:47] input. We're giving the simple moving
+[00:06:49] average a default length of 350 using
+[00:06:52] this default value here. And but we're
+[00:06:55] also providing an input. That way the
+[00:06:56] user can tweak these settings. So, these
+[00:06:58] inputs, if you hover over here, there's
+[00:07:01] this little settings. If I do that, and
+[00:07:04] click that, you see this SMA length.
+[00:07:06] This is an input generated by this input
+[00:07:08] function. So, if I don't want to use the
+[00:07:10] 350-day simple moving average, I can
+[00:07:12] change it to 200 or 250 or whatever. I
+[00:07:15] can also control the upper and lower
+[00:07:18] settings of the Bollinger Bands, right?
+[00:07:20] And so, you'll see he's also made these
+[00:07:23] upper and lower Bollinger Bollinger Band
+[00:07:24] offsets here and given them a title,
+[00:07:27] right? And those titles go onto this
+[00:07:29] form, generates an input, and we're
+[00:07:31] using 2.5. And so, these offsets are
+[00:07:34] actually standard deviations. So, the
+[00:07:37] upper and lower Bollinger Bands are just
+[00:07:39] the moving average plus 2.5 standard
+[00:07:41] deviations above and minus 2.5 standard
+[00:07:45] deviations below. And then you can
+[00:07:47] modify that depending on how some people
+[00:07:49] use two standard deviations, and then so
+[00:07:52] the Bollinger Bands will be a little bit
+[00:07:53] closer in then, right? So, that's how
+[00:07:56] you define the Bollinger Band offset,
+[00:07:58] and you can see our SMA value is the SMA
+[00:08:01] length. So, it's 350. It's taking the
+[00:08:03] SMA of the close. So, we're having this
+[00:08:06] We're plotting this SMA here. So, we're
+[00:08:08] doing a plot of this SMA value that we
+[00:08:11] calculate. And so, we're adding that
+[00:08:13] plot, and we're saying it's color teal.
+[00:08:16] So, that's why it plots the 350-day
+[00:08:19] moving average in teal. And then we're
+[00:08:22] also calculating the upper and lower
+[00:08:24] Bollinger Bands. So, that's just the SMA
+[00:08:26] value plus 2.5 standard deviations times
+[00:08:30] the or times the standard deviation,
+[00:08:32] which we calculate the standard
+[00:08:33] deviation of the close times the offset.
+[00:08:35] So, since we our offset is 2.5, we're
+[00:08:38] saying 2.5 times the standard deviation
+[00:08:40] that was calculated, and then we're
+[00:08:42] adding it to the SMA value, and then
+[00:08:44] plotting it in green, and then we're
+[00:08:46] subtracting from the simple moving
+[00:08:48] average and plotting it in red, and that
+[00:08:50] gives us our Bollinger Bands, right? And
+[00:08:52] then once we have this plotted, our
+[00:08:54] strategy, we need to define when we
+[00:08:56] enter and exit the trade. And so, we're
+[00:08:59] setting some boolean values here saying
+[00:09:00] enter long when the close crosses over
+[00:09:05] the upper Bollinger Band. And so, you
+[00:09:07] see this is graphically indicated on the
+[00:09:09] chart automatically. And so, you'll see
+[00:09:12] in Let's look at a good example more
+[00:09:14] recently. You can see
+[00:09:16] When would this have entered? So, in
+[00:09:18] October of 2019 here, you can see that
+[00:09:22] Apple hit this upper Bollinger Band, and
+[00:09:24] that's when we wanted to enter. We're
+[00:09:25] saying it had strong upward momentum,
+[00:09:28] like a a high standard It went way above
+[00:09:30] the simple moving average, right?
+[00:09:32] According to our standard deviation
+[00:09:34] settings, we hit the upper Bollinger
+[00:09:35] Band, and we're saying that trend is
+[00:09:37] going to continue, and we're going to
+[00:09:38] ride that trend until we close below the
+[00:09:41] simple moving average. So, if I scroll
+[00:09:43] back here, you can see an example of
+[00:09:45] when this triggered. will be early 2017,
+[00:09:48] right? We hit the upper Bollinger Band,
+[00:09:51] and then our exit, we're saying that we
+[00:09:53] want to exit the trade when the close
+[00:09:55] goes below the simple moving average we
+[00:09:57] defined. So, we enter here, uh the trend
+[00:09:59] is up for a long time, right? And then
+[00:10:02] but we don't actually exit with the
+[00:10:03] strategy until the price closes below
+[00:10:06] the simple moving average here. So, you
+[00:10:07] see our exit right here when it closes
+[00:10:10] below this teal line. So, this is a nice
+[00:10:12] profitable trade. Did it capture 100% of
+[00:10:15] this move? No, but we did ride this
+[00:10:17] trend for a good amount of time.
+[00:10:19] Okay? So, we enter the trade when we
+[00:10:22] cross over the upper Bollinger Band and
+[00:10:24] we exit the long when we close below
+[00:10:27] this teal line, the simple moving
+[00:10:28] average, right? And then we also can
+[00:10:31] short using this strategy. So, we use
+[00:10:33] the upper Bollinger Band to determine
+[00:10:35] when we're going to enter a long, but we
+[00:10:36] can use the lower Bollinger Band to
+[00:10:38] enter a short. And let's see if there
+[00:10:40] was a good time on here to uh short
+[00:10:42] Apple stock. Usually not a good idea to
+[00:10:44] short Apple stock is what I've learned.
+[00:10:46] So, uh
+[00:10:48] let's scroll back here and see Okay, so
+[00:10:50] let let let's look at let's use another
+[00:10:52] feature to find this. So, on a strategy
+[00:10:54] tester here, what this actually does is
+[00:10:56] back test this strategy. So, if you if
+[00:10:59] you create a Pine Script strategy,
+[00:11:01] there's a strategy tester tab and I'll
+[00:11:03] show you the profit and loss from the
+[00:11:05] strategy. So, you look like it looks
+[00:11:07] like this was very profitable. So, we
+[00:11:09] got a 78%
+[00:11:10] percent return from Apple stock. And
+[00:11:12] then if you click this other tab,
+[00:11:14] performance summary, shows a lot more
+[00:11:16] information about around uh
+[00:11:18] commissions, if you enter commissions,
+[00:11:20] percent profitable, average win trade.
+[00:11:23] So, if you click on list of trades, you
+[00:11:24] can see a list of trades that you would
+[00:11:25] have entered and exited and what the
+[00:11:27] outcome would have been. And so, let's
+[00:11:29] see if we can find a time when it said
+[00:11:30] to short Apple stock. So, if I scroll
+[00:11:32] down here, you can see uh most of these
+[00:11:35] are longs, but there's a short here,
+[00:11:37] 2008, right? Makes sense. Some people
+[00:11:39] entered short, and this was a bad trade.
+[00:11:42] So, uh if I look in October of 2008, see
+[00:11:46] the red line, it looks like it uh
+[00:11:48] hit this lower Bollinger Band here, so
+[00:11:50] it said short Apple here
+[00:11:52] uh right there, and then it didn't
+[00:11:54] really drift down, and then boom, the
+[00:11:57] recovery happened in March, went back
+[00:11:59] above the simple moving average right
+[00:12:01] here, and you would close your short,
+[00:12:03] and so that was a big loser right there.
+[00:12:06] So, um lots of winning trades here, lots
+[00:12:08] of big trades where you rode the trend a
+[00:12:10] long time, but definitely some big
+[00:12:12] losing trades as well. So, you can
+[00:12:13] experiment with this Pine Script and
+[00:12:16] change the parameters. Maybe you want to
+[00:12:17] work on a shorter time frame. This is on
+[00:12:19] the daily time frame, but if you tweak
+[00:12:21] these numbers and maybe you're a day
+[00:12:23] trader, you want to operate on the
+[00:12:25] 15-minute or hourly time frame or
+[00:12:26] whatever time frame you want, you can
+[00:12:28] experiment with this. Um but the point
+[00:12:30] of this was just to walk you through a
+[00:12:31] quick
+[00:12:33] TradingView strategy that uses Bollinger
+[00:12:35] Bands. And then now we're going to take
+[00:12:37] this strategy and I'm going to create an
+[00:12:41] alert. So, to create an alert based on
+[00:12:44] this Pine Script strategy, I will go
+[00:12:47] down here in my Pine Editor, and then I
+[00:12:49] click strategy tester here. There's a
+[00:12:51] couple of ways to do it. There's there's
+[00:12:52] these alarm clock symbols. There's one
+[00:12:54] on the right side of the screen, and
+[00:12:55] there's one on the left side over here.
+[00:12:57] And so, above my strategy, I can click
+[00:13:00] uh that alarm clock and it'll create an
+[00:13:03] alert based on that strategy. And since
+[00:13:05] I'm on the daily time frame for Apple
+[00:13:06] right now, it'll create the alert on the
+[00:13:09] daily time frame. But if I were to
+[00:13:11] change this to like the 5-minute time
+[00:13:13] frame,
+[00:13:14] um it would rerun the strategy, back
+[00:13:16] test it differently, and I can create
+[00:13:18] the alert, and it says create alert on
+[00:13:20] Apple on the 5-minute time frame.
+[00:13:22] And the drop-down by default will just
+[00:13:24] say the ticker symbol Apple, which uh it
+[00:13:27] has some built-in conditions that you
+[00:13:28] can use. So, you can say, you know,
+[00:13:30] crossing up over the price of 135 or
+[00:13:33] whatever price you choose. And I in in
+[00:13:36] the first video I did on TradingView
+[00:13:38] alerts, I actually just used crossing
+[00:13:40] above on S&P 500. So, I said when the
+[00:13:42] S&P 500 crossed above 2800 or 285
+[00:13:46] earlier this year, then we were going to
+[00:13:48] enter the position because we'd say we
+[00:13:50] said, "Oh, we're past resistance,
+[00:13:52] right?" So, in this case, we're going to
+[00:13:54] click the drop-down, and we want to use
+[00:13:56] our Bollinger Band breakout strategy.
+[00:13:58] So, I'm going to select that as a
+[00:13:59] condition. And this is going to let me
+[00:14:01] set an alert on my strategy entry
+[00:14:04] entries and exits, and I'll get a
+[00:14:06] notification when those entries and
+[00:14:08] exits occur.
+[00:14:09] So, if you look, there's a variety of
+[00:14:10] ways that you can configure this alert.
+[00:14:13] So, I can give it an expiration time if
+[00:14:15] I want, or I can let it uh run forever.
+[00:14:18] Uh there's some alert actions here, so
+[00:14:20] you need to choose how you want to be
+[00:14:21] alerted. So, the way most people
+[00:14:23] actually use these alerts is they just
+[00:14:25] want to get an email or a text message.
+[00:14:27] So, they don't want to watch the charts
+[00:14:28] all the time, but when something
+[00:14:30] significant happens, uh they want to be
+[00:14:32] alerted by email or SMS text message,
+[00:14:35] and then they look at it and go, "Oh,
+[00:14:36] should I place this trade?" And then,
+[00:14:38] you know, they'll go manually enter that
+[00:14:40] trade. But in our case, we want this to
+[00:14:42] be running in the cloud
+[00:14:44] and be able to place these trades
+[00:14:46] without any human intervention. Once we
+[00:14:48] have the strategy uh set up and it's
+[00:14:50] tuned in, you know, we're we're dialed
+[00:14:52] into our settings we like, and we trust
+[00:14:54] it enough and we've added our back
+[00:14:56] testing, error handling, all that, we
+[00:14:58] feel it's very reliable, then we can
+[00:15:00] say, "Oh, let's let's let this webhook
+[00:15:02] trade it for us." And so, uh on a text
+[00:15:04] message alert, if you clicked uh
+[00:15:07] more actions, you could say send email
+[00:15:08] to SMS, so you could add it text message
+[00:15:10] alerts or emails. The message you
+[00:15:12] receive looks like this. It says
+[00:15:14] Bollinger Band breakout, so it'll show
+[00:15:15] the name of your script and your
+[00:15:17] settings, and then it'll insert these
+[00:15:19] placeholders. So, it'll say
+[00:15:20] strategy.order.action,
+[00:15:22] right? And these little curly
+[00:15:25] these uh placeholders with the curly
+[00:15:27] braces around them, these will get
+[00:15:28] substituted with some metadata about
+[00:15:31] what actually happened uh some
+[00:15:33] information about the chart and the
+[00:15:35] setup. So, since our strategy here is
+[00:15:37] entering and calculating a number of
+[00:15:40] contracts to buy, then this little
+[00:15:42] placeholder here will get substitute in
+[00:15:44] substituted with an an actual number.
+[00:15:47] And then same thing, the ticker here, it
+[00:15:49] has a placeholder for ticker ticker that
+[00:15:51] would be replaced with the ticker AAPL,
+[00:15:53] right? They're just variables. And then
+[00:15:55] position size and so forth. And so, if
+[00:15:57] you click on this question mark here,
+[00:16:00] it'll show you there's tons of these
+[00:16:01] placeholders available. So, we can get
+[00:16:04] access to the closing price of the
+[00:16:06] previous bar when this uh
+[00:16:09] uh alert fired, and we can also get the
+[00:16:11] volume and a variety of things. So,
+[00:16:13] there's tons of these, and they're all
+[00:16:15] documented. And with the addition of
+[00:16:17] strategy alerts, you'll notice there's
+[00:16:19] some additional placeholders, strategy
+[00:16:21] position size, order action, order
+[00:16:22] contracts, and so forth. And so, if you
+[00:16:24] look at the full code of this Bollinger
+[00:16:26] breakout strategy, um he actually cal he
+[00:16:28] does more calculations than what I just
+[00:16:30] showed. Uh he actually does some uh risk
+[00:16:32] calculations, and so he he updates the
+[00:16:35] position sizing. So, if you were to
+[00:16:37] order Apple a long time ago and you were
+[00:16:39] to make a profit, you could reinvest
+[00:16:41] that profit, you could risk only a
+[00:16:42] certain amount of capital, and so forth.
+[00:16:43] So, he does more calculations to
+[00:16:45] calculate the position size. What I just
+[00:16:47] showed was just buying and selling 10
+[00:16:48] shares. So, be sure to study this cuz
+[00:16:50] you'll want to
+[00:16:51] change your position size over time most
+[00:16:53] likely.
+[00:16:54] Um so, for simplicity, we just did uh 10
+[00:16:56] shares of Apple, so the number 10 would
+[00:16:58] appear here when this alert triggered,
+[00:17:00] right? So, that's all good. So, this
+[00:17:02] looks like a text message or an email.
+[00:17:04] I'd read this as a human, but as we
+[00:17:06] discussed, a computer program doesn't
+[00:17:09] know how to parse it. Like when it says
+[00:17:10] the number 10, right? It's going to be
+[00:17:11] like 10 of what? So, what we want to do
+[00:17:14] is send this in a structured format to
+[00:17:16] our computer program. So, what I've done
+[00:17:18] is taken all these placeholders and
+[00:17:20] formatted a JSON payload. That way uh
+[00:17:23] it's uh the message is sent in such a
+[00:17:25] way that our Python program can
+[00:17:26] understand. And I've done this in
+[00:17:28] advance. And so, I put this on
+[00:17:30] the GitHub repository, and I did this
+[00:17:32] for the last video. So, I just completed
+[00:17:34] a video on strategy alerts for the
+[00:17:36] Binance API, and I put it here in case
+[00:17:39] you want to use this for crypto and
+[00:17:41] Binance. And so, in this payloads
+[00:17:43] example,
+[00:17:44] um I showed the format of the payload,
+[00:17:47] right? And so, if you take this format,
+[00:17:52] uh you can put this inside of the
+[00:17:53] message and it'll use all the
+[00:17:55] placeholders and it'll send your alert
+[00:17:57] in the form of a JSON message, right?
+[00:18:00] So, it would substitute a passphrase.
+[00:18:02] So, we're going to have it send us a
+[00:18:03] passphrase, that way we can verify that
+[00:18:06] this webhook request is coming from
+[00:18:07] TradingView. So, you can make up your
+[00:18:09] own little password, and then our web
+[00:18:10] app's going to see that and say, "Is
+[00:18:12] that ABCDEFG or whatever long password
+[00:18:14] you choose, right?" And it'll say, "Is
+[00:18:16] this a valid passphrase?" If it is, then
+[00:18:18] it can execute the trade, but if not,
+[00:18:20] we're going to reject that message.
+[00:18:22] Okay? We'll get a timestamp, an
+[00:18:23] exchange, a ticker. We'll get some bar
+[00:18:26] information. So, I grouped all of the
+[00:18:28] placeholders for the previous bar. So,
+[00:18:30] when this alert fires, we'll know what
+[00:18:31] the previous bar was that closed for
+[00:18:34] Apple for whatever time frame we're on.
+[00:18:36] And maybe you want to use the previous
+[00:18:37] bar to determine the limit price for
+[00:18:39] your order, or you want to calculate a
+[00:18:40] stop loss based on this, and so forth.
+[00:18:43] And then you also I have grouped all of
+[00:18:45] the strategy placeholders together
+[00:18:47] together under this strategy key. And
+[00:18:49] so, we'll have position size, order
+[00:18:51] action, whether it's a buy or sell,
+[00:18:53] contracts, 10 shares of Apple or 100
+[00:18:56] shares, whatever. Uh an order price. So,
+[00:18:58] this order price is calculated by
+[00:19:00] TradingView. I believe they use a broker
+[00:19:02] emulator to determine a rough price that
+[00:19:05] you should be able to get uh in the back
+[00:19:06] test, uh but you can calculate the price
+[00:19:09] however you want yourself. Um there'll
+[00:19:11] be an order ID,
+[00:19:13] um and it'll show whatever your current
+[00:19:15] market position size is and your
+[00:19:17] previous market position size. And note,
+[00:19:19] this is kind of based on what
+[00:19:20] TradingView thinks you have. So, this is
+[00:19:22] kind of detached from your actual
+[00:19:25] brokerage. So, um
+[00:19:27] what what will happen is your market
+[00:19:28] After you enter a buy, so this will fire
+[00:19:31] first, and the order action will be buy,
+[00:19:33] and you'll buy 10 shares of Apple stock,
+[00:19:35] and it's going to assume that, you know,
+[00:19:36] you made that buy, and then it'll say
+[00:19:38] your market position is 10. So, your
+[00:19:40] previous market position might have been
+[00:19:42] you had zero shares of Apple and you
+[00:19:44] were flat. You had you were not long or
+[00:19:46] short, and then your current market
+[00:19:47] position gets updated to say, "Oh, I'm
+[00:19:49] long 10 shares of Apple now." Okay?
+[00:19:52] So, that's what the format looks like
+[00:19:54] and when I put this in my webhook, it's
+[00:19:56] going to fire and fill in those numbers.
+[00:19:58] And so, the filled in format, I also
+[00:19:59] posted in the payload.
+[00:20:01] And we can use this to test our webhook.
+[00:20:03] So, what I can do is post this payload
+[00:20:06] with some values filled in for Apple and
+[00:20:08] make sure it can execute
+[00:20:11] a trade against Alpaca and we can test
+[00:20:13] our webhook locally and then we can
+[00:20:15] deploy it and we know that same payload
+[00:20:18] will be sent to our webhook in the cloud
+[00:20:21] and that's how we test that it works.
+[00:20:22] So, I'm going to click create here.
+[00:20:25] So, after I click create and then look
+[00:20:27] on the side where this alarm clock is,
+[00:20:29] you'll see my list of alerts. And if I
+[00:20:31] click on that, you can see the message
+[00:20:34] that's going to be sent and those
+[00:20:36] placeholders are going to be replaced
+[00:20:37] with real values and then, you know, I
+[00:20:39] can delete my alerts and so forth. So,
+[00:20:41] to show you what I would ideally like to
+[00:20:43] do is show you these values filled in
+[00:20:45] and have this alert trigger in real time
+[00:20:47] while this video is going on, but this
+[00:20:49] is the weekend right now and the market
+[00:20:50] is not open, so I can't show you that.
+[00:20:52] So, the way I've shown this in previous
+[00:20:54] videos is by using the crypto market
+[00:20:56] since it's always open and I can show
+[00:20:57] that happening. And I'm going to
+[00:20:59] demonstrate that real quick before we
+[00:21:00] jump back to stocks just so you can see
+[00:21:02] what this looks like when it pops up.
+[00:21:04] So, to show you what one of these
+[00:21:05] webhooks looks like filled in in real
+[00:21:07] time, I went ahead and pulled up the
+[00:21:09] Ethereum chart just so I can show you
+[00:21:11] some price action in motion since the
+[00:21:12] crypto market is always open and I'm
+[00:21:14] recording this on the weekend. I pulled
+[00:21:17] up this and I call this the the Doji SMA
+[00:21:20] strategy and this is a money losing
+[00:21:21] strategy that just watches the minute
+[00:21:24] the the 5-minute 2-minute crossover the
+[00:21:26] 5-minute. So, some arbitrary strategy to
+[00:21:29] force some webhooks to fire so that we
+[00:21:32] can see them in real time. So, don't
+[00:21:35] don't use this strategy at all.
+[00:21:37] And so, you'll see this is firing alerts
+[00:21:40] whenever
+[00:21:41] the doggy door, I call it the doggy
+[00:21:43] door, so I I identified it. The entry I
+[00:21:46] gave an ID of doggy door and the close I
+[00:21:48] closed the doggy door. That's how it's
+[00:21:50] it's writing open doggy door whenever
+[00:21:53] I open the strategy or enter the
+[00:21:55] strategy and it's saying close doggy
+[00:21:56] door after it closes. And so, I enabled
+[00:21:59] the alert here for Ethereum and let's
+[00:22:01] see if a new long will get fired here.
+[00:22:05] So, that green line is going to cross
+[00:22:06] above the yellow line and we're going to
+[00:22:08] say go long and we should get an alert
+[00:22:10] triggered here in a moment cuz it looks
+[00:22:12] like a big green candle is about to get
+[00:22:16] printed.
+[00:22:18] All right, so this big green candle
+[00:22:19] printed here and looks like my alert
+[00:22:21] popped up and you'll see that the JSON
+[00:22:24] message that we have has been filled
+[00:22:25] with actual values and since it's the
+[00:22:28] Ethereum chart, right, it filled it with
+[00:22:30] Ethereum related data that's related to
+[00:22:33] this chart that we have open.
+[00:22:35] So, I pulled this up and so, this was
+[00:22:37] just triggered and I can get this
+[00:22:39] payload here
+[00:22:41] and we can copy it to our Visual Studio
+[00:22:42] Code and we can start testing this
+[00:22:44] payload against a Python web app that we
+[00:22:46] write. And so, just to show you,
+[00:22:48] I'm going to paste that here. I'm going
+[00:22:51] to prettify it with my plugin and we got
+[00:22:53] a passphrase, we have a timestamp. So,
+[00:22:56] it's 31 minutes past the hour, we just
+[00:22:58] we just received it.
+[00:23:00] This was from the Binance exchange
+[00:23:01] Ethereum USDT. We have the open high,
+[00:23:03] low, close of the previous bar. So, if
+[00:23:05] you go back to Ethereum
+[00:23:07] to the chart here, you should see this
+[00:23:09] bar here. Looks like it had a close of
+[00:23:12] 353.18.
+[00:23:14] Oh, actually, it's probably the bar
+[00:23:15] before. So, that would probably be
+[00:23:17] 352.78.
+[00:23:19] And if I look here, the close was
+[00:23:21] 352.78. So, this long bar triggered the
+[00:23:24] alert. So, after it closed, we have the
+[00:23:26] information about the bar in this part
+[00:23:29] of the payload and then our strategy
+[00:23:31] here calculated a buy and sell. So, the
+[00:23:34] position size, it looks like
+[00:23:36] the way I had it, the contract size was
+[00:23:38] just 0.07,
+[00:23:40] right? And so, we could use we can have
+[00:23:42] this payload get posted to our Flask web
+[00:23:44] application, process it and place an
+[00:23:46] order and send it to another API and
+[00:23:48] send it to our Discord chat room, you
+[00:23:50] know, say Ethereum traded, post it to
+[00:23:53] our chat room and post the quantity, how
+[00:23:55] much money we made, that sort of thing.
+[00:23:58] So, that's how our alerts look and
+[00:23:59] that's how it looks in an email and a
+[00:24:01] pop-up. So, all we have to do now is
+[00:24:03] enable it as a webhook
+[00:24:05] and then we're going to give it a URL
+[00:24:06] like this after we deploy our our app.
+[00:24:09] It's going to be like
+[00:24:11] Alpaca webhook .heroku.app.com/webhook
+[00:24:16] and then it's going to post this payload
+[00:24:18] to our app in the in the cloud and then
+[00:24:21] we're also going to make a local version
+[00:24:22] where we have this ngrok URL and have it
+[00:24:24] posted to our local server as well. So,
+[00:24:27] that's enough of TradingView right now.
+[00:24:28] So, let's go ahead and jump to the
+[00:24:30] Python side and create an app to process
+[00:24:32] this message. So, as usual, we're going
+[00:24:34] to start from scratch. So, I have an
+[00:24:36] empty Visual Studio Code editor that's
+[00:24:39] open right here. I'm going to create a
+[00:24:40] new folder. So, I'm going to open the
+[00:24:42] folder. I'm going to do new folder. I'm
+[00:24:44] calling it TradingView
+[00:24:46] Alpaca
+[00:24:47] webhook.
+[00:24:49] Okay?
+[00:24:50] And I'm going to click open and we have
+[00:24:51] a new folder with nothing in it. I'm
+[00:24:53] going to create a requirements.text file
+[00:24:57] that's going to list out the
+[00:24:57] requirements we need for this
+[00:24:59] application and there's not very many of
+[00:25:00] them. We're just going to need Flask,
+[00:25:02] which is the web application framework
+[00:25:03] that we're using.
+[00:25:05] We're going to need Unicorn because
+[00:25:07] we're going to deploy this application
+[00:25:08] to Heroku and it's going to get served
+[00:25:10] up by Unicorn.
+[00:25:12] And then, we're going to use instead of
+[00:25:13] HTTP requests, regular HTTP requests
+[00:25:15] this time, we're going to use Alpaca
+[00:25:17] Trade API and we're just going to use
+[00:25:19] the official Python library that Alpaca
+[00:25:22] has made. I've been issuing a lot of raw
+[00:25:23] requests in this video, but I figured I
+[00:25:25] should use their official client for
+[00:25:26] once.
+[00:25:28] Okay? And I'm also going to use the
+[00:25:29] requests library. That way I can send an
+[00:25:31] HT an HTTP request to Discord. So, I'm
+[00:25:34] going to send a message to Discord to
+[00:25:36] post a chat message in this alert as
+[00:25:38] well. Okay? So, that's my
+[00:25:40] requirements.text.
+[00:25:42] And I have a virtual environment that I
+[00:25:43] set up, so I'm going to enable it. So,
+[00:25:46] I'm going to do activate like that and
+[00:25:48] I've done this in many videos. Learn how
+[00:25:49] to create a virtual environment cuz I
+[00:25:51] install all my packages inside of a
+[00:25:53] virtual environment. So, that's
+[00:25:55] activated now and if I go to my
+[00:25:58] TradingView
+[00:26:00] Alpaca webhook directory
+[00:26:02] and I type pip install requirements.text
+[00:26:05] like that with a dash R parameter, it'll
+[00:26:07] install all of the packages that I have
+[00:26:09] defined in my requirements.text file.
+[00:26:12] Okay? The next thing I'm going to do is
+[00:26:13] create a file called app.py and we're
+[00:26:15] going to have our entire Flask
+[00:26:18] application live in this application
+[00:26:20] app.py. And I'm also going to create a
+[00:26:22] config.py and as usual, we store some
+[00:26:25] config settings like our API keys,
+[00:26:27] passphrases, and things like that in
+[00:26:28] there and you'll enter your own there.
+[00:26:31] Okay? So, in app.py, we need a new Flask
+[00:26:34] application and we usually just copy the
+[00:26:36] quick start guide from Flask. So, if you
+[00:26:39] search for Flask in Python, you'll get
+[00:26:41] this flask.palletsproject
+[00:26:43] and there's this quick start guide right
+[00:26:45] here. This is the documentation for
+[00:26:46] Flask and we're going to create a new
+[00:26:48] application. We're going to paste that
+[00:26:50] into app.py and we're going to So, all
+[00:26:53] this does is it imports Flask, creates a
+[00:26:56] new Flask object, which is a new
+[00:26:58] application, and it defines a simple
+[00:27:00] hello world example. And all this does
+[00:27:02] is map a route. That's This is a
+[00:27:05] decorator for this function. And so,
+[00:27:07] this route just slash returns calls this
+[00:27:10] function hello world and returns the
+[00:27:11] string hello world to the browser. So,
+[00:27:13] to spin up the Flask development server,
+[00:27:16] you just need to type a couple of
+[00:27:18] commands. So, if we go back to our quick
+[00:27:19] start guide, this is our minimal
+[00:27:21] application code and then it gives us a
+[00:27:22] couple of commands here. So, we want
+[00:27:24] this export Flask app equals and so,
+[00:27:27] we're creating an environment variable
+[00:27:29] and we're going to say app.py since ours
+[00:27:31] is called app.py and this will let it
+[00:27:33] know when we type Flask run, it'll know
+[00:27:36] where the application is. So, if I type
+[00:27:38] Flask run,
+[00:27:41] it'll load up an environment and it'll
+[00:27:43] say running on 127. So, it's running on
+[00:27:46] localhost here on port 5000 and if I
+[00:27:49] paste that into my browser,
+[00:27:51] you'll see since the route is slash, we
+[00:27:54] get hello world there.
+[00:27:56] Okay? The next thing I want to do is
+[00:27:58] enable debug mode. That way when I add
+[00:28:00] new routes or new code, it'll
+[00:28:02] automatically reload the web server. So,
+[00:28:04] we don't want this development mode
+[00:28:06] production yet. So, what I'll do is
+[00:28:08] enable the debugger and reloading. And
+[00:28:10] so, to do that,
+[00:28:12] there should be another command on here
+[00:28:14] called debug mode and you just do this
+[00:28:16] export Flask env equals development. So,
+[00:28:19] we're going to run it in development
+[00:28:20] mode first. Okay? So, I'm going to stop
+[00:28:22] that. Control C. Export Flask env equals
+[00:28:24] development. If I run it again, you see
+[00:28:27] the environment is development and debug
+[00:28:29] mode is on. So, if I add a new route
+[00:28:31] now,
+[00:28:32] let's call it def webhook,
+[00:28:35] it'll reload and have this
+[00:28:37] route available to us. So, I'm going to
+[00:28:39] do return this is the webhook
+[00:28:42] route
+[00:28:44] and then to map to decorate this
+[00:28:47] function, I'm going to do app.route and
+[00:28:49] I want this accessible at /webhook. And
+[00:28:52] so, when I hit /webhook in the browser,
+[00:28:53] it'll call this webhook function and
+[00:28:55] return this response. So, that reloads
+[00:28:58] automatically and now if I go to
+[00:28:59] /webhook,
+[00:29:02] that's the webhook route. If I go back
+[00:29:04] here,
+[00:29:05] it's hello world. So, that's how you
+[00:29:06] create routes in Flask. And so, now I'm
+[00:29:08] going to replace this hello world. I'm
+[00:29:10] going to call it dashboard and let's
+[00:29:12] just create a quick template real quick.
+[00:29:14] So, you don't have to do this part. I'm
+[00:29:15] just going to do this just to make it
+[00:29:17] more of an app. So, we're going to do
+[00:29:19] a render template. So, I'm going to
+[00:29:21] import render template and create a
+[00:29:23] quick HTML template just to make this
+[00:29:25] look a little prettier.
+[00:29:26] Really, we we only really need a
+[00:29:27] webhook. We don't really need a
+[00:29:28] dashboard, but I'm going to do this just
+[00:29:30] to add some some extra features to this.
+[00:29:33] So, I'm going to return render template
+[00:29:35] and I'm going to call the template
+[00:29:36] dashboard.html
+[00:29:38] and then I'm going to create a new
+[00:29:38] folder called templates
+[00:29:41] and Flask already by default looks in
+[00:29:42] then a directory called templates and if
+[00:29:45] I create a dashboard.html
+[00:29:48] and create some HTML tags
+[00:29:51] and I'm going to create some styles real
+[00:29:53] quick as well. And let's create a body
+[00:29:57] and I'm going to say
+[00:30:00] Alpaca dashboard. Okay, do that. And
+[00:30:03] then let's get a little Alpaca logo
+[00:30:07] just to make it look cooler.
+[00:30:09] So Alpaca Markets logo
+[00:30:12] and let's just take this logo here and
+[00:30:15] include it on our page. So I'm going to
+[00:30:17] copy the image address and I'm going to
+[00:30:18] say image source
+[00:30:23] equals that.
+[00:30:26] And we'll give a style. We'll do body
+[00:30:29] background black.
+[00:30:30] Okay. And let's see what happens there.
+[00:30:33] So my app is rendering a template.
+[00:30:36] Instead of returning a string, we're
+[00:30:37] saying render this HTML template. So we
+[00:30:39] don't want to like write all of our HTML
+[00:30:41] in one big string big string. We want it
+[00:30:43] in HTML file. That way it's a little
+[00:30:45] easier just to control the presentation
+[00:30:47] part in this HTML file.
+[00:30:49] So if I go back to my dashboard now
+[00:30:52] and reload it, you see we have a web
+[00:30:54] page with our little Alpaca guy here.
+[00:30:56] And then what I'm going to do here is
+[00:30:58] just show a list of trades we made. So
+[00:31:00] we're going to use the Alpaca API, get
+[00:31:02] our list our order history and and place
+[00:31:04] it on here and show it in a table. And
+[00:31:06] so let's do that. So let's go ahead and
+[00:31:08] set up the flat the Alpaca API. And so
+[00:31:12] to do that, we need to since we already
+[00:31:13] installed the package for Alpaca, we
+[00:31:16] just need to import Alpaca trade API
+[00:31:20] like that as trade API. And at the top
+[00:31:23] here, let's go ahead and create an an
+[00:31:26] instance of this. So let's initialize
+[00:31:27] our API and tell it our API key. That
+[00:31:29] way this is linked to our Alpaca
+[00:31:31] account. So I'm going to do trade
+[00:31:33] API.rest.
+[00:31:35] And then you config.
+[00:31:37] I'm going to put my API key and secret
+[00:31:40] key inside of here. So API key equals
+[00:31:43] and you can put your API key.
+[00:31:45] And API secret equals your API secret.
+[00:31:48] So you'll have one on your account. And
+[00:31:50] actually I can go ahead and do this cuz
+[00:31:52] I just created a new one and throw it
+[00:31:54] away. So Alpaca makes it very easy to
+[00:31:56] create and throw away
+[00:31:58] API keys. So I'm going to log in as
+[00:32:00] myself.
+[00:32:10] And so and so I'll go into my paper
+[00:32:12] account here and log into Alpaca Markets
+[00:32:15] and you see I have some old Apple trades
+[00:32:16] in here that way I was demonstrating and
+[00:32:18] it says your API keys. I can regenerate
+[00:32:20] a key, delete the old one, create a new
+[00:32:23] one.
+[00:32:24] So I'll copy this API key ID and change
+[00:32:26] it later. So I'll do API key equals
+[00:32:28] that, secret key equals that.
+[00:32:31] Okay, and I'm also going to set that
+[00:32:33] passphrase we talked about here.
+[00:32:35] Webhook passphrase.
+[00:32:37] And let's set this to some long string.
+[00:32:39] Some long string 1 2 3. Choose something
+[00:32:43] more random than that. And so we're
+[00:32:44] going to authenticate our webhook
+[00:32:46] request by just checking a passphrase.
+[00:32:47] So just simple simple method there.
+[00:32:49] Okay, so now that we imported we have
+[00:32:51] our config file. Let's go ahead and
+[00:32:53] import config. That way it's accessible
+[00:32:56] in here.
+[00:32:57] And then now my rest API, if I hover
+[00:33:00] over I believe it'll show me
+[00:33:04] the parameters. There you go. Key. So
+[00:33:05] you need the key then the secret key and
+[00:33:08] then the base URL. So I'm going to do
+[00:33:09] config. API key, config.secret key or
+[00:33:14] API secret and my base URL
+[00:33:17] is and this is the paper API. So I'm
+[00:33:21] going to copy this. I have this written
+[00:33:22] down.
+[00:33:23] So you can do API for the real account
+[00:33:26] or paper API if you want to do a paper
+[00:33:28] trade. So we'll do a paper trade for
+[00:33:29] now. So API equals trade API rest. We've
+[00:33:33] initialized it and now let's just see if
+[00:33:35] we can get our account and orders real
+[00:33:37] quick. So I'm going now that I have API
+[00:33:39] initialized in our dashboard, I'm going
+[00:33:41] to say order equals API and you see how
+[00:33:44] my auto completion detects this in
+[00:33:46] Visual Studio Code cuz I have the Python
+[00:33:48] extension installed. It can look at this
+[00:33:51] and this is all the functions I have
+[00:33:52] available. And so I'm going to use the
+[00:33:53] one called list orders to get all my
+[00:33:55] orders. And in Flask, I can pass this
+[00:33:58] variable here orders to my template by
+[00:34:00] saying orders equals orders and that
+[00:34:03] makes a
+[00:34:04] let's call it Alpaca orders just to make
+[00:34:06] it unique. So in our template, this will
+[00:34:08] now give me a
+[00:34:10] named placeholder variable called Alpaca
+[00:34:13] orders and it's going to be set equal to
+[00:34:15] what was returned in orders. So if I go
+[00:34:17] to my dashboard here and just create a
+[00:34:19] quick table
+[00:34:21] I can loop through
+[00:34:23] so I can do for order in Alpaca orders
+[00:34:27] we can just display our orders.
+[00:34:30] Okay.
+[00:34:31] And so our order has a number of
+[00:34:33] attributes. Let's let's look at what
+[00:34:34] those attributes are. So I'm going to
+[00:34:35] print these orders on my console real
+[00:34:38] quick and hit this route just so we see
+[00:34:41] what we can display in our template. So
+[00:34:43] we hit our endpoint again and we look on
+[00:34:46] our console and you see we have a list
+[00:34:48] of orders. There's a bunch of dictionary
+[00:34:50] data here and we can access those keys.
+[00:34:52] So you see we have like a quantity,
+[00:34:54] order type and so forth. And so what I
+[00:34:56] can do in my template here is write out
+[00:34:59] these keys and display them in a table.
+[00:35:02] And so I'm going to loop through and
+[00:35:03] create new table rows and just display
+[00:35:05] these as I go. So let's let's create a
+[00:35:07] few cells here.
+[00:35:10] And I know this is deviating from our
+[00:35:12] goal of just doing the webhook, but I
+[00:35:13] just wanted to make a simple dashboard.
+[00:35:15] All right, so let's
+[00:35:17] create a few things. I'm going to do an
+[00:35:20] order.
+[00:35:21] created_at
+[00:35:23] And these are in in curly braces.
+[00:35:26] And then we're going to do
+[00:35:28] let's show the symbol we ordered.
+[00:35:30] And we're going to show the
+[00:35:32] type of order.
+[00:35:35] So it has a type, a side, so whether we
+[00:35:38] bought or sold.
+[00:35:40] So order.side
+[00:35:42] and I'll also do quantity, limit price
+[00:35:45] and filled average price. So
+[00:35:47] order.quantity
+[00:35:49] order
+[00:35:51] order.limit_price
+[00:35:54] and then the order it got filled at.
+[00:35:58] order.filled_average_price.
+[00:36:01] Okay. And let's just see if we can print
+[00:36:03] all our orders on the screen. So you
+[00:36:05] don't see anything cuz the background is
+[00:36:07] black. So I'm going to do font-family
+[00:36:11] Arial and then let's do text-align
+[00:36:14] center.
+[00:36:17] And let's do color white.
+[00:36:20] Okay, if I do it like that, you'll start
+[00:36:22] to see some information here. So that
+[00:36:23] was
+[00:36:24] very easy. And so let's do some stuff to
+[00:36:27] our table. So let's do table background
+[00:36:31] white and then have the color black be
+[00:36:34] in there.
+[00:36:35] Do that. Background black, color white.
+[00:36:40] Do that.
+[00:36:42] Background white.
+[00:36:46] Color black. There you go.
+[00:36:48] Uh
+[00:36:50] Okay, cool. We have that. And you know,
+[00:36:52] we can add a little more style here.
+[00:36:53] Let's do like a padding
+[00:36:56] 15 pixels.
+[00:36:58] And just display that out. I'll add a
+[00:37:00] margin and then I'm just adding some CSS
+[00:37:02] since since I know this stuff all right.
+[00:37:05] You don't have to do any of this if you
+[00:37:06] don't want to and I'll put some headings
+[00:37:08] on here. So we can do like some
+[00:37:10] headings. So we'll do
+[00:37:12] add a bunch of headings, right? So
+[00:37:15] So add a bunch of those and then I will
+[00:37:18] do
+[00:37:19] created, symbol
+[00:37:22] What do we have? Type
+[00:37:24] and side
+[00:37:27] quantity
+[00:37:29] and then limit price
+[00:37:31] and then filled price, right?
+[00:37:34] Okay, so we have some some headings
+[00:37:36] here. And then so we can style our
+[00:37:38] headings. We'll give those a background
+[00:37:41] light yellow.
+[00:37:43] And then we can also set uh
+[00:37:47] Let's do like a border radius to make
+[00:37:49] this round. So border radius on the
+[00:37:51] table and let's say that's 15 pixels.
+[00:37:54] Right? Okay, 10 pixels.
+[00:37:58] And then let's give it a little more
+[00:37:59] padding.
+[00:38:04] Cool, right? So that looks pretty
+[00:38:06] decent. We got our Alpaca dashboard. We
+[00:38:08] got a logo and then we have our list of
+[00:38:10] trades. You see some market orders, some
+[00:38:12] quantities and some buys and sells and
+[00:38:14] so forth. So you looks like I did
+[00:38:16] something in April previous video and
+[00:38:18] then I did a few to test this video out
+[00:38:20] already. So we have our list of trades
+[00:38:22] and now we can build our webhook your
+[00:38:25] our webhook URL and you should see it
+[00:38:27] append to this list of trades. So we
+[00:38:28] could like create our own dashboard for
+[00:38:30] like monitoring our trades. I know you
+[00:38:31] can just log into your Alpaca account.
+[00:38:33] But if you wanted to build your own like
+[00:38:34] trading platform on top of Alpaca, then
+[00:38:36] you could create your own custom
+[00:38:38] dashboard. So I just wanted to show
+[00:38:39] that's another possibility we could
+[00:38:40] explore in the future. So that is a
+[00:38:43] Flask template. This is a get request.
+[00:38:46] So I'm retrieving information and
+[00:38:48] rendering a template in response. I'm
+[00:38:50] accessing the Alpaca
+[00:38:52] API here and using their official
+[00:38:54] library. So now what we'll do, I'll
+[00:38:57] delete this orders thing. And then now
+[00:38:59] let's build out our webhook. So our
+[00:39:00] webhook from TradingView is actually a
+[00:39:03] post request. So by default, these
+[00:39:05] routes are get request. So if I if I
+[00:39:08] want this to be a post request, I need
+[00:39:10] to add methods equals post.
+[00:39:14] So this is a list of methods, HTTP
+[00:39:17] methods we want allowed. So when you're
+[00:39:19] like posting from a form or creating
+[00:39:21] something
+[00:39:22] and pushing data to the server, then use
+[00:39:25] a post or a put request. So I'm using a
+[00:39:27] post request. That's what TradingView
+[00:39:28] sends. They're going to be posting data
+[00:39:30] to us rather than just doing a get
+[00:39:31] request, right? So now if I go to
+[00:39:34] webhook/webhook
+[00:39:35] you'll see it returns invalid method.
+[00:39:38] Cuz when I just enter that in my
+[00:39:39] browser, that's a get request. So I want
+[00:39:41] to do is test a post request that posts
+[00:39:44] this payload. So, I got that payload and
+[00:39:46] I'm using this Insomnia client, which
+[00:39:48] lets me post test post requests, right?
+[00:39:51] So, if you don't have this, I covered it
+[00:39:53] in another video. Type Insomnia client
+[00:39:56] and get this. It's a very useful tool if
+[00:39:58] you're building any kind of APIs in
+[00:40:00] Python on the web, you need a tool like
+[00:40:02] either Postman or Insomnia to test those
+[00:40:05] requests. You can use curl or wget and
+[00:40:08] other command line utilities as well if
+[00:40:10] you're familiar, but this is a nice
+[00:40:12] graphical one. You want Insomnia Core.
+[00:40:14] You click latest release and you can
+[00:40:16] download Insomnia Core for Mac or OSX or
+[00:40:19] Windows. It's cross-platform. It's free.
+[00:40:22] So, this is it. And you do And with
+[00:40:24] this, you can create a new request,
+[00:40:27] right? And I'm going to call it
+[00:40:28] TradingView
+[00:40:29] uh post request. And I'm going to select
+[00:40:32] whether it's a get, post, put, patch, or
+[00:40:34] delete. We're doing a post request, and
+[00:40:36] the body we're going to do type other
+[00:40:38] here cuz I think uh
+[00:40:40] TradingView just posted it's like plain
+[00:40:42] and we're telling it it's JSON here. So,
+[00:40:45] uh it's not sending any headers for
+[00:40:46] JSON. We're just posting raw JSON here.
+[00:40:49] So, I'm going to do create.
+[00:40:51] Okay?
+[00:40:52] And so, what I've done is take that
+[00:40:53] payload we discussed earlier,
+[00:40:55] right? And I put in a passphrase ABCD
+[00:40:58] FGH, and then this is an example of a
+[00:41:01] TradingView webhook triggering. It would
+[00:41:03] post this data to our local server. And
+[00:41:05] so, if I do localhost:5000, just like I
+[00:41:08] did here, or 127 localhost and 127.0.0.1
+[00:41:11] is the same. So, I'm going to post to my
+[00:41:13] webhook this message.
+[00:41:16] And I click that, it says this is
+[00:41:17] webhook route.
+[00:41:19] Right? So, it's not doing anything
+[00:41:20] useful yet, but we do know that we can
+[00:41:22] send a post request to this webhook
+[00:41:24] route. So, now what we want to do is
+[00:41:26] take this data and send an order to
+[00:41:29] Alpaca.
+[00:41:31] Uh to do that, I'm going to open this
+[00:41:34] code here,
+[00:41:35] and let's change the response and let's
+[00:41:37] just say
+[00:41:38] uh
+[00:41:39] code success. So, we're we'll return a
+[00:41:41] dictionary that'll become JSON. We can
+[00:41:43] return success if it succeeds or failure
+[00:41:46] if it fails. So, I'm just going to
+[00:41:47] return success for now.
+[00:41:49] Okay?
+[00:41:50] So, code success is returned. And so,
+[00:41:52] now let's create an order. So, we get
+[00:41:54] this this data in our post request. And
+[00:41:58] so, to access this data, we need to
+[00:42:00] import another
+[00:42:02] another thing. We need to import
+[00:42:03] request. So, Flask provides this request
+[00:42:06] object where you can get information
+[00:42:08] about the request that was sent. And so,
+[00:42:10] we're going to get the data from the
+[00:42:11] post request and then we're also going
+[00:42:14] to load it into a dictionary by using
+[00:42:17] this JSON module. So, we're going to
+[00:42:19] import JSON as well. And that's not part
+[00:42:21] of Flask.
+[00:42:23] We're just going to import it like that.
+[00:42:25] So, import config and JSON. And then I'm
+[00:42:27] also going to import requests with an S
+[00:42:30] cuz that's another library that lets us
+[00:42:32] send HTTP requests outward. And that's
+[00:42:34] what I'm going to use to send the
+[00:42:35] Discord channel message. Okay? So, I'm
+[00:42:38] going to import requests there. Okay?
+[00:42:40] And so, now I already have an API. And
+[00:42:42] so, now
+[00:42:43] um I'm going to first get a copy of the
+[00:42:46] message. So, I'm going to say webhook
+[00:42:48] message. I'm calling it webhook message.
+[00:42:50] I'm going to do JSON JSON.loads
+[00:42:52] request.data. So, the data that's posted
+[00:42:54] in, I'm going to use JSON.loads to
+[00:42:56] convert that to a dictionary, and then I
+[00:42:57] should have that webhook message.
+[00:43:00] Okay? And let's return that message just
+[00:43:02] so you see what that looks like. Return
+[00:43:04] webhook message.
+[00:43:05] So, if I send it, you'll see we now have
+[00:43:08] the message available to us. So, we can
+[00:43:10] access these keys inside of here. So, if
+[00:43:13] I want the price, I can do um
+[00:43:16] I can do
+[00:43:18] uh order price here. So, webhook
+[00:43:21] message.
+[00:43:22] And since this is in inside of the
+[00:43:23] strategy key, I want strategy like that.
+[00:43:28] And then I want strategy and then inside
+[00:43:30] of that, I want the order price.
+[00:43:32] Okay?
+[00:43:33] So, I'll do that. And I'll also say uh
+[00:43:36] so, price equals that. I'm going to say
+[00:43:38] quantity
+[00:43:40] equals webhook message
+[00:43:43] strategy
+[00:43:45] and I'm going to take this order
+[00:43:46] contracts here, which is 171.
+[00:43:49] And so, whatever's posted will have an
+[00:43:51] automatically update will take the
+[00:43:53] prices that are reported by TradingView,
+[00:43:54] the the price, the number of contracts.
+[00:43:57] We're storing those in variables, and
+[00:43:58] we're going to send those variables to
+[00:44:00] the Alpaca API. So, we have a symbol,
+[00:44:02] and that's stored in ticker. So, I'm
+[00:44:05] going to do webhook message
+[00:44:07] ticker.
+[00:44:09] Okay? And then So, we have a And then we
+[00:44:11] have a side, right? So, this is
+[00:44:14] order action. So, side equals webhook
+[00:44:16] message
+[00:44:18] uh strategy
+[00:44:21] order action. Okay? So, we should have I
+[00:44:23] think that's all we really need. Let's
+[00:44:25] Let's just place a market order just to
+[00:44:26] make sure this goes in. Since the
+[00:44:28] market's not open, I'm not going to be
+[00:44:29] able to fill a limit order, but I'm
+[00:44:31] going to show you how we queue an order
+[00:44:33] up. Okay? So, in Alpaca, right? We can
+[00:44:36] say
+[00:44:37] order equals API. If If you look at our
+[00:44:39] functions here that are available, our
+[00:44:41] methods, you see the submit order.
+[00:44:46] Okay? And then it shows me my
+[00:44:47] parameters. So, I need symbol, quantity,
+[00:44:50] side, type. So, I have I have that stuff
+[00:44:52] already. Symbol, quantity, side, type.
+[00:44:55] Okay? And
+[00:44:57] So, type Actually, we can do a limit
+[00:44:59] order marker. It doesn't matter. This
+[00:45:00] isn't going to get filled. The market
+[00:45:01] isn't open.
+[00:45:03] Uh and then we can tell it a limit
+[00:45:04] price.
+[00:45:06] And we can say our limit price uh let's
+[00:45:09] use uh the price that was here. So,
+[00:45:11] order price, right? So, I'll use limit
+[00:45:13] price
+[00:45:14] of price here. So, limit price equals
+[00:45:17] price.
+[00:45:19] Okay? And then I believe I need that
+[00:45:21] good till canceled as well. So, let's
+[00:45:23] see if that works. Let's Let's see if
+[00:45:24] this will place an order.
+[00:45:26] Okay?
+[00:45:27] Uh I think maybe the GTC goes here.
+[00:45:30] Let's check on the order. So, submit
+[00:45:31] order
+[00:45:32] side
+[00:45:35] type of order, then time in force,
+[00:45:37] right? And then limit price. Okay, so
+[00:45:39] that that looks good. Um so, I'm going
+[00:45:41] to print the response. I'm going to
+[00:45:43] print order to the console. And let's
+[00:45:45] see what happens. So, I'm going to
+[00:45:46] submit this payload that TradingView
+[00:45:48] would send us.
+[00:45:49] And I get an error, you know, it didn't
+[00:45:51] work perfectly the first time. Says
+[00:45:52] positional argument follows keyword
+[00:45:54] argument. So, looks like I left a comma
+[00:45:56] there.
+[00:45:58] Run it again.
+[00:46:00] And I didn't get an error. And let's
+[00:46:02] look at our console. Let's see if we got
+[00:46:04] anything.
+[00:46:05] Uh looks like it did indeed submit an
+[00:46:07] order. We have some ID. So, that looks
+[00:46:10] like a successful order was submitted.
+[00:46:12] And since we have a dashboard, right? We
+[00:46:13] can check if it was. So, I just
+[00:46:15] submitted this. I'm going to refresh it,
+[00:46:17] and look at that. 32 minutes past the
+[00:46:19] hour, there was a quantity of 171
+[00:46:21] submitted for a limit price of 127.50.
+[00:46:24] And then if I look inside of my real
+[00:46:26] Alpaca account, uh you can also verify
+[00:46:31] that limit buy just went in. So, if I
+[00:46:33] submitted another one, right? Uh let's
+[00:46:35] say 128.50.
+[00:46:37] Click send.
+[00:46:39] You should see this refresh. So, you see
+[00:46:41] uh Alpaca seems to refresh in real time
+[00:46:42] like that, which is cool. So, it
+[00:46:44] accepted that order there as well. So,
+[00:46:47] that's really all we need actually,
+[00:46:48] right? So, TradingView, we use our Pine
+[00:46:51] Script, we create our alert, we create
+[00:46:54] it as a webhook, and then that webhook
+[00:46:57] posts this message. We have a Python
+[00:46:58] application that receives this message
+[00:47:01] and can place orders in Alpaca. So, we
+[00:47:03] have a complete flow, and that's running
+[00:47:06] locally. We've tested it with real
+[00:47:08] payloads using
+[00:47:10] the Insomnia client here. And so, what's
+[00:47:12] the only thing left to do is to hook
+[00:47:14] this up to TradingView. So, we have
+[00:47:16] TradingView open.
+[00:47:18] And instead of when we go to these this
+[00:47:21] gear, instead of showing pop-up sending
+[00:47:23] email, we just need to enter the enter
+[00:47:25] in the webhook URL so that TradingView
+[00:47:27] knows where this web web application is.
+[00:47:30] So, where is it? It's on my local laptop
+[00:47:33] right now, right? So, I want to deploy
+[00:47:34] this to the cloud. And this is where
+[00:47:36] Heroku comes into play.
+[00:47:38] Another step here. And I'll also show
+[00:47:40] you how to have it just running locally.
+[00:47:41] So, bear with me. Let's Let's do one
+[00:47:43] last step and get this dashboard running
+[00:47:45] in the cloud. So, So, to get started
+[00:47:47] with Heroku, sign up for free. I'm at
+[00:47:49] heroku.com. You just click sign up for
+[00:47:52] free. You see it supports a variety of
+[00:47:54] programming languages there and
+[00:47:55] frameworks. So, if you wanted to make a
+[00:47:57] Ruby on Rails app, Node.js app, Java
+[00:47:59] apps, Go, all that stuff, it's all
+[00:48:01] supported. PHP. I'm using Python here.
+[00:48:04] It's really easy to deploy Flask
+[00:48:06] applications here. Click sign up for
+[00:48:07] free. Uh sign up and then is actually
+[00:48:10] free. So, uh if The only way it's not
+[00:48:13] free is if you've run a whole big
+[00:48:14] company on top of this and need
+[00:48:16] scalability and all this stuff, then
+[00:48:18] then they'll eventually start charging
+[00:48:20] you. Okay? So, I already signed up and I
+[00:48:21] already logged in. And so, I have a list
+[00:48:23] of applications that I've created. And
+[00:48:26] so, I can create a new app just for this
+[00:48:28] webhook. And I'm going to call it uh
+[00:48:31] Alpaca webhook or TradingView Alpaca
+[00:48:34] webhook.
+[00:48:35] And I'm going to click create app.
+[00:48:37] I'm going to host it in United States.
+[00:48:39] Create it. Um I've taken that name. Now,
+[00:48:41] if you try to use that name, you
+[00:48:43] probably can't. So, choose a unique
+[00:48:44] name. And this will show you how to get
+[00:48:46] started. So, to get started, they give
+[00:48:48] you a CLI tool to make it easy to
+[00:48:50] deploy. So, it says download and install
+[00:48:52] Heroku CLI. Make sure you do that on um
+[00:48:56] OSX, you'll probably have Homebrew.
+[00:48:59] And so, you'll do brew install like
+[00:49:01] this. And so, just to show you that real
+[00:49:03] quick,
+[00:49:04] I I type brew install, right? And then
+[00:49:08] if you don't have Homebrew,
+[00:49:10] just just good just Google that. Install
+[00:49:12] Homebrew Mac. If you're creating a lot
+[00:49:15] of developer tools and doing a lot of
+[00:49:16] development on Mac, you should have
+[00:49:18] Homebrew installed. And it gives you a
+[00:49:20] simple command to install Homebrew. And
+[00:49:22] then Homebrew, use that to install
+[00:49:24] Heroku. If you're on Windows, they
+[00:49:26] probably have a setup.exe. You can
+[00:49:27] download the installer. Or if you're on
+[00:49:29] Ubuntu, there's another way to install
+[00:49:31] it here. There's a bunch of Linux
+[00:49:33] distributions. So,
+[00:49:34] I'm using Homebrew to install it on my
+[00:49:36] Mac. And then you'll see it'll run
+[00:49:39] update Homebrew and all that kind of
+[00:49:40] stuff. Um so once that finishes, so I
+[00:49:42] already actually have it. So if I type
+[00:49:44] Heroku, you see I have this command line
+[00:49:46] command which with all of these
+[00:49:48] different uh options, right? So if all I
+[00:49:51] need to do is type Heroku login.
+[00:49:54] So I'm going to type uh
+[00:49:56] Heroku login. So I'm going to go to my
+[00:49:58] command line here.
+[00:50:00] Heroku login, type that. It says press
+[00:50:02] any key to open the browser to login.
+[00:50:05] So
+[00:50:06] this will pop up something and I just
+[00:50:08] say uh
+[00:50:09] give it permission for the CLI to access
+[00:50:12] my Heroku account. So I did that and
+[00:50:14] then now I should be able to use my
+[00:50:16] Heroku commands. And so to create a new
+[00:50:19] Heroku app and synchronize my local code
+[00:50:22] with what gets deployed to Heroku, I go
+[00:50:24] into my project directory, which I'm
+[00:50:26] already in here, TradingView Alpaca
+[00:50:28] Webhook. I initialize it as a Git
+[00:50:30] repository. So I do Git init. Make sure
+[00:50:32] you have Git installed. You should have
+[00:50:34] it already. Since that's where I post
+[00:50:36] all of these code examples. So Git init.
+[00:50:38] I have initialized a Git repository.
+[00:50:40] And then I copy this command.
+[00:50:43] And that creates a new remote
+[00:50:44] repository. So I have my local Git
+[00:50:47] repository and then by typing this I add
+[00:50:50] this remote uh code repository uh that's
+[00:50:53] on Heroku and that's the remote. And so
+[00:50:56] I make my changes locally, commit them
+[00:50:57] locally, and then I push them remotely,
+[00:50:59] and then Heroku packages all of this up
+[00:51:01] and deploys it as an app. Okay? So I got
+[00:51:05] that going. And so now I need to deploy
+[00:51:07] it. So I'm going to add my code to my
+[00:51:09] repository. So I type Git add dot.
+[00:51:13] Okay. So I have all these files.
+[00:51:16] Git add dot. And I'm going to commit
+[00:51:19] and give it a message.
+[00:51:21] So I'm going to call it I'm going to say
+[00:51:23] my message is initial commit.
+[00:51:25] Do that. It adds my files and then I
+[00:51:28] just new do Git push Heroku master.
+[00:51:31] So let's see if this deploys our
+[00:51:34] application to the cloud. And I already
+[00:51:36] know something that will go wrong here
+[00:51:38] and then we're going to fix it. So I'm
+[00:51:39] going to make a mistake on purpose and
+[00:51:41] then we're going to show you how to look
+[00:51:43] at the Heroku logs and debug that and
+[00:51:45] then we're going to push a fix for our
+[00:51:47] code into production. Okay? So
+[00:51:51] since I have a requirements.txt here uh
+[00:51:54] Heroku knows which uh dependencies to
+[00:51:56] install. So it's taking my
+[00:51:57] requirements.txt here and you see it
+[00:51:59] says remote. It's installing all of
+[00:52:01] those packages on the Heroku side of
+[00:52:03] things on the server. Packages them up,
+[00:52:06] uh getting my source code, it has
+[00:52:07] repository. All that code's getting
+[00:52:09] committed and then it's going to be able
+[00:52:11] to run my app in the cloud. So after
+[00:52:14] this is done, it's going to give me a
+[00:52:15] nice URL at herokuapp.com
+[00:52:18] and that should be mapped to my
+[00:52:20] application. Okay?
+[00:52:22] So it says done and it says
+[00:52:25] tradingviewalpaccawebhook.herokuapp.com
+[00:52:27] was deployed to Heroku. And now if I go
+[00:52:30] to this in the browser
+[00:52:32] you you should see an error, right? So
+[00:52:36] I'm going to do that.
+[00:52:37] And it says application error, an error
+[00:52:39] occurred in the application, your page
+[00:52:41] cannot be served. So to debug it it says
+[00:52:44] run Heroku logs tail. And what this does
+[00:52:46] is let you see the server logs from your
+[00:52:49] local machine without SSHing in or doing
+[00:52:51] anything, right? So this Heroku command
+[00:52:53] gives you the ability to see the logs.
+[00:52:56] And so I type Heroku log tail. You can
+[00:52:58] see the logs of oh initial release, sees
+[00:53:00] it's I see that it built and released
+[00:53:03] and then here's my error, no web process
+[00:53:05] is running.
+[00:53:07] And what that means, if you look that
+[00:53:08] up, is it it actually doesn't know how
+[00:53:10] to serve up my application yet. It has
+[00:53:11] the code but I didn't give it like the
+[00:53:13] software needed to or the process needed
+[00:53:16] to run this app. So this is going to use
+[00:53:18] a web server uh to run our app or an
+[00:53:20] application server. And so
+[00:53:23] there's one last thing you need and it's
+[00:53:24] a Procfile. And so if you look up Heroku
+[00:53:28] Procfile
+[00:53:30] so if you look at any guide here, you'll
+[00:53:31] see the definition of the Procfile. So
+[00:53:34] if I look at Procfile, you just need
+[00:53:35] this little line here, adding a
+[00:53:36] Procfile.
+[00:53:38] And so I create a new file
+[00:53:40] and I'm doing capital P
+[00:53:42] Procfile like that. And inside that file
+[00:53:44] I'm putting this, web unicorn app app.
+[00:53:47] So it says uh we're serving up a web
+[00:53:49] app, we're using unicorn and we need
+[00:53:51] since our app is called app.py, you put
+[00:53:53] this name app here and it knows where it
+[00:53:55] is and how to serve it up. And so now
+[00:53:59] if I deploy that again, I'm going to do
+[00:54:00] Git add dot, I'm going to commit it.
+[00:54:03] Added Procfile.
+[00:54:05] And I'm going to push Heroku master. I'm
+[00:54:08] going to push this up to the cloud again
+[00:54:10] and it should redeploy it with this
+[00:54:11] Procfile and it'll know to use unicorn
+[00:54:14] to serve up this web application. So I
+[00:54:16] let it finish.
+[00:54:17] I still have the same address and let's
+[00:54:19] reload it and see if it works now.
+[00:54:21] So just like that, you see we have this
+[00:54:24] live public dashboard of all of my
+[00:54:26] trades and this is linked to my account.
+[00:54:29] So there's one more step we're going to
+[00:54:31] want to add, right? Our webhook can be
+[00:54:33] posted to from anyone. And that's why we
+[00:54:35] put that little webhook message uh that
+[00:54:38] webhook passphrase in this config.py. So
+[00:54:41] we need it to say some long string 123.
+[00:54:43] So what I want to do is process uh this
+[00:54:46] webhook message and make sure it has the
+[00:54:48] valid pass passphrase that uh matches
+[00:54:51] what's in our config.py. So I'm going to
+[00:54:53] say if uh webhook message
+[00:54:56] and our webhook message we're sending in
+[00:54:58] this passphrase. So webhook message
+[00:55:00] passphrase
+[00:55:05] does not equal config.webhook_passphrase
+[00:55:09] then we're going to abort with a 403
+[00:55:11] unauthorized. It's going to stop uh the
+[00:55:13] request. Or we can just return a
+[00:55:15] response like um a dictionary and say
+[00:55:18] code error
+[00:55:20] and say pass uh message
+[00:55:24] nice try, buddy.
+[00:55:25] And then it'll just stop the request
+[00:55:26] right there and then none of this logic
+[00:55:28] will run and they can't really do
+[00:55:30] anything, right? So if I post this now
+[00:55:32] to my local webhook
+[00:55:35] uh let me run the application again. So
+[00:55:37] I'm going to do flask run.
+[00:55:39] Start it back up. I'm going to test
+[00:55:41] this.
+[00:55:42] And I get the error nice try, buddy cuz
+[00:55:43] I sent a b c d e f g h and it doesn't
+[00:55:46] match this webhook passphrase that's in
+[00:55:49] here. So if I post the correct
+[00:55:51] passphrase and put that in my
+[00:55:53] TradingView payload and do that
+[00:55:56] it actually executes the trade
+[00:55:58] and goes through and then now if I
+[00:56:01] refresh, you'll see that we have another
+[00:56:03] trade there. So that worked as planned.
+[00:56:06] So I have this minimal layer of
+[00:56:08] protection here. And now that that's
+[00:56:10] protected
+[00:56:11] I can also add
+[00:56:14] my new version of app.py and commit it
+[00:56:16] again. So you can see how you can
+[00:56:17] maintain this application locally.
+[00:56:20] Added passphrase.
+[00:56:23] And then push Heroku master and you can
+[00:56:26] just iterate locally and then keep
+[00:56:27] pushing it to Heroku and I don't need to
+[00:56:29] like log into the server, install all
+[00:56:32] install a web server, configure um
+[00:56:34] engine x config, Apache config um SSL,
+[00:56:38] all these other things you would you
+[00:56:39] would have to do normally and update a
+[00:56:41] server. Um I'm just pushing code to the
+[00:56:43] server and letting Heroku worry about
+[00:56:46] that. So that's what a platform as a
+[00:56:48] service, that's the power power it
+[00:56:49] provides. And so this will get deployed
+[00:56:51] in a moment and we'll have this updated
+[00:56:53] uh code here. And so
+[00:56:56] um what I'll do now is get ready to test
+[00:56:58] this. So I'm going to go back to a b c d
+[00:57:01] 1 2 3 a b c 1 2 3 and then we're going
+[00:57:04] to get while that's deploying, I'm going
+[00:57:06] to get the address
+[00:57:08] and make sure it works remotely. So I'm
+[00:57:09] going to run this trade again and I'm
+[00:57:11] going to post to that address {slash}
+[00:57:13] webhook.
+[00:57:15] And so I'm going to post it remotely and
+[00:57:16] if I can post it remotely, then I know
+[00:57:18] TradingView can post to it as well.
+[00:57:20] Okay? So it's deployed. I'm going to run
+[00:57:22] it. Click post. Says nice try, buddy
+[00:57:25] buddy. So I have my password protection
+[00:57:27] in and I'm going to do my some long
+[00:57:29] string
+[00:57:30] or whatever password you use. So some
+[00:57:33] long string 1 2 3.
+[00:57:36] And boom. And then go back to my public
+[00:57:38] dashboard.
+[00:57:39] And you see I placed another trade. So
+[00:57:41] that's it for our webhook and our
+[00:57:42] dashboard. And just for fun, one last
+[00:57:44] bonus feature, uh I'm going to fire up
+[00:57:47] Discord here. If you're unfamiliar with
+[00:57:49] Discord, it's similar to Slack. It's
+[00:57:50] used by gamers typically uh but it's a
+[00:57:53] free chat room basically and they
+[00:57:54] provide ways to integrate with that chat
+[00:57:56] room and create bots and so forth. And
+[00:57:58] so I'm going to have my little chat
+[00:57:59] room, Part Time Larry server. I created
+[00:58:01] a a new uh chat server here and I'm
+[00:58:03] going to have our webhook automatically
+[00:58:05] post our trades to this uh a chatbot. So
+[00:58:09] uh to do that, uh I'm going to go to my
+[00:58:11] channel here and on my server, I click
+[00:58:14] on my server name and I'm going to say
+[00:58:16] server settings. And completely
+[00:58:17] optional, you can do this if you want
+[00:58:19] to. I'm going to do integrations and I'm
+[00:58:21] going to create a webhook, right? And so
+[00:58:23] I created a webhook. So I do new webhook
+[00:58:26] and I'll call it Alpaca alerts and I'll
+[00:58:29] link it to a certain channel
+[00:58:31] and then hit save. So I'm going to copy
+[00:58:33] the URL it generated and hit save.
+[00:58:38] Okay.
+[00:58:42] So you see I have this webhook that's
+[00:58:45] good to go. And so this webhook looks
+[00:58:48] like this. So I'm going to do a new
+[00:58:49] request
+[00:58:51] my web uh Discord webhook
+[00:58:53] and let's try posting to this thing and
+[00:58:55] see what happens, right? So this is
+[00:58:57] going to accept a JSON payload. So I'm
+[00:58:59] going to put JSON there.
+[00:59:00] And then I copied my webhook URL it gave
+[00:59:03] me. So it generates this long URL that I
+[00:59:05] can use and then I can post messages to
+[00:59:07] that, right? And so it expects some JSON
+[00:59:10] to get posted. And so if I go to Discord
+[00:59:14] uh webhook payload
+[00:59:16] uh we can see the format that it
+[00:59:18] expects. So we just need to post some
+[00:59:19] data uh to a Discord. And so
+[00:59:24] uh there's some long documentation but I
+[00:59:26] I've extracted this out already and so
+[00:59:28] I'll show you what it accepts. So the
+[00:59:31] chat message look a basic chat message
+[00:59:33] uh looks like this. So, uh it's just
+[00:59:35] JSON data. You need to give it a
+[00:59:37] username for your bot, so I'm going to
+[00:59:38] call it strategy alert.
+[00:59:40] And then you need to you can give it an
+[00:59:42] avatar if you want to. So, um I have one
+[00:59:46] here that I can use just for fun.
+[00:59:48] So, you can give it a logo or whatever,
+[00:59:50] however you want your bot to be
+[00:59:51] represented. So, I'm going to do uh
+[00:59:53] avatar URL.
+[00:59:56] Okay, so I have a little avatar. And
+[00:59:58] then I need to give it some content. And
+[01:00:01] the content is just the string that you
+[01:00:03] want what you want the chat message to
+[01:00:04] be. And so, I'm going to do an F-string
+[01:00:07] or I'm going to do a string here and I'm
+[01:00:09] going to say uh Bollinger Band
+[01:00:12] strategy.
+[01:00:14] And I'm just going to post this to my
+[01:00:16] Discord app and let's see what happens.
+[01:00:19] So, if I I do that, I go to my chat room
+[01:00:21] and it says strategy alert, Bollinger
+[01:00:22] Band strategy. So, I tested this webhook
+[01:00:24] URL from my Insomnia client, right? And
+[01:00:27] so, now I'm just going to post to this
+[01:00:29] URL um from my
+[01:00:32] Python application. So, I'll go here and
+[01:00:35] I'll say uh Discord URL. Let's just give
+[01:00:37] it the URL up here. So, I'll do Discord
+[01:00:40] URL.
+[01:00:41] And I'm going to use the URL they
+[01:00:42] generated for me that I copied to my
+[01:00:44] clipboard. And then I'm just going to
+[01:00:45] use the Python request library to post a
+[01:00:48] a message to uh the uh chat server. So,
+[01:00:52] when this webhook comes in, I'm going to
+[01:00:54] say chat message. Let's just create a
+[01:00:56] little dictionary. And I'm going to do
+[01:00:58] the same thing, right? I'm going to take
+[01:00:59] this
+[01:01:01] and post it in here.
+[01:01:03] And so, I'm going to say chat message
+[01:01:05] equal to this.
+[01:01:06] Chat message equals this.
+[01:01:08] Right? Strategy alert, some avatar. And
+[01:01:10] then since I'm in my Python side, I can
+[01:01:12] use the variables that come in from my
+[01:01:13] webhook and say Bollinger Band strategy
+[01:01:16] triggered.
+[01:01:18] And I put an F-string here, so there's
+[01:01:19] an F in front of there. And I can put
+[01:01:22] some named variables in there as a
+[01:01:23] result. So, I'll say uh quantity
+[01:01:27] symbol
+[01:01:29] at
+[01:01:30] price. And put that in there.
+[01:01:33] And then now I just want to post that uh
+[01:01:36] webhook message, so I'm going to do
+[01:01:37] request.post. And I'm going to do uh
+[01:01:40] Discord URL that I set above. And I'm
+[01:01:42] going to say JSON equals chat message.
+[01:01:44] And it should post that
+[01:01:46] that message as JSON to my Discord
+[01:01:49] webhook URL.
+[01:01:51] My app is not running.
+[01:01:53] So, I'm going to run it back up. Flash
+[01:01:54] run.
+[01:01:55] Post it.
+[01:01:57] And let's see if we get a response.
+[01:01:59] Let's look in our Discord server.
+[01:02:01] And sure enough, Bollinger Band strategy
+[01:02:02] triggered, 171 Apple shares at 128.50,
+[01:02:06] which matches my payload that would be
+[01:02:07] sent by TradingView. So, that's that's
+[01:02:10] great. So, now we have a cool way to
+[01:02:11] have a little chatbot integrated with
+[01:02:13] TradingView, which is a feature that's
+[01:02:15] the powerful power of these webhooks is
+[01:02:17] it lets us add functionality in our own
+[01:02:19] code and hook it in to TradingView and
+[01:02:21] add our own custom functionality. And
+[01:02:24] so, I can just deploy that, too. app.py,
+[01:02:26] commit that. Add a Discord support. And
+[01:02:30] then I added a new feature, so I'll do
+[01:02:31] get push Heroku master and have that
+[01:02:34] deployed to the cloud. And then this
+[01:02:35] functionality is available remotely. And
+[01:02:38] then the final thing to do to hook it up
+[01:02:41] to TradingView
+[01:02:42] is we get our URL
+[01:02:45] uh that's been given to us. And let's go
+[01:02:47] back to here. Uh this is our remote uh
+[01:02:50] address. And so, we have that. And so,
+[01:02:52] we just go back to TradingView.
+[01:02:54] And we go to our webhook.
+[01:02:56] We say we want a webhook URL.
+[01:02:58] And we have a webhook URL now.
+[01:03:01] Boom, {slash} webhook. It's going to
+[01:03:02] post a message. It's going to post a
+[01:03:04] message just like the one that we tested
+[01:03:06] and it's going to create a chat message.
+[01:03:08] It's going to place an Alpaca order and
+[01:03:10] we can just walk away and let this trade
+[01:03:13] our account and post messages to our
+[01:03:15] subscriber list or whatever you whatever
+[01:03:17] you do with your chat room, you know?
+[01:03:18] So, I'm going to save that and that's
+[01:03:20] good to go. And when the markets open,
+[01:03:21] this will actually work and place trades
+[01:03:23] for us and automatically trade based on
+[01:03:25] whatever strategy we have loaded into
+[01:03:28] Pine Script, in this case a Bollinger
+[01:03:30] Band uh breakout strategy. So, uh
+[01:03:33] that's it. That's it for this video. We
+[01:03:34] covered so much stuff here. Oh, and last
+[01:03:37] but not least, let's pretend you don't
+[01:03:39] want to use Heroku at all and for some
+[01:03:41] reason you want to use your laptop and
+[01:03:42] just have that open and function as your
+[01:03:44] server. Um I promise that I'll show you
+[01:03:47] how to do that as well. So, ngrok, you
+[01:03:49] have a way to uh tunnel create a tunnel
+[01:03:52] address to your local machine. So, I'm
+[01:03:54] going to click get started for free.
+[01:03:56] And uh you sign up for an account or
+[01:03:58] whatever, so I've already done that. And
+[01:04:00] it gives you this free utility that you
+[01:04:01] can use and it shows you how to install
+[01:04:04] it. So, you install it, you download it,
+[01:04:06] you just unzip it and it's just a
+[01:04:07] script, an executable that you run on
+[01:04:09] your local machine. So, you download
+[01:04:11] that. And you'll get this ngrok here.
+[01:04:13] So, I'm downloading that now and I just
+[01:04:16] put that in some path on my machine. And
+[01:04:18] then you can link this uh to your local
+[01:04:21] server. So, uh let's do that. So, I'm
+[01:04:24] unzipping it or I'm So, I'm downloading
+[01:04:26] this now and I'll let that finish. And I
+[01:04:28] think it's already finished, actually.
+[01:04:29] So, I already downloaded that locally
+[01:04:31] and I just put the zip file inside of my
+[01:04:33] project directory here. And let me just
+[01:04:35] unzip it. So, unzip it with whatever
+[01:04:37] utility you have. And then so, I get
+[01:04:39] this little ngrok utility here.
+[01:04:41] And let's see how to use that. So, I'm
+[01:04:43] going to go to my local directory here
+[01:04:46] and type uh ngrok {dot} {slash} ngrok
+[01:04:48] and it'll run this command, right? And
+[01:04:50] so, this gives me details about the
+[01:04:53] command. So, it says run this to connect
+[01:04:56] it to your account. So, I'll do that.
+[01:04:58] So, it saved some kind of token. And
+[01:05:00] then I just type ngrok HTTP and then
+[01:05:03] some uh port number that I want to serve
+[01:05:06] up, that I want to forward to port 80.
+[01:05:08] So, since my Flask application, I'm
+[01:05:11] going to run it and it's running on port
+[01:05:13] 5000, I can create my terminal and let's
+[01:05:17] run ngrok here.
+[01:05:19] Right? So, I can do ngrok
+[01:05:21] and then I just say uh serve up port
+[01:05:24] 5000. So, this is port 80, but I'm
+[01:05:26] running on port 5000. And so, this will
+[01:05:28] give me a secure URL. So, ngrok HTTP
+[01:05:32] 5000.
+[01:05:33] And it'll create some kind of tunnel
+[01:05:35] here and then give me this URL that's
+[01:05:37] remotely accessible. So, this is a uh
+[01:05:39] secure URL right here and it can map to
+[01:05:42] my local machine. And so, if I go here
+[01:05:45] to this address, this address is already
+[01:05:47] in the cloud.
+[01:05:48] And if you look,
+[01:05:50] you'll see it's actually hitting my
+[01:05:52] local machine. So, I'm going to go here
+[01:05:53] to my Flask application. If I refresh
+[01:05:56] that, you'll see it's actually that URL
+[01:05:59] is hitting my local machine.
+[01:06:01] Right? So, if I make a change here,
+[01:06:03] let's go in my template real quick and
+[01:06:05] just go uh
+[01:06:07] this is local.
+[01:06:09] Even though that's a remote URL,
+[01:06:12] you see that word this is local is
+[01:06:14] printed right here below Alpaca
+[01:06:15] dashboard. And so, that proves my local
+[01:06:17] changes. If I just want to run this
+[01:06:19] locally without deploying to the cloud,
+[01:06:20] this gives me a remotely accessible URL.
+[01:06:22] And so, I can take this URL {slash}
+[01:06:24] webhook now
+[01:06:26] and connect this to my uh
+[01:06:29] webhook URL. Paste that right in here.
+[01:06:31] And now I have a way to remotely uh
+[01:06:34] expose my local server if I want to. I
+[01:06:36] don't typically do that, but a lot of
+[01:06:38] people don't want to deal with Heroku
+[01:06:39] and Amazon and all that. But I like to
+[01:06:41] have something running in the cloud,
+[01:06:43] same way I serve my websites and things
+[01:06:45] like that. So, um yeah, that's pretty
+[01:06:47] much it. Look at all we covered. We
+[01:06:49] covered a basic Pine Script. We talked
+[01:06:51] about um
+[01:06:52] Bollinger Band breakout strategies. We
+[01:06:54] talked about alerting, JSON payloads,
+[01:06:56] webhook URLs. We created a Flask
+[01:06:59] application from scratch. We talked
+[01:07:01] about deploying to the cloud using
+[01:07:02] Heroku and we talked about tunneling to
+[01:07:04] our local machine using ngrok. So,
+[01:07:07] covered tons of material. I hope you
+[01:07:08] learned something. You can do all kinds
+[01:07:10] of cool stuff with this. We even did
+[01:07:12] Discord. We integrated with a chatbot.
+[01:07:14] So, tons of stuff we we covered in this
+[01:07:16] hour. And so, yeah, I hope you liked it.
+[01:07:19] Please like and subscribe for future
+[01:07:20] videos and keep posting on the message
+[01:07:23] board. Follow me on Twitter. All that
+[01:07:24] stuff. I know I don't always get back to
+[01:07:27] everything because it takes a long time
+[01:07:29] to create these videos. But I promise
+[01:07:30] you I'm going to keep going on with this
+[01:07:32] for years and years. So, uh this
+[01:07:34] community is only going to continue to
+[01:07:35] grow. So, uh thanks a lot for watching
+[01:07:38] and stay tuned for the next video.

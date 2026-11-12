@@ -1,0 +1,594 @@
+[00:00:00] hey everyone welcome back today I'm
+[00:00:01] going to be kicking off our discussion
+[00:00:04] of open- source algo trading Frameworks
+[00:00:07] now what do I mean by that well the best
+[00:00:09] way to explain it is to start with a few
+[00:00:11] different examples of Frameworks that
+[00:00:13] I'll be discussing so here is a list of
+[00:00:17] various uh popular trading Frameworks
+[00:00:19] that are available depending on whether
+[00:00:20] you're interested in trading
+[00:00:22] cryptocurrency or whether you're trading
+[00:00:24] uh equities so the first trading bot
+[00:00:26] framework I'll be discussing is fr trade
+[00:00:28] which is a popular open- Source uh
+[00:00:31] trading bot based on indicators and you
+[00:00:33] can see the website here at FR trade.io
+[00:00:36] and I also have this running right now
+[00:00:39] in the cloud on my own server and so
+[00:00:42] this provides a user interface for
+[00:00:44] managing your trading bot and if I go to
+[00:00:47] trade here you can see uh I can monitor
+[00:00:49] all the different trading pairs I can
+[00:00:51] see my uh daily trading stats so you can
+[00:00:53] see how I deployed this looks like 4
+[00:00:55] days ago and I've had it running uh 24/7
+[00:00:58] and you can see how much money it's
+[00:01:00] making or losing and so you can see the
+[00:01:02] first day it's up $675 lost $4 up $3 up.
+[00:01:06] 97 this is just running with a small
+[00:01:08] amount of money and so you can see the
+[00:01:10] balance here it's just about $600 that I
+[00:01:12] have trading right here and it's staking
+[00:01:14] $100 at a time on any of the different
+[00:01:17] currencies depending on whether it runs
+[00:01:19] into the signal that is defined in the
+[00:01:22] strategy and so you can easily see your
+[00:01:24] daily stats your balances uh your
+[00:01:27] performance so you can see all of the
+[00:01:29] trades are profit Prof for these pairs
+[00:01:31] except for ethereum which is a big loser
+[00:01:33] uh right now and you can also do a
+[00:01:35] variety of different things from this
+[00:01:37] web user interface when using FR trade
+[00:01:39] so you can stop and start the bot you
+[00:01:41] can pause it you can uh shut it down uh
+[00:01:44] you can check out a dashboard to see
+[00:01:46] your cumulative profit and you can also
+[00:01:49] uh chart various trading pairs on
+[00:01:51] different time frames and you can also
+[00:01:53] monitor the log so rather than sshing
+[00:01:56] into machine you want to see if your
+[00:01:58] trading bar is running whether trades
+[00:01:59] are actually successfully being executed
+[00:02:01] how you expect them to be whether
+[00:02:03] there's any timeout or things you need
+[00:02:05] to fix and so forth so this logging
+[00:02:07] functionality is really nice and as I
+[00:02:09] mentioned uh you can log into this from
+[00:02:11] the web and it also has support for
+[00:02:13] controlling the bot via telegram which
+[00:02:15] is pretty cool so the first trading bot
+[00:02:17] framework I'll be discussing in the
+[00:02:19] series is frk trade and I'll get started
+[00:02:21] with that in the next video so that one
+[00:02:23] will be all about FR trade how to get it
+[00:02:25] up and running on your local machine how
+[00:02:27] to uh Implement a basic strategy and how
+[00:02:30] to deploy that to the cloud using Docker
+[00:02:34] and all that all that sort of stuff so
+[00:02:35] I'll give you a complete tutorial of how
+[00:02:37] to use fre trade so FR trade is just one
+[00:02:39] example of a bot trading framework just
+[00:02:41] like there's many different web
+[00:02:42] application Frameworks and many
+[00:02:44] different databases out there to run
+[00:02:46] your application on top of there's a lot
+[00:02:47] of different trading Frameworks
+[00:02:49] available and there's different pros and
+[00:02:50] cons to each one of them you might want
+[00:02:52] to try each of them out and see which
+[00:02:53] one uh you understand a bit better so I
+[00:02:55] know some people find Vector BT
+[00:02:57] confusing some people have found back
+[00:02:59] Trader confusing and so forth so uh
+[00:03:01] different Frameworks will resonate with
+[00:03:03] different people and so I'll be trying
+[00:03:05] out a variety of these so FR trade will
+[00:03:07] be the first one I do a deep dive into
+[00:03:09] in the next video I'll also be taking a
+[00:03:12] look at Jesse trade so if you watched uh
+[00:03:15] earlier in the year I did a live stream
+[00:03:17] so here's the website for Jesse trade
+[00:03:19] which is another uh python based package
+[00:03:22] with a view I believe it's a vue.js user
+[00:03:24] interface as well and so it provides
+[00:03:26] similar functionality where you can back
+[00:03:28] test a run your fetch data optimize and
+[00:03:32] deploy uh your strategy live it's open
+[00:03:35] source it has a Discord it has a
+[00:03:36] community and has some of the same
+[00:03:39] functionality as FR trade and so I need
+[00:03:41] to try this one out and I'll document
+[00:03:43] that process and share that with you and
+[00:03:46] let you know what I think I'm also going
+[00:03:48] to take a look at hummingbot which is a
+[00:03:51] little bit different so if you look at
+[00:03:52] the example strategies here rather than
+[00:03:55] using uh indicators you'll see a lot of
+[00:03:56] examples of like this uh amm arbitra
+[00:04:00] hedge liquidity mining Perpetual Market
+[00:04:01] making pure Market M making and so forth
+[00:04:04] also interesting with this one is that
+[00:04:06] it supports uh decentralized exchanges
+[00:04:08] so uh some of these Frameworks you just
+[00:04:10] hook them up to uh binance or FTX or
+[00:04:13] whatever your exchange is or coinbase
+[00:04:15] but uh this one you can connect it looks
+[00:04:17] like to Unis swap Sushi swap Trader Joe
+[00:04:20] and all these other things that you may
+[00:04:21] you may have used before depending on
+[00:04:23] how much experience you have with
+[00:04:25] trading crypto so I'll take a look at
+[00:04:27] this functionality I think this will be
+[00:04:29] a nice a different area to explore so
+[00:04:31] those are the three open- Source crypto
+[00:04:33] trading Bots I wanted to explore and do
+[00:04:35] tutorials on I also want to talk a bit
+[00:04:37] more about some of these uh stock
+[00:04:39] trading uh engines here and so Quant
+[00:04:42] connect has this open- Source lean algo
+[00:04:44] trading engine so you can see it here at
+[00:04:47] lean. and you can see uh this is a
+[00:04:50] popular uh algo trading framework right
+[00:04:52] now so I want to do a series of videos
+[00:04:54] on Quant connect a lot of people have
+[00:04:56] been asking about this one so I'm going
+[00:04:58] to definitely dive into to this one
+[00:05:00] thing here is that it is a company so
+[00:05:02] even though it has this open source
+[00:05:04] engine and I think you can run it on
+[00:05:05] your own I think a lot of the benefits
+[00:05:07] come from actually paying for a monthly
+[00:05:09] uh subscription for this uh the other
+[00:05:12] set I of tools I want to discuss are the
+[00:05:15] quantopian uh set so as some of you may
+[00:05:17] know this was very popular uh years ago
+[00:05:20] but then the company was acquired by
+[00:05:22] Robin Hood and shut down and then a lot
+[00:05:24] of these tools got abandoned some people
+[00:05:26] have forked these and continued to
+[00:05:28] maintain them but but it doesn't have
+[00:05:30] that same commercial backing behind it
+[00:05:32] that used to lead to all of these
+[00:05:34] different uh contributions but
+[00:05:35] nonetheless a lot of this stuff is still
+[00:05:37] in use and there's a lot of demand for
+[00:05:39] how to use zipline zipline Trader Alpha
+[00:05:41] lens pip folio these are some good tools
+[00:05:44] that have been used and tested
+[00:05:46] extensively so I want to do some
+[00:05:48] tutorials on that regardless and maybe
+[00:05:50] even get involved in helping maintain
+[00:05:52] some of these in the future finally I
+[00:05:54] wanted to give the example of back
+[00:05:56] trader which I've already discussed
+[00:05:57] enough on the channel so I'm probably
+[00:05:58] not going to to go into it that much
+[00:06:01] more anymore but back trader is kind of
+[00:06:02] cool in that you can write a strategy
+[00:06:04] class and then switch to a live trading
+[00:06:07] mode and trade your account so I've seen
+[00:06:09] this done with interactive brokers and
+[00:06:11] alpaca who is a sponsor of the channel
+[00:06:13] so please check them out using the link
+[00:06:15] below so those were a few examples of
+[00:06:17] different trading Frameworks that are
+[00:06:18] out there and available for you to use
+[00:06:20] but I still didn't really discuss like
+[00:06:22] why you'd want to use one of these in
+[00:06:23] the first place well a bunch of people
+[00:06:26] have messaged me over time and said
+[00:06:28] Larry you know you've discussed all the
+[00:06:29] different topics like back testing and
+[00:06:32] live trading and how to do data
+[00:06:34] visualization and how to query a
+[00:06:36] database and so forth but I still don't
+[00:06:37] see how to bring this all together and
+[00:06:39] take my strategy and bring it live
+[00:06:42] without learning way too much coding and
+[00:06:44] way too much about infrastructure so the
+[00:06:47] idea behind these different trading
+[00:06:48] Frameworks is they handle a lot of the
+[00:06:50] different choices and design decisions
+[00:06:53] for you you still have to know how to
+[00:06:55] code right you still need to uh
+[00:06:57] Implement your strategy in some way but
+[00:06:59] there's a lot of things maybe you
+[00:07:00] shouldn't have to worry about like how
+[00:07:02] to design a database how to set up a
+[00:07:04] server how to install all these
+[00:07:06] different dependencies like TB and all
+[00:07:08] these different things uh and so these
+[00:07:10] Frameworks are basically run by a
+[00:07:13] community of Open Source developers and
+[00:07:15] they've all faced these same type of
+[00:07:17] problems and have come together and
+[00:07:19] packaged them up into a common set of
+[00:07:21] solutions that different people can use
+[00:07:23] and so uh some of the benefits are
+[00:07:25] organization right you don't need to
+[00:07:27] think about what different folder you
+[00:07:29] know your back tests go in where you
+[00:07:31] store your database what the table
+[00:07:32] structure looks like how you're actually
+[00:07:34] going to package this up in a Docker
+[00:07:36] container and deploy it to a server all
+[00:07:38] those type of things all those different
+[00:07:40] things should be the same for all of
+[00:07:42] your strategies and so they should all
+[00:07:43] be packaged into a common set of tools
+[00:07:46] that we can all use so the primary
+[00:07:48] benefit of using these packaged up
+[00:07:51] Solutions is that they save time right
+[00:07:52] you don't want to reinvent the wheel you
+[00:07:54] want to just follow a common set of
+[00:07:56] standards that other people are using so
+[00:07:59] the pro common problems this solves are
+[00:08:01] for instance data fetching and storing
+[00:08:03] so I might want to fetch data from an
+[00:08:05] exchange do I really need to write my
+[00:08:07] own scripts to do that or is there a
+[00:08:08] common set of packages that I can use
+[00:08:10] and I just pass it a parameter like 5
+[00:08:12] minutes and my API key and it'll just
+[00:08:14] fetch the data I need uh back testing
+[00:08:17] and live trading do I really need to
+[00:08:18] write a separate back test and then
+[00:08:20] rewrite that script to live trade it or
+[00:08:22] can I use the same a strategy class to
+[00:08:24] do that uh monitoring open orders right
+[00:08:27] do I need to have something running in a
+[00:08:29] loop to check on the status of my order
+[00:08:31] whether those orders were filled or not
+[00:08:33] whether they're cancelled whether
+[00:08:34] there's timeouts monitoring my account
+[00:08:36] balance to make sure uh I'm not trading
+[00:08:39] more money than I actually have all
+[00:08:40] those types of little situations are
+[00:08:42] handled by these Frameworks user
+[00:08:45] interfaces and data visualization so
+[00:08:46] I've done some UI and data visualization
+[00:08:49] and JavaScript some people are like oh I
+[00:08:50] just know python I don't want to learn
+[00:08:52] all the JavaScript to do that and so
+[00:08:54] these packages have user interfaces
+[00:08:56] built in they already have JavaScript
+[00:08:58] VJs interfaces is where you can see
+[00:09:00] charts you can see performance and
+[00:09:02] little graphs and pie charts and so
+[00:09:04] forth to see your portfolio allocation
+[00:09:06] that's all built in so you just need to
+[00:09:07] write your strategy and let it run and
+[00:09:09] it handles the rest for you error
+[00:09:11] handling and logging it's one thing I
+[00:09:13] don't spend enough time on this channel
+[00:09:14] but there's all types of things that can
+[00:09:16] go wrong when you're bringing one of
+[00:09:17] these trading Bots live you can have a
+[00:09:20] connection timeout maybe a service or
+[00:09:22] API goes down maybe uh any number of
+[00:09:25] network connection issues or database
+[00:09:27] connection issues could happen and you
+[00:09:29] need to properly catch these errors and
+[00:09:31] also log them so that you know if
+[00:09:33] there's any problems so that you can
+[00:09:34] revisit them in the future these
+[00:09:36] Frameworks have logging and error
+[00:09:38] handling built in and finally uh
+[00:09:41] performance metrics is another example
+[00:09:43] you might just want to see how different
+[00:09:44] strategies performed see how they
+[00:09:46] perform day by day have all these stats
+[00:09:48] aggregated so you can just look at them
+[00:09:50] easily on a dashboard and that's all
+[00:09:52] handled for you as well so these
+[00:09:54] Frameworks can save you a lot of time by
+[00:09:56] handling a lot of the common
+[00:09:57] functionality that's needed for you in
+[00:09:59] addition to saving time another benefit
+[00:10:01] I wanted to list is you have a common
+[00:10:04] language for discussing these types of
+[00:10:06] trading Bots you have a common set of
+[00:10:08] design patterns and a community where
+[00:10:10] you can discuss these same patterns and
+[00:10:12] concepts with other developers and so an
+[00:10:15] analogy I like to give for all this is
+[00:10:17] to compare it to various web Frameworks
+[00:10:19] out there and so you might be a python
+[00:10:21] developer who uses a framework like
+[00:10:23] flask or Jango or fast API or maybe
+[00:10:26] you're a JavaScript developer and you
+[00:10:27] use reactjs or View .js or uh any other
+[00:10:31] number of Frameworks out there and they
+[00:10:33] all have certain patterns they follow so
+[00:10:35] if I'm talking to a Ruby on Rails
+[00:10:36] developer uh they might say oh I'm using
+[00:10:39] an active record pattern and a
+[00:10:40] controller with these routes right and
+[00:10:42] that means something to those developers
+[00:10:44] I with just those few words you know a
+[00:10:46] lot about what I mean likewise if you
+[00:10:48] join one of these communities and base
+[00:10:50] your strategies around one of these
+[00:10:51] Frameworks and you discuss it with other
+[00:10:54] fre trade or Jesse trade or Quant
+[00:10:56] connect developers you have a common set
+[00:10:58] of language and that you can use cuz
+[00:11:00] you've all structured your projects in a
+[00:11:02] similar way so no one has to study every
+[00:11:04] single piece of code you've written you
+[00:11:06] obviously follow certain design patterns
+[00:11:09] you follow a certain set of organization
+[00:11:11] so they know and can follow your project
+[00:11:13] and you can share it with other people
+[00:11:14] so those are some benefits of using one
+[00:11:17] of these Frameworks but I also wanted to
+[00:11:19] give a couple of drawbacks and some
+[00:11:20] reasons why you might not want to use a
+[00:11:22] framework so the first is control some
+[00:11:25] people just want to control every aspect
+[00:11:27] of what they're doing they don't trust
+[00:11:29] this code written by someone someone
+[00:11:31] else uh this entire framework they're
+[00:11:33] worried maybe there's some code in the
+[00:11:34] background doing something unintended or
+[00:11:37] maybe you care about execution speed
+[00:11:39] some people have left comments saying oh
+[00:11:40] you should do everything in C++ and
+[00:11:42] you're welcome to do that if you can
+[00:11:43] Implement all the stuff in C++ then uh
+[00:11:46] knock yourself out so control is one
+[00:11:48] reason why you might want to run and
+[00:11:50] write everything from scratch a second
+[00:11:52] reason why you might not want to use a
+[00:11:54] framework is you want a low-level
+[00:11:56] understanding of what you're doing right
+[00:11:58] A lot of people try try a framework but
+[00:12:00] don't really understand the underlying
+[00:12:02] Concepts and that's the case with like
+[00:12:04] databases for instance a lot of people
+[00:12:06] use like an object relational mapper or
+[00:12:08] a database library but they don't even
+[00:12:09] know SQL right or they use a JavaScript
+[00:12:12] framework like react but they don't
+[00:12:14] really know JavaScript very well they're
+[00:12:15] just copying these patterns without
+[00:12:17] knowing how to implement it themselves
+[00:12:19] using a lower level language or a lower
+[00:12:22] level of abstractions so I think it's
+[00:12:24] important to first try things in your
+[00:12:26] own way and then once you run into
+[00:12:28] common problems and understand what
+[00:12:30] you're doing a little bit more I think
+[00:12:31] it's okay to jump into a framework
+[00:12:33] that's handled a lot of these problems
+[00:12:35] for you as long as you understand what's
+[00:12:36] going on underneath the hood another
+[00:12:39] possible concern with using a framework
+[00:12:40] is and this applies mainly to these
+[00:12:43] commercial Frameworks like Quant connect
+[00:12:45] some people are just really concerned
+[00:12:46] about intellectual property and they
+[00:12:47] don't want to take their code or their
+[00:12:49] algorithm maybe they think they have
+[00:12:51] some great strategy or something uh they
+[00:12:53] don't trust putting it on a cloud
+[00:12:55] service they think someone's going to
+[00:12:56] steal it or something like that or
+[00:12:57] there's going to be security issues or
+[00:12:59] it's getting sold their data is getting
+[00:13:00] sold to someone else and so forth so
+[00:13:03] that's a concern that some people have
+[00:13:05] another possible consideration is
+[00:13:06] maintenance and upgrades so a lot of
+[00:13:08] times these even though these Frameworks
+[00:13:10] are very stable you'll see there's new
+[00:13:12] versions that sometimes have breaking
+[00:13:13] changes or you'll see FR trade here has
+[00:13:17] uh a strategy migration for the latest
+[00:13:19] version and so you need to make all
+[00:13:20] these changes to your existing strategy
+[00:13:22] that was already running and so uh it's
+[00:13:24] important to keep up with all the
+[00:13:26] different upgrades and maintenance and
+[00:13:27] stuff involved it's not like you're just
+[00:13:28] going to run it forever if there's bug
+[00:13:30] fixes and stuff sometimes you're going
+[00:13:32] to have to adapt and make changes that
+[00:13:34] you didn't really have control over if
+[00:13:35] someone decides the next version you
+[00:13:37] know fre trade version three or whatever
+[00:13:39] does things this way and you want to
+[00:13:40] upgrade and keep it maintained you're
+[00:13:42] going to have to make changes on your
+[00:13:43] end uh a final reason it's just fear of
+[00:13:47] Abandonment right and so you're worried
+[00:13:48] you're going to invest all this time
+[00:13:50] into one of these Frameworks for
+[00:13:51] instance uh back trader is a good
+[00:13:53] example here of where it was strong had
+[00:13:55] a great Community but it's mainly
+[00:13:58] reliant on one superhero person this guy
+[00:14:01] that wrote back trader but as soon as he
+[00:14:03] gets bored and needs to do something
+[00:14:05] else you know maybe he has a great
+[00:14:06] career opportunity or starts his own
+[00:14:08] company uh he doesn't have time to
+[00:14:10] maintain this framework or any a number
+[00:14:12] of these authors might move on and do
+[00:14:14] something else in their life and you
+[00:14:16] know if you don't know what you're doing
+[00:14:17] and you're riing on this framework and
+[00:14:19] it's been abandoned then you're not
+[00:14:20] going to get that maintenance and you
+[00:14:22] know you might have to go back to
+[00:14:24] knowing how to do things yourself the
+[00:14:26] final aspect of these different trading
+[00:14:27] Frameworks I want to discuss is just a
+[00:14:29] quick comparison and contrast of when
+[00:14:31] you'd want to use a commercial trading
+[00:14:33] framework that you pay money for by the
+[00:14:35] month and using something that's
+[00:14:37] completely free and open source so
+[00:14:39] obviously one of the main benefits of
+[00:14:40] using a commercial solution like Quant
+[00:14:42] connect is you're going to get probably
+[00:14:44] better documentation and tutorials
+[00:14:46] primarily due to the fact that there are
+[00:14:47] Financial incentives right so if
+[00:14:49] thousands of people or millions of
+[00:14:51] people are using their product and
+[00:14:52] they're paying $10 $100 a month they're
+[00:14:54] accumulating lots of money and they can
+[00:14:56] hire staff and that paid staff can is
+[00:14:59] financially incentivized to maintain
+[00:15:01] documentation to improve the system to
+[00:15:04] uh fix bugs and all that stuff and when
+[00:15:06] it's just a free open- source thing you
+[00:15:08] know I've run open source projects a
+[00:15:10] long time ago and people complained
+[00:15:12] about things and uh you know reported
+[00:15:15] bugs but you know I had moved on to
+[00:15:16] something else and didn't really have
+[00:15:17] time to maintain it whereas if someone's
+[00:15:19] salary is on the line the company's
+[00:15:21] profitability is on the line then
+[00:15:23] they're going to probably have to fix
+[00:15:24] things otherwise their customers are
+[00:15:25] going to cancel another benefit to these
+[00:15:27] commercial Solutions is so they often
+[00:15:29] come with different data bundles so if
+[00:15:31] you're trading cryptocurrency for
+[00:15:33] instance it's probably pretty easy to
+[00:15:34] get free crypto historical data and
+[00:15:36] real-time websocket data but if you're
+[00:15:38] trading stocks and options it's uh often
+[00:15:40] times you have to pay a lot of money to
+[00:15:42] get detailed historical stock data or
+[00:15:45] options data or real-time websockets of
+[00:15:47] price data for each of these and so if
+[00:15:49] you sign up for a monthly fee a lot of
+[00:15:52] times with these Solutions like Quant
+[00:15:54] connect you get a cloud to deploy your
+[00:15:56] strategy too and also you get a datal
+[00:15:58] bundle that claim has very uh high
+[00:16:00] quality and now it's not all sunshine
+[00:16:03] and Roses even though these are
+[00:16:04] commercial Solutions and there's lots of
+[00:16:06] money on the line these companies do
+[00:16:08] make big mistakes you've seen Robin Hood
+[00:16:10] make big mistakes you've seen uh some of
+[00:16:12] these other Solutions go down for
+[00:16:14] periods of time there's just regular
+[00:16:16] people even though they get paid a
+[00:16:17] salary they make mistakes all the time I
+[00:16:19] also mentioned understaffed and
+[00:16:20] underfunding I don't know all the
+[00:16:21] financial details of all these companies
+[00:16:23] but some of them are still just startups
+[00:16:25] or have been running a number of years
+[00:16:27] and you can see they haven't raised like
+[00:16:28] hundreds of millions of dollars their
+[00:16:29] valuations are still quite low so
+[00:16:31] there's still some risks that could be
+[00:16:32] shut down in my opinion uh the cons are
+[00:16:35] obviously also monthly fee so you're
+[00:16:37] going to pay for it every single month
+[00:16:38] it's not just free another possible
+[00:16:40] concern is vendor lock in and
+[00:16:41] intellectual property so anytime you're
+[00:16:43] using a Cloud solution you know maybe
+[00:16:45] you invested your whole business on that
+[00:16:47] let's say you put your whole business on
+[00:16:48] Quant connect or some other service and
+[00:16:51] um you know they change or get shut down
+[00:16:54] basically your whole business is gone as
+[00:16:55] well right and even if maybe you can run
+[00:16:57] it on your own server it's not
+[00:16:59] maintained anymore so um you know
+[00:17:01] there's some concern that there's a lack
+[00:17:02] of flexibility because everything you've
+[00:17:04] written is designed on this one system
+[00:17:06] same as if you use you know AWS or
+[00:17:08] Google Cloud the deeper you get into
+[00:17:10] there the harder it is to get out
+[00:17:12] finally I wanted to give some pros and
+[00:17:14] cons of using a free and open source
+[00:17:16] framework so the pros are obviously it's
+[00:17:18] free right we all like saving money so
+[00:17:20] it's nice to be able to experiment and
+[00:17:21] try these different things without
+[00:17:23] spending any money also uh there's a
+[00:17:25] certain amount of transparency so you
+[00:17:27] can see what's going on behind the
+[00:17:28] scenes you can go to GitHub see all the
+[00:17:30] source code available you can see the
+[00:17:31] commits you can see how the framework is
+[00:17:34] evolving over the time and there's also
+[00:17:36] built-in with that a nice community and
+[00:17:38] there's other people that you can
+[00:17:39] discuss with it uh and you can give some
+[00:17:41] feedback you can submit your own pull
+[00:17:43] request and uh contribute to the
+[00:17:45] framework let's say you don't like
+[00:17:46] something or you want to change
+[00:17:47] something with open source you can make
+[00:17:49] changes yourself you can propose changes
+[00:17:51] report bugs that sort of thing get
+[00:17:53] involved in developing the software
+[00:17:54] yourself the cons are as I mentioned
+[00:17:56] earlier you might have to pay extra for
+[00:17:58] data because they're not just going to
+[00:17:59] give you you know it's just a collection
+[00:18:01] of volunteers they're not going to give
+[00:18:03] you all this free data no one's paying
+[00:18:04] for that they don't have any Financial
+[00:18:06] incentives obviously so someone can
+[00:18:09] abandon a project and not maintain it uh
+[00:18:11] because you know it's not really their
+[00:18:13] full-time job it's not going to pay the
+[00:18:14] bills uh and also is often the case is
+[00:18:17] they often have a poor documentation as
+[00:18:20] a result because a lot of people just
+[00:18:22] want to write code and they don't want
+[00:18:24] to write documentation and it's just
+[00:18:25] something you got to deal with so that's
+[00:18:27] my overview of what I'm going to be
+[00:18:29] discussing over the next couple months
+[00:18:30] I'm going to be diving into all these
+[00:18:32] different Frameworks And discussing
+[00:18:33] their pros and cons and showing you how
+[00:18:35] to set up each one of them and you can
+[00:18:37] decide for yourself what you wanted to
+[00:18:39] use and finally uh if anyone cares about
+[00:18:42] my personal life I don't like to share
+[00:18:44] too much because it's kind of weird but
+[00:18:46] I was traveling if you are curious where
+[00:18:48] I was uh I did this trip around parts of
+[00:18:51] Europe so London Paris not Bordeaux
+[00:18:54] Porto Lisbon Seville Madrid Valencia
+[00:18:58] Barcelona amazing trip we don't always
+[00:19:00] have opportunities to do lengthy trips
+[00:19:03] like this so I had to take advantage of
+[00:19:04] it while I could here's a few uh
+[00:19:07] pictures blah blah blah all over the
+[00:19:09] place in all these different cities so
+[00:19:12] really love Europe planning on going
+[00:19:14] back soon and I got to go to the Prima
+[00:19:16] Vera sound Festival in Barcelona and saw
+[00:19:19] gorillas Kung bin most def Keno of the Y
+[00:19:24] yes Meg the stallion run the jewels tala
+[00:19:27] and the new radio headside project
+[00:19:29] Johnny Greenwood and Tom York doing uh
+[00:19:33] the smile and yeah lots of cool
+[00:19:36] experiences all over uh Spain and France
+[00:19:39] and Portugal and also London and amazing
+[00:19:43] amazing places it makes me want to move
+[00:19:46] to Europe so U yeah that's it for now uh
+[00:19:49] thanks everyone for watching and thanks
+[00:19:50] for being patient as I prepare this new
+[00:19:53] set of content I'll have a lot to
+[00:19:55] discuss in the months of July and August
+[00:19:57] so uh stay tuned for the next video and
+[00:20:00] I'll be talking about freck trade thanks

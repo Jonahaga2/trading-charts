@@ -1,0 +1,151 @@
+[00:00:00] hey everybody welcome back to another
+[00:00:01] video today I'm going to talk to you
+[00:00:03] about back trader which is a Python
+[00:00:05] framework for back-testing trading
+[00:00:07] strategies so let's say you have this
+[00:00:10] idea for this trading algorithm maybe
+[00:00:13] you have some set of patterns or some
+[00:00:14] kind of moving average crossover or some
+[00:00:17] kind of indicator that you look at that
+[00:00:19] you think is effective in determining
+[00:00:21] when to buy and sell a particular asset
+[00:00:23] well you might want to write some code
+[00:00:26] to automate that trading it but before
+[00:00:29] you put that algorithm into the market
+[00:00:31] with real money you actually want to go
+[00:00:33] back and test your hypothesis like is
+[00:00:35] this just something in my head or with
+[00:00:37] this trading strategy actually work in
+[00:00:39] the real world so what back trader
+[00:00:42] allows you to do is to define your
+[00:00:44] strategy as just a simple Python class
+[00:00:46] and also kind of define a starting set
+[00:00:49] of cash and a few other settings and
+[00:00:52] using those settings back trader can
+[00:00:54] execute this strategy against historical
+[00:00:56] data and then show you what your profit
+[00:00:58] and loss would have been that way your
+[00:01:00] strategy has tested before you put it
+[00:01:02] out in the real world so up here on my
+[00:01:04] screen here is an example of something
+[00:01:07] we can build and so we're gonna do that
+[00:01:08] today
+[00:01:08] so what you see here this is a chart of
+[00:01:11] Apple stock over the years and you can
+[00:01:14] see it's went up quite a bit but we
+[00:01:17] could have defined some kind of strategy
+[00:01:18] to determine when to buy and sell this
+[00:01:21] particular stock and so back trader can
+[00:01:24] actually generate nice charts like this
+[00:01:26] to show you for any given strategy that
+[00:01:29] you define the green arrow it'll show
+[00:01:32] when a buy would have been executed and
+[00:01:34] the red arrow here shows when the sell
+[00:01:36] would have been executed according to
+[00:01:38] your strategy and then you can run this
+[00:01:40] over a historical time period of your
+[00:01:42] choosing and it'll chart out also like
+[00:01:45] whether each trade would have been
+[00:01:46] positive or negative and then here at
+[00:01:48] the top you can see you're starting cash
+[00:01:51] and what your value the value of your
+[00:01:53] cash would have grown into over time and
+[00:01:55] so it's very helpful to visualize your
+[00:01:57] trading strategy using backed trader and
+[00:02:00] it also show you can loop through and
+[00:02:04] show all of the the dates here what the
+[00:02:06] closing price is and if I go through
+[00:02:07] here I can also textually see when buys
+[00:02:11] and sells would have been created
+[00:02:12] and executed and at what price and so
+[00:02:15] let's go ahead and get started with
+[00:02:17] coding this as so you can just see
+[00:02:19] hands-on how did you go about making
+[00:02:21] something like this you'll always see
+[00:02:22] these articles that are like oh if I
+[00:02:24] would have invested $10,000 in Apple
+[00:02:26] stock in the year 2000 how much would
+[00:02:28] that have grown to or if I would have
+[00:02:31] applied this by the dip by 20 percent
+[00:02:34] dip strategy or by this moving average
+[00:02:36] crossover strategy how much money would
+[00:02:38] I have after ten years
+[00:02:39] so back trader helps you answer those
+[00:02:41] questions so yeah let's go ahead and
+[00:02:44] jump into the code so the first thing
+[00:02:46] I'll do here is install the back trader
+[00:02:50] package so I use pip here and so I'm
+[00:02:52] gonna pip install back trader and I
+[00:02:55] already did that earlier and I'm also
+[00:02:57] going to install a matplotlib because
+[00:02:59] that's useful for generating the plots
+[00:03:02] and graphs and charts that we're going
+[00:03:03] to be using to visualize our strategy
+[00:03:06] and so now that I have it installed I
+[00:03:09] have this trader dot PI file that I
+[00:03:11] started it just you can start empty and
+[00:03:13] whatever a code editor you have and I'm
+[00:03:16] going to import back trader and then
+[00:03:18] what we can do here so the main control
+[00:03:22] center for a back trader application is
+[00:03:26] called cerebro so you think of this as
+[00:03:28] kind of the brain or control center
+[00:03:30] where everything happens so cerebro
+[00:03:32] actually connects together a data feed
+[00:03:34] and a strategy so we add these things to
+[00:03:38] cerebro and then we and we have this
+[00:03:41] class run the strategy against the data
+[00:03:43] feed and that's able to show us the
+[00:03:46] outcome so the first thing we need to do
+[00:03:48] is create back trader dot cerebro and
+[00:03:52] instantiate that and cerebro generates a
+[00:03:56] broker by default so you'll have this
+[00:03:59] broker attribute here that has a value
+[00:04:02] and we can use that display our
+[00:04:04] portfolio value and so the nice thing
+[00:04:06] about back trader it already has some
+[00:04:08] defaults so you can get started I
+[00:04:10] believe it's a $10,000 a default
+[00:04:12] starting value for the broker and so
+[00:04:14] we're gonna print that and just run
+[00:04:16] cerebro and then show the final
+[00:04:18] portfolio value okay so I'm gonna go
+[00:04:21] ahead and run this so I'll do Python 3
+[00:04:23] trader dot PI and you see I have a start
+[00:04:26] portfolio value of $10,000 and a final
+[00:04:30] value of $10,000 so as the documentation
+[00:04:34] says that doesn't show a lot yet because
+[00:04:37] we haven't implemented any kind of
+[00:04:38] trading strategy we were really told it
+[00:04:40] what to do but what we do have is a
+[00:04:42] broker similar to a simulation of what
+[00:04:45] you would have with something like TD
+[00:04:46] Ameritrade or Robin Hood and it has some
+[00:04:48] cash in it and we can define what our
+[00:04:51] starting cash value is and then we can
+[00:04:53] also define our trading strategy that we
+[00:04:55] want to execute and give it some data so
+[00:04:57] it actually has some data to analyze so
+[00:04:59] let's go ahead and add some cash to our
+[00:05:02] portfolio here or to our brokerage
+[00:05:05] account so there's a set cash method so
+[00:05:10] cerebro broker dot set cash so we have
+[00:05:14] the broker and then we can do set cash
+[00:05:17] and let's give it a million dollars and
+[00:05:24] if I do that and run it you see that we
+[00:05:27] start out with our million dollars here
+[00:05:30] that we want to trade so that's all good
+[00:05:32] so now that we have a brokerage account
+[00:05:35] and we have a million bucks now we
+[00:05:37] actually need to make some trades hey so
+[00:05:41] I'm gonna try to keep these videos about
+[00:05:42] five to seven minutes long so they don't
+[00:05:44] drag on and on so I'm going to stop this
+[00:05:45] video here and in the next video
+[00:05:47] I'm going to show you how to connect a
+[00:05:49] data feed to back trader and then we're
+[00:05:52] gonna start implementing a simple
+[00:05:53] trading strategy and run it and start
+[00:05:56] seeing the outcome so thanks a lot for
+[00:05:58] watching a stay tuned for the next video
+[00:06:00] thanks

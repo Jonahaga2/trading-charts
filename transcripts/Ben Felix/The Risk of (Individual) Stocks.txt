@@ -1,0 +1,560 @@
+[00:00:00] A lot of investors hold concentrated
+[00:00:02] positions in individual stocks. This can
+[00:00:05] happen when you hear Charlie Munger say,
+[00:00:06] "Diversification is for the no nothing
+[00:00:08] investor." Without realizing that he's
+[00:00:10] talking about you, or for other reasons
+[00:00:12] like being part of a company that went
+[00:00:14] public and holding on to your stock, or
+[00:00:16] owning stock in an employer that has
+[00:00:17] performed so well that it becomes a
+[00:00:19] large part of your portfolio. In any
+[00:00:21] case, I don't think people are aware of
+[00:00:23] how risky individual stocks are. In
+[00:00:26] aggregate, stocks are probably a bit
+[00:00:28] safer for long-term investors than many
+[00:00:30] people think, but individual stocks are
+[00:00:32] way riskier. And interestingly, this is
+[00:00:35] especially true for stocks that have
+[00:00:36] performed well in recent history. I'm
+[00:00:39] Ben Felix, chief investment officer at
+[00:00:41] PWL Capital, and I'm going to tell you
+[00:00:42] why holding a concentrated portfolio of
+[00:00:45] individual stocks is far more likely to
+[00:00:47] lead to catastrophic losses than to
+[00:00:49] life-changing gains.
+[00:00:51] [Music]
+[00:00:56] In this video, I'm going to detail just
+[00:00:58] how risky individual stocks are, which
+[00:01:00] is something that I suspect most
+[00:01:01] investors don't appreciate. I'll also
+[00:01:04] cover how many stocks are needed for a
+[00:01:05] portfolio to be diversified, and why
+[00:01:08] it's more than the commonly cited 20 to
+[00:01:10] 30, which is a figure based on outdated
+[00:01:12] research. This is an important topic
+[00:01:14] because it is well documented that
+[00:01:16] individual investors commonly hold
+[00:01:17] portfolios concentrated in somewhere
+[00:01:19] between three and seven stocks. A
+[00:01:22] behavior that is more pronounced for
+[00:01:23] investors who overweight the unlikely
+[00:01:25] probability of a big win relative to the
+[00:01:28] more likely probability of losses. If
+[00:01:30] that's you, you're going to want to hear
+[00:01:32] me out. Individual stocks are exposed to
+[00:01:34] something called idiosyncratic risk.
+[00:01:36] That is risk specific to that company
+[00:01:38] like what its CEO happens to tweak. and
+[00:01:41] it's a type of risk that does not have a
+[00:01:43] positive expected return. In general,
+[00:01:46] investors should try to avoid
+[00:01:47] idiosyncratic risk by diversifying their
+[00:01:50] portfolios. A broadly diversified
+[00:01:52] portfolio is primarily exposed to market
+[00:01:54] risk, which is a risk with a positive
+[00:01:56] expected return. Diversification reduces
+[00:01:59] risk without reducing expected return,
+[00:02:02] which is why it is referred to as the
+[00:02:03] only free lunch in investing. If
+[00:02:05] diversification is the only free lunch
+[00:02:07] in investing, portfolio concentration is
+[00:02:10] like ordering fugu prepared by an
+[00:02:12] amateur chef. I'll define a concentrated
+[00:02:14] portfolio as a portfolio with a single
+[00:02:16] position that makes up 10% or more of
+[00:02:18] its holdings, which is a figure based on
+[00:02:20] one of the papers I'll reference later
+[00:02:22] in the video. Of course, the most
+[00:02:23] concentrated position would be holding
+[00:02:25] one individual stock, and each
+[00:02:27] individual stock after that makes the
+[00:02:29] portfolio more diversified. Concentrated
+[00:02:31] portfolios are problematic because they
+[00:02:33] allow the idiosyncratic risk, the
+[00:02:34] uncompensated or random risk of an
+[00:02:36] individual company to have a meaningful
+[00:02:39] influence on the outcome of the
+[00:02:40] portfolio as a whole. That might not be
+[00:02:42] so bad if most individual stocks
+[00:02:44] performed really well, but the data on
+[00:02:46] individual stock returns are sobering.
+[00:02:49] JP Morgan puts out an occasionally
+[00:02:50] updated report called The Agony and the
+[00:02:52] Ecstasy that details the range of
+[00:02:54] outcomes for individual stock returns.
+[00:02:57] In the 2021 issue, one of the data
+[00:02:59] points that jumps out at me is the
+[00:03:00] frequency of catastrophic losses.
+[00:03:03] Defined as a 70% decline in price from
+[00:03:05] peak to trough, which is never recovered
+[00:03:07] from. 44% of the companies that appeared
+[00:03:10] in the Russell 3000 index, an index
+[00:03:12] representing the US stock market from
+[00:03:14] 1980 through 2020, experienced a
+[00:03:17] catastrophic loss. Some sectors like
+[00:03:19] energy and information technology, had
+[00:03:21] even higher frequencies of catastrophic
+[00:03:23] losses. Let me make sure that's clear
+[00:03:25] because it is staggering. 44% of the
+[00:03:28] stocks that appeared in the Russell 3000
+[00:03:30] index over this period experienced
+[00:03:32] losses of 70% or more that were never
+[00:03:35] recovered from. This shouldn't be too
+[00:03:37] surprising. Capital markets are highly
+[00:03:39] competitive and they're driven by
+[00:03:41] creative destruction. Some companies
+[00:03:43] succeed to the point that they displace
+[00:03:45] companies that had previously been
+[00:03:47] successful. And some companies fail or
+[00:03:49] at least struggle to compete. In
+[00:03:51] aggregate, stock returns are positive.
+[00:03:53] But within those positive returns are
+[00:03:55] lots of losers. Evidence of this is the
+[00:03:57] fact that despite the incredible
+[00:03:59] performance of the S&P 500 index as a
+[00:04:02] whole, hundreds of companies have been
+[00:04:04] removed from the index over time due to
+[00:04:06] business distress. The other issue is
+[00:04:08] that there are more losers than there
+[00:04:10] are winners. Over the 1980 to 2020
+[00:04:13] period, 42% of stocks included in the
+[00:04:15] Russell 3000 had negative absolute
+[00:04:18] returns. They lost money. 66% trailed
+[00:04:21] the market and 10% did beat the market
+[00:04:24] by a cumulative 500% or more over the
+[00:04:26] full period. They're deemed mega
+[00:04:28] winners. That is called positive
+[00:04:31] skewess. Most stocks perform poorly, but
+[00:04:34] a few do exceptionally well. Many of the
+[00:04:36] investors holding individual stocks are
+[00:04:38] overweighting the probability of holding
+[00:04:40] a mega winner. Some sectors are worse
+[00:04:42] for skewess than others. 84% of stocks
+[00:04:45] in the energy sector trailed the market
+[00:04:46] over this period. 85% in utilities and
+[00:04:49] 73% in information technology. All of
+[00:04:52] those sectors did still have some big
+[00:04:54] winners though. Looking at the
+[00:04:55] distribution of individual stock returns
+[00:04:57] from 1980 to 2020 visually, we see that
+[00:05:00] most stocks underperform the market
+[00:05:02] while a relatively small portion of them
+[00:05:03] match or beat the market and a few do
+[00:05:06] exceptionally well. Intuitively, this
+[00:05:08] positively skewed distribution means
+[00:05:10] that if you're selecting a small number
+[00:05:11] of individual stocks for a long-term
+[00:05:13] portfolio, it's much more likely that
+[00:05:15] you will pick stocks that underperform
+[00:05:17] the market than stocks that outperform.
+[00:05:19] This is one of the reasons that
+[00:05:20] diversification makes sense in general
+[00:05:23] and why total market index funds in
+[00:05:25] particular, which hold all the stocks in
+[00:05:26] the market, are really hard to beat.
+[00:05:29] That intuition is detailed in the 2017
+[00:05:31] paper why indexing works which shows
+[00:05:33] using a simple model that when the
+[00:05:35] distribution of returns is positively
+[00:05:37] skewed randomly selecting a subset of
+[00:05:39] securities from the index may
+[00:05:41] dramatically increase the chance of
+[00:05:42] underperforming the index. This simple
+[00:05:45] model is validated empirically in the
+[00:05:46] 2023 paper mutual fund performance at
+[00:05:49] long horizons which finds that the
+[00:05:51] prefee returns of only 45.2% 2% of
+[00:05:54] actively managed US equity mutual funds
+[00:05:56] in the US beat the net of fee returns of
+[00:05:59] SPY, an S&P 500 ETF over their sample
+[00:06:02] period. This shows that due to the
+[00:06:04] skewess in stock returns, active
+[00:06:06] management, which tends to hold more
+[00:06:07] concentrated portfolios than the market
+[00:06:09] index, is at a disadvantage even before
+[00:06:12] fees and costs are considered. Those
+[00:06:14] actively managed fund portfolios, while
+[00:06:16] less diversified than the market, are
+[00:06:18] much more diversified than many
+[00:06:20] individual investors. One of the reasons
+[00:06:22] for this is likely that investors
+[00:06:23] holding individual stocks think that
+[00:06:25] they know the companies that they own
+[00:06:27] and understand the risks and
+[00:06:29] opportunities that they represent. I
+[00:06:30] think this speaks to the familiarity
+[00:06:32] bias where investors are more
+[00:06:33] comfortable with what they know and the
+[00:06:35] illusion of control bias where investors
+[00:06:37] feel like they have some level of
+[00:06:39] control over the outcome of their
+[00:06:40] individual stock holdings due to their
+[00:06:42] knowledge of the company or research
+[00:06:43] they've done about investing in it. But
+[00:06:45] the reality is that the factors that
+[00:06:47] drive underperformance and catastrophic
+[00:06:49] losses are unpredictable. For example,
+[00:06:51] the JP Morgan study discusses how things
+[00:06:53] like commodity price risks that can't be
+[00:06:55] hedged away, changes in government
+[00:06:57] policy, deregulation and reeregulation
+[00:06:59] of industries, foreign competition,
+[00:07:01] trade policy, and fraud by company
+[00:07:03] employees are some of the unpredictable
+[00:07:06] things that have caused past business
+[00:07:07] failures. These are things that no
+[00:07:09] matter how well a business is run or how
+[00:07:11] well you understand it, can blindside
+[00:07:13] its profitability, leading to a
+[00:07:15] significant stock price decline or total
+[00:07:17] company collapse. These declines can
+[00:07:20] happen quickly and unexpectedly. The
+[00:07:22] 2024 issue of The Agony and the Ecstasy
+[00:07:25] shows a sample of companies that
+[00:07:26] experienced catastrophic losses with the
+[00:07:28] magnitude of the loss on the y-axis and
+[00:07:30] the maximum monthly rate of decline on
+[00:07:32] the x-axis. The size of the dots
+[00:07:35] indicate the market capitalization of
+[00:07:36] the company after its decline. We see
+[00:07:38] that many companies of different sizes
+[00:07:40] have experienced huge losses that
+[00:07:42] accumulate quickly. I think it's common
+[00:07:44] for investors to want to hold on to
+[00:07:46] their losing individual stock positions
+[00:07:48] until after they have recovered, known
+[00:07:50] as the disposition effect. But in many
+[00:07:52] cases, they will continue to decline or
+[00:07:54] will simply never recover to their
+[00:07:55] previous high. It's easy to believe that
+[00:07:57] catastrophic losses can only happen to
+[00:07:59] companies with weak financials, high
+[00:08:01] valuations, or within certain sectors.
+[00:08:03] That they happen across sectors, to
+[00:08:05] profitable companies, to companies with
+[00:08:07] moderate debt ratios, and to companies
+[00:08:09] with reasonable evaluations. Any
+[00:08:11] business, even a well-run and successful
+[00:08:13] one, can suffer a catastrophic loss.
+[00:08:16] Another data point that investors may
+[00:08:18] use to evaluate whether a catastrophic
+[00:08:19] loss can happen to their stock is
+[00:08:22] analyst consensus on whether the stock
+[00:08:23] is a buy or a sell. Maybe if you only
+[00:08:26] hold on to stocks that analysts rate as
+[00:08:28] a buy, you're safe. Incredibly, the vast
+[00:08:30] majority of catastrophic losers in this
+[00:08:32] sample were consensus buys or strong
+[00:08:36] buys prior to their declines. Going back
+[00:08:38] further in time than the JP Morgan study
+[00:08:40] and extending to stocks beyond the
+[00:08:42] Russell 3000 index, the 2018 study, do
+[00:08:45] stocks outperform Treasury Bills, looks
+[00:08:47] at all US stocks that existed in the
+[00:08:49] Center for Research and Security Prices
+[00:08:51] or Crisp database from 1927 through 2016
+[00:08:55] and finds overall similar results to the
+[00:08:57] previously mentioned study. Only 42.6%
+[00:09:00] of common stocks have a lifetime buy and
+[00:09:02] hold return that exceeds the return to
+[00:09:04] holding one-mon treasury bills. This
+[00:09:06] means that more than half of the time
+[00:09:07] you are better off holding risk-free
+[00:09:09] treasury bills than individual stocks.
+[00:09:12] Only 30.8% of stocks in the sample beat
+[00:09:15] the value weighted market index, which
+[00:09:17] is what a total market index fund
+[00:09:18] represents over their lifetimes. A
+[00:09:20] figure similar to the JP Morgan study.
+[00:09:22] And more than half of the stocks in the
+[00:09:24] sample deliver negative lifetime
+[00:09:26] returns. This figure is likely worse
+[00:09:28] than the JP Morgan study due to the fact
+[00:09:29] that the sample includes all stocks,
+[00:09:31] including tiny ones, rather than being
+[00:09:33] cut off at the top 30,000 in the Russell
+[00:09:35] 3000 index. And it extends to the
+[00:09:37] lifetime of stocks rather than the 1980
+[00:09:40] to 2020 sample period. The data are
+[00:09:42] slightly better at the 10-year horizon
+[00:09:43] with 49.5% of stocks beating Treasury
+[00:09:46] bills and 37.3% beating the market, but
+[00:09:49] these are still abysmal numbers
+[00:09:51] reinforcing the extreme risk of owning
+[00:09:53] individual stocks. Again, most
+[00:09:56] individual stocks are losers and some
+[00:09:58] win big. For what it's worth, the author
+[00:10:00] of Do Stocks Outperform Treasury Bills
+[00:10:02] has also co-authored a similar paper
+[00:10:04] looking at global stock returns and
+[00:10:06] found the skewess to be even more
+[00:10:07] extreme. The 2023 study,
+[00:10:09] underperformance of concentrated stock
+[00:10:11] positions, uses a set of all US stocks
+[00:10:14] excluding the smallest stocks from 1926
+[00:10:16] through 2022, similar to the Russell
+[00:10:19] 3000 index to detail the effects of
+[00:10:21] concentrated positions in individual
+[00:10:23] stocks on portfolio performance. The
+[00:10:25] author finds that the median 10-year US
+[00:10:27] single stock return in this sample is a
+[00:10:30] cumulative negative 7.9 percentage
+[00:10:32] points relative to the capitalization
+[00:10:34] weighted market portfolio or an
+[00:10:36] annualized 0.82%. 82 percentage points
+[00:10:38] in underperformance and that 55% of
+[00:10:41] individual stocks trail the market at
+[00:10:43] the decade horizon. The author also
+[00:10:45] shows how the volatility of a portfolio
+[00:10:47] changes with an increasing weight in a
+[00:10:49] concentrated position by modeling
+[00:10:51] various portfolios consisting of the
+[00:10:52] market index and an increasing
+[00:10:54] allocation to an individual stock.
+[00:10:56] Portfolio volatility is relatively
+[00:10:58] unaffected by single positions at
+[00:11:00] weights up to 10%. And increasingly
+[00:11:02] affected thereafter. The effects are
+[00:11:04] more pronounced for individual stocks
+[00:11:05] with higher idiosyncratic volatility.
+[00:11:07] This is where my earlier suggestion that
+[00:11:09] a position is concentrated when it makes
+[00:11:11] up 10% or more of a portfolio comes
+[00:11:13] from. If you hear all this and think
+[00:11:15] that nobody would buy a loser stock
+[00:11:17] since smart investors only pick winners,
+[00:11:19] the crazy thing from this paper is that
+[00:11:21] stocks with top 20% performance over the
+[00:11:23] last 5 years have a median cumulative
+[00:11:26] return over the following 10 years of
+[00:11:28] negative 17.8 percentage points relative
+[00:11:30] to the market. underperforming by an
+[00:11:32] annualized 1.94 percentage points and
+[00:11:35] 60% of these stocks trail the market.
+[00:11:38] Observed underperformance of the median
+[00:11:40] stock in the study applies across all
+[00:11:42] industry groups and among both the
+[00:11:43] smallest and largest stocks in the
+[00:11:45] sample. There are a few important
+[00:11:47] takeaways from these studies on
+[00:11:48] individual stock returns. Positive
+[00:11:50] skewess in individual stock returns
+[00:11:52] means that you're much more likely to
+[00:11:53] pick a loser than a winner when
+[00:11:55] selecting an individual stock. And the
+[00:11:57] effects of skewess are more extreme at
+[00:11:59] longer horizons. This means the chances
+[00:12:02] of being a successful long-term buy and
+[00:12:04] hold investor with only a few stocks is
+[00:12:07] increasingly unlikely at longer
+[00:12:09] horizons. Though, if you do pick the
+[00:12:11] rare winners, the results can be
+[00:12:13] extremely positive. Underperformance can
+[00:12:16] happen quickly, unexpectedly, and
+[00:12:18] irreversibly. Many stocks not only
+[00:12:20] underperform the market, but suffer
+[00:12:21] catastrophic losses that they do not
+[00:12:24] recover from. To be clear, it is true
+[00:12:26] that a small number of stocks perform
+[00:12:28] exceptionally well. It's just hard to
+[00:12:30] pick them before the fact. Past winners
+[00:12:32] are more likely to underperform than
+[00:12:34] outperform in the future. Given the
+[00:12:37] extreme risk and positive skewess of
+[00:12:39] individual stock returns, some level of
+[00:12:41] diversification is likely sensible. But
+[00:12:44] how much is less clear? Research from
+[00:12:46] the 1970s and 80s found that a portfolio
+[00:12:48] of 20 to 40 stocks is sufficient for
+[00:12:51] diversification because beyond that
+[00:12:53] point, the risk reduction benefits
+[00:12:55] diminish. This finding has colored the
+[00:12:57] beliefs of many investors, but it has a
+[00:12:59] problem. It assumes that volatility is
+[00:13:01] the only measure of risk that matters to
+[00:13:03] investors. I'd argue that what really
+[00:13:05] matters is the expected distribution of
+[00:13:07] long-term wealth outcomes. For example,
+[00:13:09] a more concentrated portfolio has a
+[00:13:11] small chance of holding the mega winner
+[00:13:14] and a much larger chance of holding
+[00:13:15] losers. The difference in wealth
+[00:13:17] accumulation between the worst and best
+[00:13:19] concentrated portfolios is going to be
+[00:13:21] enormous at long horizons. Reducing
+[00:13:24] volatility is a good thing, but even
+[00:13:26] small differences in volatilities can
+[00:13:28] have big impacts on long-term wealth
+[00:13:29] outcomes. A 2022 study, How many stocks
+[00:13:32] should you own? Simulates long-term
+[00:13:34] wealth multiples for portfolios with
+[00:13:36] varying levels of concentration. The
+[00:13:39] authors find the 25th and 10th
+[00:13:41] percentile outcomes, the worst outcomes,
+[00:13:43] improve dramatically until around 250
+[00:13:46] stocks are included, and the incremental
+[00:13:48] benefits of diversification decrease
+[00:13:50] thereafter. The average portfolio in
+[00:13:52] their simulations multiplied wealth 19
+[00:13:54] times on average over 25 years. But an
+[00:13:57] investor with just 25 stocks had a 1 in
+[00:13:59] 10 chance of receiving less than a 12
+[00:14:01] times wealth multiple while an investor
+[00:14:03] with 250 stocks had a 1 in 10 chance of
+[00:14:05] achieving less than a 17 times multiple
+[00:14:07] of wealth. Again, the distribution of
+[00:14:10] returns is tighter for a more
+[00:14:11] diversified portfolio, meaning that the
+[00:14:13] worst outcome is less bad and the best
+[00:14:16] outcome is less good relative to a more
+[00:14:18] concentrated portfolio. This makes the
+[00:14:20] choice about how diversified a portfolio
+[00:14:22] should be a preference more than a
+[00:14:24] prescription. But I do think it's
+[00:14:25] important to highlight that when risk is
+[00:14:27] measured as the variability of terminal
+[00:14:29] wealth, the diversification benefits of
+[00:14:31] adding more stocks continues far beyond
+[00:14:34] 20 to 30 holdings. If you are confident
+[00:14:36] that you can pick winning stocks before
+[00:14:38] the fact, portfolio concentration can
+[00:14:40] make sense. But the odds are stacked
+[00:14:43] against you and the track record of
+[00:14:45] active management in general leaves much
+[00:14:47] to be desired. Some investors may be
+[00:14:49] comfortable with that risk. They may be
+[00:14:50] willing to accept a wider range of
+[00:14:52] long-term outcomes, including a good
+[00:14:54] chance of trailing the market or
+[00:14:55] suffering a catastrophic loss in
+[00:14:57] exchange for a smaller chance at extreme
+[00:14:59] outperformance. This is a preference for
+[00:15:01] a lotteryike payoff, which is fine, but
+[00:15:04] it's a risk that needs to be properly
+[00:15:05] understood. In Do Stocks Outperform
+[00:15:08] Treasury Bills, the author simulates
+[00:15:09] long-term returns for 20,000 randomly
+[00:15:11] selected 5, 25, 50, and 100 stock
+[00:15:15] portfolios. He finds at the 10-year
+[00:15:17] horizon that even 100 stock portfolios
+[00:15:19] outperformed the market only 47.5% of
+[00:15:22] the time. There are different ways to
+[00:15:24] interpret that result. One way is that
+[00:15:26] hey, it was only a little worse than a
+[00:15:27] coin flip that you would have beaten the
+[00:15:29] market before costs. The other is that
+[00:15:31] you had more than a 50% chance of
+[00:15:33] trailing the market. The nice thing
+[00:15:34] about total market index funds is that
+[00:15:36] you know you're going to get the market
+[00:15:38] return even if you don't know what that
+[00:15:40] return is going to be. With a more
+[00:15:42] concentrated portfolio, you're going to
+[00:15:43] get the market return plus or minus the
+[00:15:45] active return from portfolio
+[00:15:47] concentration. The range of outcomes for
+[00:15:49] that active return will be larger with
+[00:15:51] increasing portfolio concentration. And
+[00:15:53] the distribution of outcomes will have
+[00:15:55] lots of losing portfolios and a few big
+[00:15:58] winners. Research from Vanguard shows
+[00:16:00] that fund active share, which is not the
+[00:16:02] same thing as concentration, but is
+[00:16:03] related, results in a wider dispersion
+[00:16:06] of benchmark relative returns for
+[00:16:07] actively managed portfolios. it really
+[00:16:10] becomes a question of how confident you
+[00:16:11] are that the stocks you pick will be
+[00:16:13] winners rather than losers while keeping
+[00:16:15] in mind that the distribution of
+[00:16:16] individual stock returns is kind of
+[00:16:18] scary. Another important consideration
+[00:16:20] here is that portfolio concentration may
+[00:16:22] have asymmetric effects on performance.
+[00:16:25] The 2022 paper, Fund Concentration, a
+[00:16:27] magnifier of manager skill, finds that
+[00:16:30] increasing concentration has a
+[00:16:31] pronounced positive impact on
+[00:16:33] performance for outperforming funds. But
+[00:16:35] the opposite is true for underperforming
+[00:16:37] funds. And importantly, higher levels of
+[00:16:40] concentration generally hurt the poorly
+[00:16:41] performing funds more than it helps the
+[00:16:43] outperforming funds. If you are
+[00:16:45] currently holding concentrated positions
+[00:16:47] in single stocks, there are some
+[00:16:48] economic and psychological barriers to
+[00:16:51] diversifying. The biggest economic
+[00:16:53] barrier is typically taxes. If you own a
+[00:16:55] stock that increases in value
+[00:16:56] substantially leading to concentration
+[00:16:58] in that position, there could be a large
+[00:17:01] tax bill associated with selling it. In
+[00:17:03] that case, it's important to consider
+[00:17:05] that the taxes generally don't go away.
+[00:17:07] The only thing you control is whether
+[00:17:08] you pay them now or later. Deferring
+[00:17:11] taxes can be a good thing, but in this
+[00:17:13] case, it is being traded off against
+[00:17:15] taking a large amount of idiosyncratic
+[00:17:17] risk. There are other strategies like
+[00:17:18] taxefficiently donating the appreciated
+[00:17:20] securities that can make sense, but this
+[00:17:22] decision should be approached carefully.
+[00:17:24] Another less common economic constraint
+[00:17:26] is control. Some large shareholders may
+[00:17:29] need to maintain their position in order
+[00:17:31] to maintain voting control of the
+[00:17:32] company. The psychological constraints
+[00:17:34] include the representativeness bias
+[00:17:36] where people ignore the types of base
+[00:17:37] rate probabilities that I've discussed
+[00:17:39] in this video and assume that their past
+[00:17:41] experience with a single stock is
+[00:17:43] indicative of its expected range of
+[00:17:45] future outcomes. the endowment effect
+[00:17:47] where people prefer things that they
+[00:17:48] already own. The status quo bias to
+[00:17:51] stick with the thing that they're
+[00:17:52] already doing. And in the case of a
+[00:17:54] stock that has fallen in price, the
+[00:17:55] disposition effect. Managing these
+[00:17:57] biases with respect to diversifying a
+[00:17:59] single stock position can be
+[00:18:00] challenging, but I've seen a couple
+[00:18:02] things that can help. One is imagining
+[00:18:03] that the amount you have invested in the
+[00:18:05] stock is in cash and asking yourself if
+[00:18:08] you would buy the stock today with that
+[00:18:10] cash. Another is creating a systematic
+[00:18:12] plan to dollar cost average out of the
+[00:18:14] concentrated position, avoiding the
+[00:18:16] psychological impact of one big
+[00:18:18] decision. Individual stocks are
+[00:18:20] extremely risky. Most of them
+[00:18:22] underperform the market. Many of them
+[00:18:23] have negative long-term returns or
+[00:18:25] catastrophic losses, and a small number
+[00:18:27] of them have extremely high returns.
+[00:18:30] Picking any one stock is more likely to
+[00:18:32] lead to a bad outcome than a good one.
+[00:18:34] And counterintuitively, this is even
+[00:18:36] more pronounced for stocks that have
+[00:18:38] performed well over the last five years.
+[00:18:41] The simple answer to overcoming
+[00:18:42] individual stock risk is
+[00:18:44] diversification. The extent of
+[00:18:46] diversification that makes sense depends
+[00:18:47] on your preferences for skewess, your
+[00:18:50] conviction in your stock selection
+[00:18:51] ability, and your willingness to bear
+[00:18:53] the risk of a wider range of potential
+[00:18:55] outcomes. Getting out of a single stock
+[00:18:57] position can have economic and
+[00:18:59] psychological challenges, but these can
+[00:19:01] be overcome with thoughtful planning.
+[00:19:03] Thanks for watching. I'm Ben Felix,
+[00:19:04] chief investment officer at PWL Capital.
+[00:19:07] Tell me about your single stock
+[00:19:08] positions in the comments.

@@ -1,0 +1,229 @@
+[00:00:00] alright so in the previous video we
+[00:00:02] installed back trader we instantiated
+[00:00:04] this cerebro object and gave the broker
+[00:00:07] attribute and initial cash balance of a
+[00:00:10] million dollars and we displayed the
+[00:00:12] starting portfolio value and we ran our
+[00:00:15] program and displayed the final
+[00:00:17] portfolio value so this value didn't
+[00:00:19] change because we didn't yet give our
+[00:00:22] program really anything to do with this
+[00:00:24] amount of money so what we need to do
+[00:00:26] next is provide two things first we need
+[00:00:28] to provide data for which back trigger
+[00:00:31] needs to operate on and secondly we need
+[00:00:33] to give it a trading strategy so that
+[00:00:35] knows what to do with this information
+[00:00:37] so let's start with the data feed so if
+[00:00:41] you look up github back trader you'll
+[00:00:43] find this repository and has a few
+[00:00:46] examples of data and we can download
+[00:00:48] this and let's just do the one from the
+[00:00:50] back trader example program just to make
+[00:00:52] sure we're on the same page and that it
+[00:00:54] our results match theirs so they use
+[00:00:57] this oracle data set from oracle stock
+[00:01:00] oracle stock from 1995 through 2014 so
+[00:01:04] i'm just going to download the raw data
+[00:01:06] set there and i can paste this into a
+[00:01:08] new text file so i'll call it oracle csv
+[00:01:12] and i'm just going to paste that in and
+[00:01:14] save the file and so a data feed all it
+[00:01:17] really needs to have is a date and then
+[00:01:19] you have this ohlc open high/low close
+[00:01:23] and these for these form they call them
+[00:01:27] lines of data so there's see a line that
+[00:01:30] forms a series of opens a series of
+[00:01:33] highs a series of loves and a series of
+[00:01:35] closes and based on these lines of data
+[00:01:39] and their changes over time we can make
+[00:01:41] decisions based on these data changes so
+[00:01:45] we have a data set here to operate on
+[00:01:47] and i've saved it to a csv file and so
+[00:01:50] next we need to use the back trader
+[00:01:53] objects to provide a data feed so you'll
+[00:01:56] notice in the documentation there's
+[00:01:58] these data feed sources and so there's a
+[00:02:01] variety of ways to feed data into back
+[00:02:03] trader but there's one called data feeds
+[00:02:05] yahoo and you can use that and if you
+[00:02:09] don't want to use oracle stock here you
+[00:02:10] can actually go to yahoo finance so
+[00:02:13] financed yahoo.com and if you search for
+[00:02:15] something like Apple for instance if you
+[00:02:19] want to use your own data set you can
+[00:02:21] grab one you can click historical data
+[00:02:23] here and then you can use this time
+[00:02:25] period here so like five years or
+[00:02:26] whatever time period you're interested
+[00:02:28] in back testing against and click
+[00:02:30] download data and then you'll get this
+[00:02:32] nice CSV file as well and so you can
+[00:02:34] feed this CSV file into back shredder if
+[00:02:37] you'd like so for right now I'm using
+[00:02:39] this oracle data set that has opening
+[00:02:41] closing prices for 1995 through the year
+[00:02:45] 2014 so how do we feed that data in well
+[00:02:49] if you look at the Quick Start Guide
+[00:02:51] here you'll find there's a CSV data
+[00:02:55] class here and so I'll do data data
+[00:03:00] equals back trader dot feeds Yahoo
+[00:03:04] Finance CSV data and you pass it a file
+[00:03:07] name or the path to the file since ours
+[00:03:10] is in the same directory we can just
+[00:03:12] type Oracle dot CSV and then we can give
+[00:03:15] it some filters these are optional here
+[00:03:17] so you may not want to analyze 20 years
+[00:03:20] of data so if you don't want 20 years of
+[00:03:21] data you can filter and use date/time
+[00:03:24] objects to specify I want to start the
+[00:03:25] year the day January 1st 2000 through
+[00:03:28] December thirty first two thousand and
+[00:03:30] so I need to make sure I import
+[00:03:32] date/time that looks good and let me
+[00:03:35] change my indentation okay and so once
+[00:03:41] that is done we have a data feed so once
+[00:03:43] we have this data feed we need to
+[00:03:45] connect it to cerebro so we'll do
+[00:03:47] cerebro dot add data at data and then we
+[00:03:54] just pass it David just like that and
+[00:03:56] now it's connected if we run that we'll
+[00:03:59] make sure it still runs ok so the data
+[00:04:01] is connected and so now we actually need
+[00:04:03] a strategy to execute on this data so
+[00:04:07] bat trader is able to read through this
+[00:04:10] file line-by-line and go through each of
+[00:04:12] the bars or the dates in order and now
+[00:04:15] it needs to make decisions and back
+[00:04:16] tests against this data so let's give it
+[00:04:19] a strategy so I'm going to make a new
+[00:04:21] file called strategies PI and then so
+[00:04:26] the first strategy
+[00:04:27] gonna use we'll just do the one from the
+[00:04:28] QuickStart example so there's one called
+[00:04:30] test strategy and I'm just going to copy
+[00:04:32] this straight up so there's a class
+[00:04:35] called test strategy and since we have
+[00:04:38] them we're going to try out multiple
+[00:04:40] strategies so that's the first one so
+[00:04:42] I'm separating in this into a new file
+[00:04:44] and we'll put a few classes in here for
+[00:04:46] different strategies so this one's
+[00:04:48] called test strategy and let me import
+[00:04:50] back traitor here and so we're gonna do
+[00:04:53] test strategy and every strategy you
+[00:04:56] make needs to extend this base strategy
+[00:04:59] class and that has the base methods and
+[00:05:03] information needed in order to define a
+[00:05:06] strategy and so we're overriding a few
+[00:05:09] methods here so when we initialize it
+[00:05:11] we're saving a reference to the closing
+[00:05:14] the closing line and then we're writing
+[00:05:18] this next method here and then we're
+[00:05:21] logging the output as we go through the
+[00:05:23] days so that we can show when by message
+[00:05:27] it or will log a message whenever a
+[00:05:29] stock gets bought and then we'll later
+[00:05:32] log whenever we sell the asset so in
+[00:05:35] this next method method here you see
+[00:05:37] we're logging the clothes from our data
+[00:05:40] set as it goes through line by line so
+[00:05:42] it goes to the next day and the next day
+[00:05:44] at the next state and then tells us what
+[00:05:46] the clothes is and then in this next
+[00:05:49] method we can define when we want to
+[00:05:51] actually execute a buy so the first
+[00:05:54] strategy you we're running here is to
+[00:05:57] just it's basically just buying a slight
+[00:05:59] dip so we're gonna see what would happen
+[00:06:01] if the price of a stock went down two
+[00:06:04] days in a row and we bought the dip and
+[00:06:07] then we held it for X number of days and
+[00:06:10] sold it immediately after that and so
+[00:06:12] we're gonna see the outcome of that so
+[00:06:14] we're doing here is we're checking the
+[00:06:17] indexes here so the way this works is
+[00:06:21] the zeroeth index is the current day
+[00:06:24] it's looking at and then you can access
+[00:06:27] the previous days by using negative
+[00:06:29] indexing so the same way in Python if
+[00:06:33] you have an array that has several
+[00:06:36] values right
+[00:06:40] you can use zero indexing but you can do
+[00:06:43] negative one to go back a couple of days
+[00:06:46] so I can the negative one the index is
+[00:06:48] for the negative two index is 3 and so
+[00:06:50] forth so if you want to look at the
+[00:06:52] previous day's close you just see see if
+[00:06:54] the current days close is less than data
+[00:06:56] close negative 1 so that'll see if the
+[00:06:58] current close is less than the previous
+[00:07:00] day's closed and then we can take it one
+[00:07:02] step further and see if the previous
+[00:07:04] day's close is next to than the previous
+[00:07:06] close before that so we'll do data close
+[00:07:08] negative 1 it's less than data close
+[00:07:09] negative 2 and if that's the case then
+[00:07:11] we got a slight dip for a couple days
+[00:07:13] and we're gonna have our head back
+[00:07:16] trader it executed by so we're gonna log
+[00:07:19] by create we're gonna log what the price
+[00:07:21] where we executed at and then we're
+[00:07:23] calling the buy method so that's the
+[00:07:26] strategy and now we need to connect it
+[00:07:28] to cerebro so now from strategies I'm
+[00:07:33] just going to import our test strategy
+[00:07:35] and then the same way we add data to
+[00:07:40] cerebro we need to add the strategy so
+[00:07:43] there's a add strategy method and then
+[00:07:48] we just pass it a strategy which is just
+[00:07:50] the class for that strategy and then
+[00:07:54] we're going to run that and see what
+[00:07:55] happens ok so now I'm gonna run it and
+[00:08:00] you see it went through all of the days
+[00:08:04] from the year 2000 and you see the
+[00:08:07] prices and you can see when it executes
+[00:08:08] buys so this looks like around the time
+[00:08:11] of like the dot-com
+[00:08:13] you know bubble and then collapse so you
+[00:08:15] can see there was some pretty
+[00:08:16] significant volatility here
+[00:08:18] so you see it starts January 3rd and so
+[00:08:21] it's 26 27 it goes down it goes down
+[00:08:23] again and our program says hey let's
+[00:08:27] issue a buy since this current day is
+[00:08:29] closed it's less than the previous one
+[00:08:30] and it's not when it's less than the
+[00:08:32] previous one so there's a two day dip we
+[00:08:35] issue a buy and it locks it and then we
+[00:08:38] continue every time that happens we keep
+[00:08:40] issuing buys and start accumulating a
+[00:08:43] portfolio and then at the very end of
+[00:08:46] our program here you can see our final
+[00:08:48] portfolio value and it actually went
+[00:08:51] down in value
+[00:08:53] so why is that why is our final
+[00:08:55] portfolio less now well we haven't
+[00:08:58] actually finished programming our
+[00:09:00] trading strategy yet we've issued some
+[00:09:02] buy commands whenever the price of the
+[00:09:04] stock dipped a little bit but we didn't
+[00:09:06] actually issue any of our sell
+[00:09:08] conditions so we also need to tell back
+[00:09:10] trader at what point to sell Oracle
+[00:09:13] stock so in the next video I'm going to
+[00:09:15] cover how to actually issue the sell
+[00:09:18] commands monitor the status of our
+[00:09:21] trades and also how to change our
+[00:09:23] position size to buy more than one share
+[00:09:26] and set commissions and add a lot of
+[00:09:28] other settings to complete out our
+[00:09:30] strategy and then we'll also use the
+[00:09:33] plotting that's built in and to plot out
+[00:09:35] our strategy and you'll see we actually
+[00:09:37] will make a little bit of money from
+[00:09:38] this but it's not the best strategy but
+[00:09:40] it's an easy one to get started with and
+[00:09:42] get an understanding of how back trader
+[00:09:45] works so stay tuned for the next video
+[00:09:47] and we'll finish this up thanks

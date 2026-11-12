@@ -1,0 +1,165 @@
+[00:00:00] in this video I'm going to show you a
+[00:00:01] strategy using the hakashi indicator
+[00:00:04] it's great at finding Trends and even
+[00:00:06] better at finding reversals I'm also
+[00:00:08] going to be adding another indicator to
+[00:00:10] this strategy to make it that much more
+[00:00:12] effective let's get straight to it for
+[00:00:14] all the beginners out there or for the
+[00:00:16] people who don't know what the hakashi
+[00:00:18] indicator is let me give you a quick
+[00:00:20] overview so what we're looking at now
+[00:00:22] looks as if it's just a normal chart
+[00:00:24] right well actually we're looking at the
+[00:00:26] hakashi indicator at work hakashi
+[00:00:29] actually means average bar in Japanese
+[00:00:32] so that's exactly what it's doing
+[00:00:34] finding the average in the candlesticks
+[00:00:36] so this is the real time chart and this
+[00:00:39] is the hakashi chart so just make sure
+[00:00:41] in the back of your head you know the
+[00:00:43] hakashi is not the real price it's the
+[00:00:46] average price instead of just looking at
+[00:00:48] the hakashi candles we're going to be
+[00:00:49] looking at both the real time and the
+[00:00:52] hakashi at the same time so we can read
+[00:00:55] and understand the chart better to do
+[00:00:57] this just go to trading view go to the
+[00:00:59] indicators tab and type in hakashi this
+[00:01:01] will show both the real-time candles
+[00:01:03] above and the hakashi candlesticks right
+[00:01:06] below it now that we have the indicator
+[00:01:07] added let's move on to the strategy so
+[00:01:10] when trading it's a lot harder to find
+[00:01:12] Trends than you might think not all
+[00:01:14] Trends are going to look this simple and
+[00:01:15] just have all green candlesticks going
+[00:01:17] up most of the time they're going to
+[00:01:19] look like this a strong Trend going up
+[00:01:22] but having multiple pullbacks with red
+[00:01:24] candlesticks which also might give you
+[00:01:26] false signals on when to sell that's
+[00:01:28] where the hakashi comes in instead of
+[00:01:30] looking at this trend with a bunch of
+[00:01:32] false signals that may get you to panic
+[00:01:34] cell we're going to be looking at the
+[00:01:35] hakashi in most cases it'll have all the
+[00:01:38] same color candlesticks and a strong
+[00:01:40] Trend this way it's easier to identify
+[00:01:42] the trend in real time that's exactly
+[00:01:45] what the hakashi is for it helps
+[00:01:46] eliminate unwanted noise and shows a
+[00:01:49] clearer version of the price movement
+[00:01:50] let's move on to how to identify the
+[00:01:52] trend there are three simple rules you
+[00:01:55] must follow to identify an uptrend the
+[00:01:57] hakashi candlesticks must be green they
+[00:02:00] must have large bodies and they have no
+[00:02:02] lower wicks in this example this would
+[00:02:05] be a strong long Trend all the candles
+[00:02:08] are green they have large bodies and
+[00:02:10] they don't have lower Wicks it's the
+[00:02:11] complete opposite for a downtrend all
+[00:02:14] the candlesticks must be red have large
+[00:02:16] bodies and have no upper Wicks so we all
+[00:02:19] know charts gain and lose momentum all
+[00:02:21] the time after a strong upwards Trend
+[00:02:23] most of the time the chart will lose
+[00:02:25] momentum and do a reversal in the
+[00:02:27] opposite direction luckily the hocky
+[00:02:29] gashi is great at finding when that
+[00:02:32] moment is about to happen you can
+[00:02:33] identify when a reversal is about to
+[00:02:35] happen by this a doge candle a dogee
+[00:02:38] candle is a Candlestick with Wix on both
+[00:02:41] sides has a small body and it can be
+[00:02:43] either color depending if you want to go
+[00:02:45] long or short so we're going to take
+[00:02:47] advantage of what we just learned the
+[00:02:49] Only Rule you have to follow is you only
+[00:02:52] enter after you see a dogee candle and
+[00:02:55] you wait for two candles in the opposite
+[00:02:57] direction with opposite features let me
+[00:03:00] show you an example so you know what I
+[00:03:01] mean so here you can see the price is
+[00:03:03] making a downtrend then we see the chart
+[00:03:05] make a dogee candle in the opposite
+[00:03:07] color which indicates that there's a
+[00:03:10] very good chance the price will make a
+[00:03:12] reversal then we wait for two green
+[00:03:14] candles with only Wicks on the top to
+[00:03:16] appear to confirm the reversal if the
+[00:03:19] candle has a wick on the top and the
+[00:03:21] bottom we do not count that candle once
+[00:03:23] the second candle with a wick only on
+[00:03:25] the top appears we enter the trade so
+[00:03:28] this right here will be our entry signal
+[00:03:30] let me show you an example of a short
+[00:03:32] the market is in an uptrend we wait to
+[00:03:34] see a dogee candle appear in the
+[00:03:36] opposite color we then wait for two
+[00:03:38] large red candles to appear with only
+[00:03:41] Wicks on the bottom once we see the two
+[00:03:43] candlesticks we enter the trade so
+[00:03:45] that's the hakashi indicator explains
+[00:03:47] simply in a nutshell now I'm going to
+[00:03:49] show you how to add another indicator to
+[00:03:51] this strategy to make it that much more
+[00:03:54] effective and more importantly more
+[00:03:56] profitable the indicator we're going to
+[00:03:57] be adding to the strategy is the
+[00:03:59] stastics indicator I'm not going to be
+[00:04:01] going too in depth with this indicator
+[00:04:03] because one it's very simple to use and
+[00:04:06] two I don't want this video to be too
+[00:04:08] long to describe it simply the
+[00:04:10] stochastics indicator is a lot like RSI
+[00:04:13] as in if the lines are crossing above
+[00:04:15] the Top Line the market is being
+[00:04:17] overbought if the lines are crossing
+[00:04:19] below the bottom line the market is
+[00:04:21] being oversold so as an example here the
+[00:04:24] lines are crossing below the bottom line
+[00:04:26] indicating the market is oversold and
+[00:04:28] it's likely to reverse up upwards just
+[00:04:30] like most indicators though this
+[00:04:32] indicator by itself isn't very good but
+[00:04:35] combined with other indicators it's
+[00:04:37] extremely powerful to add this indicator
+[00:04:40] go to indicators tab type in stochastics
+[00:04:43] and click this one right here now let me
+[00:04:45] show you how to combine these two
+[00:04:46] indicators to make a very powerful
+[00:04:49] strategy first things first if we want
+[00:04:50] to go long we want to find a point in
+[00:04:53] the chart where the Scholastics
+[00:04:54] indicator is crossing below the bottom
+[00:04:56] line and there is weak downwards
+[00:04:58] momentum we we do not want to enter a
+[00:05:01] trade if the Scholastics lines are
+[00:05:03] crossing below the bottom line and
+[00:05:05] there's strong downwards momentum
+[00:05:07] because odds are the price will keep on
+[00:05:09] falling here's a perfect example the
+[00:05:11] Scholastic lines are crossing below the
+[00:05:13] bottom line there's a downtrend but a
+[00:05:15] very weak downtrend we then wait for a
+[00:05:18] dogee candle to appear once it does wait
+[00:05:20] for two large body candlesticks with
+[00:05:22] only Wicks at the top then we enter the
+[00:05:25] trade here's one more example Scholastic
+[00:05:28] lines are crossing below the bottom line
+[00:05:30] there's a weak downtrend wait for the
+[00:05:31] dogee candle wait for two large green
+[00:05:34] candles with only Wicks on top enter the
+[00:05:36] trade profit I just showed you a
+[00:05:38] profitable trading strategy using the
+[00:05:40] hakashi and Scholastics indicator all I
+[00:05:43] ask in return is if you take 2 seconds
+[00:05:45] out of your day and like this video if
+[00:05:47] you want to see one of the strategies I
+[00:05:49] use when day trading check out this
+[00:05:51] video right here because this strategy
+[00:05:53] works great on the one minute time frame
+[00:05:55] I'll see you guys next time
+[00:06:00] [Music]

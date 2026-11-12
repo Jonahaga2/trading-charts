@@ -1,0 +1,208 @@
+[00:00:00] Have you ever thought to yourself, I wish
+[00:00:00] I could instantly test my strategy with out
+[00:00:04] waiting months or even years, to see if my
+[00:00:04] trading strategy is even good or not.
+[00:00:09] Well, what if I told you there s a way to
+[00:00:09] test any trading strategy you want on years
+[00:00:14] of data from the past, instantly. To see right
+[00:00:14] then and there if your trading strategy is
+[00:00:19] profitable or not.
+[00:00:19] Instead of just believing a YouTuber that
+[00:00:23] says they have a 100% win rate strategy, why
+[00:00:23] not test it for yourself to see if it really
+[00:00:28] is that good or not, and see how it compares
+[00:00:28] to your strategy that you re currently using.
+[00:00:33] In this video, I m going to show you exactly
+[00:00:33] how to do that. By backtesting your strategy
+[00:00:37] on TradingView with past years of data. So
+[00:00:37] you can see just how successful your trading
+[00:00:43] strategy really is.
+[00:00:43] Let s get straight to it.
+[00:00:45] First things first, we have to go to TradingView.
+[00:00:45] I ll have a link in the description. And as
+[00:00:49] a side note, this is completely free to use
+[00:00:49] and you don t need a paid subscription or
+[00:00:53] anything. Which is pretty awesome.
+[00:00:53] Once your on tradingview, go to chart option
+[00:00:57] on the top here.
+[00:00:57] Then type in any security you want to test
+[00:01:01] your strategy on. This will work with anything.
+[00:01:01] Stocks, forex, crypto, whatever.
+[00:01:05] For this example, I m going to test the Vanguard
+[00:01:05] S&P 500.
+[00:01:09] Now for this video we are going to test a
+[00:01:09] very simple trading strategy. Just so you
+[00:01:13] guys can kind of get a grasp on the basics
+[00:01:13] of backtesting. If this video gets a good
+[00:01:17] response and you guys really want to see more
+[00:01:17] of this, I ll do a 2nd video where I ll get
+[00:01:21] a little more advanced.
+[00:01:21] The trading strategy example we will do, is
+[00:01:25] just a simple moving average strategy.
+[00:01:25] It s pretty simple. We have a 20 day moving
+[00:01:30] average and a 50 day moving average. We want
+[00:01:30] to buy, when the 50 day crosses below the
+[00:01:34] 20 day, and we want to sell, when the 50 day
+[00:01:34] crosses above the 20 day.
+[00:01:38] Like I said, very basic and simple trading
+[00:01:38] strategy, but this is just to show you the
+[00:01:42] basics of backtesting.
+[00:01:42] I should also mention. That Tradingview has
+[00:01:46] a page where it has a bunch of pre bult in
+[00:01:46] variables functions, so you don t have to
+[00:01:50] custom make all of them. We are going to be
+[00:01:50] using a lot of them in this video. So I ll
+[00:01:54] leave that in the description as well if you
+[00:01:54] want to check that out.
+[00:01:57] So once you type in whatever security you
+[00:01:57] want to test. You are going to go down and
+[00:02:01] click on this bottom tab that says pine editor
+[00:02:01] .
+[00:02:04] The very first line, is what you want to name
+[00:02:04] your trading strategy. So, we are going to
+[00:02:08] name this simple moving average strategy .
+[00:02:08] Next, we are going to set our variables. The
+[00:02:12] first one we ll call ema20 for our 20 day
+[00:02:12] moving average and the second one we ll call
+[00:02:17] ema50 for our 50 day average.
+[00:02:17] Next we are going to use the built in ema
+[00:02:22] function from the tradingview page I was talking
+[00:02:22] about before. So we just type ema( . Now this
+[00:02:28] function takes two parameters. The first parameter
+[00:02:28] is if you want the ema to read from the open
+[00:02:33] or close of a candle as a reference point.
+[00:02:33] With moving averages, I think its best to
+[00:02:37] read from the close. So we ll do that for
+[00:02:37] this strategy.
+[00:02:41] Then the 2nd value is the time frame. So for
+[00:02:41] a 20 moving average we are going to set it
+[00:02:45] to 20.
+[00:02:45] Then you re going to do the exact same thing
+[00:02:47] for this one, but make it 50.
+[00:02:47] Next we are going to set our long and short
+[00:03:02] conditions.
+[00:03:02] So we want to go long, if ema20 is above the
+[00:03:05] ema50. Then we want to go short if the ema
+[00:03:05] 20 is below ema50.
+[00:03:11] So keep in mind, these aren t entry points,
+[00:03:11] but they are just simply telling the bot what
+[00:03:15] we define as a long and what we think is a
+[00:03:15] short.
+[00:03:19] To do entry points we are going to use another
+[00:03:19] built in function, which is strategy.entry
+[00:03:24] .
+[00:03:24] The first parameter is the name, so we ll
+[00:03:27] call this entry long, then the 2nd parameter
+[00:03:27] is what we actually want to do, so we type
+[00:03:32] in strategy.long , the 3rd parameter is how
+[00:03:32] many shares you want to purchase, so in this
+[00:03:37] example we will just do 1000 shares.
+[00:03:37] Then the 4th parameter is when we want to
+[00:03:42] actually execute the trade, so we type when
+[00:03:42] = long . Which is saying we want to execute
+[00:03:47] a long trade when these parameters above are
+[00:03:47] met.
+[00:03:51] So we have the name, whether we want to go
+[00:03:51] long or short, the amount of shares, and when
+[00:03:56] want to execute.
+[00:03:56] Then we are going to do the same thin g for
+[00:03:59] a short trade. So name this short , strategy
+[00:03:59] we want is short, still have it as 1000 shares,
+[00:04:05] then we want it to execute it when this short
+[00:04:05] condition is true.
+[00:04:08] Right now we have it setup to where its longing
+[00:04:08] and shorting. But it s not actually closing
+[00:04:13] positions at this time. It s just constantly
+[00:04:13] opening trades.
+[00:04:17] So lets setup to where it actually closes
+[00:04:17] them.
+[00:04:19] To do that, just simply use strategy.close
+[00:04:19] . Then we are going to give it a few values
+[00:04:24] to tell the bot when we want to close a position.
+[00:04:24] So we want to reference what position we want
+[00:04:28] to close, so we want to close a long trade,
+[00:04:28] when short is true. Then we will do the opposite
+[00:04:34] for a short.
+[00:04:34] So close out a short position when long is
+[00:04:38] true.
+[00:04:38] So just all this code alone, in theory, will
+[00:04:41] buy every time when the 50 day crosses below
+[00:04:41] the 20 day, and will sell, when the 50 day
+[00:04:46] crosses above the 20 day.
+[00:04:46] It will also do the opposite with short trades.
+[00:04:51] Let s run it to see if it works.
+[00:04:51] To do that, go to this tab up here add to
+[00:04:54] chart and that will start our backtest.
+[00:04:54] So it looks like it worked. The cool thing
+[00:04:59] about tradingview, is that it will actually
+[00:04:59] display on the chart where it bought and sold.
+[00:05:03] This way you can check to see if the bot is
+[00:05:03] running correctly and buying and selling where
+[00:05:07] you actually want it to.
+[00:05:07] You also have these 3 different tabs.
+[00:05:11] The overview tab will show you an equity curve,
+[00:05:11] your net profit, amount of trades, max drawdown,
+[00:05:16] avg trade, etc.
+[00:05:16] The
+[00:05:25] performance summary basically gives the same
+[00:05:25] information, but in a table format.
+[00:05:30] Then theres the list of trades tab, where
+[00:05:30] it will show you every single trade and when
+[00:05:34] and how it was executed. So you can see here,
+[00:05:34] that we went all the way back to the 1970s.
+[00:05:38] So maybe you don t want to test all the way
+[00:05:38] back to 1970? Well you can actually edit the
+[00:05:43] script to where you can tell the bot a specific
+[00:05:43] amount of time you want to test.
+[00:05:47] To do that, just go to this line right here
+[00:05:47] and create a start and end variable. Then
+[00:05:51] we are going to use the prebuilt timestamp
+[00:05:51] function So we are going to set our start,
+[00:05:56] lets say 2019, august, 1, then hours, and
+[00:05:56] minutes.
+[00:06:01] Then we ll just copy and paste this and set
+[00:06:01] our end point to 2020.
+[00:06:06] So this will test our strategy from august
+[00:06:06] 2019 to august 2020 on the s&p 500.
+[00:06:12] Then we have to make an if statement. So if
+[00:06:12] time is greater than or equal to our start
+[00:06:17] variable and if time is less than or equal
+[00:06:17] to our end variable. We will run this code
+[00:06:22] below.
+[00:06:22] Then, you just indent this.
+[00:06:25] Go to the add to chart button, and boom, you
+[00:06:25] see that it tested trades from only 2019 to
+[00:06:34] 2020.
+[00:06:34] Now maybe you want to see your actually indicators
+[00:06:44] from the bot on the chart. Well, theres actually
+[00:06:44] a way to do that.
+[00:06:48] Theres a prebuilt function called the plot
+[00:06:48] function . So you just do plot( then whatever
+[00:06:53] indicator you want, the name, the color, then
+[00:06:53] the width.
+[00:06:57] Then boom, it shows you the moving averages
+[00:06:57] on the chart. Which is pretty cool.
+[00:07:00] B ut maybe you want it actually overlayed
+[00:07:00] on the chart as you normally would have it
+[00:07:04] when you add indicators.
+[00:07:04] To do that just go up here and set overlay
+[00:07:08] to true.
+[00:07:08] Then botta bing botta boom, you have the indicator
+[00:07:11] overlayed on the chart.
+[00:07:11] Like I said guys, this is a very basic strategy
+[00:07:15] and example, but I just wanted to show you
+[00:07:15] the very basic opportunities you have with
+[00:07:20] backtesting.
+[00:07:20] If you want to see a more advanced tutorial
+[00:07:22] on how to back test some advanced strategies,
+[00:07:22] like this video and let me know in the comments
+[00:07:26] if you want that, and I ll make a more advanced
+[00:07:26] tutorial.
+[00:07:31] Because there s some pretty crazy things you
+[00:07:31] can to with this tradingview backtesing.
+[00:07:35] Now that you know how to backtest, you should
+[00:07:35] backtest one of my strategies. Like this one,
+[00:07:40] where I show you one of my secret strategies
+[00:07:40] that has a high pretty high success rate.
+[00:07:43] Thanks for watching and I ll see you guys
+[00:07:43] next time.

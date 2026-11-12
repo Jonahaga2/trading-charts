@@ -1,0 +1,813 @@
+[00:00:00] Last week, Anthropic
+[00:00:01] became the first company in
+[00:00:03] history to be so good at building
+[00:00:05] artificial intelligence that the
+[00:00:07] United States government forced them to
+[00:00:09] shut it down.  Well, they forced them to
+[00:00:11] turn it off for foreigners, at
+[00:00:13] least.  Anthropic then shut down the service for
+[00:00:15] everyone because they couldn't
+[00:00:16] identify who the foreigners were.
+[00:00:18] So, it went as well as one
+[00:00:20] could have hoped.  All of this happened on
+[00:00:23] a Friday night.  Anthropic
+[00:00:25] received approximately 90 minutes' notice, and
+[00:00:28] the timing was not ideal, as
+[00:00:30] earlier in the month Anthropic had
+[00:00:32] confidentially filed
+[00:00:34] documents with the SEC for an
+[00:00:36] initial public offering.  According to the Financial
+[00:00:39] Times, the prospectus revealed an
+[00:00:41] annualized revenue rate of $47 billion
+[00:00:44] and an expected valuation of
+[00:00:47] $965 billion.  That is,
+[00:00:49] almost a trillion, but they are
+[00:00:51] being modest about it.  This is
+[00:00:54] a considerable increase compared
+[00:00:56] to the 380 billion they were valued at
+[00:00:59] in February.  And that's a lot of money for
+[00:01:01] a company that, until
+[00:01:03] recently, was best known for its extreme
+[00:01:06] dedication to AI security.
+[00:01:09] Anthropic built its brand around
+[00:01:11] a framework called
+[00:01:13] constitutional AI, which in practice
+[00:01:15] meant they created a chatbot
+[00:01:17] that would politely refuse to help
+[00:01:19] you write a mildly
+[00:01:21] mean email if someone's
+[00:01:23] feelings were hurt, which is kind.
+[00:01:27] Fable 5 was the primary
+[00:01:29] consumer product, while its more
+[00:01:31] powerful sibling, Mythos 5, was
+[00:01:32] made available only to a
+[00:01:35] vetted group of organizations through
+[00:01:37] a program called Project Glass
+[00:01:39] Wing.  These are
+[00:01:42] cutting-edge AI models, meaning they cost
+[00:01:44] billions of dollars to train and are
+[00:01:46] expected to usher in a new era of
+[00:01:48] human productivity or, at the very least,
+[00:01:50] justify a
+[00:01:52] market valuation of nearly a trillion
+[00:01:54] dollars.  Either one would be
+[00:01:56] good.  Now, when you're
+[00:01:58] drafting your S1 and planning one of the
+[00:02:00] biggest IPOs in corporate history,
+[00:02:03] you generally want your
+[00:02:05] core product to remain available to
+[00:02:07] your customers.  It's difficult to sell
+[00:02:09] shares to investors if your
+[00:02:11] core business is illegal.  In theory
+[00:02:14] , the current US administration has
+[00:02:16] a very clear policy on
+[00:02:18] artificial intelligence.  President
+[00:02:21] Trump announced on his first
+[00:02:23] full day in office that America is
+[00:02:25] in an AI race with China,
+[00:02:27] declaring: "We have an emergency.
+[00:02:29] We need to build these things."  The
+[00:02:32] stated plan was to deregulate the
+[00:02:34] sector, get out of the way of
+[00:02:36] Silicon Valley, and let
+[00:02:38] American tech champions dominate the
+[00:02:40] global market.  It now turns out that
+[00:02:42] getting out of Silicon Valley's way
+[00:02:45] involves the Department of Commerce
+[00:02:47] sending a letter to its CEO on a
+[00:02:49] Friday night, giving him 90 minutes
+[00:02:51] to shut down the company's most advanced product
+[00:02:54] .  The letter that Dario Amodei
+[00:02:56] received was what is known as an
+[00:02:58] information notification.  A
+[00:03:01] private notice that the government uses in
+[00:03:03] export control cases to tell
+[00:03:05] a company that, from now on,
+[00:03:08] it needs a license for things it did
+[00:03:10] n't need yesterday.  He ordered
+[00:03:13] Anthropic to suspend all access
+[00:03:15] to the Fable 5 and Mythos 5 models by
+[00:03:18] any foreign citizen
+[00:03:20] anywhere in the world.  The letter, a
+[00:03:23] private notice from
+[00:03:25] Commerce Secretary Howard Lutnik, did not give a
+[00:03:27] specific basis for the need for the
+[00:03:30] restrictions, but cited U.S. laws
+[00:03:32] that allow the government to impose
+[00:03:34] export controls on civilian technology
+[00:03:37] that could be used for
+[00:03:39] intelligence purposes.  He continued, "
+[00:03:43] Until further notice, you must submit
+[00:03:45] an individually validated license application
+[00:03:47] before exporting
+[00:03:49] Mythos or Fable models to
+[00:03:51] any destination in the world or to
+[00:03:53] any foreign entity, wherever they may
+[00:03:56] be located."
+[00:03:59] He then threatened criminal and
+[00:04:02] civil penalties if the company failed to comply with the
+[00:04:04] order.  If you manage a
+[00:04:06] global technology company with hundreds of
+[00:04:09] millions of users, verifying the
+[00:04:11] exact citizenship and immigration status
+[00:04:13] of every person who visits your website or
+[00:04:16] uses your API on a Friday night
+[00:04:18] is difficult.  The exception
+[00:04:21] is probably Palantir.  But since there's no
+[00:04:23] foolproof way to
+[00:04:25] instantly separate Americans from
+[00:04:27] foreigners online, Anthropic
+[00:04:29] had no real choice within 90 minutes but to
+[00:04:32] hit the shut-off button for
+[00:04:34] absolutely everyone.  They
+[00:04:36] abruptly deactivated Fable 5 and Mythos 5
+[00:04:39] globally, ensuring compliance
+[00:04:41] by simply eliminating their own
+[00:04:43] product.  Now, the government insisted that
+[00:04:46] this was a reluctant but
+[00:04:48] absolutely necessary step to protect
+[00:04:50] national security.  But when you
+[00:04:53] really analyze the
+[00:04:55] terrifying threat they were
+[00:04:56] protecting us from and who warned them, the
+[00:04:59] story becomes much stranger.
+[00:05:01] But before I delve into that,
+[00:05:03] let me talk about
+[00:05:05] this week's video sponsor, Odoo.  So, here
+[00:05:07] 's a problem that I think
+[00:05:08] many of you can relate to.  You
+[00:05:10] start a business or even a
+[00:05:12] side project and, before you know it,
+[00:05:14] you're operating with six
+[00:05:16] different tools.  One app for sales,
+[00:05:19] another for invoicing, a spreadsheet
+[00:05:21] for inventory, yet another for
+[00:05:23] your website, and none of them communicate with each other.
+[00:05:26] That's exactly the kind of mess
+[00:05:28] Odoo was created to fix.  Odoo
+[00:05:30] is an all-in-one management software,
+[00:05:32] basically a complete suite of
+[00:05:34] business applications that reside on
+[00:05:36] one platform and truly work
+[00:05:39] together.  Therefore, when you make a
+[00:05:41] sale, it automatically updates your
+[00:05:43] accounting and inventory in
+[00:05:45] real time.  No more copying and pasting
+[00:05:47] between tools.  No more spreadsheets
+[00:05:49] that become obsolete the second
+[00:05:51] you close them.  And the part I
+[00:05:53] really like: you don't have to
+[00:05:55] commit to everything on the first
+[00:05:57] day.  The first app is
+[00:05:59] completely free forever, with
+[00:06:01] hosting and support included.
+[00:06:03] From there, you can add
+[00:06:05] applications as your business grows
+[00:06:07] .  Plans start at just $
+[00:06:09] 24.90 per month for a complete ERP suite
+[00:06:12] .  That's kind of insane.  It even
+[00:06:15] configures itself automatically for your
+[00:06:18] country.  Taxes, currencies, all that stuff,
+[00:06:20] so you don't waste time with
+[00:06:22] settings.  Check out Odoo using
+[00:06:25] the link in the description.  They offer a
+[00:06:27] 15-day free trial for you to
+[00:06:29] explore and see for yourself, or you
+[00:06:31] can even schedule a demo
+[00:06:33] with a specialist to evaluate your
+[00:06:35] project.  The guideline did not apply
+[00:06:38] only to users in other countries.
+[00:06:40] It applied to any foreign national,
+[00:06:42] which, under
+[00:06:44] export administration regulations, includes
+[00:06:46] people working in the United States
+[00:06:49] on a visa.  This mechanism is known
+[00:06:51] as presumed export.  The
+[00:06:54] legal theory is that granting a
+[00:06:56] foreign citizen access to
+[00:06:58] controlled technology within a
+[00:07:00] commercial building in San Francisco is treated
+[00:07:02] exactly the same as
+[00:07:04] packing it up and shipping it back to their
+[00:07:06] country of origin.  The net effect
+[00:07:08] of this rule was that Anthropic was
+[00:07:10] forced to block its own
+[00:07:12] non-American engineers from the
+[00:07:14] systems they had just
+[00:07:16] spent the last year building.
+[00:07:18] I'm not sure what
+[00:07:20] standard corporate governance guidelines
+[00:07:22] say about making it a federal crime
+[00:07:24] for your own staff to access your
+[00:07:26] computers, but I imagine it's bad
+[00:07:28] for productivity.  According to the
+[00:07:30] administration, this halt to the
+[00:07:32] flagship new product of a
+[00:07:34] nearly trillion-dollar company was
+[00:07:36] a reluctant but
+[00:07:38] entirely necessary intervention to protect
+[00:07:40] national security.
+[00:07:43] White House AI advisor and podcaster David
+[00:07:45] Sacks explained on social media that a
+[00:07:47] trusted partner had submitted
+[00:07:50] a highly dangerous jailbreak that
+[00:07:52] allowed users to bypass the
+[00:07:54] security protections of Claude 3.5
+[00:07:57] .  Sacks claimed that the administration
+[00:07:59] had asked Anthropic to correct
+[00:08:02] the flaw or withdraw the model, and that
+[00:08:04] Anthropic had refused, which is a
+[00:08:06] very different story.  Anthropic
+[00:08:10] gave a different version of the conversation.
+[00:08:13] According to their statement, the
+[00:08:15] letter arrived at 5:21 PM on a
+[00:08:16] Friday, which is, naturally, the
+[00:08:19] exact time chosen by people
+[00:08:21] who want a problem to become someone
+[00:08:23] else's problem by
+[00:08:24] Monday.  They say they haven't
+[00:08:26] received any specific technical details regarding the
+[00:08:30] government's concerns and that they certainly haven't
+[00:08:32] refused to correct anything.  They
+[00:08:34] complied immediately.  Instead,
+[00:08:37] they explained that, after reviewing the
+[00:08:39] report they believe caused the
+[00:08:41] panic, the technique in question, and
+[00:08:43] I'm quoting their statement here
+[00:08:45] , essentially consists of asking the
+[00:08:47] model to read a
+[00:08:49] specific codebase and correct any
+[00:08:51] software flaws.  Now, to be clear,
+[00:08:54] asking a coding AI to
+[00:08:56] read computer code and correct
+[00:08:58] errors is not normally considered
+[00:09:00] a complex cyberweapon exploit.
+[00:09:02] The product is generally considered to
+[00:09:05] function exactly as
+[00:09:07] advertised.  Now, you might think that
+[00:09:09] the cybersecurity sector, the
+[00:09:11] people whose networks the government was trying to
+[00:09:14] protect from these terrible
+[00:09:16] automated code correctors, would be
+[00:09:18] happy with state intervention
+[00:09:20] to save them.  But it turns out they
+[00:09:23] were far from satisfied.  More than
+[00:09:26] 100 cybersecurity executives and technical pioneers
+[00:09:28] from companies
+[00:09:31] like Google, Zoom, and Sophos signed
+[00:09:33] an open letter to the government, politely pointing out
+[00:09:35] that the state had just
+[00:09:38] confiscated their best
+[00:09:40] defense tool.  Experts noted that
+[00:09:44] Anthropic had already integrated
+[00:09:46] significant protections into Claude
+[00:09:48] 3.5 to prevent it from being used in
+[00:09:51] hacker attacks.  In fact, according to an
+[00:09:53] article on TechCrunch, these
+[00:09:55] security measures were so aggressive on
+[00:09:57] launch day that they were the subject of
+[00:10:00] many jokes in the
+[00:10:01] cybersecurity community.  Renowned
+[00:10:06] security researcher Valentina
+[00:10:08] Palmyotti reported that the model triggered
+[00:10:11] its own internal
+[00:10:13] security filters and refused to complete
+[00:10:15] harmless tasks, such as reading a
+[00:10:18] common IT post, if the text contained
+[00:10:20] a word vaguely related to
+[00:10:22] computer networks.  Well, I need to
+[00:10:27] say something here, because viewers
+[00:10:29] often assume I think AI is
+[00:10:31] nonsense, but I don't—leaving
+[00:10:33] aside the AI-generated songs
+[00:10:35] that nobody asked for and the
+[00:10:38] LinkedIn posts written by people pretending to be
+[00:10:40] knowledgeable.  These tools
+[00:10:42] are genuinely useful for many
+[00:10:44] people and have real-world use cases
+[00:10:46] in business.  The "how" is important
+[00:10:48] here, because you've all seen
+[00:10:50] stories of someone filing a
+[00:10:52] legal petition full of cases that
+[00:10:54] AI simply invented.  The lesson
+[00:10:57] is not that the tool is useless.    The fact is
+[00:10:59] that AI doesn't replace
+[00:11:01] human experience.  She complements her.
+[00:11:04] A good lawyer can identify
+[00:11:06] errors, while someone without
+[00:11:07] legal training cannot.  The
+[00:11:09] same applies to code,
+[00:11:11] accounting, and analysis in the
+[00:11:13] hands of someone who knows what they're doing.
+[00:11:15] These models do not make the
+[00:11:17] expert redundant.  They allow
+[00:11:19] a single specialist to do the
+[00:11:20] work that previously required a team.
+[00:11:22] I know people who run
+[00:11:24] small businesses who can now
+[00:11:26] take on jobs that previously went to
+[00:11:28] much larger firms.  A friend in the
+[00:11:29] gaming industry told me how
+[00:11:31] creative people, who aren't
+[00:11:33] necessarily technically skilled, can use
+[00:11:35] Claude Code to put together an
+[00:11:37] initial version of their idea and hand it over to
+[00:11:39] programmers to get the code
+[00:11:41] ready for production.  This is much
+[00:11:43] faster than trying to describe
+[00:11:45] an idea to a programmer who can't
+[00:11:47] see your vision.  That's
+[00:11:49] why a
+[00:11:50] power button on a Friday
+[00:11:52] night is important, and not just a
+[00:11:54] funny story.  The tool that
+[00:11:56] is being shut down is something that
+[00:11:58] many people really rely on.
+[00:12:00] Cybersecurity veteran Mattsuchi
+[00:12:02] told TechCrunch that if you
+[00:12:04] simply asked Fable 5 to
+[00:12:06] write secure code, it assumed
+[00:12:08] you were doing
+[00:12:10] dangerous cybersecurity work
+[00:12:12] rather than standard software engineering.
+[00:12:15] Then, it would panic and
+[00:12:17] immediately downgrade to a
+[00:12:19] less advanced model.  So you have
+[00:12:21] a situation where a company spends
+[00:12:23] thousands of hours testing a product only
+[00:12:26] to make it so hopelessly
+[00:12:28] cautious that it can't even read a
+[00:12:30] website.  Even its own users complain
+[00:12:32] that it is practically unusable
+[00:12:34] for basic engineering, and the
+[00:12:36] White House is still giving them 90 minutes to
+[00:12:38] shut it down because they are concerned
+[00:12:40] that it poses a threat to the republic.
+[00:12:43] Anthropic's statement noted that
+[00:12:45] if this standard were applied to the entire
+[00:12:47] industry, it would virtually halt
+[00:12:49] all new
+[00:12:51] model developments for all
+[00:12:53] leading model providers, which would be strange
+[00:12:56] given the assessments we just
+[00:12:58] discussed.  Look, Anthropic's position
+[00:13:00] is that no AI model from
+[00:13:03] any provider is perfectly
+[00:13:05] resistant to jailbreaks.  They said
+[00:13:07] this clearly when they released
+[00:13:09] Fable, and they're saying it again here.  They
+[00:13:12] suspect that perfect resistance to
+[00:13:14] jailbreaks is not
+[00:13:16] currently possible for any
+[00:13:18] model provider.  Any system in the sector can be
+[00:13:21] tricked into doing something it shouldn't
+[00:13:23] under the right conditions.  Therefore,
+[00:13:25] Anthropic's approach was what they call
+[00:13:28] defense in depth.  Make
+[00:13:30] jailbreaks either limited or expensive, and
+[00:13:32] then monitor them closely to
+[00:13:34] detect anything that goes
+[00:13:36] unnoticed.  That's also why
+[00:13:38] they now retain customer data
+[00:13:40] for 30 days so they can study the
+[00:13:42] attacks.  The security company is
+[00:13:44] creating a security surveillance requirement for itself
+[00:13:47] .  But wait, in
+[00:13:50] case you're wondering who
+[00:13:52] the highly trusted partner was who
+[00:13:54] found this flaw and rushed to the
+[00:13:56] White House to report it, it was
+[00:13:58] Amazon CEO Andy Jassy.  I know you all
+[00:14:00] thought Jeff Bezos was in
+[00:14:02] charge of Amazon.  He is
+[00:14:04] retired.  There's a new guy, uh,
+[00:14:07] Andy.  Andy is in charge now.  Well,
+[00:14:09] corporate partnerships in
+[00:14:12] Silicon Valley can be quite complex.
+[00:14:14] Amazon is one of
+[00:14:16] Anthropic's biggest financial backers, having
+[00:14:19] invested $13 billion in the
+[00:14:21] startup, with commitments to invest
+[00:14:23] up to another $25 billion.  Anthropic
+[00:14:27] is also a major Amazon customer
+[00:14:29] .  CNN reported in April that the company
+[00:14:31] had committed to spending over one
+[00:14:34] hundred billion dollars on Amazon Web
+[00:14:36] Services to train and run its
+[00:14:38] AI models.  So, to summarize the
+[00:14:40] financial logic of
+[00:14:42] modern technology alliances, you raise
+[00:14:44] billions of dollars from a
+[00:14:46] cloud computing giant.  You sign a
+[00:14:48] contract promising to spend one hundred billion
+[00:14:51] dollars renting
+[00:14:53] their computers.  And then the CEO of that partner
+[00:14:55] reports you to the White House on a
+[00:14:57] Friday afternoon to ensure that
+[00:14:59] your main product is taken off the
+[00:15:02] market.  Presumably, this
+[00:15:04] particular phone call is not in
+[00:15:06] Amazon Web Services' promotional brochures
+[00:15:09] .  It's a very distinct style
+[00:15:11] of investor relations.  It is
+[00:15:14] clear that Amazon also develops
+[00:15:16] its own competing AI models
+[00:15:18] , which means that by
+[00:15:20] exposing Anthropic, Andy Jassy
+[00:15:22] managed to protect the civilized world
+[00:15:25] from the dangers of automated software debugging
+[00:15:27] while simultaneously
+[00:15:29] harming his main
+[00:15:31] corporate rival.  It's a remarkable display
+[00:15:34] of multitasking.  When asked for
+[00:15:37] comment, Amazon released a
+[00:15:39] statement saying: "It is not uncommon
+[00:15:41] for governments to seek our advice
+[00:15:43] on potential security risks.
+[00:15:45] When these occur, we do not
+[00:15:47] share the details of those
+[00:15:49] discussions."  Which translates to
+[00:15:51] : we're not going to tell you what we said
+[00:15:53] about you.  Now, we must bear in
+[00:15:56] mind that being treated as an
+[00:15:58] international arms dealer came as
+[00:16:00] a surprise to Dario Amodei.
+[00:16:03] Primarily because he had spent the
+[00:16:05] previous days explaining to
+[00:16:07] anyone who would listen how the government
+[00:16:09] should have the power to do exactly
+[00:16:11] what they had just done to him.  On
+[00:16:13] June 11, exactly one day after the
+[00:16:16] release of Claude 3.5 and less than 24
+[00:16:18] hours before the arrival of the letter from the
+[00:16:21] Department of Commerce, Amodei had
+[00:16:23] published a lengthy political essay.
+[00:16:26] In it, he complained that the intersection
+[00:16:28] of artificial intelligence with
+[00:16:30] political institutions looked a
+[00:16:32] bit like the plot of The Lord of the
+[00:16:34] Rings. I don't know what these
+[00:16:37] tech guys' deal is with the
+[00:16:39] wizarding books, where the hobbits, he said,
+[00:16:41] try to awaken Treebeard, the
+[00:16:44] wise but slow sentient tree, to
+[00:16:46] defend his forest.  The problem,
+[00:16:48] Amodei wrote, is that Treebeard
+[00:16:50] operates at a very slow speed
+[00:16:52] compared to hobbits.  It's a
+[00:16:54] well-thought-out literary analogy, the kind
+[00:16:57] of thing tech executives
+[00:16:59] write when they want to sound
+[00:17:00] profound before a nearly
+[00:17:02] trillion-dollar IPO.  Amodei's argument
+[00:17:05] was that governments needed to
+[00:17:08] build a statutory process that
+[00:17:10] was transparent, fair, clear, and
+[00:17:12] based on technical facts so that
+[00:17:14] they could block the implementation of
+[00:17:17] unsafe models.  The only flaw in
+[00:17:19] his theory was assuming that a
+[00:17:21] government bureaucracy in charge of
+[00:17:24] national security would behave like
+[00:17:26] a wise, philosophical tree from a
+[00:17:28] wizard's book.  The thing is, when
+[00:17:31] you tell a regulator that you've built
+[00:17:33] a technology so powerful it could
+[00:17:35] destroy civilization, they don't
+[00:17:37] look up from their desks,
+[00:17:39] stroke their bark, and ponder the
+[00:17:41] profound philosophical implications of
+[00:17:43] recursive self-improvement.  They
+[00:17:46] give you 90 minutes to turn it off.  Uh,
+[00:17:48] Treebeard moved fast.  All of this
+[00:17:51] led to a rather
+[00:17:53] strange situation a few days later in France,
+[00:17:56] where the leaders of the G7 nations
+[00:17:58] met for a summit.  The agenda
+[00:18:01] included a special lunch with what
+[00:18:04] the press dubbed "IA3": Dario
+[00:18:07] Amodei of Anthropic, Sam Altman of
+[00:18:09] OpenAI, and Demis Hassabis of Google
+[00:18:12] DeepMind.  The goal of bringing these
+[00:18:15] multi-billion dollar
+[00:18:16] tech giants to a luxury
+[00:18:19] lakeside resort in France was to
+[00:18:20] discuss the tremendous opportunities
+[00:18:23] artificial intelligence presents for the
+[00:18:25] financial sector.  The financial sector, as
+[00:18:27] we know, is extremely interested in
+[00:18:31] automated coding tools, and international banks
+[00:18:34] like JP Morgan Chase and Goldman Sachs
+[00:18:36] spent months negotiating
+[00:18:38] global contracts to give their employees
+[00:18:40] access to Claude Fable.  Unfortunately,
+[00:18:43] these permits vanished overnight
+[00:18:45] .  When the soup arrived, JP
+[00:18:48] Morgan had already cut off Anthropic's access
+[00:18:50] to its team in Hong Kong,
+[00:18:53] following a similar move by
+[00:18:55] Goldman Sachs.  The banks reviewed
+[00:18:57] Anthropic's licensing terms,
+[00:19:00] which technically exclude its use in
+[00:19:02] greater China, and decided that, rather than
+[00:19:04] risk a multibillion-dollar compliance dispute
+[00:19:06] with the U.S. government
+[00:19:08] on a Monday morning, it was
+[00:19:10] simpler to just remove the option
+[00:19:13] from the dropdown menu.  So, you have the
+[00:19:16] leaders of the Western world sitting down
+[00:19:18] for a polite meal with a
+[00:19:20] group of executives whose main
+[00:19:22] commercial products have been frozen
+[00:19:24] by executive order or are
+[00:19:26] currently banned for use in
+[00:19:28] major Asian financial centers
+[00:19:30] .  French President Emmanuel Macron
+[00:19:34] later noted that the dispute with
+[00:19:36] Anthropic clarified the risks for the
+[00:19:39] G7.  He warned that if the
+[00:19:42] United States could flip the switch
+[00:19:44] overnight, it would
+[00:19:46] harm the
+[00:19:48] multi-billion dollar companies leading the
+[00:19:50] AI ​​arms race, which is a
+[00:19:52] reasonable point.  And I never thought I'd see
+[00:19:55] the day when a French leader
+[00:19:56] would criticize America for interfering
+[00:19:59] too much in business, but here we are.
+[00:20:01] If relying on an American cloud service
+[00:20:03] means that a bureaucrat in
+[00:20:05] Washington can disconnect your entire
+[00:20:08] business because of a single line of
+[00:20:10] code on a Friday afternoon, then
+[00:20:12] companies can reasonably begin to
+[00:20:14] treat American AI as an
+[00:20:16] operational risk.  But while President
+[00:20:18] Macron and the other leaders of
+[00:20:20] middle powers were busy
+[00:20:22] panicking about their
+[00:20:24] technological subservience and drafting
+[00:20:26] a G7 communiqué promising to discuss
+[00:20:28] the risks, the tech executives themselves
+[00:20:30] were busy doing
+[00:20:32] something entirely different.  They were
+[00:20:35] using the panic to explain how
+[00:20:37] incredibly dangerous, and therefore
+[00:20:39] incredibly valuable, their
+[00:20:41] technology really is.  Dario Amodei
+[00:20:44] urged the room to resist the
+[00:20:46] temptation to fragment, while
+[00:20:48] Sam Altman and Demis Hassabis warned
+[00:20:51] world leaders about the
+[00:20:53] imminent dangers of bioterrorism and
+[00:20:55] AI-driven cyber warfare.
+[00:20:58] There's a distinct style of marketing
+[00:21:00] in Silicon Valley, where the best
+[00:21:02] way to convince investors
+[00:21:04] that your company is worth a trillion
+[00:21:06] dollars is to tell the President of the
+[00:21:08] United States that your product is so
+[00:21:10] terrifying it could
+[00:21:11] accidentally end all human life.
+[00:21:13] If you tell Wall Street that you've created
+[00:21:15] a very efficient spreadsheet tool
+[00:21:17] , you get a
+[00:21:19] technology multiple.  If you tell them you've
+[00:21:21] built a digital nuclear bomb,
+[00:21:23] you get an
+[00:21:24] intergalactic multiple.  The only problem with
+[00:21:26] convincing the government that you've
+[00:21:28] built a cyber weapon of
+[00:21:29] mass destruction is that they might
+[00:21:32] end up believing you.  And when the
+[00:21:34] state decides that your product is
+[00:21:36] ammunition, they tend to prevent
+[00:21:38] you from selling it to anyone,
+[00:21:40] unless it's real ammunition, of
+[00:21:42] course, in which case Texas will buy
+[00:21:44] everything you have.  It's not
+[00:21:46] entirely new for the US government to
+[00:21:48] treat software as ammunition.  They
+[00:21:50] have a long history of trying to
+[00:21:52] regulate mathematics by treating it like
+[00:21:55] a ticking time bomb.  From the 1970s to the 1990s, the
+[00:21:57] government classified
+[00:21:59] strong cryptography, the technology used to protect
+[00:22:02] digital communications, as ammunition
+[00:22:05] , meaning that publishing your
+[00:22:07] encryption code online could
+[00:22:10] be treated as illegal
+[00:22:12] arms exports.  A developer was
+[00:22:16] criminally investigated essentially for putting
+[00:22:18] encryption on the internet.  Going further
+[00:22:20] , the Atomic Energy Act of
+[00:22:23] 1946, known as the McMahan Act,
+[00:22:24] abruptly cut off all
+[00:22:26] sharing of nuclear research
+[00:22:28] with Great Britain, essentially
+[00:22:30] excluding America's closest ally
+[00:22:32] from a technology they had
+[00:22:34] helped develop.  Governments
+[00:22:36] often prefer to control
+[00:22:38] powerful new technologies, and they end up
+[00:22:40] learning the hard way that
+[00:22:43] once the math is out there, you ca
+[00:22:45] n't put it back in the
+[00:22:47] bottle.  But it usually takes them a few
+[00:22:49] decades to admit it.
+[00:22:52] Which brings us to the financial mechanics of
+[00:22:58] Anthropic's $965 billion valuation.  To justify
+[00:23:00] such a number in private markets
+[00:23:02] , a company needs to convince
+[00:23:04] investors that its
+[00:23:06] total addressable market, or TAM, is
+[00:23:08] essentially every person on
+[00:23:10] Earth with an internet connection.  The
+[00:23:12] business model relies on
+[00:23:14] building hyperintelligent systems and
+[00:23:17] renting them out to the global economy for
+[00:23:19] a monthly fee.  But if your main
+[00:23:22] product is abruptly classified
+[00:23:24] as a threat to national security
+[00:23:27] , that TAM decreases considerably.    It
+[00:23:29] 's not easy running a
+[00:23:31] global software-as-a-service business if
+[00:23:33] your product is legally classified
+[00:23:36] as a weapon.  When your target market
+[00:23:38] shrinks from the entire global economy to
+[00:23:40] people who have passed a
+[00:23:41] background check in
+[00:23:43] Washington, your valuation of nearly a
+[00:23:45] trillion dollars starts to look
+[00:23:47] a bit like a hallucination.  The
+[00:23:49] astronomical valuations of companies
+[00:23:52] like Anthropic and OpenAI are
+[00:23:53] built on the premise that
+[00:23:56] artificial intelligence is a
+[00:23:58] winner-takes-all market and that they
+[00:24:00] will be the winning company, just as
+[00:24:02] happened with internet search or
+[00:24:04] social networks.  Google and Facebook
+[00:24:07] weren't the first companies to enter
+[00:24:10] their respective markets, but once they
+[00:24:12] arrived, they practically took over everything
+[00:24:14] .  Investors are handing over
+[00:24:16] billions of dollars to
+[00:24:19] AI labs under the assumption that the same
+[00:24:21] monopoly dynamics will apply
+[00:24:23] to large language models and that
+[00:24:25] they will eventually be able to charge high prices
+[00:24:27] for access.  But if relying on
+[00:24:30] American border models means that the
+[00:24:32] U.S. Department of Commerce can
+[00:24:34] shut down your entire business because
+[00:24:36] of a line of code on a
+[00:24:38] Friday afternoon, well, the market
+[00:24:40] tends to start looking for alternatives.
+[00:24:42] The reaction in Europe to the shutdown of
+[00:24:45] Anthropic was one of immediate panic.
+[00:24:47] French presidential candidate Bruno
+[00:24:49] Retailleau described this as a
+[00:24:51] warning, noting that a nation that
+[00:24:54] relies on others for its technology
+[00:24:56] can be disconnected overnight
+[00:24:58] .  Europe currently relies on
+[00:25:01] countries outside the EU for about 80% of
+[00:25:04] its technology and 70% of its
+[00:25:07] cloud computing.  In response to this sudden
+[00:25:10] realization that they do not control their
+[00:25:13] own infrastructure,
+[00:25:15] European politicians have proposed the
+[00:25:17] European technological sovereignty package, a
+[00:25:19] plan to direct €422 billion
+[00:25:22] , or about $490 billion
+[00:25:24] , toward building their
+[00:25:27] own data centers and AI models.
+[00:25:30] Things got so tense that a
+[00:25:32] group of European technology experts
+[00:25:35] even published a
+[00:25:37] dystopian novel called Europe 2031, which
+[00:25:39] imagines a bleak future where
+[00:25:42] America cuts off all access to AI and
+[00:25:44] ends up taking over ASML, the
+[00:25:46] Dutch company that manufactures the machines
+[00:25:49] the entire world needs to produce
+[00:25:51] advanced chips.  Now, I'm not going to
+[00:25:54] lie.  When your
+[00:25:55] technology policy involves publishing
+[00:25:57] speculative fiction about
+[00:25:59] corporate acquisitions, things
+[00:26:01] are getting pretty weird.  While
+[00:26:03] European authorities were busy
+[00:26:05] writing novels, the
+[00:26:06] Chinese technology sector was busy
+[00:26:08] writing code.
+[00:26:10] Washington's export embargo
+[00:26:12] essentially served as a massive,
+[00:26:14] free publicity campaign for
+[00:26:16] Chinese open-source AI.  Shortly after
+[00:26:18] Anthropic was forced to shut down
+[00:26:21] its models globally, the
+[00:26:22] Beijing-based AI lab,
+[00:26:25] JIEPU, announced a new
+[00:26:27] open-source model.  They chose to launch it at
+[00:26:29] exactly 5:21 PM, a
+[00:26:31] direct reference to the exact minute
+[00:26:34] Anthropic received its
+[00:26:36] shutdown order.  It's necessary to respect the
+[00:26:38] level of corporate pettiness
+[00:26:40] required to coordinate an
+[00:26:41] international product launch
+[00:26:44] around a time-based joke.
+[00:26:46] Since the business models of Chinese companies
+[00:26:48] like JIEPU and DeepSeek are
+[00:26:50] open source, companies can run them
+[00:26:52] on their own servers.  The fact that
+[00:26:55] they are self-hosting makes them
+[00:26:56] completely immune to being randomly shut down
+[00:26:59] by Howard Lutnick.  And,
+[00:27:01] most importantly, they are cheap.
+[00:27:04] DeepSeek's flagship model
+[00:27:06] currently costs 87 cents per 1 million
+[00:27:09] exit tokens, making it about
+[00:27:11] 60 times cheaper than
+[00:27:14] Anthropic's Claude 3.5 was.  The results of
+[00:27:17] this are already visible.  The Financial
+[00:27:20] Times reported that, in the first two
+[00:27:22] weeks of June, four of the five
+[00:27:24] most popular models on OpenRouter,
+[00:27:27] a platform that offers access to
+[00:27:29] hundreds of AI models, were
+[00:27:31] Chinese.  Among the top 20 in the
+[00:27:34] world, Chinese models process
+[00:27:36] twice as many tokens as their
+[00:27:38] American competitors.  If AI is not a
+[00:27:40] natural monopoly and
+[00:27:42] foreign competitors are offering models
+[00:27:45] that are good enough, immune to
+[00:27:47] US shutdown switches, and
+[00:27:49] 60 times cheaper, then we end up
+[00:27:51] with a highly competitive market.  And
+[00:27:54] in a highly competitive market,
+[00:27:56] profit margins plummet.  The
+[00:27:58] economic benefits of all this
+[00:28:00] AI productivity would instead flow
+[00:28:02] to the people who use the
+[00:28:04] models, not to the companies that
+[00:28:06] spend billions of dollars
+[00:28:08] building them.  This could be great
+[00:28:10] news for companies looking to
+[00:28:12] automate their programming.  This is
+[00:28:14] terrible news for anyone
+[00:28:16] buying stocks valued
+[00:28:18] at $965 billion.  So,
+[00:28:21] where does all this leave the
+[00:28:23] cutting-edge AI industry?  Well, the lesson is
+[00:28:26] simpler than Wall Street would like.
+[00:28:28] For years, the theory was that building
+[00:28:30] artificial intelligence required
+[00:28:32] Silicon Valley genius, billions in
+[00:28:35] venture capital, and an
+[00:28:37] exclusive relationship with a
+[00:28:39] cloud computing giant.  Ideally, one
+[00:28:41] whose CEO doesn't report you to the
+[00:28:43] federal government as a hobby.  It turns out there is
+[00:28:46] no monopoly on
+[00:28:48] mathematics.  Open-source models
+[00:28:50] are good enough.  They
+[00:28:52] are 60 times cheaper and nobody
+[00:28:54] in Washington can turn them off on a
+[00:28:56] Friday afternoon.  The
+[00:28:58] productivity gains that everyone was
+[00:29:00] promised will still happen.  They will
+[00:29:02] simply flow to companies
+[00:29:04] running the code on their own
+[00:29:05] machines, rather than to the
+[00:29:07] investors who paid nearly a
+[00:29:08] trillion dollars for a
+[00:29:10] global monopoly on mathematics.  As for
+[00:29:12] Anthropic, they spent years warning
+[00:29:14] the government that their product was
+[00:29:16] dangerous, built it to be so
+[00:29:18] cautious that it would refuse to read a
+[00:29:20] blog post, and were genuinely
+[00:29:22] surprised when the government agreed it
+[00:29:25] was dangerous and confiscated it.  Telling
+[00:29:27] the authorities you built a
+[00:29:29] weapon and then being shocked when they
+[00:29:32] treat it as such is, all things considered
+[00:29:34] , genuinely considered
+[00:29:36] corporate mismanagement.  Anyway, that's it
+[00:29:39] for me.  I would say more, but I
+[00:29:41] might be seen as a
+[00:29:42] foreign citizen, and I'm not sure if I
+[00:29:44] 'm legally allowed to finish
+[00:29:46] that sentence.  If you want to watch
+[00:29:49] something that hasn't already been classified
+[00:29:51] as ammunition, my video on
+[00:29:53] why inflation might be about to get
+[00:29:55] much worse is right here.  Don't
+[00:29:57] forget to check out our
+[00:29:59] video sponsor, Odo, using the link in the
+[00:30:01] description.  See you in the next
+[00:30:03] video.  Goodbye.

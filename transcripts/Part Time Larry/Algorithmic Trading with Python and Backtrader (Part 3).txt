@@ -1,0 +1,263 @@
+[00:00:00] okay so we've done a few things so far
+[00:00:02] first we've initialized back traitor and
+[00:00:05] given ourselves an initial amount of
+[00:00:07] cash we've connected our cerebro object
+[00:00:10] in back traitor to this Yahoo Finance
+[00:00:13] data feed which has prices for oracle
+[00:00:15] stock and we've also begun implementing
+[00:00:18] a test trading strategy where we
+[00:00:21] described when to issue buy orders but
+[00:00:24] we haven't yet told our strategy when to
+[00:00:27] actually sell the stock so we're going
+[00:00:29] to do that in this video and then we're
+[00:00:31] going to visualize our outcome using the
+[00:00:33] plotting functionality so the first
+[00:00:36] thing we'll do here is in our test
+[00:00:37] strategy we're going to start keeping
+[00:00:39] track of our order status
+[00:00:41] so in our init function we're gonna say
+[00:00:43] self dot order is none because there's
+[00:00:45] no order yet and one rule a new rule for
+[00:00:49] our trading strategy here is we're not
+[00:00:51] going to buy more stock or execute more
+[00:00:53] buy orders if we already have a position
+[00:00:56] or if there's already an order that
+[00:00:59] hasn't yet been completed so yeah let me
+[00:01:02] show you what I mean there so I'm going
+[00:01:03] to print self dot order here and I'm
+[00:01:06] also gonna print self dot position and
+[00:01:09] I'm also gonna print self and so you'll
+[00:01:15] see how these values change as our
+[00:01:19] strategy runs and I'm actually
+[00:01:20] unprintable length of self so I'm gonna
+[00:01:23] do Python 3 and I'm gonna do trader PI
+[00:01:27] execute that and you can see how I'm
+[00:01:32] printing my position over time the
+[00:01:34] length of self is the bar that we're
+[00:01:37] currently on so we have two hundred and
+[00:01:39] fifty two days for the year two thousand
+[00:01:41] that we're processing and so you see on
+[00:01:43] like the end of December we're on the
+[00:01:45] two hundred forty seventh day then we're
+[00:01:47] on the two hundred and forty eight day
+[00:01:48] you'll see the status of any orders so
+[00:01:52] they'll have like a completed status
+[00:01:53] they'll have an order type they'll have
+[00:01:56] a size so we're only buying one share at
+[00:01:58] a time and then we also have a position
+[00:02:01] size so you can see when we add to our
+[00:02:04] position the number of shares for growth
+[00:02:06] are growing one at a time so we end up
+[00:02:09] with sixty one shares if we issue
+[00:02:11] another buy then we have
+[00:02:13] sixty-two shares and so on so we want to
+[00:02:16] modify our program to look at these
+[00:02:18] statuses and we also want to only enter
+[00:02:21] and buy one one time and then we want to
+[00:02:24] sell our position and then we want to
+[00:02:26] buy again and then we want to sell our
+[00:02:27] position
+[00:02:28] so let's code that in and then the other
+[00:02:33] thing is I'm showing the length of self
+[00:02:36] so this starts at one and then by the
+[00:02:38] end of the year we're on
+[00:02:40] you know bar number 252 so what we're
+[00:02:43] gonna do is our selling strategy we're
+[00:02:45] gonna buy the dip so by when the stock
+[00:02:47] closes lower a couple of times and then
+[00:02:50] we're going to wait five bars and then
+[00:02:52] sell regardless of the outcome so let me
+[00:02:55] show you how to code that so in our next
+[00:02:59] method here we're not going to issue
+[00:03:00] this buy order if we're already in the
+[00:03:03] position and we're not going to issue
+[00:03:05] the buy order if there's an order that's
+[00:03:08] already in process so here I'll put if
+[00:03:12] self dot order I'm going to return and
+[00:03:15] then I'm only going to do this if not
+[00:03:18] self dot position so if we're not in the
+[00:03:21] position then we're going to buy but if
+[00:03:23] we are in the position we need to look
+[00:03:25] for when we sell so I'm gonna do else
+[00:03:28] and then here we'll code our sell when
+[00:03:31] to sell the position that we're in so
+[00:03:33] we're gonna sell the position after five
+[00:03:35] days we've decided so I'm going to say
+[00:03:38] if the length of self is greater than
+[00:03:41] equal to self dot bar executed and we're
+[00:03:45] going to define that in a moment plus
+[00:03:48] five so we're gonna see for instance if
+[00:03:51] we're on if the length of self is 252
+[00:03:55] we're gonna see if there was a buy order
+[00:03:58] that was issued at bar 247 so if we
+[00:04:03] executed a buy it bar 247 five days pass
+[00:04:07] then we know that we can issue our sell
+[00:04:10] command so if that's the case then we'll
+[00:04:15] log it sell created created and then
+[00:04:20] we'll format that and then show
+[00:04:25] what happened so we'll do a self dot
+[00:04:27] data closed zero all right and then we
+[00:04:32] can do self dot cell and so we're going
+[00:04:36] to keep track of the orders so we had
+[00:04:38] self dot by so we're gonna do self dot
+[00:04:42] order equals self dot buy and self dot
+[00:04:44] order equals self dot sell so when you
+[00:04:47] issue a buy or sell order it actually
+[00:04:49] returns this order object that will
+[00:04:52] store and we're going to use this to a
+[00:04:54] keep track of the status of our order so
+[00:04:59] we're going to implement a method called
+[00:05:00] notify order and this method receives an
+[00:05:05] order our order object and then we can
+[00:05:08] check on the status so we'll do a couple
+[00:05:10] of things we'll see if the order status
+[00:05:11] is in order dot submitted or order dot
+[00:05:18] accepted and if that's the case and we
+[00:05:21] just return there's nothing to do yet
+[00:05:23] but if the order dot status is completed
+[00:05:29] complete it we're going to record the
+[00:05:32] execution price of our order after it's
+[00:05:35] completed so we don't care yet if it's
+[00:05:37] just submitted we want to see the actual
+[00:05:39] price that was executed so we'll say if
+[00:05:42] order dot is buy so we have this is bye
+[00:05:45] and then we also have an is sell method
+[00:05:49] so we're just checking if it's a buy or
+[00:05:51] sell order and then we're going to just
+[00:05:54] log by executed dot format and we can
+[00:06:01] record the order and it has an executed
+[00:06:04] dot price and then we'll record sell
+[00:06:08] executed executed
+[00:06:14] format and then it's order dot executed
+[00:06:18] price so we're recording the buy and
+[00:06:21] sell prices when our order is actually
+[00:06:23] completed and executed and then after
+[00:06:26] this is done we can just do self dot
+[00:06:28] order equals none so after it's done we
+[00:06:31] need to reset it and to no order and
+[00:06:35] then we let it keep running so that'd be
+[00:06:38] it oh and we also need to keep track of
+[00:06:42] what bar it was executed on
+[00:06:44] so here I'll also record the bar
+[00:06:47] executed so we're gonna do if there's a
+[00:06:50] buyer self we're gonna do self dot bar
+[00:06:54] executed equals the length of self so
+[00:06:58] we'll see what current bar we're on and
+[00:07:00] then we're just going to store that in
+[00:07:02] bar executed and send so then in our
+[00:07:05] next method you see we check the link to
+[00:07:07] self we check the bar executed if five
+[00:07:09] days have passed then we do the sell and
+[00:07:11] I'll run this one more time and now you
+[00:07:15] see we issue buy and sell orders and
+[00:07:19] this does what we want you see the stock
+[00:07:21] dips at the begin of the year that goes
+[00:07:23] twenty six twenty three twenty two wish
+[00:07:25] you a bye we wait five days we shoot a
+[00:07:28] sell we wait for there to be a dip from
+[00:07:30] 25 24 23 wish you a bye we wait five
+[00:07:34] more days we issue a sell all the way
+[00:07:37] through the end of the year and then you
+[00:07:39] see at the very end we have a final
+[00:07:41] portfolio value and we turned our 1
+[00:07:43] million dollars into 1 million and $17
+[00:07:46] and 52 cents so yeah all that worked for
+[00:07:50] 17 dollars so not a great outcome yet
+[00:07:54] but let's make a couple of tweaks here
+[00:07:56] the first thing is that we're actually
+[00:07:58] only buying one share of stock at a time
+[00:08:01] and since we have a million dollar so we
+[00:08:03] can buy a lot more than one share of
+[00:08:04] Oracle stock and so there's this sizer
+[00:08:07] that we can add so by default the stake
+[00:08:09] is 1 but if we add to a cerebro here we
+[00:08:14] say add sizer so we're gonna do this
+[00:08:17] before we've run our trading strategy
+[00:08:19] will do a fixed-size and then the stake
+[00:08:22] will buy a thousand shares instead so if
+[00:08:26] we run this we're gonna make
+[00:08:27] money and then I'll do back trader we'll
+[00:08:33] make some more money right we'll do a
+[00:08:34] million seventeen thousand five hundred
+[00:08:37] and twenty dollars which you know it's a
+[00:08:39] little a little bit better it's not
+[00:08:40] great but you know we we did get a
+[00:08:43] return on our investment here and when I
+[00:08:46] visualize and show you what Oracle stock
+[00:08:48] did during that year you'll see this is
+[00:08:50] actually you know not so bad
+[00:08:51] so I'm gonna do a visualization here so
+[00:08:55] back trader has this plot method here
+[00:08:57] and so if you run it again with this
+[00:08:59] plot method it'll run through and then
+[00:09:05] create this nice matplotlib chart here
+[00:09:08] which lets us visualize our trading
+[00:09:11] strategy and so you'll see oracle stock
+[00:09:14] actually finished the year about the
+[00:09:16] exact way it started it finished
+[00:09:19] break-even so if we made some money on
+[00:09:21] that you know that's pretty good so you
+[00:09:23] see these green arrows are shown on the
+[00:09:26] chart whenever we issued buy orders and
+[00:09:28] the red arrows are on the chart when we
+[00:09:30] issued a sell so you can see just like
+[00:09:34] the text shows there was a dip for a few
+[00:09:36] days we we bought we waited five days
+[00:09:39] and sold and turns out the prices up we
+[00:09:42] waited for another dip we bought we sold
+[00:09:45] and we did that throughout the whole
+[00:09:46] year and we finished with a total
+[00:09:50] portfolio value here so it charts our
+[00:09:52] portfolio value over time starting with
+[00:09:54] a million dollars and finishing at a
+[00:09:56] million seventeen so that's shown at the
+[00:09:59] top and also for each trade or each
+[00:10:02] order that's executed we have this
+[00:10:04] visualization here that shows blue dots
+[00:10:07] whenever we had a positive outcome and
+[00:10:09] red dots whenever there's a negative
+[00:10:12] outcome so you can see we're making a
+[00:10:15] few thousand dollars here and there but
+[00:10:16] also losing a few thousand dollars
+[00:10:18] sometimes but the majority of the time
+[00:10:20] we made a little bit of money and
+[00:10:21] finished in the green even though the
+[00:10:24] stock was even so that's about it with a
+[00:10:28] very small amount of code you see we're
+[00:10:31] able to implement a trading strategy
+[00:10:33] we're able to visualize it and we're
+[00:10:35] able to back test that back back test
+[00:10:38] all of that with some historical data
+[00:10:40] that we got
+[00:10:41] Yahoo Finance and so in the next series
+[00:10:44] what we'll do is go ahead and add some
+[00:10:46] additional trading strategies probably a
+[00:10:48] use one that's like an overbought and
+[00:10:50] oversold strategy maybe implement some
+[00:10:53] of these basic crossover signals that's
+[00:10:55] that are built in to a back trader it
+[00:10:58] has a few signals built in that we can
+[00:10:59] just take and plug in and see what
+[00:11:01] happens and also I want to actually
+[00:11:03] deploy this into the real world so the
+[00:11:06] broker that's created by the BOC out of
+[00:11:09] the box buyback trader allows us to do
+[00:11:12] this simulation but it also also back
+[00:11:15] trader lets us substitute in our own
+[00:11:18] broker and so what I want to try is some
+[00:11:20] alternate brokers that let us deploy
+[00:11:23] this in the real world and so alpacas
+[00:11:26] actually released an integration with
+[00:11:29] BAC trader that lets you substitute in
+[00:11:31] an alpaca broker that way you can
+[00:11:33] actually issue these buy and sell orders
+[00:11:35] against your real account and make money
+[00:11:38] in the real world so stay tuned for the
+[00:11:41] next series of videos I'll do a new
+[00:11:43] video on using the alpaca broker and
+[00:11:46] connect connecting it together and I'll
+[00:11:48] hook it into my real alpaca account and
+[00:11:51] let it run trades for a number of days
+[00:11:53] and see what the outcome is so thanks
+[00:11:56] for watching and stay tuned for the next
+[00:11:58] series of videos thanks

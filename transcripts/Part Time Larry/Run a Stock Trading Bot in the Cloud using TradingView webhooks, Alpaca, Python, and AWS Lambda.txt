@@ -1,0 +1,931 @@
+[00:00:00] hey everyone welcome back to another
+[00:00:01] video today per request of a viewer
+[00:00:04] we're going to be talking about trading
+[00:00:06] view which is a very powerful charting
+[00:00:08] platform that's used by day traders now
+[00:00:11] specifically this charting platform has
+[00:00:14] a feature that's very powerful that will
+[00:00:16] allow us to interact with our own custom
+[00:00:18] Python code and that feature is called
+[00:00:21] alerts and web hooks and trading view
+[00:00:24] web hooks allow us to create alerts on
+[00:00:27] specific market conditions or signals
+[00:00:29] and send them to a web server that runs
+[00:00:33] our own code and then we can process
+[00:00:35] that signal however we want we can
+[00:00:37] perhaps write a script that sends a an
+[00:00:41] API request to a broker like a alpaca or
+[00:00:45] TD Ameritrade API and order stocks based
+[00:00:48] on a signal and that way we don't have
+[00:00:50] to be physically at our computer in
+[00:00:53] order to take action on the markets we
+[00:00:55] can just code our logic in advance and
+[00:00:57] then go about our day and even if we're
+[00:00:59] not at a computer watching the markets
+[00:01:01] this this will just handle it we we have
+[00:01:04] our rules created and we have some code
+[00:01:07] that runs in places orders for us so we
+[00:01:09] have a bot that we can just put up there
+[00:01:10] in the cloud so a lot of videos I've
+[00:01:14] made so far have been like us manually
+[00:01:16] creating charts and WebSockets and data
+[00:01:18] feeds on our desktop and and placing a
+[00:01:23] request to broker api's from the desktop
+[00:01:26] but I haven't done a lot of videos going
+[00:01:28] and and creating some rules and then
+[00:01:30] deploying deploying these rules to the
+[00:01:33] cloud so that's what I'm gonna do today
+[00:01:34] and so let's go ahead and get started
+[00:01:37] but before we dive into training view
+[00:01:40] I'm trying a new experiment today and
+[00:01:42] that is going to be I'm actually since I
+[00:01:45] think this is gonna be a pretty good
+[00:01:46] video and it might drive some traffic to
+[00:01:48] trading view I've never talked to them
+[00:01:50] before but I I noticed I have an
+[00:01:51] affiliate program and so I decided to
+[00:01:53] sign up for them for that and I'm gonna
+[00:01:56] put the link in description and in the
+[00:01:58] comments so in case I Drive a lot of
+[00:02:00] traffic to trading view you know I
+[00:02:02] wouldn't mind getting the cut of that
+[00:02:03] myself so I'm gonna just put a link down
+[00:02:05] there and if you decide to follow along
+[00:02:07] then you can click and sign up for
+[00:02:10] trading view that way if you want to
+[00:02:12] toward the channel so let me show you
+[00:02:14] what that looks like real quick it's
+[00:02:15] just a link right and I'm gonna put it
+[00:02:18] in the description and so if you visit
+[00:02:21] that link it's gonna look just like a
+[00:02:23] chart here and so I'm gonna use this
+[00:02:25] type of chart whenever I'm showing the
+[00:02:27] tutorial and then so you can either
+[00:02:29] click like take any action like save and
+[00:02:31] it'll ask you to sign up so you can sign
+[00:02:33] up there or you can just click join
+[00:02:35] there so that's it if you liked the
+[00:02:37] video and want to sign up it click that
+[00:02:41] link it would be a great way to support
+[00:02:42] the channel all right ok so let's get
+[00:02:45] started with the lesson so I have
+[00:02:47] trading view open as I mentioned it's a
+[00:02:49] platform that allows you to follow all
+[00:02:51] these types all these prices and markets
+[00:02:53] in real time it has all the standard
+[00:02:57] stock market indexes and tickers and has
+[00:03:00] crypto currency it has forex it has any
+[00:03:02] type of market data you can think of so
+[00:03:04] I'm gonna go on markets here and I'm
+[00:03:06] going to click stocks and then you can
+[00:03:10] see I can just click there and see
+[00:03:12] here's a bunch of large cap stocks
+[00:03:14] actually I'm going to type a symbol
+[00:03:15] directly spy since the it's a popular
+[00:03:19] symbol that's followed and you can see
+[00:03:21] the market just open I'm up right and
+[00:03:23] early it's not six something on 6 56
+[00:03:26] a.m. on the west coast over here in San
+[00:03:30] Francisco you can see the markets open
+[00:03:32] sp500 up again I'm gonna click full
+[00:03:35] feature chart here and you see we got
+[00:03:38] this nice candlestick chart here and you
+[00:03:40] see a spy gapped up today above 2900
+[00:03:44] here so yeah so the market is recovering
+[00:03:47] so far from from the depths of March and
+[00:03:50] so I have this chart open and let's say
+[00:03:53] I want we're like right in the middle of
+[00:03:56] the bottom and all-time highs at SMP 500
+[00:03:59] 3400 right S&P 500 was 3400 in February
+[00:04:03] and then it was like 2200 in March right
+[00:04:06] and so we're kind of right in this
+[00:04:07] middle zone and I'm deciding I want to
+[00:04:09] make a strategy decide whether to flip
+[00:04:12] bullish or bearish and so let's say this
+[00:04:14] is the minute-by-minute chart but let's
+[00:04:16] say I look at the weekly chart going
+[00:04:17] back quite a ways and I remember in 2017
+[00:04:20] right the market had this about 30%
+[00:04:23] increase and then January
+[00:04:25] 20:18 right there was this final little
+[00:04:27] move up look was it like January 27th
+[00:04:29] right it hit 287 or so right and so now
+[00:04:33] I look at my chart right here and wow
+[00:04:36] this looks like an important level right
+[00:04:38] traders are always like oh this is an
+[00:04:39] important level right
+[00:04:40] so you see whenever we hit that level
+[00:04:43] sold off you know went up again to about
+[00:04:46] 292 or so sold off again and then yeah
+[00:04:50] so you see them there's been a lot of
+[00:04:52] action between the bulls and bears
+[00:04:53] around this particular level and you see
+[00:04:55] after this huge sell-off right rally all
+[00:04:59] the way back up to like 290 right or
+[00:05:03] let's see what we got to 290 right and
+[00:05:05] so we have this little here this right
+[00:05:07] here and you see we're at this critical
+[00:05:09] juncture right so now what I'm gonna do
+[00:05:12] is say I'm long when we break above a
+[00:05:15] certain level right or I get short and
+[00:05:17] by an inverse etf or something right
+[00:05:19] whenever we fall below like back below
+[00:05:22] this level right so how how would I do
+[00:05:25] that do I sit here and watch this chart
+[00:05:27] all day and wait for that to happen and
+[00:05:29] kind of execute and you know try to
+[00:05:31] place an order at the right time no I
+[00:05:34] mean I don't have to do that I don't
+[00:05:35] need to sit here all day and watch this
+[00:05:37] right I'm gonna set it up this morning
+[00:05:39] right now in like 20 minutes right and
+[00:05:40] get it up and running and I never have
+[00:05:42] to think about it again
+[00:05:43] so that's the idea here how do we do
+[00:05:45] that so trading view has this feature
+[00:05:47] called alerts and I've seen a couple
+[00:05:50] other videos about this but no one's
+[00:05:52] really shown how to use this effectively
+[00:05:54] in my opinion so let me show you what
+[00:05:56] alerts do I'm gonna create an alert here
+[00:05:59] and I'm gonna say I want an alert when
+[00:06:02] spy is crossing up above a certain level
+[00:06:05] and I'm gonna say that level yeah so
+[00:06:07] I'll leave the default here you can
+[00:06:08] specify any level right and it looks
+[00:06:12] like I can send show a pop up whenever
+[00:06:15] spy crosses up above to 89 77 so I'm
+[00:06:20] going to create that alert and I'm also
+[00:06:22] gonna create another alert here I'm
+[00:06:24] gonna do where where does it go I'm
+[00:06:26] gonna hit that plus sign and I'm gonna
+[00:06:27] say crosses down and I'm gonna say cross
+[00:06:31] this down below to 90 it's let's say I'm
+[00:06:34] gonna use this every time button I want
+[00:06:35] any time it goes up and down I want to
+[00:06:37] be notified
+[00:06:38] and I'm going to use this pop right so
+[00:06:40] let's do that and I'm going to do every
+[00:06:42] time here too all right and then we're
+[00:06:45] gonna wait here and then see if this
+[00:06:48] gets triggered kind of depends what
+[00:06:50] happens this is real time right now so
+[00:06:52] I'm watching this I don't even know
+[00:06:53] what's gonna happen so if we cross above
+[00:06:55] to 89 77 we're gonna get a pop-up here
+[00:06:58] right and while we're waiting for that
+[00:07:00] to happen I just want to mention
+[00:07:02] tradingview has very powerful indicators
+[00:07:05] and signals and people it's also like a
+[00:07:08] social platform so people share trading
+[00:07:11] ideas they publish these scripts like
+[00:07:14] pine pine scripts that they've written
+[00:07:16] that's like a proprietary scripting
+[00:07:17] language they've written and so traders
+[00:07:21] write these scripts and they publish
+[00:07:23] them here they share ideas and there's
+[00:07:24] this huge library of different
+[00:07:26] indicators that you can use and so
+[00:07:29] you're not limited to just you're not
+[00:07:31] limited to just simple things like
+[00:07:34] crossing up and down that's just what
+[00:07:35] I'm using for simplicity because we can
+[00:07:37] all understand that easily where you can
+[00:07:44] put any of these indicators or write
+[00:07:45] custom scripts to trigger these alerts
+[00:07:47] right so I'm gonna change this since it
+[00:07:51] looks like the markets already went down
+[00:07:52] a little bit I'm gonna say crossing down
+[00:07:54] below 289 right so I'll do that yeah
+[00:08:00] it's already down there you go okay so I
+[00:08:04] got the alert that spy crossed down
+[00:08:06] below 289 so you can see that instantly
+[00:08:09] let me know when this candlestick went
+[00:08:12] below 289 and it notified me on the
+[00:08:15] screen right so that is great if I'm
+[00:08:17] sitting here at the screen but pretend
+[00:08:19] you know I'm an alcoholic I like to go
+[00:08:21] take drinking hangout the pool right I
+[00:08:23] don't want to you know I'm not gonna be
+[00:08:26] looking at my desktop all day and
+[00:08:27] although they have options for like SMS
+[00:08:30] text messages right and a bunch of other
+[00:08:32] you know ways to get notified you know
+[00:08:34] it doesn't still requires me to receive
+[00:08:36] that message and then go oh oh let me
+[00:08:39] let me take action right so the idea of
+[00:08:41] this channel is we want to automate
+[00:08:43] trading and so what that allow what we
+[00:08:46] need for that is there's a new feature
+[00:08:48] they added last year and it's called web
+[00:08:52] and I'm gonna turn that off for a second
+[00:08:54] they added this feature called webhook
+[00:08:56] URL and what that does rather than
+[00:08:58] sending you an email or showing a pop-up
+[00:09:00] it will actually send that message to a
+[00:09:03] web address here right so if I had my
+[00:09:07] site comm slash buy stock right I could
+[00:09:10] send this message to that address and
+[00:09:13] when my code receives that request that
+[00:09:17] message then it can process that and do
+[00:09:19] whatever we want so I could have it buy
+[00:09:21] stock at that point using our broker
+[00:09:24] api's that we've covered in this channel
+[00:09:25] or I could have it you know order a
+[00:09:27] pizza or ring a bell or whatever I can
+[00:09:29] do in Python code I'm not limited to
+[00:09:31] what's provided by training view and
+[00:09:33] plan script I can do anything in a web
+[00:09:35] hook and if you're not familiar a web
+[00:09:37] hook is like what it sounds right it's a
+[00:09:40] way for us to hook into this code here
+[00:09:42] right we don't have access to the source
+[00:09:45] code for training view we don't work
+[00:09:46] there but they've provided this hook
+[00:09:48] where we can insert our own code here
+[00:09:51] right and customize the software to work
+[00:09:53] how we want and so what we're gonna do
+[00:09:56] in this tutorial is I'm going to show
+[00:09:57] you how to build this web hook and
+[00:09:59] deploy it to the cloud and it'll be
+[00:10:01] there 24 hours a day and while we're
+[00:10:04] walking around and sleeping it can
+[00:10:06] receive requests and do things based on
+[00:10:08] actions in the stock market right so
+[00:10:11] let's go a little bit further now one I
+[00:10:14] saw there were some tutorials on web
+[00:10:16] hooks out there on YouTube but what they
+[00:10:18] don't cover first of all must have our
+[00:10:20] own crypto and not everyone's into
+[00:10:21] crypto but secondly they added
+[00:10:23] additional features to this message that
+[00:10:25] make it a lot more powerful and I think
+[00:10:27] the best feature they've added is the
+[00:10:30] special placeholders right and these
+[00:10:32] placeholders allow you to ascend
+[00:10:35] variables right since our program see
+[00:10:39] this message here with the way it the
+[00:10:40] way they started alerts it just looks
+[00:10:42] like a text message or an email right
+[00:10:44] but a computer program receives a
+[00:10:46] message it wants a little more structure
+[00:10:47] so that I can derive meaning from this
+[00:10:49] message and so what we can do is use
+[00:10:52] these little variable placeholders
+[00:10:54] they're kind of like a template and then
+[00:10:56] when you get the message it sends you
+[00:10:57] additional data about the context of the
+[00:11:01] signal or the alert that was triggered
+[00:11:02] right so we'll know a little bit of
+[00:11:04] information
+[00:11:04] about the bar like the minute bar that
+[00:11:06] just finished right for instance and we
+[00:11:09] send that data to our program and then
+[00:11:11] we can use that to like center by our by
+[00:11:14] limit or our stop loss we can do some
+[00:11:16] calculations on the message and so forth
+[00:11:17] and so instead of this type of message
+[00:11:19] right we're going to use JSON right so I
+[00:11:22] can actually type JSON in here right and
+[00:11:24] so pretend I want to receive like the
+[00:11:27] open high low and closed at the bar
+[00:11:29] right I can do so use these little
+[00:11:31] placeholders here right and if you've
+[00:11:34] used like a templating language in
+[00:11:35] Django or flask or another framework one
+[00:11:38] thing I've noticed sometimes you'll be
+[00:11:40] tempted put a space here make sure
+[00:11:41] there's no spaces here or won't work
+[00:11:43] right so they have it documented a bunch
+[00:11:46] of different placeholders that you can
+[00:11:47] use so what I did was already pull those
+[00:11:50] out and I and I built a payload which
+[00:11:53] I'm going to put here so I'm gonna copy
+[00:11:55] this I have this on the side and here's
+[00:11:58] what it looks like
+[00:12:00] let me pull this to the screen alright
+[00:12:05] look at this so now let's say I my
+[00:12:08] message I want to look like JSON and I
+[00:12:10] want it to substitute the open high low
+[00:12:12] and close the ticker volume-time window
+[00:12:14] right so now I have a lot of data here
+[00:12:17] and I want my web message to look like
+[00:12:20] that right so I'm gonna copy this
+[00:12:22] payload be alright so that's in the
+[00:12:28] window now and so now you what we have a
+[00:12:30] template here and then now we still have
+[00:12:32] our message okay I'm gonna save that and
+[00:12:36] then there you go
+[00:12:39] okay so I saved it and the alert was
+[00:12:41] triggered and now you'll notice instead
+[00:12:43] of just receiving spy cross 289 or
+[00:12:47] whatever right now we have a message
+[00:12:48] that's populated with information that
+[00:12:50] we can rent calculations on with Python
+[00:12:53] right so now we have the open of the bar
+[00:12:54] 289 46 the high the low the close and
+[00:12:58] that's a JSON payload it can post to a
+[00:13:00] web URL our web URL can receive this
+[00:13:03] JSON message and it can process it and
+[00:13:05] then it can send like an API request to
+[00:13:07] our broker URL and then we can execute
+[00:13:09] buys and sells based on that or do it do
+[00:13:12] whatever we want we can pass it along to
+[00:13:14] another system we can make it draw a
+[00:13:16] picture for it so whatever we want
+[00:13:18] so you see you can already see the power
+[00:13:20] of the alerts and web hooks right here
+[00:13:22] and so yeah yeah so yeah that's that's
+[00:13:26] amazing right so I'm gonna use that like
+[00:13:28] right now I'm gonna show you how to
+[00:13:30] build that web hook URL and we're gonna
+[00:13:33] make it play some buys and I'm gonna use
+[00:13:35] real money just for fun just to make
+[00:13:37] this exciting and yeah let's see if we
+[00:13:40] make or lose some money I'm gonna just
+[00:13:41] do a small around or risk a few bucks or
+[00:13:43] something and let's let's build that bot
+[00:13:45] and let's get it deployed into the cloud
+[00:13:47] all right
+[00:13:49] so where are we at so I want to create
+[00:13:53] the web hook we got a working message
+[00:13:55] here and I'm gonna go ahead and turn off
+[00:13:58] this pop-up and I'm gonna have it send
+[00:14:00] me an email and just so we can let these
+[00:14:03] continue and I don't get this pop-up
+[00:14:05] okay some of you save alright so I got
+[00:14:10] an email that's gonna be generated and
+[00:14:13] let's see I'm going to turn off the web
+[00:14:16] hook until we actually have a URL so I'm
+[00:14:18] gonna hit save alright so it's
+[00:14:21] triggering and I'm gonna check my email
+[00:14:25] alright do too okay so you see we're
+[00:14:31] getting all kinds of alerts so now I'm
+[00:14:32] going to copy this populated data and
+[00:14:34] we're gonna use this as a test payload
+[00:14:36] when we start developing our application
+[00:14:38] locally so we're gonna set up a little
+[00:14:40] local server with a framework called AWS
+[00:14:43] Challis because I'm gonna use AWS lambda
+[00:14:45] as our framework here as our cloud
+[00:14:49] provider here you can use whatever
+[00:14:50] server you want if you are familiar with
+[00:14:52] PHP or Java or any other technology and
+[00:14:55] you know how to make a web web server
+[00:14:57] then you can you can do that as long as
+[00:14:59] you can provide a URL so you don't have
+[00:15:01] to use the same technology as me this is
+[00:15:02] just what I'm using because I find it
+[00:15:04] very quick and easy so I'm gonna copy
+[00:15:07] this and I'm gonna close much chart for
+[00:15:11] a minute because it's making a sound so
+[00:15:14] let's see I have this payload which is
+[00:15:18] great
+[00:15:18] alright so how I'm gonna paste this into
+[00:15:21] an editor and so I'll have it for
+[00:15:24] reference later one more time alright so
+[00:15:28] I have that payload for later and we're
+[00:15:30] gonna use that
+[00:15:31] test our application all right cool so I
+[00:15:34] got that let's get set up with our
+[00:15:37] server
+[00:15:39] let's okay so if I google AWS Challis
+[00:15:42] right you'll see it's a Python service
+[00:15:46] micro framework sounds great and it's
+[00:15:50] for AWS and it uses lambda and what
+[00:15:53] lambda is it allows you to deploy a
+[00:15:55] function or just a snippet of code to
+[00:15:58] the cloud and with that function you can
+[00:16:00] map it to a URL and have that URL call
+[00:16:04] that function and in that function you
+[00:16:06] can have whatever logic you want right
+[00:16:08] and it sounds familiar
+[00:16:10] sounds like a web hook to me right and
+[00:16:12] the beauty of Atos lambic here is they
+[00:16:15] don't charge you like a monthly fee to
+[00:16:17] run a server it's called serverless
+[00:16:18] right and so the next type of very
+[00:16:21] generous for each here I think you can
+[00:16:22] execute like a thousand requests per
+[00:16:25] month and they won't charge you anything
+[00:16:27] and so will be able to run this trading
+[00:16:29] bot for free
+[00:16:30] so that is amazing so let's what am i
+[00:16:35] doing I'm going to so yeah so first
+[00:16:38] thing is you make sure you have an AWS
+[00:16:39] account first of all because you're
+[00:16:41] gonna need an AWS key so that you can
+[00:16:43] hook this up to your account and deploy
+[00:16:46] it to your AWS account not mine and then
+[00:16:50] as a larger introduction I'm going to
+[00:16:52] breeze through this because I've already
+[00:16:54] done a video on AWS chalice and how to
+[00:16:56] get set up with it so if you look up on
+[00:16:58] YouTube AWS chalice tutorial you'll see
+[00:17:01] one of the top videos is mine and
+[00:17:03] YouTube building an API with a two is
+[00:17:05] chalice and this shows you how to build
+[00:17:07] an API from the ground up using chalice
+[00:17:11] so that follow that follow along if I go
+[00:17:13] too fast over this particular part you
+[00:17:15] can go back to this tutorial and and
+[00:17:18] follow along there and get set up again
+[00:17:21] alright so I am going to go to my
+[00:17:25] command line so AWS house here I'm gonna
+[00:17:28] make sure we install it so as in
+[00:17:30] previous videos we typically setup a
+[00:17:33] virtual environment right and so I
+[00:17:38] already have one set up I'm gonna do VIN
+[00:17:40] I'm gonna activate my virtual
+[00:17:41] environment so it's activated so chalice
+[00:17:44] you install it
+[00:17:45] with a pip command - like the Python
+[00:17:47] package and so I'm gonna install it with
+[00:17:49] pip install Challis great and that
+[00:17:53] installs the child's package in my
+[00:17:54] virtual environment so once you have
+[00:17:56] chalice installed it gives you a command
+[00:17:58] line command so I'm going to type
+[00:18:00] chalice and these are the different
+[00:18:02] options it has and so you see there's
+[00:18:04] this one called new project so I want to
+[00:18:05] create a new project I'm gonna type a
+[00:18:07] chalice new project and what am I gonna
+[00:18:09] call it training view you webhook alert
+[00:18:16] right so I already have that directory
+[00:18:20] I'm gonna call it trading view webhook
+[00:18:22] alerts right and so now that'll create a
+[00:18:25] new directory called trading view
+[00:18:27] webhook alerts I did the s I already
+[00:18:33] created one called alert alright so I'm
+[00:18:35] in that directory and it's you see
+[00:18:36] there's just two simple files let's see
+[00:18:38] what's inside those files alright Visual
+[00:18:41] Studio code open I have an empty editor
+[00:18:44] so I'm going to use my empty editor for
+[00:18:45] a bit here just so we start from scratch
+[00:18:47] right and I'm gonna open a folder and
+[00:18:51] I'm gonna choose that folder I just
+[00:18:52] created
+[00:18:54] alright and then what's in there so you
+[00:18:58] have app dot PI which is just bare-bones
+[00:19:02] hello world app it's just a function and
+[00:19:04] just one route that's just slash so when
+[00:19:06] you hit the base of the application the
+[00:19:08] base route it's just gonna return hello
+[00:19:11] world in the response and it also has
+[00:19:13] some examples here that are commented
+[00:19:14] out if you want to do a post request to
+[00:19:16] create a user right so I'm not gonna
+[00:19:19] mess with that yet but what I'm gonna do
+[00:19:21] right out the gate is deploy this
+[00:19:24] application to the cloud right so I'm
+[00:19:27] gonna type chalice deploy the first
+[00:19:31] thing I'm gonna do is I'm gonna add a
+[00:19:33] request write and request is a Python
+[00:19:37] package we've been using to make HTTP
+[00:19:39] requests so any dependencies you have on
+[00:19:41] other Python packages in chalice you can
+[00:19:44] add them to this file so you just type
+[00:19:46] the name of the package so the only
+[00:19:48] dependency we have here is requests and
+[00:19:50] so I'm going to add it to requirements
+[00:19:52] not text and I'm gonna install of that
+[00:19:54] PAC package locally to so I'm gonna do
+[00:19:57] pip install - our
+[00:19:58] requirement text make sure we have our
+[00:20:01] requirements and then I'm going to type
+[00:20:02] chalice deploy if I do that it creates a
+[00:20:06] deployment package with my dependencies
+[00:20:08] deploys it to AWS and gives me a URL all
+[00:20:13] in one shot just like that and you see
+[00:20:15] in just like a minute there we will have
+[00:20:17] a web hook that's running in the cloud
+[00:20:20] so it's creating a lambda function says
+[00:20:22] creating REST API and right down the
+[00:20:24] screen it gives me a REST API URL and
+[00:20:30] then I put that my browser and
+[00:20:33] congratulations if you could follow that
+[00:20:35] you are able to deploy a REST API to a
+[00:20:38] to a w s lambda so took no time at all
+[00:20:42] right so we don't want hello world right
+[00:20:45] we want something more complicated like
+[00:20:47] placing stock orders so how do we do
+[00:20:49] that well it's actually not that hard so
+[00:20:52] I am going to continue on so now that we
+[00:20:55] have our dependencies and we have our
+[00:20:56] app right all we need is this to be able
+[00:20:59] to accept a post request that receives a
+[00:21:02] message like the one generated by
+[00:21:04] tradingview
+[00:21:04] and we want to parse that message and
+[00:21:07] place an order so let's do it so if you
+[00:21:10] see in the commented out code here they
+[00:21:13] have this example of receiving a post
+[00:21:15] request so you need to put methods
+[00:21:17] equals post because training view is
+[00:21:19] going to post the message to your web
+[00:21:22] address you're not going to read just
+[00:21:23] hit it in the web browser right so I'm
+[00:21:26] gonna do comma methods equals post and
+[00:21:28] I'm gonna call the URL just for the
+[00:21:32] example call it by stock and I'll call
+[00:21:35] the function by stock all right and then
+[00:21:39] let's make this dictionary charge
+[00:21:42] something different so I'm gonna say a
+[00:21:44] message I plot the stock right so
+[00:21:51] there's that and then we're going to
+[00:21:55] receive JSON right we're gonna have to
+[00:21:57] send it a message so how do I do that so
+[00:22:00] I'm gonna go to the chalice
+[00:22:01] documentation and we're gonna look for
+[00:22:04] JSON body right so they have this
+[00:22:07] request object that has information
+[00:22:09] about the request that was sent so it's
+[00:22:12] going to have the
+[00:22:12] information about the tradingview
+[00:22:14] request in this case so if we're instead
+[00:22:16] a variable called request and receive
+[00:22:18] app current request so that'll be the
+[00:22:20] current request coming in and you can
+[00:22:22] get the JSON body of the requests like
+[00:22:25] that so I'm gonna call this variable
+[00:22:27] webhook message and set it equal to the
+[00:22:30] request JSON body and Challis will
+[00:22:33] automatically convert this JSON string
+[00:22:35] to a Python dictionary that way it's
+[00:22:38] very easy to parse and work with the
+[00:22:40] individual parts of the message so cool
+[00:22:43] so we got a web hook message and I'm
+[00:22:46] gonna say let's say let's see if this
+[00:22:51] works so I'm gonna do a web hook message
+[00:22:54] and I'm gonna return the web hook
+[00:22:56] message I received just right back to in
+[00:22:59] the response so I'm gonna do a web hook
+[00:23:00] message right did that so we got a post
+[00:23:05] request we have our URL and web hook
+[00:23:07] message and I'm gonna test this locally
+[00:23:10] first before testing it in the cloud
+[00:23:12] right so to test this locally what are
+[00:23:14] we gonna do
+[00:23:15] so I there's a variety of ways there's
+[00:23:18] command line commands like curl or
+[00:23:20] double you get that you can use to send
+[00:23:22] HTTP requests from the command line I
+[00:23:24] like to use this one called insomnia
+[00:23:26] client and if you download install that
+[00:23:28] it gives you like a UI for sending and
+[00:23:31] testing HTTP requests against whatever
+[00:23:34] URL you want so I like using that for
+[00:23:36] testing and I have it already so if you
+[00:23:39] don't have it you can download it there
+[00:23:40] and so what you can do is create a new
+[00:23:43] request you see I've already been
+[00:23:45] playing with this so I'm gonna do a new
+[00:23:48] request just to start from scratch
+[00:23:49] scratch and I'm gonna call it a trading
+[00:23:51] view web hook alert and it's going to be
+[00:23:56] a post request right and it's going to
+[00:23:59] post JSON data so I create that request
+[00:24:01] and it gets all set up for me and so
+[00:24:05] since chalice we want to run this
+[00:24:08] locally now so that we can test locally
+[00:24:10] debug things nicely on our desktop and
+[00:24:12] once we're happy and think it works we
+[00:24:14] can deploy it right back to AWS lambda
+[00:24:17] using a chalice deployed okay so I'm
+[00:24:21] gonna do HTTP colon slash slash and what
+[00:24:24] chalice has is a local sir
+[00:24:26] set up so if I'm in that directory you
+[00:24:28] notice one of the commands here there
+[00:24:30] was the deploy which we already used to
+[00:24:32] deploy to the cloud we use a new project
+[00:24:34] to create a new project and then there's
+[00:24:35] this local command some do chalice local
+[00:24:38] and it starts a local dev server right
+[00:24:41] so now if I go to this address right
+[00:24:45] you'll see we're actually hitting our
+[00:24:48] local server so what I want to do just
+[00:24:52] to show how that works let me do another
+[00:24:54] base route here so at the base we can
+[00:24:58] get get a URL and I'll just add the
+[00:25:02] index back and just say return hello
+[00:25:08] world right and when I save the code it
+[00:25:12] automatically reloads the server and
+[00:25:14] then I hit this local address and I get
+[00:25:17] hello world right so we have a local
+[00:25:19] testing environment all right so now
+[00:25:22] we're going to send it the actual
+[00:25:24] payload that we had been saving from
+[00:25:28] from trading view right so I got that
+[00:25:33] and I'm gonna copy this JSON right so
+[00:25:35] when trading viewed sends us the web
+[00:25:37] hook alert it's gonna look something
+[00:25:38] like that
+[00:25:39] right and so if we can work with that
+[00:25:41] type of data and prove we can do it
+[00:25:42] locally then we can deploy it to the
+[00:25:44] cloud so I'm gonna post it to you HTTP
+[00:25:47] localhost and then it's running on port
+[00:25:51] 8000 and our address is called buy stock
+[00:25:54] I'm gonna click send we got our message
+[00:25:56] but I bought the stock and it returned
+[00:25:59] our webhook message back to us great
+[00:26:01] right so we can we're capable of
+[00:26:04] receiving the JSON and parsing it in a
+[00:26:07] dictionary so let's go further let's say
+[00:26:12] we want to make an order using this
+[00:26:15] information right we've done this a
+[00:26:18] bunch of times on this channel and since
+[00:26:20] it's easy I like to use alpaca because
+[00:26:23] it's free and easy and I already have an
+[00:26:25] account so other repositories here some
+[00:26:28] of the other videos cover alpaca but I
+[00:26:30] also just I'll use this most recent one
+[00:26:32] I'll pack the bracket order right and
+[00:26:34] this shows you how to actually create a
+[00:26:37] bracket order and so
+[00:26:39] do that so you can get some cook from
+[00:26:43] here that's this is just creating a
+[00:26:44] normal order and then there's this one
+[00:26:46] called bracket order pie so it casts the
+[00:26:50] payload that we need so I'm gonna use
+[00:26:52] this so we're gonna take the message
+[00:26:55] from what from the web hook alert and
+[00:26:57] then kind of transform it into this
+[00:26:59] structure that I'll pack and eats right
+[00:27:01] so I'm gonna put this in my code I'm
+[00:27:04] gonna do buy stock and I'm gonna create
+[00:27:07] this variable write data equals this
+[00:27:11] stuff right and in the example from the
+[00:27:13] bracket URL the bracket order video we
+[00:27:16] were using Apple right we don't want to
+[00:27:17] use Apple right we want to use whatever
+[00:27:19] comes in our payload here so it's called
+[00:27:22] ticker and so we're gonna do the web
+[00:27:25] hook message so I'm going to replace
+[00:27:26] that right web hook message and then
+[00:27:29] we're gonna access the ticker and we'll
+[00:27:32] just have buy one every time and then
+[00:27:35] the side we're gonna have it bye for now
+[00:27:37] and see let's see you mark it so yeah
+[00:27:42] we'll do a limit order actually right
+[00:27:46] and then we can specify a price for the
+[00:27:51] limit order right so I'll do a price and
+[00:27:55] I think the parameter is called limit
+[00:27:57] price if you look in the documentation
+[00:27:58] for alpaca and we'll have the limit
+[00:28:00] price be let's just say it'll be the
+[00:28:03] close of in this message so we use the
+[00:28:07] web hook message close so we'll try to
+[00:28:11] get at that price and then I'll take
+[00:28:14] profit we'll do the web hook message
+[00:28:18] close we can do a percentage let's say
+[00:28:25] we want to take a profit at 1% right and
+[00:28:29] then we'll have a stop loss of
+[00:28:37] let's say 2% right actually ideally I
+[00:28:45] want more profit than that I want five
+[00:28:46] percent profit and then my staff lastly
+[00:28:48] 2% alright so that's the data structure
+[00:28:52] that I'll Pecha needs right and then how
+[00:28:54] do we send the API request to alpaca
+[00:28:56] right so we've done this before as well
+[00:28:58] so we just need to post to the order URL
+[00:29:01] and then have these keys set up right so
+[00:29:05] alpaca has these headers it expects it
+[00:29:08] has a ute base URL and so we've already
+[00:29:10] done this before watch the video on
+[00:29:12] bracket URL our bracket orders if you
+[00:29:14] want to see the details but I'm just
+[00:29:16] gonna finish this because the point of
+[00:29:18] this video is show you alerts and place
+[00:29:20] an order so I'm gonna do base URL I'm
+[00:29:22] gonna put all this stuff at the top so
+[00:29:24] the base URL is API alpaca markets first
+[00:29:28] so for a second just on the testing
+[00:29:30] locally I'm gonna do paper API just to
+[00:29:33] verify it in the paper trading account
+[00:29:36] we don't need the account URL we do need
+[00:29:39] the orders URL so we'll have an order to
+[00:29:42] URL and we have the headers we need here
+[00:29:44] and so what we all now we need is an API
+[00:29:47] key that you need to fill in for your
+[00:29:50] alpaca account if you want to actually
+[00:29:52] try this out and the secret key right
+[00:29:56] and I will pull up mine so I'm logged
+[00:29:59] into my alpaca account and I just went
+[00:30:01] to my paper trading section and I'll
+[00:30:03] show you the API key it's just my
+[00:30:05] favorite trading account so I don't care
+[00:30:06] I'm gonna delete this anyway but I'm do
+[00:30:08] you view I'm gonna regenerate my key and
+[00:30:11] click OK and it should give me a key so
+[00:30:14] I'm going to copy this API key put it in
+[00:30:17] there
+[00:30:17] secret key copy that put in there so I
+[00:30:21] should have a way to hit the paper API
+[00:30:22] use these keys use this URL and send
+[00:30:25] these headers right I'll go back to my
+[00:30:27] github repository so all this code can
+[00:30:30] be found under github calm panicking the
+[00:30:33] markets and that's going to be the name
+[00:30:34] of the community here so just be aware
+[00:30:37] of that I've changed the name so it's
+[00:30:39] getting hub dot-com slash hacking the
+[00:30:41] markets and I'm going to copy this part
+[00:30:43] that sends a post request and we're
+[00:30:46] gonna get the response so I'm gonna take
+[00:30:47] that part right we got the data
+[00:30:50] and we have a way to send an HTTP
+[00:30:54] request and that uses the requirement
+[00:30:56] that we put in our requirements not text
+[00:30:58] we're going to send the request to our
+[00:31:00] orders URL we're gonna send JSON it's to
+[00:31:03] that orders URL using and that JSON will
+[00:31:06] be from this data dictionary so JSON
+[00:31:09] equals data and the headers will be the
+[00:31:11] ones we've set up here and we're gonna
+[00:31:13] get a response from alpaca you'll notice
+[00:31:16] I have a couple of red underlines here
+[00:31:18] there's syntax issues so basically I
+[00:31:20] need to import request an JSON to use
+[00:31:23] them in the script so at the top of the
+[00:31:25] script I'm gonna do import requests
+[00:31:27] comma JSON and now I have those imported
+[00:31:30] and I can use these and I am going to
+[00:31:33] print the response not sure what they
+[00:31:37] give me back I think they'll just give
+[00:31:39] me back at 200 ms code it's already
+[00:31:42] parent response and response content and
+[00:31:43] we'll see if this works like right out
+[00:31:46] of the box so I'm gonna send my payload
+[00:31:50] to my local server
+[00:31:52] it says internal server error oh well we
+[00:31:54] didn't get the first time but luckily we
+[00:31:56] can debug this I'll look at my console
+[00:31:58] my dick object has no attribute content
+[00:32:01] so looks like it doesn't have content
+[00:32:05] like that
+[00:32:05] so let's print response dot he's just to
+[00:32:10] see what it does have so I'm gonna send
+[00:32:12] it alright and so now you see it
+[00:32:17] returned me a bunch of information oh so
+[00:32:19] it looks like our order actually went
+[00:32:21] through so it did go through the first
+[00:32:22] time I was just printing an attribute
+[00:32:24] that isn't there so let me see if that's
+[00:32:26] the case so I'm gonna go to my paper
+[00:32:28] trading account and login with alpaca
+[00:32:30] and then look at my order history and
+[00:32:32] you see BIM right there real-time this
+[00:32:36] actually placed orders and so if I
+[00:32:38] switch this and take out the word paper
+[00:32:39] this is going to start executing real
+[00:32:41] spy orders with real money and we have a
+[00:32:44] real working web hook URL so you see it
+[00:32:47] executed this bracket order so that
+[00:32:50] bracket order is composed of the
+[00:32:51] following components right so we place a
+[00:32:53] limit by to see if we get filled it
+[00:32:55] looks like it did fill and so now we
+[00:32:57] just see we give it a stop cell and a
+[00:33:01] limit so so those limits are in place so
+[00:33:04] we have
+[00:33:04] a profit taking point so if SP y goes to
+[00:33:07] 304 we'll lock in that profit and if it
+[00:33:10] falls to 284 we're just going to cut our
+[00:33:12] losses right there so there you go we
+[00:33:14] have a locally working bracket order
+[00:33:16] that's getting getting placed all right
+[00:33:19] and so how do we hook this up finally to
+[00:33:22] the webhook right so we got a web hook
+[00:33:26] we have a locally working locally
+[00:33:30] working server right and we have this
+[00:33:32] message format let's go ahead and see if
+[00:33:35] we can deploy this right I think we're
+[00:33:38] ready so I'm gonna do chalice deploy I'm
+[00:33:44] gonna get rid of these keys let's see
+[00:33:46] I'm gonna return the order ID I'm gonna
+[00:33:52] return this this ID just to to to be
+[00:33:56] able to test in the cloud to see if it
+[00:33:58] worked I want to return that to my
+[00:34:00] insomnia client so I'm gonna do order ID
+[00:34:06] I'm gonna turn both of these ide and you
+[00:34:09] don't have to do this I'm just going to
+[00:34:10] test this out I'm gonna do a response ID
+[00:34:14] and was it called client order ID case I
+[00:34:19] need to reference that later
+[00:34:21] all right response client order ID right
+[00:34:27] and I'm gonna run this again locally
+[00:34:29] just for fun
+[00:34:30] just to see the response I already
+[00:34:34] stopped the server
+[00:34:37] let's see chat list local all right
+[00:34:42] around the skin all right so I got an ID
+[00:34:45] client order ID and it should have
+[00:34:48] placed another order so I'm gonna go
+[00:34:49] into alpaca here yeah look at that 731
+[00:34:53] we place another buy so that's great
+[00:34:57] people are happy to sell me their spy
+[00:34:58] right now at 2:00 in urine so yeah it
+[00:35:01] looks like it took a dip and so yeah
+[00:35:03] people are happy to sell that to me
+[00:35:05] right now alright so that is great so
+[00:35:10] that's working and yeah let's go ahead
+[00:35:14] and deploy this
+[00:35:16] so I'm going to do chalice deploy and
+[00:35:18] let's see if that works from the cloud
+[00:35:21] so I'm gonna deployed again it's
+[00:35:23] updating our lambda function and it
+[00:35:26] gives me that URL like your URL again
+[00:35:28] right so I'm gonna go here
+[00:35:30] and instead of localhost I'm gonna do
+[00:35:34] I'm gonna use the actual URL in the
+[00:35:36] cloud so this is the one that training
+[00:35:39] view will hit so post here API buy stock
+[00:35:43] right and yeah let's send it there so
+[00:35:49] let me use a slightly different price
+[00:35:50] I'm going to use just to make sure it's
+[00:35:52] different I'm gonna use a closing price
+[00:35:55] of fifty nine cents at the end so I'm
+[00:36:01] gonna click that alright and it looks
+[00:36:04] like it still worked and it's using the
+[00:36:06] cloud there so let's see if that
+[00:36:07] executed so we go to Outback again Yance
+[00:36:14] yeah 7:32 they use that 59 cent one so
+[00:36:18] we placed another order so that's
+[00:36:20] awesome so we have a working URL that's
+[00:36:23] a web hook in the cloud ready to go and
+[00:36:26] so now we just see if we can hook this
+[00:36:28] up to trading view so I'm gonna go to
+[00:36:30] trading view right and I'm gonna go back
+[00:36:34] to my chart spy stop going back to spy
+[00:36:40] here and full featured chart see I have
+[00:36:46] my alerts set up still right and right
+[00:36:52] I'm gonna do a web hook URL I'm going to
+[00:36:55] put that buy stock web hook in there and
+[00:36:57] I'm gonna use the format we have that
+[00:37:02] has the placeholders and then those
+[00:37:04] placeholders will get substituted with
+[00:37:06] real price data whenever trading view
+[00:37:09] posts to this URL so I'll save this one
+[00:37:13] and then on this one I will make sure we
+[00:37:16] do the same nope that's the same one so
+[00:37:19] - web hook URL here and I'm gonna paste
+[00:37:23] that URL in where do I have that URL
+[00:37:28] right right here right so I'm gonna
+[00:37:31] paste that URL in right here click Save
+[00:37:34] all right so now those should be
+[00:37:38] triggering without me doing anything so
+[00:37:40] I'm gonna see if that is the case so
+[00:37:43] 7:30 to its last one I executed manually
+[00:37:46] and let's see if it executes again so
+[00:37:50] I'm gonna show the pop-up again just to
+[00:37:53] see when I should receive the message
+[00:37:56] actually so I'm gonna tweak this a
+[00:37:58] little bit now that we're at 288 50 or
+[00:38:00] so I'm gonna just do this crossing up
+[00:38:04] yeah - 89 77 I'm gonna change it to - 88
+[00:38:11] 70 just just see if I can get it to
+[00:38:14] trigger oh and that did trigger just
+[00:38:16] then so I got the alert and then I
+[00:38:18] should get an email right so I got an
+[00:38:23] email at 7:35 and I check my alpaca
+[00:38:26] account and at 7:35 you see oh you can
+[00:38:33] see it's placing more and more orders
+[00:38:35] right now our alerts getting triggered
+[00:38:36] they're hitting the webhook URL in the
+[00:38:39] cloud orders are getting filled we have
+[00:38:41] a bot running and I can go off to work
+[00:38:44] or go wherever the rest of the day and
+[00:38:46] this is just gonna keep executing keep
+[00:38:50] executors keep watching my signals I can
+[00:38:53] use trading view and I can add any of
+[00:38:55] number of indicators here if I know what
+[00:38:59] this stuff is for swing trading zigzag
+[00:39:01] pivots all kinds of stuff I can add to
+[00:39:03] my chart configure these alerts set up
+[00:39:06] my web hook URL and yeah add whatever
+[00:39:09] logic I want in chalice for my web hook
+[00:39:12] URL write a bunch of Python code and
+[00:39:15] respond to whatever happens in the
+[00:39:17] market real time it's in the cloud and
+[00:39:19] it's automated
+[00:39:20] so actually I'm very happy with this so
+[00:39:23] uh that didn't take us very long and and
+[00:39:26] we figured it out as we went so yeah let
+[00:39:29] me know if there are any questions I'm
+[00:39:30] experimenting with a variety of ways of
+[00:39:32] helping people individually so if you
+[00:39:35] email me we might be I might be able to
+[00:39:37] help you further if needed and I'm
+[00:39:40] experimenting as I'm
+[00:39:41] with the affiliate link so if you want
+[00:39:43] to sign up for trading view uh it'd be
+[00:39:45] cool if you signed up with that link so
+[00:39:48] yeah these will are trying to keep going
+[00:39:49] and I'm going to turn this off before it
+[00:39:51] executes like a million orders on my
+[00:39:54] account so thanks for watching the video
+[00:39:56] and stay tuned for more tutorials in the
+[00:39:58] future thanks

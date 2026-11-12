@@ -1,0 +1,181 @@
+[00:00:00] The super trend indicator. Known for it s
+[00:00:00] simplicity, and it s scary predictiveness
+[00:00:05] of the market. Even by itself, this indicator
+[00:00:05] is pretty decent. But in this video, I m going
+[00:00:10] to share one of my secret strategies I like
+[00:00:10] to do with this indicator, that make s it
+[00:00:14] so much better. Let s get straight to it.
+[00:00:14] If you haven t heard or used this indicator
+[00:00:19] before, well its pretty good at finding trends
+[00:00:19] in the market. Hence the name. Why this indicator
+[00:00:25] is so powerful is because it does not only
+[00:00:25] track the momentum of the market, but it also
+[00:00:29] uses ATR. Which basically means that it also
+[00:00:29] takes volatility into consideration.
+[00:00:34] I m going to show you how to take advantage
+[00:00:34] of this and make a lot of profitable trades.
+[00:00:39] First, let s add the indicator to our chart.
+[00:00:39] To do this, just go to the indicators tab
+[00:00:43] on trading view, type in super trend and make
+[00:00:43] sure your select this one right here.
+[00:00:48] It s probably one of the easiest indicators
+[00:00:48] to use on the planet. When the line s green,
+[00:00:52] you buy. When the line is red you sell. Pretty
+[00:00:52] self explanatory.
+[00:00:56] But just like any other indicator, this indicator
+[00:00:56] by itself has some problems. Let me explain.
+[00:01:01] As you can see here, the indicator is doing
+[00:01:01] a great job at finding the trend. It s great
+[00:01:05] at showing when the market has high momentum
+[00:01:05] in either direction. The problem is, the indictor
+[00:01:11] is always giving buy and sell signals, even
+[00:01:11] when the market is moving sideways and doesn
+[00:01:16] t have a lot of momentum.
+[00:01:16] And as we all know when the market is moving
+[00:01:19] sideways with little momentum, it s very risky,
+[00:01:19] and very hard to predict which direction it
+[00:01:25] will go.
+[00:01:25] And as you can see, whenever the market does
+[00:01:26] moves sideways, the indicator has some losing
+[00:01:26] trades.
+[00:01:27] That s exactly why, if you just use this indicator
+[00:01:27] by itself, and went in every time it said
+[00:01:30] buy your portfolio probably wouldn t look
+[00:01:30] too hot.
+[00:01:33] But, I m going to show you a solution to this
+[00:01:33] problem, so we only go in if the market is
+[00:01:38] truly in a trend.
+[00:01:38] The first strategy I m going to share with
+[00:01:41] you is a great one to have in your trading
+[00:01:41] arsenal. And that involves adding 3 super
+[00:01:46] tend indicators. Let s go a little more in
+[00:01:46] depth.
+[00:01:49] Once you have 3 super tend indicators added
+[00:01:49] to your chart, you re going to want to change
+[00:01:53] the settings a bit.
+[00:01:53] Go to the inputs tab and change the ATR period
+[00:01:57] to 12 and the atr multiplier to 3. The next
+[00:01:57] one you are going to set it as 10, then 1.
+[00:02:03] Then the 3rd one you are going to set it as
+[00:02:03] 11, then 2.
+[00:02:06] Then go to the style tab and turn off these
+[00:02:06] long and short icons.
+[00:02:10] So when you are done, your chart should look
+[00:02:10] something like this.
+[00:02:12] Now how this strategy works, is we will only
+[00:02:12] go in if all the lines are the same color.
+[00:02:18] Let me show you an example.
+[00:02:18] So here you can two of the lines are green,
+[00:02:22] but one of the lines are red. This is telling
+[00:02:22] us that market isn t in full momentum, and
+[00:02:27] is moving sideways. So we don t go in yet.
+[00:02:27] We wait for a little bit, until all the lines
+[00:02:33] turn green, we enter a long posistion here.
+[00:02:33] And look what happens, the chart goes up.
+[00:02:37] Let s look at one more example.
+[00:02:37] Here we are looking for a short trade, 2 of
+[00:02:41] the top lines are red, but the bottom line
+[00:02:41] is still green. We wait it out until all the
+[00:02:46] lines turn red, enter a short trade here,
+[00:02:46] profit.
+[00:02:48] Now, you may be asking yourself, but how do
+[00:02:48] I know when to exit the trade ? Well that
+[00:02:53] s a good question, there are actually a lot
+[00:02:53] of different ways to know when to exit the
+[00:02:57] trade.
+[00:02:57] You can do the classic, set a take profit
+[00:03:00] at a 1.5 ratio. Whenever the price hit s that
+[00:03:00] mark you exit the trade.
+[00:03:04] Another exit strategy is when one of the lines
+[00:03:04] change color.
+[00:03:08] So here you can see all the lines turned the
+[00:03:08] same color, we entered, we got a bunch of
+[00:03:12] profit, then once one of the lines turn red,
+[00:03:12] we exit the trade.
+[00:03:16] Another strategy can use is the pairing the
+[00:03:16] super trend indicator with a 200 day moving
+[00:03:21] average. Why this strategy is so powerful,
+[00:03:21] is because the super trend indicator is very
+[00:03:26] good at finding short term trend, and the
+[00:03:26] 200 day is good at finding long term trends.
+[00:03:32] Let s add these indicators to our chart. Go
+[00:03:32] to the indicators tab, add the super trend
+[00:03:39] indicator, and just keep the default settings.
+[00:03:39] Next had an exponential moving average, and
+[00:03:43] change the length to 200.
+[00:03:43] Now that we have the indicators set up, lets
+[00:03:47] move on to how to actually use this strategy.
+[00:03:47] The strategy is simple. We will only enter
+[00:03:52] a long trade if the super trend line is green,
+[00:03:52] and the price is above the 200 day moving
+[00:03:57] average.
+[00:03:57] We only enter a short trade, if the super
+[00:04:00] trend line is red, and the price is below
+[00:04:00] the 200 day moving average.
+[00:04:04] let me show you an example.
+[00:04:04] So here you can see the super trend line is
+[00:04:07] green, but the price is not above the 200
+[00:04:07] day moving average yet, so we wait. Once the
+[00:04:12] price is over the 200 day, and the line is
+[00:04:12] still green, this is where we enter the trade.
+[00:04:18] You can exit the trade, by doing a 1.5 profit
+[00:04:18] ratio, or by selling simply when the super
+[00:04:24] trend line turns red.
+[00:04:24] Let s take a look at a short example.
+[00:04:27] As you can see, the super trend line is red.
+[00:04:27] But, the price is still above the 200 day,
+[00:04:31] we wait for the price to go below the 200
+[00:04:31] day, make sure the super trend line is still
+[00:04:36] red, and then we enter a short trade.
+[00:04:36] Next, I m going to show you a bonus strategy
+[00:04:40] using the ichimoku indicator. To add this
+[00:04:40] indicator, go to the indicators tab and type
+[00:04:44] in ichimoku.
+[00:04:44] We are also going to clean up our chart because
+[00:04:48] this indicator s default setting are really
+[00:04:48] messy. Just uncheck the top 3 box, and the
+[00:04:53] change these plot backgrounds to purple, so
+[00:04:53] it s easier to see.
+[00:04:57] Now that we have that setup, let me explain
+[00:04:57] how the strategy works.
+[00:05:00] So this purple are is called the kumo cloud.
+[00:05:00] We will only enter a long trade if the super
+[00:05:05] trend line is green, and the price is above
+[00:05:05] the kumo cloud. We will not enter the trade
+[00:05:11] if the price is is in, or below the cloud.
+[00:05:11] It s the exact opposite for shorting. We only
+[00:05:16] enter a short trade if the super trend line
+[00:05:16] red, and the price is below the kumo cloud.
+[00:05:22] Let me show you an example.
+[00:05:22] So here the super trend line is green, but
+[00:05:25] the price is still below the kumo cloud, so
+[00:05:25] we wait. Then the price enters the kumo cloud,
+[00:05:30] but we still wait until it is above the kumo
+[00:05:30] cloud. We wait, then it finally goes above,
+[00:05:36] we make sure are super trend line is still
+[00:05:36] green. We enter the trade.
+[00:05:40] Here s a short example. The super trend line
+[00:05:40] is red, we don t enter until the price goes
+[00:05:46] below the kumo cloud, once it does, we enter
+[00:05:46] the trade.
+[00:05:50] For exit strategies, you can again do a 1.5
+[00:05:50] profit ration, or you can exit the trade once
+[00:05:56] the price goes inside the kumo cloud.
+[00:05:56] Let me show you an example.
+[00:05:58] So here we entered a trade because the super
+[00:05:58] trend line was green and the price was above
+[00:06:03] the kumo cloud. The price starts go, the heads
+[00:06:03] back down into the kumo cloud. The moment
+[00:06:08] the price hits the cloud, we exit the trade.
+[00:06:08] I just showed 3 different strategies to use
+[00:06:13] with the super trend indicator. All I ask
+[00:06:13] in return is if you take 2 seconds out of
+[00:06:17] your day and like this video.
+[00:06:17] Try these three strategies and let me know
+[00:06:21] which one worked the best for you!
+[00:06:21] If you want to see 4 price action secrets
+[00:06:25] that only the top 5% of traders know, watch
+[00:06:25] this video, because I give away some pretty
+[00:06:31] insane secrets.
+[00:06:31] Thanks for watching, and ill see you guys
+[00:06:34] next time.

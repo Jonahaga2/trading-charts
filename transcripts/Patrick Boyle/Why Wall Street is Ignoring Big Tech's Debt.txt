@@ -1,0 +1,764 @@
+[00:00:00] A few weeks ago Nikkei Asia reported
+[00:00:02] that the five biggest US tech companies
+[00:00:05] are carrying 1.65 trillion dollars of
+[00:00:08] debt that doesn't appear anywhere on
+[00:00:10] their balance sheets. Not the debt that
+[00:00:12] you can see, a second larger pile hidden
+[00:00:15] behind it. A few days later the
+[00:00:17] Financial Times found another 50 billion
+[00:00:20] in leases that Nvidia had signed for a
+[00:00:23] single data center in Texas, stuffed
+[00:00:26] full of its own chips. A commitment
+[00:00:29] nobody had known about. And the number
+[00:00:31] keeps moving. Nikkei did their count
+[00:00:34] before most of these companies had even
+[00:00:36] reported earnings. And when they did
+[00:00:38] report days ago, three of them alone
+[00:00:41] signed nearly 900 billion dollars of new
+[00:00:44] AI commitments in a single quarter. So
+[00:00:48] 1.65 trillion is already an
+[00:00:51] underestimate. Which is why if you spend
+[00:00:54] any time on financial YouTube, you
+[00:00:56] already know what people are calling
+[00:00:58] this. The word being thrown around is
+[00:01:01] Enron. Commentators, the ones with big
+[00:01:03] social media followings and no obvious
+[00:01:06] background in accounting, have looked at
+[00:01:08] these numbers and concluded it's Enron
+[00:01:11] all over again. So, I've been practicing
+[00:01:14] my shocked face in the mirror. It turns
+[00:01:17] out to be surprisingly hard to hold that
+[00:01:19] frozen open mouth and pointing at a red
+[00:01:22] line expression while also looking like
+[00:01:24] you understand what a lease is. Because
+[00:01:27] here's the question this video is
+[00:01:29] actually about. Is any of that true? Is
+[00:01:32] this fraud? The real numbers being
+[00:01:35] hidden from investors the way Enron hid
+[00:01:37] them right up until the whole thing fell
+[00:01:39] apart? Or is it something much more
+[00:01:42] boring and much more interesting? Let's
+[00:01:46] find out. First though, because a lot of
+[00:01:49] you weren't following the financial news
+[00:01:51] in 2001, a quick word on Enron since the
+[00:01:55] entire accusation rests on it. Enron was
+[00:01:59] an American energy giant that turned out
+[00:02:02] to be a fraud. It had been hiding
+[00:02:04] enormous debts and losses in a web of
+[00:02:07] secret off-the-books entities. The
+[00:02:09] accounts investors could see were
+[00:02:12] essentially a fiction. When it
+[00:02:14] unraveled, the company collapsed in a
+[00:02:16] matter of weeks. It took down Arthur
+[00:02:19] Andersen, one of the five biggest
+[00:02:21] accounting firms in the world, and wiped
+[00:02:24] out the retirement savings of thousands
+[00:02:26] of its own employees. It is still the
+[00:02:29] definitive corporate accounting fraud.
+[00:02:31] So, when someone points at Big Tech and
+[00:02:34] says Enron, they aren't complaining
+[00:02:36] about confusing bookkeeping, they're
+[00:02:38] alleging deliberate fraud on a criminal
+[00:02:41] scale. That's the charge that we're
+[00:02:43] going to test. When you see a headline
+[00:02:47] claiming that tech giants are hiding
+[00:02:49] over a trillion dollars in debt, it's
+[00:02:51] natural to assume a crime is being
+[00:02:53] committed. But, when you dig a bit
+[00:02:56] deeper, a lot of this debt turns out to
+[00:02:58] be long-term purchase agreements for
+[00:03:00] graphics cards and leases on data
+[00:03:03] centers that haven't been built yet.
+[00:03:06] Under standard accounting rules, if the
+[00:03:08] goods haven't been delivered or if the
+[00:03:10] building isn't running, you don't record
+[00:03:13] it as a liability on the balance sheet.
+[00:03:15] You disclose it in the footnotes.
+[00:03:18] When you sign a 2-year phone contract,
+[00:03:20] you've committed to paying the network
+[00:03:22] something like $50 a month for the next
+[00:03:25] 24 months. That's a real obligation. You
+[00:03:28] can't just stop. And if you added it up,
+[00:03:32] you're on the hook for over $1,000. But,
+[00:03:35] you don't sit down and record a $1,200
+[00:03:38] liability on your personal balance sheet
+[00:03:40] the day you sign. You pay for it month
+[00:03:43] by month as you use it. The tech
+[00:03:45] companies are doing the exact same
+[00:03:47] thing, just with more zeros. Instead of
+[00:03:50] a phone contract, it's a 15-year lease
+[00:03:52] on a data center in Ohio. For decades,
+[00:03:55] financial commentators have been
+[00:03:57] complaining about tech companies
+[00:03:59] hoarding cash, that they use their cash
+[00:04:02] flow to buy back shares instead of
+[00:04:04] investing in anything new. Now, these
+[00:04:06] same companies are issuing securities to
+[00:04:09] invest in new infrastructure, and the
+[00:04:11] same commentators have found a way to be
+[00:04:13] unhappy about that, too. Which raises
+[00:04:16] the question, what does it actually
+[00:04:18] signal when a company chooses to borrow
+[00:04:21] instead of raising equity? Because it
+[00:04:23] tells you quite a lot. But, before I dig
+[00:04:26] into that, let me tell you about this
+[00:04:28] week's video sponsor, Printify. Printify
+[00:04:31] is a print-on-demand platform built for
+[00:04:33] starting a side hustle from scratch,
+[00:04:36] with no inventory to buy and no cash up
+[00:04:39] front. You come up with a design, they
+[00:04:42] handle the printing and shipping, and
+[00:04:44] you never need to deal with the
+[00:04:45] inventory. There are no upfront costs,
+[00:04:48] no warehouse, no boxes of unsold mugs
+[00:04:51] stacked up in your garage. The catalog
+[00:04:54] runs to over 1,300 products, and because
+[00:04:58] printing happens through a network of
+[00:05:00] local facilities across the US and
+[00:05:03] Europe, your order gets made near
+[00:05:05] wherever it's shipping, which keeps the
+[00:05:07] fees down and the delivery times
+[00:05:10] reasonable. It connects directly to your
+[00:05:13] online sales platform, so you're just
+[00:05:16] adding a product line to a store you
+[00:05:18] might already run, rather than building
+[00:05:20] one from nothing. If design isn't your
+[00:05:23] thing, they've got AI tools built in to
+[00:05:26] help you with design. Use my promo code
+[00:05:29] Patrick to get 20% off your first order.
+[00:05:33] The offer is valid for the first 100
+[00:05:35] customers only, so be quick. Click the
+[00:05:38] link in the description to create your
+[00:05:40] Printify account for free and start your
+[00:05:43] own business today. Investors pay close
+[00:05:46] attention to how a company pays for
+[00:05:48] things. This is because the choices they
+[00:05:51] make send clear signals to the market.
+[00:05:54] Here's the intuition. If you actually
+[00:05:56] thought you'd built a machine that turns
+[00:05:58] $1 into five, you wouldn't sell half of
+[00:06:01] it to strangers to raise the money to
+[00:06:03] build it. You'd instead try to borrow
+[00:06:05] the money, build the machine, keep the
+[00:06:08] entire $5 profit, and pay off the loan.
+[00:06:11] You want to keep all of the ownership
+[00:06:13] stake yourself in such a high-conviction
+[00:06:16] investment. You only want to sell a
+[00:06:19] percentage of the business when you're
+[00:06:21] less sure about the likelihood of it
+[00:06:23] making a lot of money. So, debt isn't
+[00:06:25] always a bad sign. Borrowing to build
+[00:06:29] tends to signal that management thinks
+[00:06:31] the return on investment is worth
+[00:06:33] keeping for the existing owners.
+[00:06:36] Although, and this is where it gets
+[00:06:37] interesting, these firms are also
+[00:06:40] raising equity. In June, Alphabet
+[00:06:43] completed the largest equity raise in
+[00:06:46] corporate history, almost $85 billion,
+[00:06:49] anchored by a $10 billion check from
+[00:06:51] Berkshire Hathaway. Berkshire might be
+[00:06:54] the last name you'd expect on that list.
+[00:06:58] A firm that generally regards buying
+[00:07:00] back its own shares as more sensible
+[00:07:02] than funding somebody else's moonshot,
+[00:07:05] and a firm which drives a notoriously
+[00:07:07] hard bargain. It reportedly bought its
+[00:07:10] Alphabet stock at around a 6% discount
+[00:07:13] to the market price. Because, of course,
+[00:07:16] it did. This is not a firm that overpays
+[00:07:19] for a story. But, they decided that the
+[00:07:22] AI build-out was worth a $10 billion
+[00:07:25] investment anyway. When you see big tech
+[00:07:28] raising money by every route available
+[00:07:31] all at once, record debt, record equity,
+[00:07:34] convertibles, the lot, the signal isn't
+[00:07:37] in which one they picked. It's in the
+[00:07:39] scale of the capital raise itself. You
+[00:07:42] don't raise capital like a company
+[00:07:44] fighting for its life unless you think
+[00:07:47] there's something on the other side
+[00:07:49] worth the fight. Whether they're right
+[00:07:51] about that is the rest of this video,
+[00:07:54] but it's hard to argue they're hiding
+[00:07:56] the spending when they announced part of
+[00:07:59] it in the largest stock offering ever
+[00:08:01] filed. And a lot of this resolves itself
+[00:08:04] over time. The leases that haven't
+[00:08:07] started yet will come onto the balance
+[00:08:09] sheet as real liabilities once the data
+[00:08:12] centers switch on. That part is just a
+[00:08:15] timing difference. Meta alone signed
+[00:08:18] $233
+[00:08:19] billion
+[00:08:20] in new commitments last quarter. 96
+[00:08:24] billion of it leases that will move onto
+[00:08:26] the balance sheet as the data centers
+[00:08:29] come into use. The purchase commitments
+[00:08:32] mostly turn into chips and buildings the
+[00:08:34] companies actually own. What doesn't
+[00:08:37] tidy itself up so neatly is the cleverer
+[00:08:40] stuff. The joint ventures and
+[00:08:42] off-balance sheet vehicles engineered on
+[00:08:45] purpose to stay off the books, but even
+[00:08:48] that isn't hidden in the Enron sense.
+[00:08:51] The details are all there in the
+[00:08:53] accounts. You just have to go looking
+[00:08:55] for them. So, it isn't Enron-like fraud.
+[00:08:58] It's camouflage which only really works
+[00:09:01] on people who aren't paying much
+[00:09:03] attention. Now, none of this means that
+[00:09:06] big tech plays it straight. They're
+[00:09:08] plenty aggressive. They just do it in
+[00:09:11] plain sight on the front page of the
+[00:09:13] earnings report under a heading that
+[00:09:15] says adjusted earnings. If you're
+[00:09:18] spending billions on data centers and
+[00:09:21] chips, those assets wear out and need
+[00:09:23] replacing, but many of these firms would
+[00:09:26] rather talk to you about EBITDA,
+[00:09:28] earnings before interest, tax,
+[00:09:30] depreciation, and amortization.
+[00:09:33] Charlie Munger suggested that every time
+[00:09:36] you read the word EBITDA, you should
+[00:09:38] replace it in your head with BS
+[00:09:40] earnings. His point about depreciation
+[00:09:43] was that it's a kind of reverse float.
+[00:09:46] You paid a cash upfront for the
+[00:09:48] equipment, and the expense shows up
+[00:09:50] later as the thing wears out. Leaving it
+[00:09:53] out is just assuming that physical
+[00:09:55] objects last forever, which is a lovely
+[00:09:58] thought and very rarely true. And you
+[00:10:02] can see the strain in the real cash
+[00:10:04] numbers. When the latest earnings
+[00:10:06] landed, the four biggest hyperscalers
+[00:10:09] posted their lowest combined free cash
+[00:10:11] flow in a decade. $7 billion between
+[00:10:15] them, and Alphabet went cash negative
+[00:10:18] for the first time since it went public.
+[00:10:20] Then, there's stock-based compensation.
+[00:10:23] Tech companies love paying staff in
+[00:10:26] stock, and then taking that expense
+[00:10:28] straight back out of the earnings they
+[00:10:30] show investors on the grounds that it's
+[00:10:33] non-cash.
+[00:10:35] Aswath Damodaran at NYU has called
+[00:10:37] adding back stock-based compensation one
+[00:10:40] of the worst abuses in modern reporting.
+[00:10:43] His point is that it isn't a non-cash
+[00:10:46] expense in the way depreciation is. It's
+[00:10:49] a barter. If a company sold shares on
+[00:10:52] the market and used the cash to pay
+[00:10:54] employees, everyone would call that a
+[00:10:56] cash expense. Handing over the shares
+[00:10:59] directly instead of selling them and
+[00:11:01] paying cash doesn't make the cost
+[00:11:04] disappear. Warren Buffett has been
+[00:11:06] asking the same question for years. If
+[00:11:09] options aren't a form of compensation,
+[00:11:11] what are they? If compensation isn't an
+[00:11:14] expense, what is it? And if expenses
+[00:11:17] shouldn't go into the calculation of
+[00:11:19] earnings, where in the world should they
+[00:11:21] go?
+[00:11:22] To stop all that stock they're handing
+[00:11:25] to staff from inflating the share count,
+[00:11:27] the companies use real cash to buy their
+[00:11:30] own shares back, which they present to
+[00:11:32] investors as returning capital. Really,
+[00:11:36] they're running on an expensive
+[00:11:38] treadmill just to stay in the same
+[00:11:40] place. And here's the catch. A buyback
+[00:11:44] only actually rewards the remaining
+[00:11:46] shareholders if the shares are bought
+[00:11:48] cheaply. But, a company mopping up its
+[00:11:52] own stock-based compensation doesn't get
+[00:11:54] to wait for a good price. It has to keep
+[00:11:57] buying on a schedule, whatever the
+[00:11:59] shares cost that quarter, which lately
+[00:12:02] has not been cheap. While tech
+[00:12:04] executives might be aggressive with
+[00:12:06] their accounting, the actual cash
+[00:12:09] they're spending on AI is very real, and
+[00:12:12] it's the way they're spending it that
+[00:12:14] has some investors worried. Nvidia is
+[00:12:17] currently working on a round of AI deals
+[00:12:19] worth more than $750 billion.
+[00:12:22] It's in talks to backstop 250 billion to
+[00:12:26] help OpenAI lease computing power, and
+[00:12:29] to finance another 350 billion of
+[00:12:32] OpenAI's chip purchases. It threw 5
+[00:12:35] billion at a secretive new startup run
+[00:12:38] by former OpenAI chief scientist Ilya
+[00:12:41] Sutskever. Google has agreed to backstop
+[00:12:44] lease payments for Anthropic,
+[00:12:47] effectively handing it a $35 billion
+[00:12:50] loan.
+[00:12:51] SoftBank committed 65 billion to OpenAI
+[00:12:55] and took out a $40 billion bridge loan
+[00:12:58] just to finance that. bad. If you draw
+[00:13:01] the diagram of who owns what, the
+[00:13:04] companies at the center of the AI boom
+[00:13:06] turn out to be mostly investing in each
+[00:13:09] other.
+[00:13:10] Now, if you were a car salesman trying
+[00:13:12] to hit your monthly quota, it might
+[00:13:15] occur to you that lending a customer the
+[00:13:17] money to buy a car from you and then
+[00:13:20] booking that as a sale is a very
+[00:13:22] effective way to move inventory, at
+[00:13:25] least until the customer stops making
+[00:13:27] the payments. And the fear in the market
+[00:13:30] is that AI has turned into one enormous
+[00:13:33] version of this, a web of companies
+[00:13:36] funding their own revenue. Nvidia CEO
+[00:13:39] Jensen Huang has called the suggestion
+[00:13:42] that any of this is circular ridiculous.
+[00:13:45] Which is a strong word to reach for
+[00:13:48] while backstopping a quarter of a
+[00:13:50] trillion dollars of purchases of your
+[00:13:52] own product. But to be fair to him, he
+[00:13:55] has a point. As the Financial Times
+[00:13:58] pointed out, this is really just
+[00:14:00] old-fashioned vendor financing. Telecom
+[00:14:03] equipment makers and plane makers have
+[00:14:06] been writing checks to help their
+[00:14:07] customers buy their products for
+[00:14:09] decades. And the argument for Nvidia
+[00:14:12] doing it is just as reasonable. The AI
+[00:14:15] boom is moving fast enough that a
+[00:14:18] company like OpenAI couldn't raise
+[00:14:20] enough ordinary debt or equity to build
+[00:14:23] the computing power it thinks it needs.
+[00:14:26] So by stepping in, Nvidia locks in a
+[00:14:28] customer, make sure its chips actually
+[00:14:31] get used, and if the bet pays off, ends
+[00:14:35] up owning a slice of something that
+[00:14:37] could be worth a fortune. The trouble
+[00:14:40] with vendor financing is what happens
+[00:14:43] when it doesn't. Then it's a double
+[00:14:45] blow. You don't just lose the customer,
+[00:14:48] you lose the money you lent them to be
+[00:14:50] your customer. And the credit guarantees
+[00:14:53] make it worse. If an equity stake goes
+[00:14:56] to zero, that's just money wasted.
+[00:14:59] Annoying, but survivable. But a promise
+[00:15:02] to cover a customer's debts if things go
+[00:15:05] wrong can turn a valuation problem into
+[00:15:08] a solvency problem. Right now, Nvidia
+[00:15:11] throws off something like $200 a year in
+[00:15:15] cash. So if one or two of these startups
+[00:15:18] trip, it can take the hit. The question
+[00:15:21] is what happens as the guarantees climb
+[00:15:24] into the hundreds of billions and a
+[00:15:26] company that used to avoid debt is
+[00:15:29] suddenly standing behind everyone
+[00:15:31] else's. You don't have to take my word
+[00:15:34] that this matters. The clearest sign is
+[00:15:36] in Nvidia's own credit market. The cost
+[00:15:39] of insuring its debt against default
+[00:15:42] just jumped by the most on record in a
+[00:15:45] single day, right as this round of deals
+[00:15:48] landed. So, the people whose actual job
+[00:15:51] is to price the risk of Nvidia not
+[00:15:54] paying its bills had a look at all of
+[00:15:56] this and got noticeably less relaxed.
+[00:16:00] Because the real risk was never just
+[00:16:02] that the AI market turns out smaller
+[00:16:05] than hoped. It's that the people buying
+[00:16:07] the chips and the people making the
+[00:16:09] chips are increasingly the exact same
+[00:16:11] people.
+[00:16:12] All of this circular financing is
+[00:16:15] happening because everyone involved is
+[00:16:17] convinced that the market for AI is
+[00:16:20] going to be so astronomically large that
+[00:16:22] whatever they spend today will look like
+[00:16:25] a rounding error tomorrow.
+[00:16:27] Aswath Damodaran has a name for what
+[00:16:30] happens next. He and his co-author,
+[00:16:32] Bradford Cornell, call it the big market
+[00:16:35] delusion. The way it works is that a new
+[00:16:38] technology shows up attached to a
+[00:16:41] massive potential market. A crowd of
+[00:16:44] companies crop up to serve it and
+[00:16:46] investors price each company as if it's
+[00:16:50] going to be the winner. This is not
+[00:16:52] about the companies talking themselves
+[00:16:55] up. It's about the people buying the
+[00:16:57] shares. Each cluster of investors looks
+[00:17:00] at their chosen company and sees it as
+[00:17:03] the obvious future giant. The problem is
+[00:17:06] that they can't all be right. If you
+[00:17:09] take these companies and add up what the
+[00:17:11] market expects each of them to earn, you
+[00:17:13] get a number bigger than the market
+[00:17:15] itself. Everyone's been priced to come
+[00:17:18] in first in a race that can have only
+[00:17:21] one winner, which is how a whole market
+[00:17:24] can be priced for a future that
+[00:17:26] mathematically can't happen. The story
+[00:17:29] is doing all the work, and nobody's
+[00:17:31] minding the numbers. So, how big is the
+[00:17:35] story here? The Economist estimates that
+[00:17:38] the AI buildout is on track to be the
+[00:17:40] largest investment surge in history.
+[00:17:44] Around $900
+[00:17:46] this year alone being spent on chips,
+[00:17:48] data centers, and power, with more than
+[00:17:51] 400 billion of it borrowed.
+[00:17:53] And then, they calculated what it would
+[00:17:56] take to pay for all of that. Their
+[00:17:59] estimate is that the industry would need
+[00:18:01] to be earning something like two and a
+[00:18:03] half trillion dollars a year in AI
+[00:18:06] revenue, which is more than the entire
+[00:18:09] global technology sector earns from
+[00:18:11] everything it does today.
+[00:18:14] The actual figure is not close. Adoption
+[00:18:17] is real. Around a fifth of American
+[00:18:20] firms report using AI in some way, but a
+[00:18:23] lot of them are using the free versions.
+[00:18:27] According to a Bank of England study,
+[00:18:29] the average American executive spends
+[00:18:31] about 100 minutes a week using AI.
+[00:18:35] That's not a typo. The largest capital
+[00:18:38] investment in the history of the species
+[00:18:40] is being justified by an hour and a half
+[00:18:43] per executive per week. So, somewhere
+[00:18:45] between lunch and the drive home. And
+[00:18:48] when users do pay, they don't pay much.
+[00:18:52] The fintech firm Ramp went through
+[00:18:54] actual company spending and found that
+[00:18:57] the median firm was spending per
+[00:18:59] employee per month $10.66.
+[00:19:04] $2.5 trillion a year being spent to
+[00:19:08] capture $10.66
+[00:19:11] per employee.
+[00:19:13] The most damning number that came out of
+[00:19:15] the Bank of England's research was that
+[00:19:17] nine out of 10 executives said that AI
+[00:19:20] had made no difference to their
+[00:19:22] company's productivity over the past
+[00:19:24] four years.
+[00:19:25] When a technology takes over the
+[00:19:27] economy, people usually tend to notice.
+[00:19:31] But, that's the view from the top. Look
+[00:19:34] at the other end of the economy and the
+[00:19:36] picture flips. The people getting real
+[00:19:39] value out of AI aren't the giants
+[00:19:42] spending hundreds of billions on it,
+[00:19:44] they're the small ones. According to a
+[00:19:46] survey by the payroll firm Gusto, the
+[00:19:49] share of new business founders who used
+[00:19:52] AI to get started doubled to 60% in two
+[00:19:56] years.
+[00:19:57] They are not using it to cure a disease
+[00:20:00] or replace a department, but to build a
+[00:20:02] website, handle the local paperwork, and
+[00:20:05] do the things that used to mean hiring
+[00:20:07] someone.
+[00:20:09] Now, some of this new business activity
+[00:20:11] is people incorporating their hobbies,
+[00:20:14] and a shrinking share of these firms
+[00:20:16] will ever employ anyone but the founder.
+[00:20:19] So, let's not oversell it, but the
+[00:20:22] clearest real-world win for AI so far
+[00:20:25] isn't the company burning billions on
+[00:20:27] it, it's the person starting a one-man
+[00:20:30] business paying about $20 a month. When
+[00:20:33] a market gets priced as optimistically
+[00:20:36] as AI has been, the people whose job is
+[00:20:39] to sound a note of caution sometimes
+[00:20:41] decide to do the opposite. Take SpaceX.
+[00:20:45] When it went public in June, it wasn't
+[00:20:48] shy about the AI framing. Its own
+[00:20:51] prospectus claimed a total addressable
+[00:20:53] market of 28 and 1/2 trillion dollars,
+[00:20:57] and of that, 26 and 1/2 trillion, or 93%
+[00:21:02] of it, was attributed to AI or Grok,
+[00:21:06] which leaves about two trillion for
+[00:21:08] everything else. The rockets, the
+[00:21:10] launches, the satellites, the global
+[00:21:12] broadband network, Twitter.
+[00:21:15] The actual space company is the rounding
+[00:21:18] error at the bottom.
+[00:21:20] That was the case for pricing the shares
+[00:21:23] at $135.
+[00:21:25] You'd think that that would be ambitious
+[00:21:27] enough for anyone, but within weeks a
+[00:21:30] Wall Street analyst put a target of $800
+[00:21:33] a share on it, which would value the
+[00:21:36] company north of $10 trillion
+[00:21:38] on a business on a business that did
+[00:21:41] under $19 billion of revenue last year.
+[00:21:45] Now, you might wonder why an analyst
+[00:21:47] would look at a company losing money on
+[00:21:49] $19 billion in revenue and decide it's
+[00:21:52] worth $10 trillion.
+[00:21:54] As it happens, there is a reason and
+[00:21:57] it's a good one. The reason is what
+[00:22:00] SpaceX is about to do next. One analyst
+[00:22:03] went through the prospectuses and added
+[00:22:06] up the spending the company is committed
+[00:22:08] to. Commitments that the filing
+[00:22:10] discloses but never totals in one place,
+[00:22:14] and they got to something like $235
+[00:22:17] billion by 2030. The IPO funds raised by
+[00:22:21] SpaceX covered only a slice of that cash
+[00:22:25] requirement. A gap of around $170
+[00:22:28] billion still needs to be filled by
+[00:22:30] SpaceX issuing more stock and more debt
+[00:22:34] again and again for years, which is a
+[00:22:37] great deal of underwriting business for
+[00:22:39] Wall Street. And here's the thing about
+[00:22:42] those targets. According to Fortune,
+[00:22:45] analysts at 18 of the banks that
+[00:22:48] underwrote the IPO put out their price
+[00:22:50] targets at almost the exact same time,
+[00:22:53] around 25 days after the stock started
+[00:22:56] trading, which is when the rules let
+[00:22:58] them start talking. The notes were, in
+[00:23:01] Fortune's words, almost uniformly
+[00:23:04] bullish. Morgan Stanley called SpaceX
+[00:23:08] AI's final frontier. Bank of America
+[00:23:11] said it was paving the superhighway to
+[00:23:13] the stars. Raymond James compared it to
+[00:23:17] the invention of electricity, the
+[00:23:19] railroads, and the internet.
+[00:23:22] These are supposed to be equity research
+[00:23:25] notes. Out of 30-odd analysts covering
+[00:23:28] the stock, exactly one rated it a sell.
+[00:23:31] And that one works at an independent
+[00:23:34] research firm that doesn't do any
+[00:23:36] underwriting business. There was for
+[00:23:38] about 20 years a rule that made this
+[00:23:41] sort of arrangement awkward, but the SEC
+[00:23:44] scrapped that rule last December. It was
+[00:23:47] called the global research analyst
+[00:23:50] settlement, and it dates to 2003 in the
+[00:23:53] wreckage of the dot-com bubble.
+[00:23:55] It built a firewall between the
+[00:23:57] investment bankers and the research
+[00:24:00] analysts at the same firms. The idea
+[00:24:02] being to stop an analyst publicly rating
+[00:24:05] a stock a buy to help his bank win a
+[00:24:08] fee, while privately emailing colleagues
+[00:24:11] to call the same company a pig, which
+[00:24:13] isn't a hypothetical. In the cases that
+[00:24:16] led to the settlement, one analyst did
+[00:24:19] exactly that. Another described the
+[00:24:22] stock he was recommending as a POS,
+[00:24:25] which I'll let you expand for yourself.
+[00:24:28] The firewall was taken seriously.
+[00:24:31] Bankers and analysts at the same firm
+[00:24:34] weren't allowed to talk business without
+[00:24:36] a chaperone on the line. Two of the
+[00:24:39] highest-paid people in Manhattan needing
+[00:24:41] a babysitter on the phone in case they
+[00:24:44] said something a bit too useful to each
+[00:24:47] other.
+[00:24:48] The whole thing was championed by the
+[00:24:50] New York attorney general at the time,
+[00:24:52] Eliot Spitzer, better known as client
+[00:24:55] number nine of the Emperor's Club VIP, a
+[00:24:58] man with a well-documented understanding
+[00:25:01] of the value of keeping certain
+[00:25:03] transactions off the books.
+[00:25:06] The SEC scrapped the settlement last
+[00:25:08] December, citing the need for lower
+[00:25:11] compliance friction, which is the
+[00:25:14] regulatory way of saying that the rule
+[00:25:16] had become a hassle to enforce, so they
+[00:25:18] stopped. And it's not an isolated
+[00:25:21] decision. By almost any measure,
+[00:25:24] American enforcement of financial crime
+[00:25:26] has been falling apart for years.
+[00:25:29] White-collar prosecutions have been
+[00:25:31] drifting down over the last 30 years.
+[00:25:34] They're now running at about half the
+[00:25:36] level of 20 years ago. According to The
+[00:25:39] Economist, the Justice Department has
+[00:25:41] cut its lawyers by a fifth and moved
+[00:25:44] investigators onto immigration and
+[00:25:46] drugs. The SEC brought a grand total of
+[00:25:50] 10 enforcement actions against auditors
+[00:25:53] last year, a fifth of its usual rate,
+[00:25:56] running down the exact oversight that
+[00:25:59] was built after Enron. And since most of
+[00:26:02] these crimes carry a five-year statute
+[00:26:04] of limitations, the trick is often just
+[00:26:06] to keep the plate spinning long enough
+[00:26:09] that the clock runs out. One study
+[00:26:12] reckons only about a third of corporate
+[00:26:14] fraud is ever caught at all. But here's
+[00:26:18] the turn, and it's really the whole
+[00:26:20] point of this video. For the companies
+[00:26:22] we're actually talking about, none of
+[00:26:24] this matters. The Metas, the Oracles,
+[00:26:27] the hyperscalers, they aren't committing
+[00:26:30] fraud. They don't need to. Everything
+[00:26:33] they're doing is legal, and nearly all
+[00:26:35] of it is disclosed, which is a far more
+[00:26:38] interesting situation than will they get
+[00:26:40] caught, because they won't. The real
+[00:26:43] question is this: If it's all sitting
+[00:26:45] there in the open, the adjusted
+[00:26:47] earnings, the 50 billion in leases, the
+[00:26:50] stock-based compensation added back,
+[00:26:53] does it actually work? Does dressing up
+[00:26:56] numbers that anyone is technically free
+[00:26:58] to read still fool people? Are investors
+[00:27:02] really being taken in? It turns out that
+[00:27:06] this is one of the most heavily studied
+[00:27:08] questions in all of finance, and the
+[00:27:10] answer is a deeply unsatisfying
+[00:27:13] yes, a bit. And here's exactly how. Take
+[00:27:17] Aswath Damodaran, who we heard from
+[00:27:19] earlier. His view is that markets are
+[00:27:22] roughly efficient over time, but that
+[00:27:25] presentation still matters because most
+[00:27:28] investors anchor onto whatever number is
+[00:27:30] put in front of them. Show them an
+[00:27:32] adjusted figure, and that's the only one
+[00:27:35] they'll use. His objection to adding
+[00:27:38] back stock-based compensation is exactly
+[00:27:41] this. It's a real cost dressed up as a
+[00:27:44] non-cost, and a lot of people simply
+[00:27:46] accept it at face value.
+[00:27:49] Then, the harder evidence. In 1996, an
+[00:27:53] accounting professor named Richard Sloan
+[00:27:55] published one of the most famous papers
+[00:27:57] in the field. He split company earnings
+[00:28:00] into two parts, the cash the business
+[00:28:03] actually took in, and the accruals, the
+[00:28:06] softer judgment-based part that depends
+[00:28:09] on management's assumptions. And he
+[00:28:11] found something the market apparently
+[00:28:13] hadn't. The accrual part is much less
+[00:28:17] reliable than the cash part. It tends
+[00:28:19] not to last. Companies whose profits
+[00:28:22] leaned on accruals went on to
+[00:28:24] disappoint. Companies whose profits were
+[00:28:27] backed by real cash went on to do
+[00:28:29] better. But, the market was treating
+[00:28:33] both kinds of profit as if they were
+[00:28:35] identical, which meant that you could
+[00:28:37] earn excess returns for years simply by
+[00:28:40] betting that it would eventually notice
+[00:28:43] the difference. In plain terms, cleaner
+[00:28:46] earnings beat dressed-up earnings. The
+[00:28:49] polish doesn't hold. So, why doesn't the
+[00:28:53] market just spot this immediately?
+[00:28:55] That's the second idea. A professor
+[00:28:58] named Robert Bloomfield has a nice
+[00:29:00] explanation that he calls the incomplete
+[00:29:03] revelation hypothesis.
+[00:29:05] In theory, a market instantly prices in
+[00:29:08] all public information, but Bloomfield's
+[00:29:11] point is that public and usable are not
+[00:29:14] the same thing. The number you need is
+[00:29:17] technically out there. It's on page 83
+[00:29:21] of a 200-page filing split across four
+[00:29:24] footnotes in a form you have to
+[00:29:26] reassemble yourself. And extracting it
+[00:29:29] costs time, effort, and attention, which
+[00:29:32] aren't free. So, the harder a fact is to
+[00:29:35] dig out, the less completely it shows up
+[00:29:37] in the price. It isn't that the
+[00:29:40] information is hidden, it's that reading
+[00:29:43] it is annoying, and most people don't
+[00:29:45] bother, which is the entire game. The
+[00:29:48] debt isn't hidden, it's just filed
+[00:29:50] somewhere tedious enough that you won't
+[00:29:53] look.
+[00:29:54] At which point, you might reasonably
+[00:29:56] ask, "Fine, but if there's money to be
+[00:29:58] made reading the footnotes, why don't
+[00:30:00] the professionals just do it? Read the
+[00:30:03] filing, short the overpriced stock, and
+[00:30:05] collect." And that's the third idea, the
+[00:30:08] limits of arbitrage. A field that the
+[00:30:11] economists Mitchell and Pulvino did much
+[00:30:14] of the foundational work on. The problem
+[00:30:17] with being right about a footnote is
+[00:30:19] that being right isn't enough. You also
+[00:30:21] have to stay solvent long enough for
+[00:30:23] everyone else to catch up. If you short
+[00:30:26] a beloved narrative stock because you
+[00:30:28] found an ugly commitment buried in the
+[00:30:31] accounts, and a few million people buy
+[00:30:33] it anyway because they like the founder,
+[00:30:36] that stock can keep climbing for a very
+[00:30:38] long time, and your short position can
+[00:30:41] wipe you out well before the market ever
+[00:30:44] gets round to caring. The smart money is
+[00:30:47] aware of this. So, a lot of the time, it
+[00:30:50] simply doesn't bother getting involved
+[00:30:52] in hype stocks at all. The mispricing
+[00:30:56] survives not because nobody can see it,
+[00:30:59] but because the people who can see it
+[00:31:01] can't afford to bet against the people
+[00:31:03] who can't. Which pulls the whole thing
+[00:31:06] together. The people not reading the
+[00:31:09] accounts outnumber the people who are.
+[00:31:11] The people who are reading them can't
+[00:31:14] move the price on their own. And so, a
+[00:31:17] company that buries an inconvenient
+[00:31:19] number in a footnote is making a
+[00:31:21] perfectly rational bet that the crowd
+[00:31:24] won't read it and the professionals who
+[00:31:27] do won't be able to do much about it.
+[00:31:29] It's disclosed, it's legal, and it works
+[00:31:32] often enough to maybe be worth doing.
+[00:31:35] So, to bring this all together, the
+[00:31:38] current panic over hidden tech debt
+[00:31:40] isn't the discovery of the next Enron.
+[00:31:43] It's people finally reading the
+[00:31:45] footnotes and realizing how much money
+[00:31:47] is actually being spent. As Aswath
+[00:31:50] Damodaran puts it, "A valuation is a
+[00:31:53] story disciplined by numbers." Right
+[00:31:56] now, AI is a very expensive story told
+[00:31:59] by companies lending each other the
+[00:32:01] money to buy their own products and
+[00:32:04] reported through adjusted figures that
+[00:32:07] leave out the most expensive parts. The
+[00:32:10] debt isn't hidden. It's just filed
+[00:32:13] somewhere tedious enough that most
+[00:32:15] people won't look. The problem isn't
+[00:32:18] that AI is a fraud. It's obviously
+[00:32:20] useful, and the businesses getting the
+[00:32:23] most out of it seem to be the small
+[00:32:25] ones, the solo founders and the
+[00:32:27] one-person businesses paying their $20 a
+[00:32:30] month, which is a wonderful deal if
+[00:32:33] you're the one renting. It's a rather
+[00:32:35] worse deal if you're the one who spent
+[00:32:37] billions building it and is still
+[00:32:39] waiting for that $20 a month to add up
+[00:32:42] to the 2 and 1/2 trillion a year it
+[00:32:44] would take to pay the thing off.
+[00:32:47] Until it does, the companies building
+[00:32:49] all of this will keep borrowing. They'll
+[00:32:52] keep filing the commitments in the
+[00:32:53] footnotes and the market will keep not
+[00:32:56] reading them right up until one day it
+[00:32:59] decides to.
+[00:33:01] Jamie Diamond put it well recently. Will
+[00:33:04] AI pay off? Probably, the way the
+[00:33:06] internet did. Will it pay off the way
+[00:33:09] you expect on the timeline you expect?
+[00:33:12] Definitely not. Which means that I
+[00:33:14] should probably get back to the mirror
+[00:33:17] and keep practicing my shocked face. I
+[00:33:19] have a feeling I'm going to need it. If
+[00:33:21] you found this video interesting, you
+[00:33:23] should watch my video on Venezuela's
+[00:33:25] missing oil revenues next. Don't forget
+[00:33:28] to check out our sponsor Printify using
+[00:33:30] the link in the video description. Have
+[00:33:33] a great day and see you in the next
+[00:33:35] video. Bye.
+[00:33:38] >> [music]

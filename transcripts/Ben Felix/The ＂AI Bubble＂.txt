@@ -1,0 +1,510 @@
+[00:00:00] One of the benefits of index investing
+[00:00:02] is supposed to be broad diversification,
+[00:00:04] but right now 36% of the S&P 500 index
+[00:00:08] consists of just seven stocks. If we
+[00:00:11] look at the total US market, that number
+[00:00:13] is 32%. That is the most extreme level
+[00:00:16] of index concentration in US market
+[00:00:18] history going back to 1927.
+[00:00:21] US stock market valuations are also
+[00:00:23] nearing their 1999 peaks, which were of
+[00:00:27] course followed by a decade of flat at
+[00:00:29] best US stock returns.
+[00:00:32] I get it. This does seem concerning. If
+[00:00:35] that handful of stocks declines in
+[00:00:37] value, the effect on the overall market
+[00:00:39] could be substantial. This is a movie we
+[00:00:41] have seen before up here in Canada. In
+[00:00:44] July of the year 2000, one stock made up
+[00:00:47] about 36% of the entire Canadian market
+[00:00:50] index, subsequently crashing, eventually
+[00:00:53] becoming worthless, and dragging the
+[00:00:55] market down with it. The good news is
+[00:00:57] that mitigating the worst of these
+[00:00:59] situations is not actually that hard.
+[00:01:02] I'm Ben Felix, chief investment officer
+[00:01:03] at PWL Capital, and I'm going to tell
+[00:01:05] you how to prepare for the aftermath of
+[00:01:07] the AI bubble.
+[00:01:11] [Music]
+[00:01:14] All right, I've got to come clean up
+[00:01:15] front. I don't actually know if there is
+[00:01:17] an AI bubble. Nobody does. That's only
+[00:01:19] knowable in hindsight. That being said,
+[00:01:22] some wild stuff has been happening in
+[00:01:24] the US stock market. Companies have been
+[00:01:26] spending at a blistering rate to build
+[00:01:28] out the infrastructure needed to
+[00:01:29] capitalize on the supposed AI
+[00:01:31] revolution. This type of spending often
+[00:01:33] coincides with the development of
+[00:01:35] revolutionary technologies. Railroad and
+[00:01:38] internet stocks followed a similar path
+[00:01:40] of high asset prices, massive
+[00:01:42] investment, and an eventual painful fall
+[00:01:45] in asset prices, which we might describe
+[00:01:47] as a bubble after the fact. Stock price
+[00:01:50] bubbles or periods of unusually high
+[00:01:52] stock prices followed by much lower
+[00:01:54] prices are an age-old feature of
+[00:01:56] financial markets. They are often, but
+[00:01:58] not always, sparked by some new
+[00:02:00] technology that promises huge profits
+[00:02:02] for those developing it. The history of
+[00:02:05] technology bubbles goes back to at least
+[00:02:07] the 1700s and has followed a similar
+[00:02:09] pattern with each successive major
+[00:02:11] technological innovation. In this video,
+[00:02:13] I want to talk about the two main
+[00:02:15] features of the current US market which
+[00:02:17] seem to be causing some investors to
+[00:02:18] worry. One is market valuations, the
+[00:02:21] other is market concentration. These are
+[00:02:23] two loosely related measures. Market
+[00:02:25] valuations measure how expensive it is
+[00:02:27] to buy the expected future earnings of
+[00:02:28] companies, and market concentration
+[00:02:31] measures how concentrated the market's
+[00:02:33] total value is in a small number of
+[00:02:34] stocks. High market valuations are
+[00:02:37] generally associated with a lower future
+[00:02:39] returns, while market concentration has
+[00:02:41] a much noisier relationship, if there's
+[00:02:44] any relationship at all. Market
+[00:02:45] valuations and market concentration may
+[00:02:47] both increase around the development of
+[00:02:49] new technologies simply due to the fact
+[00:02:52] that as some companies rise in value due
+[00:02:54] to their association with the new
+[00:02:55] technology, they will make up a larger
+[00:02:57] portion of the market. Bubbles are
+[00:02:59] exciting on the way up, often inducing
+[00:03:02] FOMO, fear of missing out, that may
+[00:03:04] further feed into the bubble dynamics,
+[00:03:06] and then they are painful on the way
+[00:03:08] down, both psychologically and often
+[00:03:10] economically or financially for the
+[00:03:12] people who invested in them. Bubbles are
+[00:03:14] not all bad, though. High stock prices
+[00:03:16] that arise from speculation about the
+[00:03:18] profitability of a revolutionary
+[00:03:20] technology can help to facilitate that
+[00:03:22] technology's development and deployment
+[00:03:25] into the economy. Classic examples are
+[00:03:27] the massive spending on installing fiber
+[00:03:29] optic cables in the late '90s and on
+[00:03:31] installing railway track in the 1840s.
+[00:03:33] In both cases, many of the companies
+[00:03:36] involved were able to raise a ton of
+[00:03:37] money and achieve temporarily high stock
+[00:03:40] prices as excited investors piled in,
+[00:03:43] but their share prices subsequently
+[00:03:45] crashed. Bubbles do tend to come with
+[00:03:48] waste, too much unused fiber optic
+[00:03:50] cable, too much redundant railway track,
+[00:03:53] but despite the waste, the
+[00:03:54] infrastructure for the respective
+[00:03:55] technologies does get created, paving
+[00:03:58] the way for a potential economic golden
+[00:04:00] age to follow. These productive bubbles
+[00:04:03] are probably on net a good thing for the
+[00:04:05] economy, even if they can be painful for
+[00:04:07] investors. The pattern of investor
+[00:04:09] excitement and high stock prices
+[00:04:11] surrounding technological revolutions or
+[00:04:12] potential technological revolutions goes
+[00:04:15] back hundreds of years, and it always
+[00:04:17] follows this similar path. Stock prices
+[00:04:19] are driven up by some combination of
+[00:04:21] high profit potential from the
+[00:04:23] revolutionary technology, and once it
+[00:04:25] starts rising, speculation that the
+[00:04:27] associated stocks will continue rising.
+[00:04:30] Eventually, prices do come back to
+[00:04:31] earth, resulting in a low returns for
+[00:04:33] anyone who bought near the top. Whether
+[00:04:35] that's what we're seeing in the US right
+[00:04:37] now, again, can only be known in
+[00:04:39] hindsight. Prices could remain high. The
+[00:04:41] rapid rise in prices of the top US
+[00:04:43] stocks has also been accompanied by
+[00:04:45] rapid earnings growth. It's not pure
+[00:04:47] hype. There is some economic substance
+[00:04:49] here. What we do know is that a large
+[00:04:51] portion of the US market's return,
+[00:04:53] earnings growth, and capital expenditure
+[00:04:55] has come from AI-related stocks since
+[00:04:58] the launch of ChatGPT. A September 2025
+[00:05:00] report from JP Morgan explains that
+[00:05:02] AI-related stocks have accounted for 75%
+[00:05:05] of S&P 500 returns, 80% of earnings
+[00:05:08] growth, and 90% of capital spending
+[00:05:11] growth since ChatGPT launched in
+[00:05:13] November 2022.
+[00:05:15] We also know that US stock market
+[00:05:16] concentration, which was already high,
+[00:05:19] has shot up even further. Stock market
+[00:05:21] concentration and high stock valuations
+[00:05:23] are, again, different issues, but they
+[00:05:25] can be related by the fact that a rapid
+[00:05:27] rise in valuations for a small number of
+[00:05:29] firms can also lead to market
+[00:05:31] concentration. To be completely clear,
+[00:05:33] in case I wasn't already, I am not
+[00:05:35] taking a position on whether we are
+[00:05:37] witnessing a bubble in the US stock
+[00:05:38] market, but I think it's useful to look
+[00:05:40] at past instances of high stock market
+[00:05:43] valuations and market concentration to
+[00:05:45] understand the potential implications
+[00:05:47] and lessons. The Canadian example that I
+[00:05:49] mentioned earlier is even more extreme
+[00:05:51] than what we're currently seeing in the
+[00:05:53] US market. Northern Electric and
+[00:05:55] Manufacturing Co. was spun off from Bell
+[00:05:57] Canada in 1895.
+[00:05:59] In 1998, it was renamed Nortel Networks.
+[00:06:03] During the dot-com bubble, Nortel's
+[00:06:05] early work in optical networking
+[00:06:07] technologies propelled it to the
+[00:06:08] forefront of the internet infrastructure
+[00:06:10] revolution. It was making truly useful
+[00:06:13] stuff that the world needed or thought
+[00:06:15] it needed. Its stock price soared,
+[00:06:18] creating huge amounts of wealth for
+[00:06:20] investors and for the many employees who
+[00:06:22] received stock-based compensation.
+[00:06:24] Incredibly, the company peaked at over
+[00:06:26] 36% of the Canadian stock market index,
+[00:06:29] at the time called the TSE 300. Nortel,
+[00:06:32] and thus the Canadian stock market, had
+[00:06:34] extremely high valuations in August of
+[00:06:36] the year 2000, peaking at a Shiller
+[00:06:39] cyclically adjusted price-earnings ratio
+[00:06:40] of 60.6, far surpassing the peak
+[00:06:44] valuation of the US stock market during
+[00:06:46] the same dot-com period. The Shiller
+[00:06:48] cyclically adjusted price-earnings ratio
+[00:06:50] measures market prices against the
+[00:06:51] index's 10-year average real historical
+[00:06:54] earnings, on the assumption that
+[00:06:56] long-term earnings growth tends to be
+[00:06:57] steady. A high Shiller PE means that
+[00:07:00] investors are paying a lot more for
+[00:07:02] future earnings and should therefore
+[00:07:04] expect lower future returns, unless
+[00:07:06] earnings end up being unusually high in
+[00:07:08] the future, which can happen.
+[00:07:10] Nortel's downfall started with a string
+[00:07:12] of unprofitable internet-related
+[00:07:14] acquisitions and was accelerated by the
+[00:07:16] dot-com bubble popping. The result for
+[00:07:18] the Canadian stock market was
+[00:07:20] devastating. The Canadian TSE 300 index
+[00:07:22] dropped by 43% between September 2000
+[00:07:26] and September 2002. That obviously
+[00:07:28] hurts. There are two lessons that I
+[00:07:30] think are important to explain here.
+[00:07:31] First, well this drop was definitely
+[00:07:34] painful, I don't want to minimize that,
+[00:07:36] the market recovered by July 2005, and
+[00:07:38] it went on to deliver strong returns,
+[00:07:41] while the US market, as I'll detail in a
+[00:07:42] minute, struggled for more than a
+[00:07:44] decade. Despite having been more
+[00:07:46] concentrated, the Canadian market was
+[00:07:48] more resilient than the US market. The
+[00:07:50] Nortel crash was, in hindsight, a short
+[00:07:52] blip in a long track record of strong
+[00:07:54] performance for Canadian stocks. Second,
+[00:07:57] while the Canadian market as a whole was
+[00:07:59] hurt by its exposure to Nortel, Canadian
+[00:08:01] value stocks, a Canadian value stock
+[00:08:03] index, so stocks with low prices
+[00:08:05] relative to their fundamentals, did not
+[00:08:07] crash when the overall market did, and
+[00:08:10] it actually delivered even stronger
+[00:08:11] returns than the market on the recovery.
+[00:08:13] This will come up again in my next
+[00:08:15] examples, too. The US market did not
+[00:08:17] have such extreme concentration in 1999
+[00:08:20] as it does today or as Canada did back
+[00:08:22] then, but it did have high stock prices,
+[00:08:24] which were, in hindsight, mostly
+[00:08:26] unjustified by fundamentals. Some
+[00:08:29] companies like Microsoft and Amazon came
+[00:08:31] through the other side and proved that
+[00:08:32] there was real transformational
+[00:08:34] potential in the internet, but the vast
+[00:08:36] majority of companies that tried to
+[00:08:38] capitalize on the internet failed. This
+[00:08:41] led to the famous dot-com bubble and the
+[00:08:43] subsequent lost decade for US stocks.
+[00:08:46] The US market crashed starting around
+[00:08:48] March of 2000, and measured in Canadian
+[00:08:50] dollar terms, remained flat or below
+[00:08:53] flat until July of 2013. That is another
+[00:08:56] brutal period of technology-induced high
+[00:08:58] prices, leading to the low realized
+[00:09:01] stock returns for investors who bought
+[00:09:02] at the peak. In this case, unlike with
+[00:09:05] Nortel, the recovery was not so swift.
+[00:09:07] Part of the problem is that the great
+[00:09:09] financial crisis intervened as stock
+[00:09:11] prices were starting to recover. Either
+[00:09:13] way, this technology bust was painful
+[00:09:15] for US investors, or investors in US
+[00:09:18] stocks, in general, and even more so for
+[00:09:21] investors focused on US technology
+[00:09:23] stocks. It would have taken them even
+[00:09:24] longer to recover.
+[00:09:25] Similar to the Canadian example, an
+[00:09:27] investor in US value stocks, and to an
+[00:09:29] even greater extent US small-cap value
+[00:09:31] stocks, fared much better over this long
+[00:09:34] period of poor performance for the
+[00:09:35] market as a whole. They earned positive
+[00:09:38] returns while the market was flat at
+[00:09:40] best for an extended period of time.
+[00:09:42] It's also worth reiterating that
+[00:09:43] Canadian stocks performed reasonably
+[00:09:45] well over this period. Diversification
+[00:09:47] is known as the only free lunch in
+[00:09:49] investing for good reason. The main
+[00:09:51] problem with diversification is
+[00:09:53] behavioral. It inherently means that you
+[00:09:55] always own the stuff that's performing
+[00:09:57] well and the stuff that's performing
+[00:09:59] poorly, which is not always so easy to
+[00:10:01] do. Okay, so these two examples, the
+[00:10:03] Canadian and the US example, they had
+[00:10:04] high market valuations in common, but
+[00:10:06] the Canadian market became much more
+[00:10:08] concentrated than the US market.
+[00:10:10] In the past, the US market has reached
+[00:10:12] high concentration levels without going
+[00:10:14] on to deliver poor future returns. Not
+[00:10:17] quite as high as today, but still high.
+[00:10:19] I looked at this within the US market
+[00:10:21] going back to 1926. I sorted 10-year
+[00:10:24] future returns on the starting level of
+[00:10:26] market concentration in the top seven
+[00:10:28] stocks. There's a very slight negative
+[00:10:30] correlation between market concentration
+[00:10:32] and future returns, but it's not
+[00:10:33] statistically significant, meaning
+[00:10:35] there's a good chance it's just noise in
+[00:10:37] the data. But statistical significance
+[00:10:39] aside, it's still a weak relationship
+[00:10:41] economically. A point that often seems
+[00:10:42] to get lost in discussions of the US
+[00:10:44] market's concentration is that many
+[00:10:46] other markets around the world are far
+[00:10:47] more concentrated. I mean, I gave you
+[00:10:49] guys the Canada example, and yet they
+[00:10:51] still managed to deliver positive
+[00:10:53] returns, in some cases even more so than
+[00:10:55] the US market. Looking back at the last
+[00:10:57] 10 years of returns, just as an example,
+[00:11:00] the weight of the top seven stocks in
+[00:11:02] the 10 largest stock markets, excluding
+[00:11:04] the US, was 40.94%.
+[00:11:07] So, higher than the US.
+[00:11:09] In November 2015, so we're looking back
+[00:11:12] 10 years in history. Switzerland was the
+[00:11:14] most concentrated market at 60.11%
+[00:11:17] in the top seven stocks, and Japan was
+[00:11:19] the least concentrated at 16.91%.
+[00:11:22] The return from November 1st, 2015 to
+[00:11:25] November 26, 2025, measured in USD, was
+[00:11:29] 8.44% on average for all of these
+[00:11:31] countries. That does trail the US market
+[00:11:34] return, but still delivers a
+[00:11:35] meaningfully positive equity risk
+[00:11:37] premium. Taiwan was one of the most
+[00:11:39] concentrated markets in November 2015,
+[00:11:41] and it outperformed the US market over
+[00:11:43] the subsequent 10-year period. The
+[00:11:45] overall relationship between market
+[00:11:47] concentration and future returns across
+[00:11:49] countries seems to be noisy at best.
+[00:11:52] An interesting, sort of anecdotal
+[00:11:53] perspective is AT&T, which was broken up
+[00:11:56] into smaller companies starting in 1982.
+[00:11:59] It was the largest company in the US
+[00:12:00] market at that time and in prior
+[00:12:02] decades, not when it was broken up, but
+[00:12:03] in prior decades, it made up a larger
+[00:12:06] portion of the US market than Nvidia
+[00:12:07] makes up today. The interesting question
+[00:12:09] is, was the US market less risky after
+[00:12:12] the breakup? I think that would be
+[00:12:14] pretty hard to argue. You could maybe
+[00:12:15] even argue the opposite.
+[00:12:17] Something that does appear in the data,
+[00:12:18] at least post-1950, is the returns can
+[00:12:21] suffer over periods where concentration
+[00:12:23] is falling. I think this again makes
+[00:12:25] sense. If concentration comes from
+[00:12:26] rising valuations for a handful of
+[00:12:28] firms, falling valuations for those
+[00:12:30] firms would lead to lagging returns.
+[00:12:33] But even then, we're talking about less
+[00:12:35] positive returns, not a total disaster.
+[00:12:38] The relationship between market
+[00:12:39] valuations and future returns is
+[00:12:41] stronger, at least economically, both
+[00:12:43] across markets and within the US market.
+[00:12:45] To illustrate this, I looked at the
+[00:12:46] relationship between the starting
+[00:12:48] cyclically adjusted price-earnings
+[00:12:50] ratio, the CAPE ratio, and the 10-year
+[00:12:52] return for the 10 largest developed
+[00:12:54] stock markets going back to 1982. I
+[00:12:57] looked at rolling periods with a 1-month
+[00:12:59] step. I acknowledge that there are
+[00:13:00] potential problems with this setup, like
+[00:13:02] difficulties in comparing the CAPE ratio
+[00:13:04] across countries, and from a statistical
+[00:13:07] perspective, the fact that I'm using
+[00:13:08] these overlapping samples, the rolling
+[00:13:10] periods of the 1-month step, it does
+[00:13:12] make any conclusions drawn from the data
+[00:13:14] statistically questionable. Now, that
+[00:13:16] being said, there is a clear monotonic
+[00:13:19] relationship between starting cyclically
+[00:13:21] adjusted price-earnings ratio, so
+[00:13:22] starting valuations, and future 10-year
+[00:13:25] returns. When the CAPE ratio is higher
+[00:13:28] at the start, future returns are lower.
+[00:13:30] Again, this does not mean that the
+[00:13:32] market must crash tomorrow or next week
+[00:13:35] when valuations are high, but it might
+[00:13:37] mean that it makes sense to moderate our
+[00:13:38] expectations for future returns from the
+[00:13:41] US market in particular due to its
+[00:13:43] currently elevated valuations.
+[00:13:45] The Japanese stock market had a crazy
+[00:13:47] run leading up to 1990, eventually
+[00:13:49] becoming the largest stock market in the
+[00:13:51] world by market capitalization,
+[00:13:53] surpassing even the US market for a
+[00:13:55] period of time. Japan was viewed as this
+[00:13:57] unstoppable economic powerhouse, and its
+[00:13:59] stock market valuations reached levels
+[00:14:01] rarely seen elsewhere in history.
+[00:14:04] I'm not saying the US is today's Japan,
+[00:14:07] but I think it's an important example to
+[00:14:09] think about. At the end of 1989, the
+[00:14:11] Japanese market did crash. So, it had
+[00:14:13] these crazy high valuations, and then it
+[00:14:15] prices do start to come down. The market
+[00:14:17] really does crash.
+[00:14:19] The crazy thing about the Japan example,
+[00:14:20] though, is that it has not recovered in
+[00:14:23] real terms, so if we adjust for
+[00:14:24] inflation, to this day. So, it crashes
+[00:14:26] in the end of the end of 1989, and now
+[00:14:28] we're in almost 2026. And if you adjust
+[00:14:31] for inflation, the Japanese market is
+[00:14:33] still not recovered from the crash, or
+[00:14:35] it's it's flat
+[00:14:36] after the crash.
+[00:14:37] Now, two things would have saved an
+[00:14:39] investor in Japanese stocks in 1989.
+[00:14:42] Diversification across markets, a
+[00:14:44] globally diversified investor did just
+[00:14:46] fine as the US market kind of took the
+[00:14:48] torch of stock market dominance back
+[00:14:51] from Japan with a a vengeance. The US
+[00:14:53] went on to absolutely uh perform
+[00:14:56] exceptionally well, as Japan had done
+[00:14:58] previously.
+[00:14:59] And then the other thing that would have
+[00:15:00] helped is diversification within the
+[00:15:02] Japanese market itself. Despite Japan's
+[00:15:05] stock market struggles over this long
+[00:15:06] period of time, as with my previous
+[00:15:08] examples, Japanese value and small-cap
+[00:15:11] value stocks have actually performed
+[00:15:13] fine over this period.
+[00:15:15] Now, again, this does not mean that I'm
+[00:15:17] suggesting getting out of the US stock
+[00:15:19] market. I we could have had a very
+[00:15:21] similar conversation to what we're
+[00:15:23] having now in 2021 when US market
+[00:15:26] valuations were high again.
+[00:15:28] Uh not quite as high as today, but still
+[00:15:29] high. Uh that would have been a mistake.
+[00:15:32] US stock returns have continued to be
+[00:15:33] very positive since then.
+[00:15:35] But what it does mean is not expecting
+[00:15:38] the same rocket-ship returns that the US
+[00:15:40] market has been delivering to continue
+[00:15:42] forever. The US stock market currently
+[00:15:44] has these two defining features that are
+[00:15:46] causing some investors to worry: high
+[00:15:48] stock valuations and high market
+[00:15:50] concentration. Market concentration,
+[00:15:52] while seemingly problematic due to the
+[00:15:54] potential impact of a few large firms
+[00:15:57] faltering and bringing the market down
+[00:15:58] with them, has not historically been as
+[00:16:00] much of an issue as you might expect.
+[00:16:02] Anecdotally, the Canadian market
+[00:16:04] recovered from extreme period of market
+[00:16:06] concentration and high valuations during
+[00:16:08] the dot-com bust more quickly than the
+[00:16:11] less concentrated US market. Looking
+[00:16:13] more broadly at the 10 largest non-US
+[00:16:16] stock markets for the last 10 years, the
+[00:16:18] relationship between concentration and
+[00:16:19] future returns is seemingly nonexistent.
+[00:16:22] Looking at US returns from 1927 to 2024,
+[00:16:26] there is a weak economic relationship
+[00:16:28] that is not statistically significant
+[00:16:30] between market concentration and future
+[00:16:32] returns. Stock market valuations, on the
+[00:16:35] other hand, are more impactful, and that
+[00:16:37] is another concerning aspect of the US
+[00:16:39] market right now.
+[00:16:40] High current valuations, while not a
+[00:16:42] perfect predictor of future returns, do
+[00:16:44] seem to be at least somewhat related.
+[00:16:46] This relationship, while it's
+[00:16:48] economically strong, doesn't really hold
+[00:16:50] up to statistical scrutiny for the
+[00:16:51] simple reason that we don't have that
+[00:16:53] many independent samples to draw
+[00:16:55] conclusions from. Past market valuations
+[00:16:58] tell us only a little bit about the
+[00:17:00] future. It's always possible, as the US
+[00:17:03] market has demonstrated in recent
+[00:17:04] history, for high valuations to be
+[00:17:06] followed by high returns and continued
+[00:17:09] high valuations.
+[00:17:11] Even if history tells us that that isn't
+[00:17:13] an unlikely outcome, it is what we have
+[00:17:14] seen.
+[00:17:15] The main lessons from the information in
+[00:17:17] this video, I think, are diversification
+[00:17:19] and discipline, which I think are
+[00:17:21] related. A properly diversified investor
+[00:17:23] should be comfortable sticking with
+[00:17:25] their portfolio through good times and
+[00:17:27] bad, knowing they will always hold the
+[00:17:29] losers. You have to accept that.
+[00:17:30] Whatever's not doing well, if you're
+[00:17:31] diversified, you probably own that.
+[00:17:34] But you also own the winners. And people
+[00:17:36] who are comfortable with their
+[00:17:37] investment strategy understand that the
+[00:17:40] winners that they own are going to have
+[00:17:42] an edge over the losers in the long run,
+[00:17:44] which is something that has been
+[00:17:46] true throughout history. Thanks for
+[00:17:47] watching. I'm Ben Felix, Chief
+[00:17:49] Investment Officer at PWR Capital. If
+[00:17:50] you enjoyed this video, please share it
+[00:17:52] with someone in your life who's
+[00:17:54] concerned about the AI bubble.

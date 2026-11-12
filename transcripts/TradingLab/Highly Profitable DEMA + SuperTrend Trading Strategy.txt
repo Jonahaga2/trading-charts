@@ -1,0 +1,213 @@
+[00:00:00] I found a trading strategy that profited 130%
+[00:00:00] in just 2 months of trading. It involves using
+[00:00:06] just 2 indicators, and best of all, both of
+[00:00:06] them are completely free on TradingView. The
+[00:00:11] strategy is extremely easy to use, works in
+[00:00:11] all markets, and it s insanely profitable.
+[00:00:17] Make sure you stick around till the end of
+[00:00:17] the video, because Ill be sharing some secrets
+[00:00:21] to make this strategy even better and I m
+[00:00:21] going to share the backtest results, to show
+[00:00:25] you how it performed while taking 100 trades.
+[00:00:25] Let s get straight to it.
+[00:00:29] First things first, you need to get on tradingview.
+[00:00:29] I ll leave a link in the description. Once
+[00:00:33] your on the chart, type in any security you
+[00:00:33] want to trade with. Like I said earlier, this
+[00:00:37] strategy works with basically any security,
+[00:00:37] so there really isn t a wrong answer.
+[00:00:41] For this example, I m going to use doge. Because,
+[00:00:41] why not.
+[00:00:45] Once you ve selected what you want to trade.
+[00:00:45] Your going to add the first indicator. The
+[00:00:49] first indicator is the dema, or the double
+[00:00:49] ema.
+[00:00:52] If you don t know what the dema is, its basically
+[00:00:52] an upgraded version of the exponential moving
+[00:00:58] average. It was created in 1994 and was made
+[00:00:58] to give faster signals with less lag compared
+[00:01:04] to a normal ema.
+[00:01:04] So this is a double exponential moving average
+[00:01:09] (the blue one) and a normal exponential moving
+[00:01:09] average (the red one).
+[00:01:12] As you can see, the double exponential moving
+[00:01:12] average is a lot lower, and is giving entry
+[00:01:17] signals a lot faster than the normal ema.
+[00:01:17] Which in return is giving us a lot less lag.
+[00:01:23] You should also understand though, that less
+[00:01:23] lag is not always a good thing. This Is because
+[00:01:28] lag can sometimes help filter out noise and
+[00:01:28] give a higher success rate at times.
+[00:01:33] But I backtested this strategy with both a
+[00:01:33] double exponential moving average and a normal
+[00:01:38] moving average. And the dema performed better
+[00:01:38] with this specific strategy.
+[00:01:44] Once you have the double exponential moving
+[00:01:44] average added, we have to change the settings
+[00:01:48] a bit.
+[00:01:48] Go to the settings of double exponential moving
+[00:01:51] average, and we want to change the length
+[00:01:51] to 200. Then go to the style tab and we are
+[00:01:55] going to change it to blue, just so it s a
+[00:01:55] bit easier to see.
+[00:01:58] The second indicator for this strategy is
+[00:01:58] one that we ve used on this channel before,
+[00:02:03] and that is the supertrend indicator.
+[00:02:03] To add it, go to the indicators tab, and type
+[00:02:08] in super trend. Make sure to choose this one
+[00:02:08] right here.
+[00:02:11] Go to the settings of the super trend indicator,
+[00:02:11] and make sure to change the ATR period to
+[00:02:16] 12 and the ATR multiplier to 3.
+[00:02:16] Now that we have the indicators added and
+[00:02:21] all the settings are correct. Lets get on
+[00:02:21] with how to use this strategy.
+[00:02:25] In this example we are trading on DOGE/USD
+[00:02:25] on the 15 minute time frame.
+[00:02:30] The first rule of the strategy, is that we
+[00:02:30] will only enter a long trade if the price
+[00:02:35] is above the dema, the blue line. If the price
+[00:02:35] isn t above the blue line, we will not enter
+[00:02:42] the trade.
+[00:02:42] The 2nd rule we must follow is that, the supertrend
+[00:02:46] indicator must give a buy signal. Let me show
+[00:02:46] you an example.
+[00:02:49] So here, the price is above the 200 dema,
+[00:02:49] but the super trend indicator hasn t given
+[00:02:53] a buy signal yet, so we wait.
+[00:02:53] We then wait and the super trend gives a buy
+[00:02:58] signal. It is also important to note, that
+[00:02:58] you must wait for the buy signal candle to
+[00:03:03] close before entering. This candle could give
+[00:03:03] a buy signal, but change before it closes.
+[00:03:08] Keeping it a sell signal. So make sure you
+[00:03:08] are only entering after the buy signal candle
+[00:03:13] closes.
+[00:03:13] Once the candle closes, we enter the trade.
+[00:03:16] You are going to set your stop loss at the
+[00:03:16] buy signal line of the super trend indicator.
+[00:03:21] So for this example right here.
+[00:03:21] Then the cool thing about this strategy is
+[00:03:25] that we basically have infinite profit potential.
+[00:03:25] Unlike my other trading strategies, where
+[00:03:30] you set a 1.5 or 2 profit ratio, we are going
+[00:03:30] to do something different with this strategy.
+[00:03:36] We are only going to sell once the supertrend
+[00:03:36] indicator becomes a sell signal.
+[00:03:40] That s one of the reasons why this strategy
+[00:03:40] is so powerful because you are going to have
+[00:03:45] some trades where there s going to be a 4.2
+[00:03:45] profit ratio, or even higher.
+[00:03:50] So going back to the example. We saw that
+[00:03:50] the price was above the 200 dema, and the
+[00:03:56] supertrend indicator gave a buy signal. We
+[00:03:56] then enter the trade after the candle closed,
+[00:04:01] and set our stop loss at the buy signal of
+[00:04:01] the supertrend indicator.
+[00:04:05] We the wait while the price goes up, for a
+[00:04:05] sell signal from the supertrend indicator.
+[00:04:10] The supertrend indicator then turns red and
+[00:04:10] gives a sell signal.
+[00:04:14] This is when we exit the trade. And as you
+[00:04:14] can see, we got a profitable trade with a
+[00:04:18] 4.1 profit ratio.
+[00:04:18] Let s do one more example.
+[00:04:20] We see price just crossed the dema, we wait
+[00:04:20] for a buy signal from the supertrend, we enter,
+[00:04:26] set our stop loss at the buy signal of the
+[00:04:26] supertrend, then wait for a sell signal. Once
+[00:04:31] we see one. We exit the trade. Profit.
+[00:04:31] Lets go over an example of a short trade.
+[00:04:36] After that, I will be sharing some secrets
+[00:04:36] tips for you guys to help make this strategy
+[00:04:40] even more profitable. Ill also share how this
+[00:04:40] strategy did while making 100 trades.
+[00:04:46] So for a short trade, you are going to be
+[00:04:46] doing the exact opposite. Make sure the price
+[00:04:50] is below the 200 dema, wait for a sell signal
+[00:04:50] to occur, once it does, enter the trade, set
+[00:04:58] the stop loss at the sell signal, then stay
+[00:04:58] in the trade till you see a buy signal. Once
+[00:05:02] you see one. Exit the trade. Profit.
+[00:05:02] Now, it s time to go over some secret tips
+[00:05:11] to make this strategy even better. One tip
+[00:05:11] I would recommend, is for a situation like
+[00:05:16] this. Where the price is below the blue line,
+[00:05:16] but the super trend indicator is giving a
+[00:05:21] buy signal.
+[00:05:21] What I d recommend doing here, is waiting
+[00:05:24] for the price to cross the 200 dema, and then
+[00:05:24] entering.
+[00:05:28] Rather then not going in this trade because
+[00:05:28] the buy signal came before crossing the dema,
+[00:05:33] we will still enter once the price crosses
+[00:05:33] the dema line.
+[00:05:36] If you only entered when the price is above
+[00:05:36] the blue line, and then the super trend indicator
+[00:05:41] gives a buy signal, in that order. you would
+[00:05:41] miss out on a lot of opportunities like this
+[00:05:46] one.
+[00:05:46] Another tip for using this strategy is maybe
+[00:05:49] implementing another indicator called the
+[00:05:49] Fibonacci Bollinger Bands.
+[00:05:53] I didn t end up backtesting the strategy with
+[00:05:53] this indicator, but I did look at a couple
+[00:05:58] examples and saw you would get potentially
+[00:05:58] more profit if using this indicator with the
+[00:06:02] strategy.
+[00:06:02] If one you wants to backtest this strategy
+[00:06:03] with the Fibonnaci bolling bands added, leave
+[00:06:03] in the comments what the results were, if
+[00:06:05] the strategy was better with, or without them.
+[00:06:05] Because again, I want to make this channel
+[00:06:10] a community where we all help each other out.
+[00:06:10] But lets get on to how to use the fibonnaci
+[00:06:15] Bollinger bands with this strategy.
+[00:06:15] So all you have to do is go to the indicators
+[00:06:19] tab, and type in fbb for fibonnaci bolliner
+[00:06:19] bands.
+[00:06:23] Then go to the settings of the indicator,
+[00:06:23] and uncheck all the boxes besides the boxes
+[00:06:28] with the 1 s. Then change the colors to red
+[00:06:28] just so you can see the lines better.
+[00:06:33] These lines are basically going to be acting
+[00:06:33] as the absolute highs and lows for the price.
+[00:06:38] So if the price ever touches the red line,
+[00:06:38] we are going to sell immediately, even if
+[00:06:43] the super trend indicator still has a buy
+[00:06:43] signal.
+[00:06:45] If the price does ever hit the fibonnaci Bollinger
+[00:06:45] band, it usually reflects off it and goes
+[00:06:50] the opposite direction.
+[00:06:50] So as you can see in this example. The price
+[00:06:54] hit our Bollinger band, so we sold here, even
+[00:06:54] though the super trend indicator was still
+[00:06:59] green. And if we fast forward, we made more
+[00:06:59] money selling here, then if sold when the
+[00:07:04] super trend indicator told us.
+[00:07:04] The price will rarely high these fibonnaci
+[00:07:08] Bollinger bands, but if it does. Sell.
+[00:07:08] Like Is said, I didn t backtest this strategy
+[00:07:13] with the Bollinger bands, but I did check
+[00:07:13] a couple example with it, and it was more
+[00:07:17] profitable a majority of the time.
+[00:07:17] Next, let s take a look at the back test results
+[00:07:22] for the original strategy.
+[00:07:22] For this backtest, I traded both doge/usd
+[00:07:27] and LTC/usd. I did 100 trades. Which took
+[00:07:27] a round 2.5 months. The most wins in a row
+[00:07:33] I had with this strategy was 8, and the most
+[00:07:33] losses in a row was 3. This stat by itself,
+[00:07:40] is insanely good for a trading strategy.
+[00:07:40] The total amount of gains from the 100 trades
+[00:07:42] was 130.14% and the trading strategy had a
+[00:07:42] success rate of 60% with 60 winning trades,
+[00:07:47] and 40 loosing trades.
+[00:07:47] If you want to learn how to backtest trades
+[00:07:59] like this and test your own personal strategies,
+[00:07:59] watch this video where I go over how to do
+[00:08:05] so and backtest your strategies with years
+[00:08:05] of data on tradingview, so you can see just
+[00:08:10] how profitable your strategies actually are.
+[00:08:10] Thanks for watching and ill see you guys,
+[00:08:15] next time.

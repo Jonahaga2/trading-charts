@@ -1,0 +1,574 @@
+[00:00:00] A 1993 paper in the Journal of Financial
+[00:00:02] Economics with nearly 15,000 citations
+[00:00:05] today changed financial economics and
+[00:00:07] portfolio management forever. Eugene
+[00:00:09] Fama and Kenneth French found that a
+[00:00:11] group of three factors explained the
+[00:00:13] vast majority of differences in returns
+[00:00:15] across diversified portfolios. These
+[00:00:17] findings had and continue to have
+[00:00:19] sweeping implications for both the study
+[00:00:21] and practice of investment management.
+[00:00:23] You guys like to make fun of me in the
+[00:00:25] comments for talking about Fama and
+[00:00:27] French all the time, which I definitely
+[00:00:29] do, and this paper is one of the reasons
+[00:00:31] they always come up. It's research that
+[00:00:33] every investor should understand whether
+[00:00:35] they choose to apply its findings or
+[00:00:37] not. Personally, this paper is the
+[00:00:39] foundation of how I think about
+[00:00:40] investing and building portfolios. I'm
+[00:00:42] Ben Felix, Chief Investment Officer at
+[00:00:44] PWL Capital, and I'm going to tell you
+[00:00:45] why common risk factors in the returns
+[00:00:48] on stocks and bonds changed everything
+[00:00:50] we thought we knew about finance and
+[00:00:51] investing.
+[00:00:57] I probably don't have to tell you that
+[00:00:59] this is going to be a nerdy video. Let's
+[00:01:00] be honest, that's probably why you're
+[00:01:02] here. I think it'll be worth it. I'm
+[00:01:04] going to cover this paper's methodology,
+[00:01:05] results, and its enduring impacts. I'll
+[00:01:08] also talk later in the video about how
+[00:01:09] this paper's findings apply to investors
+[00:01:12] today, so be sure to stick around for
+[00:01:13] that. The fundamental premise of this
+[00:01:15] paper is that multiple factors, a term
+[00:01:18] I'll get more into in a minute, affect
+[00:01:20] asset prices and expected returns, and
+[00:01:22] that these factors can help to explain
+[00:01:24] why different types of stocks and bonds,
+[00:01:27] and therefore different investment
+[00:01:28] portfolios, have different expected
+[00:01:31] returns. An expected return, as it
+[00:01:33] sounds, is the return you expect from
+[00:01:35] investing in a stock or bond. The study
+[00:01:37] of expected returns is often referred to
+[00:01:39] as asset pricing because those two
+[00:01:42] things are directly related. An asset's
+[00:01:43] price is based on its expected return,
+[00:01:46] and its expected return can be inferred
+[00:01:48] from its price. Expected returns are not
+[00:01:50] guaranteed outcomes, but as we will see,
+[00:01:53] they do contain information. This makes
+[00:01:55] sense. You would pay more for a safer
+[00:01:58] asset than a riskier one, all else
+[00:02:00] equal. It's commonly known that stocks
+[00:02:02] are riskier than bonds and therefore
+[00:02:03] have higher expected returns. But, what
+[00:02:06] if some types of stocks have
+[00:02:07] systematically higher expected returns
+[00:02:09] than others? In Fama and French's
+[00:02:11] original framing, common undiversifiable
+[00:02:14] risks that a lot of investors are
+[00:02:16] sensitive to, how to explain why some
+[00:02:18] stocks have higher returns than others.
+[00:02:20] I do want to note, that while this paper
+[00:02:22] looks at both stock and bond factors, I
+[00:02:24] will focus mostly on stocks in this
+[00:02:26] video. If a stock is exposed to more of
+[00:02:27] a certain type of risk that a lot of
+[00:02:29] investors are sensitive to, that stock
+[00:02:31] needs to have a higher expected return
+[00:02:33] to entice investors to buy it, all else
+[00:02:35] equal. The idea that investors might
+[00:02:37] care about multiple types of risk was
+[00:02:39] not new when this paper came out. Robert
+[00:02:41] Merton and others had written about this
+[00:02:42] idea before, but figuring out what those
+[00:02:44] risks might be and how to measure them
+[00:02:46] was new. To understand why this
+[00:02:48] perspective was so impactful, it's
+[00:02:50] important to understand what came before
+[00:02:51] it. In 1964 and 1965, researchers
+[00:02:54] developed the capital asset pricing
+[00:02:56] model, or CAPM. This model connected a
+[00:02:59] stock's expected return to how its price
+[00:03:01] moves relative to the overall market,
+[00:03:03] expressed as its market beta, or
+[00:03:06] commonly just beta. A beta of one means
+[00:03:08] that a stock tends to move up and down
+[00:03:10] by a similar amount to the market. A
+[00:03:12] higher beta, more than one, means that
+[00:03:14] the stock will tend to be up more when
+[00:03:16] the market is up and down more when the
+[00:03:18] market is down, and vice versa for a
+[00:03:20] beta less than one. According to this
+[00:03:22] single factor model, where exposure to
+[00:03:24] market risk is the only risk care about,
+[00:03:27] stocks with higher betas should on
+[00:03:29] average deliver higher returns. The CAPM
+[00:03:32] was a big deal in finance. I mean, big
+[00:03:34] enough to win Bill Sharpe the Nobel
+[00:03:35] Memorial Prize in Economic Sciences in
+[00:03:37] 1990 for his work on it, because it
+[00:03:40] formalized a relationship between risk
+[00:03:43] and expected return. And it did a pretty
+[00:03:45] good job of explaining the observed
+[00:03:46] returns of stocks. Even though the CAPM
+[00:03:49] defined and then dominated the study of
+[00:03:51] asset pricing from its inception through
+[00:03:54] the 70s and 80s, research had
+[00:03:56] consistently come out showing that
+[00:03:57] certain types of stocks had higher
+[00:03:59] returns than what could be explained by
+[00:04:02] their CAPM betas. Since these
+[00:04:04] observations could not be explained by
+[00:04:06] an asset pricing model, by the asset
+[00:04:08] pricing model at the time, they were
+[00:04:10] referred to as anomalies. An asset
+[00:04:12] pricing anomaly could mean one of two
+[00:04:14] things. If we believe the CAPM is a
+[00:04:16] perfect model for explaining expected
+[00:04:18] returns, anomalies must mean that
+[00:04:20] markets are not efficient. Or, if we
+[00:04:23] know that markets are efficient, the
+[00:04:25] CAPM must be wrong. The asset pricing
+[00:04:27] model must be wrong. This point turns
+[00:04:29] out to be impossible to resolve. It's
+[00:04:32] actually called the joint hypothesis
+[00:04:34] problem. We can't say whether markets
+[00:04:36] are efficient without having an asset
+[00:04:37] pricing model to test market efficiency,
+[00:04:40] and we can't prove whether an asset
+[00:04:41] pricing model is right without knowing
+[00:04:43] whether markets are efficient. Anyway,
+[00:04:46] this initial asset pricing research was
+[00:04:47] important and it's where Fama and French
+[00:04:49] started in their 1993 paper. They focus
+[00:04:52] on three key problems with the CAPM.
+[00:04:55] One, small stocks earned higher average
+[00:04:57] returns than large stocks, unexplained
+[00:04:59] by differences in their CAPM betas. Two,
+[00:05:02] high book-to-market or value stocks
+[00:05:04] earned higher average returns than low
+[00:05:06] book-to-market or growth stocks. Again,
+[00:05:09] unexplained by differences in their CAPM
+[00:05:10] betas. And three, the relationship
+[00:05:12] between beta and average returns was
+[00:05:14] weaker than CAPM predicted, with low
+[00:05:17] beta stocks earning higher returns than
+[00:05:19] the model suggested. Basically, CAPM
+[00:05:21] claimed that two companies with the same
+[00:05:23] betas should have similar expected
+[00:05:25] returns regardless of their size or
+[00:05:27] value characteristics, or I mean, any
+[00:05:29] other characteristics for that matter.
+[00:05:31] Anything not following the model was
+[00:05:32] considered a mispricing or an asset
+[00:05:34] pricing anomaly, and Fama and French
+[00:05:37] wanted to explain the known anomalies at
+[00:05:39] the time. In this paper, Fama and French
+[00:05:41] noted these patterns that small stocks
+[00:05:43] and value stocks tended to perform
+[00:05:45] better on average than CAPM would
+[00:05:47] predict, stating right at the top of the
+[00:05:48] paper that the cross-section of average
+[00:05:50] returns on US common stocks shows little
+[00:05:53] relation to the market betas of the
+[00:05:55] sharp litner asset pricing model. That's
+[00:05:57] blunt language for an academic paper and
+[00:05:59] was followed up with the suggestion that
+[00:06:00] maybe the standard model, the CAPM, was
+[00:06:02] ignoring risk factors that are in fact
+[00:06:05] priced by the market. It is on this
+[00:06:07] basis that Fama and French built their
+[00:06:09] now famous three-factor asset pricing
+[00:06:11] model. Rather than just looking at the
+[00:06:13] market factor, Fama and French developed
+[00:06:15] a three-factor model that relates a
+[00:06:16] stock's expected return to the market
+[00:06:18] factor, a size factor, and a relative
+[00:06:21] price or value factor. The market factor
+[00:06:24] is the same concept from the CAPM, how
+[00:06:25] much the stock or portfolio moves when
+[00:06:27] the overall market moves. This factor
+[00:06:29] shows whether stocks went up or down
+[00:06:31] with the market. This pricing factor
+[00:06:33] remains important because broad market
+[00:06:35] movements still affect most stocks
+[00:06:37] regardless of their size or value
+[00:06:38] characteristics. The size factor is
+[00:06:41] pretty straightforward. It's based on
+[00:06:42] the size of companies. More
+[00:06:43] specifically, this factor is denoted as
+[00:06:46] SMB or small minus big. It refers to the
+[00:06:49] difference in returns between small
+[00:06:50] company stocks and large company stocks.
+[00:06:53] If small stocks outperform large stocks
+[00:06:55] in a given period, the SMB premium was
+[00:06:57] positive in that period. If large stocks
+[00:07:00] do better, the premium was negative. By
+[00:07:02] including this factor in the model, the
+[00:07:03] model captures whether being a small
+[00:07:05] company is related to systematic return
+[00:07:07] variation that investors are compensated
+[00:07:09] for. Then there's the value factor,
+[00:07:11] denoted as HML or high minus low. This
+[00:07:14] is referring to book-to-market valuation
+[00:07:16] ratios. Book-to-market is basically the
+[00:07:19] company's accounting value compared to
+[00:07:21] its stock market value. High
+[00:07:22] book-to-market stocks are value stocks.
+[00:07:25] They're cheaper in market price relative
+[00:07:27] to the book value of their assets. Low
+[00:07:29] book-to-market stocks are growth stocks.
+[00:07:31] Investors are paying more for future
+[00:07:33] potential, pushing prices further above
+[00:07:36] their book values or accounting values.
+[00:07:38] HML measures the difference in returns
+[00:07:40] between value stocks and growth stocks.
+[00:07:43] Again, high minus low. When value stocks
+[00:07:45] outperform the HML premium or value
+[00:07:47] premium is positive and vice versa. This
+[00:07:50] factor captures the effects of any
+[00:07:52] return premium that investors receive
+[00:07:53] for holding value stocks rather than
+[00:07:55] growth stocks, which again, that was one
+[00:07:57] of the anomalies at the time.
+[00:07:58] Each of these factors is what's called a
+[00:08:00] long short portfolio. SMB, for example,
+[00:08:02] is long small cap stocks and short big
+[00:08:05] stocks. The specific constructions of
+[00:08:07] the factor portfolios have some details
+[00:08:10] that are even too nerdy, I think, for
+[00:08:11] this video, but the main idea is that
+[00:08:13] they're capturing return variations
+[00:08:14] related to company size and relative
+[00:08:16] price, which had been well documented as
+[00:08:18] return anomalies back when this paper
+[00:08:20] was written. Okay, before we get into
+[00:08:22] the next part of their methodology and
+[00:08:23] the main results, which are where things
+[00:08:25] get really interesting and practically
+[00:08:27] useful, make sure to subscribe to this
+[00:08:28] channel if you haven't already. I break
+[00:08:30] down nerdy investing topics like this to
+[00:08:33] help you make more informed decisions
+[00:08:34] with your finances. Okay, let's keep
+[00:08:36] going on the finance paper that changed
+[00:08:38] everything. Take their new asset pricing
+[00:08:40] model for a test drive, Fama and French
+[00:08:42] formed diversified portfolios by sorting
+[00:08:44] stocks based on size and value
+[00:08:46] characteristics. They split stocks into
+[00:08:49] five size groups and five book-to-market
+[00:08:52] groups, creating 25 total portfolios to
+[00:08:55] test. This method allowed them to
+[00:08:56] capture every combination of these
+[00:08:58] factors, small value stocks, big growth
+[00:09:00] stocks, and everything in between.
+[00:09:02] They show that these various groups of
+[00:09:04] stocks have significant variation in
+[00:09:06] average returns, and then they test
+[00:09:08] whether their three-factor asset pricing
+[00:09:10] model is able to explain that variation.
+[00:09:12] This is where Fama and French did
+[00:09:13] something pretty groundbreaking at the
+[00:09:15] time that still shows up in tons of
+[00:09:17] academic finance papers and practical
+[00:09:19] investment analysis today. They used it
+[00:09:21] time series regressions to test how well
+[00:09:24] their asset pricing factors explain the
+[00:09:26] returns of their test portfolios. A time
+[00:09:28] series regression looks at the returns
+[00:09:30] of a portfolio over time and asks how
+[00:09:32] much of the variation in returns is
+[00:09:33] explained by the asset pricing factors
+[00:09:35] being used. Running a time series
+[00:09:37] regression is pretty straightforward
+[00:09:39] with the tools available to investors
+[00:09:40] today. You can do it in Excel or using
+[00:09:42] free online tools like Portfolio
+[00:09:44] Visualizer. The output of a time series
+[00:09:46] regression includes factor loadings or
+[00:09:49] coefficients, which tell you how your
+[00:09:50] portfolio moves relative to each factor,
+[00:09:53] and an alpha, which is the portion of
+[00:09:55] returns that is not explained by the
+[00:09:56] asset pricing model. That last term,
+[00:09:58] alpha, is really important. It was first
+[00:10:00] used to describe excess risk-adjusted
+[00:10:02] returns in a 1968 academic paper,
+[00:10:05] another banger if you're into this kind
+[00:10:07] of thing. That paper used the single
+[00:10:09] factor capital asset pricing model to
+[00:10:11] ask whether actively managed mutual fund
+[00:10:13] managers were generating returns in
+[00:10:14] excess of what should be expected based
+[00:10:16] on the amount of risk they were taking.
+[00:10:18] It's worth mentioning that active
+[00:10:20] managers in the study were not able to
+[00:10:21] beat the market, but that's another
+[00:10:23] topic. And remember, that model only
+[00:10:25] accounted for market risk. In the
+[00:10:27] context of Fama and French's 1993 paper,
+[00:10:29] they took each of the 25 test portfolios
+[00:10:31] and tracked their performance from July
+[00:10:33] 1963 to December 1991, and then used
+[00:10:37] their model to try to explain the
+[00:10:38] differences in their returns. For each
+[00:10:40] portfolio, the regression estimated how
+[00:10:42] its returns co-moved with the three
+[00:10:43] factors in the model, and whether there
+[00:10:45] were any large alphas, excess returns
+[00:10:47] unexplained by the model. They also
+[00:10:50] measured the R-squared values of the
+[00:10:51] regressions. R-squared measures the
+[00:10:53] explanatory power of a regression. What
+[00:10:55] percentage of a portfolio's ups and
+[00:10:57] downs over time can be attributed to the
+[00:10:59] factors in the model. An R-squared of
+[00:11:01] one or 100% would mean perfect
+[00:11:03] explanatory power, and zero would mean
+[00:11:06] the factors explained nothing.
+[00:11:08] What Fama and French found in terms of
+[00:11:09] alphas and R-squared values across the
+[00:11:11] 25 test portfolios was pretty
+[00:11:14] incredible. They found that three-factor
+[00:11:16] regressions on these portfolio
+[00:11:17] constructions resulted in R-squared
+[00:11:19] values ranging from 0.83 to 0.97,
+[00:11:22] about 0.93 on average. In fact, 21 of
+[00:11:25] the 25 portfolios tested had R-squared
+[00:11:27] values over 0.9. That That that this
+[00:11:30] model explains around 90% of the
+[00:11:32] differences in returns of diversified
+[00:11:34] stock portfolios. This test also
+[00:11:36] provided two other key data points.
+[00:11:38] First, every test portfolio combination
+[00:11:40] has a beta value close to one. This
+[00:11:42] consistency reinforces the fact that
+[00:11:43] variation in returns is explained by
+[00:11:45] more than just exposure to market beta
+[00:11:47] since the market beta exposures were
+[00:11:49] nearly the same in every case, and yet
+[00:11:51] returns varied widely. That would be
+[00:11:54] surprising if market beta fully priced
+[00:11:56] all assets, but it followed the pattern
+[00:11:57] that Fama and French had predicted. In
+[00:11:59] their tests, Fama and French found that
+[00:12:01] market beta could only explain around
+[00:12:03] 60% of the differences in returns across
+[00:12:05] their test portfolios. Let that sink in
+[00:12:07] for a minute. We went from being able to
+[00:12:08] explain about 60% of the differences in
+[00:12:10] returns between diversified portfolios
+[00:12:12] with the CAPM to being able to explain
+[00:12:14] around 90% with the Fama and French
+[00:12:17] three-factor model. Another important
+[00:12:18] observation was that these three-factor
+[00:12:20] regressions resulted in near zero
+[00:12:22] intercepts or alphas on almost all test
+[00:12:25] portfolios. The one exception was
+[00:12:27] small-cap growth stocks, which had much
+[00:12:28] lower returns than the three-factor
+[00:12:31] model could explain, leaving lots of
+[00:12:32] room for future research, which I'll
+[00:12:34] talk about in a minute. The finding of
+[00:12:36] minimal alphas is important and might be
+[00:12:37] one of the most compelling validations
+[00:12:39] of the model. They demonstrate that once
+[00:12:41] you account for market, size, and value
+[00:12:43] exposures, there are basically no
+[00:12:45] persistent unexplained returns remaining
+[00:12:47] in most of their portfolio sorts. Other
+[00:12:49] than the 25 test portfolios formed on
+[00:12:51] size and price to book, Fama and French
+[00:12:53] also tested portfolios formed on
+[00:12:55] dividends to price and earnings to
+[00:12:57] price, two other characteristics that
+[00:12:58] had been associated with higher returns.
+[00:13:01] They again found that their three-factor
+[00:13:03] model explained the returns of these
+[00:13:04] portfolios very well, shattering the
+[00:13:06] beliefs of dividend-focused investors
+[00:13:08] everywhere. With their analysis, Fama
+[00:13:10] and French showed that size and value
+[00:13:11] don't need to be viewed as mysterious
+[00:13:13] asset pricing anomalies or market
+[00:13:15] inefficiencies. Rather, they can be
+[00:13:17] viewed as systematic risk factors that,
+[00:13:20] together with market beta, almost fully
+[00:13:21] account for return differences across
+[00:13:23] diversified portfolios. It's worth
+[00:13:25] mentioning that it's debatable whether
+[00:13:27] the factors in the model are risk
+[00:13:28] factors or artifacts of persistent
+[00:13:31] mispricing. That's one of those things
+[00:13:32] that's really hard to test in a way that
+[00:13:34] offers definitive proof one way or
+[00:13:36] another. All right, I don't mean to sit
+[00:13:38] here and nerd out about time series
+[00:13:39] regressions. Oh, okay, fine. That's
+[00:13:41] exactly what I mean to do. But this
+[00:13:42] asset pricing model and series of tests
+[00:13:44] really did change the way we viewed
+[00:13:46] markets. Our ability to explain
+[00:13:47] differences in returns between different
+[00:13:50] types of diversified portfolios went
+[00:13:52] from pretty good to in some cases near
+[00:13:54] perfect. Remember, CAPM using just
+[00:13:57] market beta typically explained only
+[00:13:58] somewhere between 60 and maybe 80% of
+[00:14:00] differences in returns between
+[00:14:02] diversified portfolios. By adding size
+[00:14:04] and value, Fama and French jumped to
+[00:14:06] over 90% explanatory power with their
+[00:14:08] three-factor model. What this showed is
+[00:14:10] that a three-factor model could capture
+[00:14:12] fundamental systematic drivers of
+[00:14:14] returns that CAPM had completely missed.
+[00:14:16] The other area that this research
+[00:14:17] touches is traditional active
+[00:14:19] management. Remember the 1968 paper
+[00:14:21] showing that active managers don't
+[00:14:23] typically outperform after adjusting for
+[00:14:24] market risk? Well, with more factors in
+[00:14:26] the model, the data on traditional
+[00:14:28] active management only got worse. Fama
+[00:14:30] and French looked at that in later
+[00:14:31] research using their three-factor model.
+[00:14:34] Basically, if an active fund has beaten
+[00:14:35] the market, there's a really good chance
+[00:14:37] it did so by maintaining exposure to
+[00:14:39] some of the well-known factors. This
+[00:14:42] matters because if that is all an active
+[00:14:44] manager is doing, you could probably
+[00:14:46] replicate their factor exposure at a
+[00:14:48] lower cost than the fee that most active
+[00:14:50] managers charge. Altogether, the
+[00:14:52] findings in this paper challenged and
+[00:14:53] built on the single-factor CAPM asset
+[00:14:56] pricing to create a much more
+[00:14:57] comprehensive framework for how
+[00:14:59] investors should think about building
+[00:15:00] and evaluating investment portfolios
+[00:15:02] systematically. After this paper, the
+[00:15:04] study of empirical asset pricing, that
+[00:15:06] is looking at asset returns and figuring
+[00:15:08] out which factors may be driving them,
+[00:15:10] took off. Researchers wanted to find the
+[00:15:12] best factors and create better asset
+[00:15:14] pricing models. It became a bit of a
+[00:15:16] problem or a joke. In 2011, John
+[00:15:19] Cochrane in his presidential address to
+[00:15:21] the American Finance Association
+[00:15:23] described the proliferation of factors
+[00:15:25] as a zoo, a factors zoo. You could
+[00:15:27] probably even call it a factor slop to
+[00:15:29] use the language from my recent video on
+[00:15:31] ETF slop. A 2016 census from Zoo, Lu,
+[00:15:34] and Harvey confirmed this concept
+[00:15:36] finding that 316 distinct factors had
+[00:15:39] been published in academic journals at
+[00:15:40] that time and more since then. This
+[00:15:43] created a whole new set of techniques
+[00:15:44] for choosing factors and comparing asset
+[00:15:46] pricing models.
+[00:15:48] In the face of the slop proliferation,
+[00:15:50] Fama and French went on to update their
+[00:15:52] groundbreaking 1993 research in 2015,
+[00:15:56] which introduced two new asset pricing
+[00:15:58] factors, profitability and investment.
+[00:16:01] Profitability is expressed as RMW or
+[00:16:03] robust minus weak. That's the excess
+[00:16:05] return expected from companies with high
+[00:16:07] profitability over those with weak
+[00:16:09] profitability. Investment is expressed
+[00:16:11] as conservative minus aggressive.
+[00:16:13] Companies that grow their assets slowly,
+[00:16:15] conservative, tend to outperform those
+[00:16:17] that pour cash into rapid asset growth,
+[00:16:20] aggressive. The addition of these two
+[00:16:22] new factors created the Fama and French
+[00:16:24] five-factor model. The five-factor model
+[00:16:26] did help to solve some problems that the
+[00:16:28] three-factor model couldn't and it
+[00:16:29] further improved the explanatory power
+[00:16:31] of the model closer to explaining 95% of
+[00:16:34] the differences in returns between
+[00:16:35] diversified portfolios. It's now what I
+[00:16:38] would call the workhorse asset pricing
+[00:16:40] model in academic finance. Don't get me
+[00:16:42] wrong, there is still plenty of ongoing
+[00:16:44] debate both in academia and in practice
+[00:16:46] about which factors make sense and which
+[00:16:49] asset pricing model we should be using.
+[00:16:51] I'm pretty comfortable saying that when
+[00:16:53] transaction costs are accounted for,
+[00:16:55] Fama and French's five-factor model is a
+[00:16:57] very strong foundation for thinking
+[00:16:59] about portfolio construction and
+[00:17:01] evaluating portfolio performance. Okay,
+[00:17:03] I told you I would bring this back to
+[00:17:05] practical relevance. There are fund
+[00:17:07] companies that using this research, this
+[00:17:09] asset pricing research to build real
+[00:17:11] investment portfolios, real investment
+[00:17:13] products that you can invest in. They're
+[00:17:15] kind of like low-cost index funds that
+[00:17:17] deliver exposure to more than just
+[00:17:19] market risk, but they're not actually
+[00:17:22] index funds in most cases. Dimensional
+[00:17:24] Fund Advisors has a long history of
+[00:17:26] implementing factor investing research.
+[00:17:28] Eugene Fama, one of this paper's
+[00:17:29] authors, was a founding director and
+[00:17:31] remains on the board today. Kenneth
+[00:17:33] French, the other co-author, has
+[00:17:34] long-standing connections to
+[00:17:36] Dimensional. As I detailed in a previous
+[00:17:38] video, their track record using these
+[00:17:39] strategies has been very good over
+[00:17:42] decades. One catch is that Dimensional
+[00:17:44] used to be only available through
+[00:17:45] financial advisors, though at least in
+[00:17:47] the US, they're now available as ETFs
+[00:17:49] that anybody can buy. Not in Canada,
+[00:17:51] though, unfortunately. More recently,
+[00:17:53] Avantis Investors, a Dimensional
+[00:17:55] competitor, launched similar products
+[00:17:57] and they have just launched ETFs in
+[00:17:59] Canada through CIBC. If you want details
+[00:18:02] on that, we did just release a podcast
+[00:18:03] episode with the Avantis CIO. I'll do a
+[00:18:06] deeper dive on these products in another
+[00:18:07] video. Full disclosure, real quick, my
+[00:18:09] firm uses Dimensional Fund Advisors
+[00:18:11] funds pretty extensively. We are not
+[00:18:13] paid by Dimensional or Avantis, and I
+[00:18:15] was not being paid to mention them in
+[00:18:16] this video. What does this all mean for
+[00:18:18] you? Evidence suggests that long-term
+[00:18:20] expected returns are driven by exposure
+[00:18:22] to specific factors, factors that we
+[00:18:25] know about due to decades of academic
+[00:18:27] research, implying that investors may
+[00:18:29] achieve higher expected returns by
+[00:18:31] tilting toward certain types of stocks.
+[00:18:34] But which types of stocks and knowing
+[00:18:36] how to do it effectively and at a low
+[00:18:38] cost is a whole other question.
+[00:18:40] Fortunately, there are fund companies
+[00:18:41] like Dimensional Fund Advisors and
+[00:18:43] Avantis Investors that do this, creating
+[00:18:45] low-cost and broadly diversified
+[00:18:47] investment portfolios specifically built
+[00:18:49] to take academic theory and apply it to
+[00:18:51] your portfolio. Like I said at the
+[00:18:53] beginning, this seminal paper forms the
+[00:18:55] foundation for a big part of how I think
+[00:18:57] about investing. It's also part of the
+[00:18:58] reason that my firm, PWL Capital, has
+[00:19:01] been using Dimensional Fund Advisors
+[00:19:02] products since we helped bring them to
+[00:19:04] Canada back in 2003.
+[00:19:06] If you want to learn more about PWL and
+[00:19:08] how we apply this thinking to our
+[00:19:09] clients' portfolios, you can click right
+[00:19:11] here. Or if you want to nerd out on one
+[00:19:13] of the most controversial papers in
+[00:19:14] finance, you can click here.

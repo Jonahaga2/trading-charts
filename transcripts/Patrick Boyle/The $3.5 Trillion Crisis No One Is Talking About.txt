@@ -1,0 +1,628 @@
+[00:00:00] Last week, Goldman Sachs held a client
+[00:00:02] call to discuss the investment
+[00:00:04] implications of the war in Iran. Kunal
+[00:00:07] Shah, a senior executive and the global
+[00:00:09] head of fixed income currencies and
+[00:00:11] commodities, responded to a question
+[00:00:14] about the views of Goldman's clients on
+[00:00:17] the conflict by saying that some of the
+[00:00:19] bank's private markets clients were just
+[00:00:22] glad that there's something to talk
+[00:00:23] about that isn't software exposures and
+[00:00:26] private credit. He went on to say, "This
+[00:00:29] is at least a distraction from that."
+[00:00:32] Now, we can't allow ourselves to be
+[00:00:35] distracted around here. So, instead of
+[00:00:37] talking about the war in Iran, we have
+[00:00:39] to talk about private credit, the $1.8
+[00:00:42] trillion world of shadow banking that
+[00:00:44] investors have been increasingly worried
+[00:00:47] about over the last 6 months or so. If
+[00:00:50] you want to know how worried they are,
+[00:00:52] you just have to look at the stock
+[00:00:53] market. The share prices of the world's
+[00:00:56] biggest alternative asset managers have
+[00:00:58] been in a free fall. Since the start of
+[00:01:01] 2026, Blue Owl and Ares Management have
+[00:01:05] seen their stocks plunge by around 40%,
+[00:01:08] while KKR, Blackstone, and Apollo have
+[00:01:11] all shed more than 25% of their market
+[00:01:14] value. Private credit is essentially
+[00:01:17] direct lending to mid-market companies
+[00:01:20] that are often owned by private equity
+[00:01:22] sponsors. It's an asset class predicated
+[00:01:25] on the illiquidity premium. Investors
+[00:01:28] trade the ability to exit a position on
+[00:01:31] a whim for a higher yield and a bespoke
+[00:01:33] contract tailored to the borrower's
+[00:01:35] specific cash flow needs. Private equity
+[00:01:38] firms, who are the big borrowers, tend
+[00:01:41] to use a lot of leverage, meaning that
+[00:01:43] they tend not to be the most
+[00:01:44] creditworthy. This ecosystem grew
+[00:01:47] rapidly after 2008 as traditional banks,
+[00:01:51] strangled by post-crisis capital
+[00:01:53] requirements, were forced to retreat
+[00:01:55] from riskier lending. For a long time,
+[00:01:57] this was heralded as a golden age for
+[00:02:00] credit, with firms like Blackstone and
+[00:02:02] KKR offering returns as high as 13% with
+[00:02:06] almost no reported losses. Some funds
+[00:02:09] even advertised loss rates of less than
+[00:02:12] 1/10 of 1%, a figure that would make
+[00:02:15] most bank risk officers weep with envy.
+[00:02:18] But, as interest rates have risen and
+[00:02:21] many parts of the economy have started
+[00:02:23] to cool, these golden returns are
+[00:02:25] starting to look a lot more like lead.
+[00:02:28] In February, Blue Owl was forced to
+[00:02:30] block withdrawals from one of their
+[00:02:32] funds as investors clamored to get out.
+[00:02:35] The rapid expansion of the private
+[00:02:38] credit market from a niche corner of
+[00:02:40] finance into a $1.8 trillion behemoth is
+[00:02:44] a direct result of the regulatory
+[00:02:46] cleanup that came in the wake of the
+[00:02:47] 2008 financial crisis. As regulators
+[00:02:51] clamped down on bank balance sheets,
+[00:02:54] forcing them to hold significantly more
+[00:02:56] capital against risky loans, traditional
+[00:02:59] banks decided that lending to
+[00:03:01] sub-investment grade middle market
+[00:03:03] companies was simply too expensive. This
+[00:03:06] created a massive vacuum that the
+[00:03:08] private capital industry was more than
+[00:03:10] happy to fill. For over a decade, this
+[00:03:13] was a symbiotic relationship driven by a
+[00:03:16] search for yield. In an era of
+[00:03:18] rock-bottom interest rates, pension
+[00:03:20] funds and insurance companies were
+[00:03:22] desperate for anything offering a decent
+[00:03:25] return, and they were willing to trade
+[00:03:27] liquidity for the double-digit coupons
+[00:03:29] promised by private lenders. This shift
+[00:03:32] was so dramatic that the buyout barons
+[00:03:35] of the 1980s have largely reinvented
+[00:03:38] themselves as alternative credit
+[00:03:39] providers. Bloomberg points out that
+[00:03:42] KKR, the firm famous for the aggressive
+[00:03:45] corporate raids chronicled in the book
+[00:03:47] Barbarians at the Gate, now manages more
+[00:03:50] credit assets than it does equity. To
+[00:03:53] understand why this market is structured
+[00:03:55] the way it is, you have to look at the
+[00:03:57] fundamental flaw in traditional banking.
+[00:04:00] Banking is essentially an exercise in
+[00:04:03] maturity transformation. Banks take
+[00:04:05] short-term deposits from people who want
+[00:04:08] their money available at a moment's
+[00:04:10] notice and lend it out to businesses for
+[00:04:12] 5 or 10 years. This works perfectly
+[00:04:16] until the moment everyone wants their
+[00:04:17] money back at the same time, at which
+[00:04:20] point you have a run on the bank.
+[00:04:23] Institutional private credit funds solve
+[00:04:25] this problem by ensuring that there's a
+[00:04:28] maturity match between their assets and
+[00:04:30] liabilities. When a pension plan or a
+[00:04:33] sovereign wealth fund invests in private
+[00:04:35] credit, they agree to have their capital
+[00:04:37] locked away for 5 years or more. Because
+[00:04:41] the investors can't leave, the fund
+[00:04:43] manager doesn't have to worry about a
+[00:04:45] sudden panic. They can hold their loans
+[00:04:47] to maturity, work through any problems
+[00:04:50] with the borrower, and ignore the daily
+[00:04:52] mood swings of the public markets. For a
+[00:04:55] long time, this was heralded as a more
+[00:04:57] stable way to run a financial system.
+[00:05:00] But, as the industry grew, it began to
+[00:05:02] change, and it turns out that even the
+[00:05:05] most stable-looking structures can have
+[00:05:07] a serious cockroach problem. Before we
+[00:05:10] dig into that, let me tell you about
+[00:05:12] this week's video sponsor, MasterClass,
+[00:05:15] the online educational platform that
+[00:05:17] offers high-quality video classes taught
+[00:05:20] by world-renowned experts and industry
+[00:05:23] leaders. They've recently launched
+[00:05:25] MasterClass certificates, a new set of
+[00:05:28] programs specifically designed for
+[00:05:30] professionals who want to build real
+[00:05:32] job-relevant skills through practical
+[00:05:35] application. I want to spotlight their
+[00:05:37] newest program, the MasterClass
+[00:05:39] certificate in Lead with AI, Adapt,
+[00:05:43] Implement, Transform Your Organization,
+[00:05:46] which was built in collaboration with
+[00:05:47] Microsoft. This program isn't just about
+[00:05:51] learning what AI is, it's a clear,
+[00:05:54] actionable road map for leaders and
+[00:05:56] managers who want to implement AI within
+[00:05:59] their organizations responsibly and
+[00:06:01] strategically. What I like about these
+[00:06:04] MasterClass certificate courses is that
+[00:06:06] they aren't just credentials that show
+[00:06:08] that you watched a video, they're real
+[00:06:11] proof of skills. Each program includes
+[00:06:13] practical frameworks you can use right
+[00:06:16] away, with hands-on activities and a
+[00:06:19] portfolio-ready capstone project to show
+[00:06:22] for your work. If you're looking to
+[00:06:24] learn more about implementing AI in the
+[00:06:27] workplace or aiming to guide your team
+[00:06:29] through AI transformation and want the
+[00:06:32] credibility to influence those big
+[00:06:34] decisions, this is for you. You can
+[00:06:37] check out the MasterClass certificate in
+[00:06:39] Lead with AI using the link in the
+[00:06:41] description. My thanks to MasterClass
+[00:06:44] for sponsoring this week's video.
+[00:06:46] Financial problems rarely travel alone.
+[00:06:49] On an analyst call last October, JP
+[00:06:52] Morgan CEO Jamie Dimon noted that in
+[00:06:55] credit markets, bad loans are often like
+[00:06:58] cockroaches. "When you see one
+[00:07:00] cockroach," he said, "there are probably
+[00:07:02] more." He went on to say, "Everyone
+[00:07:05] should be forewarned on this one." The
+[00:07:07] first real sightings of these credit
+[00:07:10] cockroaches appeared late last year with
+[00:07:13] the sudden collapses of First Brands
+[00:07:15] Group and Tricolor. First Brands was an
+[00:07:17] auto parts manufacturer that filed for
+[00:07:20] bankruptcy owing roughly $10 billion.
+[00:07:23] Its senior lenders only discovered the
+[00:07:25] full extent of the company's debt during
+[00:07:28] the bankruptcy filing. It turned out
+[00:07:30] that the business had been using its
+[00:07:32] receivables, money it was supposedly
+[00:07:35] owed by customers, to borrow from
+[00:07:37] several different lenders at the same
+[00:07:40] time. The private credit industry was
+[00:07:42] quick to defend itself, pointing out
+[00:07:45] that these specific companies had
+[00:07:47] actually borrowed from banks rather than
+[00:07:49] private funds. But, for many investors,
+[00:07:52] the vibe shift was undeniable. After a
+[00:07:55] decade of loose lending and fierce
+[00:07:57] competition for deals, they worried that
+[00:08:00] basic underwriting standards had
+[00:08:01] weakened. This leads us to the more
+[00:08:05] recent case in the UK involving a
+[00:08:07] mortgage lender called
+[00:08:12] MFS recently collapsed amid allegations
+[00:08:15] of fraud and the double pledging of
+[00:08:17] collateral. What makes the MFS story so
+[00:08:20] useful for investors is that the warning
+[00:08:23] signs were apparently visible years ago
+[00:08:26] to anyone who bothered to look. One
+[00:08:28] credit fund manager decided not to
+[00:08:31] invest back in 2019 because the company
+[00:08:34] was unable to provide simple answers to
+[00:08:37] standard due diligence questions. His
+[00:08:39] real reason for passing, however, was
+[00:08:42] what he called the watch-to-house ratio.
+[00:08:45] He noticed that the founder of MFS wore
+[00:08:48] a 200,000 pound Richard Mille watch
+[00:08:51] while living in a house estimated to be
+[00:08:54] worth only around twice that amount. If
+[00:08:56] the founder's wrist was that leveraged,
+[00:08:59] it suggested
+[00:09:00] that the success being projected was a
+[00:09:02] performance, one that was likely being
+[00:09:05] funded by the lenders themselves.
+[00:09:08] Despite these signals, several major
+[00:09:10] institutions, including Barclays and
+[00:09:13] Jefferies, handed over hundreds of
+[00:09:15] millions of pounds to what is now being
+[00:09:17] described as a refinancing
+[00:09:19] merry-go-round. The company was
+[00:09:21] allegedly using new loans to pay off old
+[00:09:24] ones, recycling debt to keep their
+[00:09:26] default rates looking artificially low
+[00:09:29] until the money finally ran out. But,
+[00:09:32] the real story isn't just about a few
+[00:09:35] colorful frauds. It's about the
+[00:09:37] staggering amount of hidden distress
+[00:09:39] across the entire $1.8 trillion market.
+[00:09:42] A recent study by Goldman Sachs Asset
+[00:09:45] Management looked at 150 European
+[00:09:48] companies that had hit a credit event
+[00:09:51] since 2017.
+[00:09:52] Only four of those 150 companies ever
+[00:09:56] went through a public bankruptcy. The
+[00:09:58] other 146 were quiet handovers where the
+[00:10:02] lenders simply took the keys to the
+[00:10:04] business to avoid the public spotlight.
+[00:10:07] When the industry advertises loss rates
+[00:10:10] of less than 1/10 of 1%, you have to ask
+[00:10:14] yourself, how is that possible in a
+[00:10:16] world where public speculative grade
+[00:10:18] debt is currently defaulting at 4 and
+[00:10:21] 1/2%?
+[00:10:22] The answer is that private credit is
+[00:10:24] often just better at hiding its bruises.
+[00:10:27] The smart money has clearly noticed this
+[00:10:30] gap between reality and reporting, and
+[00:10:32] they're already heading for the door.
+[00:10:35] But as they exit, they're being replaced
+[00:10:37] by a new group of investors who might
+[00:10:39] not realize exactly what they're buying.
+[00:10:42] As the flood of money from pension funds
+[00:10:44] and sovereign wealth funds began to dry
+[00:10:47] up, the world's biggest alternative
+[00:10:49] asset managers didn't just pack up and
+[00:10:52] go home. Instead, they turned their
+[00:10:54] attention to a much less sophisticated
+[00:10:56] group, retail investors. This transition
+[00:11:00] is often marketed as the democratization
+[00:11:03] of finance, finally allowing the average
+[00:11:06] saver to invest alongside the giants of
+[00:11:08] Wall Street. But insiders like the hedge
+[00:11:12] fund manager Boaz Weinstein describe it
+[00:11:15] in much less noble terms. On the Money
+[00:11:17] Stuff podcast this week, Weinstein noted
+[00:11:20] that these private credit products are
+[00:11:22] sold and not bought. Most individual
+[00:11:26] investors don't call their financial
+[00:11:28] advisers asking for a piece of an opaque
+[00:11:31] middle market software loan. The
+[00:11:33] products are being pushed on them by
+[00:11:35] their financial advisers who get paid a
+[00:11:38] heavy commission. The reason for the
+[00:11:41] hard sell is simple. The commissions the
+[00:11:43] financial adviser can earn are massive,
+[00:11:46] especially when compared to selling
+[00:11:48] something simple like an ETF. Private
+[00:11:50] credit vehicles often pay financial
+[00:11:53] advisers upfront sales commissions as
+[00:11:56] high as 3 and 1/2%. And often pay
+[00:11:59] ongoing annual servicing fees, too.
+[00:12:02] This creates a glaring conflict of
+[00:12:04] interest. Your adviser isn't necessarily
+[00:12:07] putting you into private credit because
+[00:12:09] it's the best thing for your retirement.
+[00:12:11] They may instead be doing it because
+[00:12:13] it's the best thing for their own bottom
+[00:12:15] line. Weinstein went so far as to call
+[00:12:18] the practice of putting retail clients
+[00:12:20] into these illiquid products a scandal.
+[00:12:23] To understand how the retail products
+[00:12:25] differ from the institutional funds we
+[00:12:27] talked about earlier, we have to look at
+[00:12:29] a specific type of vehicle called a
+[00:12:32] business development company or BDC. You
+[00:12:35] can think of a BDC as a retail friendly
+[00:12:38] wrapper around these same types of
+[00:12:40] private loans. These come in two main
+[00:12:43] flavors. First, there are publicly
+[00:12:45] traded BDCs, which trade on an exchange
+[00:12:48] like a regular stock. You can buy or
+[00:12:51] sell them whenever you want, but they
+[00:12:54] have a habit of trading at a steep
+[00:12:56] discount to the value of the loans they
+[00:12:58] actually own. For example, FS KKR
+[00:13:01] Capital has recently been trading at a
+[00:13:04] 48% discount to its claimed book value.
+[00:13:07] As Boaz Weinstein pointed out, when you
+[00:13:10] see a public fund trading at 60 cents on
+[00:13:12] the dollar while a private version of
+[00:13:15] the same portfolio is being marketed at
+[00:13:17] 100 cents, it's a fairly safe bet that
+[00:13:20] one of these two prices is a work of
+[00:13:23] fiction.
+[00:13:24] Then there are non-traded BDCs, which
+[00:13:27] are the ones marketed to individuals
+[00:13:29] through financial advisers. These don't
+[00:13:32] trade on an exchange. Instead, they're
+[00:13:34] marketed as semi-liquid, typically
+[00:13:37] offering investors the ability to exit
+[00:13:39] on a quarterly basis. However, this
+[00:13:43] liquidity comes with a significant
+[00:13:45] catch, an industry standard cap that
+[00:13:47] limits total redemptions to just 5% of
+[00:13:50] the fund's net asset value each quarter.
+[00:13:53] It's important to understand that this
+[00:13:56] 5% limit applies to the entire fund, not
+[00:13:59] to your individual holding. In a quiet
+[00:14:02] quarter, when very few people want out,
+[00:14:04] an individual could potentially cash out
+[00:14:07] their entire stake. But the moment the
+[00:14:09] collective withdrawal requests hit that
+[00:14:11] 5% ceiling, the fund manager pulls down
+[00:14:14] the gate and starts rationing the
+[00:14:17] available cash on a pro rata basis. This
+[00:14:20] means that if everyone tries to leave at
+[00:14:22] once, you only get a small fraction of
+[00:14:25] your money back. As Antoine Garra
+[00:14:27] described it on the Unhedged podcast
+[00:14:30] last week, investors have to get in line
+[00:14:32] for an amuse-bouche of liquidity, a
+[00:14:35] small taste of their cash while the rest
+[00:14:37] is stuck behind the gate. The
+[00:14:39] fundamental mistake was believing that
+[00:14:42] you could offer a little liquidity to
+[00:14:44] retail investors in the first place. As
+[00:14:47] Robert Armstrong has noted, liquidity is
+[00:14:50] binary. It's either there when you need
+[00:14:52] it, or it never existed. Selling an
+[00:14:55] illiquid asset to a retail audience
+[00:14:57] under the guise of semi-liquidity was
+[00:15:00] always going to be problematic because
+[00:15:02] you've set up a situation where the
+[00:15:04] gates only stay open when no one's
+[00:15:07] trying to walk through them. This leads
+[00:15:10] to what former Fed president Bill Dudley
+[00:15:12] calls a dangerous adverse feedback loop.
+[00:15:16] Once investors realize that there's a
+[00:15:18] limit on withdrawals, they've a greater
+[00:15:20] incentive to always ask for the maximum
+[00:15:23] amount possible just to get a spot in
+[00:15:25] the queue. To meet these requests, the
+[00:15:28] fund manager is often forced to sell
+[00:15:30] their best, most liquid assets first to
+[00:15:33] minimize realized losses. This leaves
+[00:15:36] the remaining investors stuck with the
+[00:15:39] most problematic holdings, effectively
+[00:15:42] the cockroaches that we talked about
+[00:15:43] earlier. It's a structural design flaw
+[00:15:46] that can turn market jitters into an
+[00:15:49] orderly spiral into the abyss, which
+[00:15:51] really isn't what anyone wants. The
+[00:15:54] industry is currently facing this stress
+[00:15:57] test just as they're on the cusp of
+[00:16:00] their biggest victory yet, moving these
+[00:16:02] products into 401(k) plans. Last year,
+[00:16:06] an executive order was signed to make it
+[00:16:08] easier for alternative assets like
+[00:16:10] private credit to be offered in
+[00:16:13] retirement accounts. I made a video
+[00:16:15] about it at the time. The Department of
+[00:16:17] Labor has in fact begun the formal
+[00:16:19] rule-making process that will next lead
+[00:16:22] to a public comment period before
+[00:16:24] finally giving a green light to 401(k)
+[00:16:27] administrators to start investing in
+[00:16:30] these products. Proponents say that this
+[00:16:33] democratization gives average savers
+[00:16:36] access to better returns. Though given
+[00:16:39] that the existing investors are
+[00:16:40] currently fighting for an amuse-bouche
+[00:16:43] of liquidity, the timing might be
+[00:16:45] considered inauspicious.
+[00:16:47] To understand why fundraising for this
+[00:16:50] asset class has suddenly hit a wall even
+[00:16:53] as the total market has swelled to a
+[00:16:55] staggering $3 trillion, you have to
+[00:16:58] realize that private credit essentially
+[00:17:00] operates on a different set of physical
+[00:17:03] laws than the rest of the financial
+[00:17:05] world. While the public markets are
+[00:17:07] currently pricing these firms as if a
+[00:17:09] disaster is imminent, the private fund
+[00:17:12] valuations are whispering that
+[00:17:14] everything is perfectly fine. The
+[00:17:16] industry manages to maintain this
+[00:17:19] illusion of stability through a process
+[00:17:21] that AQR founder Cliff Asness famously
+[00:17:24] calls volatility laundering. By simply
+[00:17:27] choosing not to mark their assets to the
+[00:17:29] daily market price, managers can create
+[00:17:32] a sense of safety and stability that
+[00:17:35] doesn't actually exist. One fund even
+[00:17:38] boasted a sharp ratio of 11, a number so
+[00:17:41] high that it suggests that the manager
+[00:17:44] has either revolutionized finance or is
+[00:17:46] simply refusing to look at the
+[00:17:48] scoreboard. The reality is that these
+[00:17:51] valuations are often pure guesswork. For
+[00:17:54] example, JP Morgan recently restricted
+[00:17:57] its lending to certain private credit
+[00:17:59] firms after discovering what they claim
+[00:18:02] is a massive valuation gap. They looked
+[00:18:05] at the same software companies that
+[00:18:07] private funds had marked at par or at
+[00:18:09] 100 cents on the dollar and decided that
+[00:18:12] they were actually worth significantly
+[00:18:14] less. Boaz Weinstein noted that some
+[00:18:17] managers are marking risky positions as
+[00:18:20] much as 25 points higher than what more
+[00:18:23] conservative banks are reporting. Then
+[00:18:26] there's the sector labeling trick. A
+[00:18:28] recent investigation by Bloomberg News
+[00:18:31] found that this isn't just a few
+[00:18:33] isolated incidents. It's a systemic
+[00:18:36] practice. By analyzing thousands of
+[00:18:38] filings, Bloomberg identified at least
+[00:18:41] 250 different loans worth more than $9
+[00:18:44] billion where software companies were
+[00:18:47] being creatively relabeled. A struggling
+[00:18:50] tech firm might suddenly be classified
+[00:18:52] as a food products or logistics
+[00:18:55] business, allowing the fund to hide its
+[00:18:57] true exposure to the tech sector and
+[00:18:59] avoid triggering alarm bells about
+[00:19:02] concentration risk. Lenders also use
+[00:19:05] liability management exercises to keep
+[00:19:08] the wheels turning on bad loans. Instead
+[00:19:11] of admitting that a borrower is in
+[00:19:13] trouble, they might allow them to stop
+[00:19:15] paying cash interest and instead add
+[00:19:18] that unpaid interest to the total loan
+[00:19:20] balance, a practice known as payment in
+[00:19:23] kind or PIK debt. It's a system of
+[00:19:27] mark-to-magic
+[00:19:29] where the only thing being managed is
+[00:19:31] the investor's perception of risk. But
+[00:19:33] as we're seeing with the orderly spiral
+[00:19:35] in the BDC market, perception eventually
+[00:19:38] has to meet reality. A bigger question
+[00:19:41] looming over all of this is whether the
+[00:19:44] trouble in private credit could
+[00:19:46] precipitate a broader financial crisis.
+[00:19:49] Whenever a market grows this quickly and
+[00:19:52] this quietly, the ghost of 2008 is never
+[00:19:55] far away. Investors are increasingly
+[00:19:59] worried that a major market downturn is
+[00:20:01] finally in the cards. There is, of
+[00:20:04] course, the fixation on software
+[00:20:06] exposures, which as Kunal Shah noted,
+[00:20:09] has become the industry's favorite thing
+[00:20:11] to worry about. But the list of
+[00:20:13] headwinds is growing longer by the day.
+[00:20:16] Between a slowing US economy, surging
+[00:20:18] oil prices, the escalating war in the
+[00:20:21] Middle East, and the stubborn
+[00:20:22] persistence of inflation, the Goldilocks
+[00:20:25] era for private credit may be over.
+[00:20:28] There's even growing chatter about
+[00:20:31] stagflation, the worst possible outcome
+[00:20:33] for the levered mid-market borrowers
+[00:20:36] that make up the backbone of this
+[00:20:38] industry. These businesses are uniquely
+[00:20:41] vulnerable. They're almost entirely
+[00:20:43] funded with floating rate debt, meaning
+[00:20:45] that their interest bills have
+[00:20:47] skyrocketed just as the broader economy
+[00:20:49] has started to cool. When you combine
+[00:20:52] high leverage with shrinking margins and
+[00:20:54] a global energy shock, those pristine
+[00:20:57] loan portfolios start to look very
+[00:21:00] fragile.
+[00:21:01] The good news, if you can call it that,
+[00:21:04] is that most experts believe a literal
+[00:21:06] repeat of the global financial crisis is
+[00:21:09] very unlikely. Back in 2008, the entire
+[00:21:13] system was built on a foundation of
+[00:21:15] banks using short-term deposits to fund
+[00:21:18] long-term toxic sub- prime loans. Today,
+[00:21:21] banks are better prepared with
+[00:21:23] significantly more loss-absorbing equity
+[00:21:26] on their balance sheets than they had 20
+[00:21:28] years ago.
+[00:21:29] However, less exposure is not the same
+[00:21:32] as no exposure. Banks still provide
+[00:21:35] significant back leverage to private
+[00:21:37] credit firms, essentially lending them
+[00:21:40] the money that they use to make their
+[00:21:42] own loans. If the underlying borrower
+[00:21:45] stops paying, that stress eventually
+[00:21:47] travels back up the chain to the banks.
+[00:21:50] The real concern for many regulators
+[00:21:52] today isn't the banks, it's the
+[00:21:55] multi-trillion-dollar insurance
+[00:21:56] industry. Life insurance, particularly
+[00:21:59] those controlled by private equity
+[00:22:01] firms, have become some of the biggest
+[00:22:03] buyers of private credit. Insurance
+[00:22:06] companies are heavily regulated. They're
+[00:22:09] required to hold a specific amount of
+[00:22:11] capital against their investments to
+[00:22:13] ensure that they can pay out claims.
+[00:22:16] Regulators generally view a direct stake
+[00:22:19] in a risky private credit fund as an
+[00:22:21] equity-like risk, which carries a high
+[00:22:24] capital charge of around 30%. To bypass
+[00:22:28] these rules, the industry has developed
+[00:22:30] a magic trick called a rated note
+[00:22:33] feeder.
+[00:22:34] In this structure, a special purpose
+[00:22:36] vehicle sits between the insurer and the
+[00:22:39] credit fund. The vehicle issues bonds or
+[00:22:42] notes, which are then graded by a
+[00:22:44] specialist rating agency. This bit of
+[00:22:47] repackaging allows the insurer to treat
+[00:22:49] a stake in a risky credit fund as if it
+[00:22:52] was a top-rated corporate bond. By doing
+[00:22:55] this, they can slash their capital
+[00:22:57] requirements from 30% to as low as 10%.
+[00:23:01] The Financial Times recently described
+[00:23:03] these as black box products. Insurers
+[00:23:07] are being flooded with pitches for these
+[00:23:09] feeders, often from newer, smaller
+[00:23:11] managers who don't yet have an
+[00:23:13] established track record. In many cases,
+[00:23:16] they say, the rating agencies are
+[00:23:18] grading what is essentially a blank
+[00:23:21] sheet, rating the manager's reputation
+[00:23:24] rather than the actual loans, because
+[00:23:26] those loans haven't even been made yet.
+[00:23:29] One insurance executive noted that
+[00:23:32] buying these notes is akin to giving a
+[00:23:34] loan to a manager while having no idea
+[00:23:37] what's going on inside the actual
+[00:23:39] portfolio. Insurers are essentially
+[00:23:42] trading visibility and safety for yield,
+[00:23:45] using financial engineering to hide the
+[00:23:48] risk from regulators. This is what Bill
+[00:23:51] Dudley means when he warns about a
+[00:23:54] slow-motion crisis. Because these losses
+[00:23:57] are hidden from view and the liabilities
+[00:23:59] are long-term, the danger isn't sudden
+[00:24:02] explosion. It's that by the time the
+[00:24:04] situation becomes apparent, it'll be far
+[00:24:07] too late to fix the balance sheet.
+[00:24:10] It's easy to get lost in the financial
+[00:24:12] alchemy of rated note feeders and the
+[00:24:15] volatility laundering of private funds,
+[00:24:18] but we shouldn't lose sight of what is
+[00:24:19] actually at stake here.
+[00:24:21] As former Fed Vice Chair Roger Ferguson
+[00:24:24] recently noted in the FT, private credit
+[00:24:27] has become the essential plumbing for
+[00:24:29] Main Street. These funds are the primary
+[00:24:32] lenders to middle-market businesses that
+[00:24:35] employ 48 million Americans and
+[00:24:38] represent roughly a third of US private
+[00:24:40] sector GDP.
+[00:24:43] The real risk to the broad economy is
+[00:24:45] that the people who replace the banks
+[00:24:47] might suddenly stop lending. If retail
+[00:24:50] investors continue to hammer on the exit
+[00:24:53] gates, fund managers will be forced to
+[00:24:55] stop making new loans just to preserve
+[00:24:58] cash for redemptions. For an economy
+[00:25:01] already feeling the strain of war-driven
+[00:25:04] energy costs and embedded gas inflation,
+[00:25:07] a sudden contraction in credit could be
+[00:25:09] the catalyst that turns a slowdown into
+[00:25:12] a slump. However, it is worth asking, as
+[00:25:15] Toby Nangle did in the FT this week, who
+[00:25:19] cares if private credit goes kaput.
+[00:25:21] Nangle's point is that while the
+[00:25:24] individual cockroaches are unpleasant,
+[00:25:26] the system itself might be more
+[00:25:28] resilient than we think. Unlike 2008,
+[00:25:32] where a credit collapse threatened to
+[00:25:34] take down every checking account in the
+[00:25:36] country, the losses in private credit
+[00:25:39] are largely contained within the
+[00:25:41] portfolios of sophisticated institutions
+[00:25:43] and wealthy individuals who signed up
+[00:25:46] for the ride. If a fund loses 40% of its
+[00:25:50] value, it's a tragedy for the investor,
+[00:25:53] but as long as it doesn't trigger a run
+[00:25:55] on the banks, it isn't necessarily a
+[00:25:57] systemic catastrophe.
+[00:26:00] The irony of the democratization of
+[00:26:02] finance is that the average saver has
+[00:26:05] been invited to the table just as the
+[00:26:07] exits are being locked. Kunal Shah was
+[00:26:10] right, the war in Iran is a significant
+[00:26:13] distraction, but for the millions of
+[00:26:15] people whose retirement is being moved
+[00:26:17] into these products, the real danger is
+[00:26:20] the crisis they aren't talking about,
+[00:26:22] the one that doesn't end with a bang,
+[00:26:25] but with the slow, grinding realization
+[00:26:27] that the golden age of credit is over
+[00:26:29] and the doors have been locked from the
+[00:26:31] outside.
+[00:26:33] If you found this video interesting, you
+[00:26:35] should watch my video on private
+[00:26:37] equity's quiet crisis next. Don't forget
+[00:26:40] to check out our sponsor MasterClass
+[00:26:42] using the link in the video description,
+[00:26:44] and see you in the next video. Bye.
+[00:26:48] >> [music]

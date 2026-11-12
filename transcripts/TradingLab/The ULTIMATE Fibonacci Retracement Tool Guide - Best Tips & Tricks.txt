@@ -1,0 +1,285 @@
+[00:00:00] The Fibonacci sequence. Seen in many forms
+[00:00:00] of nature all around the world. Flower petals,
+[00:00:07] shells, galaxies, hurricanes, and even faces?
+[00:00:07] So it s seen all around in nature, but can
+[00:00:12] we use it in trading to help predict markets?
+[00:00:12] The Fibonacci sequence starts like this. Each
+[00:00:18] number is the sum of the two numbers before
+[00:00:18] that. It s a simple pattern, but it appears
+[00:00:23] to be a kind of built in numbering system
+[00:00:23] in nature.
+[00:00:26] And it s one of the reasons why charts, look
+[00:00:26] like this, creating higher highs and higher
+[00:00:32] lows.
+[00:00:32] So can we use this tool to help find a specific
+[00:00:36] spot where a pullback has a high chance of
+[00:00:36] bouncing off and creating a new higher high?
+[00:00:41] Yes. And I m going to tell you exactly how
+[00:00:41] to use the fibonnaci retracement tool the
+[00:00:46] right way, what a common mistake people make
+[00:00:46] while using it, and show you how to exit your
+[00:00:50] trades correctly so you get the most profit
+[00:00:50] as possible. Let s get straight to it.
+[00:00:58] So what are fibonnaci retracements? They are
+[00:00:58] key levels from the fibonnaci retracement
+[00:01:03] tool, that can help you find the reversal
+[00:01:03] of a pullback.
+[00:01:06] Let me show you a great example of when to
+[00:01:06] use these levels.
+[00:01:10] A lot of traders like to wait and trade off
+[00:01:10] a pullback. Considering 1. it s usually at
+[00:01:15] a cheap and great price and 2. It s usually
+[00:01:15] a place where a change in price will happen.
+[00:01:21] This is usually how a normal trade would go.
+[00:01:21] You see an uptrend. You also notice there
+[00:01:25] is a key level acting as both a support and
+[00:01:25] resistance. So you now know, if the price
+[00:01:30] does end up making a pullback at that level,
+[00:01:30] there s a great chance of it bouncing off
+[00:01:35] and creating new higher high. Making it a
+[00:01:35] great level to buy if It shows confirmation.
+[00:01:41] But what if you were in a position like this?
+[00:01:41] Where the price went up and made a pullback,
+[00:01:46] but there weren t any previous key levels
+[00:01:46] of support or resistance. How do you know
+[00:01:51] where the key levels are for a reversal to
+[00:01:51] happen?
+[00:01:54] The answer? The fibonnaci retracement tool.
+[00:01:54] If we plot these levels, you can see the price
+[00:01:59] respected them, and actually used these levels
+[00:01:59] as a key support.
+[00:02:03] Another great example of the finbonnci s magic
+[00:02:03] is the Snp 500. If we go back to when Corona
+[00:02:09] hit, you can see this Fibonacci tool predicted
+[00:02:09] the exact bottom for the crash.
+[00:02:13] Let s go over the best settings for this tool.
+[00:02:13] To do that, get on Tradingview. If you don
+[00:02:18] t have it, ill leave a link in the description.
+[00:02:18] Next, click this icon right here, and make
+[00:02:23] sure it s on fibonnaci retracement. Just place
+[00:02:23] it anywhere on the chart, and click the setting
+[00:02:28] icon. What we want to do, is uncheck 0.382
+[00:02:28] and the uncheck all the other boxes after
+[00:02:35] 1.
+[00:02:35] Next, uncheck the background. I know the colors
+[00:02:38] are fancy, but this mostly just makes your
+[00:02:38] chart messy. Then uncheck prices, and change
+[00:02:44] the levels from values, to precents.
+[00:02:44] These are the settings that I have found work
+[00:02:51] the best for me, and it make s it look really
+[00:02:51] clean on the chart.
+[00:02:54] So now that we have the correct settings,
+[00:02:54] let move on to how to use tool correctly.
+[00:02:58] First things first, we need to find a clear
+[00:02:58] trend.
+[00:03:01] In this example, you can see a clear trend.
+[00:03:01] With an swing high, and an swing low.
+[00:03:06] The next step is to drag your fibonnaci retracement
+[00:03:06] tool from the swing low, to the swing high.
+[00:03:12] One common mistake that I see a lot of traders
+[00:03:12] making is that drag from the candles body,
+[00:03:17] rather than the candles wick.
+[00:03:17] The price didn t stop here. Sure it might
+[00:03:21] of ended up here, but this was not the lowest
+[00:03:21] it went. So when making your fibonnaci levels,
+[00:03:26] make sure you are going all the way down to
+[00:03:26] the wick.
+[00:03:29] So once you have dragged your fibonnaci retracement
+[00:03:29] tool from the swing low, to the swing high.
+[00:03:33] It s time to understand how to read these
+[00:03:33] levels. So with my specific settings you are
+[00:03:38] going to have 6 levels. The 0% level is basically
+[00:03:38] you starting point. The other 5 levels are
+[00:03:44] your pullback levels. Meaning that if price
+[00:03:44] hits one of these levels and respects it,
+[00:03:48] and starts reversing.
+[00:03:48] It s very likely that it will go up to the
+[00:03:52] next highest level or even higher.
+[00:03:52] The most common levels you will see this happen
+[00:03:57] with, are these three levels. 23.60, 50, and
+[00:03:57] 61.80. A lot of traders will call this area
+[00:04:05] the golden zone .
+[00:04:05] This tool will also tell us what is considered
+[00:04:09] a pullback. If the price bounces off any of
+[00:04:09] these lines, its considered a pullback. Meaning
+[00:04:14] there s a chance for it to bounce off and
+[00:04:14] go to the next level.
+[00:04:17] If the price beaks below the 100 line, it
+[00:04:17] will likely try to come back, and fall. Starting
+[00:04:29] a downtrend.
+[00:04:29] So it s important to note. If the price ever
+[00:04:33] goes below your 100 line, it s pretty likely
+[00:04:33] it will fall a lot more after that.
+[00:04:38] You should also understand that you need to
+[00:04:38] treat these levels just as you would for support
+[00:04:43] and resistances. They are not solid line,
+[00:04:43] they are areas.
+[00:04:47] Meaning, the price is not always going to
+[00:04:47] respect the exact level where the line is.
+[00:04:52] Just because the price falls below a line,
+[00:04:52] doesn t necessarily mean it has broken that
+[00:04:57] area. It could still reverse from this point.
+[00:04:57] So I guess what I m trying to say, is don
+[00:05:02] t treat these levels as an exact measurement.
+[00:05:02] You just should be treating them as a guide.
+[00:05:07] How do you know which level the price will
+[00:05:07] reverse at? Well how about I show you an example.
+[00:05:12] So, here we found a clear trend upwards. We
+[00:05:12] identified the swing low of the trend, and
+[00:05:17] the swing high.
+[00:05:17] Next, we select our fibonnaci retracement
+[00:05:20] tool, and dragged from the swing lows wick,
+[00:05:20] to the swing high s wick.
+[00:05:24] Next, we see what price does. We see the price
+[00:05:24] retested this 0% level, but just as I said
+[00:05:30] before, just because price breaks through
+[00:05:30] a level, doesn t necessarily mean its certain.
+[00:05:35] So as you can see it test the level and got
+[00:05:35] rejected.
+[00:05:38] It end up doing that two more times, telling
+[00:05:38] us that it really want to go above this level.
+[00:05:44] Next we see come down to the 23.60% level.
+[00:05:44] And look how much it Is respecting this line.
+[00:05:50] Once I see this candle right here, I m probably
+[00:05:50] entering the trade, because I can be pretty
+[00:05:55] certain the price will go up from here as
+[00:05:55] a pullback, or at lease go to the 0% level.
+[00:06:13] So I set my stop loss right below the 23.60%
+[00:06:13] line and then I m going to sell half my shares
+[00:06:22] at the 0% line.
+[00:06:22] Let s see what the price does. It turns out
+[00:06:26] we were right, and the price went up the 0%
+[00:06:26] line, give us a nice little profit. So, we
+[00:06:32] sell half our shares so guarantee that profit.
+[00:06:32] But we are not done. As I said before. Price
+[00:06:38] has tried breaking through this line multiple
+[00:06:38] times, telling us it really wants to go up
+[00:06:43] from here. So that s why we are keeping half
+[00:06:43] our shares in the game.
+[00:06:47] We see that price breaks through the level,
+[00:06:47] and comes back down and respects it. This
+[00:06:52] right here, is like seeing gold on your screen.
+[00:06:52] The price broke through, made a slight pull
+[00:06:57] back and respected the highest level.
+[00:06:57] Meaning, it s about to make a big move upward.
+[00:07:02] After I see a bit of confirmation. I raise
+[00:07:02] my stop loss below the 0% level. Then look
+[00:07:08] what happens. The price sky rockets.
+[00:07:08] So as a quick overview. Let s go over some
+[00:07:13] key moments of this trade. There were multiple
+[00:07:13] times price tried breaking through the 0 line,
+[00:07:19] but we never entered at these points, because
+[00:07:19] there was never any confirmation it was going
+[00:07:23] up.
+[00:07:23] Another key point is when the price went down
+[00:07:26] to the 23.60% level, we only entered after
+[00:07:26] seeing the price respected this line, and
+[00:07:33] gave us confirmation it was going up.
+[00:07:33] Just because the price hits a line, doesn
+[00:07:37] t mean it will respect it. You should always
+[00:07:37] be looking for confirmation. It is a very
+[00:07:41] important concept to understand when using
+[00:07:41] the fibonnaci retracement tool.
+[00:07:45] Example is ltcusd Nov 9
+[00:07:45] Here Is another great example. We found a
+[00:07:51] clear trend upwards. We identified the swing
+[00:07:51] low and the swing high. We made sure to put
+[00:07:56] our levels all the way to the wicks. Then
+[00:07:56] we wait and see what price does.
+[00:08:00] We see that price slightly respects this level
+[00:08:00] by 1 candle resisting it, but probably not
+[00:08:05] enough information to enter the trade yet.
+[00:08:05] Then price tries to break the 0 line and then
+[00:08:11] come and reverses back to the 23.60 line.
+[00:08:11] We then see a candle appear, not even thinking
+[00:08:17] about respecting this line at all, breaking
+[00:08:17] right through it.
+[00:08:21] This might be a good spot to enter a short,
+[00:08:21] but you probably need a bit more confirmation.
+[00:08:27] So, we wait. We see it kind of bounce off
+[00:08:27] the 50% line, then hits it again, going through
+[00:08:33] it. Then the price consolidates in this area,
+[00:08:33] not know what it wants to do.
+[00:08:38] Whenever price consolidates like this. Price
+[00:08:38] can go in either direction. So it s usually
+[00:08:46] not a good time to enter.
+[00:08:46] It ends up breaking up wards, going all the
+[00:08:51] way to the 23.60 line again, but then gets
+[00:08:51] rejected. After seeing this confirmation candle,
+[00:08:58] this would be a pretty nice place to enter
+[00:08:58] a short trade.
+[00:09:01] Considering the price is respecting this resistance,
+[00:09:01] and last time this happened it went down to
+[00:09:06] the 61.80 line. We see price goes back down
+[00:09:06] to where it did before, and does another one
+[00:09:12] of those reversals going back to the 23.60
+[00:09:12] line and respecting it another time.
+[00:09:19] So if you missed going in the time before
+[00:09:19] this, the is an absolute great time to enter
+[00:09:23] a short trade.
+[00:09:23] So now that we are for sure in the trade now.
+[00:09:27] I should also mention. That you should be
+[00:09:27] selling a percentage of your trade for each
+[00:09:31] level that gets hit.
+[00:09:31] Get the profit confirmation. Its very important
+[00:09:37] rule, and is critical to become a profitable
+[00:09:37] trader. So what does price do?
+[00:09:41] It drops back down to the 50% line. It sort
+[00:09:41] of respects, but is still kind of unsure.
+[00:09:47] We still sell around 25% of our shares at
+[00:09:47] this level, for guaranteed profit.
+[00:09:53] Next we see a monster of a candle break through
+[00:09:53] the 61.80 line. The next couple candles start
+[00:09:59] respecting this line.
+[00:09:59] We sell another 25% of our original entry
+[00:10:03] and see what price does. It goes up breaking
+[00:10:03] through the 61.80 line and doesn t quite make
+[00:10:09] it to the 50 line, after losing momentum,
+[00:10:09] it drops back down to the 78.60 line.
+[00:10:15] So we now know, this 78.60 line is a pretty
+[00:10:15] strong support, considering the price keeps
+[00:10:22] stoping right around here. So we know, if
+[00:10:22] price ever breaks through this point, It s
+[00:10:26] going to drop hard.
+[00:10:26] And look what happens, price breaks through
+[00:10:30] it. Making it go all the way down below the
+[00:10:30] 100 level. We sell another 25% of our original
+[00:10:36] entry and keep the last of the money in the
+[00:10:36] trade for high return gains.
+[00:10:41] We ve now made a really good profit, and we
+[00:10:41] are even still in the trade.
+[00:10:47] And look what happens the price price comes
+[00:10:47] back up the to the 100 level, starts resisting.
+[00:10:53] This right here, is that gold moment I was
+[00:10:53] talking about before. After seeing this, we
+[00:10:58] have a pretty good idea the price will drop.
+[00:10:58] A lot.
+[00:11:01] And look what happens. Price drops.
+[00:11:01] Another key tip will help you guys out a lot,
+[00:11:07] is if you ever find a fibonnaci level where
+[00:11:07] it matches up with a key level of support,
+[00:11:11] like this example. The white line was placed
+[00:11:11] here, because it way key support level on
+[00:11:15] the daily time frame.
+[00:11:15] Then we have the red 23.60% line from the
+[00:11:19] fibonnaci right by it. This means, that this
+[00:11:19] level right here, is very likely to be a strong
+[00:11:27] support or resistance.
+[00:11:27] And as you can see. The price did exactly
+[00:11:31] that and treated this area as a strong resistance.
+[00:11:31] So some key takeaways.
+[00:11:36] You should be treating your fibonnaci levels
+[00:11:36] as areas not solid lines.
+[00:11:41] Always wait for confirmation before entering
+[00:11:41] a trade.
+[00:11:44] Sell percentage of position for every level
+[00:11:44] that is hit.
+[00:11:48] If you find an area with a strong daily support
+[00:11:48] and a fibonnaci level, there is greater chance
+[00:11:53] price will respect that level.
+[00:11:53] If you want to use the fibonnaci retracement
+[00:11:57] tool to grow a small sized stock account.
+[00:11:57] Watch this video, because I go over the best
+[00:12:02] way to grow a stock account with a small balance
+[00:12:02] efficiently as possible. Thanks for watching,
+[00:12:07] and I ll see you guys next time.

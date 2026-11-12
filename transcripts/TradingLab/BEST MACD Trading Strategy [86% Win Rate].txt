@@ -1,0 +1,166 @@
+[00:00:00] MACD Strategy
+[00:00:00] This MACD strategy I m
+[00:00:01] about to show you is one of the highest win rate
+[00:00:01] strategies you can possibly do in trading. It
+[00:00:07] is very easy to use, works in almost every single
+[00:00:07] market, and most importantly, it makes money. Well
+[00:00:12] enough talk, lets get straight into it.
+[00:00:12] The MACD or the Moving Average Convergence
+[00:00:16] Divergence is one the most popular technical
+[00:00:16] indicators used by traders. Essentially this
+[00:00:21] indicator uses moving averages to find trends
+[00:00:21] in markets, and its pretty damn good at it too.
+[00:00:27] Now, if you re an experienced
+[00:00:27] trader, you ve probably used or
+[00:00:30] heard about the MACD indicator before.
+[00:00:30] But the MACD indicator by itself, is just
+[00:00:35] alright to be honest. So, make sure you watch this
+[00:00:35] full video to see how I pair it with some other
+[00:00:40] indicators to make it perform so much better.
+[00:00:40] First things first, let s add the MACD indicator
+[00:00:46] to our chart.
+[00:00:46] To do that .
+[00:00:58] Now that we have the MACD indicator added, lets
+[00:00:58] make sure we know how the MACD actually works.
+[00:01:03] The MACD is made up of 4 different
+[00:01:03] components. The MACD line, the signal line,
+[00:01:08] the histogram, and the zero line.
+[00:01:08] The MACD line which is the blue line,
+[00:01:12] in most cases is usually a 12 day moving
+[00:01:12] average, the signal line, which is the
+[00:01:16] orange line, is usually a 26 day moving average.
+[00:01:16] Next we have the histogram, which represents the
+[00:01:22] difference between the MACD line and the signal
+[00:01:22] line. So for example, the smaller the space
+[00:01:27] between the two lines, the smaller the histogram
+[00:01:27] gets. The bigger the space, the bigger it gets.
+[00:01:33] You can also see once the MACD
+[00:01:33] line crosses above the signal line,
+[00:01:37] the histogram turns green and if the MACD line
+[00:01:37] crosses below the signal line it turns red.
+[00:01:42] And finally, we have the zero
+[00:01:42] line, which basically represents
+[00:01:45] the center of the MACD indicator.
+[00:01:45] Now that we know the 4 components,
+[00:01:49] lets make sure we know how to them.
+[00:01:49] The MACD indicator is insanely good at
+[00:01:54] finding trends in markets. How you can tell
+[00:01:54] if a chart is about to have an upward trend
+[00:01:59] is by looking for a cross upwards between
+[00:01:59] the MACD line and the Signal line.
+[00:02:03] For example, here the macd crosses above the
+[00:02:03] signal line indicating the chart is in upward
+[00:02:09] momentum, and here the macd crosses below the
+[00:02:09] signal line indicating it s in downward momentum.
+[00:02:14] You can also use the histogram to indicate
+[00:02:14] how much momentum there actually is. So,
+[00:02:19] if the histogram is getting bigger, that means
+[00:02:19] there is an increase in momentum. If it s
+[00:02:24] getting smaller, there is a decrease in momentum.
+[00:02:24] So how you want to use this indicator is by when
+[00:02:29] the lines cross upward, but only if they cross
+[00:02:29] below the zero line. If they cross and its above
+[00:02:35] the zero line you wouldn t enter a trade.
+[00:02:35] It s the same thing with shorting,
+[00:02:40] you only enter a short trade if the lines are
+[00:02:40] crossing downward, and is ABOVE the zero line.
+[00:02:45] So as you can see, this indicator is extremely
+[00:02:45] easy to use. But the problem most traders
+[00:02:52] encounter, is that they use this indicator by
+[00:02:52] itself. Let me tell you why this doesn t work.
+[00:02:58] The MACD indicator works extremely well if
+[00:02:58] the market is in a trend. So for example here,
+[00:03:03] the MACD indicator is doing a great job
+[00:03:03] indicating when the price is about to move
+[00:03:08] upward. Because the chart is in an upward trend.
+[00:03:08] But here, the price is in a downward trend,
+[00:03:13] but the MACD is still signaling to buy
+[00:03:13] long even though the price is going down.
+[00:03:19] To fix this issue, for example if
+[00:03:19] we are trading long, we only want
+[00:03:22] to trade if the market is in an uptrend.
+[00:03:22] You never want to trade against the trend,
+[00:03:27] because the odds will always be against you.
+[00:03:27] So, an easy way to figure out if the market
+[00:03:31] is in an uptrend. You simply just
+[00:03:31] need to add a 200 day moving average.
+[00:03:36] To do this
+[00:03:36] Once we have the indicator added,
+[00:04:06] you ll just see a single line.
+[00:04:06] If the price is above that line,
+[00:04:09] the market is in an uptrend. If the price is
+[00:04:09] below that line, the market is in a downtrend.
+[00:04:15] So after learning that we only want to
+[00:04:15] buy when the market is in uptrend, if
+[00:04:18] we re going long of course.
+[00:04:18] if we put all this together,
+[00:04:21] we buy if the macd lines cross below the
+[00:04:21] zero line mark, and the current price
+[00:04:27] also above the 200 day moving average.
+[00:04:27] This will guarantee that you are only
+[00:04:32] trading when the market is in an
+[00:04:32] uptrend, which is a very power combo.
+[00:04:36] If you wanted to short, you would just do
+[00:04:36] the exact opposite. Make sure the price is
+[00:04:40] below the 200 day average and the macd lines
+[00:04:40] are crossing downward above the zero line.
+[00:04:45] So as an example we would enter a long trade
+[00:04:45] right here, because the macd lines are crossing
+[00:04:51] upward below the zero line, and the current
+[00:04:51] price is above the 200 day moving average.
+[00:04:56] Now what I like to do is set a stop loss below the
+[00:04:56] 200 day moving average, so the 200 day almost acts
+[00:05:03] as a wall that the price has to break through
+[00:05:03] to hit my stop loss. Then I like to have a 1.5
+[00:05:08] profit ratio for my profit target mark.
+[00:05:08] So as you can see for this example,
+[00:05:13] the strategy worked exactly as we
+[00:05:13] wanted it to, and we made money.
+[00:05:17] But, we can still make this
+[00:05:17] trading strategy even better.
+[00:05:21] This macd strategy combined with a 200 day moving
+[00:05:21] average, works extremely well only if there is a
+[00:05:27] lot of price movement. Where the strategy starts
+[00:05:27] to get kind of iffy and giving false signals,
+[00:05:31] is when the chart starts going
+[00:05:31] sideways and losing momentum.
+[00:05:35] So as you can see here the chart is moving
+[00:05:35] sideways and lost almost all of its upward
+[00:05:39] momentum and the macd is giving lots
+[00:05:39] of false signals. If you traded here,
+[00:05:44] odds are you probably lost money.
+[00:05:44] To fix this issue we have to combine the
+[00:05:48] MACD with price action. To do this, identify
+[00:05:48] a key support or resistance where price hits
+[00:05:54] and bounces. So as you can see the prices goes
+[00:05:54] down, hits this point, and reverses upwards.
+[00:06:00] The next step is to wait for the price to
+[00:06:00] hit the same key level again. Once it does,
+[00:06:05] we are expecting the price to bounce off this
+[00:06:05] support and go upwards just like it did before.
+[00:06:10] But as a clear note, just because we made
+[00:06:10] the support and it bounced off this before,
+[00:06:16] doesn t mean that it will always do that again.
+[00:06:16] It can easily break through the support and drop
+[00:06:20] lower if it has enough momentum.
+[00:06:20] If we want to make sure the price
+[00:06:24] is about to change in momentum, that s
+[00:06:24] when we bring out the MACD indicator.
+[00:06:28] So what you would do, is make sure the
+[00:06:28] price above the 200 day moving average,
+[00:06:32] once the price hits the support made, wait for the
+[00:06:32] lines on the MACD to cross below the zero level,
+[00:06:38] and that s when you enter the trade.
+[00:06:38] So I just revealed to you how the MACD,
+[00:06:41] 200 day moving average, and using support
+[00:06:41] and resistances levels gives and extremely
+[00:06:46] high win rate with this strategy.
+[00:06:46] All I ask for in return is if you
+[00:06:49] to take 2 seconds of your time and like
+[00:06:49] this video. If you want to stay up to
+[00:06:53] date with my future strategies make to
+[00:06:53] subscribe. Because in my next video,
+[00:06:56] I m planning to release a strategy that works
+[00:06:56] even ever better than this MACD strategy.
+[00:07:01] Hope you guys learned something from this
+[00:07:01] video, and I ll see you guys next time.

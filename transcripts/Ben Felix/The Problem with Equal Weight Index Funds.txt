@@ -1,0 +1,459 @@
+[00:00:00] One of the most common questions in the
+[00:00:01] comments on this channel is what about
+[00:00:04] equal weight index funds or some version
+[00:00:06] of that question. I promise you equal
+[00:00:09] weight index funds are not that
+[00:00:10] exciting, but people keep asking me the
+[00:00:12] question, so
+[00:00:13] here we are. Market capitalization
+[00:00:16] weighting, which is what typical index
+[00:00:17] funds do, assign index weights based on
+[00:00:20] each company's size.
+[00:00:22] An equal weighted index fund, as the
+[00:00:24] name implies, equally weights all of the
+[00:00:26] stocks in a market or market segment.
+[00:00:29] Equal weighting seems like the solution
+[00:00:31] to many of the perceived problems that
+[00:00:32] market capitalization weighted indexes
+[00:00:34] have today, like high valuations and
+[00:00:36] high levels of concentration in the top
+[00:00:38] stocks. Equal weighting has actually
+[00:00:40] outperformed cap weighting going back
+[00:00:42] decades as well, but it introduces its
+[00:00:44] own unique risks, costs, and
+[00:00:46] inefficiencies. I'm Ben Felix, chief
+[00:00:49] investment officer at PWL Capital, and
+[00:00:50] I'm going to tell you why I do not use
+[00:00:52] equal weighted index funds.
+[00:00:59] Equal weight index funds do look really
+[00:01:01] compelling right now. They don't have
+[00:01:02] the same level of concentration as a
+[00:01:04] market cap weighted index fund, and they
+[00:01:07] have a long track record of strong
+[00:01:08] performance. Even in live fund data
+[00:01:11] reflective of real fees and costs, the
+[00:01:14] Invesco S&P 500 equal weight ETF has
+[00:01:16] outperformed the S&P 500 for most of its
+[00:01:19] life since 2003 and for the full period
+[00:01:22] since its inception in 2003, just by a
+[00:01:25] hair, though. But before getting too
+[00:01:27] excited, it's important to understand
+[00:01:28] the tradeoffs and to give some context
+[00:01:31] to the past performance. I'm also going
+[00:01:33] to show you why I think the benefits of
+[00:01:34] equal weighting can be achieved more
+[00:01:35] efficiently without its associated
+[00:01:37] drawbacks. Let's start with some quick
+[00:01:39] background on equal weighted versus
+[00:01:41] market capitalization weighted indexes.
+[00:01:43] When you create a stock index, one of
+[00:01:45] the most fundamental questions that you
+[00:01:46] have to answer is how you're going to
+[00:01:48] weight the stocks in your index. Market
+[00:01:51] capitalization weighting means holding
+[00:01:52] stocks at their market capitalization
+[00:01:54] weights. Market capitalization is just
+[00:01:57] what the entire company is worth on the
+[00:01:58] stock market, like how much it would
+[00:02:00] cost to buy every single share of Apple
+[00:02:03] or Shopify. A larger company will make
+[00:02:05] up a larger portion of a market
+[00:02:07] capitalization weighted index than a
+[00:02:09] smaller company.
+[00:02:10] Make sense? Equal weighting, on the
+[00:02:13] other hand, assigns equal weights to
+[00:02:14] stocks regardless of their market
+[00:02:16] capitalization. These approaches can
+[00:02:17] result in significantly different
+[00:02:19] portfolios given the same set of stocks.
+[00:02:22] The logic of market capitalization or
+[00:02:24] market cap weighting is pretty simple.
+[00:02:26] The market has determined how much
+[00:02:28] weight each stock should have. This is
+[00:02:30] why market cap index investing is often
+[00:02:32] referred to as passive. You're passively
+[00:02:35] allowing the market to determine the
+[00:02:36] weights of the stocks that you own. It's
+[00:02:38] like letting water find its own level
+[00:02:40] instead of constantly trying to adjust
+[00:02:42] it yourself. The nice thing about this
+[00:02:44] is that it does not require you to make
+[00:02:46] decisions about how to weight the stocks
+[00:02:48] in your index. The weights just are.
+[00:02:51] Another benefit is that because the
+[00:02:52] index represents the market, it doesn't
+[00:02:54] need to be rebalanced frequently. As
+[00:02:56] stock prices evolve, the market
+[00:02:58] capitalization weighted index fund
+[00:03:00] evolves in exactly the same way as the
+[00:03:02] market without needing you to make
+[00:03:03] trades. One of the perceived problems
+[00:03:05] with market cap weighting is that it can
+[00:03:07] result in high weights in a relatively
+[00:03:09] small number of stocks, something we are
+[00:03:11] seeing an extreme version of in the US
+[00:03:13] market, at least relative to its own
+[00:03:15] history right now. This index
+[00:03:17] concentration kind of ebbs and flows
+[00:03:19] naturally over time as some businesses
+[00:03:21] become increasingly successful and earn
+[00:03:23] a larger share of the market. Market
+[00:03:25] concentration can seem concerning, but
+[00:03:27] the historical relationship between
+[00:03:29] market concentration and future market
+[00:03:32] returns has not been strong historically
+[00:03:35] in the US or in other countries around
+[00:03:37] the world. If we sort 10-year future US
+[00:03:39] stock market returns on their starting
+[00:03:42] level of market concentration, there's
+[00:03:44] really not much of a relationship there.
+[00:03:46] Many other countries have been and are
+[00:03:48] today more concentrated in the top
+[00:03:50] stocks in the index than the US market
+[00:03:53] is even today when it's more
+[00:03:55] concentrated than it has been in the
+[00:03:56] past. In any case, index concentration
+[00:03:58] is a current concern for many investors.
+[00:04:00] An equal weighted index, by
+[00:04:02] construction, by design, won't ever be
+[00:04:04] concentrated in a small number of stocks
+[00:04:06] in the same way that a market
+[00:04:07] capitalization weighted index can be,
+[00:04:10] but it will result in significant under
+[00:04:12] and overweights of stocks relative to
+[00:04:15] their market capitalization weights.
+[00:04:17] Now, this is an interesting question,
+[00:04:18] whether having a high weight in large
+[00:04:21] companies in a market cap weighted
+[00:04:22] portfolio is riskier than having large
+[00:04:25] overweights to smaller companies and
+[00:04:27] underweights to larger companies in an
+[00:04:29] equal weighted portfolio. The answer's
+[00:04:31] not black and white, but I think there's
+[00:04:33] a legitimate argument that the extreme
+[00:04:35] over and underweighting in an equal
+[00:04:37] weighted portfolio is actually riskier
+[00:04:39] than accepting concentration in larger
+[00:04:41] companies in a cap weighted portfolio.
+[00:04:43] This risk can show up in a couple of
+[00:04:45] different ways. One is in volatility.
+[00:04:47] Looking at an ETF tracking the S&P 500
+[00:04:49] and one tracking the S&P 500 equal
+[00:04:51] weight, the 15-year standard deviation,
+[00:04:54] a measure of how much variability there
+[00:04:56] is in index returns, is quite a bit
+[00:04:57] higher for the equal weight index than
+[00:05:00] for the market cap weighted index.
+[00:05:02] Volatility is not the only way to think
+[00:05:03] about risk. Another way to measure risk
+[00:05:05] is by exposure to certain types of
+[00:05:07] stocks that tend to move together. Some
+[00:05:09] stocks, like small cap and value stocks,
+[00:05:11] are theoretically priced as being
+[00:05:13] riskier by the market, and an equal
+[00:05:15] weight index has more exposure to these
+[00:05:17] types of stocks than a market cap
+[00:05:19] weighted one simply because smaller and
+[00:05:21] cheaper stocks make up a smaller portion
+[00:05:24] of the market. Equal weighting all
+[00:05:26] stocks results in a natural tilt towards
+[00:05:28] smaller and lower-priced stocks. This
+[00:05:31] speaks to one of the other perceived
+[00:05:32] benefits of equal weighting in the
+[00:05:33] current market environment. Stock
+[00:05:35] valuations in the US market are high
+[00:05:37] relative to their own history. High
+[00:05:39] current valuations do have a
+[00:05:41] relationship with lower future returns.
+[00:05:43] They're not perfectly predictive, but
+[00:05:45] there's something there. Due to its
+[00:05:47] natural tilt away from the largest and
+[00:05:49] highest priced stocks, an equal weighted
+[00:05:51] index will have a lower aggregate
+[00:05:53] valuation than a market cap weighted
+[00:05:55] index. We can see this now with the
+[00:05:57] price-to-earnings and price-to-book
+[00:05:58] ratios for an equal weighted S&P 500
+[00:06:01] fund being much lower than those for a
+[00:06:03] market cap weighted fund. Those
+[00:06:04] exposures to smaller and cheaper stocks
+[00:06:06] are not bad thing. I would actually
+[00:06:08] argue that they are a good thing when
+[00:06:10] they're done right. The problem is that
+[00:06:12] if you wanted to have exposure to these
+[00:06:14] types of stocks, there are probably more
+[00:06:16] efficient ways to get it. I'll explain
+[00:06:18] that in a minute. Equal weighted indexes
+[00:06:20] will also tend to have materially
+[00:06:22] different sector exposures compared to
+[00:06:24] market capitalization weighted indexes.
+[00:06:26] Sector over or underweights introduce a
+[00:06:29] whole other type of risk that most
+[00:06:30] investors probably want to avoid. Again,
+[00:06:33] looking at the pair of S&P 500 ETFs as
+[00:06:35] an example, we can see the sector
+[00:06:37] compositions are materially different
+[00:06:39] with a large underweight to technology
+[00:06:41] and overweight to industrials for the
+[00:06:44] equal weight index. If you want those
+[00:06:46] over and underweights because you have a
+[00:06:47] view on how those sectors are going to
+[00:06:49] perform in the future, I guess that's
+[00:06:51] fine, but sector bets tend to be really
+[00:06:54] hard to get right.
+[00:06:56] A lesser-known issue with equal weights
+[00:06:58] is the implications for rebalancing. One
+[00:07:01] issue is more frequent rebalancing. When
+[00:07:02] a smaller company gets larger, a market
+[00:07:05] cap weighted index does not need to do
+[00:07:07] anything, but an equal weight index
+[00:07:08] likely needs to sell down the position
+[00:07:10] back to equalize weights at its next
+[00:07:13] rebalancing. The same thing happens when
+[00:07:14] a large company gets smaller. For
+[00:07:16] example, this S&P 500 equal weight index
+[00:07:19] ETF has had average annual turnover more
+[00:07:21] than 10 times higher than a market cap
+[00:07:23] weighted S&P 500 ETF. Turnover comes
+[00:07:26] with implicit and explicit trading costs
+[00:07:28] that are ultimately borne by the fund
+[00:07:30] investors.
+[00:07:31] The other rebalancing issue is that
+[00:07:32] equal weighting is naturally a negative
+[00:07:34] momentum strategy. This is a big deal.
+[00:07:36] I'll I'll explain what it means.
+[00:07:38] Momentum is the extremely
+[00:07:39] well-documented phenomenon first
+[00:07:41] identified by Jegadeesh and Titman in
+[00:07:44] their landmark 1993 study that stocks
+[00:07:47] that have recently done well tend to
+[00:07:48] continue to do well for a time, and
+[00:07:51] those that have recently done poorly
+[00:07:52] tend to continue doing poorly for a
+[00:07:54] time.
+[00:07:55] Equal weight funds, to maintain their
+[00:07:57] equal weights, are always going to be
+[00:07:59] selling what has done well recently and
+[00:08:00] buying what has done poorly. If a stock
+[00:08:03] does well and gets bigger, its weight
+[00:08:05] will exceed its equal weight target, and
+[00:08:07] a stock that does poorly will fall below
+[00:08:09] its target. Maintaining equal weights,
+[00:08:11] then, means systematically trading
+[00:08:13] against momentum. We can show this with
+[00:08:15] a multi-factor regression. That's a
+[00:08:17] statistical test that shows us what's
+[00:08:19] driving a fund's returns. It's kind of
+[00:08:21] like a like a blood test for a fund. It
+[00:08:23] tells you what's in your system.
+[00:08:25] Looking again at the equal weight S&P
+[00:08:27] 500, we can see that it loads positively
+[00:08:29] on the size factor and the value factor
+[00:08:31] and loads negatively on the momentum
+[00:08:34] factor. These factor loadings are all
+[00:08:35] statistically significant, meaning
+[00:08:37] they're real patterns, not just noise in
+[00:08:39] the data. This means that this fund has
+[00:08:41] more exposure to small cap and value
+[00:08:43] stocks than the market cap weighted
+[00:08:45] total market index, and that it's
+[00:08:47] trading in the opposite direction of
+[00:08:49] momentum. This is exactly what you would
+[00:08:51] expect based on the equal weighted
+[00:08:53] index's structure. It's naturally
+[00:08:55] overweight smaller and cheaper stocks
+[00:08:57] and underweight larger and more
+[00:08:58] expensive stocks, and it trades against
+[00:09:00] momentum systematically
+[00:09:02] by the way that it's designed.
+[00:09:04] Now, here's the big question. If you
+[00:09:06] want exposure to smaller and
+[00:09:08] lower-priced stocks, is equal weighting
+[00:09:11] the most efficient way to get there?
+[00:09:13] There are other investment strategies
+[00:09:14] that look a lot like index funds, but
+[00:09:17] don't strictly follow market cap
+[00:09:19] weights. For example, the Dimensional US
+[00:09:21] Core Equity One Fund has roughly similar
+[00:09:25] exposures to the small cap and value
+[00:09:26] factors as the equal weight S&P 500 ETF,
+[00:09:29] but rather than naively getting to these
+[00:09:31] exposures through equal weighting,
+[00:09:33] Dimensional is being super intentional
+[00:09:35] about targeting certain types of stocks.
+[00:09:38] This Dimensional fund has a net expense
+[00:09:40] ratio of 15 basis points, 0.15%,
+[00:09:44] compared to the equal weight S&P 500
+[00:09:46] ETFs 0.2%. It's basically a wash on fees
+[00:09:50] with a slight edge for Dimensional. I'm
+[00:09:52] going to talk about the long-term data
+[00:09:54] for this mutual fund, which is the the
+[00:09:56] one I'm talking about is a mutual fund,
+[00:09:58] that fund is only available through
+[00:10:00] financial advisors. That's just how
+[00:10:02] Dimensional distributes their products,
+[00:10:03] but just to make sure that this is
+[00:10:05] relevant for people watching, the same
+[00:10:07] strategy is available now through a
+[00:10:09] US-listed ETF that anybody can buy.
+[00:10:11] There's no no restrictions.
+[00:10:14] Uh so, Dimensional's intentional
+[00:10:15] approach shows up in a couple of
+[00:10:18] different ways. One is that they limit
+[00:10:20] the sector divergence from the market by
+[00:10:22] placing a cap on sector weight
+[00:10:24] differences to avoid taking on large
+[00:10:26] sector bets.
+[00:10:27] Another intentional difference is in
+[00:10:29] their treatment of momentum. So,
+[00:10:30] remember equal weighting is short
+[00:10:32] momentum. It's taking it's got negative
+[00:10:34] momentum exposure. Dimensional applies a
+[00:10:36] rule when they trade to avoid selling
+[00:10:38] recent winners and avoid buying recent
+[00:10:41] losers all else equal.
+[00:10:43] Dimensional funds are not index funds,
+[00:10:44] so they have the ability to do that type
+[00:10:46] of flexible trading.
+[00:10:48] They can decide to buy this stock
+[00:10:50] instead of that stock. Uh they'll
+[00:10:52] they'll buy the one that does not have
+[00:10:55] the the negative momentum exposure.
+[00:10:58] Another important way that their
+[00:11:00] intentional implementation shows up is
+[00:11:02] in the way that the portfolio turns
+[00:11:03] over, how how frequently the holdings
+[00:11:05] change. So, it's got similar tilts
+[00:11:08] towards smaller and lower-priced stocks
+[00:11:09] to the equal-weighted S&P 500 fund, but
+[00:11:12] the Dimensional fund has a really modest
+[00:11:14] turnover.
+[00:11:15] Now, a big part of the reason is that
+[00:11:17] while Dimensional is tilting towards
+[00:11:19] smaller and lower-priced stocks very
+[00:11:21] intentionally, they use market cap
+[00:11:23] weights as a starting point. So, they
+[00:11:25] start with take the market portfolio,
+[00:11:27] take like a a market cap-weighted index
+[00:11:28] fund, and then they're applying modest
+[00:11:31] tilts to get the exposures that they
+[00:11:32] want to smaller, lower-priced, more
+[00:11:34] profitable companies. So, this starting
+[00:11:37] with market cap weights minimizes
+[00:11:39] unnecessary deviations from market cap
+[00:11:41] weights, which then translates to less
+[00:11:44] aggressive rebalancing requirements.
+[00:11:46] You don't have those extreme movements
+[00:11:48] like you have in a in an equal-weighted
+[00:11:50] fund.
+[00:11:51] On the concentration concern, by tilting
+[00:11:54] away from larger and higher-priced
+[00:11:55] stocks, the Dimensional fund is reducing
+[00:11:58] concentration, but not to the same
+[00:12:00] extent as equal weighting. If your only
+[00:12:01] concern is market concentration, equal
+[00:12:04] weighting is a is a really good
+[00:12:05] solution. But that's probably not the
+[00:12:07] right problem to to solve.
+[00:12:09] Looking again at factor regressions, we
+[00:12:11] see that the Dimensional fund and the
+[00:12:13] equal-weight S&P 500 fund have had
+[00:12:15] roughly similar factor exposures, but as
+[00:12:18] expected, the Dimensional fund is not
+[00:12:19] taking a negative position on momentum
+[00:12:22] because of the way that they trade.
+[00:12:24] Going back to 2005, when the Dimensional
+[00:12:26] Core Equity One fund first launched,
+[00:12:28] both the equal-weight S&P 500 ETF and
+[00:12:30] the Dimensional fund trail an S&P 500
+[00:12:33] ETF, but the Dimensional fund does
+[00:12:35] outperform the equal-weight fund. This
+[00:12:37] was a period where large stocks with
+[00:12:39] high prices performed really well. So,
+[00:12:42] the result of the S&P 500 coming out
+[00:12:44] ahead over this period is not
+[00:12:45] surprising. Going back to 1971,
+[00:12:49] which is when backtest data start for
+[00:12:51] the S&P 500 equal-weight index,
+[00:12:53] equal weighting looks really really good
+[00:12:55] compared to the market cap-weighted S&P
+[00:12:57] 500. This was a period where small cap
+[00:12:59] and value stocks performed well. Again,
+[00:13:02] we can see using multifactor regression
+[00:13:04] that the performance of the
+[00:13:05] equal-weighted fund is largely explained
+[00:13:07] by higher exposure to small cap and
+[00:13:09] value stocks with a negative
+[00:13:11] contribution from momentum. Comparing
+[00:13:13] this equal-weight result to the
+[00:13:15] backtested Dimensional US Core Equity
+[00:13:17] One Index, so to be clear, this is not a
+[00:13:19] fund anymore, this is a backtested
+[00:13:21] index,
+[00:13:22] uh it is is also a really interesting
+[00:13:24] comparison. It had roughly similar
+[00:13:26] exposure to small cap and value stocks,
+[00:13:29] a lighter negative exposure to momentum,
+[00:13:31] and it performs nearly identically to
+[00:13:33] the equal-weight S&P 500 index over the
+[00:13:35] full period with less volatility. Keep
+[00:13:39] in mind that for both of these
+[00:13:40] backtested examples, that this is
+[00:13:42] backtest data, which can be pretty
+[00:13:44] unreliable. There's a saying in finance
+[00:13:45] that you'll never see a backtest you
+[00:13:47] don't like.
+[00:13:48] They're built with the benefit of
+[00:13:49] hindsight, and they don't reflect
+[00:13:50] real-world implementation costs, but
+[00:13:52] it's still interesting to see a similar
+[00:13:54] trend to what we saw in live funds.
+[00:13:56] Exposure to smaller and cheaper stocks
+[00:13:59] and negative exposure to momentum, in
+[00:14:01] the case of the equal-weight fund,
+[00:14:02] explains most of the results.
+[00:14:04] Equal-weight indexing seems appealing
+[00:14:06] right now because high concentration in
+[00:14:08] the top stocks and high market
+[00:14:09] valuations in the US market are making
+[00:14:12] investors nervous.
+[00:14:13] That, in addition to some pretty
+[00:14:15] attractive long-term backtests, seem to
+[00:14:17] make a strong case for equal weighting.
+[00:14:20] But it comes with some baggage. Equal
+[00:14:22] weighting results in large over- and
+[00:14:24] underweights at the individual stock and
+[00:14:26] sector levels, high portfolio turnover,
+[00:14:29] and a systematic bet against momentum.
+[00:14:31] The strong past returns of equal
+[00:14:33] weighting are largely explained by tilts
+[00:14:35] towards smaller and lower-priced stocks
+[00:14:37] rather than some magic from equal
+[00:14:40] weights.
+[00:14:41] The implication for investors is is that
+[00:14:42] if you want to tilt towards smaller and
+[00:14:45] lower-priced stocks, which is a
+[00:14:46] reasonable thing to want to do, you can
+[00:14:48] do it without introducing all of the
+[00:14:50] downsides of equal weighting.
+[00:14:52] Dimensional Fund Advisors creates
+[00:14:53] products that do something like that.
+[00:14:55] They tilt towards smaller and
+[00:14:56] lower-priced stocks systematically, in
+[00:14:59] addition to a couple of other factors,
+[00:15:00] while controlling for sector exposure,
+[00:15:03] limiting portfolio turnover, and
+[00:15:04] intentionally avoiding trading against
+[00:15:06] momentum, among a whole bunch of other
+[00:15:08] interesting stuff that I've talked about
+[00:15:09] in past videos. To be clear about one
+[00:15:12] thing, Dimensional did not pay or
+[00:15:13] otherwise incentivize me to talk about
+[00:15:15] their funds in this video. My firm, PWL
+[00:15:17] Capital, does use their Canadian
+[00:15:19] products in our clients' portfolios. I
+[00:15:21] did a video a while ago explaining
+[00:15:22] Dimensional's history, which is closely
+[00:15:24] tied to the history of index funds, and
+[00:15:25] comparing their long-term performance to
+[00:15:28] comparable Vanguard index funds.

@@ -1,0 +1,203 @@
+[00:00:00] This, is Larry Williams.
+[00:00:00] A professional trader who turned $10,000 into
+[00:00:05] $1.1 million in just 12 months of trading.
+[00:00:05] Which is 11,300%!
+[00:00:12] Now if you re like me, you re thinking, how
+[00:00:12] did he do it?
+[00:00:20] Well I decided to look for the answer of that
+[00:00:20] specific question. Sacavenging the internet
+[00:00:25] for the strategy he used to get those MASSIVE
+[00:00:25] gains.
+[00:00:28] And ohhh boy did I find something.
+[00:00:28] I found the exact trading strategy he used
+[00:00:33] to make these gains.
+[00:00:33] And I gotta say, Larry is an absolute G for
+[00:00:37] making this because it works insanely well.
+[00:00:37] And I m gonna share it with you guys.
+[00:00:41] Let s get straight to it.
+[00:00:41] So the strategy he used to make these gains
+[00:00:45] is called the Lw Volatility Breakout strategy.
+[00:00:45] LW for larry Williams. Makes sense.
+[00:00:51] So this specific strategy basically forms
+[00:00:51] around one specific indicator and that indicat
+[00:00:56] or is
+[00:00:56] The DONCHIAN CHANNElS indicator.
+[00:01:01] To add it to your chart, go to the indicators
+[00:01:01] tab and type in donchian channels. Click this
+[00:01:06] one right here.
+[00:01:06] Now the donchian indicator by itself is nice,
+[00:01:11] but in order for it to work just how we want
+[00:01:11] it, we gotta change the settings.
+[00:01:15] Go to the settings of the indicator and change
+[00:01:15] the length to 96.
+[00:01:18] Then I m also going to go to the styles tab
+[00:01:18] and change the colors of the lines to red
+[00:01:24] so they are easier to see.
+[00:01:24] Also, something very important. All of these
+[00:01:27] settings im about to tell you are for specifically
+[00:01:27] the 5 minute time frame. As that is the time
+[00:01:33] frame larry used for this specific strategy.
+[00:01:33] If you are going to be using a different time
+[00:01:37] frame, please do your own testing with different
+[00:01:37] indicator values.
+[00:01:40] So this what the donchain indicator looks
+[00:01:40] like by itself.
+[00:01:43] There are going to be 3 lines.
+[00:01:43] This middle line. Which basically acts as
+[00:01:47] a mean reversion point for the market. Which
+[00:01:47] means the means price will always be naturally
+[00:01:51] attracted to this line, almost like a magnet.
+[00:01:51] You can also use it to tell the momentum of
+[00:01:57] the chart. So if price is above the line,
+[00:01:57] its bullish.
+[00:02:00] If the price is below the line, its bearish.
+[00:02:00] Next is the upper and lower band.
+[00:02:04] These bands can act as boss supports and resistances
+[00:02:04] and often times price will hit these and reject.
+[00:02:11] But we can also use them as break out points.
+[00:02:11] As if price breaks this upper band, often
+[00:02:17] times price will continue to head upwards.
+[00:02:17] Which is exactly how Larry used it.
+[00:02:22] That s a little foreshadowing
+[00:02:22] But there is a small problem with this strategy.
+[00:02:27] Actually it s a pretty problem let me explain.
+[00:02:27] So normally how you use this indicator is
+[00:02:32] one price breaks this upper bands, you enter
+[00:02:32] a long, set your stop loss right below the
+[00:02:37] middle line, and set your take profit to something
+[00:02:37] like a 2:1 risk to reward ratio and you get
+[00:02:42] a winning trade.
+[00:02:42] BUT
+[00:02:43] If the market is consolidating like this and
+[00:02:43] moving sideways, this is when we start seeing
+[00:02:49] some problems with the strategy.
+[00:02:49] Because, when the market is consolidating,
+[00:02:52] the upper and lower bands are going to be
+[00:02:52] really close together, like they are here.
+[00:02:58] Which means, they are a lot more likely to
+[00:02:58] break even from a small move that doesn t
+[00:03:04] have a lot of momentum behind. Which in the
+[00:03:04] end, would give you a false signal, and you
+[00:03:09] would lose out on this trade.
+[00:03:09] So we need to find a way, to stop this from
+[00:03:15] happening. So we only enter in high quality
+[00:03:15] trades that have a lot of movement behind
+[00:03:20] them.
+[00:03:20] In order to do that we need to add 2 more
+[00:03:23] confirmations
+[00:03:23] But before that,
+[00:03:43] [Ad]
+[00:03:43] So
+[00:04:07] the first confirmation indicator we are going
+[00:04:07] to be adding is the LWTI. Or the larry Williams
+[00:04:14] large trade index.
+[00:04:14] Go to the settings of the indicator and Change
+[00:04:18] the period to 25.
+[00:04:18] The higher this is number the more long term
+[00:04:23] trends it will look for. If you are looking
+[00:04:23] for confirmation for shorter term trends,
+[00:04:27] a small number is better. I found 25 works
+[00:04:27] the best for the 5 minute time frame.
+[00:04:33] Then change the smoothing period to 20.
+[00:04:33] Then for the final indicator add a simple
+[00:04:38] volume indicator.
+[00:04:38] I know I know pretty boring. But this will
+[00:04:44] help us a ton with avoiding false signals!
+[00:04:44] Go to the settings and change the ma length
+[00:04:50] to 30.
+[00:04:50] Then go to the style tab and enable the volume
+[00:04:53] moving average and change the color to white.
+[00:04:53] This volume indicator will help us identify
+[00:04:58] when the market actually has momentum behind
+[00:04:58] it and not just a small move.
+[00:05:02] The strategy itself is pretty simple and im
+[00:05:02] going to teach you how to do it.
+[00:05:07] Then at the end, Ill give you a secret trick
+[00:05:07] to make it perform even better!
+[00:05:12] First make sure you re on the 5 minute timeframe.
+[00:05:12] For a long trade you want to do this.
+[00:05:16] Step 1, you want price to come up and touch
+[00:05:16] the upper red line.
+[00:05:21] Once that happens, the next step is you want
+[00:05:21] the lwti indicator to be green. If it is red
+[00:05:26] and touch the upper band, you would not enter
+[00:05:26] the trade.
+[00:05:29] Then finally you want the volume bars to be
+[00:05:29] above the white line and also want that to
+[00:05:34] be green.
+[00:05:34] Showing the market is not consolidating and
+[00:05:42] there is enough volume to enter the trade.
+[00:05:42] All 3 of these criteria need to be met in
+[00:05:48] order for you to enter the trade.
+[00:05:48] You would enter here.
+[00:05:51] Now the stop loss kind of depends on the setup.
+[00:05:51] Usually you would just set your stop loss
+[00:05:56] right bewlow the middle orange line.
+[00:05:56] But there are some cases where you would not
+[00:06:00] do that.
+[00:06:00] For instance when the upper band and the organ
+[00:06:04] line have a huge gap this. Where if you did
+[00:06:04] set your stop loss here, the stop loss would
+[00:06:09] be huge. If this is the case, you would just
+[00:06:09] set your stop loss at the recent swing low.
+[00:06:14] Like this.
+[00:06:14] Most of the time, you will be setting it right
+[00:06:17] below the middle line though.
+[00:06:17] Once you have set your stop loss.
+[00:06:20] Set your take profit at a 2:1 risk to reward
+[00:06:20] ratio.
+[00:06:23] And just like that you have a profitable trade.
+[00:06:23] Let s do a short example and then Ill give
+[00:06:27] you the secret trick to make this strategy
+[00:06:27] even better.
+[00:06:31] First you want price to hit this lower band.
+[00:06:31] Check the lwti indicator and make sure it
+[00:06:36] is red.
+[00:06:36] Then finally you want the volume to be above
+[00:06:39] the white line and you want the bars to be
+[00:06:39] red.
+[00:06:43] Enter here.
+[00:06:43] Set your stop loss right above the middle
+[00:06:46] line and set your take profit at a 2:1 risk
+[00:06:46] to reward ratio.
+[00:06:50] And just like that, you have another winning
+[00:06:50] trade.
+[00:06:53] Now, its time to go over the SECRET TRICK.
+[00:06:53] Another small problem I found with this strategy
+[00:06:59] is when its near a major support or resistance.
+[00:06:59] For example, here all of our requirements
+[00:07:04] were met. Price touched the upper band, the
+[00:07:04] lwti indicator is green, and the volume is
+[00:07:09] above the line and also green.
+[00:07:09] So we entered our trade and set our normal
+[00:07:13] take profit and stop loss.
+[00:07:13] But if you look here, it was actually a losing
+[00:07:17] trade.
+[00:07:17] If we zoom out you can see all of our criteria
+[00:07:22] was met, but it was met right at a clear strong
+[00:07:22] resistance level.
+[00:07:27] So yeah, we got all of our signals, but since
+[00:07:27] this was such a strong level, price bounced
+[00:07:32] here.
+[00:07:32] So in order to fix this, you would go on a
+[00:07:35] higher timeframe like the 1 hour.
+[00:07:35] Set all of your major support and resistance
+[00:07:40] levels. Once you have them done, do not enter
+[00:07:40] trades close to those major levels.
+[00:07:45] So in the trade I was talking about before,
+[00:07:45] you would have just skipped this trade.
+[00:07:53] Actually what I found works really well is
+[00:07:53] if price is currently breaking a resistance
+[00:07:57] level and then all of the indicator requirements
+[00:07:57] were met, this would be a great trade to enter,
+[00:08:03] as its there is a ton of confluence and bullish
+[00:08:03] momentum in this trade.
+[00:08:07] So yeah, if you pair this strategy with basic
+[00:08:07] support and resistances or even supply and
+[00:08:12] demand. Its works absolutely great.
+[00:08:12] If you guys want to learn how to draw the
+[00:08:16] perfect supply and demand zones for this strategy,
+[00:08:16] watch this video, because I tell you specially
+[00:08:23] on how to draw the best zones possible.
+[00:08:23] Thanks for watching, and ill see you guys,
+[00:08:28] next time.

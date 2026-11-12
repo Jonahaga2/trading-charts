@@ -1,0 +1,208 @@
+[00:00:00] This, is the FIBONNACI RETRACEMENT tool.
+[00:00:00] Yeah, you probably have heard of it.
+[00:00:06] And unfortunately, most traders use the Fibonacci
+[00:00:06] tool completely wrong.
+[00:00:10] I m going to show you how to use it correctly
+[00:00:10] and give you an amazing strategy using it.
+[00:00:15] These strategies will give you sniper entries,
+[00:00:15] with tight stop losses, and HUGE take profits.
+[00:00:20] Then for the cherry top ill give you a secret
+[00:00:20] hack that will completely change the way you
+[00:00:24] trade with Fibonacci forever.
+[00:00:24] Sooo basically, after this video, you ll fibonnaci
+[00:00:32] pro. Lets get straight to it.
+[00:00:32] To start us off, we have to go over how the
+[00:00:36] market moves.
+[00:00:36] To put it extremely simple. The market will
+[00:00:39] make move like this.
+[00:00:39] A Move with a big trend upwards, a retracement,
+[00:00:44] and then continue process.
+[00:00:44] Making this point, a beautiful entry.
+[00:00:49] Our goal with the fibonnaci retracement tools
+[00:00:49] is to predict the end of this pullback point
+[00:00:53] as accurate possible, so we can enter here,
+[00:00:53] and benefit from the move upwards with as
+[00:00:59] little risk as possible.
+[00:00:59] Which is exactly what these 3 strategies do.
+[00:01:03] Now, there is a lot of controversy on what
+[00:01:03] fibonacci levels are the best.
+[00:01:07] Trader after trader will sit their and fight
+[00:01:07] on what they think the best levels are
+[00:01:10] I think 0.706 and 0.618 are the best levels
+[00:01:10] that preposterous obviously the 0.79 and 0.5
+[00:01:21] levels are the best
+[00:01:21] actually ive done my analysis and the 0.382
+[00:01:25] level is the most profitable
+[00:01:25] Yeah, you get my point. Lots of traders use
+[00:01:28] different levels.
+[00:01:28] But for my testing, and these specific strategies.
+[00:01:32] The levels work the best.
+[00:01:34] But first let
+[00:01:34] me tell you about hankotradeeeee
+[00:02:12] Okay, lets go back to
+[00:02:12] the most optimal fibonnaci settings
+[00:02:23] First put your fibonnaci tool on your chart
+[00:02:23] and then go to the settings.
+[00:02:26] Here are the levels we will be using: 0, 0.382,
+[00:02:26] 0.5, 0.618, and 1.
+[00:02:33] Giving you something that looks like this.
+[00:02:33] These 3 levels are the most important and
+[00:02:37] what I call, THE GOLDEN ZONE.
+[00:02:37] The golden zone is where price is most likely
+[00:02:44] to pullback and reverse.
+[00:02:44] Now one of the biggest mistakes traders have
+[00:02:48] when using the fibonnaci tool is not knowing
+[00:02:48] where to have the starting point and the ending
+[00:02:52] point of the fibonnaci.
+[00:02:52] And this can cause a lot of problems, because
+[00:02:56] if you use the wrong starting point and the
+[00:02:56] wrong ending point, you ll get some bad losing
+[00:03:01] trades.
+[00:03:01] For example, this chart. A lot of traders
+[00:03:03] would get confused. Do you put it here, do
+[00:03:03] you put it here. Where do you put it?
+[00:03:07] Heres a quick and simple way to know exactly
+[00:03:07] where to put the fibonnaci, so you get the
+[00:03:11] perfect starting and ending point every time.
+[00:03:11] First go to the indicators tab and type in
+[00:03:16] fractals. Click this one right here.
+[00:03:16] Your chart will look something like this.
+[00:03:20] This indicator will show us high probability
+[00:03:20] reversal points.
+[00:03:23] The green arrows are bullish fractals. The
+[00:03:23] red arrows are bearish fractals.
+[00:03:24] But as you can see there are a lot of fractals.
+[00:03:24] Going on every single possible reversal.
+[00:03:30] We want to lower the sensitivity of this indicator
+[00:03:30] so we only see the major reversal.
+[00:03:35] To do that, go to the settings of the indicator
+[00:03:35] and change the periods to 10.
+[00:03:39] Now we filtered out only the strong swing
+[00:03:39] points.
+[00:03:42] But as you can see, the indicator Is still
+[00:03:42] giving us some irrelevant swing points.
+[00:03:47] So sometimes you are going to have to do your
+[00:03:47] own due diligence and only look for the strong
+[00:03:51] moves.
+[00:03:51] So for example, you would use these two fractals
+[00:03:55] here, because they are very close togethers
+[00:03:55] and it s a very weak trend.
+[00:03:59] It is very important we only use the fibonnaci
+[00:03:59] on strong trends.
+[00:04:04] If you use it on weak trends, it wont work
+[00:04:04] as much.
+[00:04:07] Once you find a strong trend like this, grab
+[00:04:07] your fibonnaci tool and mark it from the red
+[00:04:11] fractal to the green fractal.
+[00:04:11] As you can see price came to the gold zone,
+[00:04:15] we enter, and price hits our take profit with
+[00:04:15] ease.
+[00:04:18] Just this alone will work alright. But we
+[00:04:18] are going to add some confluences with this
+[00:04:23] to make it perform even fn amazing.
+[00:04:23] Confluence is the key to success.
+[00:04:28] What I found works really good. Is pairing
+[00:04:28] this with support and resistances. Specifically,
+[00:04:32] retests. Here s what I mean.
+[00:04:32] So here we found a strong trend. We see our
+[00:04:37] two fractals we get our fibonnaci tool and
+[00:04:37] market the high and low.
+[00:04:42] But if we look a little bit closer something
+[00:04:42] interesting is happening.
+[00:04:45] We have a strong resistance level right here,
+[00:04:45] and price broke right though it, meaning it
+[00:04:50] can now be used as a support or in otherwords
+[00:04:50] a retest.
+[00:04:54] If you look even closer, this retest level,
+[00:04:54] is exactly where the golden zone is. Adding
+[00:04:59] even more confluence to this strategy.
+[00:04:59] But wait, theres more. We can add even confluence.
+[00:05:06] To do this go to your indicators tab and add
+[00:05:06] a ema.
+[00:05:10] Go to the settings and change the length to
+[00:05:10] 200.
+[00:05:13] A 200 ema, on a large timeframe is going to
+[00:05:13] act as a very strong support and resistance.
+[00:05:19] For example, in this uptrend, you can see
+[00:05:19] price used this ema as a support and bounced
+[00:05:24] off of it many times.
+[00:05:24] Then in this downtrend, you can see price
+[00:05:27] used the ema as a resistance and again bounced
+[00:05:27] off many times.
+[00:05:31] You see where im going with this?
+[00:05:31] So we can add even MORE confluence with this
+[00:05:32] as well.
+[00:05:32] So we do the same thing.
+[00:05:34] Find our fractals, draw our fibonnaci tool,
+[00:05:34] look for price to retrace to the ema, and
+[00:05:40] it just so happens to also be in the golden
+[00:05:40] zone.
+[00:05:43] CONFLUENCE.
+[00:05:43] But wait theres more.
+[00:05:46] We are going to be adding ANOTHER confluence
+[00:05:46] to make this strategy work absolutely beautiful.
+[00:05:52] We will be using the anchored vwap.
+[00:05:52] If you don t what the anchored vwap is, its
+[00:05:57] basically just a normal vwap, but we can specifically
+[00:05:57] choose where it begins.
+[00:06:02] So for example, you would use it like this.
+[00:06:02] Go to this left tool bar and select the anchored
+[00:06:07] vwap.
+[00:06:07] You are going to have it start exactly at
+[00:06:10] the beginning point of the strong trend. Or
+[00:06:10] where the red fractal is.
+[00:06:14] This will put the anchored vwap on your chart.
+[00:06:14] Go to the settings of the anchored vwap and
+[00:06:19] uncheck all of these boxes beside the vwap,
+[00:06:19] as that s all we care about with this strategy.
+[00:06:25] The vwap works very similar to the ema as
+[00:06:25] price likes to bounce off this line and can
+[00:06:30] be used as a support and resistance.
+[00:06:30] So if you did the math, we now have 3 strong
+[00:06:36] confluences.
+[00:06:36] Making our trades have an extremely high probability
+[00:06:41] of winning and we have the best chance at
+[00:06:41] finding the exact retracement point like we
+[00:06:45] were talking about in the beginning of the
+[00:06:45] video.
+[00:06:48] This is how you would do it.
+[00:06:49] First things first, I like to use this strategy
+[00:06:49] on higher timeframes like the 1 hour or 4
+[00:06:54] hour.
+[00:06:55] For this example, we are using the four hour.
+[00:06:55] We see a big move upwards. Remember, if we
+[00:06:59] are going to be using the fibonnaci, the move
+[00:06:59] has to be a strong trend.
+[00:07:03] We then draw our fibonnaci retracement tool.
+[00:07:03] With the help of our fractals.
+[00:07:07] We now see where our golden zone is located.
+[00:07:07] If we look a bit closer, you can also see
+[00:07:12] price broker through this resistance right
+[00:07:12] here, and can now use it as a support and
+[00:07:17] retest off of it. It is also located exactly
+[00:07:17] in the golden zone. Perfect.
+[00:07:21] We then add the 200 ema to the chart and see
+[00:07:21] it is also directly in the golden zone.
+[00:07:27] Then finally, we add the anchored vwap by
+[00:07:27] starting it exactly at the bottom of the big
+[00:07:32] move or at the red fractal.
+[00:07:32] And as you can see, it is also exactly in
+[00:07:38] the golden zone.
+[00:07:38] So we now have 4 confluences. The golden zone,
+[00:07:42] the retest, the ema, and the vwap.
+[00:07:42] Which means, price has an extremely high probability
+[00:07:48] of bounce at this point.
+[00:07:48] I like setting my take profit at the high
+[00:07:52] of the move and setting my stop loss right
+[00:07:52] below the golden zone.
+[00:07:56] And just like that, price bounces perfectly
+[00:07:56] at the golden zone and hits our take profit
+[00:08:01] just like we planned.
+[00:08:01] Annd that s how I use the fibonnaci to find
+[00:08:04] profitable trades
+[00:08:04] Next, im going to talk about how you can pair
+[00:08:07] this with supply and demand.
+[00:08:07] As I found that works extremely well with
+[00:08:12] this strategy as well.
+[00:08:12] If you want to check that out, click this
+[00:08:14] video, and ill see you guys next time.

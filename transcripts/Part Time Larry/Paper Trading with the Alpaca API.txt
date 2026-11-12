@@ -1,0 +1,446 @@
+[00:00:00] Yeah. So, the stock trading videos I've
+[00:00:02] created so far have used a Robin Hood
+[00:00:04] private API, which means it's not really
+[00:00:06] officially supported by Robin Hood. Uh,
+[00:00:08] it's not documented on their website.
+[00:00:10] It's just people in the open source
+[00:00:11] community that have that have analyzed
+[00:00:13] the Robin Hood requests that are sent by
+[00:00:15] the app or by the website and they've
+[00:00:17] kind of ported that over to Python
+[00:00:19] packages. Uh, but I posted a new video
+[00:00:21] on trading with Robin Hood uh on Twitter
+[00:00:24] and uh it looks like a company called
+[00:00:25] Alpaca responded and said uh please try
+[00:00:28] out our commission free trading API as
+[00:00:30] well. And so yeah, I want to do just
+[00:00:32] that. Uh I've never really heard of this
+[00:00:34] company before. I just looked it up. It
+[00:00:36] looks like they're another company based
+[00:00:37] here in the Bay Area. Uh and it looks
+[00:00:39] like kind of like an API first company
+[00:00:41] where you can build your own trading
+[00:00:43] systems on top of their API. And so I
+[00:00:46] thought I'd just uh do like a quick
+[00:00:49] review or try out the out- of-box
+[00:00:51] experience and do some live coding and
+[00:00:53] see how that works for us. Uh and see
+[00:00:55] how easy it is to make trades using uh
+[00:00:57] Alpaca here. Uh so uh click their
+[00:01:00] website. Uh looks like a nice landing
+[00:01:02] page here. Um and it makes and it tells
+[00:01:05] you what it does right out the gate. Uh
+[00:01:07] it says get API key. So I'm just going
+[00:01:09] to do that and we'll just start seeing
+[00:01:11] how easy it is to get up and running and
+[00:01:13] place some trades. Uh, so it says create
+[00:01:15] your account, which I haven't done yet.
+[00:01:18] So I'm going to use my Twitter name
+[00:01:20] account, parttime Larry, and then enter
+[00:01:24] a password,
+[00:01:26] and it needs to be 12 characters long,
+[00:01:28] and I'm going to sign up. Uh, it tells
+[00:01:30] me a little bit about uh their uh
+[00:01:33] dashboard. Says they have a REST API
+[00:01:36] with websockets, which is kind of cool.
+[00:01:37] Uh, and real-time market data. So I
+[00:01:40] entered that. It says, "Enter a
+[00:01:41] verification code." So I'll check my
+[00:01:42] email. gave me a code. And so I'll paste
+[00:01:46] this into the box here.
+[00:01:51] Put it in. Click verify. So it's been
+[00:01:54] verified and I can now log in.
+[00:01:58] Okay. So it looks like some kind of
+[00:02:00] dashboard here. And it says paper
+[00:02:01] trading. And so if you haven't traded
+[00:02:03] before, uh paper trading means that uh
+[00:02:06] you're not using real money yet. So you
+[00:02:08] can test something out. So, what I
+[00:02:10] assume here, which is nice, uh I like
+[00:02:12] here is that uh they have me kind of a
+[00:02:14] sandbox where I can try out a trading
+[00:02:16] strategy and you know, see what would
+[00:02:18] happen if I used a particular trading
+[00:02:20] strategy uh with $100,000 in the bank
+[00:02:23] and $400,000 in buying power, which
+[00:02:25] means I have like Forex margin, so I can
+[00:02:28] trade on margin with this account and
+[00:02:29] and try out a bunch of things that I
+[00:02:31] might not be able to do uh with my
+[00:02:32] normal account. uh the Robin Hood videos
+[00:02:34] I did earlier, I was actually placing
+[00:02:36] real orders with the real market and it
+[00:02:38] went right into the queue. So, they
+[00:02:39] didn't really have a sandbox for me to
+[00:02:41] uh play around with. So, this is nice uh
+[00:02:44] right out the box. I like that. Um
+[00:02:46] there's nothing in my portfolio or
+[00:02:48] history, which makes sense. I just
+[00:02:50] signed up. It looks like they have an
+[00:02:51] API endpoint and a way to generate a new
+[00:02:55] key. So, I assume I'm going to need an
+[00:02:58] API key. So, I'm going to click that.
+[00:03:00] And there's my key right there. I copied
+[00:03:02] it to a clipboard and I will paste it
+[00:03:05] in. So, uh I created an empty uh a
+[00:03:09] couple empty Python scripts for this. Uh
+[00:03:12] one called config, one called sample
+[00:03:15] config, and one called trade.py. So,
+[00:03:17] there's no code here yet. Uh and so what
+[00:03:19] I usually assume is that there's going
+[00:03:20] to be some keys or other things I need
+[00:03:21] to store in a config file and that I'll
+[00:03:24] need to put that in that file. So,
+[00:03:25] there's a sample config here. Um, so
+[00:03:28] I'll do let's see, they call this API
+[00:03:31] key and secret key. Uh, people call them
+[00:03:34] slightly different things. So I'm going
+[00:03:35] to do API key equals
+[00:03:39] um, and then paste that in. So this is a
+[00:03:41] sample config. I'm going to stop the
+[00:03:42] video and put my real keys into the
+[00:03:44] config.py. But so I'll just say your API
+[00:03:47] key here and secret key equals uh, your
+[00:03:52] secret key. Okay. And I'm going to flip
+[00:03:55] over and put that key inside of my
+[00:03:57] config.py and then get going. Okay, so
+[00:04:01] my keys are in the uh config.py. So I
+[00:04:05] can use those. And I have an empty uh
+[00:04:07] trade.py here. So now what can I do with
+[00:04:10] this? Uh looks like I have an endpoint
+[00:04:12] URL. And I like how it copies everything
+[00:04:15] to the clipboard. So that's really easy.
+[00:04:17] So I'll call that endpoint URL because
+[00:04:19] I'm probably going to use that all the
+[00:04:21] time. Um, and what else?
+[00:04:26] So, there's no package that I know of
+[00:04:28] yet. Uh, maybe they have some packages
+[00:04:30] they provide, but I'm to understand this
+[00:04:31] API better. I just want to make like raw
+[00:04:33] HTTP requests uh to the library uh or to
+[00:04:36] the their API. Uh, so I like to use
+[00:04:39] Python requests. Pretty standard. Uh, I
+[00:04:41] already have it installed, but if you
+[00:04:42] don't have it installed already, you can
+[00:04:43] just install requests like so with pip
+[00:04:47] and you you'll have a way to make HTTP
+[00:04:49] requests. So, I'm going to import the
+[00:04:50] request library. Um, and I'm just going
+[00:04:52] to try making a request to their
+[00:04:54] endpoint. So, r equals request.get
+[00:04:57] endpoint URL. And then I can access the
+[00:05:01] content of that. And so, let's see what
+[00:05:03] happens when we hit it with nothing. So,
+[00:05:05] clear that out. And then I'll do
+[00:05:07] trade.py.
+[00:05:09] And it says endpoint not found, which
+[00:05:11] kind of makes sense. Uh, we haven't
+[00:05:12] specified like a specific endpoint. Uh,
+[00:05:15] I'm just going to call this the base URL
+[00:05:16] because I assume there's going to be
+[00:05:17] other uh other more specific endpoints
+[00:05:20] that we hit and we'll build upon that.
+[00:05:23] Okay. Um, so let's go to the
+[00:05:27] documentation.
+[00:05:29] Um, what jumps out? Where should I
+[00:05:31] start? So, I'm going to get started.
+[00:05:33] Sign up for an API key. Learn how an API
+[00:05:36] works. That sounds good. I'm going to
+[00:05:39] click web API documents. Okay. So the
+[00:05:42] first thing API most APIs want is some
+[00:05:45] way to uh authenticate the API. So it
+[00:05:47] looks like they start out with that
+[00:05:48] right off the bat. So I'll click right
+[00:05:50] uh go right in. Says check out the
+[00:05:52] Python client. Oh, which is nice. They
+[00:05:54] already have a Python client for me. So
+[00:05:55] I don't really need to write one myself.
+[00:05:57] But as I said earlier, I want to
+[00:05:58] understand it. So I'm going to I'm going
+[00:06:01] to just start with raw requests and
+[00:06:02] we'll write this code oursel. Maybe
+[00:06:04] we'll look at the Python client a little
+[00:06:05] bit later. So under authentication uh
+[00:06:09] looks like you authenticate with that uh
+[00:06:11] API key and secret key uh which we've
+[00:06:13] already uh copied to a config file. So
+[00:06:15] we have that uh and they're using curl
+[00:06:18] as the example here. So that's a way to
+[00:06:20] just u execute API requests from the
+[00:06:22] command line. Uh but we're using Python
+[00:06:26] uh because it's a little bit uh simpler
+[00:06:28] uh for me to remember all the parameters
+[00:06:29] and things like that. So uh API key.
+[00:06:33] Okay. So it looks like he set a couple
+[00:06:34] of headers here called uh this uh API
+[00:06:38] key ID
+[00:06:40] and secret key which is good. And in
+[00:06:45] requests what you can do they actually
+[00:06:47] have a headers
+[00:06:49] dictionary here and you can just give it
+[00:06:52] keys and values for the headers. Uh so
+[00:06:55] since I have one called API key
+[00:06:58] and then I can set that value to my API
+[00:07:01] key which is in my config file. So I'll
+[00:07:04] import my conf I'll do from config
+[00:07:07] import star and then I can use my API
+[00:07:10] key which I have in there already. And I
+[00:07:13] can do another header for the secret
+[00:07:16] key. And so I'll do secret key.
+[00:07:20] Okay. So that's in there. And I also
+[00:07:22] have a secret key in my config file. So
+[00:07:24] my headers are set. So I'm going to
+[00:07:26] request the base URL. Probably nothing's
+[00:07:28] going to happen still, but at least
+[00:07:30] we're setting some headers. Uh, so what
+[00:07:32] else do we need? They got a rate limit.
+[00:07:34] Makes sense. 200 requests every minute.
+[00:07:37] It's very generous. Uh, I'm just an
+[00:07:39] individual, so I'm not going to make 200
+[00:07:40] requests every minute. But I assume
+[00:07:42] they're going to offer this service to,
+[00:07:44] you know, financial institutions or
+[00:07:45] other organizations or people making
+[00:07:48] their own trading systems might need to
+[00:07:51] make many requests per second. They
+[00:07:52] might do some kind of high frequency
+[00:07:53] thing where they make tons of requests
+[00:07:55] uh and probably to lift that rate limit.
+[00:07:57] Maybe you'll pay some money or something
+[00:07:59] like that. I don't know the business
+[00:08:00] model yet. I'm just getting started. Um
+[00:08:02] there's some rules about time and
+[00:08:04] numbers.
+[00:08:06] All good. All good. Okay. So, here's the
+[00:08:08] endpoints. There's a bunch of endpoints.
+[00:08:11] account, orders, so forth. Let's do
+[00:08:14] account since it's the first one and see
+[00:08:16] if we can figure out some information
+[00:08:18] about the account. Uh, looks like you
+[00:08:20] make a get request to SLV2 account
+[00:08:24] returns account associated with the API
+[00:08:25] key. We have an API key, so I'll do
+[00:08:27] that. And so I'll do account URL equals
+[00:08:32] um, and we have a base URL now. So I'm
+[00:08:34] going to go like that. And then we'll
+[00:08:36] use just formatting to build up this
+[00:08:38] URL. Uh, so this will just have the base
+[00:08:41] URL and then slash account. So that's
+[00:08:43] one of our endpoints.
+[00:08:45] Um, so let's see, instead of the base
+[00:08:48] URL, let's do the account URL
+[00:08:52] and pass the headers and run it.
+[00:08:57] And wow, that's great. So we have it. So
+[00:08:59] we have an ID right out the box. We're
+[00:09:01] already making a successful API request.
+[00:09:03] Uh, we just signed up. So I like when
+[00:09:06] things succeed very early on and it's
+[00:09:08] not frustrating. So, I like this API.
+[00:09:10] Um, so it shows me how much cash in my
+[00:09:13] portfolio. So, yeah, I got a lot of
+[00:09:15] paper money to and paper money to spend.
+[00:09:18] So, I want to spend that money. So, uh,
+[00:09:20] so still so cool. That's that's my
+[00:09:22] account. Great. So, we already have an
+[00:09:24] endpoint working. So, let's make some
+[00:09:26] trades. So, I don't care about the rest
+[00:09:29] of this right now. Uh, it's cool to see
+[00:09:31] all the options that we have right here.
+[00:09:33] We got Oh, cool. We have day trading
+[00:09:36] flags and short short stock ability. We
+[00:09:40] got margin. We got all kinds of stuff.
+[00:09:42] So, we can we can trade on margin. It's
+[00:09:43] awesome. Okay. And orders. So, let's
+[00:09:48] Okay. So, we can get a list of orders.
+[00:09:50] We don't have any orders yet, so there's
+[00:09:51] nothing to get. Um, but we can also
+[00:09:54] request. We can make a new order with
+[00:09:56] this V2 orders. So, we'll do that as
+[00:09:58] well. So, we'll do orders URL equals,
+[00:10:03] right? And then we can do slashv2 orders
+[00:10:07] and format that with the base URL as
+[00:10:09] well.
+[00:10:11] Okay, so there's an order. Um, and let's
+[00:10:15] make let's go ahead and start making
+[00:10:16] some functions. So I'll call this get
+[00:10:19] account
+[00:10:20] and this will just do that. And then it
+[00:10:23] looks like this is more like a string
+[00:10:24] here that's returned from request. So
+[00:10:26] since it's Python, I want to access
+[00:10:28] these keys individually. So I want this
+[00:10:29] to be a dictionary. Um, so what I'm
+[00:10:31] going to do is return the response from
+[00:10:34] this and I want it to be a dictionary.
+[00:10:38] So you can do JSON.loads
+[00:10:40] the content and that'll take that string
+[00:10:41] and make it very easy to access
+[00:10:43] individual keys in that dictionary. So I
+[00:10:44] want to import the JSON library there.
+[00:10:47] And then so let's call this one create
+[00:10:49] order.
+[00:10:51] Okay.
+[00:10:52] And that's going to do request.post post
+[00:10:56] to orders URL
+[00:10:58] and headers equals the same header. Uh I
+[00:11:02] don't want to repeat this twice. So
+[00:11:03] we'll make a new constant up here called
+[00:11:05] headers and that dictionary we can use
+[00:11:08] in two places. So headers equals headers
+[00:11:12] and then we'll return JSON.loads our
+[00:11:15] content from there. Now to make an
+[00:11:18] order, what do we want to order? What
+[00:11:19] kind of stock do we want to buy? So
+[00:11:21] there's some parameters we need it looks
+[00:11:23] like. So we have a symbol quantity side.
+[00:11:27] Okay. So symbol let's make all these
+[00:11:30] parameters uh to this function. Symbol
+[00:11:33] quantity
+[00:11:35] uh type
+[00:11:39] and side. No
+[00:11:43] side and type.
+[00:11:45] And let's see time and force is
+[00:11:48] required. So I'll call that time and
+[00:11:51] force. Okay. Um,
+[00:11:56] post it. And how do we send these
+[00:11:59] parameters to the request?
+[00:12:02] Um, let's see
+[00:12:07] order. So, I want to know how to send
+[00:12:10] these parameters in
+[00:12:13] and I might have missed it. Is this just
+[00:12:15] understand orders?
+[00:12:18] Okay.
+[00:12:23] Oh, order object.
+[00:12:26] Okay. Yeah, it just looks like JSON that
+[00:12:28] it's going to accept. So, yeah, let's
+[00:12:30] let's try this out with these keys here.
+[00:12:32] Uh, quantity, type, and so forth. So,
+[00:12:35] let's post some JSON over to this orders
+[00:12:38] API. So, I'm going to call this data,
+[00:12:41] and we're just going to send in a JSON
+[00:12:44] object. We're going to start with the
+[00:12:45] Python dictionary first and then we'll
+[00:12:47] do symbol
+[00:12:49] and then whatever symbols passed in and
+[00:12:51] we'll do quantity quantity and then side
+[00:12:57] and then so let's make a key for each of
+[00:12:59] these parameters that come in.
+[00:13:03] Um and we'll probably change up how this
+[00:13:04] works a little bit later. I just want to
+[00:13:06] make sure this works. So time and force
+[00:13:11] time and force. Okay,
+[00:13:15] good deal. We have a dictionary of data.
+[00:13:17] Uh, and we're posting JSON over. So,
+[00:13:20] request has the ability to post JSON.
+[00:13:23] So, you can do data equals, but you can
+[00:13:25] also do JSON equals. And that's like a
+[00:13:26] shortcut. And so, this dictionary will
+[00:13:28] automatically become JSON. And it'll set
+[00:13:30] the headers and everything up to uh post
+[00:13:32] JSON data uh to this endpoint. So, the
+[00:13:36] JSON equals data. And if I do that, uh,
+[00:13:40] let's and let's go ahead and call this
+[00:13:41] function. So create order
+[00:13:45] and then I'm going to give it some real
+[00:13:47] parameters. So what do we want to buy?
+[00:13:49] I'm going to buy Apple stock. So I'll do
+[00:13:51] symbol Apple and then quantity 100
+[00:13:54] shares of Apple. We want a buy
+[00:13:59] and then the type of order. What's the
+[00:14:02] type? So create an order, request an
+[00:14:05] order. Type is market limit, stop or
+[00:14:07] stop. So, we have a lot of money here.
+[00:14:08] We have $400,000 of buying power. So,
+[00:14:11] I'm just going to do a market order
+[00:14:12] because we can buy whatever we want.
+[00:14:15] Market order and then
+[00:14:19] time and force day. GTCOPG.
+[00:14:24] What do all these mean? Okay, GTC I
+[00:14:26] think means good till cancelled. So, you
+[00:14:29] know, we can either have the trade
+[00:14:30] expire at the end of the day if it
+[00:14:31] doesn't get filled or we can have good
+[00:14:32] till canceled. Uh, I'm just going to use
+[00:14:34] GTC actually because I want this trade
+[00:14:36] to just be out there and ready to go.
+[00:14:39] So, I'm going to do create order.
+[00:14:41] Um, and we're returning a response. So,
+[00:14:43] I'm going to get response equals and
+[00:14:45] then we're going to print the response.
+[00:14:48] And let's run that and see what we get.
+[00:14:52] Sweet. Works. No mistakes out of the
+[00:14:54] box. Run the first time. Uh, so it gives
+[00:14:56] us an ID for the order and when it was
+[00:14:59] created, a bunch of information about
+[00:15:01] the symbol. It's an equity quantity so
+[00:15:04] forth. Not filled yet. Market's not
+[00:15:06] open.
+[00:15:08] So, now that I've uh submitted and
+[00:15:10] posted an order, I'm going to assume uh
+[00:15:12] it looked like it gave me a transaction
+[00:15:14] ID and all this stuff. So, I'm going to
+[00:15:15] assume if I refresh this dashboard that
+[00:15:16] my order is going to be out there. And
+[00:15:19] you can see something changed already.
+[00:15:21] Says I have less buying power. That
+[00:15:22] makes sense because Apple's like 200
+[00:15:24] something a share, I think, right now.
+[00:15:26] And I just issued an order for 100
+[00:15:28] shares. And look at that right there. We
+[00:15:30] got our order that's submitted and it's
+[00:15:32] pending right now because the market's
+[00:15:34] not open. So, we have an order in place
+[00:15:36] to buy 100 shares of Apple stock. Let's
+[00:15:38] just create a few more just for fun. Uh,
+[00:15:40] so let's create another order for
+[00:15:43] Microsoft.
+[00:15:45] So, I'll replace this and buy like a
+[00:15:47] thousand shares
+[00:15:49] and let's really spend some money here
+[00:15:51] and do that. And I'm going to trade that
+[00:15:53] stock. And then I'm going to refresh.
+[00:15:55] I'm probably going to have a lot less
+[00:15:56] money.
+[00:15:58] only $236,000 left. And you see I have
+[00:16:01] Microsoft in my queue. Um, and I'm going
+[00:16:04] to use that other endpoint we saw
+[00:16:06] earlier called get orders.
+[00:16:08] And what we'll do with that is just uh
+[00:16:14] request the orders URL.
+[00:16:16] And we need our headers here. Um,
+[00:16:20] we'll return JSON.loads our contents.
+[00:16:25] And let's make sure that works. Let's
+[00:16:27] see if we can programmatically get our
+[00:16:28] URLs. So,
+[00:16:32] let's see. Get orders.
+[00:16:34] Okay. And then we'll say orders equals
+[00:16:36] get orders. Print those out. I'll clear
+[00:16:39] this out just to clear some room. And
+[00:16:41] then print our orders.
+[00:16:47] And we run it. Uh, it says response is
+[00:16:49] not defined. And why is that?
+[00:16:54] Because I have this there.
+[00:16:56] Okay.
+[00:16:59] Okay. And it looks like yeah, we got a
+[00:17:01] list of orders and that was super easy.
+[00:17:04] Um, so yeah, I like this uh Alpaca out
+[00:17:07] the gate here. Seemed very easy. I like
+[00:17:09] that I can easily test an API. Um, so
+[00:17:12] yeah, I want to I want to try that out.
+[00:17:14] So there's live trading here. Haven't
+[00:17:16] tried that yet, but so far I'm impressed
+[00:17:18] with the sandbox and the out of-box
+[00:17:21] experience. Like I literally just
+[00:17:23] started messing this with this a few
+[00:17:24] minutes ago. Um, and then everything
+[00:17:27] worked really well. So, um, and I look
+[00:17:28] at the documentation more and, you know,
+[00:17:31] maybe check out some of the the forums
+[00:17:33] and all of that and see how it works and
+[00:17:34] maybe get involved with that community,
+[00:17:36] uh, and post this video. Uh, thanks a
+[00:17:38] lot. Um, and stay tuned. There'll be
+[00:17:40] more videos posted at part-time Larry
+[00:17:44] right here. So, you can follow me on
+[00:17:46] Twitter right there to see more content
+[00:17:47] like this. Thanks.
