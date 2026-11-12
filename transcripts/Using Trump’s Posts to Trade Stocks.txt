@@ -1,0 +1,233 @@
+[00:00:00] I backtested every Truth Social post
+[00:00:02] Trump has made to find out if trading
+[00:00:03] off of them can make me rich. And unlike
+[00:00:05] the 50 other finance myth-busting videos
+[00:00:07] I've made, this turned out nothing like
+[00:00:09] I expected. Guys, modern investing is
+[00:00:11] dead. I'd much rather legally scrape
+[00:00:14] Truth Social posts, perform a study to
+[00:00:16] see what type of posts yield the highest
+[00:00:18] returns, than bet my student loans on a
+[00:00:20] rogue tariff threat. [music] Atrioc
+[00:00:21] would be proud. And in case my mom is
+[00:00:23] watching, Truth Social is basically
+[00:00:25] Trump's version of Twitter. If you don't
+[00:00:26] know what Twitter is, I envy you. Now,
+[00:00:29] this project was motivated by this
+[00:00:30] article which claims that the Don's
+[00:00:32] media group was looking to sell early
+[00:00:34] access to his posts to anyone willing to
+[00:00:36] cough up $100,000
+[00:00:38] per month, allegedly. Or actually, maybe
+[00:00:40] it's not alleged anymore. Now, that's a
+[00:00:42] price tag that makes me believe we could
+[00:00:43] really have something here, guys. So,
+[00:00:45] let's test this theory and see if we can
+[00:00:47] get rich together by trading based on
+[00:00:49] the US president's internet posts. Also,
+[00:00:51] you can download the code for this
+[00:00:52] project in the link below. Now, if
+[00:00:54] you're anything like me, you're
+[00:00:55] skeptical and probably believe that
+[00:00:56] these posts did move markets. And oh
+[00:00:59] boy, did they? But, some traders have
+[00:01:01] captured this edge. Therefore, it's no
+[00:01:03] longer profitable as a trading strategy.
+[00:01:05] But, the only way to find out for sure
+[00:01:07] is to get to work. So, let's jump on in,
+[00:01:09] make a Truth Social account, find the
+[00:01:11] DJT's page, and through the incredible
+[00:01:13] action of pressing F12 on my keyboard
+[00:01:15] and navigating to the network tab, we
+[00:01:17] can see that each time a new post loads,
+[00:01:20] a request appears. This request shows
+[00:01:22] the following. This number is the
+[00:01:24] account number for the user, which in
+[00:01:26] this case is DJT. And I'm going to use
+[00:01:28] Python and some handy-dandy modules to
+[00:01:30] connect to this page through a request.
+[00:01:32] And I'm going to use this number for
+[00:01:34] that request. And of course, I was
+[00:01:35] immediately denied because the website
+[00:01:37] security guard looked at my script and
+[00:01:39] recognized it as a bot. [music]
+[00:01:41] Thankfully, I can just disguise myself
+[00:01:42] as a Chrome browser, which lets me pass
+[00:01:44] right on through. Hm, that was easy.
+[00:01:46] But, to spare you the details, [music]
+[00:01:48] we can use this account number to
+[00:01:49] iterate through every post made back to
+[00:01:51] the very start. And I'm going to store
+[00:01:53] what was posted and the date and time of
+[00:01:55] that post into a data file. And with
+[00:01:57] this data, we can now have an input to
+[00:01:59] our algorithm. that was the easy part.
+[00:02:01] The challenge now is to use these posts
+[00:02:03] and decipher what is actually being
+[00:02:05] said. The algorithm to determine what to
+[00:02:07] buy or short should be simple. For
+[00:02:09] example, we'll take in a time code for
+[00:02:11] when the post was made and what the post
+[00:02:13] actually says. Then quickly determine
+[00:02:15] what the post is trying to say, which is
+[00:02:17] surprisingly difficult. Is this post in
+[00:02:19] favor of or against a particular
+[00:02:21] company? Is this post encouraging or
+[00:02:23] discouraging of tariffs? Is this post
+[00:02:25] just random and has nothing to do with
+[00:02:26] the market? And based on this, within 2
+[00:02:28] minutes of the post being made, we will
+[00:02:30] buy the company. And for tariffs, we'll
+[00:02:32] buy or bet against the S&P. But before
+[00:02:35] we begin, we should ask a question that
+[00:02:37] we probably should have asked at the
+[00:02:38] beginning. Do these posts actually move
+[00:02:40] markets? And you'd think, yes,
+[00:02:42] absolutely, based on posts like these.
+[00:02:45] But there are a lot of posts here. So,
+[00:02:47] the question is, are they consistently
+[00:02:48] good indicators to buy or sell, or is
+[00:02:51] this all just noise? And speaking about
+[00:02:52] this great time to buy post, we can
+[00:02:54] actually dive a little bit deeper. This
+[00:02:56] post was made morning of April 9th,
+[00:02:59] 2025, and there was minimal market
+[00:03:01] reaction at the time. Until the 90-day
+[00:03:03] tariff pause was announced roughly 3 and
+[00:03:05] 1/2 hours later on the same day. If you
+[00:03:07] were lucky or stupid enough to bet on
+[00:03:09] this post, you'd have caught the S&P
+[00:03:11] shooting up nearly 10% in a single day,
+[00:03:14] which is just crazy. So, this strategy
+[00:03:16] obviously has merit. A much more
+[00:03:18] rigorous way of seeing if his posts move
+[00:03:20] markets is to look at tariffs
+[00:03:22] specifically. We can view the average
+[00:03:24] percent change of the spy in time
+[00:03:26] immediately after he makes a tariff
+[00:03:28] post. This vertical line shows the
+[00:03:30] moment he made the tariff post, and this
+[00:03:32] green line shows when he backed off of
+[00:03:34] tariff threats, whereas the white line
+[00:03:35] shows when he made tariff threats. The
+[00:03:37] percent change between these is small,
+[00:03:39] but it's real, and you can also notice a
+[00:03:41] step change at the time of post. Okay,
+[00:03:43] well, back to the main event. How do we
+[00:03:45] actually label these posts? And are they
+[00:03:47] positive or negative if they're about
+[00:03:50] tariffs or if they're about companies?
+[00:03:51] So, I'm going to take 100 random posts
+[00:03:54] from the Dawn, and I will label each of
+[00:03:56] these into bins. Companies, war, and the
+[00:03:59] Federal Reserve, and also random posts.
+[00:04:01] Posts about the Federal Reserve and war
+[00:04:03] were just too confusing at times and I
+[00:04:05] actually found it's best just to leave
+[00:04:06] them out entirely of the analysis all
+[00:04:08] together. So, moving forward, I'll only
+[00:04:10] focus on tariffs and company posts. I'll
+[00:04:13] then give each post a label for either
+[00:04:15] being bullish or bearish. Also, bullish
+[00:04:17] just means that we expect the stock to
+[00:04:18] go up and bearish means that we expect
+[00:04:20] it to go down. For example, if he says
+[00:04:22] that he's tariffing every gram of maple
+[00:04:23] syrup coming from Canada, I'd be bearish
+[00:04:26] in the market and expect the spy to go
+[00:04:28] down. Well, probably not, but you get
+[00:04:29] the point. Counting the frequency of
+[00:04:30] keywords in these posts, we can see that
+[00:04:33] certain companies are actually mentioned
+[00:04:34] much more frequently, like CNN, Apple,
+[00:04:37] and Nvidia, but tariffs are by far the
+[00:04:39] most mentioned with a staggering 3.6
+[00:04:41] tariff posts per week since he took
+[00:04:43] office. So, this is probably what weighs
+[00:04:45] the majority of our trading throughout
+[00:04:47] this research. Given this information,
+[00:04:49] it can be helpful to categorize each
+[00:04:51] type of post and whether or not it has
+[00:04:53] positive or negative effect [music] on
+[00:04:55] the market or stocks in particular. I'm
+[00:04:57] going to use keywords to search for
+[00:04:58] tariffs, most mentioned companies,
+[00:05:00] comments about the Fed or war, and
+[00:05:02] random posts to then determine what
+[00:05:04] percentage are positive versus negative.
+[00:05:06] Companies overall saw more bullish
+[00:05:08] posts, which are favorable for boosting
+[00:05:10] their stock price, and tariffs were
+[00:05:12] actually largely neutral, surprisingly.
+[00:05:14] However, more than double of the posts
+[00:05:16] were bearish or in a negative direction
+[00:05:17] for the economy and will give us the
+[00:05:19] potential to bet against the broader
+[00:05:21] market. Okay, time to back test. And
+[00:05:24] there's two ways we can go about this,
+[00:05:25] the realistic way and the cheating way.
+[00:05:27] The realistic way involves us waiting
+[00:05:29] until 2 minutes after the post was made.
+[00:05:31] Then, if it's a tariff threat, I'll bet
+[00:05:33] against the S&P, and if he backs off,
+[00:05:35] I'll buy it. Then, I'll always sell an
+[00:05:37] hour later. I ran my assessment from
+[00:05:39] January of 2025 to September of 2026.
+[00:05:42] This green line is the 2-minute delay
+[00:05:44] strategy. These are the cumulative
+[00:05:46] returns. Now, there were 75 trades made
+[00:05:48] and a 47% win rate, and we ended up
+[00:05:51] achieving an 8.1% return. But, trading
+[00:05:54] instantaneously is a different story. In
+[00:05:56] this case, we achieved a whopping 17.1%
+[00:05:59] return, which is far better than the
+[00:06:01] 2-minute delay and a 59% win rate. So,
+[00:06:04] yes, having this immediate knowledge
+[00:06:06] absolutely gives you an edge. But, oh
+[00:06:08] boy, does it get even better. Nobody is
+[00:06:10] sitting around all day waiting for a
+[00:06:11] Trump post. Realistically, one would
+[00:06:14] stay invested in the S&P and only swap
+[00:06:16] for maybe an hour when he posts, betting
+[00:06:18] against the market on a tariff threat or
+[00:06:20] jumping into a company he praises. Here,
+[00:06:22] we can see the total return over our
+[00:06:24] backtest window from January of 2025 to
+[00:06:27] September of 2026 if we had simply
+[00:06:29] bought and held the S&P 500. We got 28.
+[00:06:32] 4% returns, which are great returns. The
+[00:06:35] Truth Social-based algorithm performed
+[00:06:37] even better. And if we had traded with
+[00:06:39] even a 2-minute delay from the exact
+[00:06:41] moment the post was made, the total
+[00:06:43] returns were 43.8%.
+[00:06:45] This is about 1.5 times larger returns.
+[00:06:48] Trading instantaneously based on his
+[00:06:51] posts were much, much better, totaling
+[00:06:54] 74.5%
+[00:06:56] more than 2.5 times the benchmark return
+[00:06:58] over this time horizon, which is
+[00:07:00] absolutely incredible. This is a
+[00:07:02] genuinely shocking result. It's probably
+[00:07:04] the first time I've ever seen something
+[00:07:06] like this on the channel. And remember
+[00:07:08] this article from the start? Trump Media
+[00:07:10] is selling trading firms access to these
+[00:07:12] posts a fraction of a second earlier
+[00:07:13] than everyone else up to $100,000 per
+[00:07:16] month. Damn, I need to get in on that.
+[00:07:18] So, is this a real strategy and can you
+[00:07:20] make money from it? Not financial
+[00:07:22] advice, but the backtest is clear and
+[00:07:24] that makes me a little bit sad. Today,
+[00:07:26] the edge is probably gone because at
+[00:07:28] this point most people are aware, which
+[00:07:30] is likely the reason for the steep price
+[00:07:32] tag on the Truth Social API. I will be
+[00:07:34] posting this code for my GitHub
+[00:07:35] supporters and I'll leave a little deep
+[00:07:37] dive with more data on if this works in
+[00:07:39] 2026 for the Patreon members. So, make
+[00:07:42] sure you follow me there to get the
+[00:07:43] insider scoop. See you guys in the next
+[00:07:45] one.

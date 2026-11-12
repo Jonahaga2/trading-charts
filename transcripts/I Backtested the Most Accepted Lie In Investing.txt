@@ -1,0 +1,282 @@
+[00:00:00] Everything you've been told about value
+[00:00:01] investing is a lie, and I can prove it
+[00:00:03] with real back tests. I'm a PhD
+[00:00:05] physicist, and building models that
+[00:00:06] don't lie to me is my actual day job.
+[00:00:09] So, I built a code that automates value
+[00:00:11] investing to choose stocks that are
+[00:00:12] cheap compared to their true value, and
+[00:00:14] it did not work. But, through my GitHub
+[00:00:16] repository, a lot of you pointed out
+[00:00:18] some key issues in the back test. So,
+[00:00:20] I'm going to rebuild this incorporating
+[00:00:22] your comments to find out if value
+[00:00:23] investing actually works.
+[00:00:25] Value investing isn't some fringe idea.
+[00:00:28] In fact, it might be the most tested
+[00:00:29] idea in the history of finance. The
+[00:00:31] concept is pretty simple. The value of a
+[00:00:33] company can fluctuate depending on
+[00:00:35] public opinion and market sentiment, but
+[00:00:37] the company has value of which can be
+[00:00:39] measured in different ways, for example,
+[00:00:41] by looking at its revenue growth or
+[00:00:43] debt. These fundamentals can be put
+[00:00:44] together to calculate what a company is
+[00:00:46] truly [music] worth, the intrinsic
+[00:00:49] value. And when the market value, or
+[00:00:50] what it's currently trading at, falls
+[00:00:52] far below the intrinsic value, we say
+[00:00:55] that the company is trading at a
+[00:00:56] discount. We buy that stock and see
+[00:00:58] outsized returns as the market value and
+[00:01:01] public sentiment changes and the price
+[00:01:02] recovers back to what it should be. This
+[00:01:04] concept has inspired a lot of YouTube
+[00:01:06] videos, some of which are created by
+[00:01:08] very educated people, even with PhDs,
+[00:01:11] and I've always wondered why nobody has
+[00:01:13] back tested this to clearly state if it
+[00:01:15] works or not. So, when one of them tells
+[00:01:17] you it can't really be back tested,
+[00:01:20] that's a lie. A strategy can always be
+[00:01:22] back tested because a strategy is just a
+[00:01:24] list of decisions, and a list of
+[00:01:26] decisions is exactly what a coding back
+[00:01:29] test is there to provide. These are the
+[00:01:31] same excuses that some day traders use
+[00:01:33] to keep their audience buying their
+[00:01:34] courses so they can make money off their
+[00:01:36] audience and not day trading. But,
+[00:01:38] people still believe in value investing.
+[00:01:40] The value investing Reddit thread has
+[00:01:42] over 700,000 members, and people in my
+[00:01:44] comments genuinely believe in the
+[00:01:46] strategy. So, if it does work, then a
+[00:01:48] simple back test should show above
+[00:01:49] market returns. Otherwise, we should all
+[00:01:51] just buy the S&P and go to bed. In my
+[00:01:53] last video, I built a value investing
+[00:01:55] bot that used a Graham method with
+[00:01:57] company earnings, an estimate of the
+[00:01:58] growth rate, and AAA bond yields to
+[00:02:00] calculate a stock's intrinsic value. We
+[00:02:03] then validated this by hand. Also, thank
+[00:02:05] you to the commenter that suggested I do
+[00:02:07] that to confirm that the model was
+[00:02:09] indeed making correct calculations. But,
+[00:02:11] it underperformed a buy and hold
+[00:02:12] strategy. There were a bunch of comments
+[00:02:14] that correctly pointed out some fatal
+[00:02:15] flaws in the algorithm that I absolutely
+[00:02:18] must fix because value investing maybe
+[00:02:20] does work, and I'm just being a negative
+[00:02:22] Nancy. The sharpest critique of all was
+[00:02:24] that my benchmark or what I was
+[00:02:25] comparing our strategy to was super
+[00:02:28] unfair. My stomach sunk when you simply
+[00:02:30] removed the companies you couldn't
+[00:02:32] calculate the fair value from your
+[00:02:34] market portfolio. Lol. I had skipped
+[00:02:37] stocks that I couldn't value with the
+[00:02:39] Graham model. Maybe there wasn't enough
+[00:02:41] data or the earnings reports were all
+[00:02:43] zero, so I couldn't actually calculate
+[00:02:45] an intrinsic value. But, instead of
+[00:02:47] dropping them from the backtest, I
+[00:02:48] actually left them in, which is
+[00:02:50] definitely a big mistake. This is super
+[00:02:52] unfair because those stocks could by
+[00:02:54] chance performed really well, and I
+[00:02:56] wasn't even allowing my strategy to
+[00:02:58] choose them if it wanted to. So, if I
+[00:03:00] can't calculate an intrinsic value for a
+[00:03:02] particular ticker, I should drop that
+[00:03:04] ticker from the benchmark. Now, before
+[00:03:06] viewing the results of this improvement
+[00:03:08] in the backtest, we should see where we
+[00:03:09] left off from before. I'm using a
+[00:03:11] discount factor of 50% here. So, we're
+[00:03:14] only going to buy super cheap stocks.
+[00:03:16] The green line is our value-based
+[00:03:18] strategy, and the red line is what we're
+[00:03:20] comparing to, which is an equal
+[00:03:22] weighting of stocks from our
+[00:03:23] reconstructed S&P 500 membership list.
+[00:03:26] The white line is just the actual S&P
+[00:03:28] 500, and you can see that I actually did
+[00:03:31] a terrible job at recreating it, and I
+[00:03:33] clearly have a bunch of survivorship
+[00:03:34] bias since my recreated S&P 500 list is
+[00:03:38] actually [music] beating the actual S&P
+[00:03:40] 500. Anyways, it seems that between 2000
+[00:03:43] and 2002, the value-based strategy shown
+[00:03:45] in green actually did really, really
+[00:03:47] well. Well, sort of. Up until the point
+[00:03:49] that stocks recovered to their intrinsic
+[00:03:51] value, the algorithm then sold them all,
+[00:03:53] and we basically found no cheap stocks
+[00:03:55] for the next two decades. The
+[00:03:57] value-based strategy achieved an
+[00:03:59] annualized return of 0.9%
+[00:04:01] and our S&P 500 membership list, or the
+[00:04:04] buy and hold strategy, achieved 8.6%.
+[00:04:07] So, this is pretty bad, but how does it
+[00:04:09] fare with our improvement? Let's now
+[00:04:11] look at the back test where we remove
+[00:04:13] stocks we can't quantify with the
+[00:04:14] intrinsic value formula. Recall that our
+[00:04:17] fix should only change the benchmark in
+[00:04:19] red since we're dropping companies that
+[00:04:21] we can't calculate a Graham value for.
+[00:04:23] So, this will have no effect on the
+[00:04:24] intrinsic value back test itself, but
+[00:04:26] only the comparison that we're making.
+[00:04:28] And because of that, the value strategy
+[00:04:30] returns stayed the same at 0.9%
+[00:04:32] annualized, but the baseline was 8.55%.
+[00:04:37] So, it actually didn't really change
+[00:04:39] that much. But, I mean, this is a better
+[00:04:41] back test, right? Anyways, let's move
+[00:04:43] on. Last time, I hard-coded a 50%
+[00:04:45] discount to make sure that we are buying
+[00:04:47] super cheap stocks. And two of you
+[00:04:49] pointed out that it's a little bit
+[00:04:51] arbitrary.
+[00:04:52] &gt;&gt; Try other range, for example, instead of
+[00:04:54] buying discount is greater than 50%, try
+[00:04:56] discount within 0 50% or instead of is
+[00:04:58] greater than 90%, try other 10% range.
+[00:05:01] &gt;&gt; So, instead, we could rank stocks by how
+[00:05:03] discounted they are and then just buy
+[00:05:06] the cheapest. And at first, it sort of
+[00:05:08] looks like the strategy is working until
+[00:05:10] it fails terribly. Yeah, I don't even
+[00:05:12] really know what to say about this one.
+[00:05:14] It just didn't work. The total return of
+[00:05:16] the cheapest stock over this time
+[00:05:18] horizon was minus 92.9%
+[00:05:20] or minus 9.46% [music]
+[00:05:22] annualized. But, there is a bit of a
+[00:05:24] trap here. Manually tweaking the
+[00:05:26] discount until it looks good is
+[00:05:27] effectively just hand-operated
+[00:05:29] overfitting, and the cheapest stock is
+[00:05:31] also not always the best one. There
+[00:05:33] could be a systematic flaw in the
+[00:05:34] company we've selected. So, how about
+[00:05:36] this? Let's try every single discount
+[00:05:39] factor. And here you go. These are the
+[00:05:41] returns as a function of the discount
+[00:05:43] factor. There are literally no strategy
+[00:05:45] returns shown in green that beat our
+[00:05:48] baseline shown in red. [music] And also,
+[00:05:49] yes, just a reminder that we are beating
+[00:05:51] the S&P 500 over this time horizon,
+[00:05:53] [music] but slow down. We're actually
+[00:05:55] comparing to the red line because that's
+[00:05:57] the return of the tickers in our
+[00:05:59] database. That's the benchmark. The top
+[00:06:01] technical comment in my last video said
+[00:06:03] that equity curves alone are not enough
+[00:06:05] and I completely agree.
+[00:06:06] &gt;&gt; Please compare some sort of performance
+[00:06:08] metrics.
+[00:06:09] &gt;&gt; We need to show the risk-adjusted
+[00:06:11] performance of the strategy.
+[00:06:13] Specifically, we need to use the Sortino
+[00:06:15] ratio. Now, the Sortino ratio measures
+[00:06:17] the risk-adjusted return of an
+[00:06:18] investment portfolio, but unlike other
+[00:06:21] metrics, it only penalizes downside
+[00:06:23] volatility. And yeah, I know this sounds
+[00:06:25] super boring, but I promise it's
+[00:06:26] actually rather straightforward and is a
+[00:06:28] concept you can apply to everything in
+[00:06:29] your life. Now, you may wonder, why do
+[00:06:31] we care about risk-adjusted returns?
+[00:06:33] &gt;&gt; Boring.
+[00:06:34] &gt;&gt; I only care about the returns, right? I
+[00:06:36] mean, that's the only thing that matters
+[00:06:38] to me. And at first, that's what I
+[00:06:40] thought, too, but it's not quite true.
+[00:06:42] Because in making a high return, there
+[00:06:44] was some risk involved in that trade.
+[00:06:46] Now, let's say for example that you
+[00:06:47] invest $1 million
+[00:06:50] and there's a 50% chance that you see a
+[00:06:52] 100% return. So, then it becomes $2
+[00:06:55] million,
+[00:06:56] but there's also a 50% chance that you
+[00:06:59] lose it all. Let's say that you come out
+[00:07:01] of the other end with a favorable trade
+[00:07:03] and you do get that 100% return. [music]
+[00:07:06] Congrats, but you can't neglect the fact
+[00:07:08] that you took a 50% chance of losing all
+[00:07:10] of your money. You tell yourself that
+[00:07:12] you will keep betting your winnings
+[00:07:13] because the first time you did it, you
+[00:07:15] got a 100% return. It was great. That
+[00:07:17] same trade over many trades would
+[00:07:20] guarantee that you do lose all of your
+[00:07:22] money because the single time that you
+[00:07:24] land on the other side of that 50%
+[00:07:26] chance, your portfolio goes to zero.
+[00:07:28] Even though you won and your return was
+[00:07:30] 100%, the risk-adjusted return of that
+[00:07:33] trade is actually minus 100% because
+[00:07:36] you're statistically guaranteed, if you
+[00:07:38] take that bet enough, to lose
+[00:07:40] everything. So, we should always factor
+[00:07:42] in risk into our investments, which is
+[00:07:44] usually characterized by market
+[00:07:46] volatility. Our Graham strategy has a
+[00:07:48] Sortino ratio of 0.171.
+[00:07:51] The S&P 500 buy and hold is 0.545.
+[00:07:55] And our benchmark of S&P constituents is
+[00:07:58] 0.666.
+[00:08:00] Oh lord. Our strategy is roughly three
+[00:08:02] times worse on a risk-adjusted basis
+[00:08:04] than simply buying and holding, which is
+[00:08:06] pretty bad. And over a rolling one-year
+[00:08:08] window, the strategy beats the S&P
+[00:08:10] Sortino only about 34% of the time. This
+[00:08:13] strategy only worked well during the
+[00:08:15] 2008 market crash, and that basically
+[00:08:18] tells you nothing. And I'm not saying
+[00:08:19] that this will never work. I'm just
+[00:08:21] saying that the current strategy is not
+[00:08:23] sufficient. But, I encourage you to
+[00:08:25] leave comments below describing what you
+[00:08:26] could test or what I'm getting wrong,
+[00:08:28] and then we can try to implement this in
+[00:08:30] a future video and improve the
+[00:08:31] algorithm. So, if value investing
+[00:08:33] doesn't work anymore, why do people keep
+[00:08:35] making videos about it implying that it
+[00:08:37] does? Now, I'm not a drama channel, so
+[00:08:39] I'm going to stay clear of calling
+[00:08:40] people out, but I have a couple of
+[00:08:42] theories. Firstly, it's that the decades
+[00:08:44] of genuine success stories like Buffett
+[00:08:46] give this method real credibility. It's
+[00:08:49] also the perfect thing to sell people on
+[00:08:50] and just sort of make sense. Stocks are
+[00:08:52] cheap, and you should try to buy them
+[00:08:54] cheap before they recover. And finally,
+[00:08:56] you can't easily disprove it yourself
+[00:08:58] unless you're degenerates like me and
+[00:09:00] you and test it with code like we just
+[00:09:02] did. So, my honest take is that value
+[00:09:04] investing isn't a scam. It's just that
+[00:09:06] the efficient market theory has caught
+[00:09:08] up to it, and it's up to us to create
+[00:09:10] different methodologies to find gaps
+[00:09:12] that are present today. So, if you find
+[00:09:14] something that looks interesting, I'll
+[00:09:16] test it. We live in a new age of
+[00:09:17] investing where complexity is scaling
+[00:09:19] exponentially, meaning old opportunities
+[00:09:21] fade and new opportunities are
+[00:09:23] introduced. Take care, and I'll see you
+[00:09:25] guys in the next one.

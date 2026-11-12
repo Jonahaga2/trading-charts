@@ -1,0 +1,342 @@
+[00:00:00] I'm putting a thousand dollars into my
+[00:00:01] stock trading AI and racing it against
+[00:00:03] [music] 10,000 simulated dart-throwing
+[00:00:05] monkeys in a challenge to see who can
+[00:00:06] get the highest returns. I've been
+[00:00:08] building this AI for about four years
+[00:00:10] now since my physics PhD back in 2020.
+[00:00:12] Oh my goodness, this thing took off.
+[00:00:14] Predictor actually works. It takes in
+[00:00:16] market data, macroeconomic indicators,
+[00:00:19] news sentiment, basically the works, and
+[00:00:20] spits out a prediction for every stock
+[00:00:22] one day in advance. Some months it
+[00:00:24] crushed the market and some months it
+[00:00:26] eats glass, which means I genuinely
+[00:00:28] don't know if it has real skill or if
+[00:00:29] I've just been fooling myself this
+[00:00:30] entire time. So today, this stops being
+[00:00:32] theoretical. I'm going to let it trade
+[00:00:34] with my real YouTube money and see if I
+[00:00:36] can maybe pay off my student debts with
+[00:00:37] this method.
+[00:00:39] Yeah, probably not. We've created a long
+[00:00:41] short-term memory model, which is a type
+[00:00:42] of neural network that takes in data,
+[00:00:44] then makes a prediction, and is
+[00:00:46] especially good at remembering or
+[00:00:47] forgetting data as needed. Hence the
+[00:00:49] term long short-term memory. In this
+[00:00:52] case, the input data are stock market
+[00:00:54] prices going back about one month for
+[00:00:56] each and every single day. It then uses
+[00:00:58] this data, feeds the model, and makes a
+[00:01:00] prediction for what the company's price
+[00:01:01] will be tomorrow. But surely, you cannot
+[00:01:03] predict the company's share price for
+[00:01:05] tomorrow by only looking at the trend
+[00:01:07] and patterns of their stock price. And
+[00:01:09] you would be right. So I've added so
+[00:01:10] much data to give this model a fighting
+[00:01:12] chance. You can find the list of input
+[00:01:14] parameters on the GitHub repo, and it's
+[00:01:15] pretty long. Now unfortunately, there's
+[00:01:17] one critical problem. The current code
+[00:01:19] is only built for back testing, and back
+[00:01:21] testing does not allow us to make
+[00:01:22] predictions about the actual future.
+[00:01:24] Yeah, we've gone this long and we
+[00:01:25] haven't actually made a real prediction
+[00:01:26] yet. Back testing is a great way of
+[00:01:28] evaluating if a model can actually make
+[00:01:30] successful predictions, and it is an
+[00:01:32] extremely important part of writing
+[00:01:34] financial algorithms. It helps us answer
+[00:01:36] the question, does the model actually
+[00:01:38] work? The concept of back testing is
+[00:01:40] actually really straightforward. We pick
+[00:01:41] a date in the past, one where we already
+[00:01:43] know tomorrow's stock [music] value.
+[00:01:44] Then we feed the model the historical
+[00:01:46] data from that chosen day going back
+[00:01:48] about one month, and then ask it to
+[00:01:49] predict the next day's stock price. The
+[00:01:51] model can't see what the next day value
+[00:01:53] is, so it's predicting only based on the
+[00:01:55] past, which is important because when we
+[00:01:56] actually use this model for real, we
+[00:01:58] don't have access to what the future
+[00:02:00] stock price will be. I mean, obviously.
+[00:02:02] This is something you can only get
+[00:02:03] access to when you become the president
+[00:02:04] of the United States and feel like using
+[00:02:06] your power to manipulate the markets. We
+[00:02:08] do this for a whole bunch of random
+[00:02:10] dates, and that is what allows us to
+[00:02:11] determine the accuracy of the model.
+[00:02:13] When we click run, the code first asks,
+[00:02:16] is our historical database up to date?
+[00:02:18] And currently, it's Sunday, April 19th,
+[00:02:20] so let's run this again to bring it up
+[00:02:22] to date. Now we can train the model on
+[00:02:24] all our historical data, and there is a
+[00:02:25] lot, and make a prediction for the
+[00:02:27] future. There was a whole bunch of
+[00:02:28] predictions made, and we can see this
+[00:02:30] here. Some of them are predictions for
+[00:02:32] six months or one month, where the code
+[00:02:34] thinks that these choices are going to
+[00:02:36] give us the highest returns, but we're
+[00:02:37] going to go with our one-day horizon,
+[00:02:39] because I want to actually show you guys
+[00:02:40] if this works or not. So this is saying
+[00:02:42] that the best candidate is a stock
+[00:02:43] called ALNY. I know nothing about the
+[00:02:45] stock, but I'm just going to go out and
+[00:02:47] buy it. The model is set up to look at
+[00:02:48] the price change over the day, which
+[00:02:50] means I had to buy at the market open
+[00:02:51] and then sell exactly at the market
+[00:02:53] close, regardless of what the price is.
+[00:02:55] I just need to listen to what the model
+[00:02:56] is telling me to do. Unfortunately, I
+[00:02:58] have a day job and I can't time my buys
+[00:03:00] and sells, so I I'll be honest, I got in
+[00:03:03] a little bit late and I missed some of
+[00:03:04] the returns. And in some cases, I
+[00:03:06] actually forgot to sell at the market
+[00:03:07] close and some of my stocks tanked
+[00:03:09] throughout the night. So what I'm going
+[00:03:10] to do to make this really simple for us
+[00:03:11] is I'm just going to assume that I'm
+[00:03:13] actually competent and look at the open
+[00:03:14] and close values to simulate this
+[00:03:16] portfolio, but I'll show you
+[00:03:18] periodically my Questrade to show you
+[00:03:19] that I'm actually buying these stocks.
+[00:03:21] So checking out Yahoo Finance, we can
+[00:03:22] see that the stock went from an open of
+[00:03:24] 306.56
+[00:03:25] to 310.94,
+[00:03:27] which is about a 1.76% return, which is
+[00:03:30] actually really, really, really good,
+[00:03:32] especially since the model can give us
+[00:03:34] these same sorts of returns every single
+[00:03:36] day. Okay, so it's Monday, April the
+[00:03:38] 20th right now, and now that the
+[00:03:39] market's closed, I'm going to rerun my
+[00:03:40] live prediction and just do the same
+[00:03:42] thing I've always done. Pull all our new
+[00:03:43] closing data for this Monday and then
+[00:03:45] see what the model predicts for
+[00:03:46] tomorrow. Okay, so we've predicted ALNY
+[00:03:49] again.
+[00:03:50] Uh very nice. I mean, it seems odd that
+[00:03:53] it predicted it again, but I'm just
+[00:03:54] going to do what the model's telling me
+[00:03:55] to do blindly and cross my fingers. And
+[00:03:58] this is what the returns look like on
+[00:04:00] Tuesday, April 21st. The opening market
+[00:04:02] value was 307.32,
+[00:04:04] and it ended up closing at 308.43,
+[00:04:07] which is a return of 0.36%, which isn't
+[00:04:10] great, but these are actually really
+[00:04:12] good returns, and let me explain why.
+[00:04:13] Hypothetically, this model could achieve
+[00:04:15] this every single day, I mean, in
+[00:04:16] principle. And to put that into
+[00:04:17] perspective, a 0.3% return compounded
+[00:04:20] daily with an initial investment of
+[00:04:22] $10,000 would grow to be half a billion
+[00:04:24] dollars in 10 years, which is really the
+[00:04:26] magic of compounding, but doing it
+[00:04:28] consistently. In comparison to an
+[00:04:29] average return of 10% yearly, which is
+[00:04:31] approximately what the S&P would give,
+[00:04:33] you would only double your money. So
+[00:04:34] this is pretty powerful, even though
+[00:04:35] it's giving small returns. Now that
+[00:04:37] said, I'm not saying that the model
+[00:04:38] works, so this is just a fun thing to
+[00:04:39] look at. Now there's a pretty big issue.
+[00:04:41] The stock predictor might actually be
+[00:04:42] lying to us. We hope that it's buying a
+[00:04:44] company because it believes, based on
+[00:04:45] historical patterns and data, that the
+[00:04:47] company that it chose should go up in
+[00:04:49] value, but it might just be guessing a
+[00:04:50] stock to buy and it happens to get it
+[00:04:52] right. I mean, a broken clock is still
+[00:04:53] right twice a day. So to fix this, we
+[00:04:55] need to create a baseline comparison. A
+[00:04:57] baseline comparison is something that
+[00:04:58] you can compare the model to to
+[00:05:00] understand if it's actually performing
+[00:05:02] well. A great analogy to explain this is
+[00:05:04] to think about a multiple-choice test.
+[00:05:05] Let's say there are four questions on a
+[00:05:07] multiple-choice test, and you are a
+[00:05:09] terrible student. You did not study at
+[00:05:11] all, so you end up guessing every single
+[00:05:13] question randomly. You know intuitively
+[00:05:15] that you can expect to get a mark of
+[00:05:17] maybe about 25% just by guessing. I
+[00:05:19] mean, there's four questions and one of
+[00:05:20] them has to be right. Now from the
+[00:05:22] teacher's perspective, students who get
+[00:05:24] marks above 25% are statistically more
+[00:05:27] likely to have studied and know the
+[00:05:28] answers to maybe a few questions on this
+[00:05:30] test. They actually learned something.
+[00:05:32] You can apply the same idea to our AI
+[00:05:34] model. Our AI model is the student, and
+[00:05:36] we want to assess if they've actually
+[00:05:37] learned something or not. So we need
+[00:05:39] this baseline comparison. That baseline
+[00:05:41] should be someone who's randomly
+[00:05:42] guessing what stocks to buy, someone
+[00:05:44] that has learned nothing about the stock
+[00:05:45] market. This is an individual that
+[00:05:47] randomly guesses. A monkey. A monkey
+[00:05:49] that throws a dart at a random stock on
+[00:05:51] a dartboard. Okay, yeah, I think I'm
+[00:05:52] losing my mind. I'll skip the details of
+[00:05:54] building this coded monkey, but I mean,
+[00:05:56] come on, it's a PNG of a monkey with a
+[00:05:58] JPEG of a dart flying at another JPEG of
+[00:06:00] a dartboard with a bunch of stock
+[00:06:01] tickers randomly scattered on it. Okay,
+[00:06:03] it's after market close on Tuesday
+[00:06:05] night, and I'm going to make a
+[00:06:06] prediction for tomorrow, which is April
+[00:06:08] 22nd. I'll run my AI stock predictor as
+[00:06:10] usual, and okay, it picked ALNY again.
+[00:06:14] I'm actually starting to wonder if this
+[00:06:16] thing's going to pick anything else. So
+[00:06:17] what were the results after the market
+[00:06:18] close on Wednesday? Surprisingly, this
+[00:06:20] is now the third day in a row this thing
+[00:06:22] has given positive returns. ALNY opened
+[00:06:25] at this value, and we ended the day at
+[00:06:27] this value. So this is about a 0.69%
+[00:06:30] increase. Nice. And I'll be honest, at
+[00:06:31] this point, I've missed selling shares
+[00:06:33] before the market closes because my job.
+[00:06:35] I promise I am holding the stocks, I
+[00:06:37] just keep holding them overnight when I
+[00:06:38] shouldn't. The stock predictor is only
+[00:06:40] predicting the market close value, so we
+[00:06:43] should be selling like right before the
+[00:06:44] market ends. Our portfolio should be at
+[00:06:46] this number now, but what about our
+[00:06:48] monkey friend? He predicted Meta, which
+[00:06:50] opened at this number and closed at this
+[00:06:52] number, which is a 0.05% increase. So if
+[00:06:55] we had invested in Meta, our simulated
+[00:06:57] portfolio would be this, which is
+[00:06:59] obviously worse. There's an important
+[00:07:00] point to be made. Statistically, this
+[00:07:02] monkey could choose well-performing
+[00:07:03] stocks five or 10 times in a row, not
+[00:07:06] because the monkey knows what it's
+[00:07:07] doing, I can promise you that, but
+[00:07:08] because random guesses can sometimes, by
+[00:07:10] pure luck, work in your favor. Trading
+[00:07:12] 10,000 instances of monkeys all throwing
+[00:07:15] returns for a trader that has no
+[00:07:16] knowledge of what they're doing. We can
+[00:07:18] say that the AI model is working only if
+[00:07:19] the model's performance is greater than
+[00:07:21] the average result of what the monkeys
+[00:07:23] get. So I updated the code and ran
+[00:07:25] 10,000 stock trading monkeys all
+[00:07:27] predicting stocks for Thursday's stock
+[00:07:29] price, and we'll see how they perform on
+[00:07:30] average. I'll make a prediction for what
+[00:07:31] I should buy on Thursday. Same thing as
+[00:07:33] usual, I run the predictor, it pulls
+[00:07:35] data, you know the deal. Wow. Okay.
+[00:07:38] Amazing. ALNY again. Incredible. Is this
+[00:07:40] thing broken?
+[00:07:44] Okay, well I'll I'll buy it again. All
+[00:07:46] right. So it's Thursday, and ALNY is
+[00:07:48] currently up, but it's not really up by
+[00:07:50] that much. We saw a 0.06% return, and
+[00:07:53] I'm starting to worry that the model is
+[00:07:54] just predicting the same stock over and
+[00:07:56] over again, and I should inform you that
+[00:07:58] I'm only letting the stock predictor
+[00:07:59] make predictions for a list of 200 stock
+[00:08:01] tickers, which isn't really that much.
+[00:08:03] So what I'll do is I'll add in 100 more
+[00:08:05] stocks just to see if we can get a
+[00:08:06] different prediction other than ALNY.
+[00:08:08] Anyways, I'm curious how the monkeys
+[00:08:10] performed. This is a plot of the
+[00:08:11] portfolios of our monkeys after the
+[00:08:13] market close on Thursday. They randomly
+[00:08:15] chose stocks, and because of that, some
+[00:08:16] of the portfolios went up and others
+[00:08:18] went down. On average, they actually did
+[00:08:19] much better than my AI. The monkeys
+[00:08:21] received an average return of 1.13%.
+[00:08:23] [music] The worst performer got minus
+[00:08:25] 19, and the best performer got 214%.
+[00:08:28] [music]
+[00:08:28] So the monkeys beat us this time, but
+[00:08:30] how will my AI stock predictor perform
+[00:08:32] with new stocks in its list to make a
+[00:08:34] prediction? So I'll run the code just
+[00:08:35] the same as usual, and okay, it actually
+[00:08:38] looks like the best candidate for the
+[00:08:39] one-day horizon is a company called
+[00:08:41] AMST. Uh where did ALNY go? Oh, it's
+[00:08:44] actually not even a buy today, so that's
+[00:08:45] nice. All right, so it's currently
+[00:08:46] Friday, April 24th now, and where I
+[00:08:48] live, the market opens up at 10:30 a.m.
+[00:08:50] Unfortunately, I ended up getting pulled
+[00:08:51] into a meeting at work, so that took
+[00:08:53] priority over buying the stock, but I
+[00:08:55] did end up managing to buy the launch,
+[00:08:56] so I I I promise I'm buying them, I
+[00:08:57] promise. And what a shame it was that I
+[00:08:59] did not buy the stock at the market
+[00:09:00] open, because oh my goodness, this thing
+[00:09:02] took off. I only managed to scoop up
+[00:09:04] about 2.57% returns for the day, but if
+[00:09:06] I had actually listened to my stock
+[00:09:08] predictor, I would have gotten about a
+[00:09:09] 30% return. It's interesting to see that
+[00:09:11] this company is declining for the past
+[00:09:13] couple weeks, and then all of a sudden,
+[00:09:14] the moment it's about to make this huge
+[00:09:15] jump, the predictor actually works.
+[00:09:18] Yeah, so that stock actually opened at
+[00:09:19] 1.21, and then it ended up closing at
+[00:09:22] 1.58. Now the monkeys have been chugging
+[00:09:24] away, so we should really look at their
+[00:09:25] returns to get a good idea of the
+[00:09:27] baseline, but I doubt that the monkeys
+[00:09:29] did as well as me. The monkeys ended up
+[00:09:30] with a return of 0.54% on average for
+[00:09:34] this day, which is honestly not that
+[00:09:35] bad, but the AI definitely comes out on
+[00:09:37] top. And it's important to keep in mind
+[00:09:39] that this code was not created in just a
+[00:09:40] day. This code has been slowly developed
+[00:09:42] over a year, most evenings after my day
+[00:09:44] job. So if you want access to the full
+[00:09:46] private repository, I shared this entire
+[00:09:48] code with anyone who becomes a GitHub
+[00:09:49] sponsor, link in the description. All
+[00:09:51] proceeds go to paying my PhD student
+[00:09:53] loans. Now to be completely clear, I I
+[00:09:55] it is very misleading to look at one
+[00:09:56] week's performance and say that this
+[00:09:58] model works. Honest opinion, I don't
+[00:09:59] think it works. You will need to run
+[00:10:01] this over a very long period to get a
+[00:10:02] proper understanding for its
+[00:10:04] performance. Let's keep learning and
+[00:10:05] continuously improving.

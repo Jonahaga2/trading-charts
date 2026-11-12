@@ -1,0 +1,186 @@
+[00:00:00] [Music]
+[00:00:01] with an AI text generator.
+[00:00:03] &gt;&gt; And I didn't write a single line of
+[00:00:05] code.
+[00:00:08] [Applause]
+[00:00:11] &gt;&gt; Everyone's talking about AI like it's
+[00:00:12] the future of everything.
+[00:00:13] &gt;&gt; AI
+[00:00:14] &gt;&gt; here to uproot your life, change the way
+[00:00:16] you live, and yeah, also bring about the
+[00:00:18] end of humanity.
+[00:00:22] But are we overestimating the value of
+[00:00:23] AI?
+[00:00:24] &gt;&gt; Here, boy, a lost clanker.
+[00:00:25] &gt;&gt; Here's the uncomfortable truth. We're
+[00:00:27] probably in an AI bubble and the data
+[00:00:29] proves it. Even Sam Alman, CEO of Open
+[00:00:31] AI, recognized that investors are a
+[00:00:33] little over excited about AI. This is
+[00:00:35] not a debate about whether or not AI is
+[00:00:36] important. There are numerous
+[00:00:37] applications of the technology that will
+[00:00:39] adjust how we function as a society.
+[00:00:41] That much is for certain. But when
+[00:00:43] exciting and new technologies emerge,
+[00:00:45] history usually repeats itself.
+[00:00:46] &gt;&gt; Can Dow 10,000?
+[00:00:48] &gt;&gt; The Dow Jones Industrial Average dropped
+[00:00:49] more than 900 points.
+[00:00:51] &gt;&gt; And ordinary investors caught in the
+[00:00:52] hype can lose significant wealth. So
+[00:00:54] firstly, what do I mean by a bubble?
+[00:00:56] It's when excitement and money run away
+[00:00:58] ahead of the actual results. Stocks
+[00:01:00] soar, investments pour in, but the
+[00:01:02] technology itself isn't quite delivering
+[00:01:04] on the promises. Importantly, valuations
+[00:01:06] of companies become much larger than
+[00:01:07] their intrinsic value. All right, so why
+[00:01:09] should you even care about this? I mean,
+[00:01:11] maybe you're not even invested in AI, or
+[00:01:13] you've made so much off of Nvidia that
+[00:01:15] you're in the Bahamas on your yacht, and
+[00:01:16] you couldn't give a damn about what some
+[00:01:17] guy on YouTube is saying. Well, I'm
+[00:01:18] going to tell you why. Bubbles will lose
+[00:01:20] you a lot of money or bring you
+[00:01:22] significant wealth if you're patient.
+[00:01:23] So, let me explain. The most recent
+[00:01:25] event of this nature was the.com crash.
+[00:01:27] The.com boom promised revolution and
+[00:01:28] then eventually delivered on one, but
+[00:01:30] not before the NASDAQ lost 78% of its
+[00:01:32] value between March 2000 and October
+[00:01:34] 2002. In the 1990s, internet adoption
+[00:01:37] exploded with US household computer
+[00:01:39] ownership jumping from 15% in 1990 to
+[00:01:41] 35% in 1997. Cheap capital and tax
+[00:01:44] breaks poured fuel in the fire while
+[00:01:46] investors piled into anything with AI,
+[00:01:49] sorry, I mean.com in the name, sending
+[00:01:51] the NASDAQ up 400% by 2000 and inflating
+[00:01:53] price to earnings ratios to levels never
+[00:01:55] seen before. When reality set in, nearly
+[00:01:57] $5 trillion in market value vanished,
+[00:01:59] leaving behind a cautionary tale about
+[00:02:01] hype outpacing fundamentals. Okay, so
+[00:02:03] let's actually look at the numbers. In
+[00:02:04] 2025, Meta, Microsoft, Google, and
+[00:02:07] Amazon are projected to spend over $344
+[00:02:10] billion on AI infrastructure, mostly on
+[00:02:12] gigantic data centers, and high-end
+[00:02:14] chips. That's more than the entire
+[00:02:16] nominal GDP of countries like Chile and
+[00:02:18] approaching that of Ireland. Factories
+[00:02:19] are going up all over. These are the AI
+[00:02:21] factories, massive server farms
+[00:02:23] consuming power, cooling, and real
+[00:02:24] estate. Because scaling AI demands
+[00:02:26] physical infrastructure, not just lab
+[00:02:28] codes. Race is now about betting on
+[00:02:29] hardware as much as it is on algorithms,
+[00:02:31] prompting Nvidia to see a 1300% return
+[00:02:34] in the past 5 years. That's
+[00:02:35] approximately a 26 times better return
+[00:02:37] than the S&P would return on average,
+[00:02:39] which is absolutely ridiculous. Okay, so
+[00:02:42] life is great. Those numbers are
+[00:02:43] outstanding. So where's the issue? So
+[00:02:45] here's the kicker. MIT's Media Lab just
+[00:02:47] released their NANDA report on the state
+[00:02:48] of AI in business after billions poured
+[00:02:51] into generative AI pilots. The results
+[00:02:53] are basically brutal. 95% of companies
+[00:02:56] saw no measurable return. So, think
+[00:02:58] about that. 95 cents of every dollar lit
+[00:03:00] on fire. Only about 5% of pilots made it
+[00:03:03] into real production with an actual
+[00:03:04] impact on the bottom line. And this
+[00:03:06] isn't some tiny sample. The study dug
+[00:03:07] into over 300 AI initiatives,
+[00:03:09] interviewed dozens of executives, and
+[00:03:11] surveyed hundreds of senior leaders
+[00:03:12] across the board. The message was the
+[00:03:14] same. Massive hype, very little
+[00:03:16] follow-through. And why? Because most of
+[00:03:18] these projects aren't being built into
+[00:03:20] the workflows where they'd actually
+[00:03:21] matter. They're flashy demos,
+[00:03:22] powerpoints, or one-off tools for sales
+[00:03:24] and marketing. Meanwhile, the hard messy
+[00:03:26] work of integrating AI into the backbone
+[00:03:28] of businesses gets ignored. So, while
+[00:03:30] Wall Street is throwing money at this AI
+[00:03:32] revolution inside the companies
+[00:03:34] themselves, the revolution isn't showing
+[00:03:35] up in the numbers. And the
+[00:03:37] infrastructure costs are absolutely
+[00:03:39] staggering. Data centers now consume
+[00:03:41] about 1.5% of all global electricity,
+[00:03:43] roughly the output of a midsized
+[00:03:45] country, according to the International
+[00:03:47] Energy Agency. That figure could more
+[00:03:49] than double to nearly 3% by 2030 if
+[00:03:51] current trends continue. In the US,
+[00:03:53] electricity prices have already surged
+[00:03:55] up nearly 30% since 2021. Analysts
+[00:03:57] warned that the AI arms race is one of
+[00:03:59] the drivers behind those higher bills as
+[00:04:01] power- hungry data centers compete with
+[00:04:02] households and businesses for limited
+[00:04:04] grid supply. There is a serious
+[00:04:06] disconnect with respect to the valuation
+[00:04:08] of these companies. How can a company
+[00:04:09] that loses money on every API call be
+[00:04:11] worth more than Costco or even most of
+[00:04:13] the world's banks? Open AAI is currently
+[00:04:15] valued at around $300 billion following
+[00:04:17] its most recent $ 8.3 billion funding
+[00:04:19] round. And OpenAI is not alone. Across
+[00:04:21] the country, the giants Meta, Amazon,
+[00:04:24] Microsoft, and Google have poured an
+[00:04:25] estimated $560 billion into AI since
+[00:04:28] 2024, while raking in only about $35
+[00:04:30] billion in AI specific revenue. That's a
+[00:04:33] 16 to1 spending torevenue gap. If this
+[00:04:35] feels a little bit familiar, that's
+[00:04:37] because we've gone through this before.
+[00:04:38] In the late '90s, companies added the
+[00:04:40] dot to their names and double their
+[00:04:41] valuations overnight. Today, just slap
+[00:04:43] AI powered on a press release, and the
+[00:04:45] same thing happens. The patterns are
+[00:04:46] identical. Massive capital spending,
+[00:04:48] wild promises. Even Sam Olman admits
+[00:04:51] that people are overexited about this
+[00:04:53] kernel of truth. The internet was real,
+[00:04:55] but most.com companies weren't. AI is
+[00:04:57] real, too, but most AI startups probably
+[00:04:59] won't survive the correction. The lesson
+[00:05:01] here is that the bubbles don't kill
+[00:05:02] technology, they kill the excess. After
+[00:05:04] the crash, the NASDAQ didn't recover to
+[00:05:06] its 2000s highs for 15 years, but the
+[00:05:09] survivors grew into trillion dollar
+[00:05:10] companies. In today's AI boom, we should
+[00:05:12] expect the same. The AI bubble is
+[00:05:14] definitely real, and the data proves it.
+[00:05:16] trillion spent, minimal returns,
+[00:05:18] unsustainable energy costs. But just
+[00:05:20] like the internet, AI isn't going away.
+[00:05:22] What will pop is the hype, the inflated
+[00:05:24] valuations, and the impossible promises.
+[00:05:26] The crash will be painful, but what
+[00:05:28] emerges will hopefully be strong and
+[00:05:30] resilient companies. The question isn't
+[00:05:32] whether the bubble will burst, it's what
+[00:05:33] will build from the wreckage. But I'm
+[00:05:35] just some guy prone to my own echo
+[00:05:37] chamber. The friends and work colleagues
+[00:05:38] around me, retail investors excited for
+[00:05:40] the future with real money that they
+[00:05:42] have worked hard for tied to this new
+[00:05:43] technology. When the house of cards
+[00:05:45] collapses, everyday people can be hurt
+[00:05:46] by the speculation and greed.

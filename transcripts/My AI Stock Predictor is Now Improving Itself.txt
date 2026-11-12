@@ -1,0 +1,200 @@
+[00:00:00] I handed the stupidest stock trading bot
+[00:00:01] I've ever built one simple instruction,
+[00:00:04] make yourself smarter and keep going
+[00:00:05] until you've beaten the market. So it
+[00:00:07] rewrote itself over and over again. I've
+[00:00:09] spent the last year after my day job
+[00:00:11] manually building an algorithm that
+[00:00:13] reads thousands of inputs on a stock,
+[00:00:15] its history, insider trading, and even
+[00:00:17] new sentiment to predict where it's
+[00:00:19] heading into the future. So this time
+[00:00:20] I'm not touching it. I'm handing it
+[00:00:22] straight to an AI and telling it to
+[00:00:23] improve itself then feeding that
+[00:00:25] improved code back in and telling it to
+[00:00:28] do it all over again over and over and
+[00:00:30] over again until we beat the market.
+[00:00:32] Guys, it's really that simple. Recursive
+[00:00:34] self-improvement is the ability for an
+[00:00:37] AI to improve itself. Lads, history is
+[00:00:39] upon us. Our laziness can flourish. So
+[00:00:41] let's max out my Claude usage and
+[00:00:43] blindly blunder past the efficient
+[00:00:44] market hypothesis and see if a
+[00:00:46] self-improving model can beat Wall
+[00:00:48] Street. But first, where we left off. So
+[00:00:51] I retrained the old model and ran it on
+[00:00:53] every stock in our database. The green
+[00:00:54] lines are the AI strategy across a bunch
+[00:00:56] of random seeds and the thin gray lines
+[00:00:59] are just portfolios with stocks that are
+[00:01:01] picked at random. Basically, a
+[00:01:02] representation of a trader that has no
+[00:01:04] idea what they're doing.
+[00:01:06] At first, it looks like a win. The AI
+[00:01:07] strategy returns 23.8% per year versus
+[00:01:11] the random picks of 0.4% per year. But
+[00:01:14] those shaded bands are the plus and
+[00:01:16] minus three sigma spread and they
+[00:01:18] overlap almost completely. So it's
+[00:01:20] nothing to bet your life savings on.
+[00:01:22] It's basically still returning the same
+[00:01:24] as randomness. So out with the old and
+[00:01:27] in with the new. Now, instead of
+[00:01:29] thinking instead of using our own
+[00:01:31] brains, I figured look, these things
+[00:01:33] code better than I ever will. So screw
+[00:01:35] it. I'll get Claude to fix my code for
+[00:01:37] me. So that's what I did. I told it to
+[00:01:39] improve my market predictor. Then I told
+[00:01:41] it again and again just over and over
+[00:01:44] putting that $150 a month Claude Max
+[00:01:46] subscription to work. This is what the
+[00:01:48] physics PhD was for, guys. And I'm only
+[00:01:50] at 8% of my weekly Claude usage and I've
+[00:01:52] got student loans to pay back. So the
+[00:01:54] first thing it found wasn't actually an
+[00:01:56] improvement to the model. it was a bug I
+[00:01:58] hadn't noticed. My model scores every
+[00:02:01] stock over four time frames: one day,
+[00:02:03] one week, one month, and six months out.
+[00:02:05] And it just bought whichever was scoring
+[00:02:07] the highest. So, it always ended up
+[00:02:09] picking six months out because stocks
+[00:02:11] tend to drift up given a long enough
+[00:02:13] time horizon. It wasn't really
+[00:02:15] predicting anything. It had just become
+[00:02:17] a long-term investor. So, the fix is to
+[00:02:19] rank them by annual returns instead. 1%
+[00:02:22] in a day obviously beats 2% in [music] a
+[00:02:24] month. So, I let it fix everything and
+[00:02:27] rerun the backtest. Now, those gray
+[00:02:29] lines that you're seeing used to be
+[00:02:30] random single stock picks. But, the
+[00:02:33] first self-improvement changed them.
+[00:02:35] Each one is now 25 random stocks, which
+[00:02:38] basically tracks the market on average.
+[00:02:40] So, the only way the green escapes this
+[00:02:42] cloud of random picks is by picking
+[00:02:44] genuinely good stocks. I honestly don't
+[00:02:46] know why the hell it chose to do this,
+[00:02:48] but there you go. The model apparently
+[00:02:50] has a 26% compound annual growth rate,
+[00:02:53] while the equal weight universe of the
+[00:02:54] stocks we give this backtest is about
+[00:02:56] 10%, which I find very hard to believe.
+[00:02:59] So, I asked it a second time to improve
+[00:03:01] the code. This time it tells me the
+[00:03:03] actual problem is the list of stocks
+[00:03:05] chosen for the backtest. And when I
+[00:03:06] first built this thing, I had stupidly
+[00:03:08] grabbed an alphabetical chunk of the
+[00:03:10] market. It pointed out that if you only
+[00:03:12] download companies that still exist
+[00:03:14] today, you've basically deleted
+[00:03:15] everybody that went bankrupt, and your
+[00:03:17] model looks like a genius because you
+[00:03:18] hid all of the losers. Now, we've been
+[00:03:21] down this path before. It's basically
+[00:03:22] survivorship bias. So, you need to be
+[00:03:24] very particular about the data you
+[00:03:26] acquire. And this data is hard to get.
+[00:03:29] So, I've partnered with Massive to pull
+[00:03:30] it through their API. And yeah, while I
+[00:03:32] usually don't feature products I use,
+[00:03:35] Massive's financial data API is
+[00:03:37] literally what makes these backtests
+[00:03:38] possible. So, I have an affiliate link
+[00:03:40] in the description if you want to try it
+[00:03:41] for yourself. Now, here's the trap. If
+[00:03:43] you just ask an AI for the old S&P 500
+[00:03:46] membership list, it'll confidently make
+[00:03:48] one up out of thin air. Also, So tried
+[00:03:50] that, and it just hallucinated a bunch
+[00:03:51] of garbage. You can't remember your way
+[00:03:54] out of survivorship free data. You have
+[00:03:56] to go and get it. So the model actually
+[00:03:58] went and did this, but it did two main
+[00:03:59] things. For who was in the index on a
+[00:04:02] given day, it pulled a historical
+[00:04:03] membership data set off of GitHub, every
+[00:04:05] change that went all the way back to the
+[00:04:07] '90s, and I'm going to credit them
+[00:04:08] below. It also grabbed prices, including
+[00:04:10] the companies that went bankrupt right
+[00:04:12] to their last trading day, and that data
+[00:04:14] came from massive.
+[00:04:16] Put those together and you finally have
+[00:04:17] a fair fight, which is a real S&P 500
+[00:04:20] membership, the winners and the losers.
+[00:04:22] And this time it actually seemed to
+[00:04:24] perform pretty well, but of course, it
+[00:04:26] could be tricking itself. Now, I know
+[00:04:28] what you're thinking. Asking a model to
+[00:04:30] improve itself over and over again by
+[00:04:32] hand is tedious. So for the last round,
+[00:04:35] I'm going to take myself out of the
+[00:04:36] equation. I'll have the model propose a
+[00:04:38] change, test it, and then keep it only
+[00:04:40] if it beats the current best, then
+[00:04:42] repeat it on its own. And out of 14
+[00:04:44] different iterations, it decided to keep
+[00:04:46] only one improvement. It actually
+[00:04:48] noticed that my 6-month prediction goes
+[00:04:50] completely stale. Basically, the stock
+[00:04:52] pick was purely dependent on today's
+[00:04:54] data, and by month three, whatever made
+[00:04:56] that stock look really good in the first
+[00:04:58] place had already played out. So you're
+[00:05:00] effectively buying and holding a month's
+[00:05:02] old opinion. Incredibly, this is
+[00:05:03] something I actually hadn't thought
+[00:05:05] about. As we make a prediction about the
+[00:05:07] future, we should be continuously
+[00:05:09] updating to determine if the stock we
+[00:05:11] locked in has maybe new information
+[00:05:14] which hurts the probability of it being
+[00:05:15] an outperformer in the future. The model
+[00:05:17] also came up with 13 different ideas and
+[00:05:19] then just threw them all away. Before
+[00:05:21] any of that self-improvement stuff even
+[00:05:23] started, Claude forcefully sealed off a
+[00:05:25] chunk of financial data, data in my
+[00:05:27] folder from 2025 until the present day.
+[00:05:29] So this final test runs on data the
+[00:05:31] model has actually never seen before.
+[00:05:33] I'm running this backtest for the very
+[00:05:34] first time, and once I do, the
+[00:05:36] self-improvement script has actually
+[00:05:37] told me it will literally never run it
+[00:05:39] twice. Here we can see the results. The
+[00:05:41] AI strategy returned 30.4%, which is
+[00:05:44] fantastic on data it has never seen
+[00:05:47] before. This sounds incredible until
+[00:05:49] this shows up next to it. The market
+[00:05:51] made 33.5.
+[00:05:53] &gt;&gt; [music]
+[00:05:53] &gt;&gt; So, it did not beat the index. And you
+[00:05:55] can watch it happen. My portfolio in
+[00:05:57] green, the market in white on that
+[00:05:59] sealed window. I'm ahead for maybe a
+[00:06:01] year and then right at the end the
+[00:06:02] market walks past me. Effectively, I've
+[00:06:04] become the market. And the only question
+[00:06:06] that matters is did this stock picking
+[00:06:08] add anything on top of just buying the
+[00:06:10] market? [music] And the answer is
+[00:06:11] statistically, no. It's
+[00:06:12] indistinguishable from random. The 30%
+[00:06:15] came from riding the index, not the
+[00:06:17] [music] model. I'm sorry. I can't lie to
+[00:06:19] you. I'm not like other YouTubers.
+[00:06:21] If you have any ideas for how to improve
+[00:06:23] this, let me know in the comments. I
+[00:06:24] want to keep improving this with your
+[00:06:26] suggestions. Also, I've posted this code
+[00:06:28] for my GitHub sponsors. Link in the
+[00:06:30] description below where you can download
+[00:06:31] it for yourself. I'll catch you guys in
+[00:06:33] the next one.

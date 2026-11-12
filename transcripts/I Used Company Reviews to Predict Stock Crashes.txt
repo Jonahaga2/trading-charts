@@ -1,0 +1,191 @@
+[00:00:00] I want to become an insider trader, but
+[00:00:01] how does one become an insider trader
+[00:00:03] with absolutely no insider knowledge?
+[00:00:05] Allow me to explain. We have been
+[00:00:07] building an AI stock predictor for
+[00:00:09] several months now, and despite what
+[00:00:11] every finance bro on YouTube tells you,
+[00:00:12] nothing actually works. But I'm a
+[00:00:14] physicist. I'm a problem-solver, [music]
+[00:00:16] so I had to get a little bit creative.
+[00:00:17] We find ourselves in a time where one
+[00:00:19] stray Trump tweet can bring the market
+[00:00:20] crashing down. So how are we going to
+[00:00:23] compete with this, guys? The solution?
+[00:00:25] Glassdoor. A place where disgruntled
+[00:00:27] employees will come to complain about
+[00:00:29] their organization. Do you hate your
+[00:00:30] CEO? Come and write a review. Do you
+[00:00:32] love your work culture? Come and leave a
+[00:00:34] review. And there are so many reviews on
+[00:00:36] this website, literally hundreds of
+[00:00:38] thousands. This tree diagram shows the
+[00:00:40] number of companies that received a
+[00:00:42] review on the vertical axis. This
+[00:00:44] evolves in time where a new branch is
+[00:00:46] created for every new review included
+[00:00:48] for a given company. My hypothesis is
+[00:00:50] that bad reviews could indicate a
+[00:00:51] company's likelihood to do better or
+[00:00:54] worse over time. And since the source is
+[00:00:55] coming from people that actually work at
+[00:00:57] the company, I mean, guys, this is like
+[00:00:59] the closest thing to insider trading
+[00:01:00] that we can get without becoming
+[00:01:02] senators ourselves. Let's not do that.
+[00:01:04] Now, Glassdoor could be an indicator of
+[00:01:06] company health, and it's just so weird
+[00:01:08] and uncommonly discussed that there
+[00:01:10] could be real patterns to take advantage
+[00:01:12] of that firms have not yet found. And
+[00:01:14] thankfully, I don't have to illegally
+[00:01:16] perform web scraping because these
+[00:01:18] fantastic data sets already exist online
+[00:01:20] with Glassdoor reviews. Thank you to the
+[00:01:22] person that definitely did not break
+[00:01:23] terms of service to get this. Before
+[00:01:25] diving right in, we should understand
+[00:01:27] the fundamental baseline structure of
+[00:01:29] this data. going to create some basic
+[00:01:31] structure just to look at, you know, a
+[00:01:32] bunch of parameters in this code,
+[00:01:34] whatever I find interesting. So here are
+[00:01:35] six histograms showing how the company
+[00:01:38] is actually being rated by its
+[00:01:39] employees. You can see for the most
+[00:01:40] part, a lot of people actually prefer
+[00:01:41] their company. They're giving them four
+[00:01:43] or five-star ratings. People really
+[00:01:44] appreciate the culture, the overall
+[00:01:46] rating, you know, so on and so forth.
+[00:01:47] There's a bunch of things. For the most
+[00:01:48] part, it actually skews to the right,
+[00:01:50] which is positive, until you get to the
+[00:01:51] ratings of the management, which yeah,
+[00:01:53] it kind of makes sense. Most people
+[00:01:54] [ __ ] hate management, so yeah, this
+[00:01:56] is kind of all over the place. But what
+[00:01:57] I want to know is can we find reviews
+[00:01:58] that are consistently getting worse over
+[00:02:00] time, which is indicating some
+[00:02:01] fundamental problem within the company.
+[00:02:03] So I wrote a script to find three
+[00:02:04] companies that had average reviews
+[00:02:06] trending in a negative direction. Like,
+[00:02:08] [ __ ] what is Metro Bank? XPO Logistics.
+[00:02:11] Oh, yeah, okay, Facebook. I know this
+[00:02:12] one. Yeah, yeah, yeah. And what's this I
+[00:02:14] see? Is this Facebook having a negative
+[00:02:16] review score that's consistently getting
+[00:02:18] worse and worse and worse in time from
+[00:02:20] 2017 to 2021? I wonder what their stock
+[00:02:23] market price was doing. Oh, okay, yeah,
+[00:02:25] it was doing It was doing great,
+[00:02:27] actually. Okay. Oh, my [ __ ] Oh, no,
+[00:02:29] it's like the employees actually saw it
+[00:02:31] before the stock market did. Okay, we're
+[00:02:32] not onto something. We We cannot be onto
+[00:02:34] something. There's no way that the firms
+[00:02:35] haven't caught onto this, right?
+[00:02:36] Employee reviews? This is something
+[00:02:38] everyone should know. All right, I mean,
+[00:02:39] let's let's let's keep looking at the
+[00:02:40] data. Let's keep looking at the data. I
+[00:02:41] started to question what the data
+[00:02:42] actually looks like in time cuz it's
+[00:02:44] just one instance. And okay, well, that
+[00:02:47] didn't really answer anything. It's kind
+[00:02:48] of interesting to see that if we do a
+[00:02:50] rolling average of 100 reviews in time,
+[00:02:53] some of them are kind of smoothed out,
+[00:02:54] and you can see there's periods of
+[00:02:56] positivity and negativity in the trends,
+[00:02:58] sure. But [ __ ] McDonald's has so many
+[00:03:01] reviews that a 100 review rolling
+[00:03:03] average isn't able to smooth out the
+[00:03:05] noise. As you can expect, you can see
+[00:03:06] that there's some companies that see
+[00:03:07] ratings decline sharply for one reason
+[00:03:09] or the other. So sure, maybe in some
+[00:03:11] instances, companies get bad reviews,
+[00:03:13] but it doesn't predict a stock value
+[00:03:14] crashing. I mean, come on. So our real
+[00:03:16] question is, what is the relationship
+[00:03:18] between positive reviews and the future
+[00:03:20] company's price? So what we actually
+[00:03:21] care about here is the correlation
+[00:03:23] between those two [music] parameters. So
+[00:03:24] here are the correlations for a bunch of
+[00:03:26] stocks. Now, the way I've set this data
+[00:03:28] up is that a positive correlation means
+[00:03:30] that the Glassdoor reviews are getting
+[00:03:31] more and more positive in time. And it
+[00:03:33] also happens to be that the future stock
+[00:03:35] value about 6 months in advance is also
+[00:03:37] going up. On the left-hand side is a
+[00:03:38] negative correlation, which means that
+[00:03:40] the company reviews are getting better
+[00:03:42] and better in time, but the future stock
+[00:03:44] value actually went down. If there was a
+[00:03:45] true correlation, there'd just be a
+[00:03:46] bunch of data on one side and not the
+[00:03:48] other. But hold on, this is a lot of
+[00:03:50] data, and this is just one statistic. So
+[00:03:51] maybe we can experiment with a machine
+[00:03:53] learning model to find these subtle
+[00:03:54] correlations in this data set. I then
+[00:03:56] proceeded to import the data, verify the
+[00:03:58] data was not crap, write the model,
+[00:04:00] train the model, evaluate its accuracy,
+[00:04:02] and also review something that is
+[00:04:04] critical, the baseline accuracy, because
+[00:04:07] it's the simplest, most brainless
+[00:04:09] strategy. You just always buy. This is
+[00:04:11] an important comparison to make because
+[00:04:12] imagine every stock in your data set
+[00:04:14] trended upwards with absolutely no down
+[00:04:17] days. Always buying everything would
+[00:04:19] give you a 100% win rate, but it doesn't
+[00:04:21] mean that your model actually learned
+[00:04:22] anything, so we do need to compare to
+[00:04:24] this baseline.
+[00:04:26] Oh.
+[00:04:27] Okay. That didn't really work, then, did
+[00:04:29] it? Let's be real, guys. There was no
+[00:04:31] way I was about to plug in some
+[00:04:32] Glassdoor reviews and get a prediction
+[00:04:34] of a future company's value. This is not
+[00:04:36] how the world works. But you can't tell
+[00:04:37] me that this Facebook data doesn't look
+[00:04:39] a little bit suspicious. I mean, is it a
+[00:04:41] potential indicator? Maybe. So pairing
+[00:04:43] this with company fundamentals, news
+[00:04:45] sentiment scoring, fear and greed
+[00:04:47] correlations, everything that we've done
+[00:04:48] before could actually be a genuine
+[00:04:51] benefit. I mean, this is what we've been
+[00:04:53] dying for, guys, some sort of edge,
+[00:04:54] something that nobody has thought of
+[00:04:56] before. And that's exactly what these
+[00:04:57] Glassdoor reviews are. Oh, wait, no. How
+[00:04:59] are we going to get the data? Okay, so
+[00:05:00] there's one fundamental problem with
+[00:05:01] this, which is we actually need to get
+[00:05:03] the data because so far I've been using
+[00:05:04] a data set on Kaggle. If we were doing
+[00:05:06] this for real, we would need to find a
+[00:05:08] way to pull all of this data from
+[00:05:10] Glassdoor reviews for any company that
+[00:05:11] we want. And that gets into a little bit
+[00:05:13] of complexity, violating terms of
+[00:05:16] service, whatever, right? Okay. So if
+[00:05:18] you guys want to see me build an illegal
+[00:05:20] web scraper, leave a comment below. We
+[00:05:22] are getting IP banned, boys. If you guys
+[00:05:24] want to see more stupid stuff like this,
+[00:05:25] please subscribe so you don't miss the
+[00:05:27] next one. Leave a comment below telling
+[00:05:28] me what you want to see me improve, and
+[00:05:30] I'll just do it, okay? I'll see you guys
+[00:05:31] in the next one. Take care. One more
+[00:05:33] about that.

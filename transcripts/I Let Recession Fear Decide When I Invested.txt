@@ -1,0 +1,392 @@
+[00:00:00] In this video, I'm going to test a
+[00:00:01] simple question using real data. Should
+[00:00:03] you be dollar cost averaging, investing
+[00:00:05] routinely, no matter what, or should you
+[00:00:06] stop investing when someone thinks a
+[00:00:08] recession is coming? Either based on
+[00:00:10] public fear, or actual indicators of an
+[00:00:12] impending recession. Hearing screaming.
+[00:00:14] &gt;&gt; I'll show you step by step exactly how I
+[00:00:16] built a back test that compares
+[00:00:17] traditional dollar averaging against a
+[00:00:19] strategy that only invests when public
+[00:00:21] sentiment suggests we aren't heading
+[00:00:23] into a recession. By the end of this
+[00:00:24] video, we'll know whether ignoring
+[00:00:25] recession fear is actually smart [music]
+[00:00:27] or if public opinion and recession
+[00:00:29] indicators could save you from losing
+[00:00:31] your money. And if you want the code,
+[00:00:32] you can find it on my GitHub completely
+[00:00:34] free of charge and totally open source.
+[00:00:36] My strategy is to leverage data in
+[00:00:38] science to come to realistic tested
+[00:00:39] conclusions about what is right or
+[00:00:41] wrong. We can actually construct an
+[00:00:42] algorithm to mimic the investing of a
+[00:00:44] regular 9to-5 Joe like myself. We can
+[00:00:46] gather data showing public interest in
+[00:00:48] recessions and model a fear indicator to
+[00:00:50] describe people's belief that there will
+[00:00:52] be a recession and only invest our money
+[00:00:54] in this backtested portfolio when we
+[00:00:56] believe we are not entering this
+[00:00:58] recession. Holy [ __ ] I said the word
+[00:01:00] recession a lot. So, a lot of people in
+[00:01:02] the comments ask me quite often how they
+[00:01:04] can learn to code. And I'd say the best
+[00:01:05] way is just by doing. So, if you'd like,
+[00:01:06] you can follow along. So, I'll just
+[00:01:07] start by importing some generic modules
+[00:01:10] and we'll create some configuration
+[00:01:12] variables. So, in this model, you're
+[00:01:13] going to be contributing on every
+[00:01:14] paycheck. Let's just say that your
+[00:01:15] contribution is $200 and that you're,
+[00:01:18] you know, working this 9 toive job. You
+[00:01:19] get paid bi-weekly. So, you're going to
+[00:01:20] contribute every 14 days and we need to
+[00:01:23] assume a date that we're going to start
+[00:01:24] investing. And I'm just going to pick
+[00:01:25] 2005, but you could pick any date. And
+[00:01:27] we'll load in our spy data with pandas.
+[00:01:30] Okay. So, I want to model recession
+[00:01:32] fears just based on public opinion. So,
+[00:01:34] I went to Google Trends and just typed
+[00:01:35] in recession and then pulled that data
+[00:01:37] going as far back as I can. And this is
+[00:01:40] what the interest looks like. So I could
+[00:01:41] go back to 2004 and get a parameter
+[00:01:44] basically from 0 to 100 on how how many
+[00:01:46] searches were happening at the time for
+[00:01:48] the word recession. So that's my very
+[00:01:49] crude way of approximating public
+[00:01:51] interest in a recession. Just sort of
+[00:01:53] saying that's maybe proportional to
+[00:01:55] people's fears of a recession.
+[00:01:58] Now I'm just converting the months in
+[00:01:59] this variable to something that's more
+[00:02:01] readable. Let's maybe start by just
+[00:02:03] trying to simulate the returns one could
+[00:02:05] expect if they were just investing in
+[00:02:07] the market based on $200 every 14 days.
+[00:02:10] And initially the portfolio value will
+[00:02:11] be zero. And we'll also make a
+[00:02:13] comparison to a portfolio that does not
+[00:02:15] receive any investment returns. But it's
+[00:02:17] just like putting money in a savings
+[00:02:19] account. You're not actually investing
+[00:02:20] in the market. We also need to keep
+[00:02:22] track of the last investment date. And
+[00:02:24] then we can maybe have an if statement
+[00:02:25] later on that says based on our current
+[00:02:27] investment date and the actual date that
+[00:02:29] it is right now, we can look at that
+[00:02:31] difference in number of days. And if
+[00:02:32] that exceeds or is equal to 14 days, so
+[00:02:35] we've gone past 2 weeks since our last
+[00:02:38] investment, then we should invest this
+[00:02:40] contribution amount of $200 and then
+[00:02:42] update the last investment date just so
+[00:02:44] that way we're routinely investing every
+[00:02:46] 2 weeks. Now, I'd like to create the
+[00:02:48] variable basically index start, which is
+[00:02:51] going to equal the index in our spy. So
+[00:02:54] this number right here on the left. So
+[00:02:55] for this one, it's 613. that will be the
+[00:02:57] index that we start investing on because
+[00:02:59] right now we have a date but we actually
+[00:03:01] don't know that the index so we have to
+[00:03:02] sort of look that up. So we're going to
+[00:03:03] look for the smallest difference between
+[00:03:05] [music]
+[00:03:06] uh this date and whatever date we have
+[00:03:07] in spy and then find the corresponding
+[00:03:09] index to that date. Okay. So there we
+[00:03:12] go. So if we type in like 2005 January
+[00:03:14] 10, it spits back 1306. So if we go to
+[00:03:17] 1306 [music] that is January 10th 2005.
+[00:03:21] So we have the right index. So think
+[00:03:22] about what we want to do right now. We
+[00:03:24] basically want to loop from this index
+[00:03:26] in our spy through every single date and
+[00:03:29] at each date compute a return based on
+[00:03:31] our portfolio value and if we've reached
+[00:03:33] this limit of going past 14 days or at
+[00:03:36] 14 days between when we invested last we
+[00:03:38] want to put in $200 and then just keep
+[00:03:40] evolving that portfolio amount by
+[00:03:42] whatever returns we're getting in the
+[00:03:43] market. So that should be pretty simple.
+[00:03:44] So we can say for i in range of the
+[00:03:46] index starting and then we'll evolve
+[00:03:48] that index by one. So we don't need to
+[00:03:50] put anything um after this length of
+[00:03:53] [music] dates. So it'll go all the way
+[00:03:54] from our index right here to the index
+[00:03:57] length of dates which would be the very
+[00:03:58] last one. And we're going to evolve it
+[00:03:59] by one like this. But we don't we don't
+[00:04:01] need to type that. Then our portfolio
+[00:04:02] value is just going to be equal to the
+[00:04:05] current value of spy on today's date
+[00:04:07] which is just going to be I divided by
+[00:04:09] spy with yesterday's value. So it's
+[00:04:11] actually just going to be I minus 1. And
+[00:04:12] then that's going to be our return. If
+[00:04:14] you have a 1% return, this is going to
+[00:04:15] be 1.01. And you would multiply that by
+[00:04:17] the portfolio value. But actually we can
+[00:04:19] make this a little bit simpler. Instead
+[00:04:20] of writing multiply by the portfolio
+[00:04:22] value, we can just put a multiplication
+[00:04:23] here. Now our portfolio value has
+[00:04:25] evolved. But we also need to add to the
+[00:04:27] portfolio. So we'll say if the last
+[00:04:29] investment date is equal to none because
+[00:04:31] right now it will be none. So the first
+[00:04:33] day that this runs, we'll put in 200
+[00:04:35] bucks or for all the other days where we
+[00:04:36] actually have given the last investment
+[00:04:38] date an actual date when we do invest.
+[00:04:40] We want to say that the the current date
+[00:04:41] that we're at right now minus the last
+[00:04:44] investment date and then get the days of
+[00:04:46] that difference is larger or equal to
+[00:04:48] the contribution every well in this case
+[00:04:50] 14 days. And if that is true, we want to
+[00:04:52] say that our portfolio value is going to
+[00:04:53] be equal to the same portfolio value
+[00:04:56] whatever it is, but we're going to add
+[00:04:57] the contribution. And the portfolio
+[00:04:58] value with no return is also just going
+[00:05:00] to equal whatever it is plus the
+[00:05:01] contribution. But we're not going to
+[00:05:02] evolve that with a return. As you can
+[00:05:04] see here, this if statement is true if
+[00:05:06] we are actually investing. So, we're
+[00:05:07] going to need to update the last
+[00:05:08] investment date, whatever the current
+[00:05:09] date is today. Good. So, that's
+[00:05:10] everything we need, but we're going to
+[00:05:11] need to append dates to form a plot. So,
+[00:05:14] for every time that we evolve through
+[00:05:15] this, we're evolving through a new day.
+[00:05:16] So, we'll take a variable that we'll
+[00:05:17] call x, which we could define early on.
+[00:05:19] And I guess we're also going to need a
+[00:05:20] y, which is going to be our portfolio
+[00:05:22] value, and maybe a y for no
+[00:05:24] contributions.
+[00:05:26] And we call this function. We'll get
+[00:05:27] these three parameters back. Good. So,
+[00:05:29] we could call this function right now
+[00:05:30] and it would give us the full evolution
+[00:05:32] with these arrays to describe the entire
+[00:05:34] evolution of our portfolio uh with
+[00:05:36] investments or just being thrown into
+[00:05:38] savings and you're not actually getting
+[00:05:39] a return. Now, we'd like to plot this.
+[00:05:41] So, we can create a plot strategy which
+[00:05:43] is going to take in some inputs. So,
+[00:05:44] we're definitely going to want to take
+[00:05:46] in our dates um probably the amount of
+[00:05:48] money that we've made from investments.
+[00:05:50] Okay, so we'll say that X is equal to
+[00:05:51] our dates. Y base is just going to be if
+[00:05:54] we're putting money into the market,
+[00:05:55] dollar cost averaging, and we're not
+[00:05:57] doing anything crazy, just regular
+[00:05:58] boring investing, [music] brainless. The
+[00:06:00] strategy is going to be whatever we're
+[00:06:02] trying to do to avoid the recession,
+[00:06:03] whether it's listening to public
+[00:06:04] information and public concern about an
+[00:06:07] impending recession or some indicator
+[00:06:09] that we're going to test later on to see
+[00:06:10] if that can somehow save us some more
+[00:06:11] money. And then this Y contribution is
+[00:06:13] just going to be for putting our money
+[00:06:14] in a savings account, we have no care in
+[00:06:16] the world for investment returns, which
+[00:06:19] obviously is a terrible [ __ ]
+[00:06:20] strategy. We'll actually comment out the
+[00:06:22] plot with the strategy just because we
+[00:06:24] haven't implemented anything like that.
+[00:06:25] We're just trying to get this set up in
+[00:06:26] a very simple manner at the moment.
+[00:06:29] Okay, so there you go. Since 2005,
+[00:06:31] you're just putting money straight into
+[00:06:32] your savings. You'd have about $105,000.
+[00:06:34] But if you were investing in the spy,
+[00:06:36] you'd have $356,000.
+[00:06:38] So that's pretty good. Surprise,
+[00:06:39] surprise. Investing is great. Um, this
+[00:06:41] is with dollar cost averaging. So
+[00:06:42] there's been absolutely no avoidance of
+[00:06:44] any recessions. Now, so let's try to
+[00:06:46] implement this Google Trends fear into
+[00:06:48] our algorithm to see that if we are
+[00:06:50] putting money into a savings account, we
+[00:06:52] don't put any money into the market and
+[00:06:53] we just wait until these recession
+[00:06:55] public recession fears have vanished and
+[00:06:58] then we put all our money back into the
+[00:06:59] account once those are all gone. What
+[00:07:01] does that look like? So maybe let's just
+[00:07:02] create a little helper function called
+[00:07:05] always invest. And we'll just call this
+[00:07:07] function anytime we want to always
+[00:07:08] invest. So always Yeah, silly little
+[00:07:10] function. So always invest. And we're
+[00:07:12] also going to create a function which is
+[00:07:13] the Google trend boolean. We'll take a
+[00:07:16] date then a try function and we'll look
+[00:07:19] at the Google trend fear CSV that we
+[00:07:22] have and we'll locate the exact month
+[00:07:26] that we're going to input in that CSV.
+[00:07:28] We'll look at our recession value. And
+[00:07:31] from what I've seen, it seems like when
+[00:07:33] we actually were in a recession, when we
+[00:07:35] look back in history, uh the value goes
+[00:07:37] to about 20. So if this is below 20,
+[00:07:39] return true. You can invest. Otherwise,
+[00:07:41] it'll be false. Okay. Now, when we
+[00:07:43] actually start to avoid putting money
+[00:07:46] into the market, we're still gaining
+[00:07:47] this $200 that we could invest on each
+[00:07:50] paycheck. So, what we need to do is we
+[00:07:52] need to create a variable called value
+[00:07:54] to invest. So, this is money that we're
+[00:07:56] we're saving. We're putting aside until
+[00:07:57] we believe that there's not a recession.
+[00:07:59] And right now, it's going to be at zero.
+[00:08:01] What we can do is we can pass into our
+[00:08:03] evolve portfolio function that describes
+[00:08:05] whether or not we can or can't invest.
+[00:08:07] So, we'll pass in always invest. And we
+[00:08:10] can create the variable that is the
+[00:08:12] allow variable which will be a bunch of
+[00:08:13] true or falses for each date that says
+[00:08:15] whether or not we can actually invest
+[00:08:17] based on our strategy. So then in our if
+[00:08:19] statement we'll say if allow is true you
+[00:08:21] can invest otherwise you're not going to
+[00:08:23] invest at all but you will add this
+[00:08:25] money to the stockpile of money that you
+[00:08:26] could invest. Now, of course, every time
+[00:08:29] you believe there's a recession, this
+[00:08:31] value is going to grow and grow and grow
+[00:08:33] up until the point where you don't think
+[00:08:34] there's a recession anymore, and you're
+[00:08:36] going to dump all of this into the
+[00:08:37] market, which means that when this is
+[00:08:40] true, you should always be adding
+[00:08:41] whatever that value to invest is to your
+[00:08:43] portfolio value. And then, of course,
+[00:08:45] you should make it zero because you've
+[00:08:46] dumped it all into your portfolio. Okay,
+[00:08:48] so I think that's Google Trends. Now,
+[00:08:49] hopefully this hopefully this works. So,
+[00:08:51] then we can change our plot to actually
+[00:08:53] include the strategy. So, pass the
+[00:08:55] contribution
+[00:08:56] &gt;&gt; vocal stem of the day.
+[00:09:00] &gt;&gt; Oh my [ __ ] god, there's bugs
+[00:09:02] everywhere. What the [ __ ] am I doing?
+[00:09:04] Oh.
+[00:09:06] Oh my god. There we go. Okay, so this
+[00:09:08] was according to Google Trends all the
+[00:09:10] places where people were concerned that
+[00:09:11] there was a recession coming obviously
+[00:09:13] in 2008. Uh COVID fears. You could look
+[00:09:16] at this and say, "Well, yeah, of course,
+[00:09:17] it's really good that we didn't invest
+[00:09:18] during this time if we're following
+[00:09:20] public fear about recessions, but you're
+[00:09:22] also missing massive opportunities to
+[00:09:24] gain a lot of money." The green line is
+[00:09:26] if we're doing dollar cost averaging and
+[00:09:27] the white line is the Google Trends
+[00:09:29] recession indicator, public fear
+[00:09:32] sentiment sort of rating that we've
+[00:09:33] given. You can see that if you're always
+[00:09:35] investing, you do in the end up with a
+[00:09:37] little bit more money. Now, Google
+[00:09:38] Trends is still a pretty crude way of
+[00:09:39] doing this just purely based on public
+[00:09:41] sentiment. But there are real recession
+[00:09:43] indicators out there that we can use.
+[00:09:45] Like for example, Sam's rule, which is
+[00:09:47] this really simple sort of real-time way
+[00:09:49] to tell if the US economy has already
+[00:09:51] entered a recession. That way, we're not
+[00:09:52] relying on public sentiment. This is a
+[00:09:54] real indicator that people use. It
+[00:09:55] effectively says that if the 3-month
+[00:09:57] average unemployment rate rises by.5
+[00:09:59] percentage points above its lowest level
+[00:10:02] in the past 12 months, then a recession
+[00:10:03] has started. So, we can use this
+[00:10:05] indicator and then back test our entire
+[00:10:07] portfolio to see if potentially using
+[00:10:09] this indicator of a recession could
+[00:10:11] actually avoid us losing a lot of money
+[00:10:13] or maybe dollar cost averaging is still
+[00:10:15] just the way to go to just turn your
+[00:10:17] brain off and keep putting money into
+[00:10:18] the market. So, let's get to work in
+[00:10:19] coding this up. So, I have here the US
+[00:10:21] unemployment rate on a monthly basis
+[00:10:23] going back to 2000. And then we'll
+[00:10:24] create another function that will give
+[00:10:26] us a true or false statement on whether
+[00:10:27] or not we should invest based on this
+[00:10:29] data. And we'll evaluate it based on
+[00:10:31] Sam's rule.
+[00:10:34] So, I created a little script here that
+[00:10:36] basically uses the unemployment rate to
+[00:10:38] calculate the SAMs rule to determine
+[00:10:40] when we're actually entering a
+[00:10:41] recession. And I've gone ahead and
+[00:10:42] stored it in this CSV. Basically, the
+[00:10:45] unemployment rate in time, the
+[00:10:46] unemployment average over a 3-month
+[00:10:49] interval. And then I give a flag, which
+[00:10:51] is the SAM recession flag, either yes,
+[00:10:53] we're in a recession or no, we are not.
+[00:10:55] So, we can import this into our Python
+[00:10:57] file, which is what we've written, and
+[00:10:59] then start to create our boolean. So, we
+[00:11:01] can try
+[00:11:03] The most important part of what this
+[00:11:05] back test is showing us is that we can
+[00:11:07] try to time the market as an average
+[00:11:09] person. Calculating indicators or
+[00:11:11] listening to what people tell you, but
+[00:11:12] you're basically guaranteed to lose and
+[00:11:14] end up with lower returns. Timing the
+[00:11:16] market is just not possible. It's mostly
+[00:11:18] a guess as to when a recession will
+[00:11:19] start. And by holding your cash, you're
+[00:11:21] missing out on the most important aspect
+[00:11:22] of investing, which is time. Time spent
+[00:11:25] in the market is the most important
+[00:11:26] thing. of course, also investing in good
+[00:11:28] businesses. But if you're investing in
+[00:11:30] the market sort of as a whole, there's
+[00:11:32] really no reason to wait to invest even
+[00:11:33] if you think something bad is about to
+[00:11:35] happen because you've seen the back
+[00:11:36] test. And when people think there might
+[00:11:37] be a recession, even when indicators
+[00:11:39] tell you so, you still end up losing by
+[00:11:42] waiting. So, if you found this video
+[00:11:43] helpful, make sure to like and
+[00:11:44] subscribe. You can find the code on my
+[00:11:45] GitHub completely for free. Links are in
+[00:11:47] the description. You can play with this
+[00:11:48] code yourself. And if I made any
+[00:11:50] mistakes, please let me know in the
+[00:11:51] comments. So, thanks for watching and
+[00:11:52] I'll see you guys in the next

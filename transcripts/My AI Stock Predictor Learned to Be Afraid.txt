@@ -1,0 +1,274 @@
+[00:00:00] It is clear to me now that my AI stock
+[00:00:02] predictor has been missing something all
+[00:00:03] along. Something so obvious that I'm
+[00:00:05] wondering why I haven't included it
+[00:00:07] since the beginning. It's missing a
+[00:00:08] certain human element. [music] I have
+[00:00:10] long believed that if anyone were to
+[00:00:11] build a code that could predict a future
+[00:00:13] stock's value using AI, that it wouldn't
+[00:00:15] use obvious indicators like
+[00:00:17] price-to-earnings ratios, company debt,
+[00:00:19] or earnings reports. I mean, come on.
+[00:00:21] Who cares about those things? We live in
+[00:00:22] a new age where human emotion, fear, and
+[00:00:25] greed dictate a company's [music] value.
+[00:00:27] Yes, these are the things we should be
+[00:00:29] looking at. past year, I've been working
+[00:00:30] countless hours after my day job
+[00:00:32] developing my long short-term memory
+[00:00:34] stock price predictor as an experiment
+[00:00:36] to take a shot at predicting future
+[00:00:37] company value [music] based on current
+[00:00:39] real-world parameters. The code is built
+[00:00:41] to take company fundamentals, earnings
+[00:00:43] reports, news sentiment scores, and even
+[00:00:45] insider buying to make predictions of
+[00:00:47] over a thousand companies' future value.
+[00:00:49] And for some reason, I never thought to
+[00:00:51] add the missing human element that is
+[00:00:53] fear and emotion until one commenter
+[00:00:55] brought this up and a lightbulb went off
+[00:00:57] in my head. Some people invest based on
+[00:00:59] their emotions. And a code that could
+[00:01:00] quickly interpret this to make stock
+[00:01:02] purchases may capitalize on market gaps
+[00:01:04] that have momentarily opened. And before
+[00:01:06] we dive in, we should ask ourselves some
+[00:01:08] simple questions. Now, how can human
+[00:01:10] emotion be quantified? As in, how do you
+[00:01:12] actually put a number on it? And there's
+[00:01:13] a couple criteria that we should keep in
+[00:01:15] mind when thinking about this. The human
+[00:01:17] emotion indicator should be quick to
+[00:01:19] update because, well, a lagging
+[00:01:20] indicator might not be useful if we want
+[00:01:22] to predict tomorrow's stock value.
+[00:01:24] Secondly, describe how people feel en
+[00:01:26] masse, not just some small group of
+[00:01:27] 4chan users. And three, be publicly
+[00:01:30] available either free or paid. I mean, I
+[00:01:32] got to use that GitHub sponsorship money
+[00:01:33] for something now. So, for example, we
+[00:01:35] wouldn't rely on polling data because,
+[00:01:37] well, this is a very delayed indicator
+[00:01:38] of how people feel. And it's not really
+[00:01:40] useful if we want to make short-term
+[00:01:42] predictions. Now, this problem of trying
+[00:01:44] to put a number on human emotion
+[00:01:45] escalates in three layers. We can think
+[00:01:48] of each layer as we go deeper, kind of
+[00:01:49] like an iceberg. At the surface are
+[00:01:51] these simple concepts. They're very easy
+[00:01:53] to obtain. At the very top of the
+[00:01:55] iceberg is the VIX, which is the
+[00:01:56] volatility index, which roughly
+[00:01:58] describes, well, how volatile the market
+[00:02:00] is. One layer deep could be things like
+[00:02:02] the CNN Fear and Greed Index. It's
+[00:02:04] public, easy to obtain. And deeper are
+[00:02:07] Reddit, Twitter, X comment sections.
+[00:02:09] Noisy data, but possibly indicating
+[00:02:11] shifts in public sentiment. Fear in the
+[00:02:13] market exists at different depths with
+[00:02:15] increasingly more complicated barriers
+[00:02:16] to obtaining that data. One simple way
+[00:02:18] of including human emotion and fear is
+[00:02:20] to describe it through volatility. If
+[00:02:22] stocks are en masse seeing large swings
+[00:02:24] going up or down, this is what is known
+[00:02:26] as volatility. And thankfully, there's
+[00:02:27] an index that describes this. It's
+[00:02:29] called the VIX. It's a bit difficult to
+[00:02:30] describe exactly how it's calculated,
+[00:02:32] and the methodology is maybe a bit too
+[00:02:34] much to go over in this video. But just
+[00:02:36] think of it as a description of how
+[00:02:37] volatile the market is at any point in
+[00:02:39] time. This is our layer one depth of
+[00:02:40] complexity. It's a good idea to start
+[00:02:42] with this, and then [music] we can see
+[00:02:43] how this changes our backtest. And then
+[00:02:45] we can implement something more
+[00:02:46] complicated with a higher chance of
+[00:02:48] success. You got to walk before you can
+[00:02:50] run, right? We can use our script for
+[00:02:51] downloading stock data to download the
+[00:02:53] VIX, process it, and add it to our model
+[00:02:55] as an input parameter. I've gone ahead
+[00:02:57] and attached it to the stocks we have in
+[00:02:58] our list and calculated the volatility
+[00:03:00] on a 10, 20, and 30-day
+[00:03:02] backwards-looking rolling average. Next,
+[00:03:04] we can train our model, view the
+[00:03:05] results, and see if this made an
+[00:03:06] improvement. Implementing the volatility
+[00:03:08] as an input parameter in our backtest,
+[00:03:10] we can see that the model is not really
+[00:03:12] improving. It ends up making very little
+[00:03:14] purchases early on, which dodges two
+[00:03:15] recessions, which is great, but it's
+[00:03:17] very clearly not doing this because it
+[00:03:19] knows something we don't. It's doing it
+[00:03:21] because it's getting almost no buy
+[00:03:22] signals. Here, we used a confidence
+[00:03:24] score of 50%, meaning the model needed
+[00:03:26] to be at least 50% confident that a
+[00:03:28] particular stock would give an unusually
+[00:03:30] high return for it to buy. And well, it
+[00:03:33] didn't buy much. You can learn a little
+[00:03:34] bit by looking at the feature importance
+[00:03:36] and seeing that it put almost no
+[00:03:37] weighting on anything except a
+[00:03:39] ridiculous amount on the intraday range,
+[00:03:41] which I found a little bit surprising
+[00:03:42] and probably tells you that the model
+[00:03:43] isn't really learning. The VIX is nice,
+[00:03:45] but describing volatility in the market
+[00:03:47] does not directly describe fear and
+[00:03:49] greed. For this, we need to engineer our
+[00:03:51] own parameter, a single number. And
+[00:03:53] thankfully, CNN has the notorious Fear
+[00:03:55] and Greed Index going back in time,
+[00:03:56] which we can use as an input parameter
+[00:03:58] to our model. One critical problem is
+[00:04:00] that the public data set for the CNN
+[00:04:01] Fear and Greed Index only goes back to
+[00:04:03] 2011, which massively cuts off our
+[00:04:06] model. Rather, this guy stinks. But we
+[00:04:09] can implement it into our training set
+[00:04:10] regardless, retrain, and test to see the
+[00:04:12] results. The nice part of this code is
+[00:04:14] that we actually have a full history log
+[00:04:15] of all the trades that we made, what
+[00:04:17] their expected returns were based on the
+[00:04:19] model, and what the actual real-world
+[00:04:21] return was on that trade. It even tells
+[00:04:23] us how long the model thought to hold
+[00:04:24] for in order to achieve the maximum
+[00:04:26] possible return out of all possible
+[00:04:29] periods to hold the stock for. The
+[00:04:30] really fun part is to see these massive
+[00:04:32] jumps in the backtest and then think,
+[00:04:33] "Okay, yeah, there's no way that we got
+[00:04:35] that high of a return." And then of
+[00:04:36] course, to go to Yahoo Finance and see
+[00:04:38] that for that particular stock, we
+[00:04:39] actually did get a massive return, and
+[00:04:41] the prediction software did predict it
+[00:04:43] correctly. It's also worth noting that
+[00:04:45] these large jumps that you see are the
+[00:04:46] result of a stock being purchased at
+[00:04:48] that point, and then the stock being
+[00:04:49] sold later on. In the end, the return
+[00:04:52] was much better than the S&P baseline,
+[00:04:54] and the feature importance also shifted
+[00:04:56] notably. Now, I include a bunch of my
+[00:04:57] other codes for free on my GitHub, which
+[00:04:59] you can get access to through a link in
+[00:05:00] the description. But this code in
+[00:05:02] particular has taken me over a year of
+[00:05:04] development, and I'm still improving the
+[00:05:06] code. So, if you want access and the
+[00:05:07] support of a PhD grad with crippling
+[00:05:09] student debt, you can get this code and
+[00:05:10] other private repositories by supporting
+[00:05:12] my work as a GitHub sponsor. Including a
+[00:05:14] fear and greed parameter should help our
+[00:05:15] model, but it could actually make it
+[00:05:17] worse. That's because some companies may
+[00:05:18] be correlated or anti-correlated with
+[00:05:20] the fear and greed factor. This might
+[00:05:23] sound a bit confusing at first, but
+[00:05:24] allow me to explain. So, here's a plot
+[00:05:25] of the Tesla stock price in green
+[00:05:27] overlaid with the Fear and Greed Index
+[00:05:29] in red. And for reference, a lower value
+[00:05:31] of the Fear and Greed Index is a market
+[00:05:32] that is becoming more fearful. Now, if
+[00:05:34] you focus on May to June of 2021, the
+[00:05:37] Greed and Fear Index begins to decline
+[00:05:39] towards increased fear in the market.
+[00:05:40] And so too did Tesla. People became more
+[00:05:42] fearful, and they started to sell off
+[00:05:44] Tesla. That sort of makes sense. If we
+[00:05:46] plot the correlation between Tesla and
+[00:05:48] the Fear and Greed Index in time, we see
+[00:05:50] that during this dip, the correlation is
+[00:05:51] positive. It's positive because a
+[00:05:53] decrease in the fear and greed, where
+[00:05:55] people become more fearful, corresponds
+[00:05:57] to a decrease in the Tesla share price.
+[00:05:59] That is a correlation. Let's contrast
+[00:06:01] this with Dollarama, a classic company
+[00:06:03] that is known for doing really well
+[00:06:04] during market downturns. Conceptually,
+[00:06:06] if people are uneasy or worried about a
+[00:06:08] market recession, it may lead one to
+[00:06:10] believe that as the economy declines and
+[00:06:12] people pull back on their expenses, they
+[00:06:14] tend to shop at discount stores like
+[00:06:16] Dollarama and Walmart, which then see
+[00:06:18] increased revenues, a higher valuation,
+[00:06:20] and therefore the stock price actually
+[00:06:22] increases. During a comparison over the
+[00:06:23] same time period, we can notice that the
+[00:06:25] correlation swings deeply negative from
+[00:06:27] May to June, actually the opposite of
+[00:06:29] what Tesla did. Since as the fear in the
+[00:06:31] markets increased, the Dollarama share
+[00:06:33] price actually performs pretty well. So,
+[00:06:35] the Fear and Greed Index is lowering and
+[00:06:37] the share price is increasing. This is
+[00:06:39] anti-correlated. To account for this, we
+[00:06:41] need to add a new parameter to our
+[00:06:42] model, which is the Fear and Greed
+[00:06:44] Sensitivity Factor, which can be
+[00:06:45] positive for correlated or negative for
+[00:06:47] anti-correlated. The model will get a
+[00:06:49] fuller picture and through training can
+[00:06:51] actually implicitly incorporate that
+[00:06:53] Fear and Greed Sensitivity Factor into
+[00:06:55] the multiplicative weightings of our
+[00:06:57] model to accurately describe how fear
+[00:06:59] and greed influence a particular stock.
+[00:07:01] Otherwise, we're training a model and
+[00:07:02] saying, "Hey, if the markets are
+[00:07:03] fearful, the stock drops." That makes
+[00:07:05] sense, right? But then you show it
+[00:07:06] another stock for the training run, and
+[00:07:08] the stock does the exact opposite. So,
+[00:07:10] it can never actually latch on to any
+[00:07:12] patterns. [music] You need to feed it a
+[00:07:13] parameter to describe those differences
+[00:07:15] in correlation. The actual algorithm
+[00:07:17] used will be a backward-looking
+[00:07:18] parameter that describes how correlated
+[00:07:20] the stocks were to the Fear and Greed
+[00:07:22] parameter over the past 60 days. We add
+[00:07:24] this into our model, we retrain, and we
+[00:07:26] view the result. The results of this
+[00:07:27] backtest are pretty surprising as it
+[00:07:29] seems that there actually was an
+[00:07:30] improvement. We're definitely predicting
+[00:07:32] stocks better. We're getting better
+[00:07:33] returns, [music] at least within the
+[00:07:34] backtest. I've said it before and I'll
+[00:07:36] say it again. This doesn't prove it
+[00:07:37] works, but these are without a doubt
+[00:07:39] steps in the right direction, and that's
+[00:07:40] all that really matters. Moving forward,
+[00:07:42] we will continue to make iterative
+[00:07:43] improvements to this code using your
+[00:07:45] viewer suggestions. I read every single
+[00:07:47] comment you guys leave, so please do not
+[00:07:49] go easy on me. Everything you write is
+[00:07:51] useful. I also update this code
+[00:07:52] regularly, and you can get access to all
+[00:07:54] my work with data sets through private
+[00:07:55] access alone by becoming a GitHub
+[00:07:57] sponsor. You can also check out my
+[00:07:58] public repositories by following Losing
+[00:08:00] Looneys on GitHub. Like and subscribe so
+[00:08:02] you don't miss future videos, and I'll
+[00:08:03] see you guys in the next one.

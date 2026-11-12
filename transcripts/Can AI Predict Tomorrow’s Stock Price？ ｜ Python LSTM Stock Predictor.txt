@@ -1,0 +1,275 @@
+[00:00:00] In this video, I'm going to show you how
+[00:00:01] I built a machine learning algorithm
+[00:00:02] that uses long short-term memory or LSTM
+[00:00:05] to predict the value of a stock price a
+[00:00:06] day into the future. The system
+[00:00:07] automatically downloads stock data,
+[00:00:09] including insider trading activity, new
+[00:00:11] sentiment scores, and even the number of
+[00:00:13] news articles for each ticker. It works
+[00:00:14] for any number of stocks, keeps itself
+[00:00:16] up-to-date, and can forecast into the
+[00:00:18] future. I've also built in backtesting,
+[00:00:19] so you can see exactly how it would have
+[00:00:20] performed on the historical data.
+[00:00:31] Now, to be completely realistic,
+[00:00:32] predicting stock market movements on a
+[00:00:33] day-to-day basis is extremely difficult,
+[00:00:36] perhaps even impossible. It makes the
+[00:00:38] problem an interesting candidate for
+[00:00:40] machine learning model to study. While
+[00:00:41] predicting daily changes may not be
+[00:00:42] feasible, the process of tackling this
+[00:00:44] nearly impossible challenge, one in
+[00:00:47] which some have reportedly succeeded,
+[00:00:48] could provide valuable lessons. These
+[00:00:50] insights might help in pursuing more
+[00:00:52] realistic goals, such as predicting
+[00:00:53] price movements over weeks, months, or
+[00:00:55] even years using these various market
+[00:00:57] indicators. And I do have a massive
+[00:00:59] favor to ask of you. If you spot
+[00:01:01] anything off or think that there's a way
+[00:01:02] to improve this model, drop your
+[00:01:03] suggestion in the comments. I'll try to
+[00:01:05] take your feedback, implement the
+[00:01:06] changes in a follow-up video, and then
+[00:01:07] I'll give you a shout-out. This way we
+[00:01:09] can keep refining the code together and
+[00:01:10] see if the model actually improves. So,
+[00:01:12] where do we begin? The goal is to
+[00:01:13] forecast the probability that a stock
+[00:01:14] will go up over a bunch of different
+[00:01:16] time horizons: 1 day, 7 days, 30 days,
+[00:01:18] 180 days. But for this video, we're just
+[00:01:21] going to focus on 1 day into the future.
+[00:01:22] The logic of this code can be described
+[00:01:24] as follows. We firstly load and
+[00:01:25] preprocess the stock data. We clean it,
+[00:01:27] we compute returns, and then create
+[00:01:29] classification targets. Currently, we
+[00:01:31] simply have a binary yes or no to
+[00:01:33] describe if the next day return was
+[00:01:34] positive or negative, respectively. Then
+[00:01:36] we scale and window the data, so past
+[00:01:38] sequences of stock features are
+[00:01:39] transformed into the sliding window to
+[00:01:41] feed into the neural network. This is
+[00:01:43] pretty simple and commonly what others
+[00:01:44] would do in a forecasting algorithm.
+[00:01:46] Basically, it says that there's this
+[00:01:47] time history X days into the past, which
+[00:01:50] will determine the future value. And
+[00:01:52] this would allow the LSTM to latch on to
+[00:01:53] patterns. However, there is a limit to
+[00:01:55] the size of this window due to
+[00:01:57] computational limitations and because
+[00:01:58] we'd expect that past a certain point
+[00:02:00] the history doesn't really matter in
+[00:02:02] determining the next day value. Then we
+[00:02:04] split the data into train, validation,
+[00:02:05] and test sets and done carefully to
+[00:02:07] avoid using future information in the
+[00:02:09] training. My initial approach to
+[00:02:11] creating this code involves splitting
+[00:02:12] the data such that 80% of the stocks
+[00:02:14] data sets went into the training set and
+[00:02:16] the remaining 20% went into the testing
+[00:02:18] set. And the reason was that if we
+[00:02:20] wanted to actually use this model for
+[00:02:21] forecasting, we'd want to include data
+[00:02:23] sets that are as current as possible
+[00:02:25] during training because maybe new
+[00:02:27] features have emerged in the market that
+[00:02:28] we can exploit or maybe more importantly
+[00:02:30] patterns existed that no longer exist
+[00:02:32] today. The issue with this approach is
+[00:02:33] that there are massive market swings.
+[00:02:35] For instance, the 2008 crash.
+[00:02:37] &gt;&gt; Traders here working the phones say a
+[00:02:38] lot of their customers are freaking
+[00:02:40] every day they're pounding it.
+[00:02:41] &gt;&gt; Which would be part of the training set.
+[00:02:43] So, the model could actually learn these
+[00:02:45] broader market patterns and swings for
+[00:02:47] that period. But when you actually go to
+[00:02:48] do your back testing, all of a sudden it
+[00:02:50] has an 80% accuracy during the 2008 dot
+[00:02:53] com bubble. It's actually able to
+[00:02:54] recognize the swings in the broader
+[00:02:56] market that either brought all the
+[00:02:57] stocks up or down and see that pattern
+[00:02:59] and remember it. And then when we
+[00:03:00] actually go to do our back testing, we
+[00:03:02] get a falsely accurate forecast for that
+[00:03:04] specific time period. For this reason,
+[00:03:06] I've chosen to have an 80/20 split for
+[00:03:08] the training and testing be based on
+[00:03:10] time and not stock specific splits. This
+[00:03:13] is unfortunate because the model is not
+[00:03:14] training on the most current market
+[00:03:15] data. But if you can think of a solution
+[00:03:17] to this, I'd be more than glad to hear
+[00:03:19] it in the comments. The next step is
+[00:03:20] training the deep learning model. We use
+[00:03:22] a 1D convolution layer which is
+[00:03:23] especially good for fitting peaks and
+[00:03:25] valleys in time series signals and
+[00:03:26] focusing on local dependencies like
+[00:03:28] short-term trends. We of course apply
+[00:03:30] our LSTM network with Monte Carlo
+[00:03:32] dropout to capture both the predictions
+[00:03:34] and uncertainty and also to avoid
+[00:03:37] overfitting. Then we generate forecasts.
+[00:03:39] So, after training the model predicts
+[00:03:40] the return then produces a binary one or
+[00:03:42] zero representing yes or no for the
+[00:03:44] stock going up the next day. Basically,
+[00:03:46] a signal to buy the stock or hold the
+[00:03:47] stock. And the end result is a fully
+[00:03:49] automated system that I take raw
+[00:03:50] historical data and produce
+[00:03:52] interpretable forecasts.
+[00:03:57] All right, so let's actually use the
+[00:03:58] model. So, this is a list of all the
+[00:03:59] features I'm going to be using. You can
+[00:04:00] pause the video if you want to take a
+[00:04:02] look. I have some pretty simple things
+[00:04:03] like the 10, 20, 30-day moving average,
+[00:04:05] which day of the month it is,
+[00:04:07] exponential moving averages, insider
+[00:04:09] buying flags whether or not someone's
+[00:04:11] actually buying or selling and etc. You
+[00:04:13] get the point. All right, so one thing I
+[00:04:15] like to do is actually just feed into
+[00:04:17] the model the answer we're looking for.
+[00:04:19] So, I'm going to leave in my target one,
+[00:04:20] which is the binary or one whether or
+[00:04:22] not the stock has gone up the next day.
+[00:04:23] And I'm just going to leave that in the
+[00:04:25] model. So, we're not going to exclude
+[00:04:26] it. Now, it'll make the accuracy much
+[00:04:27] higher, but this will allow us
+[00:04:28] understand whether or not the model can
+[00:04:30] actually latch onto features. In fact,
+[00:04:32] so easy that we could even set the
+[00:04:33] number of epochs to one. Yeah, and we
+[00:04:35] can see that our accuracy is quite high.
+[00:04:37] All right, so all our forecasts are
+[00:04:38] complete. You can see all our buy and
+[00:04:40] hold signals.
+[00:04:42] So, in fact, there's actually a
+[00:04:42] threshold that I'm using here that if
+[00:04:44] the probability is above a certain
+[00:04:46] threshold that it'll return buy, and if
+[00:04:48] it's below, it'll return hold. And in
+[00:04:50] this case, the probability threshold is
+[00:04:51] .7. So, let's actually run a back test.
+[00:04:53] Oh, wow, would you look at that?
+[00:04:55] So, something that's a little bit more
+[00:04:56] difficult might be to feed into the X
+[00:04:58] data the next day closing value cuz
+[00:05:00] that's not necessarily
+[00:05:02] the direct result. It's more of an
+[00:05:03] indirect result. It would have to
+[00:05:05] compute based on the next day closing
+[00:05:07] value and the current day closing value
+[00:05:09] whether or not it's gone up. It's not
+[00:05:10] necessarily
+[00:05:12] the exact target like we fed in this
+[00:05:14] current circumstance. Kind of seems
+[00:05:16] obvious that the model would work, and
+[00:05:17] it almost certainly will. But this is a
+[00:05:19] good way to probe how sensitive the
+[00:05:21] model is to latching on the features.
+[00:05:23] Now, in this case, it's super obvious.
+[00:05:25] Well, what if it didn't work? Well, then
+[00:05:26] you could probe into your code a little
+[00:05:27] further to figure out what's going wrong
+[00:05:29] rather than feeding in all this data at
+[00:05:31] once, seeing that it doesn't work for
+[00:05:32] stock market prediction, and saying,
+[00:05:34] "Oh, well, it's too complicated." Maybe
+[00:05:35] it's actually something a lot simpler
+[00:05:37] than that as to why it's not able to
+[00:05:38] successfully work. So, we'll drop our
+[00:05:40] target again. And then we could run this
+[00:05:42] to make sure our accuracy is quite low,
+[00:05:43] okay? And it is, which is good. That's
+[00:05:45] kind of what we'd expect. And then we'll
+[00:05:46] create our features. So, this is the
+[00:05:48] next day closing value, which we
+[00:05:49] wouldn't normally see in the data frame
+[00:05:51] for a given window, but we're going to
+[00:05:53] shift it back one, so that way we'll
+[00:05:54] actually see it in the given window.
+[00:05:58] All right, and there we have it, folks.
+[00:06:00] 50 epochs later, and yeah, of course
+[00:06:02] this also performed really well, which
+[00:06:04] is good. That's sort of what we'd
+[00:06:05] expect. Now, what if we decide to
+[00:06:07] exclude everything that could
+[00:06:09] potentially influence this accuracy?
+[00:06:11] We'll exclude the next day close that we
+[00:06:13] created. We'll also exclude our targets.
+[00:06:16] And I'm not exactly sure how many epochs
+[00:06:17] to have, but we'll maybe set it as 100
+[00:06:19] for now. Actually, you know what? Let's
+[00:06:21] just make that 200, why not? We might
+[00:06:22] have to change something related to the
+[00:06:24] callbacks, but we'll just run this for
+[00:06:25] now and see what this gives us. Okay,
+[00:06:27] well, we only made it to about 19 epochs
+[00:06:29] before it stopped. The training accuracy
+[00:06:31] continuously improved, which sort of
+[00:06:32] makes sense, but the validation accuracy
+[00:06:34] did not, which is unfortunate. Probably
+[00:06:36] suggests that this is not working, or we
+[00:06:38] need a lot more epochs, or the data is
+[00:06:40] just not good enough. There's just not
+[00:06:41] enough data. And you know what? Instead
+[00:06:42] of having a callback function, let's
+[00:06:43] actually just get rid of this. And we'll
+[00:06:45] just let this run out for 200 epochs and
+[00:06:47] see what we get.
+[00:06:51] All right, so it's been like
+[00:06:52] a day or something, I don't know. 200
+[00:06:54] epochs later,
+[00:06:56] the validation set actually has not
+[00:06:58] increased in accuracy. Of course, the
+[00:06:59] training set has, and we can run our
+[00:07:01] backtest to see what this looks like.
+[00:07:04] Now, we can compare the results to a buy
+[00:07:06] and hold strategy where we just buy the
+[00:07:07] S&P 500 and continue to hold it. Now,
+[00:07:10] this top three strategy is pretty
+[00:07:11] simple. We're just buying the top three
+[00:07:13] stocks with the highest probability of
+[00:07:15] going up the next day. It actually looks
+[00:07:16] like it's working, but this could just
+[00:07:18] be a fluke as well. So, a better way of
+[00:07:19] testing this would be to compare the top
+[00:07:21] three strategy with our machine learning
+[00:07:22] algorithm to buying a random stock every
+[00:07:25] day, and running that random stock
+[00:07:27] return over and over and over again to
+[00:07:29] get sort of this distribution of what a
+[00:07:32] bunch of individuals could get if they
+[00:07:34] just had randomly bought a stock every
+[00:07:35] day. Now, this is a lot more telling of
+[00:07:37] how we're actually performing. You can
+[00:07:38] see that it is above the average, but is
+[00:07:41] maybe not three sigma above the average.
+[00:07:44] So, it'd be completely reasonable to
+[00:07:45] assume that we could get this return
+[00:07:47] from a machine learning algorithm that
+[00:07:48] is effectively equivalent to just a
+[00:07:50] random guess. So, in short, this isn't
+[00:07:52] working, but we have set up a good
+[00:07:54] foundation of code to actually make
+[00:07:56] improvements to this. If you found this
+[00:07:58] video interesting, I would recommend
+[00:07:59] subscribing because I'll be talking
+[00:08:01] about these things in the next video. I
+[00:08:02] appreciate you watching until the end of
+[00:08:04] the video. See you later.

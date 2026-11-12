@@ -1,0 +1,348 @@
+[00:00:00] Today, I'm going to be showing you my
+[00:00:01] own creation, a stupidly simple code
+[00:00:03] that invests in stocks based on large
+[00:00:05] drops from their intrinsic value. I've
+[00:00:06] always wanted to do something like this.
+[00:00:08] Building a tool to help value investors
+[00:00:09] find value. And I've long subscribed to
+[00:00:11] the idea of value investing. Stocks will
+[00:00:13] vary in time based on how sentiment
+[00:00:14] changes, but a company's fundamentals
+[00:00:16] and future projections are what really
+[00:00:17] determine the outlook for a company.
+[00:00:19] Then I realized we can actually develop
+[00:00:20] these models and back test them to see
+[00:00:22] if value investing actually works or if
+[00:00:24] I'm completely misguided. And for those
+[00:00:26] that are curious, you can find a link in
+[00:00:27] the description to the GitHub
+[00:00:28] repository. I'll make this available to
+[00:00:29] GitHub supporters. So, if you're a
+[00:00:31] supporter of my AI LSTM stock predictor,
+[00:00:33] you'll get access to this new project of
+[00:00:34] mine.
+[00:00:37] Now, sure, there's a bunch of reasons
+[00:00:39] why this is a terrible idea. Investing
+[00:00:41] based on an algorithm, something that
+[00:00:42] will evaluate an arbitrary list of
+[00:00:44] stocks the same way each time. I mean,
+[00:00:46] come on. The stock market changes, and
+[00:00:47] deviations from a stock's intrinsic
+[00:00:49] value doesn't mean that it's a good buy.
+[00:00:51] Okay, so let's back up a minute and
+[00:00:52] define a couple of things. Intrinsic
+[00:00:54] value is basically what a stock is
+[00:00:55] actually worth based on the underlying
+[00:00:57] business not what the market is
+[00:00:58] currently pricing it at. So you can
+[00:01:00] think of this as a market price which is
+[00:01:02] what people feel like paying today based
+[00:01:03] on fear, hype, momentum, vibes,
+[00:01:05] whatever. Then there's the intrinsic
+[00:01:06] value which is what the company is truly
+[00:01:08] worth based on its ability to generate
+[00:01:10] cash in the future. And investors
+[00:01:12] estimate the intrinsic value by looking
+[00:01:13] at stuff like expected future cash
+[00:01:15] flows, profit margins, earnings growth,
+[00:01:17] assets and liabilities, competitive
+[00:01:19] modes, management and long-term
+[00:01:20] sustainability. So value investors find
+[00:01:22] value by finding cheap stocks relative
+[00:01:24] to the intrinsic value. The way I think
+[00:01:26] about it, there's this theoretical value
+[00:01:27] that stock should be based on all of its
+[00:01:29] fundamentals. And then there's the
+[00:01:30] actual value or the market price which
+[00:01:32] can vary wildly depending on public
+[00:01:34] sentiment and fluctuates kind of
+[00:01:35] randomly around the intrinsic value. And
+[00:01:37] the plan for this video is simple.
+[00:01:38] Evaluate the true or intrinsic value of
+[00:01:40] a massive list of stocks based on their
+[00:01:42] entire history. Compute how the actual
+[00:01:44] price of these stocks deviate from their
+[00:01:46] intrinsic value. then develop an
+[00:01:48] algorithm to strategically invest with a
+[00:01:50] diversified portfolio into the stocks
+[00:01:52] that see the largest drop from their
+[00:01:53] intrinsic value. Then analyze the
+[00:01:55] results from our back testing and most
+[00:01:57] importantly develop a strategy for what
+[00:01:59] will improve for our next iteration of
+[00:02:00] the code. Now that we've developed a
+[00:02:02] rough plan for this code, it's time to
+[00:02:03] answer the big question. How are we
+[00:02:05] actually going to evaluate the intrinsic
+[00:02:06] value of a stock?
+[00:02:09] &gt;&gt; What is going on with my [ __ ] [ __ ]
+[00:02:12] man? Because this is iteration one of
+[00:02:14] this code, I'd prefer to keep things
+[00:02:15] simple. Most of this video is going to
+[00:02:17] be building things from the ground up.
+[00:02:18] So, let's not get ahead of ourselves
+[00:02:20] here trying to build something extremely
+[00:02:21] complicated. There's a couple ways that
+[00:02:23] we can evaluate the intrinsic value of a
+[00:02:24] stock. There's the discounted cash flow
+[00:02:26] model. Here, we estimate all future cash
+[00:02:28] flows the company will make and discount
+[00:02:29] them to today's value. One of the pros
+[00:02:31] is that this is very accurate if your
+[00:02:33] cash flow estimates are solid, but small
+[00:02:35] errors and assumptions can throw things
+[00:02:37] way off. Then there's the dividend
+[00:02:38] discount model, which values the stock
+[00:02:40] based on all the future dividends it
+[00:02:41] will pay. Of course, this doesn't work
+[00:02:43] for companies that don't pay dividends
+[00:02:44] or don't pay them often, but this is a
+[00:02:46] very simple method for evaluating the
+[00:02:47] intrinsic value of a stock that does pay
+[00:02:50] dividends. Then the Graham model, which
+[00:02:51] is a simple model using earnings per
+[00:02:53] share, and growth rate. One of the pros
+[00:02:54] is that it's a quick estimate that ties
+[00:02:56] earnings and growth together, but it is
+[00:02:58] very rough, ignores cash flows, debt,
+[00:03:00] and current market conditions. There's a
+[00:03:02] bunch of other more accurate ways to
+[00:03:03] evaluate intrinsic value, but these are
+[00:03:05] the three that I'll consider because
+[00:03:06] they're pretty simple. Unfortunately,
+[00:03:08] I'd like to build this code such that we
+[00:03:09] could evaluate any stock, not just
+[00:03:11] stocks that produce a dividend. So, the
+[00:03:12] dividend discount [music] model is off
+[00:03:14] the table. And I ended up going with the
+[00:03:15] Graham model just because it's so damn
+[00:03:17] simple. Now, what do we need for the
+[00:03:18] Graham model? Honestly, not really that
+[00:03:20] much. It's super simple. Now, this is
+[00:03:22] the Benjamin Graham model equation. The
+[00:03:24] EPS is the earnings per share. The 8.5
+[00:03:26] is a fair PE ratio for a zero growth
+[00:03:29] company. G is our expected earnings
+[00:03:31] growth. Of course, a higher growth is a
+[00:03:33] higher intrinsic value. This 4.4 is the
+[00:03:35] old AAA bond yield. and this y is the
+[00:03:37] current bond yield. Pushing aside if the
+[00:03:39] gram model actually makes sense to use
+[00:03:41] here, we can start to construct a rough
+[00:03:42] idea of how we might want to evaluate
+[00:03:43] this. Now, remember the growth factor? I
+[00:03:45] spent way too much time thinking about
+[00:03:46] this, and it's really not as easy as you
+[00:03:48] might think. Sure, you could pull data
+[00:03:50] from Yahoo Finance, but you'd run into
+[00:03:52] an API limit pretty quickly. So, I've
+[00:03:53] decided to find my own cheating way to
+[00:03:55] approximate this. I firstly created the
+[00:03:56] Git forward growth estimate, which tries
+[00:03:58] to fetch analyst earnings estimates from
+[00:04:00] Alpha Vantage, but is super unreliable.
+[00:04:02] Basically, it tries to find EPS for the
+[00:04:04] current year, for the next year, and
+[00:04:06] then look at the percent difference to
+[00:04:07] determine a forward-looking growth rate.
+[00:04:09] The con of this is that many tickers
+[00:04:10] don't have analyst estimates. Analysts
+[00:04:12] are also often optimistic. Damn, that's
+[00:04:14] hard to say. And smaller companies have
+[00:04:16] unreliable estimates, which is why I
+[00:04:18] built the second function, which is the
+[00:04:19] estimate growth rate function, which
+[00:04:21] measures real historical EPS growth from
+[00:04:23] quarterly earnings. We use about 30
+[00:04:25] quarters or 7 years of data. Look at the
+[00:04:27] log of the earnings per share. Since
+[00:04:29] most companies grow exponentially, this
+[00:04:31] log scale allows us to create a straight
+[00:04:32] line fit and estimate what future EPS
+[00:04:35] could be given this growth rate, which
+[00:04:36] is determined by the slope of that fit.
+[00:04:38] So here's the concept for when to buy.
+[00:04:40] Let's say we know both the actual value
+[00:04:41] and the intrinsic value of a stock. A
+[00:04:43] value investor might purchase the stock
+[00:04:44] if they believe in it and if the actual
+[00:04:46] value is half the intrinsic value. In
+[00:04:48] the spirit of building knowledge to
+[00:04:50] determine if we actually will buy, we
+[00:04:52] can't purchase a stock based on if we
+[00:04:54] believe in it. We actually need to
+[00:04:55] develop an algorithm. But buying a stock
+[00:04:57] if the actual value is 50% of the
+[00:04:59] intrinsic value is an easy thing to
+[00:05:00] code. But a couple of issues come to
+[00:05:02] mind. What if there are many stocks that
+[00:05:04] fit this criteria in our list of
+[00:05:05] tickers? Do we buy them all? What if the
+[00:05:07] stock's market value never recovers to
+[00:05:09] its intrinsic value? We'll decide to
+[00:05:10] purchase any stock out of our list that
+[00:05:12] has a market value below 50% of [music]
+[00:05:15] its intrinsic value and sell the stock
+[00:05:17] when it returns to the intrinsic value
+[00:05:19] or after 3 years if this criteria is not
+[00:05:22] met. This is to avoid us holding stocks
+[00:05:23] that have some fundamental problem that
+[00:05:25] is not allowing them to recover. But
+[00:05:26] then, how do we manage what fraction of
+[00:05:27] our portfolio is used on each of these
+[00:05:29] [music] stocks? Since we have no way to
+[00:05:30] favor one stock versus the other, I'd
+[00:05:32] like to allocate a similar amount of
+[00:05:34] capital towards each that we determine
+[00:05:36] as a buy. Let's try to keep this very,
+[00:05:38] very simple. The fraction of capital we
+[00:05:39] have in a particular stock will be
+[00:05:41] evenly divided among all the stocks that
+[00:05:43] we determine as a buy. For example, if
+[00:05:45] we have only one stock that we're
+[00:05:46] holding, 100% of the portfolio will be
+[00:05:48] in this one stock. If we have 10 stocks
+[00:05:50] that we're holding, then 10% of our
+[00:05:52] portfolio will be split across all 10 of
+[00:05:54] these [music] stocks. This will not be
+[00:05:56] rebalanced in time. So the weightings
+[00:05:58] can change depending on the value of the
+[00:05:59] stock changing. However, each time that
+[00:06:01] we either buy or sell, the number of
+[00:06:03] stocks we own in the portfolio changes,
+[00:06:05] of course, we rebalance accordingly.
+[00:06:07] Okay, so now we can actually try to test
+[00:06:08] this code and I'll run you through my
+[00:06:09] workflow. So we'll start by producing
+[00:06:11] our data. We can go into our list of
+[00:06:13] stock tickers and actually just update
+[00:06:14] this if we'd like, but I'll use just a
+[00:06:16] couple well-known tickers that I have
+[00:06:17] for now. Okay, there. I'll just write
+[00:06:18] these five tickers for now. And then I
+[00:06:20] click run in the compiled folder. Yep.
+[00:06:22] Okay, good. So, we have all this data.
+[00:06:23] Estimated growth rate is computed and we
+[00:06:25] have a gram intrinsic value. And we have
+[00:06:27] all of this by date. So, for example,
+[00:06:29] Nvidia goes from 1999 all the way to the
+[00:06:31] present day. This intrinsic value
+[00:06:33] calculation is actually pretty close.
+[00:06:34] So, it's 213 right now for Nvidia and
+[00:06:37] the opening value is 195. Now that we
+[00:06:39] have all this, we can go to our back
+[00:06:40] testing algorithm, which will take the
+[00:06:42] information from the compiled filter and
+[00:06:43] run through our current methodology.
+[00:06:45] We'll start with an initial capital of
+[00:06:46] $1,000. We'll only buy when the market
+[00:06:48] value drops below 50% of the intrinsic
+[00:06:51] value of a stock. And we'll sell it only
+[00:06:52] when it returns back to the intrinsic
+[00:06:54] value or if it's gone 3 years without
+[00:06:56] meeting that criteria. So, let's go
+[00:06:58] ahead and just run this. Okay, good.
+[00:06:59] It's working. It seems to get held up in
+[00:07:01] a couple spots, but we've only given
+[00:07:02] this five tickers. So, what more can you
+[00:07:04] expect? In the end, this performed
+[00:07:06] terribly compared to the buy and hold
+[00:07:07] strategy. We're now working with 100
+[00:07:09] tickers. Wow. And look at that. I mean,
+[00:07:11] I think we've just solved investing,
+[00:07:13] guys. It only took a little bit of code
+[00:07:14] and we're getting 48% annualized
+[00:07:16] returns. I mean, that's incredible. Over
+[00:07:18] that same time period, the S&P got 6.3.
+[00:07:21] So, I think we've done it. That's it.
+[00:07:22] End of video. No. Now, things like this
+[00:07:24] happen so frequently, which is that you
+[00:07:26] have some error in this code that has
+[00:07:28] convinced you that your algorithm is
+[00:07:30] working when it's really not. likely
+[00:07:32] somewhere here we have a forward-looking
+[00:07:34] bias, meaning that we're using future
+[00:07:36] information which aids us in our
+[00:07:37] prediction and gives us a falsely
+[00:07:39] accurate representation of what the code
+[00:07:41] prediction accuracy is. A much better
+[00:07:43] way of evaluating this would be to
+[00:07:45] literally go into our data, chop off the
+[00:07:48] data that we do not Oh my god, that's
+[00:07:49] really bright. Chop off the data that
+[00:07:51] we'd like to test to ensure that there's
+[00:07:53] no way this data can enter into our
+[00:07:55] algorithm until it's time to actually do
+[00:07:56] the test. In reality, if we were to use
+[00:07:58] this algorithm today to make a
+[00:08:00] prediction about what stocks we should
+[00:08:01] purchase and hold into the future, this
+[00:08:03] would probably be nothing more than a
+[00:08:04] random guess. Maybe it's slightly more
+[00:08:06] educated than a random guess because of
+[00:08:07] the intrinsic value calculation, but
+[00:08:09] what we should be doing is combing
+[00:08:11] through this to ensure that there's no
+[00:08:12] way this is able to use future
+[00:08:14] information for its prediction
+[00:08:15] currently. Okay, I found the issue. I
+[00:08:17] was effectively estimating the growth
+[00:08:18] rate by fitting the earnings per share
+[00:08:20] data across the entire earnings history.
+[00:08:22] meaning that the regression included
+[00:08:24] this future earnings per share data that
+[00:08:26] would have not been known at the time of
+[00:08:28] making the prediction. Effectively, this
+[00:08:30] gives the model a massive look ahead
+[00:08:31] bias. And because the growth fit already
+[00:08:33] incorporates future earnings trends, it
+[00:08:35] basically knows in advance whether or
+[00:08:36] not a stock will go up or down, which of
+[00:08:38] course massively inflates the back
+[00:08:39] testing performance. Now, here are the
+[00:08:41] results of our intrinsic value program
+[00:08:43] using the Graham formula with hopefully
+[00:08:45] no look ahead bias. The S&P annualized
+[00:08:48] return is 6.29% 29% [music] for this
+[00:08:50] time period and our intrinsic value
+[00:08:51] strategy has given us an annualized
+[00:08:53] return of 9.07%. So technically we've
+[00:08:56] beaten the market. But this is assuming
+[00:08:57] that we have no look ahead bias which we
+[00:08:59] absolutely may have. Another important
+[00:09:00] aspect of this is that we could have
+[00:09:02] chosen stocks that happen to perform
+[00:09:03] better than the market on average. So a
+[00:09:05] better way of approaching this might be
+[00:09:06] to randomly select tickers as groupings
+[00:09:09] of random stocks. Select multiple random
+[00:09:11] groupings. Employ our strategy and see
+[00:09:14] what each grouping does compared to the
+[00:09:16] S&P. So, we're going to need a lot of
+[00:09:17] tickers and a lot of data to do a proper
+[00:09:19] [music] analysis. Thankfully, I have a
+[00:09:20] list of 500 stock tickers. Uh, this
+[00:09:23] might take a while to run. There's still
+[00:09:24] a ton of room for improvement in this
+[00:09:26] project. From refining how we calculate
+[00:09:28] intrinsic value to building a better
+[00:09:29] growth rate model to tightening up back
+[00:09:31] testing logic. I'm going to keep
+[00:09:32] iterating on this and pushing it forward
+[00:09:34] to a fully automated system that can
+[00:09:35] actually help me make long-term
+[00:09:36] investment decisions. If you want access
+[00:09:38] to the full source code, I've linked
+[00:09:39] everything in the description, including
+[00:09:41] instructions on how to run it yourself.
+[00:09:42] This project helps me chip away at my
+[00:09:43] student debt. So, GitHub sponsors get
+[00:09:45] access to private repos and early
+[00:09:46] developments. All my public repositories
+[00:09:48] are open for you to explore as well. If
+[00:09:50] you've enjoyed this breakdown, hit like
+[00:09:51] and subscribe so you don't miss my next
+[00:09:52] update. I'm going to keep improving this
+[00:09:54] model, sharing what I learned, and
+[00:09:55] hopefully building a community of data
+[00:09:57] enjoyers. I'll see you in the next one.

@@ -1,0 +1,296 @@
+[00:00:00] Can WallStreetBets, the degenerate
+[00:00:01] trading Reddit thread, actually predict
+[00:00:03] when a stock will blow up before it
+[00:00:04] does? I mean, that's sort of what
+[00:00:06] happened with GameStop, right?
+[00:00:08] &gt;&gt; Surprise!
+[00:00:09] &gt;&gt; [laughter]
+[00:00:09] &gt;&gt; So, I did a dumb thing, and I built an
+[00:00:10] algorithm that scrapes Reddit posts and
+[00:00:13] searches for mentions of stock tickers
+[00:00:14] to create an automated way to invest in
+[00:00:16] companies before they take off. Can we
+[00:00:18] really trust the wisdom of crowds, or is
+[00:00:20] this actually the ignorance of the
+[00:00:21] masses?
+[00:00:23] But, the real question is, can a guy
+[00:00:24] with a physics degree and zero finance
+[00:00:26] knowledge construct an algorithm to
+[00:00:27] compete with experts that already use
+[00:00:29] this data, or at the very least lose
+[00:00:31] money in a much more sophisticated way
+[00:00:32] than everybody else?
+[00:00:35] In case my mom is watching this video,
+[00:00:37] WallStreetBets is basically an internet
+[00:00:38] forum that has a bunch of degenerates
+[00:00:41] that believe they're investors, but
+[00:00:42] they're really just gambling addicts. At
+[00:00:44] its peak, there were almost 1.4 million
+[00:00:46] posts per month, with people sharing
+[00:00:47] their massive wins and losses in the
+[00:00:49] stock market, and it all quickly became
+[00:00:50] a huge internet meme. Now, all of this
+[00:00:52] data is just primed to be analyzed to
+[00:00:55] understand how retail investors, that's
+[00:00:57] you and me, feel about certain companies
+[00:00:59] and invest in them before WallStreetBets
+[00:01:01] blows it up. Basically, can we get in
+[00:01:03] early by analyzing every single post
+[00:01:05] made to the subreddit in real time? If
+[00:01:07] you told me this is what I'd use my
+[00:01:09] physics degree for, I probably wouldn't
+[00:01:10] believe you, but damn it, here we are.
+[00:01:12] Now, there's one big problem.
+[00:01:14] WallStreetBets has millions of posts
+[00:01:15] going back over a decade, and I am not
+[00:01:17] reading through every post. So, step one
+[00:01:19] is to get a computer to read through
+[00:01:21] them for me, and I'm [music] going to be
+[00:01:22] honest with you guys, the plan is pretty
+[00:01:24] dumb. Basically, we're going to pull
+[00:01:25] every single WallStreetBets post in real
+[00:01:27] time, scan each one for stock tickers,
+[00:01:30] and then count how many times each
+[00:01:32] ticker shows up each day. Then just, uh,
+[00:01:35] I don't know. Maybe we'll just buy
+[00:01:36] whatever the crowd is screaming about
+[00:01:37] the loudest, I guess. This is probably
+[00:01:39] the simplest and most naive version of
+[00:01:41] this idea, which is exactly why it's the
+[00:01:43] perfect place to start. So, I can just
+[00:01:45] write the code and blah blah blah, you
+[00:01:47] don't really care about this part, and
+[00:01:49] boom, it's done. So, the first question
+[00:01:51] is, if I just throw money at whatever
+[00:01:53] WallStreetBets is talking about, what
+[00:01:55] happens on average? Basically, is the
+[00:01:57] subreddit beating the market? And I
+[00:01:59] would surely be surprised if it was.
+[00:02:01] Now, to test this properly, I ran a
+[00:02:03] Monte Carlo simulation. Simply put, I
+[00:02:05] let a computer randomly pick thousands
+[00:02:07] of different posts, buy the stock that
+[00:02:09] was mentioned [music] in that post, and
+[00:02:10] then hold it for 60 days, and then I
+[00:02:12] sell it. Then, compare that to just
+[00:02:14] buying the S&P 500 on the same day to
+[00:02:16] get a good baseline comparison. [music]
+[00:02:18] The best way to interpret this is to
+[00:02:19] look at a histogram of the returns, and
+[00:02:21] then find the median of each. The neon
+[00:02:24] green line is the median return of the
+[00:02:25] Wall Street Bets posts, which did about
+[00:02:27] minus 10.3% over 2 months, which is
+[00:02:31] absolutely terrible, but that's fine.
+[00:02:33] The median S&P 500 return was 4.6% over
+[00:02:37] a 2-month holding period, and that is
+[00:02:39] shown in red. And I say it's fine
+[00:02:40] because, keep in mind that we have no
+[00:02:42] selection for sentiment. These could be
+[00:02:44] posts that are actually in favor of the
+[00:02:46] article or against the article. We're
+[00:02:48] just picking things arbitrarily at the
+[00:02:49] moment. But, I mean, come on, what did
+[00:02:51] you expect? Yeah, buying random
+[00:02:53] companies off of Wall Street Bets
+[00:02:54] clearly does not work, and I'm sure you
+[00:02:56] did not need me to tell you that.
+[00:02:57] However, people [music] do tend to buy
+[00:02:59] what everyone else is talking about.
+[00:03:01] People like to follow the herd, right?
+[00:03:03] So, let's just do that instead. Now,
+[00:03:05] this strategy is simple, and honestly, a
+[00:03:07] little bit brain-dead. Over the time
+[00:03:09] window from 2021 to 2022, every day, I
+[00:03:12] counted up every ticker mentioned on the
+[00:03:14] forum, and found the single most
+[00:03:15] mentioned stock. Then, I buy it, and I
+[00:03:18] just hold it until it loses its place as
+[00:03:20] the most mentioned stock, then I'll sell
+[00:03:22] it. So, effectively, we're just
+[00:03:24] following the hype. I'll show the buy
+[00:03:26] the most mentioned stock strategy in
+[00:03:28] green, and then plot the S&P 500 on top.
+[00:03:31] There is this massive spike early in the
+[00:03:32] year where we get these insane profits.
+[00:03:35] So, it looks like the strategy is
+[00:03:36] working. However, this is all driven by
+[00:03:38] the infamous GameStop short squeeze.
+[00:03:40] But, the issue is that it holds its
+[00:03:42] place as the most mentioned stock
+[00:03:44] [music] even after it's hit its peak
+[00:03:45] popularity. And this causes us to lose
+[00:03:47] the majority of our profits. So, yeah,
+[00:03:50] this idea does not work. However, it's
+[00:03:52] failing for an interesting reason. Think
+[00:03:54] about what most mentioned actually
+[00:03:55] means. By the time a stock is the single
+[00:03:57] most mentioned ticker [music] on the
+[00:03:58] forum, everyone already knows about it.
+[00:04:01] It's on the front page, it's in the
+[00:04:02] news, maybe your grandmother's telling
+[00:04:04] you about it. So, buying the most
+[00:04:06] popular stock doesn't work, but what
+[00:04:07] about buying the stock that is becoming
+[00:04:09] the most popular? So, forget the raw
+[00:04:11] count. We care about velocity. Here's
+[00:04:13] the idea. Say a stock gets mentioned
+[00:04:14] five times on Monday, 10 times on
+[00:04:16] Tuesday, and 15 times on Wednesday.
+[00:04:18] That's plus five mentions per day.
+[00:04:20] That's the velocity. A stock with high
+[00:04:22] velocity could blow up before it's known
+[00:04:24] in the mainstream, and in theory, if I
+[00:04:26] can catch a stock while the fire is
+[00:04:27] still spreading, I might be able to get
+[00:04:29] in early and ride that wave up. So,
+[00:04:31] every day I rank every stock by the
+[00:04:33] velocity, and I'll buy the fastest
+[00:04:35] riser, then hold and sell. And yeah,
+[00:04:39] that also clearly did not work. Over one
+[00:04:42] year, the algorithm executed 222 trades,
+[00:04:45] and our strategy returned an average
+[00:04:46] return of minus 1.1%
+[00:04:49] versus the average S&P 500 return of
+[00:04:51] 30%, which is absolutely terrible. For
+[00:04:54] reference, one of our best trades was
+[00:04:56] plus 58%, which sounds great until you
+[00:04:58] realize that our worst trade was minus
+[00:05:00] 83%,
+[00:05:02] and at this point I kind of feel like
+[00:05:03] I'm just making up rules, to be honest.
+[00:05:05] Like I'm trying something, and of course
+[00:05:07] it doesn't work. It's just an endless
+[00:05:08] loop of try this, doesn't work, try
+[00:05:10] this, doesn't work. So, I had to turn to
+[00:05:12] something different. And if you're
+[00:05:13] yelling a better idea at your screen, I
+[00:05:15] post all the codes I create on my GitHub
+[00:05:16] for my sponsors, link in the
+[00:05:18] description. You can clone it, break it,
+[00:05:20] try your own version, and if you can
+[00:05:21] come up with improvements, I may just
+[00:05:23] feature your work in a future video, so
+[00:05:24] we can pool our collective knowledge of
+[00:05:26] 30,000 degenerates together. Anyways,
+[00:05:29] like the terrible researcher I am, I
+[00:05:31] only looked at what other people had
+[00:05:32] done after I built the whole thing
+[00:05:33] myself. Absolutely fantastic. Turns out
+[00:05:36] this is a pretty well-studied topic.
+[00:05:38] Researchers from Oxford University
+[00:05:40] scraped the entire forum from 2012 to
+[00:05:42] 2022, and published a peer-reviewed
+[00:05:44] paper on it. Here is a chart of the
+[00:05:46] number of Wall Street Bets posts over
+[00:05:48] time. This is the time period we've been
+[00:05:50] looking at with about 1.4 million posts
+[00:05:53] per month. So, here's the problem with
+[00:05:55] my precious velocity signal, and the
+[00:05:57] article actually does point this out. If
+[00:05:59] a stock gets more mentions this week
+[00:06:01] than the last, is it actually heating up
+[00:06:03] or did the entire forum just get bigger?
+[00:06:05] So, my indicator was actually partly
+[00:06:07] measuring the subreddit's growth.
+[00:06:09] Thankfully, the fix is simple. Just
+[00:06:10] don't count the raw mentions. Instead,
+[00:06:12] count each stock's share of the
+[00:06:14] conversation. Basically, it's mentions
+[00:06:16] as a fraction of the total posts made
+[00:06:18] that day. The Oxford paper literally
+[00:06:20] divides by the 7-day rolling average of
+[00:06:22] total posts to cancel out the forum's
+[00:06:25] growth, and I should probably also do
+[00:06:26] the same. And the results are, yeah,
+[00:06:29] this also did not work. I mean, what a
+[00:06:31] surprise. It did not beat holding the
+[00:06:34] index. It did do better than the last
+[00:06:36] non-normalized strategy, but the S&P did
+[00:06:39] plus 30% over this time window, and our
+[00:06:41] new normalized strategy gave minus 0.2%
+[00:06:45] over the year. Technically, it's better
+[00:06:47] than before, but still terrible compared
+[00:06:49] to the market return. Now, I know
+[00:06:50] exactly what you're thinking, and I've
+[00:06:52] been holding out saying this until now.
+[00:06:54] Some Redditors are posting that a stock
+[00:06:55] is going to zero, and others are posting
+[00:06:57] that it's going to go to the moon.
+[00:06:59] Investing based on the number of
+[00:07:00] mentions or the velocity tells you
+[00:07:02] nothing about how people feel about a
+[00:07:05] particular company. This is where we
+[00:07:07] will get to an idea of mine, and you're
+[00:07:09] going to help me with this. This gap
+[00:07:11] that I'm describing is the difference
+[00:07:13] between my work and the approach at
+[00:07:14] Oxford. Well, that and like a hundred
+[00:07:17] other things. They didn't count just the
+[00:07:19] posts. They actually read them. They
+[00:07:21] trained an AI to classify every post as
+[00:07:24] either bullish or bearish, then they
+[00:07:26] measured whether that sentiment
+[00:07:27] predicted returns. In fact, they
+[00:07:29] actually manually classified 4,000 posts
+[00:07:32] by hand, then they trained the model to
+[00:07:33] predict if a post was either bullish or
+[00:07:35] bearish. And did it actually work? Did
+[00:07:38] reading the crowd beat just buying the
+[00:07:40] index? No, it did not. And I want to be
+[00:07:43] honest with you. They simulated trading
+[00:07:45] on the sentiment of every post and lost
+[00:07:47] money. They lost about minus 2.8% the
+[00:07:50] next [music] day. During the GameStop
+[00:07:52] year, it was actually worse, about minus
+[00:07:54] 4.4%. So, is that it? Crowd dumb, buy
+[00:07:58] [music] index, video over? Also no,
+[00:08:01] because buried in that same paper is the
+[00:08:03] most interesting result in this project.
+[00:08:05] And it's the reason why I wanted to make
+[00:08:07] a video on this in the first place.
+[00:08:08] Sure, the forum as a whole is noise, but
+[00:08:11] the researchers actually split posts
+[00:08:13] apart. And when they isolated just the
+[00:08:15] due diligence posts, the long actually
+[00:08:17] researched write-ups, the returns
+[00:08:19] flipped positive. Now, here's [music]
+[00:08:21] the catch. The model the Oxford
+[00:08:23] researchers used to classify posts only
+[00:08:25] achieved a 69% [music]
+[00:08:27] accuracy, which is not bad for
+[00:08:28] classifying Redditors, but there's a lot
+[00:08:30] of room to improve. Moreover, they only
+[00:08:32] achieved this by manually classifying
+[00:08:34] 4,000 posts by hand, which gave me an
+[00:08:36] idea. To do better, we need a lot more
+[00:08:39] labeled data. Like a lot more than 4,000
+[00:08:41] posts. A cleaner, bigger pile of posts
+[00:08:44] that humans have already tagged as
+[00:08:45] either bullish or bearish. We need a lot
+[00:08:48] more than just a couple PhD students
+[00:08:49] jacked up on coffee. So, here's the
+[00:08:51] plan. If this video does well and
+[00:08:53] there's an interest in this project
+[00:08:55] long-term, I'll enlist the help of my
+[00:08:57] viewers through 500 Discord users,
+[00:08:59] 30,000 degenerate subscribers, and
+[00:09:01] everyone on Patreon to do the hard
+[00:09:03] manual labor and classify as many posts
+[00:09:05] as possible so we can then feed a
+[00:09:07] language-based model and classify Reddit
+[00:09:10] posts. We could even extend beyond Wall
+[00:09:12] Street Bets and venture into the land of
+[00:09:14] Reddit in general, or maybe even beyond.
+[00:09:16] There are so many things to do to
+[00:09:18] improve this project. The highest
+[00:09:19] leverage is probably a full literature
+[00:09:21] review to understand what the state of
+[00:09:23] public knowledge already looks like. Why
+[00:09:25] didn't I do this before? Well, I'm not
+[00:09:27] super smart. That's it. [laughter]
+[00:09:29] That's that's the answer. Make sure you
+[00:09:30] like and subscribe so you do not miss
+[00:09:32] future videos in these silly little
+[00:09:34] projects. Love you guys and I'll see you
+[00:09:36] in the next one.

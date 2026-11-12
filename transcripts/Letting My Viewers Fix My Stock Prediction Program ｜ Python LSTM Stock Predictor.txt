@@ -1,0 +1,177 @@
+[00:00:00] Last month, I built an AI that tried to
+[00:00:01] predict tomorrow's stock prices using
+[00:00:03] machine learning. It kind of worked. If
+[00:00:05] by worked, you mean random guesses with
+[00:00:07] extra steps. But then you guys left some
+[00:00:09] insanely smart comments. I trying many
+[00:00:10] model, but I am so sad. So today, I
+[00:00:12] rebuilt the model using your suggestions
+[00:00:14] to see if it can actually get smarter.
+[00:00:16] Okay, quick recap. The last model used
+[00:00:18] an LSTM or long short-term memory
+[00:00:20] network trained on historical data,
+[00:00:22] insider trading, and sentiment scores to
+[00:00:24] predict if a stock would go up the next
+[00:00:25] day. I'm not certain what the issue is.
+[00:00:27] Well, I mean, probably that the stock
+[00:00:28] market is very difficult to predict.
+[00:00:33] Is determined by so many variables, and
+[00:00:35] then we have to compete with
+[00:00:36] institutional investors. So, while we
+[00:00:38] might seek to find patterns in news and
+[00:00:40] sentiment to gauge whether or not a
+[00:00:41] stock will increase the next day.
+[00:00:43] Realistically, there probably already
+[00:00:44] thousands of people doing exactly this.
+[00:00:46] So, the opportunity in the market has
+[00:00:48] been filled. So, what should we do next?
+[00:00:50] If we were to place ourselves on a
+[00:00:51] Dunning-Kruger curve, we'd probably be
+[00:00:53] right here, right at the start. We know
+[00:00:55] nothing, we are nothing. Everything
+[00:00:57] about the code we've written could
+[00:00:58] probably be found in countless places on
+[00:01:00] YouTube. Or maybe you could even ask
+[00:01:02] ChatGPT to write a similar AI code. But
+[00:01:04] there's one thing that we have that
+[00:01:05] others don't, and that's an extreme
+[00:01:07] patience. A patience so large that even
+[00:01:09] if we never crack the code to AI stock
+[00:01:11] prediction, we would have learned so
+[00:01:12] much by doing these forecasting models
+[00:01:14] that it all would have been worth it.
+[00:01:15] So, where do we go next? Well, we
+[00:01:17] implement your changes, of course.
+[00:01:22] This is where we're at with this code
+[00:01:23] right now. If I click run,
+[00:01:28] here we compare our machine learning
+[00:01:30] model, which is making predictions about
+[00:01:31] which stock to buy and sell each day in
+[00:01:34] blue to a buy and hold strategy where we
+[00:01:36] just buy the S&P and never sell. This is
+[00:01:38] being shown in green. Of course, if you
+[00:01:40] just randomly bought and sold stocks
+[00:01:42] each day, you could by pure chance
+[00:01:43] actually outperform the market. So, this
+[00:01:45] is being shown in the faded gray lines
+[00:01:47] where we evolve a bunch of portfolios,
+[00:01:49] each randomly buying and selling stocks
+[00:01:51] each day. If our machine learning model
+[00:01:53] greatly outperforms the random noise of
+[00:01:55] buying and selling random stocks and the
+[00:01:58] S&P, then we can be confident the
+[00:01:59] model's actually working.
+[00:02:00] &gt;&gt; You should introduce an early epoch
+[00:02:01] cutoff when the validation accuracy
+[00:02:03] hasn't progressed for 10 to 15 epochs in
+[00:02:04] a row to avoid overfitting.
+[00:02:05] &gt;&gt; Easy fix. That's called early stopping.
+[00:02:07] I didn't do that before because well,
+[00:02:08] maybe more epochs will help this work.
+[00:02:11] Okay, probably not. So, yeah, let's
+[00:02:12] implement that. There's no point to
+[00:02:14] resimulate because this doesn't actually
+[00:02:15] increase our prediction accuracy. It
+[00:02:17] only lowers the amount of time required
+[00:02:18] for training because the model isn't
+[00:02:20] seeing that accuracy is not improving
+[00:02:22] with more epochs. So, it just stops it
+[00:02:24] early.
+[00:02:25] &gt;&gt; I really liked your video. I just have a
+[00:02:26] few questions about your video. Have you
+[00:02:27] tried predicting tomorrow's log returns
+[00:02:29] instead of whether it goes up or down?
+[00:02:30] What are some of the best performing
+[00:02:31] features? How does your random runs
+[00:02:32] work?
+[00:02:32] &gt;&gt; In my previous model, I was just
+[00:02:34] predicting whether or not a stock would
+[00:02:35] go up the next day. A simple yes or no.
+[00:02:37] But the problem with that is that it
+[00:02:38] ignores how much the stock is expected
+[00:02:40] to move. For example, a stock might be
+[00:02:42] very likely to go up, but only by 0.1%
+[00:02:45] while another stock might have a smaller
+[00:02:46] chance of going up, but could move by
+[00:02:48] 5%. The binary prediction treats both
+[00:02:50] the same, which isn't very useful if
+[00:02:51] you're trying to pick the best
+[00:02:52] opportunities. That's why I'm now
+[00:02:54] predicting log returns, and I agree with
+[00:02:56] this commenter. Essentially, the
+[00:02:57] expected percentage change for the next
+[00:02:59] day. This gives a continuous measure of
+[00:03:00] how much a stock might move, which lets
+[00:03:02] us decide whether or not to buy. But it
+[00:03:03] also allows us to rank stocks by the
+[00:03:05] expected return. It's much closer to how
+[00:03:07] traders actually think about
+[00:03:08] opportunities, and not just whether a
+[00:03:09] stock goes up, but by how much.
+[00:03:13] ChatGPT, what's wrong with my
+[00:03:15] code?
+[00:03:17] Oh, there's no return.
+[00:03:18] &gt;&gt; We can also compute the permutation
+[00:03:19] importance, which will describe, well,
+[00:03:21] the importance of each feature that
+[00:03:23] we're using in our model. This doesn't
+[00:03:24] contribute to an improvement in the
+[00:03:25] accuracy of our model, but will allow us
+[00:03:27] to have a better appreciation for what
+[00:03:29] features are actually providing us with
+[00:03:30] the most value. So, you can see in this
+[00:03:32] bar plot that things like the closing
+[00:03:33] value, yesterday open log returns, and
+[00:03:36] 20-day momentum are couple things that
+[00:03:37] contribute the most to our algorithm and
+[00:03:39] allowing it to achieve a higher
+[00:03:41] accuracy.
+[00:03:41] &gt;&gt; You could add more features.
+[00:03:42] Volume-based features. Use a tree-based
+[00:03:44] model, and in that use time decay
+[00:03:45] weights with recent data points have
+[00:03:46] more weight.
+[00:03:47] &gt;&gt; Okay, that's a fantastic idea. The
+[00:03:48] market changes over time. Patterns
+[00:03:49] appear, disappear, and new ones emerge
+[00:03:51] as people react to them. So, if our
+[00:03:52] model is trying to learn from these
+[00:03:54] patterns, it makes sense to give more
+[00:03:55] weight to the most recent data. That
+[00:03:57] way, the model focuses on what's
+[00:03:58] currently relevant rather than being
+[00:04:00] overly influenced by old market behavior
+[00:04:02] that might no longer apply. Now, with
+[00:04:03] all the changes we've made, it's
+[00:04:04] probably time that we test the model.
+[00:04:10] Now that we have log returns, we're
+[00:04:11] actually going to have to change the way
+[00:04:12] we do our back testing. We now have to
+[00:04:14] consider the predicted log return, where
+[00:04:16] we can comb through each stock for each
+[00:04:18] day and find the highest return. Now, if
+[00:04:19] all the returns are below zero, we just
+[00:04:21] won't buy for that day.
+[00:04:25] What you might notice is that the
+[00:04:26] predicted log our strategy, which we
+[00:04:28] believe to be better, might actually be
+[00:04:29] performing worse than our previous
+[00:04:30] version one. In reality, this might be
+[00:04:32] better, but it's still not able to
+[00:04:33] accurately make predictions, and it's
+[00:04:34] just fitting in with the noise of all
+[00:04:36] the randomly evolved portfolios buying
+[00:04:38] and selling random stocks each day. So,
+[00:04:39] this is still nothing more than a
+[00:04:40] complete guess. So, where do we go from
+[00:04:42] here? Well, I'll tell you. You keep
+[00:04:43] giving me comments telling me either how
+[00:04:45] dumb I am or giving suggestions on how
+[00:04:47] to improve my code. You guys have been
+[00:04:48] so kind and helpful, and I'm so thankful
+[00:04:50] to every single one of you that's
+[00:04:52] watched my last video. And if you've
+[00:04:53] enjoyed this video, then subscribe so
+[00:04:55] you don't miss my next iteration of this
+[00:04:56] code version three. I'll catch you guys
+[00:04:58] later.

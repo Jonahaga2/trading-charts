@@ -1,0 +1,319 @@
+[00:00:00] I built the world's stupidest trading
+[00:00:01] bot that uses Reddit posts to predict
+[00:00:03] which stocks are about to explode before
+[00:00:06] they actually do. And it failed
+[00:00:07] miserably because Oxford beat me to the
+[00:00:09] punch and has already developed an
+[00:00:11] algorithm to do exactly this, which is
+[00:00:13] now publicized. Last time I built a bot
+[00:00:16] to trade off Wall Street bets and it
+[00:00:18] lost to the S&P baseline. Then you guys
+[00:00:20] left 600 comments detailing every
+[00:00:22] important improvement I should make. And
+[00:00:24] I went through every single one of them
+[00:00:25] and have assembled a list that I will
+[00:00:27] use to create the best Wall Street Bets
+[00:00:29] trading algorithm implementing your
+[00:00:31] suggestions to beat these brainiac
+[00:00:33] Oxford quants with comment section
+[00:00:35] creativity. So about the Oxford paper,
+[00:00:38] they didn't actually build a trading
+[00:00:40] algorithm. Instead, they built three
+[00:00:42] specific places where a signal might
+[00:00:44] exist [music] and then three big
+[00:00:45] warnings about where it doesn't. Today,
+[00:00:47] the comment section beats Oxford
+[00:00:49] accuracy with five minutes of coding.
+[00:00:51] Then, I want to go straight into every
+[00:00:53] single warning that Oxford specifically
+[00:00:55] told us to avoid. And by the end, I'm
+[00:00:57] going to show you two doors that I still
+[00:00:58] haven't opened yet, and which ones we're
+[00:01:00] going to be opening next. But before we
+[00:01:02] beat Oxford, I owe the comment section
+[00:01:04] one test, [music] the one everybody
+[00:01:05] asked for, the one that got a,000 up
+[00:01:08] votes. All right, so quick recap in case
+[00:01:10] you missed my last video, by the way.
+[00:01:12] Definitely go check that out. We had
+[00:01:13] scanned through Wall Street Bets posts
+[00:01:15] counting the number of mentions for a
+[00:01:17] particular stock ticker every single
+[00:01:19] day. We then bought the hype, basically
+[00:01:21] the most popular stock for a given day,
+[00:01:22] and then we sold it when it lost its
+[00:01:24] popularity. And we lost to the S&P every
+[00:01:27] single time, as expected. We then tried
+[00:01:30] to buy the fastest risers, maybe stocks
+[00:01:32] where mentions were spiking suddenly,
+[00:01:34] and we also lost. So sadly, these two
+[00:01:36] different strategies did not work. But
+[00:01:38] you guys pointed out exactly why, and
+[00:01:40] Oxford actually knew it, too. You can't
+[00:01:42] just buy the most mentioned stock with
+[00:01:44] the fastest riser because the sentiment
+[00:01:46] could actually be negative. Maybe the
+[00:01:48] company is about to declare bankruptcy
+[00:01:50] and that's why everybody's talking about
+[00:01:51] it. So, it's probably not a good time to
+[00:01:53] buy. Oxford actually went through the
+[00:01:55] effort of handlabeling 4,000 posts
+[00:01:57] either bullish, bearish, or neutral.
+[00:01:59] They then fine-tuned an AI called
+[00:02:01] Finnbert and hit an accuracy of 69%. And
+[00:02:04] then they tested investing based on
+[00:02:06] sentiment for every Wall Street Bets
+[00:02:08] post and they lost money. Fantastic.
+[00:02:11] &gt;&gt; [music]
+[00:02:11] &gt;&gt; So, we do need sentiment. And boy oh
+[00:02:13] boy, do I have a plan for this. But
+[00:02:15] before we get to that, I have to address
+[00:02:17] your most upvoted comment. Did you try
+[00:02:20] doing the opposite?
+[00:02:22] &gt;&gt; So, if the crowd is reliably wrong, then
+[00:02:24] inverting them should be reliable,
+[00:02:26] right? I mean, come on. It's basically
+[00:02:27] free money. Let's bet against Wall
+[00:02:29] Street bets, which means we will short
+[00:02:31] the most mentioned stocks. [music] So
+[00:02:33] when the company we bet on crashes, we
+[00:02:35] see massive returns because surely the
+[00:02:38] most mentioned stocks are overhyped
+[00:02:40] right now. At first I chose the GameStop
+[00:02:43] year running the back test from January
+[00:02:45] to February of 2021. I know it's an
+[00:02:48] interesting [music] time period to
+[00:02:49] choose. Now this quickly resulted in all
+[00:02:51] of us losing our money together as
+[00:02:53] GameStop exploded in value and we lost
+[00:02:56] everything during our short. We could
+[00:02:58] run a bunch of individual random
+[00:03:00] portfolios where we short stocks on the
+[00:03:02] date they are mentioned in the
+[00:03:04] subreddit. This could generally tell us
+[00:03:06] if Wall Street Bets is on average
+[00:03:08] consistently wrong. And maybe we can
+[00:03:10] make a profit by just betting against
+[00:03:12] the [music] whole forum in general. And
+[00:03:14] unfortunately, this too does not work
+[00:03:16] with our portfolio coming in just below
+[00:03:18] average market return. But running this
+[00:03:21] during the GameStop year would be
+[00:03:23] misleading. It was a massive outlier.
+[00:03:26] So, let's pull data for the entirety of
+[00:03:28] 2025. Now, what you're seeing is our
+[00:03:30] simulated portfolio in green compared to
+[00:03:32] the S&P in red. Even by shorting the
+[00:03:35] most mentioned stock throughout this
+[00:03:36] entire year, there's only a single
+[00:03:38] fleeting moment where the strategy was
+[00:03:40] beating the S&P. And how did we do by
+[00:03:42] shorting random stocks on the Wall
+[00:03:44] Street Bets forum? Well, also not great.
+[00:03:47] These uncapped downsides mean that our
+[00:03:49] risk is so much higher than simply
+[00:03:50] buying and holding a stock, which
+[00:03:52] results in these rather poor returns.
+[00:03:54] The median return for our shorting
+[00:03:56] strategy was approximately minus 1.09%
+[00:04:00] over 2025 to 2026 as compared to the S&P
+[00:04:03] return of about 18%. So do the opposite
+[00:04:07] isn't a cheat code. [music] And we just
+[00:04:09] confirmed Oxford's second warning that
+[00:04:11] shorting the crowd does not work. But
+[00:04:14] the comment section had a much better
+[00:04:16] idea. The idea that 40 of you pointed
+[00:04:18] out. Okay, quick thing. All of this goes
+[00:04:21] up on GitHub for my sponsors. every
+[00:04:23] script, every back test, everything. 600
+[00:04:25] of you already run it and you can cancel
+[00:04:28] any time, but every month I merge your
+[00:04:30] ideas into the code. So, the people who
+[00:04:32] stay get something that keeps getting
+[00:04:33] smarter. Plus, you get to support a
+[00:04:35] struggling PhD grad. Link in the
+[00:04:37] description. I should maybe stop
+[00:04:39] publishing this stuff because, as one of
+[00:04:41] you have already pointed out,
+[00:04:43] &gt;&gt; don't publish all [music] your secrets
+[00:04:45] in a YouTube video. Tsunoo.
+[00:04:48] &gt;&gt; Okay, back to the Oxford thing. Roughly
+[00:04:50] 40 of you said the same thing. Use an
+[00:04:52] LLM that classifies sentiment for each
+[00:04:54] post. That way we know if people are
+[00:04:56] bullish or bearish on a stock. [music]
+[00:04:58] We buy the ones we like and short the
+[00:05:00] ones we hate. Okay. Oxford did this too
+[00:05:02] by labeling 4,000 posts by hand
+[00:05:05] fine-tuned in a Finnbert model and hit
+[00:05:08] an accuracy of 69%. [music] So that's
+[00:05:10] the number that we have to beat. They
+[00:05:12] did it with two PhDs hand labeling. And
+[00:05:14] I'm going to use Finnbert for the entire
+[00:05:15] [music]
+[00:05:16] thing. Finnbert is just Google's
+[00:05:18] language model that is specifically
+[00:05:19] trained on financial sentiment data.
+[00:05:21] It's able to generate an indicator for
+[00:05:23] positive or negative sentiment based
+[00:05:24] [music] on text alone. And yes, I know a
+[00:05:27] lot of posts are super sarcastic, but
+[00:05:29] I'm hopeful we can beat this thing
+[00:05:30] [music] regardless. So, I used Finn to
+[00:05:32] classify posts from January to February
+[00:05:34] of 2025 into positive or negative
+[00:05:37] sentiment. Then, I validated them by
+[00:05:40] hand to get a sense for its accuracy. I
+[00:05:42] ended up checking about 200 posts with
+[00:05:44] confidence levels above 90%. [music] And
+[00:05:47] yeah, I know that this is like way less
+[00:05:48] than the 4,000 posts manually validated
+[00:05:51] by the Oxford level PhDs, but I am lazy
+[00:05:54] and pucker up for this. In those 200
+[00:05:57] posts, the prediction accuracy that I
+[00:05:59] found was 94%. [music]
+[00:06:02] Which is pretty damn good. Now, full
+[00:06:04] disclosure, I am cheating a little bit
+[00:06:06] because the Oxford 69% accuracy was on
+[00:06:09] three different classes, both bullish,
+[00:06:11] bearish, and neutral. [music]
+[00:06:13] And across every post, which is very
+[00:06:15] difficult, some are sarcastic or not
+[00:06:17] really obvious. I'm doing two classes
+[00:06:19] only, both bearish and bullish on the
+[00:06:22] easiest high confidence posts only,
+[00:06:24] which I think makes [music] much more
+[00:06:25] sense for creating a trading algorithm.
+[00:06:27] The advantage in this case is that our
+[00:06:28] algorithm only uses data that has high
+[00:06:30] confidence [music] rather than the
+[00:06:32] sarcastic posts that are uncertain. So
+[00:06:34] with better accuracy, can we beat the
+[00:06:36] Oxford model? That is the question.
+[00:06:39] Okay, this is a recap on the algorithm
+[00:06:40] in case you're taking notes. Basically,
+[00:06:42] every day we're going to scan through
+[00:06:44] Wall Street Bets posts and label it as
+[00:06:46] bullish or bearish using our LLM. Then
+[00:06:48] each stock ticker mentioned, we
+[00:06:50] calculate a score. I want the score to
+[00:06:52] make use of positive and negative
+[00:06:54] sentiment. And I also want it to be dead
+[00:06:56] simple because I'm not that smart. So
+[00:06:58] the score is going to be the number of
+[00:07:00] bullish posts mentioning that stock
+[00:07:02] minus the number of bearish posts
+[00:07:04] mentioning that stock. Whichever stock
+[00:07:06] has the highest score that day is the
+[00:07:08] one that we're going to buy. We then
+[00:07:10] hold it until a different stock takes
+[00:07:12] the top spot. Then we rotate to that new
+[00:07:14] one instead. I decided not to have any
+[00:07:16] diversification because come on, live a
+[00:07:19] little. In my short back test, we see
+[00:07:21] that buying the stock with the highest
+[00:07:22] positive sentiment does really well
+[00:07:25] compared to buying and holding the S&P.
+[00:07:27] This worked super well, and we even had
+[00:07:29] a day give plus 25% returns. The total
+[00:07:33] return over these two months was 51%.
+[00:07:36] Which amounts to a compound annual
+[00:07:38] growth rate of over a,000%.
+[00:07:42] H the spy over the same time period
+[00:07:44] [music]
+[00:07:45] did a compound annual growth rate of
+[00:07:47] 10%. So, is this thing actually working?
+[00:07:50] Am I making a massive mistake by
+[00:07:51] uploading this video to YouTube? Is this
+[00:07:53] commenter right? I genuinely don't know.
+[00:07:56] But if my physics background taught me
+[00:07:58] anything, it's that a good scientist
+[00:08:00] always seeks to disprove himself. So,
+[00:08:02] let's try to investigate this further.
+[00:08:04] My first thought was that I got lucky. I
+[00:08:06] mean, we only looked at January to
+[00:08:08] February of 2025, so maybe let's look at
+[00:08:10] all of 2025. I then pulled the data from
+[00:08:13] January of 2025 to January of 2026 and
+[00:08:17] let Finnbert get to work. And there are
+[00:08:19] a lot of posts to classify, so this took
+[00:08:22] a couple of hours. Okay. I mean, this is
+[00:08:24] what I'd expect. It has no real edge. Uh
+[00:08:27] oh. Oh gosh. Okay. Okay. This is working
+[00:08:31] really well. All right. So, I went back
+[00:08:33] to my code to investigate because if
+[00:08:34] something looks too good to be true, it
+[00:08:36] probably is. And I ended up finding
+[00:08:39] this. This simple less than symbol is
+[00:08:42] the difference between the code working
+[00:08:43] or not. It's basically allowing us to
+[00:08:46] use the current-day sentiment for
+[00:08:47] tomorrow's prediction. But the way I had
+[00:08:49] wrote it allowed the program to look at
+[00:08:51] the community reaction and then buy it
+[00:08:54] before the news has spread into the
+[00:08:56] market value. Basically, I had really
+[00:08:58] bad look ahead bias. The model was
+[00:09:00] cheating off of tomorrow's knowledge.
+[00:09:02] So, now that we fixed our look ahead
+[00:09:04] bias, we can rerun the code and see the
+[00:09:06] results. Here we're going long on stocks
+[00:09:08] based on high scores from our sentiment.
+[00:09:10] We can see that the model unfortunately
+[00:09:13] does not work. So simply following the
+[00:09:15] crowd is definitely a bad idea. But
+[00:09:17] stick around for a bit because we're not
+[00:09:19] done yet. We still need to short Wall
+[00:09:21] Street Bets based on sentiment.
+[00:09:22] Following Wall Street Bets positive
+[00:09:24] sentiment gave a 1-year return of minus
+[00:09:26] 49%.
+[00:09:28] Which is uh not good. Maybe you don't
+[00:09:31] trust Wall Street bets with your next
+[00:09:32] stock trade. So, what if we bet against
+[00:09:35] stocks that have highc scoring positive
+[00:09:37] sentiment? In my opinion, this is what
+[00:09:39] would give the highest probability of
+[00:09:41] working because we're purposely betting
+[00:09:43] against a degenerate crowd of gamblers.
+[00:09:45] So, we should have a pretty good shot at
+[00:09:47] winning, right? Also, quick note, the
+[00:09:49] algorithm flags words like tech, bull,
+[00:09:51] and meme as tickers because they are
+[00:09:54] real ETFs. So, when Wall Street Bets
+[00:09:56] says this is a meme stock, my bot thinks
+[00:09:59] they're hyping the meme ETF, which is a
+[00:10:01] cute bug, but it doesn't really change
+[00:10:03] the results by much. So, here we go.
+[00:10:06] Finally, let's short Wall Street Bets
+[00:10:08] with sentiment. Now, we can see that the
+[00:10:10] volatility is super high because of the
+[00:10:12] uncapped downsides. And while the market
+[00:10:15] in general took a downswing in February
+[00:10:17] of 2025, which helped our short
+[00:10:19] positions, we quickly lost all of our
+[00:10:21] gains. and the S&P quickly recovers back
+[00:10:24] to beating the strategy. So, no, it did
+[00:10:27] not work. We walked into every warning
+[00:10:30] Oxford left for us. Don't follow the
+[00:10:31] hype. We did and lost 49%. Don't trade
+[00:10:35] on aggregate forum sentiment. We did. No
+[00:10:38] edge. But here's what we didn't do.
+[00:10:40] Oxford's paper has a few findings I just
+[00:10:42] glossed over, and I thought I'd save the
+[00:10:44] best for last. Oxford built a network
+[00:10:46] map of which assets get discussed
+[00:10:48] together and most of the big clusters
+[00:10:50] lost money. But small niche clusters did
+[00:10:53] have positive returns. So maybe small
+[00:10:56] groups of weirdos like me and you
+[00:10:58] talking about boring stocks might
+[00:10:59] actually work. Now we have a lot more
+[00:11:02] work to do and I need your help. So drop
+[00:11:04] a comment with your ideas and I will
+[00:11:06] explore them in the next [music] video.
+[00:11:08] The code for this is on GitHub. Have fun
+[00:11:10] playing around with it. But if you solve
+[00:11:11] something, you are obligated to tell me
+[00:11:13] about it. I'll see you guys in the next
+[00:11:15] one.

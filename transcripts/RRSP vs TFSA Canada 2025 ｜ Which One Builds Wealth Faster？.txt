@@ -1,0 +1,235 @@
+[00:00:00] My friend recently messaged me asking if
+[00:00:02] RRSPs are a scam, which only proves to
+[00:00:04] me that people in their 20s really do
+[00:00:06] have no financial literacy and we're all
+[00:00:08] basically doomed. Now, obviously, a
+[00:00:10] retirement savings account isn't a scam,
+[00:00:12] but my friend really is being serious
+[00:00:14] here. So, allow me to explain to you
+[00:00:16] exactly how an RRSP is worth it. My goal
+[00:00:19] here is just to make a comparison
+[00:00:20] between a TFSA and RRSP and then look at
+[00:00:23] the long-term outcome of investing in
+[00:00:24] either. The point my friend is trying to
+[00:00:26] get at is that taxes are bad. And since
+[00:00:28] a TFSA is well tax-free, it just has to
+[00:00:32] be better. But what is an RRSP? Now, the
+[00:00:34] Canadian government website defines an
+[00:00:35] RRSP as
+[00:00:38] which is a pretty shitty description. I
+[00:00:40] mean, I know that there's other links on
+[00:00:41] this page, but for the RRSP page, this
+[00:00:43] is basically it. But there is an
+[00:00:45] important word they mentioned which is
+[00:00:46] tax deductible which basically says,
+[00:00:48] "Hey, with your current income at your
+[00:00:50] shitty McDonald's job,
+[00:00:52] &gt;&gt; give me the [ __ ] McLer,
+[00:00:54] &gt;&gt; your employer will take a portion of
+[00:00:55] your income and send it back to the
+[00:00:57] government to pay your taxes. But if you
+[00:00:59] put this money into a tax deductible
+[00:01:00] account, we will reward you by not
+[00:01:02] having to pay taxes on the amount you
+[00:01:04] just put in. So let's say that you make
+[00:01:06] $100,000 a year and you pay 30% taxes,
+[00:01:10] so $30,000. then your take-home pay is
+[00:01:13] $70,000. Now, you've been a good boy and
+[00:01:16] you put about $10,000 into a
+[00:01:18] taxdeductible RRSP. And come tax season,
+[00:01:21] the government takes $10,000 of that
+[00:01:23] contribution you made and deducts it
+[00:01:25] from the $100,000 of taxable income. So,
+[00:01:28] your new taxable income is 90,000.
+[00:01:31] Whoops. You've already paid taxes on the
+[00:01:34] $100,000 of income because it came out
+[00:01:36] of your pay automatically. And with a
+[00:01:38] 30% tax bracket on that new $90,000, you
+[00:01:41] should really have paid $27,000 worth of
+[00:01:44] taxes, not $30,000. So the government
+[00:01:47] will refund you $3,000 on your tax
+[00:01:50] return due to that contribution.
+[00:01:54] All right, so I set up this sheet that
+[00:01:55] we can work through to make a comparison
+[00:01:57] between the TFSA and RRSP. Can't believe
+[00:01:59] I'm doing this in Excel, but this uh
+[00:02:02] really just works better and uh really
+[00:02:04] fulfilling the role of a salary man
+[00:02:05] right now.
+[00:02:07] So, if we just look at the TFSA for a
+[00:02:08] second, um, and assume that we make a
+[00:02:11] $3,000 yearly investment, which is maybe
+[00:02:14] reasonable or unreasonable depending on,
+[00:02:16] uh, where you are. Good. So, the TFSA is
+[00:02:19] rather simple. You make a $3,000
+[00:02:20] contribution in year 1. And then year
+[00:02:22] two, it's that same $3,000, but just
+[00:02:25] scaled by 2% to account for inflation.
+[00:02:29] Let's say that you're contributing more
+[00:02:30] as time goes on. So, your account value
+[00:02:33] in the first year will be 3,000. And
+[00:02:35] then in the next year will simply be
+[00:02:36] that 3,000 multiplied by 1 plus our 8%
+[00:02:40] to give us our annual investment return.
+[00:02:42] And then we'll also add into that but
+[00:02:44] not scaled with respect to the
+[00:02:46] investment return the contribution that
+[00:02:48] you've made. This will continue on for
+[00:02:50] about 30 years at which point we'll
+[00:02:52] withdraw the amount which will just be
+[00:02:54] the final account's value. Since this is
+[00:02:56] tax-free, we'll assume that for your
+[00:02:58] income bracket you pay about 24% taxes.
+[00:03:01] We'll put this as 24% which could be
+[00:03:03] very high or very low depending on who
+[00:03:05] you are but these are just made up
+[00:03:06] numbers. The tax return reinvestment is
+[00:03:08] simply a percentage that will describe
+[00:03:11] what percentage of your tax return
+[00:03:12] you're actually reinvesting into your
+[00:03:14] RRSP.
+[00:03:16] So again the contribution is $3,000 uh
+[00:03:19] the same as the TFSA
+[00:03:23] and this also scales with respect to
+[00:03:24] inflation just the same. In fact, this
+[00:03:26] whole column will be the exact same. But
+[00:03:29] beyond the contribution is the tax
+[00:03:31] return for the next year. So this will
+[00:03:33] be simply the tax return reinvestment
+[00:03:35] factor. Um we'll assume 100% the income
+[00:03:38] tax bracket that you're in because
+[00:03:40] that'll determine how much money you get
+[00:03:41] back and the contribution that you made.
+[00:03:46] So for the first year it'll be $720. And
+[00:03:49] then this will scale as you contribute
+[00:03:51] more. but also because you're
+[00:03:53] reinvesting that $720 in the next year
+[00:03:56] it goes up to a whopping $97 that you
+[00:03:58] get back on your tax return. And we're
+[00:04:00] assuming that we're reinvesting 100% of
+[00:04:02] this. But if we put it at zero, the tax
+[00:04:04] return for the next year just goes to
+[00:04:06] well 0%. And in fact, the final value
+[00:04:09] for your account in the RRSP is the
+[00:04:11] exact same. However, the after tax
+[00:04:14] amount is not, which is important. And
+[00:04:18] this brings up an interesting point,
+[00:04:20] which is that the RRSP is really useful
+[00:04:22] if you're reinvesting the tax back that
+[00:04:24] you get because at the end of your RRSP
+[00:04:27] when you decide to withdraw, you will be
+[00:04:29] hit with those taxes on withdrawals.
+[00:04:32] Now, if you make the tax return
+[00:04:34] reinvestment fraction 0%, meaning that
+[00:04:36] every time you get your tax return, you
+[00:04:38] spend all of that money. You see, of
+[00:04:40] course, that the tax return for the next
+[00:04:42] year goes to zero, which makes sense.
+[00:04:44] you're not investing anything into your
+[00:04:45] RRSP based on your tax return, which
+[00:04:49] really means that you need to be making
+[00:04:50] that contribution
+[00:04:52] uh on from your tax return
+[00:04:55] using the portion of that tax return
+[00:04:58] which came from the contribution on your
+[00:05:00] RRSP. Now, even if you do do this,
+[00:05:03] there's actually no difference between
+[00:05:04] the RRSP and TFSA. So, what actually
+[00:05:07] makes the TFSA or RRSP worth it? You
+[00:05:10] have to mostly consider your income tax
+[00:05:12] bracket. In fact, that's really the only
+[00:05:13] thing that actually matters here in our
+[00:05:15] current scenario where we invest an
+[00:05:18] equal amount into our TFSA as our RRSP.
+[00:05:21] But each time that we get our tax return
+[00:05:23] on the RRSP, we invest or I should say
+[00:05:25] we reinvest 100% of that tax return
+[00:05:28] portion. There's basically no difference
+[00:05:31] between the RRSP and TFSA. We get
+[00:05:34] basically the same amount back. But
+[00:05:36] there's one important thing to consider,
+[00:05:39] which is our tax brackets. Now, let's
+[00:05:41] say that your current tax bracket is
+[00:05:43] 24%, which is quite a lot, but later in
+[00:05:45] life when you decide to withdraw from
+[00:05:47] your RRSP, whenever that may be, you're
+[00:05:49] in a significantly lower tax bracket.
+[00:05:52] Let's say maybe 14%. Because let's say
+[00:05:54] that you're withdrawing about $40,000
+[00:05:56] each year. This means that there's a
+[00:05:58] huge difference between the RRSP and
+[00:06:00] TFSA. In fact, based on the parameters
+[00:06:02] that we've entered, we gain about
+[00:06:04] $30,000 more at the end of those 30
+[00:06:06] years. But depending on your situation,
+[00:06:09] the RRSP could be good. For example, if
+[00:06:11] you're making a lot of money right now
+[00:06:13] and maybe you're in the 30% tax bracket.
+[00:06:15] Well, later on, if you decide to move
+[00:06:17] towards a lower salary because of your
+[00:06:20] retirement or whatever life goals you
+[00:06:22] have, making the RRSP contribution could
+[00:06:25] be a significant advantage. If you're in
+[00:06:27] the 30% tax bracket right now and making
+[00:06:29] lots of money, you might not be
+[00:06:31] comfortable later on in life with only a
+[00:06:33] $40,000 withdrawal. But what you can do
+[00:06:36] which could be beneficial is to utilize
+[00:06:39] other income sources which are not
+[00:06:41] classified as income like savings from
+[00:06:43] TFSAs.
+[00:06:45] For instance, if you max out your RRSP
+[00:06:48] as sort of the backup plan if all things
+[00:06:50] go wrong for retirement or whatever you
+[00:06:53] plan to do later on in life, you are
+[00:06:55] guaranteed this sort of minimum chunk of
+[00:06:58] cash that you can withdraw ideally at a
+[00:07:00] lower tax bracket. And if you have
+[00:07:02] filled up your contribution room for the
+[00:07:04] RRSP, you can invest into your TFSA,
+[00:07:07] which means that you can combine
+[00:07:09] withdrawals from the TFSA and RRSP. And
+[00:07:11] withdrawals from your TFSA do not count
+[00:07:14] as income. So you will not be taxed on
+[00:07:16] that portion, meaning that you can
+[00:07:17] remain within this lower tax bracket on
+[00:07:19] the RRSP. So to my friend in the
+[00:07:21] beginning, yes, RRSPs are worth it. It
+[00:07:24] just depends on your situation. And for
+[00:07:26] example, you could come up with some
+[00:07:28] situation in which you're actually
+[00:07:30] harming yourself. Like for instance, if
+[00:07:32] you're in a very low tax bracket right
+[00:07:33] now, paying something like 15% and later
+[00:07:36] on you make a boatload of money and
+[00:07:38] you're paying 40%. Well, then yes, of
+[00:07:42] course, the RRSP is not worth it at all.
+[00:07:45] But this situation is very unlikely. And
+[00:07:47] in fact, if you are making a significant
+[00:07:49] amount of money later on in life, you
+[00:07:51] probably don't really care about the
+[00:07:52] small contributions you're making
+[00:07:54] towards your RRSP in the beginning
+[00:07:55] because you're making so much money
+[00:07:56] later on anyways. So the RRSP really is
+[00:07:59] sort of like an insurance plan on your
+[00:08:02] ability to do things later on in life
+[00:08:04] with the money that you're saving now.
+[00:08:06] If you're in a much higher tax bracket
+[00:08:07] later on, then yeah, the RRSP was not
+[00:08:09] worth it at all, but you're probably
+[00:08:11] doing quite well financially anyways.
+[00:08:13] And if things go south, then the RRSP
+[00:08:15] will cover you. You're in a low income
+[00:08:17] tax bracket anyways, so withdrawals were
+[00:08:20] definitely worth it and you made the
+[00:08:21] right decision. If you've made it this
+[00:08:22] far, I'd be beyond grateful if you could
+[00:08:24] click the like and consider subscribing.
+[00:08:26] I'm branching out on a different path
+[00:08:27] here, breaking from the basic 9 to5 and
+[00:08:30] every bit of connection gives me courage
+[00:08:32] to keep creating. And I appreciate you
+[00:08:34] spending time to watch the entire video.
+[00:08:36] So, I'll talk to you next time. Take
+[00:08:38] care and bye-bye.

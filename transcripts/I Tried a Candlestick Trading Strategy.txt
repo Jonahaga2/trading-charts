@@ -1,0 +1,217 @@
+[00:00:00] We're back at it again. Validating
+[00:00:01] YouTubers trading strategies with real
+[00:00:03] data and real code. This time we're
+[00:00:04] looking at Trading Lab's most viewed
+[00:00:06] video. The only candlestick pattern
+[00:00:08] guide you'll ever need, which is a crazy
+[00:00:09] claim. So, instead of eyeballing charts,
+[00:00:11] I coded the patterns, back tested them
+[00:00:13] exactly as described. And in this video,
+[00:00:15] I'm going to share my favorite
+[00:00:16] candlestick patterns just like this one
+[00:00:19] that I use on a daily basis. No tweaks,
+[00:00:22] no optimization, just exactly the rules
+[00:00:24] as stated in the video. This video
+[00:00:25] claims that a small set of candlestick
+[00:00:27] patterns can help you predict direction
+[00:00:28] and time series. And to be fair, Trading
+[00:00:30] Labs does say that you shouldn't trade
+[00:00:31] on candlesticks alone, but the examples
+[00:00:33] clearly imply that these patterns can be
+[00:00:34] used as actionable signals. Some people
+[00:00:36] do genuinely rely on videos like this to
+[00:00:38] learn how to invest their hard-earned
+[00:00:40] money. So, the question is simple. If we
+[00:00:42] do exactly as stated systematically and
+[00:00:44] consistently, does this actually work?
+[00:00:46] To avoid some hindsight bias, I
+[00:00:48] translated the video's explanations into
+[00:00:50] explicit computer readable rules. When
+[00:00:52] to enter and when to exit whenever the
+[00:00:54] video didn't specify a detail,
+[00:00:55] especially exits, I use the most
+[00:00:57] generous reasonable assumption. and I'll
+[00:00:58] show you exactly what that was. One of
+[00:01:00] my favorite and most used candlestick
+[00:01:02] patterns I like to trade with is the
+[00:01:04] engulfing candle. According to the
+[00:01:06] video, an engulfing candle is supposed
+[00:01:07] to signal a reversal point. Bullish
+[00:01:09] engulfing candle is defined as a green
+[00:01:11] candle that completely engulfs the
+[00:01:12] previous red candle and a bearish
+[00:01:14] engulfing candle is just the opposite.
+[00:01:16] Importantly, the video does not specify
+[00:01:17] any trend filter or confirmation, just
+[00:01:20] the candle itself. So, we'll enter right
+[00:01:22] at that point. So, here are the rules
+[00:01:23] I've used. We identify bullish or
+[00:01:24] bearish engulfing patterns exactly as
+[00:01:26] defined. enter the next candle open and
+[00:01:29] then exit after a fixed holding position
+[00:01:30] cuz there's no real way to know how long
+[00:01:32] you should hold for. But we can go back
+[00:01:33] into the code and change this later on
+[00:01:35] if we'd like. If this strategy does
+[00:01:36] work, we should see returns that simply
+[00:01:37] beat holding the market. And from what
+[00:01:39] we can see with this engulfing candle
+[00:01:40] versus buying and holding strategy is
+[00:01:42] that the strategy equity actually is
+[00:01:44] higher than the buy and hold after our
+[00:01:46] time period. Now, we've only done a
+[00:01:47] couple trades here, but somebody might
+[00:01:48] naively look at this and say, "Hey,
+[00:01:49] look, it is working." But of course, a
+[00:01:51] better way to test this would be to look
+[00:01:52] at a lot of data and a bunch of
+[00:01:54] different tickers.
+[00:01:57] You can see that our strategy equity is
+[00:01:59] pretty much in line with the buy and
+[00:02:01] hold. We only got a couple indications
+[00:02:02] here to actually either go long or short
+[00:02:04] on this stock, but a real evaluation
+[00:02:06] isn't going to use just a couple data
+[00:02:07] points would look at a massive data set.
+[00:02:08] But immediately, you can see that this
+[00:02:10] is not going to give us a guaranteed
+[00:02:12] win. And in this one example, a buy and
+[00:02:14] hold would have given you pretty much
+[00:02:15] the same thing. Next, we have the
+[00:02:16] momentum candle. A momentum candle is
+[00:02:19] simply a candle that is two to three
+[00:02:21] times bigger than the previous candles
+[00:02:23] before it. The next pattern is the
+[00:02:24] momentum candle. The claim here is very
+[00:02:26] strong. If the market is moving sideways
+[00:02:28] and a candle appears that's two or three
+[00:02:30] times larger than recent candles, price
+[00:02:32] is likely to continue in that direction.
+[00:02:34] We define sideways markets as low
+[00:02:36] volatility periods. Identify candles
+[00:02:38] that are larger than three times the
+[00:02:40] recent average range and then enter in
+[00:02:42] the direction of that candle. Then we
+[00:02:43] exit after a fixed time window. Again,
+[00:02:45] the results do not show a persistent
+[00:02:46] edge. Now, here is our momentum strategy
+[00:02:48] versus the buy and hold. Again, the
+[00:02:50] strategy outperforms a little bit, but
+[00:02:51] not by much. and it's pretty much
+[00:02:53] equivalent to the buy and hold strategy
+[00:02:55] or maybe even a coin toss.
+[00:02:59] Next, we have the multiple candlestick
+[00:03:02] pattern. All it is is when you have
+[00:03:04] three or more candles that have wicks
+[00:03:06] going in one direction. The next pattern
+[00:03:08] described is what we will call the
+[00:03:10] multiple candlestick wick pattern. The
+[00:03:12] idea is simple. If you see three or more
+[00:03:14] candles with wicks pointing in the same
+[00:03:16] direction, it's taken as evidence that
+[00:03:17] price is being rejected at that level.
+[00:03:19] For example, if multiple candles have
+[00:03:20] long lower wicks, the claim is that
+[00:03:22] buyers are repeatedly overpowering
+[00:03:24] sellers, suggesting a strong support and
+[00:03:26] a likely bounce upwards. The problem
+[00:03:27] here isn't the intuition, the lack of
+[00:03:29] testable definition. The video often
+[00:03:31] pairs this pattern with support or
+[00:03:33] resistance, but never defines what those
+[00:03:35] actually are. And in practice, support
+[00:03:37] and resistance are drawn sort of
+[00:03:38] subjectively. You can place them almost
+[00:03:40] anywhere on the chart after the fact. To
+[00:03:42] test this fairly, I had to make the idea
+[00:03:44] explicit. So I define support
+[00:03:46] mechanically as price staying with a
+[00:03:48] narrow band around a rolling average for
+[00:03:49] a fixed period of time. This is a simple
+[00:03:51] way to represent consolidation without
+[00:03:53] any hindsight. So here are the rules
+[00:03:54] that I used. I identify three or more
+[00:03:56] consecutive candles with wicks in the
+[00:03:58] same direction. I require price to
+[00:04:00] remain within a defined range over a
+[00:04:02] rolling average. I enter in the implied
+[00:04:04] reversal direction and then exit after a
+[00:04:06] fixed holding period. Again, there's no
+[00:04:07] real way to know how long we should hold
+[00:04:08] for. If you don't hold for long enough,
+[00:04:10] people in the comments will tell me that
+[00:04:11] I'm a complete idiot and I should have
+[00:04:12] held for at least a day. If I hold for a
+[00:04:14] day and then it collapses and I lose any
+[00:04:16] returns that I have, people will claim
+[00:04:18] that I should have held for a much
+[00:04:19] shorter duration. And here is the
+[00:04:20] multiple wick pattern. The strategy
+[00:04:22] equity is actually lower than the buy
+[00:04:24] and hold equity. This is similar to what
+[00:04:25] we've seen before where there's really
+[00:04:27] no obvious indication that these
+[00:04:28] strategies work. It just seems random or
+[00:04:31] pretty much like you're buying and
+[00:04:32] holding the stock regardless. There's no
+[00:04:34] real strategy involved here. And if
+[00:04:36] every single one of these strategies
+[00:04:37] seems to just be random, how is it that
+[00:04:39] combining strategies is somehow going to
+[00:04:41] work? If none of these work, putting
+[00:04:42] them together doesn't just magically
+[00:04:43] make it work. At this point, a pattern
+[00:04:45] starts to emerge. Every strategy that
+[00:04:47] gets explained by one of these YouTube
+[00:04:48] gurus starts with a clear visual idea,
+[00:04:50] but the moment you try to define it
+[00:04:52] precisely, it either becomes arbitrary
+[00:04:54] or just stops working. That's why these
+[00:04:55] explanations eventually shift towards
+[00:04:57] phrases like you need to combine
+[00:04:58] patterns or you develop an intuition
+[00:05:00] over time. But how can combining
+[00:05:02] patterns help if none of the patterns
+[00:05:04] work in the first place? That's like
+[00:05:05] saying you can construct this beautiful
+[00:05:07] well-built house with rotten pieces of
+[00:05:09] wood, but it only becomes well-built
+[00:05:11] once you bring everything together. And
+[00:05:12] the issue with intuition isn't that it's
+[00:05:14] mysterious. It's that it's
+[00:05:15] unfalsifiable. Once a strategy depends
+[00:05:17] on intuition, it cannot be tested. It
+[00:05:19] cannot be replicated, and it can't be
+[00:05:20] verified. In finance, if a claim can't
+[00:05:22] be stated clearly enough for a computer
+[00:05:24] to evaluate, it isn't a strategy. It's a
+[00:05:26] complete story. A story meant to sell
+[00:05:28] you courses and keep viewers watching
+[00:05:30] such that those content creators, and
+[00:05:32] there are a lot of them,
+[00:05:34] can turn a profit because they sure as
+[00:05:36] hell aren't doing it in the stock market
+[00:05:37] with these trading strategies. When
+[00:05:39] tested exactly as claimed with explicit
+[00:05:41] rules and no hindsight, these strategies
+[00:05:43] do not outperform simply buying the
+[00:05:45] market. And this is really a fear of
+[00:05:46] mine while making the videos I do, being
+[00:05:48] sort of a content creator in finance,
+[00:05:49] which is a little bit odd to say, is
+[00:05:51] that you will contort the story behind
+[00:05:53] the codes and methods I've created for
+[00:05:54] myself, the things I test, and you will
+[00:05:57] believe that you can really make money
+[00:05:58] with them. Take everything everyone says
+[00:06:00] with a grain of sand. You'd be surprised
+[00:06:02] how many people have absolutely no clue
+[00:06:04] what they're talking about, but claim
+[00:06:05] that they do. If you want, I'm happy to
+[00:06:07] keep testing YouTuber trading
+[00:06:08] strategies. Leave one below and explain
+[00:06:10] why you think it works. I might just
+[00:06:11] include you in a future video to keep
+[00:06:13] busting these trading myths. Make sure
+[00:06:14] to subscribe so you don't miss out on
+[00:06:15] finance mythbusting.

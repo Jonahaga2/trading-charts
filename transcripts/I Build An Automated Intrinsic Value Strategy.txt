@@ -1,0 +1,289 @@
+[00:00:00] In my last video, I tried to build a
+[00:00:01] Python script to find intrinsically
+[00:00:02] undervalued stocks, and a lot of you
+[00:00:04] correctly pointed out that the backtest
+[00:00:05] wasn't exactly valid. The idea wasn't
+[00:00:07] necessarily bad,
+[00:00:09] &gt;&gt; You sure about that?
+[00:00:10] &gt;&gt; but the backtest had flaws that were
+[00:00:11] feeding us lies. So, today I am
+[00:00:13] implementing your suggestions to make
+[00:00:14] iterative and continuous improvements to
+[00:00:16] my code that determines the intrinsic
+[00:00:18] value of a list of stocks and simulates
+[00:00:20] a valid backtested portfolio to help me
+[00:00:22] come to tested conclusions if intrinsic
+[00:00:25] value is even correct to consider. This
+[00:00:27] is a more long-term strategy, something
+[00:00:28] I actually believe could work. But then
+[00:00:30] again, I know nothing and I'm reliant on
+[00:00:33] your feedback to learn and grow my work.
+[00:00:35] This is version two of the intrinsic
+[00:00:36] value monitor. A quick note, this work
+[00:00:38] comes from a physicist perspective, not
+[00:00:40] somebody in finances, and as such I am
+[00:00:42] greatly misinformed, uneducated, but I
+[00:00:44] also have a fresh perspective on how to
+[00:00:46] approach these problems. The original
+[00:00:48] goal of this project was pretty simple.
+[00:00:49] Take a list of stocks, estimate their
+[00:00:50] intrinsic value using a very basic
+[00:00:52] Graham style formula, and then invest
+[00:00:54] only when the market price is
+[00:00:55] significantly below that estimate. You
+[00:00:57] buy discounted companies, and then you
+[00:00:59] sell once they were reverted back
+[00:01:00] towards their fair value. But before we
+[00:01:02] can even think about improving
+[00:01:03] performance, we have to make sure that
+[00:01:05] the model isn't accidentally lying to
+[00:01:07] us. As always, this project is available
+[00:01:09] on GitHub where you can get access to my
+[00:01:10] code repository and all future versions
+[00:01:12] of the code as I continue to improve it.
+[00:01:13] All money that I'm making from GitHub
+[00:01:14] sponsors is going to go directly to
+[00:01:15] paying my [ __ ] $100,000 student
+[00:01:18] loans. Let's go. And that brings us into
+[00:01:20] why the original backtest was invalid.
+[00:01:22] In the original version, the backtest
+[00:01:23] scanned a list of stock tickers that
+[00:01:25] exist today, and that's a massive
+[00:01:27] problem.
+[00:01:29] Because over 30, 40, 50 years, companies
+[00:01:32] have gone bankrupt, been acquired,
+[00:01:33] delisted, or disappeared entirely. And
+[00:01:35] by only testing companies that survived
+[00:01:37] today, I was implicitly assuming that
+[00:01:39] every investment had a happy ending,
+[00:01:41] which is obviously not true. This is a
+[00:01:42] super simple thing to avoid. It is
+[00:01:45] survivorship bias.
+[00:01:46] &gt;&gt; You'd have to test this on the
+[00:01:47] historical constituents of the S&P 500,
+[00:01:49] [music]
+[00:01:50] including delisted stocks for this to be
+[00:01:51] even remotely valid. If you only test
+[00:01:53] tickers that are in the S&P 500 today,
+[00:01:56] then you have survivor bias.
+[00:01:57] &gt;&gt; Well, maybe it's easy to recognize,
+[00:01:59] actually quite difficult to avoid. So,
+[00:02:01] comparing my backtest to a historical
+[00:02:02] S&P return, I may have actually had
+[00:02:04] inflated results, higher returns than
+[00:02:06] reality, and convince myself that the
+[00:02:08] model might work when it doesn't. So,
+[00:02:10] let's get into survivorship bias. Fixing
+[00:02:12] this was actually not as easy as I
+[00:02:13] initially expected. I pulled Discord
+[00:02:15] members, searched around online, and
+[00:02:16] quickly realized that there really isn't
+[00:02:18] a clean, publicly available solution. I
+[00:02:20] ended up boiling this problem down into
+[00:02:21] a few broad categories. I could use full
+[00:02:24] point market databases, which is really
+[00:02:26] the gold standard. I could use something
+[00:02:28] like the CRSP, which is the Center for
+[00:02:30] Research in Security Prices, and these
+[00:02:31] datasets track all listed securities,
+[00:02:33] delistings, bankruptcies, and
+[00:02:35] acquisitions. It's basically the index
+[00:02:37] membership at each point in time.
+[00:02:39] Additionally, all fundamentals are
+[00:02:41] reported as the original, so there's no
+[00:02:42] look-ahead bias. The problem with this
+[00:02:44] is that even if I could access the data,
+[00:02:46] I can't legally redistribute it. The
+[00:02:48] entire goal of this project, and really
+[00:02:49] my channel in general, is to keep all
+[00:02:51] the code I create open source and
+[00:02:52] reproducible, and that immediately rules
+[00:02:54] out proprietary datasets. So, this one
+[00:02:56] is completely off the table. Then
+[00:02:57] there's index reconstruction, which is
+[00:02:59] actually what I'm going to attempt here,
+[00:03:00] which is to use publicly available S&P
+[00:03:02] [music] membership change logs. We
+[00:03:04] reconstruct the index through time using
+[00:03:06] entry and removal dates, and at any
+[00:03:08] point in time during the backtest, I
+[00:03:09] allow investments in stocks that were
+[00:03:11] valid members at that time. There's some
+[00:03:13] pretty big limitations, as we'll quickly
+[00:03:15] realize. For example, reconstructing
+[00:03:17] this membership accurately is definitely
+[00:03:19] non-trivial. It is difficult. It does
+[00:03:21] not perfectly account for companies
+[00:03:23] removed due to acquisitions or companies
+[00:03:25] that disappeared entirely, is some
+[00:03:27] survivorship bias that can leak through
+[00:03:28] depending on data quality and
+[00:03:30] assumptions. Another option was the
+[00:03:31] broad market universe, which is all
+[00:03:33] stocks listed at a time T, which I feel
+[00:03:35] like I have to mention cuz somebody is
+[00:03:37] going to say something about this. The
+[00:03:38] concept is to define the investment
+[00:03:40] universe as every stock listed on an
+[00:03:42] exchange at that point in time, and
+[00:03:44] there's a bunch of problems with this.
+[00:03:45] Primarily, that there's massive
+[00:03:47] complexity very early in this project,
+[00:03:49] and there's still so many things that we
+[00:03:50] need to take care of. So, trying to even
+[00:03:51] tackle that concept in advance is way
+[00:03:54] too much. I'm only one guy. Please,
+[00:03:56] don't do it to me. This would require
+[00:03:58] reliable delistings and historical
+[00:03:59] listings data, which I do not have, and
+[00:04:01] many publicly available data sets still
+[00:04:04] contain survivorship bias, especially on
+[00:04:06] fundamentals. So, I decided to go with
+[00:04:07] this temporary fix of number two, which
+[00:04:09] is index reconstruction, specifically
+[00:04:11] reconstructing the S&P 500 membership.
+[00:04:13] This is one that may work for the time
+[00:04:15] being, since there's just so much to
+[00:04:16] improve on in this code. It's important
+[00:04:18] we don't get too carried away with
+[00:04:20] completely eliminating survivorship bias
+[00:04:22] immediately. I decided to take publicly
+[00:04:24] available data for the S&P 500
+[00:04:25] membership, when stocks were added and
+[00:04:27] when they were removed. I recreated a
+[00:04:29] list based on this information, and I
+[00:04:31] only used this recreated membership list
+[00:04:33] to choose what stocks to invest in. So,
+[00:04:35] at any point in time during the back
+[00:04:37] test, I'm pulling the currently
+[00:04:39] acceptable members from that list. If a
+[00:04:40] stock hasn't been added yet, I don't use
+[00:04:42] it. If a stock was just removed for
+[00:04:44] whatever reason, I'm no longer allowed
+[00:04:46] to use it. This is, I feel, a realistic
+[00:04:49] representation of what someone could
+[00:04:50] have invested in. This guarantees that
+[00:04:52] I'm not selecting tickers that didn't
+[00:04:53] exist yet, but it does not guarantee
+[00:04:55] that survivorship bias is fully
+[00:04:57] eliminated. There are a couple issues
+[00:04:58] with doing this. Primarily, that
+[00:04:59] survivorship bias is not completely
+[00:05:01] eliminated, and I actually have not
+[00:05:03] perfectly reconstructed the S&P 500. No
+[00:05:05] matter how hard I try, I don't even have
+[00:05:07] 500 stocks in the membership list as a
+[00:05:10] function of time. Some stocks have been
+[00:05:11] missed, and those stocks could have been
+[00:05:14] bad performers for whatever reason,
+[00:05:15] meaning that the list is biased high.
+[00:05:17] I've selected higher performers than I
+[00:05:19] would have if I truly had a
+[00:05:20] representative sample of the S&P 500 in
+[00:05:23] time. So, how do I mitigate for this?
+[00:05:24] Well, instead of comparing to the S&P
+[00:05:26] 500 index, which would be unfair, I
+[00:05:29] compare my strategy to a naive baseline
+[00:05:31] built from the same universe. The
+[00:05:33] baseline is an equal weighted portfolio
+[00:05:36] of all eligible constituents at each
+[00:05:38] point in time. It happens to be higher
+[00:05:39] than the actual S&P 500, so yes, my
+[00:05:42] membership bias list is biased high, and
+[00:05:45] I'm missing stocks in this list that
+[00:05:46] performed poorly and having an equal
+[00:05:48] weighting of all companies in the list
+[00:05:50] that I do have is not consistent with
+[00:05:52] what the S&P actually was, but this is
+[00:05:54] the best bet that I have right now
+[00:05:55] because keeping track of weightings is
+[00:05:57] just really not possible for me. But my
+[00:05:58] comparisons will be made to this evenly
+[00:06:00] weighted membership return, the one that
+[00:06:02] I have synthetically created myself.
+[00:06:04] Meaning that if I bought an equal price
+[00:06:06] of each stock in my list and held it for
+[00:06:08] the entire duration, which basically
+[00:06:09] means what if I bought an equal price of
+[00:06:12] each stock in my list and held it for an
+[00:06:13] entire duration that I've determined for
+[00:06:15] my backtest. If a company is removed
+[00:06:17] from the membership list, I just
+[00:06:18] rebalance the portfolio accordingly such
+[00:06:20] that it's evenly weighted across all
+[00:06:22] members. This is super crude, but if my
+[00:06:24] method outperforms the baseline, then we
+[00:06:26] will try to make this a little bit more
+[00:06:28] robust. But there's no point in trying
+[00:06:30] to make a perfect non-biased data set
+[00:06:31] with no survivorship bias if my model
+[00:06:33] can even outperform that crude baseline.
+[00:06:35] &gt;&gt; What were the exact data sources used in
+[00:06:37] the backtest? And were they
+[00:06:39] point-in-time or revised historical
+[00:06:41] data?
+[00:06:42] &gt;&gt; Another problem was point-in-time data
+[00:06:44] errors. And this is subtle, but can be
+[00:06:46] just as damaging. It's effectively
+[00:06:47] look-ahead bias. When we pull historical
+[00:06:49] financial data, what we actually get is
+[00:06:52] revised data. It's been cleaned up with
+[00:06:54] information that wasn't known at that
+[00:06:55] time. That means that the model can
+[00:06:57] accidentally use future earnings or
+[00:06:58] corrected reports before investors
+[00:07:00] actually saw them. That is look-ahead
+[00:07:02] bias and it can completely invalidate a
+[00:07:04] backtest. So I implement a conservative
+[00:07:06] reporting lag, which I know you guys are
+[00:07:08] going to absolutely hate, but bear with
+[00:07:10] me here. This is intentionally
+[00:07:11] conservative and instead of trying to
+[00:07:13] perfectly model reporting dates, I
+[00:07:15] assume that becomes usable 90 days after
+[00:07:18] the quarter ends. That means that the
+[00:07:19] model is always late, but this model is
+[00:07:21] meant to be long-term, so that should be
+[00:07:23] fine. We are avoiding some complexity in
+[00:07:25] doing this, which sure makes our lives
+[00:07:27] easier, but it makes it more difficult
+[00:07:28] for the model to outperform the market.
+[00:07:30] Since we plan to use this code for
+[00:07:31] long-term investments hoping to latch
+[00:07:33] onto broad market swings due to changes
+[00:07:35] in sentiment, I think that this is a
+[00:07:36] fine conservatism to make at least for
+[00:07:39] now. We just need to make a point of
+[00:07:40] this in the future in case we want to
+[00:07:42] revisit this and improve the method.
+[00:07:43] Once you apply these two corrections,
+[00:07:45] results usually get worse. Draw downs
+[00:07:47] increase, some strategies just stop
+[00:07:48] working entirely, and yeah, maybe mine
+[00:07:50] gets worse, but that's actually kind of
+[00:07:52] the point. Any model that collapses when
+[00:07:54] you remove bias wasn't discovering
+[00:07:56] anything. It was probably discovering
+[00:07:57] data leakage, but we do need a good
+[00:07:59] baseline to work from. From here, the
+[00:08:00] plan is simple, but it is slow. We're
+[00:08:02] going to build honestly, break things,
+[00:08:04] fix them, create multiple indicators for
+[00:08:07] intrinsic value, and weight them
+[00:08:08] according to the domain of highest
+[00:08:10] accuracy. Some next steps might include
+[00:08:12] building better intrinsic value models,
+[00:08:14] quality filters, smarter exits, or risk
+[00:08:16] control, but only after the foundation
+[00:08:18] is rock solid. If you guys have ideas,
+[00:08:20] criticisms, or flaws you want me to
+[00:08:21] address in the next video, please leave
+[00:08:23] them in the comments below. If you're
+[00:08:24] interested in getting access to the
+[00:08:26] code, you can find it in the link in the
+[00:08:27] description. I hope to see you guys in
+[00:08:28] the next iteration in version three
+[00:08:30] where I plan to improve my code to
+[00:08:31] potentially automate my finances and
+[00:08:33] increase my abysmal net worth. I'll see
+[00:08:36] you guys in the next one.

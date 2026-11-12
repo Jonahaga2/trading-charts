@@ -1,0 +1,263 @@
+[00:00:00] This is a Fourier transform, a way of
+[00:00:01] breaking down signals in time to a
+[00:00:03] representation of their individual
+[00:00:05] frequencies. And this is my
+[00:00:06] community-built AI stock predictor. For
+[00:00:08] the past year now, I've been building an
+[00:00:10] AI stock prediction tool with the help
+[00:00:11] of this community. We've added new
+[00:00:13] sentiment, insider trading, and even
+[00:00:15] added fear and greed from the markets.
+[00:00:17] And every single time one of you leaves
+[00:00:18] a comment that completely reshapes this
+[00:00:20] code. Now, I've spun the slot machine of
+[00:00:22] YouTube comments until I eventually
+[00:00:24] found this gem, the Fourier transform.
+[00:00:26] It's beautiful. I studied MRI physics
+[00:00:29] during my PhD, so this stuff is my jam.
+[00:00:31] This is the essential tool that allows
+[00:00:33] so much of what I've done to function. I
+[00:00:35] spent the last 5 years basically doing
+[00:00:37] nothing but Fourier transforms. Now, can
+[00:00:39] the same tool that allows an MRI to
+[00:00:40] work, creates noise-canceling
+[00:00:42] headphones, and digital signal
+[00:00:43] processing, also be used to find hidden
+[00:00:45] frequencies in the stock market that
+[00:00:47] finally allow this AI stock predictor to
+[00:00:49] crush and get insane returns? Maybe.
+[00:00:51] Okay, well, quick explainer because this
+[00:00:53] stuff is really important. Everything
+[00:00:55] that changes in time has a frequency.
+[00:00:57] Ocean's tides, your heartbeat, and yeah,
+[00:01:00] even the stock market. If you understand
+[00:01:01] a Fourier transform in one of these
+[00:01:03] examples, you understand them in all.
+[00:01:04] Waves can help you describe so many
+[00:01:06] different things in the real world.
+[00:01:07] Sound waves are the pressure changes in
+[00:01:10] air. A wave that oscillates up and down
+[00:01:12] consistently with the same time between
+[00:01:13] peaks has one frequency. This is a wave
+[00:01:16] in time, and this is the frequency of
+[00:01:18] that wave converted into an audio signal
+[00:01:20] for you to listen to. The frequency can
+[00:01:22] increase or it can decrease. We can also
+[00:01:25] add frequencies together of many
+[00:01:26] different waves. Here are two waves of
+[00:01:28] the same frequency added together.
+[00:01:30] Notice that the only thing that has
+[00:01:31] changed when adding these two waves
+[00:01:33] together is that their amplitudes have
+[00:01:34] grown, so the sound has become louder.
+[00:01:36] Waves can also add to each other to
+[00:01:38] increase or decrease the volume. Adding
+[00:01:40] two waves together of the same
+[00:01:42] frequency, but where one is shifted
+[00:01:43] slightly, can actually cause sounds to
+[00:01:45] vanish because the waves are adding to
+[00:01:47] perfectly cancel. Here are two waves
+[00:01:49] added with different frequencies. Notice
+[00:01:51] that the sound becomes more complex.
+[00:01:53] With more waves of different amplitudes
+[00:01:55] and different frequencies, the sound
+[00:01:57] gets even more complex. The sound can
+[00:01:59] become so complex that it is now hard to
+[00:02:01] understand exactly what we're looking
+[00:02:03] at. So, let's [music] go back to the
+[00:02:04] single frequency wave. Applying the
+[00:02:06] Fourier transform to this signal spits
+[00:02:08] out a new signal. But this new signal
+[00:02:10] isn't just showing the wave over time,
+[00:02:12] it's showing the wave's ingredients. It
+[00:02:14] shows you the pure frequencies
+[00:02:16] comprising the original time-based
+[00:02:18] signal. We've now moved from the time
+[00:02:20] domain over to the frequency domain.
+[00:02:22] Let's go ahead and add a second [music]
+[00:02:24] higher frequency to our original wave
+[00:02:26] and see what happens to the Fourier
+[00:02:27] transformed signal. And look at that,
+[00:02:30] all the ingredients are listed to us in
+[00:02:31] this frequency domain. The lower
+[00:02:33] frequency wave and the higher frequency
+[00:02:35] wave. This is not immediately apparent
+[00:02:37] [music] in the time-based signal. In
+[00:02:38] fact, the horizontal axis is actually
+[00:02:40] showing us the frequency of these waves
+[00:02:42] and the height, or vertical axis, is
+[00:02:44] showing us the amplitude of those waves.
+[00:02:46] This is especially helpful with complex
+[00:02:48] signals that have many different waves
+[00:02:50] all added together with different
+[00:02:51] frequencies and different amplitudes. It
+[00:02:53] breaks down into their so-called recipe.
+[00:02:55] This can be applied to any time-based
+[00:02:57] signal, and it can even be applied to
+[00:02:59] sound in fun ways where we can look at
+[00:03:01] my voice on the frequency axis. This is
+[00:03:03] the time signal of my voice, and this is
+[00:03:06] the frequency domain signal of my voice.
+[00:03:08] I can remove the lower frequency
+[00:03:10] component by forcing all signal in that
+[00:03:12] low frequency region to be zero. Now,
+[00:03:14] the only thing that remains is the
+[00:03:15] higher frequency signal. I can also
+[00:03:17] remove the high frequency component by
+[00:03:19] forcing all signal in that high
+[00:03:21] frequency region to be zero, and we're
+[00:03:23] left with the low frequency part of my
+[00:03:24] voice. Okay, so there's one thing I've
+[00:03:26] been holding off answering until now.
+[00:03:27] How does this actually help us
+[00:03:29] understand stock market prices? Okay, we
+[00:03:31] can start by simulating a hypothetical
+[00:03:33] company that sees seasonal increases in
+[00:03:35] their market value. Maybe they increase
+[00:03:37] around Christmas time. Let's just call
+[00:03:39] the company Bath & Body Limited. BBL has
+[00:03:41] a stock price that oscillates because
+[00:03:43] people like to buy more of it during the
+[00:03:45] uptick in their seasonal sales. However,
+[00:03:47] noise in the markets, people buying and
+[00:03:49] selling cause the stock to look like
+[00:03:50] this. It's random, confusing, and just
+[00:03:52] kind of looks like noise. We apply a
+[00:03:54] Fourier transform, and voila, we have on
+[00:03:56] the other side all of the frequencies
+[00:03:58] that make up the stock [music] price.
+[00:04:00] And this spike right here, this is the
+[00:04:01] seasonal oscillation. We could actually
+[00:04:03] use this to make a prediction. This is
+[00:04:05] something that at one point people did
+[00:04:07] genuinely look towards as an indicator.
+[00:04:09] It doesn't guarantee the price will go
+[00:04:10] up, but through all the noise, it means
+[00:04:11] that there can be upwards or downwards
+[00:04:13] momentum during these periods that is
+[00:04:15] driving the market price within that
+[00:04:16] noise. Some of the best firms in the
+[00:04:18] world will include this in their
+[00:04:19] analysis of stock prices, and we're
+[00:04:21] going to add it to our AI stock
+[00:04:22] predictor. So, here's what I tried
+[00:04:24] first. I took every stock in my list and
+[00:04:26] I ran a Fourier transform on every
+[00:04:27] single one. I fed every frequency into
+[00:04:29] the model, their exact frequencies and
+[00:04:31] amplitudes. Every peak in the frequency
+[00:04:32] spectrum from the fastest oscillation to
+[00:04:34] the slowest. I retrained and backtested,
+[00:04:37] and here are the results. The results
+[00:04:38] are
+[00:04:39] Okay, well,
+[00:04:41] the results are actually not that good.
+[00:04:42] The model actually got worse, and I'm
+[00:04:44] not sure why, but I do have a bit of a
+[00:04:46] clue. Maybe we're just feeding this
+[00:04:48] thing too much noise, too much data with
+[00:04:50] absolutely no signal. These tiny small
+[00:04:53] amplitude frequencies might be random
+[00:04:54] variation for no coherent reason. By
+[00:04:57] throwing all of this data into our
+[00:04:58] model, I'd given it an ocean of new
+[00:05:00] features. What we should be looking at
+[00:05:02] are the largest amplitude swings in the
+[00:05:04] market, the dominant rhythms driving the
+[00:05:06] stock's movement. So, I rewrote this
+[00:05:07] code to include a search algorithm to
+[00:05:09] find the largest peak in our frequency
+[00:05:10] data and use that as an input to our
+[00:05:12] model. That way we focus on the most
+[00:05:13] impactful frequencies within a
+[00:05:15] particular stock. Before making this
+[00:05:16] improvement, I'll be honest with you.
+[00:05:18] I've actually been misleading you this
+[00:05:19] entire time. There's a major flaw in how
+[00:05:21] I've presented this, and it ends up
+[00:05:22] being a trap many traders fall into.
+[00:05:24] Because we've only run the model once,
+[00:05:25] and a broken clock is still right twice
+[00:05:27] a day. The model could have just guessed
+[00:05:29] and gotten it right. And that's an issue
+[00:05:30] we're all very familiar with. So, how do
+[00:05:32] I fix this problem? And yeah, I'm a
+[00:05:33] physicist, but that really doesn't mean
+[00:05:35] that this has to be complicated.
+[00:05:38] So, I ran the model over and over. Well,
+[00:05:41] actually only three times, but it proves
+[00:05:42] the point regardless. If this really
+[00:05:44] worked, you should be able to change
+[00:05:46] your random seed, retrain the model, run
+[00:05:48] your predictions again, and it would be
+[00:05:50] able to predict accurately over and over
+[00:05:52] again, thousands of times. This is the
+[00:05:54] essence of a Monte Carlo simulation
+[00:05:55] where we want to explore how certain our
+[00:05:57] model is. A Monte Carlo simulation is an
+[00:05:59] extremely powerful tool that is
+[00:06:02] incredibly simple, but it sounds
+[00:06:03] complicated. Imagine you're playing a
+[00:06:05] good old-fashioned game of coin toss
+[00:06:07] with the lads. You predict coin toss
+[00:06:09] will result in the coin landing on
+[00:06:10] heads. You flip the coin, and it landed
+[00:06:13] on heads. Absolutely incredible. The
+[00:06:15] single run of this match would indicate
+[00:06:17] that you can predict the outcome of a
+[00:06:18] coin toss with 100% accuracy. You are a
+[00:06:21] wizard. It sounds silly, but that's
+[00:06:23] basically what we've done with this
+[00:06:24] model. We ran a single backtest, saw
+[00:06:27] that it worked, and then concluded that
+[00:06:28] the model works. So, you need to run
+[00:06:30] multiple tests, like ideally hundreds or
+[00:06:32] thousands, to hone in on the true
+[00:06:33] accuracy of the model. And in relation
+[00:06:35] to our story, realize that you are not a
+[00:06:37] coin toss-predicting wizard. So, my
+[00:06:39] first run, you can actually see that the
+[00:06:40] model performed pretty well. There was a
+[00:06:41] massive spike at the end, which was a
+[00:06:43] little bit curious, but it outperformed
+[00:06:45] the average baseline of the list of
+[00:06:47] stock tickers I have. Now, I can run the
+[00:06:49] exact same thing again, and yeah, this
+[00:06:51] is getting a little bit confusing, but
+[00:06:52] the newest model is right here in my
+[00:06:54] neon green. This thin green line you're
+[00:06:57] seeing here is actually the previous run
+[00:06:58] that we had, and the red line is just
+[00:07:00] the average of our predictions. If we
+[00:07:02] were to run this many, many, many times,
+[00:07:04] [music] that red line being the average
+[00:07:06] of all of our AI predictions, would give
+[00:07:08] us a better indication of if this model
+[00:07:10] is actually outperforming the baseline.
+[00:07:12] And let's run it a third time. And now
+[00:07:14] it actually seems to be underperforming,
+[00:07:16] at least in the beginning. It is
+[00:07:17] absolutely incredible to me the amount
+[00:07:19] of community suggestions we've
+[00:07:20] implemented so far in this predictor.
+[00:07:22] And I want to remind you that this was
+[00:07:23] not done in just a day. This has been
+[00:07:25] slowly developed throughout a year of
+[00:07:27] work. So, if you want access to the full
+[00:07:29] private repository and to join in on
+[00:07:30] this community-led project, I shared the
+[00:07:32] entire code with anyone who becomes a
+[00:07:34] GitHub sponsor, [music]
+[00:07:35] link in the description. All proceeds
+[00:07:36] are going back to pay my PhD student
+[00:07:38] loans. Now, I'll say what I always say.
+[00:07:40] This doesn't prove that the model works.
+[00:07:42] Backtests are not real life, and I am
+[00:07:43] deeply aware that the market has a long
+[00:07:45] history of humbling people that think
+[00:07:47] they figured it out. But we have crossed
+[00:07:49] off one path to continue improving our
+[00:07:51] community AI stock predictor. This is
+[00:07:53] something I genuinely couldn't have done
+[00:07:54] alone.
+[00:07:58] &gt;&gt; [music]

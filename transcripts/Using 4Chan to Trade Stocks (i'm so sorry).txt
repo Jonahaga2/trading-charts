@@ -1,0 +1,220 @@
+[00:00:00] Last time, I built a trading bot that
+[00:00:01] uses a large language model to read
+[00:00:03] Reddit posts from Wall Street Bets and
+[00:00:05] predict if a stock is about to blow up.
+[00:00:07] It did not work. And if I've learned
+[00:00:09] anything from this, [music] it's that we
+[00:00:11] need to go deeper, down to the depths
+[00:00:13] where no sane human dares to go. 4chan.
+[00:00:17] I have never used 4chan before because I
+[00:00:19] have a functioning prefrontal cortex.
+[00:00:22] And if you do, too, then all you need to
+[00:00:23] know about 4chan is that it's an
+[00:00:25] anonymous image-based board where users
+[00:00:27] can post comments and share pictures.
+[00:00:29] &gt;&gt; [music]
+[00:00:29] &gt;&gt; This sounds like a really lovely place
+[00:00:31] where constructive ideation is
+[00:00:32] bountiful. The perfect place to harvest
+[00:00:35] information for intellectual stock
+[00:00:37] market sentiment prediction. So, here's
+[00:00:38] the plan. I'm going to scrape a full
+[00:00:40] year off the business board, [music]
+[00:00:42] then get an LLM to label every post as
+[00:00:44] either bullish, bearish, or neutral.
+[00:00:46] Then label 200 myself to check the
+[00:00:49] machine and make sure it's actually
+[00:00:50] functioning properly. Then we'll find
+[00:00:52] out if these people are actually gurus
+[00:00:54] worth copying or if they shall be
+[00:00:56] shorted to bet against their stupid
+[00:00:58] predictions.
+[00:01:00] To make this easier, I'm only going to
+[00:01:01] analyze 14 tickers [music] over one full
+[00:01:03] year of data. There are 156,000
+[00:01:06] posts to look at, and only some of those
+[00:01:08] will include the tickers I'm actually
+[00:01:10] interested in. Unlike Reddit posts that
+[00:01:11] have karma, usernames, and post [music]
+[00:01:13] history, the business forum on 4chan has
+[00:01:16] nothing other than text. It's a whole
+[00:01:18] beast by itself. Additionally, the
+[00:01:20] business forum deletes itself and
+[00:01:21] threads expire in hours, [music] so I
+[00:01:23] needed to find an archive to backtest my
+[00:01:25] theories. I used warosu, I'm
+[00:01:28] definitely butchering that name, which
+[00:01:29] mirrors the board. There is no API for
+[00:01:31] this, so I'm literally just scraping the
+[00:01:33] data off the website myself, and I'm
+[00:01:35] going to focus on the top 14 most
+[00:01:37] mentioned stocks for simplicity's sake.
+[00:01:39] And right away, there's something I
+[00:01:40] didn't account for here. Looking at the
+[00:01:42] number of mentioned tickers, it's pretty
+[00:01:44] apparent that this thread is not just
+[00:01:46] about stocks. There are over 33,000
+[00:01:48] mentions of Bitcoin [music] in just the
+[00:01:50] last year. So, it's mostly a discussion
+[00:01:52] of cryptocurrencies and meme stocks,
+[00:01:54] which is fine. We can still work with
+[00:01:55] this. The real question is, how do we
+[00:01:57] classify 4chan posts into a label for a
+[00:01:59] sentiment? And this is going to be a
+[00:02:01] much bigger problem than you might
+[00:02:03] think. In the last video, I used
+[00:02:04] FinBERT, which is an LLM specifically
+[00:02:06] tuned for financial sentiment data, and
+[00:02:08] it's just about the worst LLM I could
+[00:02:10] use for 4chan. First, I pulled out every
+[00:02:13] post that actually mentions one of my
+[00:02:14] tickers, then send those to FinBERT. And
+[00:02:17] I should stop for a moment [music]
+[00:02:18] because before receiving these LLM-based
+[00:02:20] results, I'm actually going to manually
+[00:02:22] sift through 200 posts and classify them
+[00:02:24] myself. That way we have a good baseline
+[00:02:26] comparison to the LLM. And this is
+[00:02:28] actually much more difficult than I
+[00:02:29] initially anticipated because those
+[00:02:32] posts are truly brain-dead. And I have
+[00:02:34] no idea if somebody's in favor or
+[00:02:36] against a particular stock. This
+[00:02:37] makes no sense at all. Sorry, I got
+[00:02:39] flustered there for a second. Okay, so
+[00:02:41] out of the 200 posts, I found 88 with an
+[00:02:44] actual opinion in them. Everything else
+[00:02:47] is just complete garbage. FinBERT found
+[00:02:49] 25, which is a real problem for this
+[00:02:51] project. There's a complete discrepancy
+[00:02:53] between what I found and what FinBERT
+[00:02:55] found. Of the 44 I marked as positive
+[00:02:57] sentiment, FinBERT found two. So,
+[00:03:00] FinBERT is completely off here. The
+[00:03:02] reason why is because FinBERT was
+[00:03:04] trained on financial news and analyst
+[00:03:06] reports. And holy the language in
+[00:03:09] 4chan could not be further from
+[00:03:10] corporate speak. So, this is like the
+[00:03:11] worst possible model I could have chosen
+[00:03:13] for this. My first thought was to switch
+[00:03:15] to Anthropic's API because it's better
+[00:03:18] than FinBERT, but they literally
+[00:03:19] wouldn't accept my Canadian ID to verify
+[00:03:21] my billing address. So, uh let's just
+[00:03:24] try Gemini. Why not?
+[00:03:26] This time, I will tell my prompt
+[00:03:28] specifically that this is a 4chan post.
+[00:03:30] And it actually finds 45 of 54 bullish
+[00:03:33] sentiment posts, which is much better
+[00:03:34] than FinBERT. Fantastic. So, let's get
+[00:03:37] into this backtest. But, before
+[00:03:39] analyzing the data, there's one critical
+[00:03:41] question to answer. When 4chan posts
+[00:03:44] about a ticker, is the post made before
+[00:03:46] price movement or after? This
+[00:03:48] effectively asks the question, is 4chan
+[00:03:51] reactive or predictive in their posts?
+[00:03:54] You could probably guess the answer. The
+[00:03:56] correlation between 4chan posts about a
+[00:03:58] ticker and that ticker's price has a lag
+[00:04:00] of zero days, meaning that the board is
+[00:04:02] really just an indicator for volatility
+[00:04:04] at any point in time. This exact thing
+[00:04:06] has actually already been explored
+[00:04:08] before in financial research, but for
+[00:04:10] the Yahoo Finance message [music] board
+[00:04:12] with the same conclusions. Posts are
+[00:04:14] correlated to volatility, but in no way
+[00:04:16] to returns. But who cares about that?
+[00:04:18] We're in a new age of investing, so
+[00:04:20] maybe everything has changed. Who knows?
+[00:04:22] Let's see if we can beat the market
+[00:04:23] based on 4chan sentiment alone. But
+[00:04:25] there's a problem with the obvious
+[00:04:27] comparison we might make, which is
+[00:04:29] comparing 4chan to the S&P 500 or the
+[00:04:32] broader market in general. Half the
+[00:04:34] universe of tickers mentioned are
+[00:04:35] actually not stocks, they're crypto. So
+[00:04:38] comparing against the S&P would just be
+[00:04:39] measuring crypto versus US equities. It
+[00:04:42] tells you nothing about whether 4chan is
+[00:04:44] a real signal. The right comparison is
+[00:04:46] the same 14 assets equally weighted with
+[00:04:49] no signal at all. The only difference is
+[00:04:51] whether or not you'd actually listen to
+[00:04:53] the forum. [music]
+[00:04:54] So here's exactly what the backtest
+[00:04:55] does. Every Monday, look at the previous
+[00:04:58] seven days of posts, then count how many
+[00:05:01] posts each asset got, buy the top three
+[00:05:04] with equal weighting and hold for
+[00:05:05] exactly one week. Simple. So I simulated
+[00:05:09] a $100 portfolio buying the most popular
+[00:05:12] 4chan tickers. One year later, it became
+[00:05:14] $98 or down 2%, which tells you
+[00:05:17] absolutely nothing until you compare it
+[00:05:19] to the baseline. Just holding all 14
+[00:05:21] assets equally gives you $118.
+[00:05:24] In a hundred portfolios buying off the
+[00:05:26] same board completely at random, a mean
+[00:05:29] value of $115.
+[00:05:31] But I've said this before and I'll say
+[00:05:32] it again, one backtest proves nothing.
+[00:05:34] You can lose by chance. So I ran 1,000
+[00:05:37] portfolios that bought the same stocks,
+[00:05:39] but on the wrong dates to see what the
+[00:05:41] baseline could look like for somebody
+[00:05:43] that was not timing their strategy at
+[00:05:45] all. The result was that 97% of those
+[00:05:48] portfolios beat the strategy of buying
+[00:05:50] the most popular ticker. And there's
+[00:05:52] something there. There's no edge, but
+[00:05:55] wait a minute. If 4chan is bad, why not
+[00:05:58] just short them? So, I did exactly that.
+[00:06:00] Shorting everything they hyped returns
+[00:06:02] 27%
+[00:06:04] over that year, which kind of blew my
+[00:06:06] mind. And to stop there would be an
+[00:06:07] injustice to you. So, I had to look
+[00:06:09] further into this. Specifically,
+[00:06:11] shorting crypto the thread hyped gave
+[00:06:13] $170, but shorting the stocks they hyped
+[00:06:16] gave 74. This could just mean that 4chan
+[00:06:19] likes to talk a lot about crypto, and
+[00:06:21] they do. And we happen to be in a crypto
+[00:06:24] bear market. So, this again says
+[00:06:26] basically nothing. And that's the
+[00:06:28] problem with back tests. It's extremely
+[00:06:30] easy to trick yourself into thinking you
+[00:06:32] found a working strategy when you
+[00:06:34] actually didn't. So, this video is
+[00:06:36] sponsored by nobody because I'm getting
+[00:06:38] too picky with those sponsors, guys. I'm
+[00:06:40] sponsoring my own damn video. So, I
+[00:06:42] built a tool called Verdict that allows
+[00:06:44] you to back test your strategies with a
+[00:06:46] visual logic diagram. No coding
+[00:06:48] required, and you can test it on 500
+[00:06:49] popular stocks. It basically runs the
+[00:06:51] same checks you just watched me
+[00:06:53] currently running this video in about a
+[00:06:54] minute of setup. And it won't find you a
+[00:06:56] winner. I mean, maybe it will, but
+[00:06:58] probably not because it will give you
+[00:06:59] honest results that could save you from
+[00:07:01] losing lots of loonies on strategies
+[00:07:04] that don't actually work. So, link in
+[00:07:05] the description. Anyways, back to the
+[00:07:07] worst place on the internet. Clearly,
+[00:07:08] these strategies do not work, both
+[00:07:10] following 4chan or betting against
+[00:07:12] [music] it. But, you will have more
+[00:07:14] insight into this than I do. So, if you
+[00:07:16] have a strategy suggestion, I suggest
+[00:07:19] you leave it in the comments below, and
+[00:07:20] I might just explore it in a future
+[00:07:22] video, 4chan or otherwise. [music]
+[00:07:24] Code repos in the description, and I'll
+[00:07:26] see you guys in the next one.
