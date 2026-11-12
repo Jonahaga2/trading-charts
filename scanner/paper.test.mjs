@@ -39,6 +39,20 @@ const grow = (g, w = 0.01, n = 300, p0 = 50, vol = 1e6) => {
   check('sorted best first', picks.every((p, i) => !i || picks[i - 1].smooth >= p.smooth));
 }
 
+// Old runners: a stock that tripled in the two years before the momentum window is skipped.
+{
+  const long = (g0, g1) => { const n = 800, c = [50]; for (let i = 1; i < n; i++) c.push(c[i - 1] * (1 + (i < n - 252 ? g0 : g1) + (i % 2 ? 0.01 : -0.01))); return { c, v: Array(n).fill(1e6) }; };
+  const runner = long(0.0025, 0.004), calm = long(0.0002, 0.002);
+  const xr = score(runner.c, runner.v), L = runner.c.length - 1;
+  check('run = close 252 ago ÷ close 756 ago − 1', near(xr.run, runner.c[L - 252] / runner.c[L - 756] - 1));
+  check('run is null with under three years of history', score(grow(0.002).c, grow(0.002).v).run === null);
+  check('test runner really tripled, calm one did not', xr.run >= 2 && score(calm.c, calm.v).run < 2, `${xr.run} ${score(calm.c, calm.v).run}`);
+  const m = new Map([['RUN', runner], ['CALM', calm]]);
+  const picks = pickMomentum(m, { ...RULE, top: 2 });
+  check('the old runner is skipped even with better momentum', picks.length === 1 && picks[0].sym === 'CALM' && xr.smooth > score(calm.c, calm.v).smooth, picks.map(p => p.sym).join());
+  check('maxRun: null turns the rule off', pickMomentum(m, { ...RULE, top: 2, maxRun: null }).length === 2);
+}
+
 // targetWeights: 30% SPY, 20% bonds, 5% each of 10.
 {
   const w = targetWeights(Array.from({ length: 10 }, (_, i) => ({ sym: 'X' + i })));

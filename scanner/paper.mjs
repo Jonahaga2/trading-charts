@@ -26,7 +26,7 @@ import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { parseUniverse } from './run.mjs';
 
-export const RULE = { top: 10, liquid: 300, minPrice: 3, core: { SPY: 0.3, IEF: 0.2 }, minTrade: 0.005, buffer: 0.01 };
+export const RULE = { top: 10, liquid: 300, minPrice: 3, maxRun: 2, core: { SPY: 0.3, IEF: 0.2 }, minTrade: 0.005, buffer: 0.01 };
 
 /* ── Picks (pure) ─────────────────────────────────────────────────────
    series: Map sym → { c: closes oldest→newest (dividend-adjusted), v: volumes }.
@@ -45,7 +45,9 @@ export function score(c, v) {
   if (n < 230 || n60 < 40) return null;
   const vol = Math.sqrt(Math.max(0, s2 / n - (s / n) ** 2) * 252);
   const mom = c[L - 21] / c[L - 252] - 1;
-  return { mom, vol, smooth: mom / (vol || 1), dv: dv / n60, price: c[L] };
+  // The two years before the momentum window: c[L−252] ÷ c[L−756] − 1 (null with under three years of history).
+  const run = L >= 756 && c[L - 756] > 0 ? c[L - 252] / c[L - 756] - 1 : null;
+  return { mom, vol, smooth: mom / (vol || 1), dv: dv / n60, price: c[L], run };
 }
 
 export function pickMomentum(series, rule = RULE) {
@@ -55,7 +57,9 @@ export function pickMomentum(series, rule = RULE) {
     if (x && x.price >= rule.minPrice && isFinite(x.smooth)) rows.push({ sym, ...x });
   }
   rows.sort((a, b) => b.dv - a.dv);
-  return rows.slice(0, rule.liquid).sort((a, b) => b.smooth - a.smooth).slice(0, rule.top);
+  // Old runners (tripled or more in the two years before the last one) count toward the liquid 300 but are not picked.
+  return rows.slice(0, rule.liquid).filter(r => rule.maxRun == null || r.run == null || r.run < rule.maxRun)
+    .sort((a, b) => b.smooth - a.smooth).slice(0, rule.top);
 }
 
 export function targetWeights(picks, rule = RULE) {
@@ -111,7 +115,7 @@ function client(key, secret, fetchFn = fetch) {
 }
 
 async function dailyBars(call, symbols, now = Date.now()) {
-  const start = new Date(now - 400 * 864e5).toISOString().slice(0, 10);
+  const start = new Date(now - 1150 * 864e5)   // ~790 sessions: three years for the old-runner check.toISOString().slice(0, 10);
   const end = new Date(now - 16 * 60e3).toISOString();
   const today = new Date(now).toISOString().slice(0, 10);
   const series = new Map();

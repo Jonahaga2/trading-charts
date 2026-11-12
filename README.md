@@ -318,7 +318,8 @@ intact, as their terms require.
 `scanner/paper.mjs` runs the one strategy that passed every backtest gate:
 **50% in the 10 large stocks with the best 12-1 momentum ÷ volatility, 30% SPY, 20% IEF (7–10 year Treasuries)**
 (US common stocks, $3+, the 300 most traded over 60 sessions), rebalanced on
-the first trading day of each month. Orders go only to `paper-api.alpaca.markets`.
+the first trading day of each month. A stock that tripled or more in the two years
+before its momentum window is skipped ("old runner" rule; long-term reversal). Orders go only to `paper-api.alpaca.markets`.
 
 - `.github/workflows/paper.yml` wakes on the first seven weekdays of each month
   at 14:47 UTC; the script trades only on the month's first session.
