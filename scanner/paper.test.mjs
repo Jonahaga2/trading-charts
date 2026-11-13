@@ -1,6 +1,6 @@
 /* Checks for the paper-trading rule and order planner. No network.
    Run: node scanner/paper.test.mjs */
-import { score, pickMomentum, targetWeights, planOrders, isFirstSession, RULE } from './paper.mjs';
+import { score, pickMomentum, targetWeights, planOrders, isFirstSession, trimAtGap, RULE } from './paper.mjs';
 
 let pass = 0, fail = 0;
 const check = (name, cond, detail = '') => { if (cond) pass++; else { fail++; console.log(`  ✗ ${name}${detail ? ' — ' + detail : ''}`); } };
@@ -88,5 +88,13 @@ const grow = (g, w = 0.01, n = 300, p0 = 50, vol = 1e6) => {
   check('a month starting on a weekend', isFirstSession('2026-11-02', [{ date: '2026-11-02' }, { date: '2026-11-03' }]));
 }
 
+// trimAtGap: a ticker reused by a new company after a long gap keeps only the new company's bars.
+{
+  const t = ['2019-08-06', '2019-08-07', '2019-08-08', '2026-02-12', '2026-02-13'];
+  const x = trimAtGap(t, [50, 51, 52, 10, 11], [1, 1, 1, 2, 2]);
+  check('bars before a 30+ day gap are dropped', x.c.join() === '10,11' && x.v.join() === '2,2', x.c.join());
+  const y = trimAtGap(['2026-01-02', '2026-01-05', '2026-01-06'], [1, 2, 3], [1, 1, 1]);
+  check('weekends and holidays are not gaps', y.c.length === 3);
+}
 console.log(`${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

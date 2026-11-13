@@ -114,6 +114,14 @@ function client(key, secret, fetchFn = fetch) {
   };
 }
 
+/* A ticker that went dark for 30+ days and came back is often a different company reusing the symbol
+   (Alpaca returns both histories under one ticker). Keep only the bars after the last such gap. */
+export function trimAtGap(t, c, v, maxGapDays = 30) {
+  let from = 0;
+  for (let i = 1; i < t.length; i++) if (Date.parse(t[i]) - Date.parse(t[i - 1]) > maxGapDays * 864e5) from = i;
+  return { c: c.slice(from), v: v.slice(from) };
+}
+
 async function dailyBars(call, symbols, now = Date.now()) {
   const start = new Date(now - 1150 * 864e5)   // ~790 sessions: three years for the old-runner check.toISOString().slice(0, 10);
   const end = new Date(now - 16 * 60e3).toISOString();
@@ -126,14 +134,15 @@ async function dailyBars(call, symbols, now = Date.now()) {
     for (let page = 0; page < 200; page++) {
       const j = await call(base + (token ? `&page_token=${encodeURIComponent(token)}` : ''));
       for (const [s, list] of Object.entries(j.bars || {})) {
-        let x = series.get(s); if (!x) series.set(s, x = { c: [], v: [] });
+        let x = series.get(s); if (!x) series.set(s, x = { t: [], c: [], v: [] });
         // Only completed sessions: today's partial bar is not a close.
-        for (const b of list) if (b.t.slice(0, 10) < today) { x.c.push(b.c); x.v.push(b.v); }
+        for (const b of list) if (b.t.slice(0, 10) < today) { x.t.push(b.t.slice(0, 10)); x.c.push(b.c); x.v.push(b.v); }
       }
       token = j.next_page_token; if (!token) break;
     }
     process.stderr.write(`bars ${Math.min(i + 200, symbols.length)}/${symbols.length}\n`);
   }
+  for (const [s, x] of series) series.set(s, trimAtGap(x.t, x.c, x.v));
   return series;
 }
 
