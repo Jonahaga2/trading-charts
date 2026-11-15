@@ -7,3 +7,7 @@ __probe.html
 node_modules/
 # Local dip-scan output (scanner/run.mjs)
 .scan/
+
+# Backtest price data (~700 MB) and joined run scripts
+research/data/
+research/.build/
