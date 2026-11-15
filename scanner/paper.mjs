@@ -137,8 +137,13 @@ export function trimAtGap(t, c, v, maxGapDays = 30) {
   return { c: c.slice(from), v: v.slice(from) };
 }
 
+/* First day of bars to fetch: ~1150 calendar days (~790 sessions), enough for the old-runner check. YYYY-MM-DD. */
+export function barsStart(now = Date.now()) {
+  return new Date(now - 1150 * 864e5).toISOString().slice(0, 10);
+}
+
 async function dailyBars(call, symbols, now = Date.now()) {
-  const start = new Date(now - 1150 * 864e5)   // ~790 sessions: three years for the old-runner check.toISOString().slice(0, 10);
+  const start = barsStart(now);
   const end = new Date(now - 16 * 60e3).toISOString();
   const today = new Date(now).toISOString().slice(0, 10);
   const series = new Map();
@@ -237,7 +242,8 @@ async function main() {
   }
 
   if (a.log) {
-    const spy = series.get('SPY')?.c.at(-1) ?? (await call(`${DATA}/v2/stocks/SPY/trades/latest?feed=sip`)).trade?.p;
+    // SPY is an ETF, so it is not in `series`. Free accounts can read the IEX feed's latest trade; a failure only drops this one log field.
+    const spy = series.get('SPY')?.c.at(-1) ?? await call(`${DATA}/v2/stocks/SPY/trades/latest?feed=iex`).then(j => j.trade?.p ?? null, () => null);
     const log = fs.existsSync(a.log) ? JSON.parse(fs.readFileSync(a.log, 'utf8')) : { started: today, runs: [] };
     log.runs.push({ date: today, equity, spy, dry: !!a.dry, picks: picks.map(p => p.sym), orders: placed });
     fs.writeFileSync(a.log, JSON.stringify(log, null, 1));

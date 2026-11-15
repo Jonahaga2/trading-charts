@@ -1,6 +1,6 @@
 /* Checks for the paper-trading rule and order planner. No network.
    Run: node scanner/paper.test.mjs */
-import { score, pickMomentum, targetWeights, planOrders, isFirstSession, isFirstSessionOfWeek, weekStart, trimAtGap, RULE } from './paper.mjs';
+import { score, pickMomentum, targetWeights, planOrders, isFirstSession, isFirstSessionOfWeek, weekStart, trimAtGap, barsStart, RULE } from './paper.mjs';
 
 let pass = 0, fail = 0;
 const check = (name, cond, detail = '') => { if (cond) pass++; else { fail++; console.log(`  ✗ ${name}${detail ? ' — ' + detail : ''}`); } };
@@ -110,5 +110,12 @@ const grow = (g, w = 0.01, n = 300, p0 = 50, vol = 1e6) => {
   const y = trimAtGap(['2026-01-02', '2026-01-05', '2026-01-06'], [1, 2, 3], [1, 1, 1]);
   check('weekends and holidays are not gaps', y.c.length === 3);
 }
+// barsStart: a plain YYYY-MM-DD date about three years back (Alpaca rejects anything else).
+{
+  const d = barsStart(Date.parse('2026-11-15T15:00:00Z'));
+  check('bars start is YYYY-MM-DD', /^\d{4}-\d{2}-\d{2}$/.test(d), d);
+  check('bars start is 1150 days back', d === '2023-09-22', d);
+}
+
 console.log(`${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);
