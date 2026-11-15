@@ -1,18 +1,18 @@
-# Paper trading — 50% top-10 momentum + 30% SPY + 20% bonds (IEF), rebalanced on the first
-# trading day of each month on Alpaca's PAPER account (no real money).
-# scanner/paper.mjs decides whether today is that day, so the schedule just
-# wakes it on each of the first seven weekdays. Each run is appended to
-# paper-log.json on the `paper-log` branch.
+# Paper trading — Weekly Ranked Momentum, 100% stocks: the top 10 by 12-1 momentum ÷ volatility,
+# weighted 10:9:…:1 by rank, rebalanced on the first trading session of each week on Alpaca's
+# PAPER account (no real money). scanner/paper.mjs decides whether today is that session, so
+# the schedule just wakes it every weekday. Each run is appended to paper-log.json on the
+# `paper-log` branch.
 name: Paper trade
 
 on:
   schedule:
     # 14:47 UTC: 9:47am New York in winter, 10:47am in summer — after the open.
-    - cron: '47 14 1-7 * 1-5'
+    - cron: '47 14 * * 1-5'
   workflow_dispatch:
     inputs:
       mode:
-        description: 'auto (first session only), force (rebalance now) or dry (plan only)'
+        description: 'auto (week''s first session only), force (rebalance now) or dry (plan only)'
         default: force
         type: choice
         options: [auto, force, dry]

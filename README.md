@@ -315,15 +315,16 @@ intact, as their terms require.
 
 ## Paper trading (Alpaca, no real money)
 
-`scanner/paper.mjs` runs the one strategy that passed every backtest gate:
-**50% in the 10 large stocks with the best 12-1 momentum ÷ volatility, 30% SPY, 20% IEF (7–10 year Treasuries)**
-(US common stocks, $3+, the 300 most traded over 60 sessions), rebalanced on
-the first trading day of each month. A stock that tripled or more in the two years
-before its momentum window is skipped ("old runner" rule; long-term reversal). Orders go only to `paper-api.alpaca.markets`.
+`scanner/paper.mjs` runs **Weekly Ranked Momentum, 100% stocks**: the 10 large stocks with the
+best 12-1 momentum ÷ volatility (US common stocks, $3+, the 300 most traded over 60 sessions),
+weighted by rank (#1 gets 10 parts, #2 9 … #10 1), rebalanced on the first trading session of
+each week. A stock that tripled or more in the two years before its momentum window is skipped
+("old runner" rule). No SPY, bonds, stop-loss or take-profit. Backtest 2018–2026: about +51%/yr,
+worst drop about −45%. Orders go only to `paper-api.alpaca.markets`.
 
-- `.github/workflows/paper.yml` wakes on the first seven weekdays of each month
-  at 14:47 UTC; the script trades only on the month's first session.
+- `.github/workflows/paper.yml` wakes every weekday at 14:47 UTC;
+  the script trades only on the week's first session.
   Run it by hand from Actions → Paper trade (`force` rebalances now, `dry` only plans).
 - Each run is appended to `paper-log.json` on the `paper-log` branch: equity, SPY, picks, orders.
 - `node scanner/paper.test.mjs` checks the rule and order planner (no network).
-  On cached data the live code picks the same stocks as the backtest in every one of the last 24 months.
+  On cached data the live code picks the same stocks, in the same rank order, as the backtest on each of the last 60 weekly signal days.

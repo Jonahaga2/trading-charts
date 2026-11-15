@@ -1,23 +1,23 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   Paper trading: 50% momentum (top 10 large stocks) + 30% SPY + 20% bonds
+   Paper trading: Weekly Ranked Momentum, 100% stocks ("aggressive")
    ───────────────────────────────────────────────────────────────────────
-   The one strategy that passed every gate of the backtest tournament
-   (2017–2021 explore, 2022–23 validate, 2024→ holdout, random-pick luck
-   controls, delisted stocks included):
-
      · universe: US-listed common stocks (no ETFs), $3+, the 300 with the
        most dollar volume over the last 60 sessions
+     · skip "old runners": tripled or more in the two years before the
+       momentum window (long-term reversal)
      · score: 12-1 momentum ÷ volatility — the return from 12 months ago
        to 1 month ago, divided by the last year's annualised volatility
-     · hold the top 10 at 5% each, SPY at 30% and IEF (7–10 year
-       Treasuries) at 20% — the bonds cut the backtest's worst drop from
-       −36% to −29% for about 3%/yr less return
-     · rebalance on the first trading day of each month
+     · hold the top 10, weighted by rank: #1 gets 10 parts, #2 9 … #10 1
+       (#1 ≈ 18%, #10 ≈ 2%); no SPY or bonds, no stop-loss, no take-profit
+     · rebalance on the first trading session of each week
+
+   Backtest 2018–2026 (delisted stocks included, 0.05% cost per trade):
+   about +51%/yr, worst drop about −45%. Expect less live.
 
    Orders go to Alpaca's PAPER API only (paper-api.alpaca.markets): no real
    money. Keys come from ALPACA_KEY / ALPACA_SECRET.
 
-     node scanner/paper.mjs              rebalance if today is the month's first session
+     node scanner/paper.mjs              rebalance if today is the week's first session
      node scanner/paper.mjs --force      rebalance now
      node scanner/paper.mjs --dry        print the plan, place nothing
      node scanner/paper.mjs --log out/paper-log.json   append this run to a log
@@ -26,7 +26,7 @@ import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { parseUniverse } from './run.mjs';
 
-export const RULE = { top: 10, liquid: 300, minPrice: 3, maxRun: 2, core: { SPY: 0.3, IEF: 0.2 }, minTrade: 0.005, buffer: 0.01 };
+export const RULE = { top: 10, liquid: 300, minPrice: 3, maxRun: 2, core: {}, weighting: 'rank', minTrade: 0.005, buffer: 0.01 };
 
 /* ── Picks (pure) ─────────────────────────────────────────────────────
    series: Map sym → { c: closes oldest→newest (dividend-adjusted), v: volumes }.
@@ -64,8 +64,11 @@ export function pickMomentum(series, rule = RULE) {
 
 export function targetWeights(picks, rule = RULE) {
   const w = { ...rule.core };
-  const each = (1 - Object.values(rule.core).reduce((a, b) => a + b, 0)) / Math.max(rule.top, picks.length);
-  for (const p of picks) w[p.sym] = (w[p.sym] || 0) + each;
+  const stocks = 1 - Object.values(rule.core).reduce((a, b) => a + b, 0);
+  // rank: best gets `top` parts, next top−1 … (picks arrive best first). Fewer picks than `top` leave the rest in cash.
+  const parts = picks.map((_, n) => rule.weighting === 'rank' ? rule.top - n : 1);
+  const total = parts.reduce((a, b) => a + b, 0), share = stocks * Math.min(1, picks.length / rule.top);
+  picks.forEach((p, n) => { w[p.sym] = (w[p.sym] || 0) + share * parts[n] / total; });
   return w;
 }
 
@@ -87,6 +90,18 @@ export function planOrders({ equity, positions, weights, rule = RULE }) {
     if (diff > rule.minTrade * equity) buys.push({ symbol, notional: Math.floor(diff * 100) / 100 });
   }
   return { sells, buys };
+}
+
+/* Monday (UTC date) of the week containing `day` (YYYY-MM-DD). */
+export function weekStart(day) {
+  const d = new Date(day + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 6) % 7));
+  return d.toISOString().slice(0, 10);
+}
+
+/* First trading session of its week? (Monday, or Tuesday after a Monday holiday.) */
+export function isFirstSessionOfWeek(today, calendar) {
+  const mon = weekStart(today);
+  return calendar.map(d => d.date).filter(d => d >= mon && d <= today).sort()[0] === today;
 }
 
 /* First trading session of its month? calendar: Alpaca /v2/calendar rows. */
@@ -172,8 +187,8 @@ async function main() {
 
   const clock = await call(`${PAPER}/v2/clock`);
   const today = clock.timestamp.slice(0, 10);
-  const cal = await call(`${PAPER}/v2/calendar?start=${today.slice(0, 7)}-01&end=${today}`);
-  if (!a.force && !a.dry && !isFirstSession(today, cal)) { console.log(`${today}: not the month's first session — nothing to do`); return; }
+  const cal = await call(`${PAPER}/v2/calendar?start=${weekStart(today)}&end=${today}`);
+  if (!a.force && !a.dry && !isFirstSessionOfWeek(today, cal)) { console.log(`${today}: not the week's first session — nothing to do`); return; }
 
   // Universe: listed common stocks (no ETFs) that Alpaca can trade.
   const DIR = 'https://www.nasdaqtrader.com/dynamic/SymDir/';
@@ -190,7 +205,7 @@ async function main() {
   const positions = await call(`${PAPER}/v2/positions`);
   const equity = +acct.equity;
   console.log(`${today} · equity $${equity.toFixed(2)} · market ${clock.is_open ? 'open' : 'closed'}`);
-  console.log('picks: ' + picks.map(p => `${p.sym} (${(p.mom * 100).toFixed(0)}% 12-1, vol ${(p.vol * 100).toFixed(0)}%)`).join(', '));
+  console.log('picks: ' + picks.map(p => `${p.sym} ${(weights[p.sym] * 100).toFixed(1)}% (${(p.mom * 100).toFixed(0)}% 12-1, vol ${(p.vol * 100).toFixed(0)}%)`).join(', '));
 
   const { sells, buys } = planOrders({ equity, positions, weights });
   // A stock Alpaca cannot trade in fractions is bought in whole shares.

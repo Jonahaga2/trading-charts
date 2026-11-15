@@ -1,6 +1,6 @@
 /* Checks for the paper-trading rule and order planner. No network.
    Run: node scanner/paper.test.mjs */
-import { score, pickMomentum, targetWeights, planOrders, isFirstSession, trimAtGap, RULE } from './paper.mjs';
+import { score, pickMomentum, targetWeights, planOrders, isFirstSession, isFirstSessionOfWeek, weekStart, trimAtGap, RULE } from './paper.mjs';
 
 let pass = 0, fail = 0;
 const check = (name, cond, detail = '') => { if (cond) pass++; else { fail++; console.log(`  ✗ ${name}${detail ? ' — ' + detail : ''}`); } };
@@ -53,15 +53,18 @@ const grow = (g, w = 0.01, n = 300, p0 = 50, vol = 1e6) => {
   check('maxRun: null turns the rule off', pickMomentum(m, { ...RULE, top: 2, maxRun: null }).length === 2);
 }
 
-// targetWeights: 30% SPY, 20% bonds, 5% each of 10.
+// targetWeights: 100% stocks, rank weights 10:9:…:1.
 {
   const w = targetWeights(Array.from({ length: 10 }, (_, i) => ({ sym: 'X' + i })));
-  check('SPY 30%', w.SPY === 0.3);
-  check('bonds (IEF) 20%', w.IEF === 0.2);
-  check('each pick 5%', Object.entries(w).filter(([s]) => s !== 'SPY' && s !== 'IEF').every(([, x]) => near(x, 0.05)));
+  check('no SPY or bonds', w.SPY === undefined && w.IEF === undefined);
+  check('#1 gets 10/55', near(w.X0, 10 / 55));
+  check('#10 gets 1/55', near(w.X9, 1 / 55));
+  check('each rank gets less than the one above', Array.from({ length: 9 }, (_, i) => w['X' + i] > w['X' + (i + 1)]).every(Boolean));
   check('weights sum to 1', near(Object.values(w).reduce((a, b) => a + b, 0), 1));
   const few = targetWeights([{ sym: 'A' }, { sym: 'B' }]);
-  check('fewer than 10 picks: still 5% each, rest stays cash', near(few.A, 0.05) && near(few.B, 0.05));
+  check('2 picks: 20% of the money, split 10:9, rest stays cash', near(few.A + few.B, 0.2) && near(few.A / few.B, 10 / 9));
+  const old = targetWeights(Array.from({ length: 10 }, (_, i) => ({ sym: 'X' + i })), { ...RULE, core: { SPY: 0.3, IEF: 0.2 }, weighting: 'equal' });
+  check('old rule still works: 30/20 core, 5% each', old.SPY === 0.3 && near(old.X3, 0.05));
 }
 
 // planOrders.
@@ -78,6 +81,17 @@ const grow = (g, w = 0.01, n = 300, p0 = 50, vol = 1e6) => {
   check('a new pick is bought', p.buys.some(b => b.symbol === 'BBB' && near(b.notional, 24750, 0.01)));
   const tiny = planOrders({ equity: 100000, positions: [{ symbol: 'SPY', qty: '1', market_value: '49300' }], weights: { SPY: 0.5 } });
   check('changes under 0.5% of equity are skipped', tiny.buys.length === 0 && tiny.sells.length === 0);
+}
+
+// isFirstSessionOfWeek: Monday, or Tuesday after a Monday holiday.
+{
+  check('weekStart of Wed 2026-11-18 is Mon 2026-11-16', weekStart('2026-11-18') === '2026-11-16');
+  check('weekStart of Sun 2026-11-22 is Mon 2026-11-16', weekStart('2026-11-22') === '2026-11-16');
+  const wk = [{ date: '2026-11-16' }, { date: '2026-11-17' }, { date: '2026-11-18' }];
+  check('Monday is the first session', isFirstSessionOfWeek('2026-11-16', wk));
+  check('Tuesday is not', !isFirstSessionOfWeek('2026-11-17', wk));
+  const labor = [{ date: '2026-09-08' }, { date: '2026-09-09' }];   // Labor Day Monday 2026-09-07
+  check('Tuesday after a Monday holiday is', isFirstSessionOfWeek('2026-09-08', labor));
 }
 
 // isFirstSession: holidays push the first session later.
