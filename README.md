@@ -103,14 +103,20 @@ that crossed the retrace line on the latest session.
 Every threshold is in the panel — drop, window (two weeks to six months),
 retrace range, price, average dollar volume — and re-runs instantly.
 
-**Where the data comes from.** Yahoo daily bars, fetched by
+**Where the data comes from.** Alpaca's consolidated daily bars, fetched by
 `scanner/run.mjs` on GitHub Actions after each US close
-(`.github/workflows/scan.yml`). It runs on a server rather than in the page
-because a page can only reach Yahoo through a third-party CORS proxy, and
-~6,000 chart requests through one of those is a guaranteed rate limit — the
-reason Yahoo was retired from the charts in the first place. The universe is
+(`.github/workflows/scan.yml`), 200 symbols a request. The universe is
 Nasdaq Trader's symbol directory with ETFs, warrants, rights, units,
 preferreds and notes removed.
+
+It was built on Yahoo first and Yahoo is still there (`--source yahoo`), but
+Yahoo answers every data-centre address with `429 Too Many Requests` —
+GitHub Actions and every cloud machine tried, from the very first request,
+even with the cookie-and-crumb session yfinance uses. Alpaca serves servers;
+free paper-trading keys are enough. Add them as repository secrets named
+`ALPACA_KEY` and `ALPACA_SECRET` (Settings → Secrets and variables →
+Actions). Without them the job falls back to Yahoo, which stops within a
+minute and says why in the log, rather than retrying for an hour.
 
 The job publishes every stock that fell at least 20% (and trades over $1 and
 $1M a day) with six months of its highs, lows and closes, to a `scan-data`
@@ -125,11 +131,23 @@ The first scan appears after the workflow first runs — trigger it by hand from
 the Actions tab rather than waiting for the evening.
 
 ```bash
-npm run scan                                        # full scan → .scan/scan.json, prints the matches
+ALPACA_KEY=… ALPACA_SECRET=… npm run scan          # full scan → .scan/scan.json, prints the matches
 node scanner/run.mjs --symbols AAPL,TSLA,PLTR       # just these
 node scanner/run.mjs --drop 40 --retrace 25 --lookback 126
-npm run test:scan                                   # 48 checks, no network
+npm run test:scan                                   # 78 checks, no network
 ```
+
+**Top 5 picks, with charts.** After each scan, `scanner/charts.mjs` picks
+five: liquid stocks ($5+, $50M+ a day) that fell 30%+ inside three months
+and have won back 50–85% of it **steadily** — no single day since the low up
+more than 10%, so a recovery made of one spike is left out — with the ones
+that crossed 50% on the latest session first, then the deepest falls.
+`--retrace`, `--max` and `--jump` override the rule for one run.
+It fetches their candles from Alpaca, draws each as a 1-hour candlestick chart
+(regular hours, on the 9:30 grid, last ~20 sessions; `--tf day` for daily)
+with the high, the low and the 20% line marked, and screenshots it with
+headless Chrome. `picks.json` and `charts/1.png … 5.png` are published beside
+`scan.json`, and the morning briefing shows them.
 
 `src/scan.js` is the logic, and it is the same file in both places — inlined
 into the page and required by the runner — so the nightly prefilter and the
@@ -294,3 +312,19 @@ Charts, screener and news are provided by
 [TradingView](https://www.tradingview.com/), used through their public
 embeddable widgets. Their branding and links inside each widget are left
 intact, as their terms require.
+
+## Paper trading (Alpaca, no real money)
+
+`scanner/paper.mjs` runs **Weekly Ranked Momentum, 100% stocks**: the 10 large stocks with the
+best 12-1 momentum ÷ volatility (US common stocks, $3+, the 300 most traded over 60 sessions),
+weighted by rank (#1 gets 10 parts, #2 9 … #10 1), rebalanced on the first trading session of
+each week. A stock that tripled or more in the two years before its momentum window is skipped
+("old runner" rule). No SPY, bonds, stop-loss or take-profit. Backtest 2018–2026: about +51%/yr,
+worst drop about −45%. Orders go only to `paper-api.alpaca.markets`.
+
+- `.github/workflows/paper.yml` wakes every weekday at 14:47 UTC;
+  the script trades only on the week's first session.
+  Run it by hand from Actions → Paper trade (`force` rebalances now, `dry` only plans).
+- Each run is appended to `paper-log.json` on the `paper-log` branch: equity, SPY, picks, orders.
+- `node scanner/paper.test.mjs` checks the rule and order planner (no network).
+  On cached data the live code picks the same stocks, in the same rank order, as the backtest on each of the last 60 weekly signal days.

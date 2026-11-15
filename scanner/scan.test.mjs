@@ -3,7 +3,7 @@
    behaviour against canned responses. No network.
    Run: node scanner/scan.test.mjs   (or npm run test:scan) */
 import { createRequire } from 'node:module';
-import { parseUniverse, parseChart, scan, cleanName, yahooSymbol, PREFILTER, BARS } from './run.mjs';
+import { parseUniverse, parseChart, scan, cleanName, yahooSymbol, getSession, Blocked, AuthError, PREFILTER, BARS } from './run.mjs';
 
 const require = createRequire(import.meta.url);
 const SCAN = require('../src/scan.js');
@@ -113,6 +113,39 @@ const loose = { lookback: 999, minDrop: 0, minRetrace: 0, minPrice: 0, minDollar
   check(`windowed drawdown ≤ full (${sound}/${N})`, sound === N);
 }
 
+/* ── maxJump: the biggest one-day gain since the low ── */
+{
+  const spike = flat([100, 50, 51, 70, 71]);           // +37% on one day
+  const steady = flat([100, 50, 54, 58, 62, 66, 71]);  // ≤8% a day
+  const ms = SCAN.evaluate(spike, loose), mt = SCAN.evaluate(steady, loose);
+  check('jump: spike measured', near(ms.jump, (70 / 51 - 1) * 100));
+  check('jump: steady climb measured', mt.jump < 8.1 && mt.jump > 7);
+  check('jump: maxJump gates the spike', !SCAN.evaluate(spike, { ...loose, maxJump: 10 }).pass);
+  check('jump: …and passes the steady one', SCAN.evaluate(steady, { ...loose, maxJump: 10 }).pass);
+  // The crash into the low is not a "jump", and days before the low don't count.
+  const preSpike = flat([60, 100, 50, 52, 55]);        // +67% before the low
+  check('jump: only days after the low count', SCAN.evaluate(preSpike, loose).jump < 6);
+  check('jump: default allows anything', SCAN.evaluate(spike, loose).pass);
+}
+
+/* ── sharp dips from a high: maxDropDays and highLookback ── */
+{
+  const sharp = flat([...Array(10).fill(80), 90, 100, 70, 50, 60, 76]);       // up to a high, −50% in 2 days
+  const slide = flat([100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50, 60, 76]);  // a 10-day grind down
+  const fromHigh = { ...loose, minRetrace: 50 };
+  const ms = SCAN.evaluate(sharp, fromHigh), ml = SCAN.evaluate(slide, fromHigh);
+  check('sharp: drop days measured', ms.dropDays === 2 && ml.dropDays === 10);
+  check('sharp: maxDropDays keeps the fast drop', SCAN.evaluate(sharp, { ...fromHigh, maxDropDays: 5 }).pass);
+  check('sharp: …and drops the slow slide', !SCAN.evaluate(slide, { ...fromHigh, maxDropDays: 5 }).pass);
+  check('sharp: highFor counts the sessions the high tops', ms.highFor === 11 && ml.highFor === 0);
+  check('sharp: highLookback keeps a dip from a high', SCAN.evaluate(sharp, { ...fromHigh, highLookback: 10 }).pass);
+  const lowerHigh = flat([120, ...Array(9).fill(80), 90, 100, 70, 50, 60, 76]);   // a higher high 11 sessions back
+  check('sharp: …and drops one below an earlier high', !SCAN.evaluate(lowerHigh, { ...fromHigh, lookback: 7, highLookback: 15 }).pass);
+  check('sharp: off by default', SCAN.evaluate(slide, fromHigh).pass);
+  check('slow: minDropDays keeps the slide', SCAN.evaluate(slide, { ...fromHigh, minDropDays: 10 }).pass);
+  check('slow: …and drops the crash', !SCAN.evaluate(sharp, { ...fromHigh, minDropDays: 10 }).pass);
+}
+
 /* ── dollar volume ── */
 check('dollar volume averages the last 20', near(SCAN.dollarVolume(Array(30).fill(10), [...Array(10).fill(0), ...Array(20).fill(100)]), 1000));
 
@@ -135,6 +168,8 @@ check('dollar volume averages the last 20', near(SCAN.dollarVolume(Array(30).fil
     'SPY|SPDR S&P 500 ETF Trust|P|SPY|Y|100|N|SPY',
     'GME|GameStop Corporation Common Stock|N|GME|N|100|N|GME',
     'XYZ|Some Arca Listed Inc Common Stock|P|XYZ|N|100|N|XYZ',
+    'FNGD|MicroSectors FANG+ Index -3X Inverse Leveraged ETNs due January 8, 2038|P|FNGD|N|100|N|FNGD',
+    'XLX|Some Bank 2X Long ETN|P|XLX|N|100|N|XLX',
     'AAPL|duplicate should be ignored|N|AAPL|N|100|N|AAPL',
     'File Creation Time: 1105202617:00|||||||',
   ].join('\n');
@@ -188,12 +223,156 @@ check('dollar volume averages the last 20', near(SCAN.dollarVolume(Array(30).fil
   check('prefilter keeps the fallers', kept === 'BUSY,DIP,LONG', kept);
   check('429 is retried until it answers', calls.BUSY === 3);
   check('404 is not retried and not a failure', calls.GONE === 1 && !out.failedSymbols.includes('GONE'));
-  check('5xx retried, then counted as failed', calls.DOWN === 5 && out.failed === 1 && out.failedSymbols[0] === 'DOWN');
+  check('5xx retried, then counted as failed', calls.DOWN === 4 && out.failed === 1 && out.failedSymbols[0] === 'DOWN');
+  check('failures are tallied by reply', out.errors['HTTP 503'] === 1, JSON.stringify(out.errors));
   check('series trimmed to the stored window', out.rows.find(r => r.s === 'LONG').c.length === BARS);
   check('header carries the prefilter', out.prefilter.minDrop === PREFILTER.minDrop && out.universe === 7);
   check('asOf is a date', /^\d{4}-\d\d-\d\d$/.test(out.asOf));
   const dip = SCAN.evaluate(out.rows.find(r => r.s === 'DIP'));
   check('a kept row re-evaluates in the panel', dip.pass && near(dip.retrace, 22), JSON.stringify(dip));
+}
+
+/* ── Yahoo session: cookie from fc.yahoo.com, crumb from getcrumb ── */
+const res = (status, body = '', setCookie = []) => ({
+  ok: status >= 200 && status < 300, status,
+  text: async () => body, json: async () => JSON.parse(body),
+  headers: { getSetCookie: () => setCookie },
+});
+const tinyChart = JSON.stringify({ chart: { result: [{ timestamp: [1, 2, 3],
+  indicators: { quote: [{ high: [100, 50, 61], low: [100, 50, 61], close: [100, 50, 61], volume: [1e6, 1e6, 1e6] }] } }] } });
+{
+  const seen = [];
+  const yahoo = async (url, init = {}) => {
+    seen.push({ url, cookie: init.headers?.Cookie });
+    if (url.startsWith('https://fc.yahoo.com')) return res(404, 'nope', ['A3=d=AQAB; Expires=Fri; Domain=.yahoo.com; Path=/; Secure']);
+    if (url.includes('/v1/test/getcrumb')) return init.headers?.Cookie === 'A3=d=AQAB' ? res(200, 'abc.DEF/9') : res(401, '<html>');
+    const crumb = new URL(url).searchParams.get('crumb');
+    return crumb === 'abc.DEF/9' && init.headers?.Cookie === 'A3=d=AQAB' ? res(200, tinyChart) : res(429, 'Too Many Requests');
+  };
+  const sess = await getSession(yahoo);
+  check('session takes the cookie from fc.yahoo.com', sess.cookie === 'A3=d=AQAB', sess.cookie);
+  check('session gets a crumb with it', sess.crumb === 'abc.DEF/9', sess.crumb);
+  const out = await scan([{ s: 'DIP', x: 'NYSE', n: 'Dip' }], { fetchFn: yahoo, backoff: 1 });
+  const chartCall = seen.find(c => c.url.includes('/v8/finance/chart/'));
+  check('chart requests carry the crumb', chartCall && new URL(chartCall.url).searchParams.get('crumb') === 'abc.DEF/9');
+  check('chart requests carry the cookie', chartCall?.cookie === 'A3=d=AQAB');
+  check('a session-authenticated scan succeeds', out.rows.length === 1 && out.failed === 0);
+
+  const pageNotCrumb = async url => url.includes('getcrumb') ? res(200, '<!doctype html><html>') : res(404, '', []);
+  check('an HTML page is not taken for a crumb', (await getSession(pageNotCrumb)).crumb === '');
+}
+
+/* ── an expired session (401) is renewed once, shared by all workers ── */
+{
+  let handshakes = 0, chartCalls = 0;
+  const expiring = async (url, init = {}) => {
+    if (url.startsWith('https://fc.yahoo.com')) return res(404, '', [`A3=s${handshakes}`]);
+    if (url.includes('getcrumb')) { handshakes++; return res(200, `c${handshakes}`); }
+    chartCalls++;
+    return new URL(url).searchParams.get('crumb') === 'c2' ? res(200, tinyChart) : res(401, 'Unauthorized');
+  };
+  const u = Array.from({ length: 8 }, (_, i) => ({ s: 'S' + i, x: 'NYSE', n: '' }));
+  const out = await scan(u, { fetchFn: expiring, backoff: 1, concurrency: 4 });
+  check('401 renews the session and succeeds', out.failed === 0 && out.rows.length === 8, JSON.stringify(out.errors));
+  check('…with one renewal, not one per worker', handshakes === 2, `handshakes ${handshakes}`);
+}
+
+/* ── blocked: stop after the probe instead of grinding through the rest ── */
+{
+  let calls = 0;
+  const refusing = async url => {
+    if (url.startsWith('https://fc.yahoo.com') || url.includes('getcrumb')) return res(429, 'Too Many Requests');
+    calls++; return res(429, 'Too Many Requests');
+  };
+  const u = Array.from({ length: 2000 }, (_, i) => ({ s: 'B' + i, x: 'NYSE', n: '' }));
+  let err = null;
+  try { await scan(u, { fetchFn: refusing, backoff: 1, probe: 60, concurrency: 6 }); } catch (e) { err = e; }
+  check('a blocked run throws Blocked', err instanceof Blocked, String(err));
+  check('…naming what Yahoo answered', /HTTP 429/.test(err?.message || ''), err?.message);
+  check('…after the probe, not the whole universe', calls < 70 * 4, `${calls} chart calls`);
+
+  // A run that is merely patchy is not blocked.
+  let n = 0;
+  const patchy = async url => {
+    if (url.startsWith('https://fc.yahoo.com') || url.includes('getcrumb')) return res(200, 'ok1');
+    return (n++ % 3 === 0) ? res(400, 'bad') : res(200, tinyChart);
+  };
+  const v = Array.from({ length: 150 }, (_, i) => ({ s: 'P' + i, x: 'NYSE', n: '' }));
+  const out = await scan(v, { fetchFn: patchy, backoff: 1 });
+  check('a patchy run completes', out.universe === 150 && out.failed > 0 && out.rows.length > 0);
+}
+
+/* ── Alpaca: many symbols per request, paged, with keys in two headers ── */
+{
+  const day = i => new Date(Date.UTC(2026, 5, 1) + i * 864e5).toISOString();
+  const barsOf = closes => closes.map((c, i) => ({ t: day(i), o: c, h: c, l: c, c, v: 1e6 }));
+  const DATA = {
+    DIP: barsOf([...Array(100).fill(100), 50, 52, 61]),   // drop 50, retrace 22
+    CALM: barsOf(Array(120).fill(100).map((x, i) => x + i)),
+    'BRK.B': barsOf([...Array(60).fill(500), 300, 360]),
+  };
+  const reqs = [];
+  // Serves pages of at most 50 bars across symbols, like Alpaca's `limit`,
+  // so DIP is split over a page break.
+  const alpaca = async (url, init = {}) => {
+    const u = new URL(url);
+    reqs.push({ u, h: init.headers || {} });
+    if (init.headers?.['APCA-API-SECRET-KEY'] !== 'sec') return res(401, '{"message":"forbidden."}');
+    const syms = u.searchParams.get('symbols').split(',');
+    const flat = syms.flatMap(s => (DATA[s] || []).map(b => [s, b]));
+    const from = +(u.searchParams.get('page_token') || 0);
+    const page = flat.slice(from, from + 50), bars = {};
+    for (const [s, b] of page) (bars[s] ||= []).push(b);
+    return res(200, JSON.stringify({ bars, next_page_token: from + 50 < flat.length ? String(from + 50) : null }));
+  };
+  const u = ['DIP', 'CALM', 'BRK.B', 'GONE'].map(s => ({ s, x: 'NYSE', n: s }));
+  const now = Date.UTC(2026, 10, 6, 22, 0);
+  const out = await scan(u, { source: 'alpaca', fetchFn: alpaca, key: 'kid', secret: 'sec', backoff: 1, now });
+  const r0 = reqs[0];
+  check('alpaca: both key headers sent', r0.h['APCA-API-KEY-ID'] === 'kid' && r0.h['APCA-API-SECRET-KEY'] === 'sec');
+  check('alpaca: one request names all four symbols', r0.u.searchParams.get('symbols') === 'DIP,CALM,BRK.B,GONE');
+  check('alpaca: daily, consolidated, split-adjusted, ascending', ['timeframe=1Day', 'feed=sip', 'adjustment=split', 'sort=asc'].every(q => r0.u.search.includes(q)));
+  check('alpaca: window ends past the 15-minute embargo', Date.parse(r0.u.searchParams.get('end')) <= now - 15 * 60e3);
+  check('alpaca: window starts far enough back for BARS sessions', (now - Date.parse(r0.u.searchParams.get('start'))) / 864e5 >= BARS * 1.4);
+  check('alpaca: follows page tokens', reqs.length === 6, `${reqs.length} requests`);
+  const dip = out.rows.find(r => r.s === 'DIP');
+  check('alpaca: a symbol split across pages is whole', dip && dip.c.length === 103, dip && String(dip.c.length));
+  check('alpaca: kept rows evaluate', SCAN.evaluate(dip).pass);
+  check('alpaca: share classes keep their dot', out.rows.some(r => r.s === 'BRK.B'));
+  check('alpaca: no data is not a failure', out.failed === 0 && out.universe === 4);
+  check('alpaca: output names the source', out.source === 'Alpaca');
+  check('alpaca: asOf is the latest bar of any symbol', out.asOf === day(119).slice(0, 10), out.asOf);
+
+  let err = null;
+  try { await scan(u, { source: 'alpaca', fetchFn: alpaca, key: 'kid', secret: 'wrong', backoff: 1, now }); } catch (e) { err = e; }
+  check('alpaca: a rejected key stops the run with AuthError', err instanceof AuthError && /401/.test(err.message), String(err));
+
+  // A batch whose second page fails is discarded whole: DIP's bars run over
+  // that page break, and scanning half a series would misreport it.
+  const secondPageFails = async (url, init) => new URL(url).searchParams.get('page_token') === '50'
+    ? res(503, 'busy') : alpaca(url, init);
+  const outP = await scan(u, { source: 'alpaca', fetchFn: secondPageFails, key: 'kid', secret: 'sec', backoff: 1, now });
+  check('alpaca: a batch failing mid-pages keeps nothing', outP.rows.length === 0 && outP.failed === 4, `rows ${outP.rows.length}, failed ${outP.failed}`);
+
+  // 450 symbols → 3 batches of ≤200; a batch that keeps failing fails whole.
+  const big = Array.from({ length: 450 }, (_, i) => ({ s: 'Z' + i, x: 'NYSE', n: '' }));
+  const sizes = [];
+  let flaky = 0;
+  const batching = async url => {
+    const n = new URL(url).searchParams.get('symbols').split(',');
+    sizes.push(n.length);
+    if (n[0] === 'Z200') { flaky++; return res(503, 'busy'); }
+    return res(200, JSON.stringify({ bars: {}, next_page_token: null }));
+  };
+  const outB = await scan(big, { source: 'alpaca', fetchFn: batching, key: 'k', secret: 's', backoff: 1, probe: 1000 });
+  check('alpaca: batches of at most 200', sizes.filter((_, i) => i === sizes.indexOf(sizes[i])).every(n => n <= 200) && Math.max(...sizes) === 200);
+  check('alpaca: a failing batch is retried, then fails whole', flaky === 4 && outB.failed === 200 && outB.errors['HTTP 503'] === 200, JSON.stringify(outB.errors));
+
+  // Blocked names Alpaca, not Yahoo.
+  const refuse = async () => res(429, 'slow down');
+  let berr = null;
+  try { await scan(big, { source: 'alpaca', fetchFn: refuse, key: 'k', secret: 's', backoff: 1, tries: 2 }); } catch (e) { berr = e; }
+  check('alpaca: blocked run names Alpaca', berr instanceof Blocked && /^Alpaca refused/.test(berr.message), berr?.message);
 }
 
 console.log(`${pass} passed, ${fail} failed`);

@@ -1,0 +1,160 @@
+/* Checks for the backtest's trade mechanics and portfolio. No network.
+   Run: node scanner/backtest.test.mjs */
+import { trade, signals, simulate, simulateDollars, confidence, stats, atrAt } from './backtest.mjs';
+
+let pass = 0, fail = 0;
+const check = (name, cond, detail = '') => { if (cond) pass++; else { fail++; console.log(`  ✗ ${name}${detail ? ' — ' + detail : ''}`); } };
+const near = (a, b) => Math.abs(a - b) < 1e-9;
+
+// Bars from [o, h, l, c] rows; dates are sequential.
+const ser = (s, rows) => ({
+  s, t: rows.map((_, i) => new Date(Date.UTC(2024, 0, 1) + i * 864e5).toISOString().slice(0, 10)),
+  o: Float64Array.from(rows.map(r => r[0])), h: Float64Array.from(rows.map(r => r[1])),
+  l: Float64Array.from(rows.map(r => r[2])), c: Float64Array.from(rows.map(r => r[3])),
+  v: Float64Array.from(rows.map(() => 1e7)),
+});
+const sig = (i, peak = 200) => ({ s: 'X', i, peak });
+
+// Signal at bar 0 → entry at bar 1's open (100).
+{
+  const stopped = ser('X', [[90, 95, 88, 92], [100, 101, 95, 96], [96, 97, 84, 85], [85, 90, 80, 88]]);
+  const t = trade(stopped, sig(0), { stop: 0.15, hold: 20 });
+  check('enters at the next open', t.entry === 100);
+  check('stop fills at the stop price', t.why === 'stop' && near(t.exit, 85) && t.k === 2);
+
+  const gap = ser('X', [[90, 95, 88, 92], [100, 101, 95, 96], [80, 82, 78, 81]]);
+  const g = trade(gap, sig(0), { stop: 0.15, hold: 20 });
+  check('a gap through the stop fills at the open', g.why === 'stop' && g.exit === 80);
+
+  const up = ser('X', [[90, 95, 88, 92], [100, 105, 99, 104], [104, 125, 103, 120]]);
+  const u = trade(up, sig(0, 120), { stop: 0.15, hold: 20, target: true });
+  check('target fills at the old high', u.why === 'target' && u.exit === 120 && u.k === 2);
+
+  const both = ser('X', [[90, 95, 88, 92], [100, 130, 80, 100]]);
+  check('a day touching both counts as stopped', trade(both, sig(0, 120), { stop: 0.15, hold: 20, target: true }).why === 'stop');
+
+  const flat = ser('X', [[90, 95, 88, 92], ...Array(10).fill([100, 102, 98, 101])]);
+  const f = trade(flat, sig(0), { stop: 0.15, hold: 5 });
+  check('time exit at the close of the hold-th session', f.why === 'time' && f.k === 5 && f.exit === 101);
+  const nostop = trade(stopped, sig(0), { stop: 1, hold: 3 });
+  check('stop 100% = no stop', nostop.why === 'time' && nostop.exit === 88);
+  check('no bar after the signal → no trade', trade(flat, sig(10), { hold: 5 }) === null);
+
+  // Take-profit: +10% from a 100 entry is 110.
+  const tp = ser('X', [[90, 95, 88, 92], [100, 104, 99, 103], [103, 112, 102, 111], [111, 120, 110, 119]]);
+  const t1 = trade(tp, sig(0), { stop: 0.15, hold: 20, takeProfit: 0.1 });
+  check('take-profit fills at +10%', t1.why === 'target' && near(t1.exit, 110) && t1.k === 2);
+  // Trailing 10%: highs 104 then 120 lift the stop to 108 for day 4.
+  const tr = ser('X', [[90, 95, 88, 92], [100, 104, 99, 103], [103, 120, 102, 118], [118, 119, 105, 106]]);
+  const t2 = trade(tr, sig(0), { stop: 0.15, hold: 20, trail: 0.1 });
+  check('trailing stop follows the high', t2.why === 'trail' && near(t2.exit, 108) && t2.k === 3);
+  // A day's own high can't raise the stop it's tested against.
+  const same = ser('X', [[90, 95, 88, 92], [100, 130, 95, 100]]);
+  check('trail uses highs before today only', trade(same, sig(0), { stop: 0.15, hold: 1, trail: 0.1 }).why === 'time');
+}
+
+// ATR stops and close-only stops.
+{
+  // 15 days with a 4-point true range each (h−l = 4, no gaps) → ATR 4.
+  const base = Array.from({ length: 15 }, () => [100, 102, 98, 100]);
+  check('ATR: average true range', near(atrAt(ser('X', base), 14), 4));
+  // Entry 100, 2 × ATR stop = 92. A low of 93 holds; a low of 91 sells at 92.
+  const holds = ser('X', [...base, [100, 101, 93, 99], [99, 100, 98, 99]]);
+  check('ATR stop: 2×ATR below entry holds above it', trade(holds, { i: 14 }, { atr: 2, hold: 2 }).why === 'time');
+  const hits = ser('X', [...base, [100, 101, 91, 95]]);
+  const ah = trade(hits, { i: 14 }, { atr: 2, hold: 5 });
+  check('ATR stop: sells at entry − 2×ATR', ah.why === 'stop' && near(ah.exit, 92));
+  // Chandelier: high 120 on day 15 → stop 120 − 8 = 112 from day 16.
+  const ch = ser('X', [...base, [100, 120, 99, 119], [119, 119, 111, 112]]);
+  const cr = trade(ch, { i: 14 }, { atr: 2, chandelier: true, hold: 5 });
+  check('chandelier: trails ATR below the high', cr.why === 'trail' && near(cr.exit, 112));
+  // Close-only: a wick to 84 that closes at 95 doesn't sell a 15% stop (85).
+  const wick = ser('X', [[90, 95, 88, 92], [100, 101, 84, 95], [95, 96, 80, 82]]);
+  check('close-only: an intraday wick below the stop is ignored', trade(wick, sig(0), { stop: 0.15, hold: 1, onClose: true }).why === 'time');
+  const shut = trade(wick, sig(0), { stop: 0.15, hold: 5, onClose: true });
+  check('close-only: a close below sells at that close', shut.why === 'stop' && shut.exit === 82 && shut.k === 2);
+}
+
+// Sell on a lower low.
+{
+  // Days 0-4 before entry, lowest low 90 → first stop 90. Entry day 5 at 100.
+  // Day 7 low 97 is a swing low (below days 5-6 and 8-9), confirmed at day 9
+  // → stop lifts to 97. Day 11 trades to 95: a lower low → out at 97.
+  const rows = [[95, 96, 92, 95], [95, 96, 90, 95], [95, 97, 93, 96], [96, 98, 94, 97], [97, 99, 95, 98],   // 0-4
+    [100, 104, 99, 103], [103, 106, 100, 105], [104, 105, 97, 103], [103, 108, 101, 107], [107, 110, 104, 109], // 5-9
+    [109, 111, 106, 110], [108, 109, 95, 96]];                                                                  // 10-11
+  const t = trade(ser('X', rows), sig(4), { swing: true });
+  check('lower low: enters at the next open', t.entry === 100 && t.firstStop === 90);
+  check('lower low: a confirmed higher low lifts the stop', t.stop === 97);
+  check('lower low: sells on the break, at the stop', t.why === 'lowerlow' && t.exit === 97 && t.k === 11);
+  // A gap below the stop fills at the open.
+  const gapRows = [...rows.slice(0, 11), [92, 93, 90, 91]];
+  check('lower low: a gap through fills at the open', trade(ser('X', gapRows), sig(4), { swing: true }).exit === 92);
+  // Never breaking down: sold at the close of the 60th session.
+  const up = [...rows.slice(0, 5), ...Array.from({ length: 70 }, (_, k) => [100 + k, 101 + k, 99.5 + k, 100.5 + k])];
+  const u = trade(ser('X', up), sig(4), { swing: true });
+  check('lower low: time exit after 60 sessions', u.why === 'time' && u.k === 5 + 59 && u.exit === 100.5 + 59);
+  // Before entry, the first stop alone applies.
+  const early = [...rows.slice(0, 5), [100, 101, 89, 90]];
+  const ea = trade(ser('X', early), sig(4), { swing: true });
+  check('lower low: under the pre-entry dip on day one is out', ea.why === 'lowerlow' && ea.exit === 90 && ea.k === 5);
+}
+
+// signals(): fires once, on the day the steady recovery crosses 50%.
+{
+  // A slow slide (13 sessions, 100 → 50), then a steady climb: 50% back at 75.
+  const slide = [96, 92, 88, 84, 80, 76, 72, 68, 64, 60, 56, 52, 50];
+  const closes = [...Array(70).fill(100), ...slide, 54, 58, 62, 66, 70, 74, 78];
+  const rows = closes.map(c => [c, c, c, c]);
+  const sg = signals(ser('Y', rows));
+  check('signal fires on the crossing day only', sg.length === 1 && sg[0].i === 89, JSON.stringify(sg.map(x => x.i)));
+  const spiky = [...Array(70).fill(100), ...slide, 52, 76, 77];               // +46% in one day
+  check('a one-day spike gives no signal', signals(ser('Z', spiky.map(c => [c, c, c, c]))).length === 0);
+  const crash = [...Array(70).fill(100), 50, 54, 58, 62, 66, 70, 74, 78];      // the same climb after a 1-day crash
+  check('a crash (not a slow drop) gives no signal', signals(ser('C', crash.map(c => [c, c, c, c]))).length === 0);
+}
+
+// simulate(): slots and one trade per symbol at a time.
+{
+  const mk = s => ser(s, [[50, 50, 50, 50], ...Array(30).fill([100, 101, 99, 100])]);
+  const all = new Map(['A', 'B', 'C'].map(s => [s, mk(s)]));
+  const day = all.get('A').t[0];
+  const sigs = ['A', 'B', 'C'].map((s, k) => ({ s, i: 0, day, drop: 50 - k, peak: 200 }));
+  const one = simulate(all, sigs, { top: 5, slots: 2, stop: 0.15, hold: 5 });
+  check('slots cap open trades', one.trades.length === 2 && one.trades.map(t => t.s).join() === 'A,B');
+  const dup = simulate(all, [sigs[0], { ...sigs[0], i: 1, day: all.get('A').t[1] }], { top: 5, slots: 5, stop: 0.15, hold: 5 });
+  check('one open trade per symbol', dup.trades.length === 1);
+  const st = stats([{ ret: 0.1, why: 'time', days: 5 }, { ret: -0.15, why: 'stop', days: 2 }, { ret: 0.2, why: 'target', days: 9 }]);
+  check('stats', near(st.win, 2 / 3) && near(st.avg, 0.05 / 1) && near(st.pf, 0.3 / 0.15) && near(st.stops, 1 / 3));
+}
+
+// Confidence points and dollar sizing.
+{
+  const g = { jump: 5, dv: 3e8, retrace: 65 };
+  check('confidence: all four points', confidence(g, true) === 4);
+  check('confidence: none', confidence({ jump: 9, dv: 1e8, retrace: 55 }, false) === 0);
+  check('confidence: market only', confidence({ jump: 9, dv: 1e8, retrace: 55 }, true) === 1);
+
+  // Five symbols, all signalling on day 0, flat afterwards (time exit at 0%).
+  const mk = s => ser(s, [[50, 50, 50, 50], ...Array(30).fill([100, 101, 99, 100])]);
+  const syms = ['A', 'B', 'C', 'D', 'E'];
+  const all = new Map(syms.map(s => [s, mk(s)]));
+  const day = all.get('A').t[0];
+  const hi = { jump: 5, dv: 3e8, retrace: 65 }, lo = { jump: 9, dv: 1e8, retrace: 55 };
+  const sigs = syms.map((s, k) => ({ s, i: 0, day, drop: 50 - k, peak: 200, ...(k === 0 ? hi : lo) }));
+  const spyUp = new Map([[day, false]]);
+  const r = simulateDollars(all, sigs, { start: 2000, maxPer: 500, top: 5, spyUp, stop: 0.15, hold: 5 });
+  check('dollars: high confidence gets the $500 cap... minus the missing market point', r.trades[0].size === 400 && r.trades[0].score === 3);
+  check('dollars: low confidence gets $100', r.trades[1].size === 100 && r.trades[1].score === 0);
+  const capped = simulateDollars(all, sigs.map(x => ({ ...x, ...hi })), { start: 2000, maxPer: 500, top: 5, spyUp: new Map([[day, true]]), stop: 0.15, hold: 5 });
+  check('dollars: never more than $500 a stock', capped.trades.every(t => t.size <= 500));
+  check('dollars: never more than the cash on hand', capped.trades.reduce((s, t) => s + t.size, 0) <= 2000 && capped.trades.length === 4);
+  check('dollars: flat trades return the stake', Math.abs(capped.final - 2000) < 1e-6);
+  const blocked = simulateDollars(all, sigs, { start: 2000, top: 5, spyUp, allow: new Map([[day, false]]), stop: 0.15, hold: 5 });
+  check('market filter: no buys on a down day', blocked.trades.length === 0 && blocked.final === 2000);
+  const allowed = simulateDollars(all, sigs, { start: 2000, top: 5, spyUp, allow: new Map([[day, true]]), stop: 0.15, hold: 5 });
+  check('market filter: buys on an up day', allowed.trades.length === 5);
+}
+
+console.log(`${pass} passed, ${fail} failed`);
+process.exit(fail ? 1 : 0);
