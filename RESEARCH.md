@@ -173,6 +173,55 @@ HPE 5.5%, FTNT 3.6%, ILMN 1.8%.
 
 ---
 
+## 11. Part 2 (Nov 2026): new ideas, and the push for a smaller drop
+
+All rows are weekly with rank weights. "Worst drop" is the worse of two sets of trading days,
+because weekly results moved by 1–6 points when the trading days were shifted by 2.
+
+**New ideas, each on its own** (aggressive = 100% momentum, which made +51.3%/yr with a −45% drop):
+
+| Idea | Result |
+|---|---|
+| **Only stocks in the top-half industries** (by average 12-1 momentum) | **+54–55%/yr. Beat all 20 random-industry tries (best +50.5%).** Adopt. |
+| Residual momentum (beat the market or the industry) | +30% to +47%, worse |
+| Crash guards (bear-market or high-volatility switches) | +46% to +50%. The worst drop was unchanged, because it wasn't a market crash. |
+| Earnings surprise (quarterly SEC data) | +13% to +37%, worse. Filing dates come after the news, and delisted companies are missing. |
+| Margin on the 50/30/20 plan (2×) | +52.7% with a −48.9% drop, no better than 100% stocks |
+| Calendar (SPY in January, "sell in May") | +39%, worse. Holding SPY in December looked good, but only after looking at the months first, so it's treated as luck. |
+
+**Where the big drops came from:** momentum crashes while the market was fine (Mar–May 2021
+−47%, Jun–Jul 2026 −45%, Oct–Nov 2025 −39%). Only holdings that move differently from
+momentum helped. Weekly correlation with momentum: low-volatility stocks 0.05, bonds 0.00,
+gold 0.16, SPY 0.45.
+
+**What did not lower the drop:** per-stock stops (a 20% stop from the buy price gave +50.5% with a
+−47.8% drop, and 69% of stopped stocks recovered), take-profits, moving-average exits,
+equity-curve rules, value stocks (−56% drop in 2020), risk parity, ETF trend rotation, blended
+lookbacks, overnight-only holding (costs ate it), sleeve rotation, a short SPY hedge,
+short-term reversal, and holding more stocks. Skipping stocks that swing more than 100% a year
+looked great at exactly 100% but not at 80% or 120%, so it's treated as luck.
+
+**The mix frontier** (momentum = top 10 in top-half industries; low-vol = 10 calmest of the 300 most
+traded, equal weight; bonds = IEF; gold = GLD; re-balanced weekly):
+
+| Mix (momentum / low-vol / bonds / gold) | Per year | Worst drop | 2018–23 only |
+|---|---|---|---|
+| 25 / 15 / 30 / 30 (weights chosen on 2018–21) | +19% | −14 to −16% | — |
+| 30 / 30 / 20 / 20 | +21.6% | −17.2% | +15.5% |
+| **35 / 35 / 15 / 15** | **+24–26%** | **−19.6 to −19.7%** | **+17.5%** |
+| 40 / 30 / 15 / 15 | +26.4% | −22.2% | +19.0% |
+| 50 / 50 / 0 / 0 | +31–33% | −27 to −28% | +23.1% |
+| 100 / 0 / 0 / 0 (aggressive) | +52–54% | −47 to −51% | +36.5% |
+
+- Gold rose about 27%/yr in 2024–26 versus about 7%/yr in 2018–23. That inflates recent
+  returns, but the worst drops all happened before 2024.
+- **The limit:** a search over 2,292 weight mixes, even using hindsight, found no mix above
+  **+26%/yr with a drop of 20% or less**. Leverage doesn't change this, because it scales the
+  return and the drop together. **+51%/yr with a −20% drop was not reachable** with anything
+  tested. That would need about 2.5% of return per 1% of drop, and the best found was about 1.3.
+
+---
+
 ## 10. Where things are
 
 | Path | What |
@@ -182,4 +231,5 @@ HPE 5.5%, FTNT 3.6%, ILMN 1.8%.
 | `research/engine.mjs` | Backtest engine (data loading, signals, simulator, stats) |
 | `research/tests/*.mjs` | Tests behind the sections above (weighting, stops, exits, after-hours, audit…) |
 | `research/run.mjs` | Runs one test: `node research/run.mjs tests/weighting.mjs` |
+| `research/engine2.mjs` | Part 2 engine (industry momentum, earnings surprise, more exits, shifted days) |
 | `research/README.md` | How to download the data and run the tests |
