@@ -1,0 +1,94 @@
+{
+ "started": "2026-11-14",
+ "runs": [
+  {
+   "date": "2026-11-14",
+   "equity": 742.32,
+   "spy": 752.09,
+   "dry": true,
+   "picks": [
+    "MRNA",
+    "VLO",
+    "MPC",
+    "PSX",
+    "SNDK",
+    "DELL",
+    "PBR",
+    "HPE",
+    "FTNT",
+    "ILMN"
+   ],
+   "orders": []
+  },
+  {
+   "date": "2026-11-16",
+   "equity": 742.32,
+   "spy": 740.04,
+   "dry": false,
+   "picks": [
+    "MRNA",
+    "VLO",
+    "MPC",
+    "PSX",
+    "SNDK",
+    "DELL",
+    "PBR",
+    "HPE",
+    "FTNT",
+    "ILMN"
+   ],
+   "orders": [
+    {
+     "side": "buy",
+     "symbol": "MRNA",
+     "notional": 133.61
+    },
+    {
+     "side": "buy",
+     "symbol": "VLO",
+     "notional": 120.25
+    },
+    {
+     "side": "buy",
+     "symbol": "MPC",
+     "notional": 106.89
+    },
+    {
+     "side": "buy",
+     "symbol": "PSX",
+     "notional": 93.53
+    },
+    {
+     "side": "buy",
+     "symbol": "SNDK",
+     "notional": 80.17
+    },
+    {
+     "side": "buy",
+     "symbol": "DELL",
+     "notional": 66.8
+    },
+    {
+     "side": "buy",
+     "symbol": "PBR",
+     "notional": 53.44
+    },
+    {
+     "side": "buy",
+     "symbol": "HPE",
+     "notional": 40.08
+    },
+    {
+     "side": "buy",
+     "symbol": "FTNT",
+     "notional": 26.72
+    },
+    {
+     "side": "buy",
+     "symbol": "ILMN",
+     "notional": 13.36
+    }
+   ]
+  }
+ ]
+}
