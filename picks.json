@@ -1,0 +1,47 @@
+{
+ "asOf": "2026-11-20",
+ "rule": {
+  "lookback": 63,
+  "minDrop": 30,
+  "minRetrace": 50,
+  "maxRetrace": 85,
+  "minPrice": 5,
+  "minDollarVol": 50000000,
+  "maxJump": 10,
+  "minDropDays": 10
+ },
+ "picks": [
+  {
+   "rank": 1,
+   "symbol": "CAR",
+   "exchange": "NASDAQ",
+   "name": "Avis Budget Group, Inc.",
+   "close": 124.4,
+   "drop": 35,
+   "retrace": 51.9,
+   "maxJump": 9.6,
+   "peak": 149.56,
+   "low": 97.23,
+   "daysSinceLow": 21,
+   "fresh": false,
+   "dollarVolume": 52698909,
+   "chart": "charts/1.png"
+  },
+  {
+   "rank": 2,
+   "symbol": "RKT",
+   "exchange": "NYSE",
+   "name": "Rocket Companies, Inc. Class A",
+   "close": 13.75,
+   "drop": 30,
+   "retrace": 81.7,
+   "maxJump": 8.7,
+   "peak": 14.55,
+   "low": 10.18,
+   "daysSinceLow": 27,
+   "fresh": false,
+   "dollarVolume": 488017203,
+   "chart": "charts/2.png"
+  }
+ ]
+}
