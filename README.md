@@ -328,3 +328,11 @@ worst drop about −45%. Orders go only to `paper-api.alpaca.markets`.
 - Each run is appended to `paper-log.json` on the `paper-log` branch: equity, SPY, picks, orders.
 - `node scanner/paper.test.mjs` checks the rule and order planner (no network).
   On cached data the live code picks the same stocks, in the same rank order, as the backtest on each of the last 60 weekly signal days.
+
+## Morning reel and post scanner
+
+- `node scanner/news.mjs --hours 18` lists the newest reports of Trump's Truth Social posts, big-tech CEOs' posts on X,
+  big-tech company news, and Fed/tariff headlines, from Google News RSS (no key needed), with duplicates removed.
+- `node scanner/reel.mjs brief.json reel.mp4` turns a list of slides into a vertical 1080×1920 video. Each slide is read
+  aloud by Piper, a free voice that runs offline (`pip install piper-tts`, then set `PIPER_VOICE` to an `.onnx` voice
+  such as `en_US-ryan-high` from huggingface.co/rhasspy/piper-voices). Without a voice the reel is silent.
