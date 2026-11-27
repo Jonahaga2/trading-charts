@@ -1,0 +1,159 @@
+{
+ "started": "2026-11-14",
+ "runs": [
+  {
+   "date": "2026-11-14",
+   "equity": 742.32,
+   "spy": 752.09,
+   "dry": true,
+   "picks": [
+    "MRNA",
+    "VLO",
+    "MPC",
+    "PSX",
+    "SNDK",
+    "DELL",
+    "PBR",
+    "HPE",
+    "FTNT",
+    "ILMN"
+   ],
+   "orders": []
+  },
+  {
+   "date": "2026-11-16",
+   "equity": 742.32,
+   "spy": 740.04,
+   "dry": false,
+   "picks": [
+    "MRNA",
+    "VLO",
+    "MPC",
+    "PSX",
+    "SNDK",
+    "DELL",
+    "PBR",
+    "HPE",
+    "FTNT",
+    "ILMN"
+   ],
+   "orders": [
+    {
+     "side": "buy",
+     "symbol": "MRNA",
+     "notional": 133.61
+    },
+    {
+     "side": "buy",
+     "symbol": "VLO",
+     "notional": 120.25
+    },
+    {
+     "side": "buy",
+     "symbol": "MPC",
+     "notional": 106.89
+    },
+    {
+     "side": "buy",
+     "symbol": "PSX",
+     "notional": 93.53
+    },
+    {
+     "side": "buy",
+     "symbol": "SNDK",
+     "notional": 80.17
+    },
+    {
+     "side": "buy",
+     "symbol": "DELL",
+     "notional": 66.8
+    },
+    {
+     "side": "buy",
+     "symbol": "PBR",
+     "notional": 53.44
+    },
+    {
+     "side": "buy",
+     "symbol": "HPE",
+     "notional": 40.08
+    },
+    {
+     "side": "buy",
+     "symbol": "FTNT",
+     "notional": 26.72
+    },
+    {
+     "side": "buy",
+     "symbol": "ILMN",
+     "notional": 13.36
+    }
+   ]
+  },
+  {
+   "date": "2026-11-23",
+   "equity": 626.68,
+   "spy": 723.44,
+   "dry": false,
+   "picks": [
+    "MRNA",
+    "SNDK",
+    "MU",
+    "MPC",
+    "VLO",
+    "DELL",
+    "PSX",
+    "PBR",
+    "HPE",
+    "TGT"
+   ],
+   "orders": [
+    {
+     "side": "sell",
+     "symbol": "DELL",
+     "qty": 0.034285
+    },
+    {
+     "side": "sell",
+     "symbol": "FTNT",
+     "qty": "all"
+    },
+    {
+     "side": "sell",
+     "symbol": "HPE",
+     "qty": 0.343785
+    },
+    {
+     "side": "sell",
+     "symbol": "ILMN",
+     "qty": "all"
+    },
+    {
+     "side": "sell",
+     "symbol": "MPC",
+     "qty": 0.042021
+    },
+    {
+     "side": "sell",
+     "symbol": "MRNA",
+     "qty": 0.075897
+    },
+    {
+     "side": "sell",
+     "symbol": "PBR",
+     "qty": 0.897058
+    },
+    {
+     "side": "sell",
+     "symbol": "PSX",
+     "qty": 0.167635
+    },
+    {
+     "side": "sell",
+     "symbol": "VLO",
+     "qty": 0.117409
+    }
+   ]
+  }
+ ]
+}
